@@ -308,7 +308,7 @@ final class RY_WTP_ECPay_Shipping
                         'LogisticsType' => $method_class::$LogisticsType,
                         'LogisticsSubType' => $method_class::$LogisticsSubType . (('C2C' == $CVS_type) ? 'C2C' : ''),
                         'IsCollection' => 'Y',
-                        'ServerReplyURL' => esc_url(WC()->api_request_url('ry_ecpay_map_callback', true)),
+                        'ServerReplyURL' => esc_url(WC()->api_request_url('ry_ecpay_map_callback')),
                         'ExtraData' => 'ry' . $order->get_id()
                     ],
                     'newStore' => $choosed_cvs,
