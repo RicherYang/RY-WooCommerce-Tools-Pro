@@ -1,34 +1,17 @@
 <?php
 defined('RY_WTP_VERSION') or exit('No direct script access allowed');
 
-class RY_ECPay_Shipping_CVS_711_Pro extends RY_ECPay_Shipping_CVS_711
+class RY_ECPay_Shipping_Home_Ecan_Pro extends RY_ECPay_Shipping_Home_Ecan
 {
     public function __construct($instance_id = 0)
     {
         $this->instance_form_fields = include(RY_WT_PLUGIN_DIR . 'woocommerce/shipping/ecpay/includes/settings-ecpay-shipping-base.php');
-        $field_keys = array_keys($this->instance_form_fields);
-        $field_idx = array_search('cost', $field_keys) + 1;
-        $this->instance_form_fields = array_slice($this->instance_form_fields, 0, $field_idx)
-            + [
-                'cost_offisland' => [
-                    'title' => __('Off island plus cost', 'ry-woocommerce-tools-pro'),
-                    'type' => 'number',
-                    'default' => 40,
-                    'min' => 0,
-                    'step' => 1,
-                    'description' => __('The total cost is cost plus off island cost.', 'ry-woocommerce-tools-pro'),
-                    'desc_tip' => true
-                ]
-            ]
-            + array_slice($this->instance_form_fields, $field_idx);
 
         $this->instance_form_fields['cost_requires']['options']['min_amount_except_discount'] = __('A minimum order amount ( except discount and tex )', 'ry-woocommerce-tools-pro');
         $this->instance_form_fields['cost_requires']['options']['min_amount_except_discount_or_coupon'] = __('A minimum order amount OR a coupon ( except discount and tex )', 'ry-woocommerce-tools-pro');
         $this->instance_form_fields['cost_requires']['options']['min_amount_except_discount_and_coupon'] = __('A minimum order amount AND a coupon ( except discount and tex )', 'ry-woocommerce-tools-pro');
 
         parent::__construct($instance_id);
-
-        $this->cost_offisland = $this->get_option('cost_offisland');
     }
 
     public function calculate_shipping($package = [])
@@ -42,10 +25,6 @@ class RY_ECPay_Shipping_CVS_711_Pro extends RY_ECPay_Shipping_CVS_711
                 'no_count' => 1
             ]
         ];
-
-        if ((int) WC()->session->get('shipping_cvs_out_island') == 1) {
-            $rate['cost'] += $this->cost_offisland;
-        }
 
         $has_coupon = $this->check_has_coupon($this->cost_requires, ['coupon', 'min_amount_or_coupon', 'min_amount_and_coupon', 'min_amount_except_discount_or_coupon', 'min_amount_except_discount_and_coupon']);
         $has_min_amount = $this->check_has_min_amount($this->cost_requires, ['min_amount', 'min_amount_or_coupon', 'min_amount_and_coupon']);

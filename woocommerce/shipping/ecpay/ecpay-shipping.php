@@ -8,6 +8,8 @@ final class RY_WTP_ECPay_Shipping
         include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-cvs-711.php');
         include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-cvs-family.php');
         include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-cvs-hilife.php');
+        include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-home-tcat.php');
+        include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-home-ecan.php');
 
         if (is_admin()) {
             add_filter('woocommerce_get_settings_rytools', [__CLASS__, 'add_setting'], 11, 2);
@@ -26,15 +28,15 @@ final class RY_WTP_ECPay_Shipping
             wp_register_script('ry-pro-shipping', RY_WTP_PLUGIN_URL . 'style/js/ry_shipping.js', ['jquery'], RY_WTP_VERSION, true);
         }
 
-        if ('yes' === RY_WT::get_option('ecpay_shipping_cvs', 'no')) {
+        if ('yes' === RY_WT::get_option('ecpay_shipping', 'no')) {
             add_filter('woocommerce_shipping_methods', [__CLASS__, 'use_pro_method'], 11);
             add_filter('woocommerce_checkout_fields', [__CLASS__, 'hide_billing_info']);
 
             if ('yes' === RY_WT::get_option('ecpay_shipping_auto_get_no', 'yes')) {
                 if ('yes' === RY_WTP::get_option('ecpay_shipping_auto_with_scheduler', 'no')) {
-                    remove_action('woocommerce_order_status_processing', ['RY_ECPay_Shipping', 'get_cvs_code'], 10, 2);
-                    add_action('woocommerce_order_status_processing', [__CLASS__, 'get_cvs_code'], 10, 2);
-                    add_action('ry_wtp_get_ecpay_cvs_code', ['RY_ECPay_Shipping_Api', 'get_cvs_code'], 10, 2);
+                    remove_action('woocommerce_order_status_processing', ['RY_ECPay_Shipping', 'get_code'], 10, 2);
+                    add_action('woocommerce_order_status_processing', [__CLASS__, 'get_code'], 10, 2);
+                    add_action('ry_wtp_get_ecpay_cvs_code', ['RY_ECPay_Shipping_Api', 'get_code'], 10, 2);
                 }
             }
 
@@ -105,12 +107,16 @@ final class RY_WTP_ECPay_Shipping
                 break;
         }
 
+        if (version_compare(RY_WT_VERSION, '1.3.10', '>=')) {
+            $actions['ry_print_ecpay_home'] = __('Print shipping booking note (home)', 'ry-woocommerce-tools-pro');
+        }
+
         return $actions;
     }
 
     public static function print_cvs_shipping_note($redirect_to, $action, $ids)
     {
-        if (false !== strpos($action, 'ry_print_ecpay_cvs_')) {
+        if (false !== strpos($action, 'ry_print_ecpay_')) {
             $redirect_to = esc_url_raw($redirect_to);
             $redirect_to = remove_query_arg(array('action', 'action2', 'tags_input', 'post_author', 'comment_status', 'ping_status', '_status', 'post', 'bulk_edit', 'post_view'), $redirect_to);
             $redirect_to = add_query_arg(
@@ -135,19 +141,23 @@ final class RY_WTP_ECPay_Shipping
         $order_ids = array_map('intval', explode(',', $_GET['ids']));
         $order_ids = array_filter($order_ids);
         $logistics_list = [];
-
         foreach ($order_ids as $order_id) {
-            if ($order = wc_get_order($order_id)) {
+            $order = wc_get_order($order_id);
+            if ($order) {
                 foreach ($order->get_items('shipping') as $item_id => $item) {
                     $shipping_method = RY_ECPay_Shipping::get_order_support_shipping($item);
-                    if ($shipping_method !== false) {
-                        if (strrchr($shipping_method, '_') == $print_type) {
-                            $shipping_list = $order->get_meta('_ecpay_shipping_info', true);
-                            if (is_array($shipping_list)) {
-                                foreach ($shipping_list as $info) {
-                                    $logistics_list[$info['ID']] = $order_id;
-                                }
-                            }
+                    if ($shipping_method === false) {
+                        continue;
+                    }
+
+                    if (strpos($shipping_method, $print_type) === false) {
+                        continue;
+                    }
+
+                    $shipping_list = $order->get_meta('_ecpay_shipping_info', true);
+                    if (is_array($shipping_list)) {
+                        foreach ($shipping_list as $info) {
+                            $logistics_list[$info['ID']] = $order_id;
                         }
                     }
                 }
@@ -155,47 +165,51 @@ final class RY_WTP_ECPay_Shipping
         }
 
         if (count($logistics_list)) {
-            switch (RY_WT::get_option('ecpay_shipping_cvs_type')) {
-                case 'B2C':
-                    $print_info = RY_ECPay_Shipping_Api::get_print_info_form(array_keys($logistics_list));
-                    break;
-                case 'C2C':
-                    $iframe_size = '';
-                    switch ($print_type) {
-                        case '_family':
-                            $iframe_size = 'width:320px;height:515px';
-                            $td_col = 2;
-                            break;
-                        case '_hilife':
-                            $iframe_size = 'width:990px;height:315px';
-                            $td_col = 1;
-                            break;
-                        case '_711':
-                            $iframe_size = 'width:850px;height:800px';
-                            $td_col = 1;
-                            break;
-                    }
-
-                    $print_info = '<!DOCTYPE html><html><head><meta charset="' . get_bloginfo('charset', 'display') . '"></head><body style="margin:0;padding:0"><table style="max-width:900px;width:100%;"><tbody><tr>';
-                    $foreach_count = 0;
-                    foreach ($logistics_list as $logistics_id => $order_id) {
-                        $iframe_src = add_query_arg(
-                            [
-                                'action' => 'RY_ECPay_Shipping_print',
-                                'orderid' => $order_id,
-                                'id' => $logistics_id,
-                                'only' => 1
-                            ],
-                            admin_url('admin-ajax.php')
-                        );
-                        if ($foreach_count > 0 && $foreach_count % $td_col == 0) {
-                            $print_info .= '</tr><tr>';
+            if ($print_type == '_home') {
+                $print_info = RY_ECPay_Shipping_Api::get_print_info_form(array_keys($logistics_list));
+            } else {
+                switch (RY_WT::get_option('ecpay_shipping_cvs_type')) {
+                    case 'B2C':
+                        $print_info = RY_ECPay_Shipping_Api::get_print_info_form(array_keys($logistics_list));
+                        break;
+                    case 'C2C':
+                        $iframe_size = '';
+                        switch ($print_type) {
+                            case '_family':
+                                $iframe_size = 'width:320px;height:515px';
+                                $td_col = 2;
+                                break;
+                            case '_hilife':
+                                $iframe_size = 'width:990px;height:315px';
+                                $td_col = 1;
+                                break;
+                            case '_711':
+                                $iframe_size = 'width:850px;height:800px';
+                                $td_col = 1;
+                                break;
                         }
-                        $print_info .= '<td><iframe src="' . $iframe_src . '" style="border:0;' . $iframe_size . '"></iframe></td>';
-                        $foreach_count += 1;
-                    }
-                    $print_info .= '</tr></tbody></table></body></html>';
-                    break;
+
+                        $print_info = '<!DOCTYPE html><html><head><meta charset="' . get_bloginfo('charset', 'display') . '"></head><body style="margin:0;padding:0"><table style="max-width:900px;width:100%;"><tbody><tr>';
+                        $foreach_count = 0;
+                        foreach ($logistics_list as $logistics_id => $order_id) {
+                            $iframe_src = add_query_arg(
+                                [
+                                    'action' => 'RY_ECPay_Shipping_print',
+                                    'orderid' => $order_id,
+                                    'id' => $logistics_id,
+                                    'only' => 1
+                                ],
+                                admin_url('admin-ajax.php')
+                            );
+                            if ($foreach_count > 0 && $foreach_count % $td_col == 0) {
+                                $print_info .= '</tr><tr>';
+                            }
+                            $print_info .= '<td><iframe src="' . $iframe_src . '" style="border:0;' . $iframe_size . '"></iframe></td>';
+                            $foreach_count += 1;
+                        }
+                        $print_info .= '</tr></tbody></table></body></html>';
+                        break;
+                }
             }
 
             echo($print_info);
@@ -211,20 +225,21 @@ final class RY_WTP_ECPay_Shipping
     {
         foreach ($order->get_items('shipping') as $item_id => $item) {
             $shipping_method = RY_ECPay_Shipping::get_order_support_shipping($item);
-            if ($shipping_method !== false) {
-                $shipping_list = $order->get_meta('_ecpay_shipping_info', true);
-                if (is_array($shipping_list)) {
-                    $field_keys = array_keys($fields);
-                    $field_idx = array_search('order_number', $field_keys) + 1;
-                    $fields = array_slice($fields, 0, $field_idx)
-                        + [
-                            'ry_ecpay_shipping_id' => [
-                                'label' => __('ECPay shipping ID', 'ry-woocommerce-tools'),
-                                'value' => implode(', ', array_column($shipping_list, 'ID'))
-                            ]
+            if ($shipping_method === false) {
+                continue;
+            }
+            $shipping_list = $order->get_meta('_ecpay_shipping_info', true);
+            if (is_array($shipping_list)) {
+                $field_keys = array_keys($fields);
+                $field_idx = array_search('order_number', $field_keys) + 1;
+                $fields = array_slice($fields, 0, $field_idx)
+                    + [
+                        'ry_ecpay_shipping_id' => [
+                            'label' => __('ECPay shipping ID', 'ry-woocommerce-tools'),
+                            'value' => implode(', ', array_column($shipping_list, 'ID'))
                         ]
-                        + array_slice($fields, $field_idx);
-                }
+                    ]
+                    + array_slice($fields, $field_idx);
             }
         }
 
@@ -233,14 +248,12 @@ final class RY_WTP_ECPay_Shipping
 
     public static function use_pro_method($shipping_methods)
     {
-        if (isset($shipping_methods['ry_ecpay_shipping_cvs_711'])) {
-            $shipping_methods['ry_ecpay_shipping_cvs_711'] = 'RY_ECPay_Shipping_CVS_711_Pro';
-        }
-        if (isset($shipping_methods['ry_ecpay_shipping_cvs_hilife'])) {
-            $shipping_methods['ry_ecpay_shipping_cvs_hilife'] = 'RY_ECPay_Shipping_CVS_Hilife_Pro';
-        }
-        if (isset($shipping_methods['ry_ecpay_shipping_cvs_family'])) {
-            $shipping_methods['ry_ecpay_shipping_cvs_family'] = 'RY_ECPay_Shipping_CVS_Family_Pro';
+        foreach ($shipping_methods as $method => $method_class) {
+            if (substr($method, 0, 9) == 'ry_ecpay_') {
+                if (substr($method_class, -4) != '_Pro') {
+                    $shipping_methods[$method] = $method_class . '_Pro';
+                }
+            }
         }
 
         return $shipping_methods;
@@ -274,7 +287,7 @@ final class RY_WTP_ECPay_Shipping
         return $fields;
     }
 
-    public static function get_cvs_code($order_id, $order)
+    public static function get_code($order_id, $order)
     {
         $shipping_list = $order->get_meta('_ecpay_shipping_info', true);
         if (!is_array($shipping_list)) {
@@ -289,7 +302,7 @@ final class RY_WTP_ECPay_Shipping
     {
         foreach ($order->get_items('shipping') as $item_id => $item) {
             $method_class = RY_ECPay_Shipping::get_order_support_shipping($item);
-            if ($method_class !== false) {
+            if ($method_class !== false && strpos($method_class, 'cvs') !== false) {
                 list($MerchantID, $HashKey, $HashIV, $CVS_type) = RY_ECPay_Shipping::get_ecpay_api_info();
 
                 $choosed_cvs = '';

@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the RY WooCommerce Tools Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: RY WooCommerce Tools Pro 1.0.33\n"
+"Project-Id-Version: RY WooCommerce Tools Pro 1.1.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ry-woocommerce-tools-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-02-27T12:15:39+08:00\n"
+"POT-Creation-Date: 2020-04-30T11:28:54+08:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: ry-woocommerce-tools-pro\n"
@@ -18,7 +18,7 @@ msgstr ""
 #: class.ry-wt-p.admin.php:98
 #: class.ry-wt-p.admin.php:104
 #: class.ry-wt-p.admin.php:121
-#: class.ry-wt-p.main.php:66
+#: class.ry-wt-p.main.php:69
 #: woocommerce/admin/view/html-setting-tools.php:1
 #: woocommerce/settings/settings-pro-version.php:6
 msgid "RY WooCommerce Tools Pro"
@@ -93,48 +93,48 @@ msgid "Is tried"
 msgstr ""
 
 #. translators: %s: Name of this plugin
-#: class.ry-wt-p.main.php:65
+#: class.ry-wt-p.main.php:68
 msgid "<strong>%s</strong> is inactive. It require RY WooCommerce Tools."
 msgstr ""
 
-#: templates/order/order-ecpay-shipping-info.php:17
+#: templates/order/order-ecpay-shipping-info.php:16
 msgid "Shipping details"
 msgstr ""
 
-#: templates/order/order-ecpay-shipping-info.php:22
+#: templates/order/order-ecpay-shipping-info.php:23
 msgid "Shipping payment no"
 msgstr ""
 
-#: templates/order/order-ecpay-shipping-info.php:23
+#: templates/order/order-ecpay-shipping-info.php:26
 msgid "Shipping status"
-msgstr ""
-
-#: templates/order/order-ecpay-shipping-info.php:39
-msgctxt "Shipping status"
-msgid "Wait shipment"
-msgstr ""
-
-#: templates/order/order-ecpay-shipping-info.php:41
-msgctxt "Shipping status"
-msgid "Transporting"
-msgstr ""
-
-#: templates/order/order-ecpay-shipping-info.php:43
-msgctxt "Shipping status"
-msgid "Waiting for pick up"
 msgstr ""
 
 #: templates/order/order-ecpay-shipping-info.php:45
 msgctxt "Shipping status"
-msgid "Completed"
+msgid "Wait shipment"
 msgstr ""
 
 #: templates/order/order-ecpay-shipping-info.php:47
 msgctxt "Shipping status"
-msgid "Overdue return"
+msgid "Transporting"
 msgstr ""
 
 #: templates/order/order-ecpay-shipping-info.php:49
+msgctxt "Shipping status"
+msgid "Waiting for pick up"
+msgstr ""
+
+#: templates/order/order-ecpay-shipping-info.php:51
+msgctxt "Shipping status"
+msgid "Completed"
+msgstr ""
+
+#: templates/order/order-ecpay-shipping-info.php:53
+msgctxt "Shipping status"
+msgid "Overdue return"
+msgstr ""
+
+#: templates/order/order-ecpay-shipping-info.php:55
 msgctxt "Shipping status"
 msgid "Unknow"
 msgstr ""
@@ -294,73 +294,83 @@ msgstr ""
 msgid "Pay via NewebPay Credit(30 installment)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping-cvs-711.php:12
+#: woocommerce/shipping/ecpay/ecpay-shipping-cvs-711.php:14
 msgid "Off island plus cost"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping-cvs-711.php:17
+#: woocommerce/shipping/ecpay/ecpay-shipping-cvs-711.php:19
 msgid "The total cost is cost plus off island cost."
-msgstr ""
-
-#: woocommerce/shipping/ecpay/ecpay-shipping-cvs-711.php:23
-#: woocommerce/shipping/ecpay/ecpay-shipping-cvs-family.php:8
-#: woocommerce/shipping/ecpay/ecpay-shipping-cvs-hilife.php:8
-#: woocommerce/shipping/newebpay/newebpay-shipping-cvs.php:8
-msgid "A minimum order amount ( except discount and tex )"
-msgstr ""
-
-#: woocommerce/shipping/ecpay/ecpay-shipping-cvs-711.php:24
-#: woocommerce/shipping/ecpay/ecpay-shipping-cvs-family.php:9
-#: woocommerce/shipping/ecpay/ecpay-shipping-cvs-hilife.php:9
-#: woocommerce/shipping/newebpay/newebpay-shipping-cvs.php:9
-msgid "A minimum order amount OR a coupon ( except discount and tex )"
 msgstr ""
 
 #: woocommerce/shipping/ecpay/ecpay-shipping-cvs-711.php:25
 #: woocommerce/shipping/ecpay/ecpay-shipping-cvs-family.php:10
 #: woocommerce/shipping/ecpay/ecpay-shipping-cvs-hilife.php:10
+#: woocommerce/shipping/ecpay/ecpay-shipping-home-ecan.php:10
+#: woocommerce/shipping/ecpay/ecpay-shipping-home-tcat.php:10
+#: woocommerce/shipping/newebpay/newebpay-shipping-cvs.php:8
+msgid "A minimum order amount ( except discount and tex )"
+msgstr ""
+
+#: woocommerce/shipping/ecpay/ecpay-shipping-cvs-711.php:26
+#: woocommerce/shipping/ecpay/ecpay-shipping-cvs-family.php:11
+#: woocommerce/shipping/ecpay/ecpay-shipping-cvs-hilife.php:11
+#: woocommerce/shipping/ecpay/ecpay-shipping-home-ecan.php:11
+#: woocommerce/shipping/ecpay/ecpay-shipping-home-tcat.php:11
+#: woocommerce/shipping/newebpay/newebpay-shipping-cvs.php:9
+msgid "A minimum order amount OR a coupon ( except discount and tex )"
+msgstr ""
+
+#: woocommerce/shipping/ecpay/ecpay-shipping-cvs-711.php:27
+#: woocommerce/shipping/ecpay/ecpay-shipping-cvs-family.php:12
+#: woocommerce/shipping/ecpay/ecpay-shipping-cvs-hilife.php:12
+#: woocommerce/shipping/ecpay/ecpay-shipping-home-ecan.php:12
+#: woocommerce/shipping/ecpay/ecpay-shipping-home-tcat.php:12
 #: woocommerce/shipping/newebpay/newebpay-shipping-cvs.php:10
 msgid "A minimum order amount AND a coupon ( except discount and tex )"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:62
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:67
 msgid "Auto get with scheduler action"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:66
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:71
 msgid "Get shipping payment no use scheduler action."
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:72
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:77
 msgctxt "Cvs type"
 msgid "B2C"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:77
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:82
 #: woocommerce/shipping/newebpay/newebpay-shipping.php:34
 msgid "cvs remove billing address"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:81
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:86
 #: woocommerce/shipping/newebpay/newebpay-shipping.php:38
 msgid "Remove billing address when shipping mode is cvs."
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:82
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:87
 #: woocommerce/shipping/newebpay/newebpay-shipping.php:39
 msgid "The billing address still will show in order details."
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:92
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:98
 msgid "Print shipping booking note (711)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:93
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:98
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:99
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:104
 msgid "Print shipping booking note (family)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:94
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:99
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:100
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:105
 msgid "Print shipping booking note (hilife)"
+msgstr ""
+
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:111
+msgid "Print shipping booking note (home)"
 msgstr ""
