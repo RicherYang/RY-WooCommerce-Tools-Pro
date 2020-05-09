@@ -5,6 +5,7 @@ final class RY_WTP_ECPay_Shipping
 {
     public static function init()
     {
+        include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ry-base.php');
         include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-cvs-711.php');
         include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-cvs-family.php');
         include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-cvs-hilife.php');
@@ -31,6 +32,11 @@ final class RY_WTP_ECPay_Shipping
         if ('yes' === RY_WT::get_option('ecpay_shipping', 'no')) {
             add_filter('woocommerce_shipping_methods', [__CLASS__, 'use_pro_method'], 11);
             add_filter('woocommerce_checkout_fields', [__CLASS__, 'hide_billing_info']);
+
+            add_action('ry_ecpay_shipping_response_status_2024', [__CLASS__, 'shipping_transporting'], 10, 2);
+            add_action('ry_ecpay_shipping_response_status_2068', [__CLASS__, 'shipping_transporting'], 10, 2);
+            add_action('ry_ecpay_shipping_response_status_3006', [__CLASS__, 'shipping_transporting'], 10, 2);
+            add_action('ry_ecpay_shipping_response_status_3032', [__CLASS__, 'shipping_transporting'], 10, 2);
 
             if ('yes' === RY_WT::get_option('ecpay_shipping_auto_get_no', 'yes')) {
                 if ('yes' === RY_WTP::get_option('ecpay_shipping_auto_with_scheduler', 'no')) {
@@ -107,7 +113,7 @@ final class RY_WTP_ECPay_Shipping
                 break;
         }
 
-        if (version_compare(RY_WT_VERSION, '1.3.10', '>=')) {
+        if (version_compare(RY_WT_VERSION, '1.4.0', '>=')) {
             $actions['ry_print_ecpay_home'] = __('Print shipping booking note (home)', 'ry-woocommerce-tools-pro');
         }
 
@@ -296,6 +302,11 @@ final class RY_WTP_ECPay_Shipping
         if (count($shipping_list) == 0) {
             WC()->queue()->schedule_single(time(), 'ry_wtp_get_ecpay_cvs_code', [$order_id], '');
         }
+    }
+
+    public static function shipping_transporting($ipn_info, $order)
+    {
+        $order->update_status('ry-transporting');
     }
 
     public static function add_choose_cvs_btn($order)

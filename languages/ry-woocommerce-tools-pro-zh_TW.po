@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ry-woocommerce-"
 "tools-pro\n"
-"POT-Creation-Date: 2020-04-30T11:28:54+08:00\n"
-"PO-Revision-Date: 2020-04-30 11:29+0800\n"
+"POT-Creation-Date: 2020-05-09T16:18:53+08:00\n"
+"PO-Revision-Date: 2020-05-09 16:20+0800\n"
 "Last-Translator: Richer Yang\n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -333,51 +333,62 @@ msgstr "最小訂購金額或使用折價券（不包含折價及稅金）"
 msgid "A minimum order amount AND a coupon ( except discount and tex )"
 msgstr "最小訂購金額以及使用折價券（不包含折價及稅金）"
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:67
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:73
 msgid "Auto get with scheduler action"
 msgstr "使用排程來自動取得物流單號"
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:71
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:77
 msgid "Get shipping payment no use scheduler action."
 msgstr "使用排程動作來取得物流寄件編號。"
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:77
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:83
 msgctxt "Cvs type"
 msgid "B2C"
 msgstr "B2C"
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:82
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:88
 #: woocommerce/shipping/newebpay/newebpay-shipping.php:34
 msgid "cvs remove billing address"
 msgstr "超商取貨移除帳單地址"
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:86
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:92
 #: woocommerce/shipping/newebpay/newebpay-shipping.php:38
 msgid "Remove billing address when shipping mode is cvs."
 msgstr "當超商取貨的時候移除帳單中的地址欄位。"
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:87
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:93
 #: woocommerce/shipping/newebpay/newebpay-shipping.php:39
 msgid "The billing address still will show in order details."
 msgstr "在訂單明細當中依然會顯示帳單地址的資料。"
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:98
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:104
 msgid "Print shipping booking note (711)"
 msgstr "列印物流託運單 (7-11)"
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:99
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:104
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:105
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:110
 msgid "Print shipping booking note (family)"
 msgstr "列印物流託運單 (全家)"
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:100
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:105
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:106
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:111
 msgid "Print shipping booking note (hilife)"
 msgstr "列印物流託運單 (萊爾富)"
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:111
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:117
 msgid "Print shipping booking note (home)"
 msgstr "列印物流託運單 (宅配)"
+
+#: woocommerce/shipping/ry-base.php:16 woocommerce/shipping/ry-base.php:38
+msgctxt "Order status"
+msgid "Transporting"
+msgstr "運送中"
+
+#. translators: %s: number of orders
+#: woocommerce/shipping/ry-base.php:44
+msgid "Transporting <span class=\"count\">(%s)</span>"
+msgid_plural "Transporting <span class=\"count\">(%s)</span>"
+msgstr[0] "運送中 <span class=\"count\">(%s)</span>"
 
 #~ msgid "Payment details"
 #~ msgstr "付款詳細資料"
