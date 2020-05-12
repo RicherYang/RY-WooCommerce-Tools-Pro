@@ -66,7 +66,6 @@ final class RY_WTP_ECPay_Shipping
             wp_enqueue_script('ry-pro-admin-shipping');
 
             $setting_id_idx = array_column($settings, 'id');
-
             $setting_idx = array_search(RY_WT::$option_prefix . 'ecpay_shipping_auto_get_no', $setting_id_idx);
             array_splice($settings, $setting_idx + 1, 0, [
                 [
@@ -82,6 +81,7 @@ final class RY_WTP_ECPay_Shipping
             $setting_idx = array_search(RY_WT::$option_prefix . 'ecpay_shipping_cvs_type', $setting_id_idx);
             $settings[$setting_idx]['options']['B2C'] = _x('B2C', 'Cvs type', 'ry-woocommerce-tools-pro');
 
+            $setting_id_idx = array_column($settings, 'id');
             $setting_idx = array_search(RY_WT::$option_prefix . 'ecpay_shipping_auto_completed', $setting_id_idx);
             array_splice($settings, $setting_idx + 1, 0, [
                 [
@@ -91,6 +91,19 @@ final class RY_WTP_ECPay_Shipping
                     'default' => 'no',
                     'desc' => __('Remove billing address when shipping mode is cvs.', 'ry-woocommerce-tools-pro') . '<br>'
                         . __('The billing address still will show in order details.', 'ry-woocommerce-tools-pro')
+                ]
+            ]);
+
+            $setting_id_idx = array_column($settings, 'id');
+            $setting_idx = array_search(RY_WT::$option_prefix . 'ecpay_shipping_order_prefix', $setting_id_idx);
+            array_splice($settings, $setting_idx + 1, 0, [
+                [
+                    'title' => __('shipping item name', 'ry-woocommerce-tools-pro'),
+                    'id' => RY_WT::$option_prefix . 'shipping_item_name',
+                    'type' => 'text',
+                    'default' => '',
+                    'desc' => __('If empty use the first product name.', 'ry-woocommerce-tools-pro'),
+                    'desc_tip' => true
                 ]
             ]);
         }

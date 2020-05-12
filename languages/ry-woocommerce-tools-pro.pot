@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the RY WooCommerce Tools Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: RY WooCommerce Tools Pro 1.1.4\n"
+"Project-Id-Version: RY WooCommerce Tools Pro 1.1.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ry-woocommerce-tools-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-05-09T16:18:53+08:00\n"
+"POT-Creation-Date: 2020-05-12T20:37:58+08:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: ry-woocommerce-tools-pro\n"
@@ -329,15 +329,15 @@ msgstr ""
 msgid "A minimum order amount AND a coupon ( except discount and tex )"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:73
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:72
 msgid "Auto get with scheduler action"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:77
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:76
 msgid "Get shipping payment no use scheduler action."
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:83
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:82
 msgctxt "Cvs type"
 msgid "B2C"
 msgstr ""
@@ -357,21 +357,29 @@ msgstr ""
 msgid "The billing address still will show in order details."
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:104
-msgid "Print shipping booking note (711)"
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:101
+msgid "shipping item name"
 msgstr ""
 
 #: woocommerce/shipping/ecpay/ecpay-shipping.php:105
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:110
-msgid "Print shipping booking note (family)"
-msgstr ""
-
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:106
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:111
-msgid "Print shipping booking note (hilife)"
+msgid "If empty use the first product name."
 msgstr ""
 
 #: woocommerce/shipping/ecpay/ecpay-shipping.php:117
+msgid "Print shipping booking note (711)"
+msgstr ""
+
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:118
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:123
+msgid "Print shipping booking note (family)"
+msgstr ""
+
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:119
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:124
+msgid "Print shipping booking note (hilife)"
+msgstr ""
+
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:130
 msgid "Print shipping booking note (home)"
 msgstr ""
 
