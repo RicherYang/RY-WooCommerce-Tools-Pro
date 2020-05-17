@@ -33,7 +33,7 @@ final class RY_WTP_ECPay_Shipping
             add_filter('woocommerce_shipping_methods', [__CLASS__, 'use_pro_method'], 11);
             add_filter('woocommerce_checkout_fields', [__CLASS__, 'hide_billing_info']);
 
-            add_action('ry_ecpay_shipping_response_status_2024', [__CLASS__, 'shipping_transporting'], 10, 2);
+            add_action('ry_ecpay_shipping_response_status_2030', [__CLASS__, 'shipping_transporting'], 10, 2);
             add_action('ry_ecpay_shipping_response_status_2068', [__CLASS__, 'shipping_transporting'], 10, 2);
             add_action('ry_ecpay_shipping_response_status_3006', [__CLASS__, 'shipping_transporting'], 10, 2);
             add_action('ry_ecpay_shipping_response_status_3032', [__CLASS__, 'shipping_transporting'], 10, 2);
