@@ -53,8 +53,8 @@ final class RY_WTP_ECPay_Gateway
                     'id' => RY_WTP::$option_prefix . 'ecpay_email_payment_info',
                     'type' => 'checkbox',
                     'default' => 'yes',
-                    /* translators: %s: email title */
                     'desc' => sprintf(
+                        /* translators: %s: email title */
                         __('Add payment info in "%s" email.', 'ry-woocommerce-tools-pro'),
                         __('Order on-hold', 'woocommerce')
                     )
