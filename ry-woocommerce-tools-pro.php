@@ -12,7 +12,7 @@ WC requires at least: 3
 WC tested up to: 4.1.1
 */
 
-function_exists('plugin_dir_url') OR exit('No direct script access allowed');
+function_exists('plugin_dir_url') or exit('No direct script access allowed');
 
 define('RY_WTP_VERSION', '1.1.7');
 define('RY_WTP_PLUGIN_URL', plugin_dir_url(__FILE__));

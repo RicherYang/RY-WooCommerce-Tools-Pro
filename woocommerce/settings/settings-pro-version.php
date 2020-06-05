@@ -1,23 +1,23 @@
 <?php
-defined('RY_WT_VERSION') OR exit('No direct script access allowed');
+defined('RY_WT_VERSION') or exit('No direct script access allowed');
 
 return [
-	[
-		'title' => __('RY WooCommerce Tools Pro', 'ry-woocommerce-tools-pro'),
-		'id' => 'pro_options',
-		'type' => 'title'
-	],
-	[
-		'title' => __('License key', 'ry-woocommerce-tools-pro'),
-		'id' => RY_WTP::$option_prefix . 'pro_Key',
-		'type' => 'text',
-		'default' => ''
-	],
-	[
-		'type' => 'rywct_version_info',
-	],
-	[
-		'id' => 'pro_options',
-		'type' => 'sectionend'
-	]
+    [
+        'title' => __('RY WooCommerce Tools Pro', 'ry-woocommerce-tools-pro'),
+        'id' => 'pro_options',
+        'type' => 'title'
+    ],
+    [
+        'title' => __('License key', 'ry-woocommerce-tools-pro'),
+        'id' => RY_WTP::$option_prefix . 'pro_Key',
+        'type' => 'text',
+        'default' => ''
+    ],
+    [
+        'type' => 'rywct_version_info',
+    ],
+    [
+        'id' => 'pro_options',
+        'type' => 'sectionend'
+    ]
 ];
