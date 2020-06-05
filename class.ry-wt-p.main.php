@@ -57,6 +57,11 @@ final class RY_WTP
                 if ('yes' == RY_WT::get_option('enabled_newebpay_shipping', 'no')) {
                     include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/newebpay/newebpay-shipping.php');
                 }
+
+                // 速買配金流
+                if ('yes' == RY_WT::get_option('enabled_smilepay_gateway', 'no')) {
+                    include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/smilepay/smilepay-gateway.php');
+                }
             }
         }
     }
