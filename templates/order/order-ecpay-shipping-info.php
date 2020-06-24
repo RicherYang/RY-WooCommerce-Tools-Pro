@@ -33,7 +33,7 @@ if (count($shipping_info_list)) { ?>
             <td class="woocommerce-table__shipping-no shipping-no">
                 <?php
                 if ($shipping_info['LogisticsType'] == 'CVS') {
-                    echo $shipping_info['PaymentNo'];
+                    echo empty($shipping_info['PaymentNo']) ? $shipping_info['ID'] : $shipping_info['PaymentNo'];
                 } elseif ($shipping_info['LogisticsType'] == 'HOME') {
                     echo $shipping_info['BookingNote'];
                 }
