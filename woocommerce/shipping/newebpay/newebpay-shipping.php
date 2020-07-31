@@ -5,12 +5,11 @@ final class RY_WTP_NewebPay_Shipping
 {
     public static function init()
     {
-        include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/newebpay/newebpay-shipping-cvs.php');
+        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ry-base.php';
+        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/newebpay/newebpay-shipping-cvs.php';
 
         if (is_admin()) {
             add_filter('woocommerce_get_settings_rytools', [__CLASS__, 'add_setting'], 11, 2);
-        } else {
-            wp_register_script('ry-pro-shipping', RY_WTP_PLUGIN_URL . 'style/js/ry_shipping.js', ['jquery'], RY_WTP_VERSION, true);
         }
 
         if ('yes' === RY_WT::get_option('newebpay_shipping', 'no')) {

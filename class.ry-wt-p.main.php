@@ -27,40 +27,44 @@ final class RY_WTP
 
             self::$activate_status = self::valid_key();
 
-            include_once(RY_WTP_PLUGIN_DIR . 'include/class.updater.php');
-            include_once(RY_WTP_PLUGIN_DIR . 'include/class.link-server.php');
+            include_once RY_WTP_PLUGIN_DIR . 'include/class.updater.php';
+            include_once RY_WTP_PLUGIN_DIR . 'include/class.link-server.php';
 
-            include_once(RY_WTP_PLUGIN_DIR . 'class.ry-wt-p.update.php');
+            include_once RY_WTP_PLUGIN_DIR . 'class.ry-wt-p.update.php';
             RY_WTP_update::update();
 
             if (is_admin()) {
-                include_once(RY_WTP_PLUGIN_DIR . 'class.ry-wt-p.admin.php');
+                include_once RY_WTP_PLUGIN_DIR . 'class.ry-wt-p.admin.php';
             }
 
             if (self::$activate_status) {
-                include_once(RY_WTP_PLUGIN_DIR . 'include/class.cron.php');
+                include_once RY_WTP_PLUGIN_DIR . 'include/class.cron.php';
 
                 // 綠界金流
                 if ('yes' == RY_WT::get_option('enabled_ecpay_gateway', 'no')) {
-                    include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/ecpay-gateway.php');
+                    include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/ecpay-gateway.php';
                 }
                 // 綠界物流
                 if ('yes' == RY_WT::get_option('enabled_ecpay_shipping', 'no')) {
-                    include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping.php');
+                    include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping.php';
                 }
 
                 // 藍新金流
                 if ('yes' == RY_WT::get_option('enabled_newebpay_gateway', 'no')) {
-                    include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/newebpay-gateway.php');
+                    include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/newebpay-gateway.php';
                 }
                 // 藍新物流
                 if ('yes' == RY_WT::get_option('enabled_newebpay_shipping', 'no')) {
-                    include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/newebpay/newebpay-shipping.php');
+                    include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/newebpay/newebpay-shipping.php';
                 }
 
                 // 速買配金流
                 if ('yes' == RY_WT::get_option('enabled_smilepay_gateway', 'no')) {
-                    include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/smilepay/smilepay-gateway.php');
+                    include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/smilepay/smilepay-gateway.php';
+                }
+                // 速買配物流
+                if ('yes' == RY_WT::get_option('enabled_smilepay_shipping', 'no')) {
+                    include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/smilepay/smilepay-shipping.php';
                 }
             }
         }

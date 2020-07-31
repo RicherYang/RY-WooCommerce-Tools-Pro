@@ -9,6 +9,11 @@ final class RY_WTP_Shipping
         add_filter('woocommerce_reports_order_statuses', [__CLASS__, 'add_reports_order_statuses']);
         add_filter('woocommerce_order_is_paid_statuses', [__CLASS__, 'add_order_is_paid_statuses']);
         self::register_order_statuses();
+
+        if (is_admin()) {
+        } else {
+            wp_register_script('ry-pro-shipping', RY_WTP_PLUGIN_URL . 'style/js/ry_shipping.js', ['jquery'], RY_WTP_VERSION, true);
+        }
     }
 
     public static function add_order_statuses($order_statuses)

@@ -5,12 +5,12 @@ final class RY_WTP_ECPay_Shipping
 {
     public static function init()
     {
-        include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ry-base.php');
-        include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-cvs-711.php');
-        include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-cvs-family.php');
-        include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-cvs-hilife.php');
-        include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-home-tcat.php');
-        include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-home-ecan.php');
+        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ry-base.php';
+        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-cvs-711.php';
+        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-cvs-family.php';
+        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-cvs-hilife.php';
+        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-home-tcat.php';
+        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-home-ecan.php';
 
         if (is_admin()) {
             add_filter('woocommerce_get_settings_rytools', [__CLASS__, 'add_setting'], 11, 2);
@@ -25,8 +25,6 @@ final class RY_WTP_ECPay_Shipping
             add_filter('wcdn_order_info_fields', [__CLASS__, 'add_wcdn_shipping_info'], 10, 2);
         } else {
             add_action('woocommerce_view_order', [__CLASS__, 'shipping_info']);
-
-            wp_register_script('ry-pro-shipping', RY_WTP_PLUGIN_URL . 'style/js/ry_shipping.js', ['jquery'], RY_WTP_VERSION, true);
         }
 
         if ('yes' === RY_WT::get_option('ecpay_shipping', 'no')) {
@@ -114,20 +112,20 @@ final class RY_WTP_ECPay_Shipping
     {
         switch (RY_WT::get_option('ecpay_shipping_cvs_type')) {
             case 'B2C':
-                $actions['ry_print_ecpay_cvs_711'] = __('Print shipping booking note (711)', 'ry-woocommerce-tools-pro');
-                $actions['ry_print_ecpay_cvs_family'] = __('Print shipping booking note (family)', 'ry-woocommerce-tools-pro');
-                $actions['ry_print_ecpay_cvs_hilife'] = __('Print shipping booking note (hilife)', 'ry-woocommerce-tools-pro');
+                $actions['ry_print_ecpay_cvs_711'] = __('Print ECPay shipping booking note (711)', 'ry-woocommerce-tools-pro');
+                $actions['ry_print_ecpay_cvs_family'] = __('Print ECPay shipping booking note (family)', 'ry-woocommerce-tools-pro');
+                $actions['ry_print_ecpay_cvs_hilife'] = __('Print ECPay shipping booking note (hilife)', 'ry-woocommerce-tools-pro');
                 break;
             case 'C2C':
                 if (version_compare(RY_WT_VERSION, '1.2.6', '>=')) {
-                    $actions['ry_print_ecpay_cvs_family'] = __('Print shipping booking note (family)', 'ry-woocommerce-tools-pro');
-                    $actions['ry_print_ecpay_cvs_hilife'] = __('Print shipping booking note (hilife)', 'ry-woocommerce-tools-pro');
+                    $actions['ry_print_ecpay_cvs_family'] = __('Print ECPay shipping booking note (family)', 'ry-woocommerce-tools-pro');
+                    $actions['ry_print_ecpay_cvs_hilife'] = __('Print ECPay shipping booking note (hilife)', 'ry-woocommerce-tools-pro');
                 }
                 break;
         }
 
         if (version_compare(RY_WT_VERSION, '1.4.0', '>=')) {
-            $actions['ry_print_ecpay_home'] = __('Print shipping booking note (home)', 'ry-woocommerce-tools-pro');
+            $actions['ry_print_ecpay_home'] = __('Print ECPay shipping booking note (home)', 'ry-woocommerce-tools-pro');
         }
 
         return $actions;

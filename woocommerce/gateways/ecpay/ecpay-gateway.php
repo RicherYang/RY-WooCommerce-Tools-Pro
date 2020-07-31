@@ -6,12 +6,12 @@ final class RY_WTP_ECPay_Gateway
     public static function init()
     {
         if (version_compare(RY_WT_VERSION, '1.1.9', '>=')) {
-            include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/includes/ecpay-gateway-credit-installment-base.php');
-            include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-3.php');
-            include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-6.php');
-            include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-12.php');
-            include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-18.php');
-            include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-24.php');
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/includes/ecpay-gateway-credit-installment-base.php';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-3.php';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-6.php';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-12.php';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-18.php';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-24.php';
 
             if (is_admin()) {
                 add_filter('woocommerce_get_settings_rytools', [__CLASS__, 'add_setting'], 11, 2);

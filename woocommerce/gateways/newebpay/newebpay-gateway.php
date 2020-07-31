@@ -6,13 +6,13 @@ final class RY_WTP_NewebPay_Gateway
     public static function init()
     {
         if (version_compare(RY_WT_VERSION, '1.2.0', '>=')) {
-            include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/includes/newebpay-gateway-credit-installment-base.php');
-            include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-3.php');
-            include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-6.php');
-            include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-12.php');
-            include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-18.php');
-            include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-24.php');
-            include_once(RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-30.php');
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/includes/newebpay-gateway-credit-installment-base.php';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-3.php';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-6.php';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-12.php';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-18.php';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-24.php';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-30.php';
 
             if (is_admin()) {
                 add_filter('woocommerce_get_settings_rytools', [__CLASS__, 'add_setting'], 11, 2);
