@@ -26,7 +26,7 @@ final class RY_WTP_SmilePay_Shipping
 
         if ('yes' === RY_WT::get_option('smilepay_shipping', 'no')) {
             add_filter('woocommerce_shipping_methods', [__CLASS__, 'use_pro_method'], 11);
-            add_filter('woocommerce_checkout_fields', [__CLASS__, 'hide_billing_info']);
+            add_filter('woocommerce_checkout_fields', [__CLASS__, 'hide_billing_info'], 9999);
 
             if ('yes' === RY_WT::get_option('smilepay_shipping_auto_get_no', 'yes')) {
                 if ('yes' === RY_WTP::get_option('smilepay_shipping_auto_with_scheduler', 'no')) {
@@ -38,7 +38,6 @@ final class RY_WTP_SmilePay_Shipping
 
             if (is_admin()) {
             } else {
-                add_action('woocommerce_checkout_process', [__CLASS__, 'is_need_change_address_required']);
                 add_action('woocommerce_review_order_after_shipping', [__CLASS__, 'shipping_choose_cvs']);
                 add_filter('woocommerce_update_order_review_fragments', [__CLASS__, 'shipping_choose_cvs_info'], 11);
             }
@@ -215,6 +214,29 @@ final class RY_WTP_SmilePay_Shipping
             }
         }
 
+        if (did_action('woocommerce_checkout_process')) {
+            if (RY_WTP::get_option('smilepay_cvs_billing_address', 'no') == 'yes') {
+                $used_cvs = false;
+                $shipping_method = isset($_POST['shipping_method']) ? wc_clean($_POST['shipping_method']) : [];
+                foreach ($shipping_method as $method) {
+                    $method = strstr($method, ':', true);
+                    if (array_key_exists($method, RY_SmilePay_Shipping::$support_methods)) {
+                        $used_cvs = true;
+                        break;
+                    }
+                }
+
+                if ($used_cvs) {
+                    $fields['billing']['billing_country']['required'] = false;
+                    $fields['billing']['billing_address_1']['required'] = false;
+                    $fields['billing']['billing_address_2']['required'] = false;
+                    $fields['billing']['billing_city']['required'] = false;
+                    $fields['billing']['billing_state']['required'] = false;
+                    $fields['billing']['billing_postcode']['required'] = false;
+                }
+            }
+        }
+
         return $fields;
     }
 
@@ -229,37 +251,6 @@ final class RY_WTP_SmilePay_Shipping
                 WC()->queue()->schedule_single(time(), 'ry_wtp_get_smilepay_cvs_code', [$order_id, $smse_id], '');
             }
         }
-    }
-
-    public static function is_need_change_address_required()
-    {
-        if (RY_WTP::get_option('smilepay_cvs_billing_address', 'no') == 'yes') {
-            $used_cvs = false;
-            $shipping_method = isset($_POST['shipping_method']) ? wc_clean($_POST['shipping_method']) : [];
-            foreach ($shipping_method as $method) {
-                $method = strstr($method, ':', true);
-                if (array_key_exists($method, RY_SmilePay_Shipping::$support_methods)) {
-                    $used_cvs = true;
-                    break;
-                }
-            }
-
-            if ($used_cvs) {
-                add_filter('woocommerce_checkout_fields', [__CLASS__, 'fix_billing_address_required'], 9999);
-            }
-        }
-    }
-
-    public static function fix_billing_address_required($fields)
-    {
-        $fields['billing']['billing_country']['required'] = false;
-        $fields['billing']['billing_address_1']['required'] = false;
-        $fields['billing']['billing_address_2']['required'] = false;
-        $fields['billing']['billing_city']['required'] = false;
-        $fields['billing']['billing_state']['required'] = false;
-        $fields['billing']['billing_postcode']['required'] = false;
-
-        return $fields;
     }
 
     public static function shipping_choose_cvs()

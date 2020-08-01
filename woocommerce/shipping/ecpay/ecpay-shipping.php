@@ -29,7 +29,7 @@ final class RY_WTP_ECPay_Shipping
 
         if ('yes' === RY_WT::get_option('ecpay_shipping', 'no')) {
             add_filter('woocommerce_shipping_methods', [__CLASS__, 'use_pro_method'], 11);
-            add_filter('woocommerce_checkout_fields', [__CLASS__, 'hide_billing_info']);
+            add_filter('woocommerce_checkout_fields', [__CLASS__, 'hide_billing_info'], 9999);
 
             add_action('ry_ecpay_shipping_response_status_2030', [__CLASS__, 'shipping_transporting'], 10, 2);
             add_action('ry_ecpay_shipping_response_status_2068', [__CLASS__, 'shipping_transporting'], 10, 2);
@@ -51,7 +51,6 @@ final class RY_WTP_ECPay_Shipping
             } else {
                 add_action('woocommerce_load_shipping_methods', [__CLASS__, 'out_island_reset_shipping']);
 
-                add_action('woocommerce_checkout_process', [__CLASS__, 'is_need_change_address_required']);
                 add_action('woocommerce_review_order_after_shipping', [__CLASS__, 'shipping_choose_cvs']);
                 add_filter('woocommerce_update_order_review_fragments', [__CLASS__, 'shipping_choose_cvs_info'], 11);
             }
@@ -301,6 +300,29 @@ final class RY_WTP_ECPay_Shipping
             }
         }
 
+        if (did_action('woocommerce_checkout_process')) {
+            if (RY_WTP::get_option('ecpay_cvs_billing_address', 'no') == 'yes') {
+                $used_cvs = false;
+                $shipping_method = isset($_POST['shipping_method']) ? wc_clean($_POST['shipping_method']) : [];
+                foreach ($shipping_method as $method) {
+                    $method = strstr($method, ':', true);
+                    if (array_key_exists($method, RY_ECPay_Shipping::$support_methods)) {
+                        $used_cvs = true;
+                        break;
+                    }
+                }
+
+                if ($used_cvs) {
+                    $fields['billing']['billing_country']['required'] = false;
+                    $fields['billing']['billing_address_1']['required'] = false;
+                    $fields['billing']['billing_address_2']['required'] = false;
+                    $fields['billing']['billing_city']['required'] = false;
+                    $fields['billing']['billing_state']['required'] = false;
+                    $fields['billing']['billing_postcode']['required'] = false;
+                }
+            }
+        }
+
         return $fields;
     }
 
@@ -371,37 +393,6 @@ final class RY_WTP_ECPay_Shipping
             } while (true);
             WC()->session->set('shipping_cvs_out_island', (int) $_POST['CVSOutSide']);
         }
-    }
-
-    public static function is_need_change_address_required()
-    {
-        if (RY_WTP::get_option('ecpay_cvs_billing_address', 'no') == 'yes') {
-            $used_cvs = false;
-            $shipping_method = isset($_POST['shipping_method']) ? wc_clean($_POST['shipping_method']) : [];
-            foreach ($shipping_method as $method) {
-                $method = strstr($method, ':', true);
-                if (array_key_exists($method, RY_ECPay_Shipping::$support_methods)) {
-                    $used_cvs = true;
-                    break;
-                }
-            }
-
-            if ($used_cvs) {
-                add_filter('woocommerce_checkout_fields', [__CLASS__, 'fix_billing_address_required'], 9999);
-            }
-        }
-    }
-
-    public static function fix_billing_address_required($fields)
-    {
-        $fields['billing']['billing_country']['required'] = false;
-        $fields['billing']['billing_address_1']['required'] = false;
-        $fields['billing']['billing_address_2']['required'] = false;
-        $fields['billing']['billing_city']['required'] = false;
-        $fields['billing']['billing_state']['required'] = false;
-        $fields['billing']['billing_postcode']['required'] = false;
-
-        return $fields;
     }
 
     public static function shipping_choose_cvs()
