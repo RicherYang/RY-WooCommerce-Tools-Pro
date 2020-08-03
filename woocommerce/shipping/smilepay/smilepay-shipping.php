@@ -10,14 +10,17 @@ final class RY_WTP_SmilePay_Shipping
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/smilepay/smilepay-shipping-cvs-fami.php';
 
         if (is_admin()) {
-            add_filter('woocommerce_get_settings_rytools', [__CLASS__, 'add_setting'], 11, 2);
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/admin/meta-boxes/smilepay-shipping-meta-box.php';
 
+            add_filter('woocommerce_get_settings_rytools', [__CLASS__, 'add_setting'], 11, 2);
 
             if (version_compare(RY_WT_VERSION, '1.6.2', '>=')) {
                 add_filter('bulk_actions-edit-shop_order', [__CLASS__, 'shop_order_list_action']);
                 add_filter('handle_bulk_actions-edit-shop_order', [__CLASS__, 'print_shipping_note'], 10, 3);
             }
 
+            remove_action('add_meta_boxes', ['RY_SmilePay_Shipping_Meta_Box', 'add_meta_box'], 40);
+            add_action('add_meta_boxes', ['RY_SmilePay_Shipping_Meta_Box_Pro', 'add_meta_box'], 40, 2);
             // Support plugin (WooCommerce Print Invoice & Delivery Note)
             add_filter('wcdn_order_info_fields', [__CLASS__, 'add_wcdn_shipping_info'], 10, 2);
         } else {
@@ -103,8 +106,8 @@ final class RY_WTP_SmilePay_Shipping
         if (false !== strpos($action, 'ry_print_smilepay_')) {
             $print_type = strrchr($action, '_');
             $logistics_list = [];
-            foreach ($ids as $order_id) {
-                $order = wc_get_order($order_id);
+            foreach ($ids as $order_ID) {
+                $order = wc_get_order($order_ID);
                 if ($order) {
                     foreach ($order->get_items('shipping') as $item_id => $item) {
                         $shipping_method = RY_SmilePay_Shipping::get_order_support_shipping($item);
@@ -118,6 +121,14 @@ final class RY_WTP_SmilePay_Shipping
 
                         $shipping_list = $order->get_meta('_smilepay_shipping_info', true);
                         if (is_array($shipping_list)) {
+                            foreach ($shipping_list as $info) {
+                                if (empty($info['PaymentNo'])) {
+                                    RY_SmilePay_Shipping_Api::get_code_no($order_ID, $info['ID']);
+                                }
+                            }
+
+                            $order = wc_get_order($order_ID);
+                            $shipping_list = $order->get_meta('_smilepay_shipping_info', true);
                             foreach ($shipping_list as $info) {
                                 $logistics_list[$info['ID']] = $info;
                             }
