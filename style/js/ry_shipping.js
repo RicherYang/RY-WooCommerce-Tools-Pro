@@ -1,8 +1,8 @@
 jQuery(function ($) {
 
 	$(document.body).on('updated_checkout', function (e, data) {
-		if (typeof data !== 'undefined') {
-			if (typeof data.fragments.hide_billing_address !== 'undefined') {
+		if (data !== undefined) {
+			if (data.fragments.hide_billing_address !== undefined && data.fragments.hide_billing_address) {
 				$('.woocommerce-billing-fields__field-wrapper p#billing_country_field').hide();
 				$('.woocommerce-billing-fields__field-wrapper p#billing_address_1_field').hide();
 				$('.woocommerce-billing-fields__field-wrapper p#billing_address_2_field').hide();

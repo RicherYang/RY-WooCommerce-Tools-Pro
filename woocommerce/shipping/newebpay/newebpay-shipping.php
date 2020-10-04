@@ -68,10 +68,12 @@ final class RY_WTP_NewebPay_Shipping
 
             if ($is_support) {
                 if ('yes' == RY_WTP::get_option('ecpay_cvs_billing_address', 'no')) {
-                    $hide_fields = ['billing_country', 'billing_address_1', 'billing_address_2', 'billing_city', 'billing_state', 'billing_postcode'];
-                    foreach ($hide_fields as $field_name) {
-                        if (isset($fields['billing'][$field_name])) {
-                            $fields['billing'][$field_name]['class'][] = 'ry-hide';
+                    if (strpos($chosen_method[0], '_cvs')) {
+                        $hide_fields = ['billing_country', 'billing_address_1', 'billing_address_2', 'billing_city', 'billing_state', 'billing_postcode'];
+                        foreach ($hide_fields as $field_name) {
+                            if (isset($fields['billing'][$field_name])) {
+                                $fields['billing'][$field_name]['class'][] = 'ry-hide';
+                            }
                         }
                     }
                 }
@@ -85,7 +87,9 @@ final class RY_WTP_NewebPay_Shipping
                 foreach ($shipping_method as $method) {
                     $method = strstr($method, ':', true);
                     if (array_key_exists($method, RY_NewebPay_Shipping::$support_methods)) {
-                        $used_cvs = true;
+                        if (strpos($method, '_cvs')) {
+                            $used_cvs = true;
+                        }
                         break;
                     }
                 }
@@ -113,7 +117,8 @@ final class RY_WTP_NewebPay_Shipping
     {
         if (isset($fragments['newebpay_shipping_info'])) {
             if (RY_WTP::get_option('newebpay_cvs_billing_address', 'no') == 'yes') {
-                $fragments['hide_billing_address'] = 1;
+                $chosen_method = isset(WC()->session->chosen_shipping_methods) ? WC()->session->chosen_shipping_methods : [];
+                $fragments['hide_billing_address'] = strpos($chosen_method[0], '_cvs');
             }
         }
 

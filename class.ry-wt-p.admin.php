@@ -104,14 +104,14 @@ final class RY_WTP_admin
                 WC_Admin_Settings::add_error(__('RY WooCommerce Tools Pro', 'ry-woocommerce-tools-pro') . ': '
                     . __('Connect license server failed!', 'ry-woocommerce-tools-pro'));
             } else {
-                if (is_array($json) && isset($json['data'])) {
+                if (is_array($json)) {
                     if (empty($json['data'])) {
-                        WC_Admin_Settings::add_error(sprintf(
-                            __('RY WooCommerce Tools Pro', 'ry-woocommerce-tools-pro') . ': '
-                     /* translators: %s: Error message */
-                     . __('Verification error: %s', 'ry-woocommerce-tools-pro'),
-                            __($json['error'], 'ry-woocommerce-tools-pro')
-                        ));
+                        WC_Admin_Settings::add_error(__('RY WooCommerce Tools Pro', 'ry-woocommerce-tools-pro') . ': '
+                            . sprintf(
+                                /* translators: %s: Error message */
+                                __('Verification error: %s', 'ry-woocommerce-tools-pro'),
+                                __($json['error'], 'ry-woocommerce-tools-pro')
+                            ));
 
                         /* Error message list. For make .pot */
                         __('Unknown key', 'ry-woocommerce-tools-pro');
