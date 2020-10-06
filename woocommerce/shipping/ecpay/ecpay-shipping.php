@@ -337,7 +337,7 @@ final class RY_WTP_ECPay_Shipping
             $shipping_list = [];
         }
         if (count($shipping_list) == 0) {
-            WC()->queue()->schedule_single(time(), 'ry_wtp_get_ecpay_cvs_code', [$order_id], '');
+            WC()->queue()->schedule_single(time() + 3, 'ry_wtp_get_ecpay_cvs_code', [$order_id], '');
         }
     }
 

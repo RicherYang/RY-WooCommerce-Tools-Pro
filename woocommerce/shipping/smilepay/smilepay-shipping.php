@@ -263,7 +263,7 @@ final class RY_WTP_SmilePay_Shipping
         }
         if (count($shipping_list) > 0) {
             foreach ($shipping_list as $smse_id => $info) {
-                WC()->queue()->schedule_single(time(), 'ry_wtp_get_smilepay_cvs_code', [$order_id, $smse_id], '');
+                WC()->queue()->schedule_single(time() + 3, 'ry_wtp_get_smilepay_cvs_code', [$order_id, $smse_id], '');
             }
         }
     }
