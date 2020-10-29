@@ -49,8 +49,6 @@ final class RY_WTP_ECPay_Shipping
                     add_action('woocommerce_admin_order_data_after_shipping_address', [__CLASS__, 'add_choose_cvs_btn']);
                 }
             } else {
-                add_action('woocommerce_load_shipping_methods', [__CLASS__, 'out_island_reset_shipping']);
-
                 add_action('woocommerce_review_order_after_shipping', [__CLASS__, 'shipping_choose_cvs']);
                 add_filter('woocommerce_update_order_review_fragments', [__CLASS__, 'shipping_choose_cvs_info'], 11);
             }
@@ -380,22 +378,6 @@ final class RY_WTP_ECPay_Shipping
                 include(RY_WTP_PLUGIN_DIR . 'woocommerce/admin/meta-boxes/views/choose_cvs_btn.php');
                 break;
             }
-        }
-    }
-
-    public static function out_island_reset_shipping()
-    {
-        if (isset($_POST['CVSOutSide'])) {
-            $package_key = 0;
-            do {
-                $stored_rates = WC()->session->get('shipping_for_package_' . $package_key);
-                if (empty($stored_rates)) {
-                    break;
-                }
-                WC()->session->set('shipping_for_package_' . $package_key, '');
-                $package_key += 1;
-            } while (true);
-            WC()->session->set('shipping_cvs_out_island', (int) $_POST['CVSOutSide']);
         }
     }
 
