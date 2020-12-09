@@ -1,10 +1,10 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: RY WooCommerce Tools Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ry-woocommerce-"
 "tools-pro\n"
-"POT-Creation-Date: 2020-07-31T12:32:38+08:00\n"
-"PO-Revision-Date: 2020-07-31 12:32+0800\n"
+"POT-Creation-Date: 2020-12-09T10:46:09+08:00\n"
+"PO-Revision-Date: 2020-12-09 11:10+0800\n"
 "Last-Translator: Richer Yang\n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -23,7 +23,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: ./..\n"
 
 #. Plugin Name of the plugin
-#: class.ry-wt-p.admin.php:104 class.ry-wt-p.admin.php:110
+#: class.ry-wt-p.admin.php:104 class.ry-wt-p.admin.php:109
 #: class.ry-wt-p.admin.php:127 class.ry-wt-p.main.php:78
 #: woocommerce/admin/view/html-setting-tools.php:2
 #: woocommerce/settings/settings-pro-version.php:6
@@ -351,64 +351,64 @@ msgstr "最小訂購金額或使用折價券（不包含折價及稅金）"
 msgid "A minimum order amount AND a coupon ( except discount and tex )"
 msgstr "最小訂購金額以及使用折價券（不包含折價及稅金）"
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:70
-#: woocommerce/shipping/smilepay/smilepay-shipping.php:57
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:67
+#: woocommerce/shipping/smilepay/smilepay-shipping.php:59
 msgid "Auto get with scheduler action"
 msgstr "使用排程來自動取得物流單號"
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:74
-#: woocommerce/shipping/smilepay/smilepay-shipping.php:61
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:71
+#: woocommerce/shipping/smilepay/smilepay-shipping.php:63
 msgid "Get shipping payment no use scheduler action."
 msgstr "使用排程動作來取得物流寄件編號。"
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:80
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:77
 msgctxt "Cvs type"
 msgid "B2C"
 msgstr "B2C"
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:86
-#: woocommerce/shipping/newebpay/newebpay-shipping.php:36
-#: woocommerce/shipping/smilepay/smilepay-shipping.php:69
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:83
+#: woocommerce/shipping/newebpay/newebpay-shipping.php:35
+#: woocommerce/shipping/smilepay/smilepay-shipping.php:71
 msgid "cvs remove billing address"
 msgstr "超商取貨移除帳單地址"
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:90
-#: woocommerce/shipping/newebpay/newebpay-shipping.php:40
-#: woocommerce/shipping/smilepay/smilepay-shipping.php:73
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:87
+#: woocommerce/shipping/newebpay/newebpay-shipping.php:39
+#: woocommerce/shipping/smilepay/smilepay-shipping.php:75
 msgid "Remove billing address when shipping mode is cvs."
 msgstr "當超商取貨的時候移除帳單中的地址欄位。"
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:91
-#: woocommerce/shipping/newebpay/newebpay-shipping.php:41
-#: woocommerce/shipping/smilepay/smilepay-shipping.php:74
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:88
+#: woocommerce/shipping/newebpay/newebpay-shipping.php:40
+#: woocommerce/shipping/smilepay/smilepay-shipping.php:76
 msgid "The billing address still will show in order details."
 msgstr "在訂單明細當中依然會顯示帳單地址的資料。"
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:99
-#: woocommerce/shipping/smilepay/smilepay-shipping.php:82
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:96
+#: woocommerce/shipping/smilepay/smilepay-shipping.php:84
 msgid "shipping item name"
 msgstr "物流商品名稱"
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:103
-#: woocommerce/shipping/smilepay/smilepay-shipping.php:86
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:100
+#: woocommerce/shipping/smilepay/smilepay-shipping.php:88
 msgid "If empty use the first product name."
 msgstr "如果未輸入，則使用第一件商品的名稱。"
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:115
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:112
 msgid "Print ECPay shipping booking note (711)"
 msgstr "列印綠界物流託運單 (7-11)"
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:116
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:121
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:113
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:118
 msgid "Print ECPay shipping booking note (family)"
 msgstr "列印綠界物流託運單 (全家)"
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:117
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:122
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:114
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:119
 msgid "Print ECPay shipping booking note (hilife)"
 msgstr "列印綠界物流託運單 (萊爾富)"
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:128
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:125
 msgid "Print ECPay shipping booking note (home)"
 msgstr "列印綠界物流託運單 (宅配)"
 
@@ -423,11 +423,11 @@ msgid "Transporting <span class=\"count\">(%s)</span>"
 msgid_plural "Transporting <span class=\"count\">(%s)</span>"
 msgstr[0] "運送中 <span class=\"count\">(%s)</span>"
 
-#: woocommerce/shipping/smilepay/smilepay-shipping.php:96
+#: woocommerce/shipping/smilepay/smilepay-shipping.php:98
 msgid "Print smilepay shipping booking note (711)"
 msgstr "列印速買配物流託運單 (7-11)"
 
-#: woocommerce/shipping/smilepay/smilepay-shipping.php:97
+#: woocommerce/shipping/smilepay/smilepay-shipping.php:99
 msgid "Print SmilePay shipping booking note (family)"
 msgstr "列印速買配物流託運單 (全家)"
 

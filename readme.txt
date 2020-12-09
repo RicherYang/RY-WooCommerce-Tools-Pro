@@ -1,7 +1,7 @@
 === RY WooCommerce Tools Pro ===
 Contributors: Richer Yang
 Tags: woocommerce, payment, gateway, ecpay
-Requires at least: 5.0
+Requires at least: 5.2
 Requires PHP: 7.3
-Tested up to: 5.5.1
-Stable tag: 1.2.7
+Tested up to: 5.6.0
+Stable tag: 1.2.8
