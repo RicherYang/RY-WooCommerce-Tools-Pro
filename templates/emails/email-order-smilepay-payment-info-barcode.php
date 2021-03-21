@@ -10,7 +10,7 @@
  *
  * @version 1.2.0
  */
-
+defined('ABSPATH') || exit;
 if ($order->get_payment_method() != 'ry_smilepay_barcode') {
     return;
 }

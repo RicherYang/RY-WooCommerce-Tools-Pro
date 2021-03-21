@@ -10,7 +10,7 @@
  *
  * @version 1.0.15
  */
-
+defined('ABSPATH') || exit;
 if ($order->get_payment_method() != 'ry_smilepay_cvs') {
     return;
 }

@@ -1,6 +1,4 @@
 <?php
-defined('RY_WTP_VERSION') or exit('No direct script access allowed');
-
 final class RY_WTP_update
 {
     public static function update()
@@ -14,8 +12,8 @@ final class RY_WTP_update
             return;
         }
 
-        if (version_compare($now_version, '1.2.8', '<')) {
-            RY_WTP::update_option('version', '1.2.8');
+        if (version_compare($now_version, '1.2.9', '<')) {
+            RY_WTP::update_option('version', '1.2.9');
         }
     }
 }

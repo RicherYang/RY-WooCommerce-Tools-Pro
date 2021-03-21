@@ -10,30 +10,39 @@
  *
  * @version 1.0.15
  */
-
-if( $order->get_payment_method() != 'ry_newebpay_cvs' ) {
-	return;
+defined('ABSPATH') || exit;
+if ($order->get_payment_method() != 'ry_newebpay_cvs') {
+    return;
 }
 
-if( $order->get_meta('_newebpay_payment_type') != 'CVS' ) {
-	return;
+if ($order->get_meta('_newebpay_payment_type') != 'CVS') {
+    return;
 }
 
 $text_align = is_rtl() ? 'right' : 'left';
 ?>
-<h2><?=__('Payment details', 'ry-woocommerce-tools') ?></h2>
+<h2><?=__('Payment details', 'ry-woocommerce-tools') ?>
+</h2>
 <div style="margin-bottom: 40px;">
 	<table class="td" cellspacing="0" cellpadding="6" style="width: 100%;" border="1">
 		<tbody>
 			<tr>
-				<th class="td" scope="row" style="text-align:<?=esc_attr($text_align) ?>;"><?=__('CVS code', 'ry-woocommerce-tools') ?></th>
-				<td class="td" style="text-align:<?=esc_attr($text_align) ?>;"><?=$order->get_meta('_newebpay_cvs_PaymentNo') ?></td>
+				<th class="td" scope="row" style="text-align:<?=esc_attr($text_align) ?>;">
+					<?=__('CVS code', 'ry-woocommerce-tools') ?>
+				</th>
+				<td class="td" style="text-align:<?=esc_attr($text_align) ?>;">
+					<?=$order->get_meta('_newebpay_cvs_PaymentNo') ?>
+				</td>
 			</tr>
 			<tr>
-				<th class="td" scope="row" style="text-align:<?=esc_attr($text_align) ?>;"><?=__('Payment deadline', 'ry-woocommerce-tools') ?></th>
+				<th class="td" scope="row" style="text-align:<?=esc_attr($text_align) ?>;">
+					<?=__('Payment deadline', 'ry-woocommerce-tools') ?>
+				</th>
 				<?php $expireDate = wc_string_to_datetime($order->get_meta('_newebpay_cvs_ExpireDate')); ?>
 				<?php $expireDate = $expireDate->date_i18n(wc_date_format()); ?>
-				<td class="td" style="text-align:<?=esc_attr($text_align) ?>;"><?=$expireDate ?></td>
+				<td class="td" style="text-align:<?=esc_attr($text_align) ?>;">
+					<?=$expireDate ?>
+				</td>
 			</tr>
 		</tbody>
 	</table>

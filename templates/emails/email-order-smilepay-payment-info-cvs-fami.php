@@ -10,7 +10,7 @@
  *
  * @version 1.2.0
  */
-
+defined('ABSPATH') || exit;
 if ($order->get_payment_method() != 'ry_smilepay_cvs_fami') {
     return;
 }
@@ -31,7 +31,8 @@ $text_align = is_rtl() ? 'right' : 'left';
 				<th class="td" scope="row" style="text-align:<?=esc_attr($text_align) ?>;">
 					<?=__('CVS code', 'ry-woocommerce-tools') ?>
 				</th>
-				<td class="td" style="text-align:<?=esc_attr($text_align) ?>;"><?=$order->get_meta('_smilepay_cvs_PaymentNo') ?>
+				<td class="td" style="text-align:<?=esc_attr($text_align) ?>;">
+					<?=$order->get_meta('_smilepay_cvs_PaymentNo') ?>
 				</td>
 			</tr>
 			<tr>

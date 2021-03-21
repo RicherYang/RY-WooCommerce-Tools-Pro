@@ -10,22 +10,22 @@
  *
  * @version 1.0.15
  */
-
-if( $order->get_payment_method() != 'ry_newebpay_barcode' ) {
-	return;
+defined('ABSPATH') || exit;
+if ($order->get_payment_method() != 'ry_newebpay_barcode') {
+    return;
 }
 
-if( $order->get_meta('_newebpay_payment_type') != 'BARCODE' ) {
-	return;
+if ($order->get_meta('_newebpay_payment_type') != 'BARCODE') {
+    return;
 }
 
 echo "\n==========\n\n";
 
-echo wp_kses_post( __('Payment details', 'ry-woocommerce-tools') ) . "\n";
+echo wp_kses_post(__('Payment details', 'ry-woocommerce-tools')) . "\n";
 
-echo wp_kses_post( __('Barcode 1', 'ry-woocommerce-tools') . "\t " . $order->get_meta('_newebpay_barcode_Barcode1') ) . "\n";
-echo wp_kses_post( __('Barcode 2', 'ry-woocommerce-tools') . "\t " . $order->get_meta('_newebpay_barcode_Barcode2') ) . "\n";
-echo wp_kses_post( __('Barcode 3', 'ry-woocommerce-tools') . "\t " . $order->get_meta('_newebpay_barcode_Barcode3') ) . "\n";
+echo wp_kses_post(__('Barcode 1', 'ry-woocommerce-tools') . "\t " . $order->get_meta('_newebpay_barcode_Barcode1')) . "\n";
+echo wp_kses_post(__('Barcode 2', 'ry-woocommerce-tools') . "\t " . $order->get_meta('_newebpay_barcode_Barcode2')) . "\n";
+echo wp_kses_post(__('Barcode 3', 'ry-woocommerce-tools') . "\t " . $order->get_meta('_newebpay_barcode_Barcode3')) . "\n";
 $expireDate = wc_string_to_datetime($order->get_meta('_newebpay_barcode_ExpireDate'));
 $expireDate = $expireDate->date_i18n(wc_date_format());
-echo wp_kses_post( __('Payment deadline', 'ry-woocommerce-tools') . "\t " . $expireDate ) . "\n";
+echo wp_kses_post(__('Payment deadline', 'ry-woocommerce-tools') . "\t " . $expireDate) . "\n";

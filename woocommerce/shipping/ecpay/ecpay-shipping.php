@@ -1,6 +1,4 @@
 <?php
-defined('RY_WTP_VERSION') or exit('No direct script access allowed');
-
 final class RY_WTP_ECPay_Shipping
 {
     public static function init()
@@ -375,7 +373,7 @@ final class RY_WTP_ECPay_Shipping
 
                 wp_enqueue_script('ry-pro-admin-shipping');
 
-                include(RY_WTP_PLUGIN_DIR . 'woocommerce/admin/meta-boxes/views/choose_cvs_btn.php');
+                include RY_WTP_PLUGIN_DIR . 'woocommerce/admin/meta-boxes/views/choose_cvs_btn.php';
                 break;
             }
         }

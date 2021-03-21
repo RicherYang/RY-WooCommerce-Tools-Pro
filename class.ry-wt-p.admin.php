@@ -1,6 +1,4 @@
 <?php
-defined('RY_WTP_VERSION') or exit('No direct script access allowed');
-
 final class RY_WTP_admin
 {
     private static $initiated = false;
@@ -39,7 +37,7 @@ final class RY_WTP_admin
             if (empty($settings)) {
                 $settings = [];
             }
-            $settings = array_merge($settings, include(RY_WTP_PLUGIN_DIR . 'woocommerce/settings/settings-pro-version.php'));
+            $settings = array_merge($settings, include RY_WTP_PLUGIN_DIR . 'woocommerce/settings/settings-pro-version.php');
 
             $pro_data = RY_WTP::get_option('pro_Data');
             if (is_array($pro_data) && isset($pro_data['expire'])) {

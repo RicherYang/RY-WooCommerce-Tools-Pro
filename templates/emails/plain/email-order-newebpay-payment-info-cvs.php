@@ -10,20 +10,20 @@
  *
  * @version 1.0.15
  */
-
-if( $order->get_payment_method() != 'ry_newebpay_cvs' ) {
-	return;
+defined('ABSPATH') || exit;
+if ($order->get_payment_method() != 'ry_newebpay_cvs') {
+    return;
 }
 
-if( $order->get_meta('_newebpay_payment_type') != 'CVS' ) {
-	return;
+if ($order->get_meta('_newebpay_payment_type') != 'CVS') {
+    return;
 }
 
 echo "\n==========\n\n";
 
-echo wp_kses_post( __('Payment details', 'ry-woocommerce-tools') ) . "\n";
+echo wp_kses_post(__('Payment details', 'ry-woocommerce-tools')) . "\n";
 
-echo wp_kses_post( __('CVS code', 'ry-woocommerce-tools') . "\t " . $order->get_meta('_newebpay_cvs_PaymentNo') ) . "\n";
+echo wp_kses_post(__('CVS code', 'ry-woocommerce-tools') . "\t " . $order->get_meta('_newebpay_cvs_PaymentNo')) . "\n";
 $expireDate = wc_string_to_datetime($order->get_meta('_newebpay_cvs_ExpireDate'));
 $expireDate = $expireDate->date_i18n(wc_date_format());
-echo wp_kses_post( __('Payment deadline', 'ry-woocommerce-tools') . "\t " . $expireDate ) . "\n";
+echo wp_kses_post(__('Payment deadline', 'ry-woocommerce-tools') . "\t " . $expireDate) . "\n";

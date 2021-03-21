@@ -1,6 +1,4 @@
 <?php
-defined('RY_WTP_VERSION') or exit('No direct script access allowed');
-
 class RY_NewebPay_Gateway_Credit_Installment_Base extends RY_NewebPay_Gateway_Base
 {
     public $payment_type = 'InstFlag';
@@ -10,7 +8,7 @@ class RY_NewebPay_Gateway_Credit_Installment_Base extends RY_NewebPay_Gateway_Ba
         $this->has_fields = false;
         $this->method_description = '';
 
-        $this->form_fields = include(RY_WT_PLUGIN_DIR . 'woocommerce/gateways/newebpay/includes/settings-newebpay-gateway-credit-installment.php');
+        $this->form_fields = include RY_WT_PLUGIN_DIR . 'woocommerce/gateways/newebpay/includes/settings-newebpay-gateway-credit-installment.php';
         unset($this->form_fields['number_of_periods']);
         $this->init_settings();
 

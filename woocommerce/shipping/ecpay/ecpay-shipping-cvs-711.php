@@ -1,11 +1,9 @@
 <?php
-defined('RY_WTP_VERSION') or exit('No direct script access allowed');
-
 class RY_ECPay_Shipping_CVS_711_Pro extends RY_ECPay_Shipping_CVS_711
 {
     public function __construct($instance_id = 0)
     {
-        $this->instance_form_fields = include(RY_WT_PLUGIN_DIR . 'woocommerce/shipping/ecpay/includes/settings-ecpay-shipping-base.php');
+        $this->instance_form_fields = include RY_WT_PLUGIN_DIR . 'woocommerce/shipping/ecpay/includes/settings-ecpay-shipping-base.php';
         $field_keys = array_keys($this->instance_form_fields);
         $field_idx = array_search('cost', $field_keys) + 1;
         $this->instance_form_fields = array_slice($this->instance_form_fields, 0, $field_idx)
