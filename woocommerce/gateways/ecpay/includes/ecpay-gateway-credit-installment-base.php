@@ -2,7 +2,6 @@
 class RY_ECPay_Gateway_Credit_Installment_Base extends RY_ECPay_Gateway_Base
 {
     public $payment_type = 'Credit';
-    public $inpay_payment_type = 'CREDIT';
 
     public function __construct()
     {
@@ -13,7 +12,6 @@ class RY_ECPay_Gateway_Credit_Installment_Base extends RY_ECPay_Gateway_Base
         unset($this->form_fields['number_of_periods']);
         $this->init_settings();
 
-        $this->inpay = 'yes' == $this->get_option('inpay');
         $this->title = $this->get_option('title');
         $this->description = $this->get_option('description');
         $this->min_amount = (int) $this->get_option('min_amount', 0);
@@ -38,8 +36,6 @@ class RY_ECPay_Gateway_Credit_Installment_Base extends RY_ECPay_Gateway_Base
 
     public function process_admin_options()
     {
-        $this->check_inpay_with_ssl();
-
         parent::process_admin_options();
     }
 }

@@ -70,6 +70,20 @@ final class RY_WTP_ECPay_Shipping
                 ]
             ]);
 
+            if (version_compare(RY_WT_VERSION, '1.7.0', '>=')) {
+                $setting_id_idx = array_column($settings, 'id');
+                $setting_idx = array_search(RY_WT::$option_prefix . 'ecpay_shipping_log_status_change', $setting_id_idx);
+                array_splice($settings, $setting_idx + 1, 0, [
+                    [
+                        'title' => __('Clean up receiver name', 'ry-woocommerce-tools-pro'),
+                        'id' => RY_WT::$option_prefix . 'ecpay_shipping_cleanup_receiver_name',
+                        'type' => 'checkbox',
+                        'default' => 'no',
+                        'desc' => __('Clean up receiver name to comply with EcPay request.', 'ry-woocommerce-tools-pro')
+                    ]
+                ]);
+            }
+
             $setting_id_idx = array_column($settings, 'id');
             $setting_idx = array_search(RY_WT::$option_prefix . 'ecpay_shipping_cvs_type', $setting_id_idx);
             $settings[$setting_idx]['options']['B2C'] = _x('B2C', 'Cvs type', 'ry-woocommerce-tools-pro');
