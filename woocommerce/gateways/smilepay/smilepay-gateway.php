@@ -3,15 +3,13 @@ final class RY_WTP_SmilePay_Gateway
 {
     public static function init()
     {
-        if (version_compare(RY_WT_VERSION, '1.5.0', '>=')) {
-            if (is_admin()) {
-                add_filter('woocommerce_get_settings_rytools', [__CLASS__, 'add_setting'], 11, 2);
-            }
+        if (is_admin()) {
+            add_filter('woocommerce_get_settings_rytools', [__CLASS__, 'add_setting'], 11, 2);
+        }
 
-            if ('yes' === RY_WT::get_option('smilepay_gateway', 'no')) {
-                if ('yes' === RY_WTP::get_option('smilepay_email_payment_info', 'yes')) {
-                    add_action('woocommerce_email_after_order_table', [__CLASS__, 'add_payment_info'], 10, 4);
-                }
+        if ('yes' === RY_WT::get_option('smilepay_gateway', 'no')) {
+            if ('yes' === RY_WTP::get_option('smilepay_email_payment_info', 'yes')) {
+                add_action('woocommerce_email_after_order_table', [__CLASS__, 'add_payment_info'], 10, 4);
             }
         }
     }

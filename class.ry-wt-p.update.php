@@ -12,8 +12,8 @@ final class RY_WTP_update
             return;
         }
 
-        if (version_compare($now_version, '1.2.10', '<')) {
-            RY_WTP::update_option('version', '1.2.10');
+        if (version_compare($now_version, '1.2.11', '<')) {
+            RY_WTP::update_option('version', '1.2.11');
         }
     }
 }

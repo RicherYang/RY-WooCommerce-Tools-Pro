@@ -8,6 +8,8 @@ final class RY_WTP_admin
         if (!self::$initiated) {
             self::$initiated = true;
 
+            add_action('all_admin_notices', [__CLASS__, 'add_update_notice']);
+
             add_filter('woocommerce_get_sections_rytools', [__CLASS__, 'add_sections'], 11);
             add_filter('woocommerce_get_settings_rytools', [__CLASS__, 'add_setting'], 11, 2);
             add_filter('ry_setting_section_tools', '__return_false');
@@ -18,6 +20,15 @@ final class RY_WTP_admin
             add_action('manage_shop_order_posts_custom_column', [__CLASS__, 'shop_order_column'], 11);
 
             wp_register_script('ry-pro-admin-shipping', RY_WTP_PLUGIN_URL . 'style/js/admin/ry_shipping.js', ['jquery'], RY_WTP_VERSION, true);
+        }
+    }
+
+    public static function add_update_notice()
+    {
+        if (version_compare(RY_WT_VERSION, '1.7.3', '<')) {
+            echo '<div class="notice notice-info is-dismissible"><p>'
+                . '請更新 RY WooCommerce Tools 至版本 1.7.3 或更新的版本，以確保一切功能都可以正常運作。'
+                . '</p></div>';
         }
     }
 
