@@ -93,19 +93,6 @@ final class RY_WTP_ECPay_Shipping
                         . __('The billing address still will show in order details.', 'ry-woocommerce-tools-pro')
                 ]
             ]);
-
-            $setting_id_idx = array_column($settings, 'id');
-            $setting_idx = array_search(RY_WT::$option_prefix . 'ecpay_shipping_order_prefix', $setting_id_idx);
-            array_splice($settings, $setting_idx + 1, 0, [
-                [
-                    'title' => __('shipping item name', 'ry-woocommerce-tools-pro'),
-                    'id' => RY_WT::$option_prefix . 'shipping_item_name',
-                    'type' => 'text',
-                    'default' => '',
-                    'desc' => __('If empty use the first product name.', 'ry-woocommerce-tools-pro'),
-                    'desc_tip' => true
-                ]
-            ]);
         }
         return $settings;
     }
