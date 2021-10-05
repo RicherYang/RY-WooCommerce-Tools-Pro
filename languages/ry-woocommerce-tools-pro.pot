@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the RY WooCommerce Tools Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: RY WooCommerce Tools Pro 1.2.11\n"
+"Project-Id-Version: RY WooCommerce Tools Pro 1.2.13\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ry-woocommerce-tools-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-07-09T11:24:47+08:00\n"
+"POT-Creation-Date: 2021-10-04T09:43:42+08:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: ry-woocommerce-tools-pro\n"
@@ -317,6 +317,7 @@ msgstr ""
 #: woocommerce/shipping/ecpay/ecpay-shipping-cvs-711.php:23
 #: woocommerce/shipping/ecpay/ecpay-shipping-cvs-family.php:8
 #: woocommerce/shipping/ecpay/ecpay-shipping-cvs-hilife.php:8
+#: woocommerce/shipping/ecpay/ecpay-shipping-cvs-ok.php:8
 #: woocommerce/shipping/ecpay/ecpay-shipping-home-ecan.php:8
 #: woocommerce/shipping/ecpay/ecpay-shipping-home-tcat.php:8
 #: woocommerce/shipping/newebpay/newebpay-shipping-cvs.php:8
@@ -328,6 +329,7 @@ msgstr ""
 #: woocommerce/shipping/ecpay/ecpay-shipping-cvs-711.php:24
 #: woocommerce/shipping/ecpay/ecpay-shipping-cvs-family.php:9
 #: woocommerce/shipping/ecpay/ecpay-shipping-cvs-hilife.php:9
+#: woocommerce/shipping/ecpay/ecpay-shipping-cvs-ok.php:9
 #: woocommerce/shipping/ecpay/ecpay-shipping-home-ecan.php:9
 #: woocommerce/shipping/ecpay/ecpay-shipping-home-tcat.php:9
 #: woocommerce/shipping/newebpay/newebpay-shipping-cvs.php:9
@@ -339,6 +341,7 @@ msgstr ""
 #: woocommerce/shipping/ecpay/ecpay-shipping-cvs-711.php:25
 #: woocommerce/shipping/ecpay/ecpay-shipping-cvs-family.php:10
 #: woocommerce/shipping/ecpay/ecpay-shipping-cvs-hilife.php:10
+#: woocommerce/shipping/ecpay/ecpay-shipping-cvs-ok.php:10
 #: woocommerce/shipping/ecpay/ecpay-shipping-home-ecan.php:10
 #: woocommerce/shipping/ecpay/ecpay-shipping-home-tcat.php:10
 #: woocommerce/shipping/newebpay/newebpay-shipping-cvs.php:10
@@ -347,76 +350,70 @@ msgstr ""
 msgid "A minimum order amount AND a coupon ( except discount and tex )"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:60
-#: woocommerce/shipping/smilepay/smilepay-shipping.php:55
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:61
+#: woocommerce/shipping/smilepay/smilepay-shipping.php:54
 msgid "Auto get with scheduler action"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:64
-#: woocommerce/shipping/smilepay/smilepay-shipping.php:59
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:65
+#: woocommerce/shipping/smilepay/smilepay-shipping.php:58
 msgid "Get shipping payment no use scheduler action."
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:72
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:73
 msgid "Clean up receiver name"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:76
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:77
 msgid "Clean up receiver name to comply with EcPay request."
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:82
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:83
 msgctxt "Cvs type"
 msgid "B2C"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:88
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:89
 #: woocommerce/shipping/newebpay/newebpay-shipping.php:33
-#: woocommerce/shipping/smilepay/smilepay-shipping.php:67
+#: woocommerce/shipping/smilepay/smilepay-shipping.php:66
 msgid "cvs remove billing address"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:92
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:93
 #: woocommerce/shipping/newebpay/newebpay-shipping.php:37
-#: woocommerce/shipping/smilepay/smilepay-shipping.php:71
+#: woocommerce/shipping/smilepay/smilepay-shipping.php:70
 msgid "Remove billing address when shipping mode is cvs."
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:93
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:94
 #: woocommerce/shipping/newebpay/newebpay-shipping.php:38
-#: woocommerce/shipping/smilepay/smilepay-shipping.php:72
+#: woocommerce/shipping/smilepay/smilepay-shipping.php:71
 msgid "The billing address still will show in order details."
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:101
-#: woocommerce/shipping/smilepay/smilepay-shipping.php:80
-msgid "shipping item name"
-msgstr ""
-
 #: woocommerce/shipping/ecpay/ecpay-shipping.php:105
-#: woocommerce/shipping/smilepay/smilepay-shipping.php:84
-msgid "If empty use the first product name."
-msgstr ""
-
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:117
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:122
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:110
 msgid "Print ECPay shipping booking note (711)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:118
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:123
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:106
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:111
 msgid "Print ECPay shipping booking note (family)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:119
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:107
 msgid "Print ECPay shipping booking note (hilife)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:127
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:112
+msgid "Print ECPay shipping booking note (ok)"
+msgstr ""
+
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:116
 msgid "Print ECPay shipping booking note (tcat)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:128
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:117
 msgid "Print ECPay shipping booking note (ecan)"
 msgstr ""
 
@@ -433,10 +430,10 @@ msgid_plural "Transporting <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: woocommerce/shipping/smilepay/smilepay-shipping.php:94
+#: woocommerce/shipping/smilepay/smilepay-shipping.php:80
 msgid "Print smilepay shipping booking note (711)"
 msgstr ""
 
-#: woocommerce/shipping/smilepay/smilepay-shipping.php:95
+#: woocommerce/shipping/smilepay/smilepay-shipping.php:81
 msgid "Print SmilePay shipping booking note (family)"
 msgstr ""

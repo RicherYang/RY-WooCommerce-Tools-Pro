@@ -7,14 +7,12 @@ final class RY_WTP_ECPay_Shipping
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-cvs-711.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-cvs-family.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-cvs-hilife.php';
+        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-cvs-ok.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-home-tcat.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-home-ecan.php';
 
         if (is_admin()) {
             add_filter('woocommerce_get_settings_rytools', [__CLASS__, 'add_setting'], 11, 2);
-
-            add_filter('bulk_actions-edit-shop_order', [__CLASS__, 'shop_order_list_action']);
-            add_filter('handle_bulk_actions-edit-shop_order', [__CLASS__, 'print_shipping_note'], 10, 3);
 
             // Support plugin (WooCommerce Print Invoice & Delivery Note)
             add_filter('wcdn_order_info_fields', [__CLASS__, 'add_wcdn_shipping_info'], 10, 2);
@@ -40,6 +38,9 @@ final class RY_WTP_ECPay_Shipping
             }
 
             if (is_admin()) {
+                add_filter('bulk_actions-edit-shop_order', [__CLASS__, 'shop_order_list_action']);
+                add_filter('handle_bulk_actions-edit-shop_order', [__CLASS__, 'print_shipping_note'], 10, 3);
+
                 add_action('woocommerce_admin_order_data_after_shipping_address', [__CLASS__, 'add_choose_cvs_btn']);
             } else {
                 add_action('woocommerce_review_order_after_shipping', [__CLASS__, 'shipping_choose_cvs']);
@@ -108,6 +109,7 @@ final class RY_WTP_ECPay_Shipping
             case 'C2C':
                 $actions['ry_print_ecpay_cvs_711'] = __('Print ECPay shipping booking note (711)', 'ry-woocommerce-tools-pro');
                 $actions['ry_print_ecpay_cvs_family'] = __('Print ECPay shipping booking note (family)', 'ry-woocommerce-tools-pro');
+                $actions['ry_print_ecpay_cvs_ok'] = __('Print ECPay shipping booking note (ok)', 'ry-woocommerce-tools-pro');
                 break;
         }
 
@@ -164,7 +166,10 @@ final class RY_WTP_ECPay_Shipping
     {
         foreach ($shipping_methods as $method => $method_class) {
             if (substr($method, 0, 9) == 'ry_ecpay_') {
-                if (substr($method_class, -4) != '_Pro') {
+                if (substr($method_class, -4) == '_Pro') {
+                    continue;
+                }
+                if (class_exists($method_class . '_Pro')) {
                     $shipping_methods[$method] = $method_class . '_Pro';
                 }
             }

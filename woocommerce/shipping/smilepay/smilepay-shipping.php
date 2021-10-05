@@ -12,9 +12,6 @@ final class RY_WTP_SmilePay_Shipping
 
             add_filter('woocommerce_get_settings_rytools', [__CLASS__, 'add_setting'], 11, 2);
 
-            add_filter('bulk_actions-edit-shop_order', [__CLASS__, 'shop_order_list_action']);
-            add_filter('handle_bulk_actions-edit-shop_order', [__CLASS__, 'print_shipping_note'], 10, 3);
-
             remove_action('add_meta_boxes', ['RY_SmilePay_Shipping_Meta_Box', 'add_meta_box'], 40);
             add_action('add_meta_boxes', ['RY_SmilePay_Shipping_Meta_Box_Pro', 'add_meta_box'], 40, 2);
             // Support plugin (WooCommerce Print Invoice & Delivery Note)
@@ -36,6 +33,8 @@ final class RY_WTP_SmilePay_Shipping
             }
 
             if (is_admin()) {
+                add_filter('bulk_actions-edit-shop_order', [__CLASS__, 'shop_order_list_action']);
+                add_filter('handle_bulk_actions-edit-shop_order', [__CLASS__, 'print_shipping_note'], 10, 3);
             } else {
                 add_action('woocommerce_review_order_after_shipping', [__CLASS__, 'shipping_choose_cvs']);
                 add_filter('woocommerce_update_order_review_fragments', [__CLASS__, 'shipping_choose_cvs_info'], 11);
