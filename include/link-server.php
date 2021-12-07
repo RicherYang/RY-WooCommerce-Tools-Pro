@@ -1,7 +1,7 @@
 <?php
 final class RY_WTP_link_server
 {
-    private static $api_url = 'https://ry-plugin.com/wp-json/ry/';
+    private static $api_url = 'https://ry-plugin.com/wp-json/ry/v2/';
     private static $plugin_type = 'ry-woocommerce-tools-pro';
 
     public static function check_version()

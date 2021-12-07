@@ -25,8 +25,8 @@ final class RY_WTP
 
             self::$activate_status = self::valid_key();
 
-            include_once RY_WTP_PLUGIN_DIR . 'include/class.updater.php';
-            include_once RY_WTP_PLUGIN_DIR . 'include/class.link-server.php';
+            include_once RY_WTP_PLUGIN_DIR . 'include/updater.php';
+            include_once RY_WTP_PLUGIN_DIR . 'include/link-server.php';
 
             include_once RY_WTP_PLUGIN_DIR . 'class.ry-wt-p.update.php';
             RY_WTP_update::update();
@@ -36,7 +36,7 @@ final class RY_WTP
             }
 
             if (self::$activate_status) {
-                include_once RY_WTP_PLUGIN_DIR . 'include/class.cron.php';
+                include_once RY_WTP_PLUGIN_DIR . 'include/cron.php';
 
                 // 綠界金流
                 if ('yes' == RY_WT::get_option('enabled_ecpay_gateway', 'no')) {
@@ -84,6 +84,7 @@ final class RY_WTP
         if (is_array($json) && isset($json['data'])) {
             self::update_option('pro_Data', $json['data']);
         } else {
+            self::delete_option('pro_Data');
             wp_unschedule_hook(self::$option_prefix . 'check_expire');
         }
     }
