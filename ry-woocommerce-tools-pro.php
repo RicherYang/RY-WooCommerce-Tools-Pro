@@ -1,20 +1,24 @@
 <?php
-/*
-Plugin Name: RY WooCommerce Tools Pro
-Plugin URI: https://richer.tw/ry-woocommerce-tools-pro/
-Version: 1.4.0
-Author: Richer Yang
-Author URI: https://richer.tw/
-Text Domain: ry-woocommerce-tools-pro
-Domain Path: /languages
-
-WC requires at least: 5
-WC tested up to: 5.9.0
-*/
+/**
+ * Plugin Name: RY WooCommerce Tools Pro
+ * Plugin URI: https://richer.tw/ry-woocommerce-tools-pro/
+ * Version: 1.5.0
+ * Requires at least: 5.6
+ * Requires PHP: 7.3
+ * Author: Richer Yang
+ * Author URI: https://richer.tw/
+ * License: GPLv2 or later
+ *
+ * Text Domain: ry-woocommerce-tools-pro
+ * Domain Path: /languages
+ *
+ * WC requires at least: 5
+ * WC tested up to: 5.9.0
+ */
 
 function_exists('plugin_dir_url') or exit('No direct script access allowed');
 
-define('RY_WTP_VERSION', '1.4.0');
+define('RY_WTP_VERSION', '1.5.0');
 define('RY_WTP_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('RY_WTP_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('RY_WTP_PLUGIN_BASENAME', plugin_basename(__FILE__));

@@ -1,5 +1,5 @@
 <?php
-final class RY_WTP_link_server
+final class RY_WTP_LinkServer
 {
     private static $api_url = 'https://ry-plugin.com/wp-json/ry/v2/';
     private static $plugin_type = 'ry-woocommerce-tools-pro';
@@ -19,7 +19,7 @@ final class RY_WTP_link_server
                 'Content-Type' => 'application/json;charset=' . get_bloginfo('charset'),
             ],
             'body' => wp_json_encode([
-                'license_key' => RY_WTP::get_option('pro_Key'),
+                'license_key' => RY_WTP_License::get_license_key(),
                 'domain' => get_site_url()
             ])
         ]);

@@ -1,5 +1,5 @@
 <?php
-final class RY_WTP_updater
+final class RY_WTP_Updater
 {
     private static $initiated = false;
 
@@ -20,7 +20,7 @@ final class RY_WTP_updater
 
     public static function transient_update_plugins($transient)
     {
-        $json = RY_WTP_link_server::check_version();
+        $json = RY_WTP_LinkServer::check_version();
 
         if (is_array($json) && isset($json['version'])) {
             set_site_transient(RY_WTP::$option_prefix . 'checktime', time());
@@ -48,4 +48,4 @@ final class RY_WTP_updater
     }
 }
 
-RY_WTP_updater::init();
+RY_WTP_Updater::init();

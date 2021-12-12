@@ -1,5 +1,5 @@
 <?php
-final class RY_WTP_cron
+final class RY_WTP_Cron
 {
     private static $initiated = false;
 
@@ -14,20 +14,20 @@ final class RY_WTP_cron
 
     protected static function set_event()
     {
-        add_action(RY_WTP::$option_prefix . 'check_update', ['RY_WTP_updater', 'check_update']);
+        add_action(RY_WTP::$option_prefix . 'check_update', ['RY_WTP_Updater', 'check_update']);
         if (!wp_next_scheduled(RY_WTP::$option_prefix . 'check_update')) {
             $time = wp_next_scheduled('wp_update_plugins');
             if ($time == false) {
                 $time = time();
             }
-            wp_schedule_event($time + MINUTE_IN_SECONDS, 'twicedaily', RY_WTP::$option_prefix . 'check_update');
+            wp_schedule_event($time + MINUTE_IN_SECONDS, 'daily', RY_WTP::$option_prefix . 'check_update');
         }
 
-        add_action(RY_WTP::$option_prefix . 'check_expire', ['RY_WTP', 'check_expire']);
+        add_action(RY_WTP::$option_prefix . 'check_expire', ['RY_WTP_License', 'check_expire']);
         if (!wp_next_scheduled(RY_WTP::$option_prefix . 'check_expire')) {
             wp_schedule_event(time(), 'daily', RY_WTP::$option_prefix . 'check_expire');
         }
     }
 }
 
-RY_WTP_cron::init();
+RY_WTP_Cron::init();

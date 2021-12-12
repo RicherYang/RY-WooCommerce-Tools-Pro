@@ -50,14 +50,14 @@ final class RY_WTP_admin
             }
             $settings = array_merge($settings, include RY_WTP_PLUGIN_DIR . 'woocommerce/settings/settings-pro-version.php');
 
-            $pro_data = RY_WTP::get_option('pro_Data');
-            if (is_array($pro_data) && isset($pro_data['expire'])) {
+            $expire = RY_WTP_License::get_expire();
+            if (!empty($expire)) {
                 foreach ($settings as $key => $setting) {
-                    if (isset($setting['id']) && $setting['id'] == RY_WTP::$option_prefix . 'pro_Key') {
+                    if (isset($setting['id']) && $setting['id'] == RY_WTP::$option_prefix . 'license_key') {
                         $settings[$key]['desc'] = sprintf(
                             /* translators: %s: Expiration date of pro license */
                             __('License Expiration Date %s', 'ry-woocommerce-tools-pro'),
-                            date_i18n(get_option('date_format'), $pro_data['expire'])
+                            date_i18n(get_option('date_format'), $expire)
                         );
                         break;
                     }
@@ -70,7 +70,7 @@ final class RY_WTP_admin
     public static function show_version_info($value)
     {
         $version = RY_WTP::get_option('version');
-        $version_info = RY_WTP_link_server::check_version(); ?>
+        $version_info = RY_WTP_LinkServer::check_version(); ?>
 <tr valign="top">
     <th scope="row" class="titledesc">
         <?php _e('version info', 'ry-woocommerce-tools-pro'); ?>
@@ -106,8 +106,8 @@ final class RY_WTP_admin
 
     public static function activate_key()
     {
-        if (!empty(RY_WTP::get_option('pro_Key'))) {
-            $json = RY_WTP_link_server::activate_key();
+        if (!empty(RY_WTP_License::get_license_key())) {
+            $json = RY_WTP_LinkServer::activate_key();
 
             if ($json === false) {
                 WC_Admin_Settings::add_error(__('RY WooCommerce Tools Pro', 'ry-woocommerce-tools-pro') . ': '
@@ -129,7 +129,7 @@ final class RY_WTP_admin
                         __('Used key', 'ry-woocommerce-tools-pro');
                         __('Is tried', 'ry-woocommerce-tools-pro');
                     } else {
-                        RY_WTP::update_option('pro_Data', $json['data']);
+                        RY_WTP_License::set_license_data($json['data']);
                         return true;
                     }
                 } else {
@@ -139,8 +139,7 @@ final class RY_WTP_admin
             }
         }
 
-        RY_WTP::check_expire();
-        RY_WTP::update_option('pro_Key', '');
+        RY_WTP_License::delete_license_key();
     }
 
     public static function shop_order_columns($columns)
