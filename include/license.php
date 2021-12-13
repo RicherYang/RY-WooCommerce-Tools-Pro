@@ -65,8 +65,6 @@ final class RY_WTP_License
     public static function delete_license()
     {
         RY_WTP::delete_option('license_data');
-        RY_WTP::delete_option('pro_Data');
-        RY_WTP::delete_option('pro_Key');
         wp_unschedule_hook(RY_WTP::$option_prefix . 'check_expire');
         wp_unschedule_hook(RY_WTP::$option_prefix . 'check_update');
     }
