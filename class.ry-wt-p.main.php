@@ -94,6 +94,21 @@ final class RY_WTP
         return delete_option(self::$option_prefix . $option);
     }
 
+    public static function get_transient($transient)
+    {
+        return get_transient(self::$option_prefix . $transient);
+    }
+
+    public static function set_transient($transient, $value, $expiration = 0)
+    {
+        return set_transient(self::$option_prefix . $transient, $value, $expiration);
+    }
+
+    public static function delete_transient($transient)
+    {
+        return delete_transient(self::$option_prefix . $transient);
+    }
+
     public static function plugin_activation()
     {
     }

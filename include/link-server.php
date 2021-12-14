@@ -6,7 +6,11 @@ final class RY_WTP_LinkServer
 
     public static function check_version()
     {
-        $response = wp_remote_get(self::$api_url . 'products/' . self::$plugin_type);
+        $response = wp_remote_get(self::$api_url . 'products/' . self::$plugin_type, [
+            'timeout' => 1,
+            'httpversion' => '1.1',
+            'user-agent' => self::get_user_agent()
+        ]);
 
         return self::decode_response($response);
     }
@@ -14,6 +18,7 @@ final class RY_WTP_LinkServer
     public static function activate_key()
     {
         $response = wp_remote_post(self::$api_url . 'license/activate/' . self::$plugin_type, [
+            'httpversion' => '1.1',
             'user-agent' => self::get_user_agent(),
             'headers' => [
                 'Content-Type' => 'application/json;charset=' . get_bloginfo('charset'),
@@ -30,6 +35,7 @@ final class RY_WTP_LinkServer
     public static function expire_data()
     {
         $response = wp_remote_post(self::$api_url . 'license/expire/' . self::$plugin_type, [
+            'httpversion' => '1.1',
             'user-agent' => self::get_user_agent(),
             'headers' => [
                 'Content-Type' => 'application/json;charset=' . get_bloginfo('charset'),

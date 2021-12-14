@@ -12,7 +12,6 @@ final class RY_WTP_admin
 
             add_filter('woocommerce_get_sections_rytools', [__CLASS__, 'add_sections'], 11);
             add_filter('woocommerce_get_settings_rytools', [__CLASS__, 'add_setting'], 11, 2);
-            add_filter('ry_setting_section_tools', '__return_false');
             add_action('ry_setting_section_ouput_tools', [__CLASS__, 'output_tools']);
             add_action('woocommerce_update_options_rytools_ry_key', [__CLASS__, 'activate_key']);
 
@@ -67,34 +66,22 @@ final class RY_WTP_admin
         return $settings;
     }
 
-    public static function show_version_info($value)
+    public static function show_version_info()
     {
         $version = RY_WTP::get_option('version');
-        $version_info = RY_WTP_LinkServer::check_version(); ?>
-<tr valign="top">
-    <th scope="row" class="titledesc">
-        <?php _e('version info', 'ry-woocommerce-tools-pro'); ?>
-    </th>
-    <td class="forminp">
-        <?php _e('Now Version:', 'ry-woocommerce-tools-pro') ?> <?=$version ?>
-        <?php if ($version_info && version_compare($version, $version_info['version'], '<')) { ?>
-        <?php set_site_transient('update_plugins', []); ?>
-        <br><span style="color:blue"><?php _e('New Version:', 'ry-woocommerce-tools-pro') ?></span> <?=$version_info['version'] ?>
-        <a href="<?=wp_nonce_url(self_admin_url('update.php?action=upgrade-plugin&plugin=' . RY_WTP_PLUGIN_BASENAME), 'upgrade-plugin_' . RY_WTP_PLUGIN_BASENAME); ?>">
-            <?php _e('update plugin', 'ry-woocommerce-tools-pro') ?>
-        </a>
-        <?php } ?>
-    </td>
-</tr>
-<?php
+        $version_info = RY_WTP::get_transient('version_info');
+        if (empty($version_info)) {
+            $version_info = RY_WTP_LinkServer::check_version();
+            if ($version_info) {
+                RY_WTP::set_transient('version_info', $version_info, HOUR_IN_SECONDS);
+            }
+        }
+
+        include RY_WTP_PLUGIN_DIR . 'woocommerce/admin/view/html-version-info.php';
     }
 
     public static function output_tools()
     {
-        global $hide_save_button;
-
-        $hide_save_button = true;
-
         if (!empty($_POST['change_address'])) {
             if (is_plugin_active('ry-wc-city-select/ry-wc-city-select.php')) {
                 self::change_user_address();

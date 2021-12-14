@@ -25,6 +25,18 @@ final class RY_WTP_License
         $json = RY_WTP_LinkServer::expire_data();
         if (is_array($json) && isset($json['data'])) {
             self::set_license_data($json['data']);
+            RY_WTP::delete_transient('expire_link_error');
+        } elseif ($json === false) {
+            $link_error = (int) RY_WTP::get_transient('expire_link_error');
+            if ($link_error > 2) {
+                self::delete_license();
+            } else {
+                if ($link_error<=0) {
+                    $link_error = 0;
+                }
+                $link_error += 1;
+                RY_WTP::set_transient('expire_link_error', $link_error);
+            }
         } else {
             self::delete_license();
         }
@@ -65,6 +77,8 @@ final class RY_WTP_License
     public static function delete_license()
     {
         RY_WTP::delete_option('license_data');
+        RY_WTP::delete_transient('expire_link_error');
+
         wp_unschedule_hook(RY_WTP::$option_prefix . 'check_expire');
         wp_unschedule_hook(RY_WTP::$option_prefix . 'check_update');
     }
