@@ -1,6 +1,8 @@
 <?php
 final class RY_WTP_License
 {
+    public static $log = false;
+
     public static function valid_key()
     {
         $license_data = self::get_license_data();
@@ -10,10 +12,20 @@ final class RY_WTP_License
                     if ($license_data['expire'] > time() - DAY_IN_SECONDS) {
                         if (self::get_site_url() === $license_data['url']) {
                             return true;
+                        } else {
+                            self::log('WTP site change. ' . $license_data['url'] . ' => ' . self::get_site_url(), 'error');
                         }
+                    } else {
+                        self::log('WTP expire. ' . $license_data['expire'] . ' @ ' . time(), 'error');
                     }
+                } else {
+                    self::log('WTP secret check error.', 'error');
                 }
+            } else {
+                self::log('WTP data error. ' . var_export($license_data, true), 'error');
             }
+        } elseif ($license_data !== false) {
+            self::log('WTP data error. ' . var_export($license_data, true), 'error');
         }
 
         self::delete_license();
@@ -27,11 +39,14 @@ final class RY_WTP_License
             self::set_license_data($json['data']);
             RY_WTP::delete_transient('expire_link_error');
         } elseif ($json === false) {
+            wp_clear_scheduled_hook(RY_WTP::$option_prefix . 'check_expire');
+            wp_schedule_event(time() + HOUR_IN_SECONDS, 'daily', RY_WTP::$option_prefix . 'check_expire');
+
             $link_error = (int) RY_WTP::get_transient('expire_link_error');
-            if ($link_error > 2) {
+            if ($link_error > 3) {
                 self::delete_license();
             } else {
-                if ($link_error<=0) {
+                if ($link_error <= 0) {
                     $link_error = 0;
                 }
                 $link_error += 1;
@@ -63,6 +78,7 @@ final class RY_WTP_License
     public static function delete_license_key()
     {
         RY_WTP::delete_option('license_key');
+        RY_WTP::delete_option('pro_Data');
         RY_WTP::delete_option('pro_Key');
     }
 
@@ -72,6 +88,9 @@ final class RY_WTP_License
         $data['url'] = self::get_site_url();
         $data = base64_encode(serialize($data));
         RY_WTP::update_option('license_data', $data);
+
+        RY_WTP::delete_option('pro_Data');
+        RY_WTP::delete_option('pro_Key');
     }
 
     public static function delete_license()
@@ -113,5 +132,17 @@ final class RY_WTP_License
     {
         $url = str_replace(['http://', 'https://'], '', get_site_url());
         return rtrim($url, '/');
+    }
+
+    public static function log($message, $level = 'info')
+    {
+        if (empty(self::$log)) {
+            self::$log = wc_get_logger();
+        }
+
+        self::$log->log($level, $message, [
+            'source' => 'ry_plguin_license',
+            '_legacy' => true
+        ]);
     }
 }

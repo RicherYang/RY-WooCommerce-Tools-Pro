@@ -14,7 +14,7 @@ class RY_NewebPay_Gateway_Credit_Installment_Base extends RY_NewebPay_Gateway_Ba
 
         $this->title = $this->get_option('title');
         $this->description = $this->get_option('description');
-        $this->min_amount = (int) $this->get_option('min_amount', 0);
+        $this->min_amount = (int) $this->get_option('min_amount', $this->check_min_amount);
 
         parent::__construct();
     }
@@ -32,10 +32,5 @@ class RY_NewebPay_Gateway_Credit_Installment_Base extends RY_NewebPay_Gateway_Ba
         }
 
         return parent::is_available();
-    }
-
-    public function process_admin_options()
-    {
-        parent::process_admin_options();
     }
 }

@@ -25,7 +25,7 @@ final class RY_WTP_Cron
 
         add_action(RY_WTP::$option_prefix . 'check_expire', ['RY_WTP_License', 'check_expire']);
         if (!wp_next_scheduled(RY_WTP::$option_prefix . 'check_expire')) {
-            wp_schedule_event(time(), 'daily', RY_WTP::$option_prefix . 'check_expire');
+            wp_schedule_event(time() + MINUTE_IN_SECONDS, 'daily', RY_WTP::$option_prefix . 'check_expire');
         }
     }
 }

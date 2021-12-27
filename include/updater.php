@@ -14,8 +14,11 @@ final class RY_WTP_Updater
 
     public static function check_update()
     {
-        $update_plugins = get_site_transient('update_plugins');
-        set_site_transient('update_plugins', $update_plugins);
+        $time = (int) get_site_transient(RY_WTP::$option_prefix . 'checktime');
+        if (HOUR_IN_SECONDS < time() - $time) {
+            $update_plugins = get_site_transient('update_plugins');
+            set_site_transient('update_plugins', $update_plugins);
+        }
     }
 
     public static function transient_update_plugins($transient)
