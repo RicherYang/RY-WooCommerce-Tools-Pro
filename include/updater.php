@@ -25,21 +25,19 @@ final class RY_WTP_Updater
     {
         $json = RY_WTP_LinkServer::check_version();
 
-        if (is_array($json) && isset($json['version'])) {
+        if (is_array($json) && isset($json['new_version'])) {
             set_site_transient(RY_WTP::$option_prefix . 'checktime', time());
 
-            $item = (object) array(
-                'slug' => 'ry-woocommerce-tools-pro',
-                'plugin' => RY_WTP_PLUGIN_BASENAME,
-                'new_version'=> $json['version'],
-                'package'=> $json['url']
-            );
-            if (version_compare(RY_WTP_VERSION, $json['version'], '<')) {
+            if (version_compare(RY_WTP_VERSION, $json['new_version'], '<')) {
+                unset($json['version']);
+                unset($json['url']);
+                $json['slug'] = 'ry-woocommerce-tools-pro';
+
                 if (empty($transient)) {
                     $transient = new stdClass;
                 }
                 $transient->last_checked = time();
-                $transient->response[RY_WTP_PLUGIN_BASENAME] = (object) $item;
+                $transient->response[RY_WTP_PLUGIN_BASENAME] = (object) $json;
             } else {
                 if (isset($transient->response)) {
                     unset($transient->response[RY_WTP_PLUGIN_BASENAME]);

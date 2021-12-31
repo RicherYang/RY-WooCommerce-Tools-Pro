@@ -2,9 +2,9 @@
 /**
  * Plugin Name: RY WooCommerce Tools Pro
  * Plugin URI: https://richer.tw/ry-woocommerce-tools-pro/
- * Version: 1.5.2
+ * Version: 1.5.3
  * Requires at least: 5.6
- * Requires PHP: 7.3
+ * Requires PHP: 7.4
  * Author: Richer Yang
  * Author URI: https://richer.tw/
  * License: GPLv2 or later
@@ -18,7 +18,7 @@
 
 function_exists('plugin_dir_url') or exit('No direct script access allowed');
 
-define('RY_WTP_VERSION', '1.5.2');
+define('RY_WTP_VERSION', '1.5.3');
 define('RY_WTP_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('RY_WTP_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('RY_WTP_PLUGIN_BASENAME', plugin_basename(__FILE__));
