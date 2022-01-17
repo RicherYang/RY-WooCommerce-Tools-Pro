@@ -130,7 +130,7 @@ final class RY_WTP_License
 
     private static function get_site_url()
     {
-        $url = str_replace(['http://', 'https://'], '', get_site_url());
+        $url = str_replace(['http://', 'https://'], '', get_option('siteurl'));
         return rtrim($url, '/');
     }
 
