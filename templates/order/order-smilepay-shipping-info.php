@@ -41,7 +41,7 @@ if (count($shipping_info_list)) { ?>
             </td>
             <td class="woocommerce-table__shipping-status shipping-status">
                 <?php
-                if (in_array($shipping_info['status'], apply_filters('ry_smilepay_shipping_status_info_transporting', [0]))) {
+                if (in_array($shipping_info['status'], apply_filters('ry_smilepay_shipping_status_info_wait', [0]))) {
                     _ex('Wait shipment', 'Shipping status', 'ry-woocommerce-tools-pro');
                 } elseif (in_array($shipping_info['status'], apply_filters('ry_smilepay_shipping_status_info_transporting', [1]))) {
                     _ex('Transporting', 'Shipping status', 'ry-woocommerce-tools-pro');
