@@ -32,6 +32,7 @@ final class RY_WTP_Updater
                 unset($json['version']);
                 unset($json['url']);
                 $json['slug'] = 'ry-woocommerce-tools-pro';
+                $json['plugin'] = RY_WTP_PLUGIN_BASENAME;
 
                 if (empty($transient)) {
                     $transient = new stdClass;
