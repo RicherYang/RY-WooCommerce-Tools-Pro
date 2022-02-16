@@ -24,6 +24,7 @@ final class RY_WTP_ECPay_Shipping
             add_filter('woocommerce_shipping_methods', [__CLASS__, 'use_pro_method'], 11);
             add_filter('woocommerce_checkout_fields', [__CLASS__, 'hide_billing_info'], 9999);
 
+            add_filter('ry_ecpay_shipping_at_cvs_prev_status', [__CLASS__, 'add_transporting']);
             add_action('ry_ecpay_shipping_response_status_2030', [__CLASS__, 'shipping_transporting'], 10, 2);
             add_action('ry_ecpay_shipping_response_status_2068', [__CLASS__, 'shipping_transporting'], 10, 2);
             add_action('ry_ecpay_shipping_response_status_3006', [__CLASS__, 'shipping_transporting'], 10, 2);
@@ -242,6 +243,12 @@ final class RY_WTP_ECPay_Shipping
         if (count($shipping_list) == 0) {
             WC()->queue()->schedule_single(time() + 3, 'ry_wtp_get_ecpay_cvs_code', [$order_id], '');
         }
+    }
+
+    public static function add_transporting($status)
+    {
+        $status[] = 'ry-transporting';
+        return array_unique($status);
     }
 
     public static function shipping_transporting($ipn_info, $order)
