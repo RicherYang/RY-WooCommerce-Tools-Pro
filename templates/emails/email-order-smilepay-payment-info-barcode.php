@@ -22,38 +22,38 @@ if ($order->get_meta('_smilepay_payment_type') != '3') {
 $text_align = is_rtl() ? 'right' : 'left';
 ?>
 <h2>
-	<?=__('Payment details', 'ry-woocommerce-tools') ?>
+	<?php esc_html_e('Payment details', 'ry-woocommerce-tools') ?>
 </h2>
 <div style="margin-bottom: 40px;">
 	<table class="td" cellspacing="0" cellpadding="6" border="1" style="width: 100%;">
 		<tbody>
 			<tr>
 				<th class="td" scope="row" style="text-align:<?=esc_attr($text_align) ?>;">
-					<?=__('Barcode 1', 'ry-woocommerce-tools') ?>
+					<?php esc_html_e('Barcode 1', 'ry-woocommerce-tools') ?>
 				</th>
 				<td class="td" style="text-align:<?=esc_attr($text_align) ?>;">
-					<span><?=$order->get_meta('_smilepay_barcode_Barcode1') ?></span>
+					<span><?php echo esc_html($order->get_meta('_smilepay_barcode_Barcode1')); ?></span>
 				</td>
 			</tr>
 			<tr>
 				<th class="td" scope="row" style="text-align:<?=esc_attr($text_align) ?>;">
-					<?=__('Barcode 2', 'ry-woocommerce-tools') ?>
+					<?php esc_html_e('Barcode 2', 'ry-woocommerce-tools') ?>
 				</th>
 				<td class="td" style="text-align:<?=esc_attr($text_align) ?>;">
-					<span><?=$order->get_meta('_smilepay_barcode_Barcode2') ?></span>
+					<span><?php echo esc_html($order->get_meta('_smilepay_barcode_Barcode2')); ?></span>
 				</td>
 			</tr>
 			<tr>
 				<th class="td" scope="row" style="text-align:<?=esc_attr($text_align) ?>;">
-					<?=__('Barcode 3', 'ry-woocommerce-tools') ?>
+					<?php esc_html_e('Barcode 3', 'ry-woocommerce-tools') ?>
 				</th>
 				<td class="td" style="text-align:<?=esc_attr($text_align) ?>;">
-					<span><?=$order->get_meta('_smilepay_barcode_Barcode3') ?></span>
+					<span><?php echo esc_html($order->get_meta('_smilepay_barcode_Barcode3')); ?></span>
 				</td>
 			</tr>
 			<tr>
 				<th class="td" scope="row" style="text-align:<?=esc_attr($text_align) ?>;">
-					<?=__('Payment deadline', 'ry-woocommerce-tools') ?>
+					<?php esc_html_e('Payment deadline', 'ry-woocommerce-tools') ?>
 				</th>
 				<?php $expireDate = wc_string_to_datetime($order->get_meta('_smilepay_barcode_ExpireDate')); ?>
 				<?php $expireDate = $expireDate->date_i18n(wc_date_format()); ?>

@@ -34,31 +34,31 @@ class RY_SmilePay_Shipping_Meta_Box_Pro
     <thead>
         <tr>
             <th>
-                <?=__('SmilePay shipping ID', 'ry-woocommerce-tools') ?>
+                <?php esc_html_e('SmilePay shipping ID', 'ry-woocommerce-tools') ?>
             </th>
             <th>
-                <?=__('Shipping no', 'ry-woocommerce-tools') ?>
+                <?php esc_html_e('Shipping no', 'ry-woocommerce-tools') ?>
             </th>
             <th>
-                <?=__('Store ID', 'ry-woocommerce-tools') ?>
+                <?php esc_html_e('Store ID', 'ry-woocommerce-tools') ?>
             </th>
             <th>
-                <?=__('Shipping status', 'ry-woocommerce-tools') ?>
+                <?php esc_html_e('Shipping status', 'ry-woocommerce-tools') ?>
             </th>
             <th>
-                <?=__('declare amount', 'ry-woocommerce-tools') ?>
+                <?php esc_html_e('declare amount', 'ry-woocommerce-tools') ?>
             </th>
             <th>
-                <?=__('Collection of money', 'ry-woocommerce-tools') ?>
+                <?php esc_html_e('Collection of money', 'ry-woocommerce-tools') ?>
             </th>
             <th>
-                <?=__('Shipping status last change time', 'ry-woocommerce-tools') ?>
+                <?php esc_html_e('Shipping status last change time', 'ry-woocommerce-tools') ?>
             </th>
             <th>
-                <?=__('Shipping create time', 'ry-woocommerce-tools') ?>
+                <?php esc_html_e('Shipping create time', 'ry-woocommerce-tools') ?>
             </th>
             <th>
-                <?=__('Shipping booking note', 'ry-woocommerce-tools') ?>
+                <?php esc_html_e('Shipping booking note', 'ry-woocommerce-tools') ?>
             </th>
         </tr>
     </thead>
@@ -94,7 +94,7 @@ class RY_SmilePay_Shipping_Meta_Box_Pro
                 <?=sprintf(_x('%1$s %2$s', 'Datetime', 'ry-woocommerce-tools'), $item['create']->date_i18n(wc_date_format()), $item['create']->date_i18n(wc_time_format())) ?>
             </td>
             <td>
-                <button type="button" class="button print_info" data-orderid="<?=$post->ID ?>" data-id="<?=$item['ID'] ?>"><?=__('Print', 'ry-woocommerce-tools') ?></button>
+                <button type="button" class="button print_info" data-orderid="<?=$post->ID ?>" data-id="<?=$item['ID'] ?>"><?php esc_html_e('Print', 'ry-woocommerce-tools') ?></button>
             </td>
         </tr>
         <?php

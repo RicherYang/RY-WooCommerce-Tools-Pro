@@ -13,17 +13,17 @@
 defined('ABSPATH') || exit;
 if (count($shipping_info_list)) { ?>
 <h2 class="woocommerce-order-details__title">
-    <?=__('Shipping details', 'ry-woocommerce-tools-pro') ?>
+    <?php esc_html_e('Shipping details', 'ry-woocommerce-tools-pro') ?>
 </h2>
 
 <table class="woocommerce-table woocommerce-table--shipping-details shop_table shipping_details">
     <thead>
         <tr>
             <th class="woocommerce-table__shipping-no shipping-no">
-                <?=__('Shipping payment no', 'ry-woocommerce-tools-pro') ?>
+                <?php esc_html_e('Shipping payment no', 'ry-woocommerce-tools-pro') ?>
             </th>
             <th class="woocommerce-table__shipping-status shipping-status">
-                <?=__('Shipping status', 'ry-woocommerce-tools-pro') ?>
+                <?php esc_html_e('Shipping status', 'ry-woocommerce-tools-pro') ?>
             </th>
         </tr>
     </thead>

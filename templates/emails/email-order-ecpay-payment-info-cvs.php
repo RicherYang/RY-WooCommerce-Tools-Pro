@@ -22,22 +22,22 @@ if ($order->get_meta('_ecpay_payment_type') != 'CVS') {
 $text_align = is_rtl() ? 'right' : 'left';
 ?>
 <h2>
-	<?=__('Payment details', 'ry-woocommerce-tools') ?>
+	<?php esc_html_e('Payment details', 'ry-woocommerce-tools') ?>
 </h2>
 <div style="margin-bottom: 40px;">
 	<table class="td" cellspacing="0" cellpadding="6" style="width: 100%;" border="1">
 		<tbody>
 			<tr>
 				<th class="td" scope="row" style="text-align:<?=esc_attr($text_align) ?>;">
-					<?=__('CVS code', 'ry-woocommerce-tools') ?>
+					<?php esc_html_e('CVS code', 'ry-woocommerce-tools') ?>
 				</th>
 				<td class="td" style="text-align:<?=esc_attr($text_align) ?>;">
-					<?=$order->get_meta('_ecpay_cvs_PaymentNo') ?>
+					<?php echo esc_html($order->get_meta('_ecpay_cvs_PaymentNo')); ?>
 				</td>
 			</tr>
 			<tr>
 				<th class="td" scope="row" style="text-align:<?=esc_attr($text_align) ?>;">
-					<?=__('Payment deadline', 'ry-woocommerce-tools') ?>
+					<?php esc_html_e('Payment deadline', 'ry-woocommerce-tools') ?>
 				</th>
 				<?php $expireDate = wc_string_to_datetime($order->get_meta('_ecpay_cvs_ExpireDate')); ?>
 				<?php /* translators: %1$s: date %2$s: time */ ?>
