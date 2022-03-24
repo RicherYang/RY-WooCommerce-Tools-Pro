@@ -94,6 +94,7 @@ final class RY_WTP_admin
     public static function activate_key()
     {
         if (!empty(RY_WTP_License::get_license_key())) {
+            RY_WTP::delete_transient('version_info');
             $json = RY_WTP_LinkServer::activate_key();
 
             if ($json === false) {
