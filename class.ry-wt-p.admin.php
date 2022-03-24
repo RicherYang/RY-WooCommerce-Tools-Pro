@@ -103,6 +103,7 @@ final class RY_WTP_admin
             } else {
                 if (is_array($json)) {
                     if (empty($json['data'])) {
+                        RY_WTP_License::delete_license();
                         WC_Admin_Settings::add_error(__('RY WooCommerce Tools Pro', 'ry-woocommerce-tools-pro') . ': '
                             . sprintf(
                                 /* translators: %s: Error message */
