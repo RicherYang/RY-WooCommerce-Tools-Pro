@@ -3,6 +3,15 @@ final class RY_WTP_ECPay_Shipping
 {
     public static function init()
     {
+        RY_ECPay_Shipping::$support_methods = [
+            'ry_ecpay_shipping_cvs_711' => 'RY_ECPay_Shipping_CVS_711_Pro',
+            'ry_ecpay_shipping_cvs_family' => 'RY_ECPay_Shipping_CVS_Family_Pro',
+            'ry_ecpay_shipping_cvs_hilife' => 'RY_ECPay_Shipping_CVS_Hilife_Pro',
+            'ry_ecpay_shipping_cvs_ok' => 'RY_ECPay_Shipping_CVS_Ok_Pro',
+            'ry_ecpay_shipping_home_ecan' => 'RY_ECPay_Shipping_Home_Ecan_Pro',
+            'ry_ecpay_shipping_home_tcat' => 'RY_ECPay_Shipping_Home_Tcat_Pro'
+        ];
+
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ry-base.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-cvs-711.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-cvs-family.php';
@@ -16,12 +25,13 @@ final class RY_WTP_ECPay_Shipping
 
             // Support plugin (WooCommerce Print Invoice & Delivery Note)
             add_filter('wcdn_order_info_fields', [__CLASS__, 'add_wcdn_shipping_info'], 10, 2);
+
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/includes/ecpay-shipping-admin.php';
         } else {
             add_action('woocommerce_view_order', [__CLASS__, 'shipping_info']);
         }
 
         if ('yes' === RY_WT::get_option('ecpay_shipping', 'no')) {
-            add_filter('woocommerce_shipping_methods', [__CLASS__, 'use_pro_method'], 11);
             add_filter('woocommerce_checkout_fields', [__CLASS__, 'hide_billing_info'], 9999);
 
             add_filter('ry_ecpay_shipping_at_cvs_prev_status', [__CLASS__, 'add_transporting']);
@@ -38,15 +48,8 @@ final class RY_WTP_ECPay_Shipping
                 }
             }
 
-            if (is_admin()) {
-                add_filter('bulk_actions-edit-shop_order', [__CLASS__, 'shop_order_list_action']);
-                add_filter('handle_bulk_actions-edit-shop_order', [__CLASS__, 'print_shipping_note'], 10, 3);
-
-                add_action('woocommerce_admin_order_data_after_shipping_address', [__CLASS__, 'add_choose_cvs_btn']);
-            } else {
-                add_action('woocommerce_review_order_after_shipping', [__CLASS__, 'shipping_choose_cvs']);
-                add_filter('woocommerce_update_order_review_fragments', [__CLASS__, 'shipping_choose_cvs_info'], 11);
-            }
+            add_action('woocommerce_review_order_after_shipping', [__CLASS__, 'shipping_choose_cvs']);
+            add_filter('woocommerce_update_order_review_fragments', [__CLASS__, 'shipping_choose_cvs_info'], 11);
         }
     }
 
@@ -67,9 +70,23 @@ final class RY_WTP_ECPay_Shipping
                 ]
             ]);
 
+
             $setting_id_idx = array_column($settings, 'id');
-            $setting_idx = array_search(RY_WT::$option_prefix . 'ecpay_shipping_log_status_change', $setting_id_idx);
+            $setting_idx = array_search(RY_WT::$option_prefix . 'keep_shipping_phone', $setting_id_idx);
             array_splice($settings, $setting_idx + 1, 0, [
+                [
+                    'title' => __('cvs remove billing address', 'ry-woocommerce-tools-pro'),
+                    'id' => RY_WTP::$option_prefix . 'ecpay_cvs_billing_address',
+                    'type' => 'checkbox',
+                    'default' => 'no',
+                    'desc' => __('Remove billing address when shipping mode is cvs.', 'ry-woocommerce-tools-pro') . '<br>'
+                        . __('The billing address still will show in order details.', 'ry-woocommerce-tools-pro')
+                ]
+            ]);
+
+            $setting_id_idx = array_column($settings, 'id');
+            $setting_idx = array_search(RY_WT::$option_prefix . 'ecpay_shipping_order_prefix', $setting_id_idx);
+            array_splice($settings, $setting_idx, 0, [
                 [
                     'title' => __('Clean up receiver name', 'ry-woocommerce-tools-pro'),
                     'id' => RY_WT::$option_prefix . 'ecpay_shipping_cleanup_receiver_name',
@@ -82,66 +99,13 @@ final class RY_WTP_ECPay_Shipping
             $setting_id_idx = array_column($settings, 'id');
             $setting_idx = array_search(RY_WT::$option_prefix . 'ecpay_shipping_cvs_type', $setting_id_idx);
             $settings[$setting_idx]['options']['B2C'] = _x('B2C', 'Cvs type', 'ry-woocommerce-tools-pro');
-
-            $setting_id_idx = array_column($settings, 'id');
-            $setting_idx = array_search(RY_WT::$option_prefix . 'ecpay_shipping_auto_completed', $setting_id_idx);
-            array_splice($settings, $setting_idx + 1, 0, [
-                [
-                    'title' => __('cvs remove billing address', 'ry-woocommerce-tools-pro'),
-                    'id' => RY_WTP::$option_prefix . 'ecpay_cvs_billing_address',
-                    'type' => 'checkbox',
-                    'default' => 'no',
-                    'desc' => __('Remove billing address when shipping mode is cvs.', 'ry-woocommerce-tools-pro') . '<br>'
-                        . __('The billing address still will show in order details.', 'ry-woocommerce-tools-pro')
-                ]
-            ]);
         }
         return $settings;
     }
 
-    public static function shop_order_list_action($actions)
-    {
-        switch (RY_WT::get_option('ecpay_shipping_cvs_type')) {
-            case 'B2C':
-                $actions['ry_print_ecpay_cvs_711'] = __('Print ECPay shipping booking note (711)', 'ry-woocommerce-tools-pro');
-                $actions['ry_print_ecpay_cvs_family'] = __('Print ECPay shipping booking note (family)', 'ry-woocommerce-tools-pro');
-                $actions['ry_print_ecpay_cvs_hilife'] = __('Print ECPay shipping booking note (hilife)', 'ry-woocommerce-tools-pro');
-                break;
-            case 'C2C':
-                $actions['ry_print_ecpay_cvs_711'] = __('Print ECPay shipping booking note (711)', 'ry-woocommerce-tools-pro');
-                $actions['ry_print_ecpay_cvs_family'] = __('Print ECPay shipping booking note (family)', 'ry-woocommerce-tools-pro');
-                $actions['ry_print_ecpay_cvs_hilife'] = __('Print ECPay shipping booking note (hilife)', 'ry-woocommerce-tools-pro');
-                $actions['ry_print_ecpay_cvs_ok'] = __('Print ECPay shipping booking note (ok)', 'ry-woocommerce-tools-pro');
-                break;
-        }
-
-        $actions['ry_print_ecpay_home_tcat'] = __('Print ECPay shipping booking note (tcat)', 'ry-woocommerce-tools-pro');
-        $actions['ry_print_ecpay_home_ecan'] = __('Print ECPay shipping booking note (ecan)', 'ry-woocommerce-tools-pro');
-
-        return $actions;
-    }
-
-    public static function print_shipping_note($redirect_to, $action, $ids)
-    {
-        if (false !== strpos($action, 'ry_print_ecpay_')) {
-            $redirect_to = add_query_arg(
-                [
-                    'orderid' => implode(',', $ids),
-                    'type' => substr($action, 15),
-                    'noheader' => 1,
-                ],
-                admin_url('admin.php?page=ry_print_ecpay_shipping')
-            );
-            wp_redirect($redirect_to);
-            exit();
-        }
-
-        return esc_url_raw($redirect_to);
-    }
-
     public static function add_wcdn_shipping_info($fields, $order)
     {
-        foreach ($order->get_items('shipping') as $item_id => $item) {
+        foreach ($order->get_items('shipping') as $item) {
             $shipping_method = RY_ECPay_Shipping::get_order_support_shipping($item);
             if ($shipping_method === false) {
                 continue;
@@ -162,22 +126,6 @@ final class RY_WTP_ECPay_Shipping
         }
 
         return $fields;
-    }
-
-    public static function use_pro_method($shipping_methods)
-    {
-        foreach ($shipping_methods as $method => $method_class) {
-            if (substr($method, 0, 9) == 'ry_ecpay_') {
-                if (substr($method_class, -4) == '_Pro') {
-                    continue;
-                }
-                if (class_exists($method_class . '_Pro')) {
-                    $shipping_methods[$method] = $method_class . '_Pro';
-                }
-            }
-        }
-
-        return $shipping_methods;
     }
 
     public static function hide_billing_info($fields)
@@ -257,42 +205,7 @@ final class RY_WTP_ECPay_Shipping
         $order->update_status('ry-transporting');
     }
 
-    public static function add_choose_cvs_btn($order)
-    {
-        foreach ($order->get_items('shipping') as $item_id => $item) {
-            $method_class = RY_ECPay_Shipping::get_order_support_shipping($item);
-            if ($method_class !== false && strpos($method_class, 'cvs') !== false) {
-                list($MerchantID, $HashKey, $HashIV, $CVS_type) = RY_ECPay_Shipping::get_ecpay_api_info();
 
-                $choosed_cvs = '';
-                if (isset($_POST['MerchantID']) && $_POST['MerchantID'] == $MerchantID) {
-                    $choosed_cvs = [
-                        'CVSStoreID' => wc_clean(wp_unslash($_POST['CVSStoreID'])),
-                        'CVSStoreName' => wc_clean(wp_unslash($_POST['CVSStoreName'])),
-                        'CVSAddress' => wc_clean(wp_unslash($_POST['CVSAddress'])),
-                        'CVSTelephone' => wc_clean(wp_unslash($_POST['CVSTelephone']))
-                    ];
-                }
-                wp_localize_script('ry-pro-admin-shipping', 'ECPayInfo', [
-                    'postUrl' => RY_ECPay_Shipping_Api::get_map_post_url(),
-                    'postData' => [
-                        'MerchantID' => $MerchantID,
-                        'LogisticsType' => $method_class::$LogisticsType,
-                        'LogisticsSubType' => $method_class::$LogisticsSubType . (('C2C' == $CVS_type) ? 'C2C' : ''),
-                        'IsCollection' => 'Y',
-                        'ServerReplyURL' => esc_url(WC()->api_request_url('ry_ecpay_map_callback')),
-                        'ExtraData' => 'ry' . $order->get_id()
-                    ],
-                    'newStore' => $choosed_cvs,
-                ]);
-
-                wp_enqueue_script('ry-pro-admin-shipping');
-
-                include RY_WTP_PLUGIN_DIR . 'woocommerce/admin/meta-boxes/views/choose_cvs_btn.php';
-                break;
-            }
-        }
-    }
 
     public static function shipping_choose_cvs()
     {

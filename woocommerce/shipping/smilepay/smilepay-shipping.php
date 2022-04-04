@@ -91,7 +91,7 @@ final class RY_WTP_SmilePay_Shipping
             foreach ($ids as $order_ID) {
                 $order = wc_get_order($order_ID);
                 if ($order) {
-                    foreach ($order->get_items('shipping') as $item_id => $item) {
+                    foreach ($order->get_items('shipping') as $item) {
                         $shipping_method = RY_SmilePay_Shipping::get_order_support_shipping($item);
                         if ($shipping_method === false) {
                             continue;
@@ -129,7 +129,7 @@ final class RY_WTP_SmilePay_Shipping
 
     public static function add_wcdn_shipping_info($fields, $order)
     {
-        foreach ($order->get_items('shipping') as $item_id => $item) {
+        foreach ($order->get_items('shipping') as $item) {
             $shipping_method = RY_SmilePay_Shipping::get_order_support_shipping($item);
             if ($shipping_method === false) {
                 continue;

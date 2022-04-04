@@ -9,6 +9,10 @@ final class RY_WTP_Shipping
         self::register_order_statuses();
 
         if (is_admin()) {
+            if ('yes' == RY_WT::get_option('enabled_ecpay_shipping', 'no')) {
+                add_action('woocommerce_product_options_shipping', [__CLASS__, 'shipping_options']);
+                add_action('woocommerce_admin_process_product_object', [__CLASS__, 'save_shipping_options']);
+            }
         } else {
             wp_register_script('ry-pro-shipping', RY_WTP_PLUGIN_URL . 'style/js/ry_shipping.js', ['jquery'], RY_WTP_VERSION, true);
         }
@@ -46,6 +50,18 @@ final class RY_WTP_Shipping
             /* translators: %s: number of orders */
             'label_count' => _n_noop('Transporting <span class="count">(%s)</span>', 'Transporting <span class="count">(%s)</span>', 'ry-woocommerce-tools-pro'),
         ]);
+    }
+
+    public static function shipping_options()
+    {
+        global $product_object;
+
+        include RY_WTP_PLUGIN_DIR . 'woocommerce/admin/view/product-shipping-option.php';
+    }
+
+    public static function save_shipping_options($product)
+    {
+        $product->update_meta_data('_ry_shipping_temp', isset($_POST['_ry_shipping_temp']) ? wc_clean(wp_unslash($_POST['_ry_shipping_temp'])) : '1');
     }
 }
 

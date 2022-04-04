@@ -9,7 +9,7 @@ class RY_SmilePay_Shipping_Meta_Box_Pro
                 $theorder = wc_get_order($post->ID);
             }
 
-            foreach ($theorder->get_items('shipping') as $item_id => $item) {
+            foreach ($theorder->get_items('shipping') as $item) {
                 if (RY_SmilePay_Shipping::get_order_support_shipping($item) !== false) {
                     add_meta_box('ry-smilepay-shipping-info', __('SmilePay shipping info', 'ry-woocommerce-tools'), [__CLASS__, 'output'], 'shop_order', 'normal', 'high');
                     break;

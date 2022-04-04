@@ -1,6 +1,8 @@
 <?php
 class RY_ECPay_Shipping_CVS_711_Pro extends RY_ECPay_Shipping_CVS_711
 {
+    public static $support_temp = ['1'];
+
     public function __construct($instance_id = 0)
     {
         $this->instance_form_fields = include RY_WT_PLUGIN_DIR . 'woocommerce/shipping/ecpay/includes/settings-ecpay-shipping-base.php';

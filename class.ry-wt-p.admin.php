@@ -24,9 +24,9 @@ final class RY_WTP_admin
 
     public static function add_update_notice()
     {
-        if (version_compare(RY_WT_VERSION, '1.7.3', '<')) {
+        if (version_compare(RY_WT_VERSION, '1.9.0', '<')) {
             echo '<div class="notice notice-info is-dismissible"><p>'
-                . '請更新 RY WooCommerce Tools 至版本 1.7.3 或更新的版本，以確保一切功能都可以正常運作。'
+                . '請更新 RY WooCommerce Tools 至版本 1.9.0 或更新的版本，以確保一切功能都可以正常運作。'
                 . '</p></div>';
         }
     }
