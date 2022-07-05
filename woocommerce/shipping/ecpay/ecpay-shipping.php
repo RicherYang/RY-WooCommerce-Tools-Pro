@@ -8,7 +8,6 @@ final class RY_WTP_ECPay_Shipping
             'ry_ecpay_shipping_cvs_family' => 'RY_ECPay_Shipping_CVS_Family_Pro',
             'ry_ecpay_shipping_cvs_hilife' => 'RY_ECPay_Shipping_CVS_Hilife_Pro',
             'ry_ecpay_shipping_cvs_ok' => 'RY_ECPay_Shipping_CVS_Ok_Pro',
-            'ry_ecpay_shipping_home_ecan' => 'RY_ECPay_Shipping_Home_Ecan_Pro',
             'ry_ecpay_shipping_home_tcat' => 'RY_ECPay_Shipping_Home_Tcat_Pro'
         ];
 
@@ -18,7 +17,6 @@ final class RY_WTP_ECPay_Shipping
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-cvs-hilife.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-cvs-ok.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-home-tcat.php';
-        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-home-ecan.php';
 
         if (is_admin()) {
             add_filter('woocommerce_get_settings_rytools', [__CLASS__, 'add_setting'], 11, 2);

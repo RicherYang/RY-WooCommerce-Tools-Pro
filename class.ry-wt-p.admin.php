@@ -136,7 +136,7 @@ final class RY_WTP_admin
         $add_index = array_search('shipping_address', array_keys($columns)) + 1;
         $pre_array = array_splice($columns, 0, $add_index);
         $array = [
-            'ry_shipping_no' => __('Shipping payment no', 'ry-woocommerce-tools')
+            'ry_shipping_no' => __('Shipping payment no', 'ry-woocommerce-tools-pro')
         ];
         return array_merge($pre_array, $array, $columns);
     }

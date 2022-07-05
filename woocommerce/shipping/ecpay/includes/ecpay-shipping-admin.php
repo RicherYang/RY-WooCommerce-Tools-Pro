@@ -32,7 +32,6 @@ final class RY_WTP_ECPay_Shipping_admin
         }
 
         $actions['ry_print_ecpay_home_tcat'] = __('Print ECPay shipping booking note (tcat)', 'ry-woocommerce-tools-pro');
-        $actions['ry_print_ecpay_home_ecan'] = __('Print ECPay shipping booking note (ecan)', 'ry-woocommerce-tools-pro');
 
         return $actions;
     }
