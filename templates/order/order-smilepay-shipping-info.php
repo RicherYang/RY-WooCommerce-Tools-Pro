@@ -37,24 +37,24 @@ if (count($shipping_info_list)) { ?>
                 } elseif ($shipping_info['type'] == 'HOME') {
                     echo $shipping_info['BookingNote'];
                 }
-                ?>
+            ?>
             </td>
             <td class="woocommerce-table__shipping-status shipping-status">
                 <?php
-                if (in_array($shipping_info['status'], apply_filters('ry_smilepay_shipping_status_info_wait', [0]))) {
-                    _ex('Wait shipment', 'Shipping status', 'ry-woocommerce-tools-pro');
-                } elseif (in_array($shipping_info['status'], apply_filters('ry_smilepay_shipping_status_info_transporting', [1]))) {
-                    _ex('Transporting', 'Shipping status', 'ry-woocommerce-tools-pro');
-                } elseif (in_array($shipping_info['status'], apply_filters('ry_smilepay_shipping_status_info_wait_pick', [2]))) {
-                    _ex('Waiting for pick up', 'Shipping status', 'ry-woocommerce-tools-pro');
-                } elseif (in_array($shipping_info['status'], apply_filters('ry_smilepay_shipping_status_info_completed', [3]))) {
-                    _ex('Completed', 'Shipping status', 'ry-woocommerce-tools-pro');
-                } elseif (in_array($shipping_info['status'], apply_filters('ry_smilepay_shipping_status_info_overdue', [4]))) {
-                    _ex('Overdue return', 'Shipping status', 'ry-woocommerce-tools-pro');
-                } else {
-                    _ex('Unknow', 'Shipping status', 'ry-woocommerce-tools-pro');
-                }
-                ?>
+            if (in_array($shipping_info['status'], apply_filters('ry_smilepay_shipping_status_info_wait', [0]))) {
+                _ex('Wait shipment', 'Shipping status', 'ry-woocommerce-tools-pro');
+            } elseif (in_array($shipping_info['status'], apply_filters('ry_smilepay_shipping_status_info_transporting', [1]))) {
+                _ex('Transporting', 'Shipping status', 'ry-woocommerce-tools-pro');
+            } elseif (in_array($shipping_info['status'], apply_filters('ry_smilepay_shipping_status_info_wait_pick', [2]))) {
+                _ex('Waiting for pick up', 'Shipping status', 'ry-woocommerce-tools-pro');
+            } elseif (in_array($shipping_info['status'], apply_filters('ry_smilepay_shipping_status_info_completed', [3]))) {
+                _ex('Completed', 'Shipping status', 'ry-woocommerce-tools-pro');
+            } elseif (in_array($shipping_info['status'], apply_filters('ry_smilepay_shipping_status_info_overdue', [4]))) {
+                _ex('Overdue return', 'Shipping status', 'ry-woocommerce-tools-pro');
+            } else {
+                _ex('Unknow', 'Shipping status', 'ry-woocommerce-tools-pro');
+            }
+            ?>
             </td>
         </tr>
         <?php } ?>
