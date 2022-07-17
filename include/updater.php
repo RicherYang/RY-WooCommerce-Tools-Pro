@@ -9,6 +9,8 @@ final class RY_WTP_Updater
             self::$initiated = true;
 
             add_filter('pre_set_site_transient_update_plugins', [__CLASS__, 'transient_update_plugins']);
+
+            add_filter('plugins_api', [__CLASS__, 'modify_plugin_details'], 10, 3);
         }
     }
 
@@ -47,6 +49,24 @@ final class RY_WTP_Updater
         }
 
         return $transient;
+    }
+
+    public static function modify_plugin_details($result, $action, $args)
+    {
+        if ($action !== 'plugin_information') {
+            return $result;
+        }
+
+        if ($args->slug != 'ry-woocommerce-tools-pro') {
+            return $result;
+        }
+
+        $response = RY_WTP_LinkServer::get_info();
+        if (!empty($response)) {
+            return (object) $response;
+        }
+
+        return $result;
     }
 }
 

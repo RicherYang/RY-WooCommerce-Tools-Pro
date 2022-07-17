@@ -4,16 +4,18 @@ final class RY_WTP_SmilePay_Shipping
     public static function init()
     {
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ry-base.php';
-        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/smilepay/smilepay-shipping-cvs-711.php';
-        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/smilepay/smilepay-shipping-cvs-fami.php';
+        if (isset(RY_SmilePay_Shipping::$support_methods['ry_smilepay_shipping_cvs_711'])) {
+            RY_SmilePay_Shipping::$support_methods['ry_smilepay_shipping_cvs_711'] = 'RY_SmilePay_Shipping_CVS_711_Pro';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/smilepay/smilepay-shipping-cvs-711.php';
+        }
+        if (isset(RY_SmilePay_Shipping::$support_methods['ry_smilepay_shipping_cvs_fami'])) {
+            RY_SmilePay_Shipping::$support_methods['ry_smilepay_shipping_cvs_fami'] = 'RY_SmilePay_Shipping_CVS_Fami_Pro';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/smilepay/smilepay-shipping-cvs-fami.php';
+        }
 
         if (is_admin()) {
-            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/admin/meta-boxes/smilepay-shipping-meta-box.php';
-
             add_filter('woocommerce_get_settings_rytools', [__CLASS__, 'add_setting'], 11, 2);
 
-            remove_action('add_meta_boxes', ['RY_SmilePay_Shipping_Meta_Box', 'add_meta_box'], 40);
-            add_action('add_meta_boxes', ['RY_SmilePay_Shipping_Meta_Box_Pro', 'add_meta_box'], 40, 2);
             // Support plugin (WooCommerce Print Invoice & Delivery Note)
             add_filter('wcdn_order_info_fields', [__CLASS__, 'add_wcdn_shipping_info'], 10, 2);
         } else {
@@ -60,15 +62,15 @@ final class RY_WTP_SmilePay_Shipping
             ]);
 
             $setting_id_idx = array_column($settings, 'id');
-            $setting_idx = array_search(RY_WT::$option_prefix . 'smilepay_shipping_auto_completed', $setting_id_idx);
+            $setting_idx = array_search(RY_WT::$option_prefix . 'keep_shipping_phone', $setting_id_idx);
             array_splice($settings, $setting_idx + 1, 0, [
                 [
                     'title' => __('cvs remove billing address', 'ry-woocommerce-tools-pro'),
                     'id' => RY_WTP::$option_prefix . 'smilepay_cvs_billing_address',
                     'type' => 'checkbox',
                     'default' => 'no',
-                    'desc' => __('Remove billing address when shipping mode is cvs.', 'ry-woocommerce-tools-pro') . '<br>'
-                        . __('The billing address still will show in order details.', 'ry-woocommerce-tools-pro')
+                    'desc' => __('Remove billing address when shipping mode is cvs.', 'ry-woocommerce-tools-pro')
+                        . '<p class="description" style="margin-bottom:2px">' . __('The billing address still will show in order details.', 'ry-woocommerce-tools-pro') . '</p>'
                 ]
             ]);
         }

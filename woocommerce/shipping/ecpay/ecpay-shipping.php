@@ -3,20 +3,27 @@ final class RY_WTP_ECPay_Shipping
 {
     public static function init()
     {
-        RY_ECPay_Shipping::$support_methods = [
-            'ry_ecpay_shipping_cvs_711' => 'RY_ECPay_Shipping_CVS_711_Pro',
-            'ry_ecpay_shipping_cvs_family' => 'RY_ECPay_Shipping_CVS_Family_Pro',
-            'ry_ecpay_shipping_cvs_hilife' => 'RY_ECPay_Shipping_CVS_Hilife_Pro',
-            'ry_ecpay_shipping_cvs_ok' => 'RY_ECPay_Shipping_CVS_Ok_Pro',
-            'ry_ecpay_shipping_home_tcat' => 'RY_ECPay_Shipping_Home_Tcat_Pro'
-        ];
-
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ry-base.php';
-        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-cvs-711.php';
-        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-cvs-family.php';
-        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-cvs-hilife.php';
-        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-cvs-ok.php';
-        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-home-tcat.php';
+        if (isset(RY_ECPay_Shipping::$support_methods['ry_ecpay_shipping_cvs_711'])) {
+            RY_ECPay_Shipping::$support_methods['ry_ecpay_shipping_cvs_711'] = 'RY_ECPay_Shipping_CVS_711_Pro';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-cvs-711.php';
+        }
+        if (isset(RY_ECPay_Shipping::$support_methods['ry_ecpay_shipping_cvs_family'])) {
+            RY_ECPay_Shipping::$support_methods['ry_ecpay_shipping_cvs_family'] = 'RY_ECPay_Shipping_CVS_Family_Pro';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-cvs-family.php';
+        }
+        if (isset(RY_ECPay_Shipping::$support_methods['ry_ecpay_shipping_cvs_hilife'])) {
+            RY_ECPay_Shipping::$support_methods['ry_ecpay_shipping_cvs_hilife'] = 'RY_ECPay_Shipping_CVS_Hilife_Pro';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-cvs-hilife.php';
+        }
+        if (isset(RY_ECPay_Shipping::$support_methods['ry_ecpay_shipping_cvs_ok'])) {
+            RY_ECPay_Shipping::$support_methods['ry_ecpay_shipping_cvs_ok'] = 'RY_ECPay_Shipping_CVS_Ok_Pro';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-cvs-ok.php';
+        }
+        if (isset(RY_ECPay_Shipping::$support_methods['ry_ecpay_shipping_home_tcat'])) {
+            RY_ECPay_Shipping::$support_methods['ry_ecpay_shipping_home_tcat'] = 'RY_ECPay_Shipping_Home_Tcat_Pro';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-home-tcat.php';
+        }
 
         if (is_admin()) {
             add_filter('woocommerce_get_settings_rytools', [__CLASS__, 'add_setting'], 11, 2);
@@ -77,8 +84,8 @@ final class RY_WTP_ECPay_Shipping
                     'id' => RY_WTP::$option_prefix . 'ecpay_cvs_billing_address',
                     'type' => 'checkbox',
                     'default' => 'no',
-                    'desc' => __('Remove billing address when shipping mode is cvs.', 'ry-woocommerce-tools-pro') . '<br>'
-                        . __('The billing address still will show in order details.', 'ry-woocommerce-tools-pro')
+                    'desc' => __('Remove billing address when shipping mode is cvs.', 'ry-woocommerce-tools-pro')
+                        . '<p class="description" style="margin-bottom:2px">' . __('The billing address still will show in order details.', 'ry-woocommerce-tools-pro') . '</p>'
                 ]
             ]);
 

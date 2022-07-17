@@ -17,6 +17,17 @@ final class RY_WTP_LinkServer
         return self::decode_response($response);
     }
 
+    public static function get_info()
+    {
+        $response = wp_remote_get(self::$api_url . 'products/info/' . self::$plugin_type, [
+            'timeout' => 3,
+            'httpversion' => '1.1',
+            'user-agent' => self::get_user_agent()
+        ]);
+
+        return self::decode_response($response);
+    }
+
     public static function activate_key()
     {
         $response = wp_remote_post(self::$api_url . 'license/activate/' . self::$plugin_type, [

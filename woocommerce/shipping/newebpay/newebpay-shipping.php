@@ -4,7 +4,10 @@ final class RY_WTP_NewebPay_Shipping
     public static function init()
     {
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ry-base.php';
-        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/newebpay/newebpay-shipping-cvs.php';
+        if (isset(RY_NewebPay_Shipping::$support_methods['ry_newebpay_shipping_cvs'])) {
+            RY_NewebPay_Shipping::$support_methods['ry_newebpay_shipping_cvs'] = 'RY_NewebPay_Shipping_CVS_Pro';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/newebpay/newebpay-shipping-cvs.php';
+        }
 
         if (is_admin()) {
             add_filter('woocommerce_get_settings_rytools', [__CLASS__, 'add_setting'], 11, 2);
@@ -27,15 +30,19 @@ final class RY_WTP_NewebPay_Shipping
         if ($current_section == 'newebpay_shipping') {
             $setting_id_idx = array_column($settings, 'id');
 
-            $setting_idx = array_search(RY_WT::$option_prefix . 'newebpay_shipping', $setting_id_idx);
+            if (version_compare(RY_WT_VERSION, '1.9.8', '<=')) {
+                $setting_idx = array_search(RY_WT::$option_prefix . 'newebpay_shipping', $setting_id_idx);
+            } else {
+                $setting_idx = array_search(RY_WT::$option_prefix . 'keep_shipping_phone', $setting_id_idx);
+            }
             array_splice($settings, $setting_idx + 1, 0, [
                 [
                     'title' => __('cvs remove billing address', 'ry-woocommerce-tools-pro'),
                     'id' => RY_WTP::$option_prefix . 'newebpay_cvs_billing_address',
                     'type' => 'checkbox',
                     'default' => 'no',
-                    'desc' => __('Remove billing address when shipping mode is cvs.', 'ry-woocommerce-tools-pro') . '<br>'
-                        . __('The billing address still will show in order details.', 'ry-woocommerce-tools-pro')
+                    'desc' => __('Remove billing address when shipping mode is cvs.', 'ry-woocommerce-tools-pro')
+                        . '<p class="description" style="margin-bottom:2px">' . __('The billing address still will show in order details.', 'ry-woocommerce-tools-pro') . '</p>'
                 ]
             ]);
         }
