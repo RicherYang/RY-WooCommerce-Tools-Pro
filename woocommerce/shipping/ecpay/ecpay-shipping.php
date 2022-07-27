@@ -20,6 +20,10 @@ final class RY_WTP_ECPay_Shipping
             RY_ECPay_Shipping::$support_methods['ry_ecpay_shipping_cvs_ok'] = 'RY_ECPay_Shipping_CVS_Ok_Pro';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-cvs-ok.php';
         }
+        if (isset(RY_ECPay_Shipping::$support_methods['ry_ecpay_shipping_home_post'])) {
+            RY_ECPay_Shipping::$support_methods['ry_ecpay_shipping_home_post'] = 'RY_ECPay_Shipping_Home_Post_Pro';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-home-post.php';
+        }
         if (isset(RY_ECPay_Shipping::$support_methods['ry_ecpay_shipping_home_tcat'])) {
             RY_ECPay_Shipping::$support_methods['ry_ecpay_shipping_home_tcat'] = 'RY_ECPay_Shipping_Home_Tcat_Pro';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/ecpay-shipping-home-tcat.php';
@@ -209,8 +213,6 @@ final class RY_WTP_ECPay_Shipping
     {
         $order->update_status('ry-transporting');
     }
-
-
 
     public static function shipping_choose_cvs()
     {

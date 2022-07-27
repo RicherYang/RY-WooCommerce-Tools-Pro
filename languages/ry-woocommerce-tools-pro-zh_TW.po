@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: RY WooCommerce Tools Pro\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ry-woocommerce-"
 "tools-pro\n"
-"POT-Creation-Date: 2022-07-17T15:47:04+08:00\n"
-"PO-Revision-Date: 2022-07-17 15:47+0800\n"
+"POT-Creation-Date: 2022-07-27T22:52:41+08:00\n"
+"PO-Revision-Date: 2022-07-27 22:53+0800\n"
 "Last-Translator: Richer Yang\n"
 "Language-Team: \n"
 "Language: zh_TW\n"
@@ -327,6 +327,7 @@ msgstr "總運費是運費加離島附加運費。"
 #: woocommerce/shipping/ecpay/ecpay-shipping-cvs-family.php:10
 #: woocommerce/shipping/ecpay/ecpay-shipping-cvs-hilife.php:10
 #: woocommerce/shipping/ecpay/ecpay-shipping-cvs-ok.php:10
+#: woocommerce/shipping/ecpay/ecpay-shipping-home-post.php:8
 #: woocommerce/shipping/ecpay/ecpay-shipping-home-tcat.php:25
 #: woocommerce/shipping/newebpay/newebpay-shipping-cvs.php:8
 #: woocommerce/shipping/smilepay/smilepay-shipping-cvs-711.php:8
@@ -338,6 +339,7 @@ msgstr "最小訂購金額（不包含折價及稅金）"
 #: woocommerce/shipping/ecpay/ecpay-shipping-cvs-family.php:11
 #: woocommerce/shipping/ecpay/ecpay-shipping-cvs-hilife.php:11
 #: woocommerce/shipping/ecpay/ecpay-shipping-cvs-ok.php:11
+#: woocommerce/shipping/ecpay/ecpay-shipping-home-post.php:9
 #: woocommerce/shipping/ecpay/ecpay-shipping-home-tcat.php:26
 #: woocommerce/shipping/newebpay/newebpay-shipping-cvs.php:9
 #: woocommerce/shipping/smilepay/smilepay-shipping-cvs-711.php:9
@@ -349,6 +351,7 @@ msgstr "最小訂購金額或使用折價券（不包含折價及稅金）"
 #: woocommerce/shipping/ecpay/ecpay-shipping-cvs-family.php:12
 #: woocommerce/shipping/ecpay/ecpay-shipping-cvs-hilife.php:12
 #: woocommerce/shipping/ecpay/ecpay-shipping-cvs-ok.php:12
+#: woocommerce/shipping/ecpay/ecpay-shipping-home-post.php:10
 #: woocommerce/shipping/ecpay/ecpay-shipping-home-tcat.php:27
 #: woocommerce/shipping/newebpay/newebpay-shipping-cvs.php:10
 #: woocommerce/shipping/smilepay/smilepay-shipping-cvs-711.php:10
@@ -364,43 +367,43 @@ msgstr "低溫附加運費"
 msgid "The total cost is cost plus cool cost."
 msgstr "總運費是運費加低溫附加運費。"
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:70
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:74
 #: woocommerce/shipping/smilepay/smilepay-shipping.php:56
 msgid "Auto get with scheduler action"
 msgstr "使用排程來自動取得物流單號"
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:74
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:78
 #: woocommerce/shipping/smilepay/smilepay-shipping.php:60
 msgid "Get shipping payment no use scheduler action."
 msgstr "使用排程動作來取得物流寄件編號。"
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:83
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:87
 #: woocommerce/shipping/newebpay/newebpay-shipping.php:40
 #: woocommerce/shipping/smilepay/smilepay-shipping.php:68
 msgid "cvs remove billing address"
 msgstr "超商取貨移除帳單地址"
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:87
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:91
 #: woocommerce/shipping/newebpay/newebpay-shipping.php:44
 #: woocommerce/shipping/smilepay/smilepay-shipping.php:72
 msgid "Remove billing address when shipping mode is cvs."
 msgstr "當超商取貨的時候移除帳單中的地址欄位。"
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:88
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:92
 #: woocommerce/shipping/newebpay/newebpay-shipping.php:45
 #: woocommerce/shipping/smilepay/smilepay-shipping.php:73
 msgid "The billing address still will show in order details."
 msgstr "在訂單明細當中依然會顯示帳單地址的資料。"
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:96
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:100
 msgid "Clean up receiver name"
 msgstr "調整收件人姓名"
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:100
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:104
 msgid "Clean up receiver name to comply with EcPay request."
 msgstr "自動調整收件人姓名以符合綠界的規定。"
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:106
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:110
 msgctxt "Cvs type"
 msgid "B2C"
 msgstr "B2C"
@@ -425,14 +428,18 @@ msgid "Print ECPay shipping booking note (ok)"
 msgstr "列印綠界物流託運單 (OK)"
 
 #: woocommerce/shipping/ecpay/includes/ecpay-shipping-admin.php:34
+msgid "Print ECPay shipping booking note (post)"
+msgstr "列印綠界物流託運單 (郵局)"
+
+#: woocommerce/shipping/ecpay/includes/ecpay-shipping-admin.php:35
 msgid "Print ECPay shipping booking note (tcat)"
 msgstr "列印綠界物流託運單 (黑貓)"
 
-#: woocommerce/shipping/ecpay/includes/ecpay-shipping-admin.php:108
+#: woocommerce/shipping/ecpay/includes/ecpay-shipping-admin.php:109
 msgid "Get new Ecpay shipping no (refrigerated)"
 msgstr "取得新的綠界物流編號(冷藏)"
 
-#: woocommerce/shipping/ecpay/includes/ecpay-shipping-admin.php:111
+#: woocommerce/shipping/ecpay/includes/ecpay-shipping-admin.php:112
 msgid "Get new Ecpay shipping no (freezer)"
 msgstr "取得新的綠界物流編號(冷凍)"
 
