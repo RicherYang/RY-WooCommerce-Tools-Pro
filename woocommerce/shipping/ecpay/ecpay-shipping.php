@@ -1,4 +1,5 @@
 <?php
+
 final class RY_WTP_ECPay_Shipping
 {
     public static function init()
@@ -101,7 +102,7 @@ final class RY_WTP_ECPay_Shipping
                     'id' => RY_WT::$option_prefix . 'ecpay_shipping_cleanup_receiver_name',
                     'type' => 'checkbox',
                     'default' => 'no',
-                    'desc' => __('Clean up receiver name to comply with EcPay request.', 'ry-woocommerce-tools-pro')
+                    'desc' => __('Clean up receiver name to comply with ECPay request.', 'ry-woocommerce-tools-pro')
                 ]
             ]);
 
