@@ -26,6 +26,7 @@ final class RY_WTP
             include_once RY_WTP_PLUGIN_DIR . 'include/license.php';
             include_once RY_WTP_PLUGIN_DIR . 'include/link-server.php';
             include_once RY_WTP_PLUGIN_DIR . 'include/updater.php';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/admin/notes/license-auto-deactivate.php';
 
             self::$activate_status = RY_WTP_License::valid_key();
 
@@ -34,6 +35,9 @@ final class RY_WTP
 
             if (is_admin()) {
                 include_once RY_WTP_PLUGIN_DIR . 'class.ry-wt-p.admin.php';
+                if (!self::$activate_status) {
+                    add_action('woocommerce_settings_start', [RY_WTP_admin::instance(), 'add_license_notice']);
+                }
             }
 
             if (self::$activate_status) {
@@ -74,7 +78,7 @@ final class RY_WTP
         $message = sprintf(
             /* translators: %s: Name of this plugin */
             __('<strong>%s</strong> is inactive. It require RY WooCommerce Tools.', 'ry-woocommerce-tools-pro'),
-            __('RY WooCommerce Tools Pro', 'ry-woocommerce-tools-pro')
+            'RY WooCommerce Tools Pro'
         );
         printf('<div class="error"><p>%s</p></div>', $message);
     }

@@ -2,25 +2,19 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: RY WooCommerce Tools Pro 1.7.0\n"
+"Project-Id-Version: RY WooCommerce Tools Pro 1.7.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ry-woocommerce-tools-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-07-27T22:52:41+08:00\n"
+"POT-Creation-Date: 2022-12-18T17:42:57+08:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.6.0\n"
+"X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: ry-woocommerce-tools-pro\n"
 
 #. Plugin Name of the plugin
-#: class.ry-wt-p.admin.php:106
-#: class.ry-wt-p.admin.php:112
-#: class.ry-wt-p.admin.php:130
-#: class.ry-wt-p.main.php:77
-#: woocommerce/admin/view/html-setting-tools.php:2
-#: woocommerce/settings/settings-pro-version.php:4
 msgid "RY WooCommerce Tools Pro"
 msgstr ""
 
@@ -36,48 +30,53 @@ msgstr ""
 msgid "https://richer.tw/"
 msgstr ""
 
-#: class.ry-wt-p.admin.php:43
+#: class.ry-wt-p.admin.php:47
+msgid "Your license is not active!"
+msgstr ""
+
+#: class.ry-wt-p.admin.php:54
+#: woocommerce/admin/notes/license-auto-deactivate.php:41
 #: woocommerce/settings/settings-pro-version.php:9
 msgid "License key"
 msgstr ""
 
 #. translators: %s: Expiration date of pro license
-#: class.ry-wt-p.admin.php:63
+#: class.ry-wt-p.admin.php:74
 msgid "License Expiration Date %s"
 msgstr ""
 
-#: class.ry-wt-p.admin.php:107
-#: class.ry-wt-p.admin.php:131
+#: class.ry-wt-p.admin.php:118
+#: class.ry-wt-p.admin.php:142
 msgid "Connect license server failed!"
 msgstr ""
 
 #. translators: %s: Error message
-#: class.ry-wt-p.admin.php:115
+#: class.ry-wt-p.admin.php:126
 msgid "Verification error: %s"
 msgstr ""
 
-#: class.ry-wt-p.admin.php:120
+#: class.ry-wt-p.admin.php:131
 msgid "Unknown key"
 msgstr ""
 
-#: class.ry-wt-p.admin.php:121
+#: class.ry-wt-p.admin.php:132
 msgid "Locked key"
 msgstr ""
 
-#: class.ry-wt-p.admin.php:122
+#: class.ry-wt-p.admin.php:133
 msgid "Unknown target url"
 msgstr ""
 
-#: class.ry-wt-p.admin.php:123
+#: class.ry-wt-p.admin.php:134
 msgid "Used key"
 msgstr ""
 
-#: class.ry-wt-p.admin.php:124
+#: class.ry-wt-p.admin.php:135
 msgid "Is tried"
 msgstr ""
 
 #. translators: %s: Name of this plugin
-#: class.ry-wt-p.main.php:76
+#: class.ry-wt-p.main.php:80
 msgid "<strong>%s</strong> is inactive. It require RY WooCommerce Tools."
 msgstr ""
 
@@ -139,6 +138,15 @@ msgstr ""
 
 #: woocommerce/admin/meta-boxes/views/choose_cvs_btn.php:4
 msgid "After choose cvs, you need save the order to keep the change info."
+msgstr ""
+
+#. translators: Date
+#: woocommerce/admin/notes/license-auto-deactivate.php:24
+msgid "License has auto deactivate at %1$s."
+msgstr ""
+
+#: woocommerce/admin/notes/license-auto-deactivate.php:35
+msgid "License Auto Deactivate!"
 msgstr ""
 
 #: woocommerce/admin/view/html-setting-tools.php:2
@@ -363,43 +371,43 @@ msgstr ""
 msgid "The total cost is cost plus cool cost."
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:74
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:75
 #: woocommerce/shipping/smilepay/smilepay-shipping.php:56
 msgid "Auto get with scheduler action"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:78
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:79
 #: woocommerce/shipping/smilepay/smilepay-shipping.php:60
 msgid "Get shipping payment no use scheduler action."
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:87
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:88
 #: woocommerce/shipping/newebpay/newebpay-shipping.php:40
 #: woocommerce/shipping/smilepay/smilepay-shipping.php:68
 msgid "cvs remove billing address"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:91
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:92
 #: woocommerce/shipping/newebpay/newebpay-shipping.php:44
 #: woocommerce/shipping/smilepay/smilepay-shipping.php:72
 msgid "Remove billing address when shipping mode is cvs."
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:92
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:93
 #: woocommerce/shipping/newebpay/newebpay-shipping.php:45
 #: woocommerce/shipping/smilepay/smilepay-shipping.php:73
 msgid "The billing address still will show in order details."
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:100
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:101
 msgid "Clean up receiver name"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:104
-msgid "Clean up receiver name to comply with EcPay request."
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:105
+msgid "Clean up receiver name to comply with ECPay request."
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping.php:110
+#: woocommerce/shipping/ecpay/ecpay-shipping.php:111
 msgctxt "Cvs type"
 msgid "B2C"
 msgstr ""
@@ -438,19 +446,6 @@ msgstr ""
 #: woocommerce/shipping/ecpay/includes/ecpay-shipping-admin.php:112
 msgid "Get new Ecpay shipping no (freezer)"
 msgstr ""
-
-#: woocommerce/shipping/ry-base.php:32
-#: woocommerce/shipping/ry-base.php:54
-msgctxt "Order status"
-msgid "Transporting"
-msgstr ""
-
-#. translators: %s: number of orders
-#: woocommerce/shipping/ry-base.php:60
-msgid "Transporting <span class=\"count\">(%s)</span>"
-msgid_plural "Transporting <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
 
 #: woocommerce/shipping/smilepay/smilepay-shipping.php:82
 msgid "Print smilepay shipping booking note (711)"

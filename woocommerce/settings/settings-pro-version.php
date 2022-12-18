@@ -1,7 +1,7 @@
 <?php
 return [
     [
-        'title' => __('RY WooCommerce Tools Pro', 'ry-woocommerce-tools-pro'),
+        'title' => 'RY WooCommerce Tools Pro',
         'id' => 'pro_options',
         'type' => 'title'
     ],
