@@ -1,4 +1,5 @@
 <?php
+
 class RY_ECPay_Gateway_Credit_Installment_24 extends RY_ECPay_Gateway_Credit_Installment_Base
 {
     public function __construct()

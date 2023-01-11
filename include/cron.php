@@ -1,4 +1,5 @@
 <?php
+
 final class RY_WTP_Cron
 {
     private static $initiated = false;

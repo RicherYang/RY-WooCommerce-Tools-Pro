@@ -1,4 +1,5 @@
 <?php
+
 final class RY_WTP_Updater
 {
     private static $initiated = false;
@@ -37,7 +38,7 @@ final class RY_WTP_Updater
                 $json['plugin'] = RY_WTP_PLUGIN_BASENAME;
 
                 if (empty($transient)) {
-                    $transient = new stdClass;
+                    $transient = new stdClass();
                 }
                 $transient->last_checked = time();
                 $transient->response[RY_WTP_PLUGIN_BASENAME] = (object) $json;

@@ -1,4 +1,5 @@
 <?php
+
 class RY_ECPay_Shipping_CVS_Family_Pro extends RY_ECPay_Shipping_CVS_Family
 {
     public static $support_temp = ['1'];

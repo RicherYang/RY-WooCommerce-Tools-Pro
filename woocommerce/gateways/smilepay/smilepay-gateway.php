@@ -1,4 +1,5 @@
 <?php
+
 final class RY_WTP_SmilePay_Gateway
 {
     public static function init()

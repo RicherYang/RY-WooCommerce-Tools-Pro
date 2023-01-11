@@ -1,4 +1,5 @@
 <?php
+
 final class RY_WTP_Admin_Shipping
 {
     protected static $_instance = null;

@@ -1,4 +1,5 @@
 <?php
+
 class RY_ECPay_Shipping_Home_Post_Pro extends RY_ECPay_Shipping_Home_Post
 {
     public function __construct($instance_id = 0)

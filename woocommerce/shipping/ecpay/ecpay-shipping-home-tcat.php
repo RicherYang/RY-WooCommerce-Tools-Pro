@@ -1,4 +1,5 @@
 <?php
+
 class RY_ECPay_Shipping_Home_Tcat_Pro extends RY_ECPay_Shipping_Home_Tcat
 {
     public static $support_temp = ['1', '2', '3'];

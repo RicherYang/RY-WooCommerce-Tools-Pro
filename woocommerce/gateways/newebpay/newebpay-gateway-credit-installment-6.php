@@ -1,4 +1,5 @@
 <?php
+
 class RY_NewebPay_Gateway_Credit_Installment_6 extends RY_NewebPay_Gateway_Credit_Installment_Base
 {
     public function __construct()

@@ -1,4 +1,5 @@
 <?php
+
 return [
     [
         'title' => 'RY WooCommerce Tools Pro',

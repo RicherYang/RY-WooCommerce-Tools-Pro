@@ -1,4 +1,5 @@
 <?php
+
 class RY_SmilePay_Shipping_CVS_Fami_Pro extends RY_SmilePay_Shipping_CVS_Fami
 {
     public function __construct($instance_id = 0)

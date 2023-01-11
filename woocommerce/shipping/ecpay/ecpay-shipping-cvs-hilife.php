@@ -1,4 +1,5 @@
 <?php
+
 class RY_ECPay_Shipping_CVS_Hilife_Pro extends RY_ECPay_Shipping_CVS_Hilife
 {
     public static $support_temp = ['1'];

@@ -1,4 +1,5 @@
 <?php
+
 final class RY_WTP_NewebPay_Shipping
 {
     public static function init()

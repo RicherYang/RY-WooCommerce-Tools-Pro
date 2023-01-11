@@ -1,4 +1,5 @@
 <?php
+
 class RY_NewebPay_Shipping_CVS_Pro extends RY_NewebPay_Shipping_CVS
 {
     public function __construct($instance_id = 0)

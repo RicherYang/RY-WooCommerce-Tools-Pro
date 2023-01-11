@@ -1,4 +1,5 @@
 <?php
+
 final class RY_WTP_SmilePay_Shipping
 {
     public static function init()

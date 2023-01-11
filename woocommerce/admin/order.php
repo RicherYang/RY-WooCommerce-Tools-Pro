@@ -1,4 +1,5 @@
 <?php
+
 final class RY_WTP_admin_Order
 {
     protected static $_instance = null;

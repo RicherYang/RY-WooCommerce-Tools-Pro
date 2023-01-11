@@ -1,4 +1,5 @@
 <?php
+
 final class RY_WTP_ECPay_Shipping_admin
 {
     public static function init()
@@ -43,10 +44,9 @@ final class RY_WTP_ECPay_Shipping_admin
             $redirect_to = add_query_arg(
                 [
                     'orderid' => implode(',', $ids),
-                    'type' => substr($action, 15),
-                    'noheader' => 1,
+                    'type' => substr($action, 15)
                 ],
-                admin_url('admin.php?page=ry_print_ecpay_shipping')
+                admin_url('admin-post.php?action=ry-print-ecpay-shipping')
             );
             wp_redirect($redirect_to);
             exit();

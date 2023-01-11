@@ -1,15 +1,15 @@
-# Copyright (C) 2022 Richer Yang
+# Copyright (C) 2023 Richer Yang
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: RY WooCommerce Tools Pro 1.7.2\n"
+"Project-Id-Version: RY WooCommerce Tools Pro 1.7.2.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ry-woocommerce-tools-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-12-18T17:42:57+08:00\n"
+"POT-Creation-Date: 2023-01-11T14:14:16+08:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: ry-woocommerce-tools-pro\n"
@@ -30,53 +30,53 @@ msgstr ""
 msgid "https://richer.tw/"
 msgstr ""
 
-#: class.ry-wt-p.admin.php:47
+#: class.ry-wt-p.admin.php:48
 msgid "Your license is not active!"
 msgstr ""
 
-#: class.ry-wt-p.admin.php:54
+#: class.ry-wt-p.admin.php:55
 #: woocommerce/admin/notes/license-auto-deactivate.php:41
-#: woocommerce/settings/settings-pro-version.php:9
+#: woocommerce/settings/settings-pro-version.php:10
 msgid "License key"
 msgstr ""
 
 #. translators: %s: Expiration date of pro license
-#: class.ry-wt-p.admin.php:74
+#: class.ry-wt-p.admin.php:75
 msgid "License Expiration Date %s"
 msgstr ""
 
-#: class.ry-wt-p.admin.php:118
-#: class.ry-wt-p.admin.php:142
+#: class.ry-wt-p.admin.php:119
+#: class.ry-wt-p.admin.php:143
 msgid "Connect license server failed!"
 msgstr ""
 
 #. translators: %s: Error message
-#: class.ry-wt-p.admin.php:126
+#: class.ry-wt-p.admin.php:127
 msgid "Verification error: %s"
 msgstr ""
 
-#: class.ry-wt-p.admin.php:131
+#: class.ry-wt-p.admin.php:132
 msgid "Unknown key"
 msgstr ""
 
-#: class.ry-wt-p.admin.php:132
+#: class.ry-wt-p.admin.php:133
 msgid "Locked key"
 msgstr ""
 
-#: class.ry-wt-p.admin.php:133
+#: class.ry-wt-p.admin.php:134
 msgid "Unknown target url"
 msgstr ""
 
-#: class.ry-wt-p.admin.php:134
+#: class.ry-wt-p.admin.php:135
 msgid "Used key"
 msgstr ""
 
-#: class.ry-wt-p.admin.php:135
+#: class.ry-wt-p.admin.php:136
 msgid "Is tried"
 msgstr ""
 
 #. translators: %s: Name of this plugin
-#: class.ry-wt-p.main.php:80
+#: class.ry-wt-p.main.php:81
 msgid "<strong>%s</strong> is inactive. It require RY WooCommerce Tools."
 msgstr ""
 
@@ -87,7 +87,7 @@ msgstr ""
 
 #: templates/order/order-ecpay-shipping-info.php:23
 #: templates/order/order-smilepay-shipping-info.php:23
-#: woocommerce/admin/order.php:27
+#: woocommerce/admin/order.php:28
 msgid "Shipping payment no"
 msgstr ""
 
@@ -173,170 +173,158 @@ msgstr ""
 msgid "Transport temperature"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-3.php:7
-#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-3.php:7
+#: woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-3.php:8
+#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-3.php:8
 msgid "Pay via Credit(3 installment)"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-3.php:8
+#: woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-3.php:9
 msgid "ECPay Credit(3 installment)"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-3.php:18
+#: woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-3.php:19
 msgid "Pay via ECPay Credit(3 installment)"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-6.php:7
-#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-6.php:7
+#: woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-6.php:8
+#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-6.php:8
 msgid "Pay via Credit(6 installment)"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-6.php:8
+#: woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-6.php:9
 msgid "ECPay Credit(6 installment)"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-6.php:18
+#: woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-6.php:19
 msgid "Pay via ECPay Credit(6 installment)"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-12.php:7
-#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-12.php:7
+#: woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-12.php:8
+#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-12.php:8
 msgid "Pay via Credit(12 installment)"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-12.php:8
+#: woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-12.php:9
 msgid "ECPay Credit(12 installment)"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-12.php:18
+#: woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-12.php:19
 msgid "Pay via ECPay Credit(12 installment)"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-18.php:7
-#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-18.php:7
+#: woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-18.php:8
+#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-18.php:8
 msgid "Pay via Credit(18 installment)"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-18.php:8
+#: woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-18.php:9
 msgid "ECPay Credit(18 installment)"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-18.php:18
+#: woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-18.php:19
 msgid "Pay via ECPay Credit(18 installment)"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-24.php:7
-#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-24.php:7
+#: woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-24.php:8
+#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-24.php:8
 msgid "Pay via Credit(24 installment)"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-24.php:8
+#: woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-24.php:9
 msgid "ECPay Credit(24 installment)"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-24.php:18
+#: woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-24.php:19
 msgid "Pay via ECPay Credit(24 installment)"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/ecpay-gateway.php:36
-#: woocommerce/gateways/newebpay/newebpay-gateway.php:37
-#: woocommerce/gateways/smilepay/smilepay-gateway.php:25
+#: woocommerce/gateways/ecpay/ecpay-gateway.php:37
+#: woocommerce/gateways/newebpay/newebpay-gateway.php:38
+#: woocommerce/gateways/smilepay/smilepay-gateway.php:26
 msgid "Gateway options"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/ecpay-gateway.php:41
-#: woocommerce/gateways/newebpay/newebpay-gateway.php:42
+#: woocommerce/gateways/ecpay/ecpay-gateway.php:42
+#: woocommerce/gateways/newebpay/newebpay-gateway.php:43
 msgid "Credit installment"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/ecpay-gateway.php:45
-#: woocommerce/gateways/newebpay/newebpay-gateway.php:46
+#: woocommerce/gateways/ecpay/ecpay-gateway.php:46
+#: woocommerce/gateways/newebpay/newebpay-gateway.php:47
 msgid "Add each periods of credit installment as a payment gateway."
 msgstr ""
 
-#: woocommerce/gateways/ecpay/ecpay-gateway.php:48
-#: woocommerce/gateways/newebpay/newebpay-gateway.php:49
-#: woocommerce/gateways/smilepay/smilepay-gateway.php:30
+#: woocommerce/gateways/ecpay/ecpay-gateway.php:49
+#: woocommerce/gateways/newebpay/newebpay-gateway.php:50
+#: woocommerce/gateways/smilepay/smilepay-gateway.php:31
 msgid "Show payment info in email"
 msgstr ""
 
 #. translators: %s: email title
-#: woocommerce/gateways/ecpay/ecpay-gateway.php:54
-#: woocommerce/gateways/newebpay/newebpay-gateway.php:55
-#: woocommerce/gateways/smilepay/smilepay-gateway.php:36
+#: woocommerce/gateways/ecpay/ecpay-gateway.php:55
+#: woocommerce/gateways/newebpay/newebpay-gateway.php:56
+#: woocommerce/gateways/smilepay/smilepay-gateway.php:37
 msgid "Add payment info in \"%s\" email."
 msgstr ""
 
-#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-3.php:8
+#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-3.php:9
 msgid "NewebPay Credit(3 installment)"
 msgstr ""
 
-#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-3.php:18
+#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-3.php:19
 msgid "Pay via NewebPay Credit(3 installment)"
 msgstr ""
 
-#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-6.php:8
+#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-6.php:9
 msgid "NewebPay Credit(6 installment)"
 msgstr ""
 
-#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-6.php:18
+#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-6.php:19
 msgid "Pay via NewebPay Credit(6 installment)"
 msgstr ""
 
-#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-12.php:8
+#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-12.php:9
 msgid "NewebPay Credit(12 installment)"
 msgstr ""
 
-#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-12.php:18
+#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-12.php:19
 msgid "Pay via NewebPay Credit(12 installment)"
 msgstr ""
 
-#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-18.php:8
+#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-18.php:9
 msgid "NewebPay Credit(18 installment)"
 msgstr ""
 
-#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-18.php:18
+#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-18.php:19
 msgid "Pay via NewebPay Credit(18 installment)"
 msgstr ""
 
-#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-24.php:8
+#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-24.php:9
 msgid "NewebPay Credit(24 installment)"
 msgstr ""
 
-#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-24.php:18
+#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-24.php:19
 msgid "Pay via NewebPay Credit(24 installment)"
 msgstr ""
 
-#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-30.php:7
+#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-30.php:8
 msgid "Pay via Credit(30 installment)"
 msgstr ""
 
-#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-30.php:8
+#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-30.php:9
 msgid "NewebPay Credit(30 installment)"
 msgstr ""
 
-#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-30.php:18
+#: woocommerce/gateways/newebpay/newebpay-gateway-credit-installment-30.php:19
 msgid "Pay via NewebPay Credit(30 installment)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping-cvs-711.php:14
+#: woocommerce/shipping/ecpay/ecpay-shipping-cvs-711.php:15
 msgid "Off island plus cost"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping-cvs-711.php:19
+#: woocommerce/shipping/ecpay/ecpay-shipping-cvs-711.php:20
 msgid "The total cost is cost plus off island cost."
-msgstr ""
-
-#: woocommerce/shipping/ecpay/ecpay-shipping-cvs-711.php:25
-#: woocommerce/shipping/ecpay/ecpay-shipping-cvs-family.php:10
-#: woocommerce/shipping/ecpay/ecpay-shipping-cvs-hilife.php:10
-#: woocommerce/shipping/ecpay/ecpay-shipping-cvs-ok.php:10
-#: woocommerce/shipping/ecpay/ecpay-shipping-home-post.php:8
-#: woocommerce/shipping/ecpay/ecpay-shipping-home-tcat.php:25
-#: woocommerce/shipping/newebpay/newebpay-shipping-cvs.php:8
-#: woocommerce/shipping/smilepay/smilepay-shipping-cvs-711.php:8
-#: woocommerce/shipping/smilepay/smilepay-shipping-cvs-fami.php:8
-msgid "A minimum order amount ( except discount and tex )"
 msgstr ""
 
 #: woocommerce/shipping/ecpay/ecpay-shipping-cvs-711.php:26
@@ -348,7 +336,7 @@ msgstr ""
 #: woocommerce/shipping/newebpay/newebpay-shipping-cvs.php:9
 #: woocommerce/shipping/smilepay/smilepay-shipping-cvs-711.php:9
 #: woocommerce/shipping/smilepay/smilepay-shipping-cvs-fami.php:9
-msgid "A minimum order amount OR a coupon ( except discount and tex )"
+msgid "A minimum order amount ( except discount and tex )"
 msgstr ""
 
 #: woocommerce/shipping/ecpay/ecpay-shipping-cvs-711.php:27
@@ -360,42 +348,54 @@ msgstr ""
 #: woocommerce/shipping/newebpay/newebpay-shipping-cvs.php:10
 #: woocommerce/shipping/smilepay/smilepay-shipping-cvs-711.php:10
 #: woocommerce/shipping/smilepay/smilepay-shipping-cvs-fami.php:10
+msgid "A minimum order amount OR a coupon ( except discount and tex )"
+msgstr ""
+
+#: woocommerce/shipping/ecpay/ecpay-shipping-cvs-711.php:28
+#: woocommerce/shipping/ecpay/ecpay-shipping-cvs-family.php:13
+#: woocommerce/shipping/ecpay/ecpay-shipping-cvs-hilife.php:13
+#: woocommerce/shipping/ecpay/ecpay-shipping-cvs-ok.php:13
+#: woocommerce/shipping/ecpay/ecpay-shipping-home-post.php:11
+#: woocommerce/shipping/ecpay/ecpay-shipping-home-tcat.php:28
+#: woocommerce/shipping/newebpay/newebpay-shipping-cvs.php:11
+#: woocommerce/shipping/smilepay/smilepay-shipping-cvs-711.php:11
+#: woocommerce/shipping/smilepay/smilepay-shipping-cvs-fami.php:11
 msgid "A minimum order amount AND a coupon ( except discount and tex )"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping-home-tcat.php:14
+#: woocommerce/shipping/ecpay/ecpay-shipping-home-tcat.php:15
 msgid "Cool plus cost"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/ecpay-shipping-home-tcat.php:19
+#: woocommerce/shipping/ecpay/ecpay-shipping-home-tcat.php:20
 msgid "The total cost is cost plus cool cost."
 msgstr ""
 
 #: woocommerce/shipping/ecpay/ecpay-shipping.php:75
-#: woocommerce/shipping/smilepay/smilepay-shipping.php:56
+#: woocommerce/shipping/smilepay/smilepay-shipping.php:57
 msgid "Auto get with scheduler action"
 msgstr ""
 
 #: woocommerce/shipping/ecpay/ecpay-shipping.php:79
-#: woocommerce/shipping/smilepay/smilepay-shipping.php:60
+#: woocommerce/shipping/smilepay/smilepay-shipping.php:61
 msgid "Get shipping payment no use scheduler action."
 msgstr ""
 
 #: woocommerce/shipping/ecpay/ecpay-shipping.php:88
-#: woocommerce/shipping/newebpay/newebpay-shipping.php:40
-#: woocommerce/shipping/smilepay/smilepay-shipping.php:68
+#: woocommerce/shipping/newebpay/newebpay-shipping.php:41
+#: woocommerce/shipping/smilepay/smilepay-shipping.php:69
 msgid "cvs remove billing address"
 msgstr ""
 
 #: woocommerce/shipping/ecpay/ecpay-shipping.php:92
-#: woocommerce/shipping/newebpay/newebpay-shipping.php:44
-#: woocommerce/shipping/smilepay/smilepay-shipping.php:72
+#: woocommerce/shipping/newebpay/newebpay-shipping.php:45
+#: woocommerce/shipping/smilepay/smilepay-shipping.php:73
 msgid "Remove billing address when shipping mode is cvs."
 msgstr ""
 
 #: woocommerce/shipping/ecpay/ecpay-shipping.php:93
-#: woocommerce/shipping/newebpay/newebpay-shipping.php:45
-#: woocommerce/shipping/smilepay/smilepay-shipping.php:73
+#: woocommerce/shipping/newebpay/newebpay-shipping.php:46
+#: woocommerce/shipping/smilepay/smilepay-shipping.php:74
 msgid "The billing address still will show in order details."
 msgstr ""
 
@@ -412,30 +412,30 @@ msgctxt "Cvs type"
 msgid "B2C"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/ecpay-shipping-admin.php:22
-#: woocommerce/shipping/ecpay/includes/ecpay-shipping-admin.php:27
-msgid "Print ECPay shipping booking note (711)"
-msgstr ""
-
 #: woocommerce/shipping/ecpay/includes/ecpay-shipping-admin.php:23
 #: woocommerce/shipping/ecpay/includes/ecpay-shipping-admin.php:28
-msgid "Print ECPay shipping booking note (family)"
+msgid "Print ECPay shipping booking note (711)"
 msgstr ""
 
 #: woocommerce/shipping/ecpay/includes/ecpay-shipping-admin.php:24
 #: woocommerce/shipping/ecpay/includes/ecpay-shipping-admin.php:29
+msgid "Print ECPay shipping booking note (family)"
+msgstr ""
+
+#: woocommerce/shipping/ecpay/includes/ecpay-shipping-admin.php:25
+#: woocommerce/shipping/ecpay/includes/ecpay-shipping-admin.php:30
 msgid "Print ECPay shipping booking note (hilife)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/ecpay-shipping-admin.php:30
+#: woocommerce/shipping/ecpay/includes/ecpay-shipping-admin.php:31
 msgid "Print ECPay shipping booking note (ok)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/ecpay-shipping-admin.php:34
+#: woocommerce/shipping/ecpay/includes/ecpay-shipping-admin.php:35
 msgid "Print ECPay shipping booking note (post)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/ecpay-shipping-admin.php:35
+#: woocommerce/shipping/ecpay/includes/ecpay-shipping-admin.php:36
 msgid "Print ECPay shipping booking note (tcat)"
 msgstr ""
 
@@ -447,10 +447,10 @@ msgstr ""
 msgid "Get new Ecpay shipping no (freezer)"
 msgstr ""
 
-#: woocommerce/shipping/smilepay/smilepay-shipping.php:82
+#: woocommerce/shipping/smilepay/smilepay-shipping.php:83
 msgid "Print smilepay shipping booking note (711)"
 msgstr ""
 
-#: woocommerce/shipping/smilepay/smilepay-shipping.php:83
+#: woocommerce/shipping/smilepay/smilepay-shipping.php:84
 msgid "Print SmilePay shipping booking note (family)"
 msgstr ""

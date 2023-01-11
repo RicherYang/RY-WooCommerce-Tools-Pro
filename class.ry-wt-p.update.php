@@ -1,4 +1,5 @@
 <?php
+
 final class RY_WTP_update
 {
     public static function update()
@@ -9,8 +10,8 @@ final class RY_WTP_update
             return;
         }
 
-        if (version_compare($now_version, '1.7.2', '<')) {
-            RY_WTP::update_option('version', '1.7.2');
+        if (version_compare($now_version, '1.7.2.1', '<')) {
+            RY_WTP::update_option('version', '1.7.2.1');
         }
     }
 }
