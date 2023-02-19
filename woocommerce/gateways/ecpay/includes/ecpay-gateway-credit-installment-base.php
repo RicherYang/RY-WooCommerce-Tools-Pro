@@ -3,6 +3,7 @@
 class RY_ECPay_Gateway_Credit_Installment_Base extends RY_ECPay_Gateway_Base
 {
     public $payment_type = 'Credit';
+    public $number_of_periods = '';
 
     public function __construct()
     {

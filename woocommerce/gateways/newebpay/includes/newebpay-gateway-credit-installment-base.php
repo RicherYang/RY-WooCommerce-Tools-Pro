@@ -3,6 +3,7 @@
 class RY_NewebPay_Gateway_Credit_Installment_Base extends RY_NewebPay_Gateway_Base
 {
     public $payment_type = 'InstFlag';
+    public $number_of_periods = '';
 
     public function __construct()
     {
