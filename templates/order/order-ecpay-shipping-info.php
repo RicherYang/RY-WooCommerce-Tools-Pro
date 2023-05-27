@@ -49,7 +49,7 @@ if (count($shipping_info_list)) { ?>
                 _ex('Waiting for pick up', 'Shipping status', 'ry-woocommerce-tools-pro');
             } elseif (in_array($shipping_info['status'], apply_filters('ry_ecpay_shipping_status_info_completed', [2067, 3003, 3022]))) {
                 _ex('Completed', 'Shipping status', 'ry-woocommerce-tools-pro');
-            } elseif (in_array($shipping_info['status'], apply_filters('ry_ecpay_shipping_status_info_overdue', [2065, 2070, 2072, 2074, 3019, 3020, 3023, 3025]))) {
+            } elseif (in_array($shipping_info['status'], apply_filters('ry_ecpay_shipping_status_info_overdue', [2065, 2070, 2072, 2074, 2076, 3019, 3020, 3023, 3025]))) {
                 _ex('Overdue return', 'Shipping status', 'ry-woocommerce-tools-pro');
             } else {
                 _ex('Unknow', 'Shipping status', 'ry-woocommerce-tools-pro');
@@ -62,3 +62,4 @@ if (count($shipping_info_list)) { ?>
 </table>
 <?php
 }
+?>
