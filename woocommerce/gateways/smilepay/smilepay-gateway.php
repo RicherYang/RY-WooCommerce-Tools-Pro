@@ -70,10 +70,10 @@ final class RY_WTP_SmilePay_Gateway
                     wc_get_template(
                         str_replace('emails/', 'emails/plain/', $template_file),
                         array(
-                            'order'         => $order,
+                            'order' => $order,
                             'sent_to_admin' => $sent_to_admin,
-                            'plain_text'    => $plain_text,
-                            'email'         => $email,
+                            'plain_text' => $plain_text,
+                            'email' => $email,
                         ),
                         '',
                         RY_WTP_PLUGIN_DIR . 'templates/'
@@ -82,10 +82,10 @@ final class RY_WTP_SmilePay_Gateway
                     wc_get_template(
                         $template_file,
                         array(
-                            'order'         => $order,
+                            'order' => $order,
                             'sent_to_admin' => $sent_to_admin,
-                            'plain_text'    => $plain_text,
-                            'email'         => $email,
+                            'plain_text' => $plain_text,
+                            'email' => $email,
                         ),
                         '',
                         RY_WTP_PLUGIN_DIR . 'templates/'

@@ -10,14 +10,16 @@ final class RY_WTP_ECPay_Gateway
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-12.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-18.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/ecpay-gateway-credit-installment-24.php';
+        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/ecpay-gateway-twqr.php';
 
         if (is_admin()) {
             add_filter('woocommerce_get_settings_rytools', [__CLASS__, 'add_setting'], 11, 2);
         }
 
         if ('yes' === RY_WT::get_option('ecpay_gateway', 'no')) {
+            add_filter('woocommerce_payment_gateways', [__CLASS__, 'add_method']);
             if ('yes' === RY_WTP::get_option('ecpay_credit_installment', 'no')) {
-                add_filter('woocommerce_payment_gateways', [__CLASS__, 'add_method']);
+                add_filter('woocommerce_payment_gateways', [__CLASS__, 'add_installment_method']);
             }
 
             if ('yes' === RY_WTP::get_option('ecpay_email_payment_info', 'yes')) {
@@ -67,6 +69,13 @@ final class RY_WTP_ECPay_Gateway
 
     public static function add_method($methods)
     {
+        $methods[] = 'RY_ECPay_Gateway_Twqr';
+
+        return $methods;
+    }
+
+    public static function add_installment_method($methods)
+    {
         $methods[] = 'RY_ECPay_Gateway_Credit_Installment_3';
         $methods[] = 'RY_ECPay_Gateway_Credit_Installment_6';
         $methods[] = 'RY_ECPay_Gateway_Credit_Installment_12';
@@ -96,10 +105,10 @@ final class RY_WTP_ECPay_Gateway
                     wc_get_template(
                         str_replace('emails/', 'emails/plain/', $template_file),
                         array(
-                            'order'         => $order,
+                            'order' => $order,
                             'sent_to_admin' => $sent_to_admin,
-                            'plain_text'    => $plain_text,
-                            'email'         => $email,
+                            'plain_text' => $plain_text,
+                            'email' => $email,
                         ),
                         '',
                         RY_WTP_PLUGIN_DIR . 'templates/'
@@ -108,10 +117,10 @@ final class RY_WTP_ECPay_Gateway
                     wc_get_template(
                         $template_file,
                         array(
-                            'order'         => $order,
+                            'order' => $order,
                             'sent_to_admin' => $sent_to_admin,
-                            'plain_text'    => $plain_text,
-                            'email'         => $email,
+                            'plain_text' => $plain_text,
+                            'email' => $email,
                         ),
                         '',
                         RY_WTP_PLUGIN_DIR . 'templates/'

@@ -22,7 +22,7 @@ class RY_NewebPay_Gateway_Credit_Installment_18 extends RY_NewebPay_Gateway_Cred
         wc_release_stock_for_order($order);
 
         return [
-            'result'   => 'success',
+            'result' => 'success',
             'redirect' => $order->get_checkout_payment_url(true),
         ];
     }

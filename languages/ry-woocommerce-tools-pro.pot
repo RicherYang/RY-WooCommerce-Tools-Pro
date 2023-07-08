@@ -1,17 +1,17 @@
 # Copyright (C) 2023 Richer Yang
-# This file is distributed under the GPLv2 or later.
+# This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: RY WooCommerce Tools Pro 1.7.2.1\n"
+"Project-Id-Version: RY WooCommerce Tools Pro 2.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ry-woocommerce-tools-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-01-11T14:14:16+08:00\n"
+"POT-Creation-Date: 2023-07-08T18:34:25+08:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.7.1\n"
+"X-Generator: WP-CLI 2.8.1\n"
 "X-Domain: ry-woocommerce-tools-pro\n"
 
 #. Plugin Name of the plugin
@@ -238,30 +238,42 @@ msgstr ""
 msgid "Pay via ECPay Credit(24 installment)"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/ecpay-gateway.php:37
+#: woocommerce/gateways/ecpay/ecpay-gateway-twqr.php:13
+msgid "Pay via TWQR"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/ecpay-gateway-twqr.php:14
+msgid "ECPay TWQR"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/ecpay-gateway-twqr.php:45
+msgid "Pay via ECPay TWQR"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/ecpay-gateway.php:39
 #: woocommerce/gateways/newebpay/newebpay-gateway.php:38
 #: woocommerce/gateways/smilepay/smilepay-gateway.php:26
 msgid "Gateway options"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/ecpay-gateway.php:42
+#: woocommerce/gateways/ecpay/ecpay-gateway.php:44
 #: woocommerce/gateways/newebpay/newebpay-gateway.php:43
 msgid "Credit installment"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/ecpay-gateway.php:46
+#: woocommerce/gateways/ecpay/ecpay-gateway.php:48
 #: woocommerce/gateways/newebpay/newebpay-gateway.php:47
 msgid "Add each periods of credit installment as a payment gateway."
 msgstr ""
 
-#: woocommerce/gateways/ecpay/ecpay-gateway.php:49
+#: woocommerce/gateways/ecpay/ecpay-gateway.php:51
 #: woocommerce/gateways/newebpay/newebpay-gateway.php:50
 #: woocommerce/gateways/smilepay/smilepay-gateway.php:31
 msgid "Show payment info in email"
 msgstr ""
 
 #. translators: %s: email title
-#: woocommerce/gateways/ecpay/ecpay-gateway.php:55
+#: woocommerce/gateways/ecpay/ecpay-gateway.php:57
 #: woocommerce/gateways/newebpay/newebpay-gateway.php:56
 #: woocommerce/gateways/smilepay/smilepay-gateway.php:37
 msgid "Add payment info in \"%s\" email."

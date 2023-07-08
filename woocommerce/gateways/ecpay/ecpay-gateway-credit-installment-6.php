@@ -22,7 +22,7 @@ class RY_ECPay_Gateway_Credit_Installment_6 extends RY_ECPay_Gateway_Credit_Inst
         wc_release_stock_for_order($order);
 
         return [
-            'result'   => 'success',
+            'result' => 'success',
             'redirect' => $order->get_checkout_payment_url(true),
         ];
     }
