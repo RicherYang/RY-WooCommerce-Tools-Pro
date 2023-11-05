@@ -1,0 +1,1 @@
+(()=>{"use strict";const e=window.wp.blocks,c=JSON.parse('{"name":"ry-woocommerce-tools/ry-ecpay-cvs-select-block"}');(0,e.registerBlockType)(c.name)})();

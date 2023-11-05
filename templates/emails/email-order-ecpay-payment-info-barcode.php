@@ -22,46 +22,46 @@ if ($order->get_meta('_ecpay_payment_type') != 'BARCODE') {
 $text_align = is_rtl() ? 'right' : 'left';
 ?>
 <h2>
-	<?php esc_html_e('Payment details', 'ry-woocommerce-tools') ?>
+    <?php esc_html_e('Payment details', 'ry-woocommerce-tools') ?>
 </h2>
 <div style="margin-bottom: 40px;">
-	<table class="td" cellspacing="0" cellpadding="6" style="width: 100%;" border="1">
-		<tbody>
-			<tr>
-				<th class="td" scope="row" style="text-align:<?=esc_attr($text_align) ?>;">
-					<?php esc_html_e('Barcode 1', 'ry-woocommerce-tools') ?>
-				</th>
-				<td class="td" style="text-align:<?=esc_attr($text_align) ?>;">
-					<span><?php echo esc_html($order->get_meta('_ecpay_barcode_Barcode1')); ?></span>
-				</td>
-			</tr>
-			<tr>
-				<th class="td" scope="row" style="text-align:<?=esc_attr($text_align) ?>;">
-					<?php esc_html_e('Barcode 2', 'ry-woocommerce-tools') ?>
-				</th>
-				<td class="td" style="text-align:<?=esc_attr($text_align) ?>;">
-					<span><?php echo esc_html($order->get_meta('_ecpay_barcode_Barcode2')); ?></span>
-				</td>
-			</tr>
-			<tr>
-				<th class="td" scope="row" style="text-align:<?=esc_attr($text_align) ?>;">
-					<?php esc_html_e('Barcode 3', 'ry-woocommerce-tools') ?>
-				</th>
-				<td class="td" style="text-align:<?=esc_attr($text_align) ?>;">
-					<span><?php echo esc_html($order->get_meta('_ecpay_barcode_Barcode3')); ?></span>
-				</td>
-			</tr>
-			<tr>
-				<th class="td" scope="row" style="text-align:<?=esc_attr($text_align) ?>;">
-					<?php esc_html_e('Payment deadline', 'ry-woocommerce-tools') ?>
-				</th>
-				<?php $expireDate = wc_string_to_datetime($order->get_meta('_ecpay_barcode_ExpireDate')); ?>
-				<?php /* translators: %1$s: date %2$s: time */ ?>
-				<?php $expireDate = sprintf(_x('%1$s %2$s', 'Datetime', 'ry-woocommerce-tools'), $expireDate->date_i18n(wc_date_format()), $expireDate->date_i18n(wc_time_format())); ?>
-				<td class="td" style="text-align:<?=esc_attr($text_align) ?>;">
-					<?=$expireDate ?>
-				</td>
-			</tr>
-		</tbody>
-	</table>
+    <table class="td" cellspacing="0" cellpadding="6" style="width: 100%;" border="1">
+        <tbody>
+            <tr>
+                <th class="td" scope="row" style="text-align:<?=esc_attr($text_align) ?>;">
+                    <?php esc_html_e('Barcode 1', 'ry-woocommerce-tools') ?>
+                </th>
+                <td class="td" style="text-align:<?=esc_attr($text_align) ?>;">
+                    <span><?php echo esc_html($order->get_meta('_ecpay_barcode_Barcode1')); ?></span>
+                </td>
+            </tr>
+            <tr>
+                <th class="td" scope="row" style="text-align:<?=esc_attr($text_align) ?>;">
+                    <?php esc_html_e('Barcode 2', 'ry-woocommerce-tools') ?>
+                </th>
+                <td class="td" style="text-align:<?=esc_attr($text_align) ?>;">
+                    <span><?php echo esc_html($order->get_meta('_ecpay_barcode_Barcode2')); ?></span>
+                </td>
+            </tr>
+            <tr>
+                <th class="td" scope="row" style="text-align:<?=esc_attr($text_align) ?>;">
+                    <?php esc_html_e('Barcode 3', 'ry-woocommerce-tools') ?>
+                </th>
+                <td class="td" style="text-align:<?=esc_attr($text_align) ?>;">
+                    <span><?php echo esc_html($order->get_meta('_ecpay_barcode_Barcode3')); ?></span>
+                </td>
+            </tr>
+            <tr>
+                <th class="td" scope="row" style="text-align:<?=esc_attr($text_align) ?>;">
+                    <?php esc_html_e('Payment deadline', 'ry-woocommerce-tools') ?>
+                </th>
+                <?php $expireDate = wc_string_to_datetime($order->get_meta('_ecpay_barcode_ExpireDate')); ?>
+                <?php /* translators: %1$s: date %2$s: time */ ?>
+                <?php $expireDate = sprintf(_x('%1$s %2$s', 'Datetime', 'ry-woocommerce-tools'), $expireDate->date_i18n(wc_date_format()), $expireDate->date_i18n(wc_time_format())); ?>
+                <td class="td" style="text-align:<?=esc_attr($text_align) ?>;">
+                    <?=$expireDate ?>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>

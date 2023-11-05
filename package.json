@@ -1,0 +1,26 @@
+{
+    "name": "ry-woocommerce-tools-pro",
+    "title": "RY WooCommerce Tools Pro",
+    "version": "2.1.0",
+    "author": "Richer Yang",
+    "license": "GPL-3.0",
+    "devDependencies": {
+        "@woocommerce/dependency-extraction-webpack-plugin": "^2.3",
+        "@wordpress/blocks": "^12.22",
+        "@wordpress/components": "^25.11",
+        "@wordpress/i18n": "^4.45",
+        "@wordpress/icons": "^9.36",
+        "@wordpress/scripts": "^26.16"
+    },
+    "scripts": {
+        "start": "wp-scripts start",
+        "build": "npm run build:assets && npm run i18n:pot && npm run i18n:po",
+        "build:all": "npm run build:assets && npm run build:i18n",
+        "build:assets": "wp-scripts build",
+        "build:i18n": "npm run i18n:pot && npm run i18n:po && npm run i18n:mo && npm run i18n:json",
+        "i18n:pot": "wp i18n make-pot \"\" \"languages/ry-woocommerce-tools-pro.pot\" --slug=\"ry-woocommerce-tools-pro\" --domain=\"ry-woocommerce-tools-pro\" --exclude=\"node_modules,assets-src\"",
+        "i18n:po": "wp i18n update-po \"languages/ry-woocommerce-tools-pro.pot\" languages",
+        "i18n:mo": "wp i18n make-mo \"languages/ry-woocommerce-tools-pro-zh_TW.po\"",
+        "i18n:json": "del-cli -f \"languages/*.json\" && wp i18n make-json \"languages\" --no-purge"
+    }
+}

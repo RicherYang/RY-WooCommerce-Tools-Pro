@@ -62,3 +62,4 @@ if (count($shipping_info_list)) { ?>
 </table>
 <?php
 }
+?>

@@ -1,12 +1,14 @@
 <?php
 
-final class RY_WTP_admin_Order
+use Automattic\WooCommerce\Utilities\OrderUtil;
+
+final class RY_WTP_WC_Admin_Order
 {
     protected static $_instance = null;
 
-    public static function instance()
+    public static function instance(): RY_WTP_WC_Admin_Order
     {
-        if (self::$_instance === null) {
+        if (null === self::$_instance) {
             self::$_instance = new self();
             self::$_instance->do_init();
         }
@@ -14,10 +16,17 @@ final class RY_WTP_admin_Order
         return self::$_instance;
     }
 
-    protected function do_init()
+    protected function do_init(): void
     {
-        add_filter('manage_shop_order_posts_columns', [$this, 'shop_order_columns'], 11);
-        add_action('manage_shop_order_posts_custom_column', [$this, 'shop_order_column'], 11);
+        if (class_exists('Automattic\WooCommerce\Utilities\OrderUtil') && OrderUtil::custom_orders_table_usage_is_enabled()) {
+            if('edit' !== ($_GET['action'] ?? '')) {
+                add_filter('manage_woocommerce_page_wc-orders_columns', [$this, 'shop_order_columns'], 11);
+                add_action('manage_woocommerce_page_wc-orders_custom_column', [$this, 'shop_order_column'], 11, 2);
+            }
+        } else {
+            add_filter('manage_shop_order_posts_columns', [$this, 'shop_order_columns'], 11);
+            add_action('manage_shop_order_posts_custom_column', [$this, 'shop_order_column'], 11, 2);
+        }
     }
 
     public function shop_order_columns($columns)
@@ -30,23 +39,22 @@ final class RY_WTP_admin_Order
         return array_merge($pre_array, $array, $columns);
     }
 
-    public function shop_order_column($column)
+    public function shop_order_column($column, $order)
     {
-        global $the_order;
+        if ('ry_shipping_no' == $column) {
+            if(!is_object($order)) {
+                global $the_order;
+                $order = $the_order;
+            }
 
-        if ($column != 'ry_shipping_no') {
-            return ;
-        }
-
-        $shipping_list = $the_order->get_meta('_ecpay_shipping_info', true);
-        if (is_array($shipping_list)) {
-            foreach ($shipping_list as $item) {
-                if ($item['LogisticsType'] == 'CVS') {
-                    echo $item['PaymentNo'] . ' ' . $item['ValidationNo'] . '<br>';
+            $shipping_list = $order->get_meta('_ecpay_shipping_info', true);
+            if (is_array($shipping_list)) {
+                foreach ($shipping_list as $item) {
+                    if ('CVS' === $item['LogisticsType']) {
+                        echo $item['PaymentNo'] . ' ' . $item['ValidationNo'] . '<br>';
+                    }
                 }
             }
         }
     }
 }
-
-RY_WTP_admin_Order::instance();
