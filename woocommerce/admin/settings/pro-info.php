@@ -13,6 +13,7 @@ return [
         'default' => ''
     ],
     [
+        'id' => 'ry_wtp_version_info',
         'type' => 'ry_wtp_version_info',
     ],
     [
