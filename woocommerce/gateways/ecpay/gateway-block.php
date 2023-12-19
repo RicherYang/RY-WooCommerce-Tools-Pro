@@ -26,6 +26,7 @@ final class RY_WTP_WC_ECPay_Gateway_Block
         if (class_exists('Automattic\WooCommerce\Blocks\Payments\Integrations\AbstractPaymentMethodType')) {
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/blocks/gateway-atm.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/blocks/gateway-barcode.php';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/blocks/gateway-bnpl.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/blocks/gateway-credit-installment.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/blocks/gateway-credit.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/blocks/gateway-cvs.php';
@@ -47,6 +48,7 @@ final class RY_WTP_WC_ECPay_Gateway_Block
     {
         $payment_method_registry->register(new RY_ECPay_Gateway_Atm_Blocks_Support());
         $payment_method_registry->register(new RY_ECPay_Gateway_Barcode_Blocks_Support());
+        $payment_method_registry->register(new RY_ECPay_Gateway_Bnpl_Blocks_Support());
         $payment_method_registry->register(new RY_ECPay_Gateway_Credit_Installment_Blocks_Support());
         $payment_method_registry->register(new RY_ECPay_Gateway_Credit_Blocks_Support());
         $payment_method_registry->register(new RY_ECPay_Gateway_Cvs_Blocks_Support());

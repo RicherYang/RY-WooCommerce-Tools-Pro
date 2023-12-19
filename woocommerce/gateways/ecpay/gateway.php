@@ -17,6 +17,7 @@ final class RY_WTP_WC_ECPay_Gateway
     protected function do_init(): void
     {
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/includes/gateway-credit-installment.php';
+        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-bnpl.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-credit-installment-3.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-credit-installment-6.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-credit-installment-12.php';
@@ -30,9 +31,8 @@ final class RY_WTP_WC_ECPay_Gateway
             add_filter('woocommerce_get_settings_rytools', [$this, 'add_setting'], 11, 2);
         }
 
-        if ('yes' === RY_WTP::get_option('ecpay_credit_installment', 'no')) {
-            add_filter('woocommerce_payment_gateways', [$this, 'add_installment_method']);
-        }
+        add_filter('woocommerce_payment_gateways', [$this, 'add_method']);
+
         if ('yes' === RY_WTP::get_option('ecpay_email_payment_info', 'yes')) {
             add_action('woocommerce_email_after_order_table', [$this, 'add_payment_info'], 10, 4);
         }
@@ -75,13 +75,17 @@ final class RY_WTP_WC_ECPay_Gateway
         return $settings;
     }
 
-    public function add_installment_method($methods)
+    public function add_method($methods)
     {
-        $methods[] = 'RY_ECPay_Gateway_Credit_Installment_3';
-        $methods[] = 'RY_ECPay_Gateway_Credit_Installment_6';
-        $methods[] = 'RY_ECPay_Gateway_Credit_Installment_12';
-        $methods[] = 'RY_ECPay_Gateway_Credit_Installment_18';
-        $methods[] = 'RY_ECPay_Gateway_Credit_Installment_24';
+        $methods[] = 'RY_ECPay_Gateway_Bnpl';
+
+        if ('yes' === RY_WTP::get_option('ecpay_credit_installment', 'no')) {
+            $methods[] = 'RY_ECPay_Gateway_Credit_Installment_3';
+            $methods[] = 'RY_ECPay_Gateway_Credit_Installment_6';
+            $methods[] = 'RY_ECPay_Gateway_Credit_Installment_12';
+            $methods[] = 'RY_ECPay_Gateway_Credit_Installment_18';
+            $methods[] = 'RY_ECPay_Gateway_Credit_Installment_24';
+        }
 
         return $methods;
     }

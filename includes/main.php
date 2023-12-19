@@ -3,8 +3,7 @@
 final class RY_WTP
 {
     public const Option_Prefix = 'RY_WTP_';
-
-    public static $min_Tools_version = '3.0.0';
+    public const Min_Tools_Version = '3.0.6';
 
     protected static $_instance = null;
 
@@ -35,7 +34,7 @@ final class RY_WTP
 
     public function do_woo_init(): void
     {
-        if (version_compare(RY_WT_VERSION, self::$min_Tools_version, '<')) {
+        if (version_compare(RY_WT_VERSION, self::Min_Tools_Version, '<')) {
             return;
         }
 

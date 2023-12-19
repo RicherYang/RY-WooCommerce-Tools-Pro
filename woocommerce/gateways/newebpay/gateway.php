@@ -31,9 +31,8 @@ final class RY_WTP_WC_NewebPay_Gateway
             add_filter('woocommerce_get_settings_rytools', [$this, 'add_setting'], 11, 2);
         }
 
-        if ('yes' === RY_WTP::get_option('newebpay_credit_installment', 'no')) {
-            add_filter('woocommerce_payment_gateways', [$this, 'add_method']);
-        }
+        add_filter('woocommerce_payment_gateways', [$this, 'add_method']);
+
         if ('yes' === RY_WTP::get_option('newebpay_email_payment_info', 'yes')) {
             add_action('woocommerce_email_after_order_table', [$this, 'add_payment_info'], 10, 4);
         }
@@ -78,12 +77,14 @@ final class RY_WTP_WC_NewebPay_Gateway
 
     public function add_method($methods)
     {
-        $methods[] = 'RY_NewebPay_Gateway_Credit_Installment_3';
-        $methods[] = 'RY_NewebPay_Gateway_Credit_Installment_6';
-        $methods[] = 'RY_NewebPay_Gateway_Credit_Installment_12';
-        $methods[] = 'RY_NewebPay_Gateway_Credit_Installment_18';
-        $methods[] = 'RY_NewebPay_Gateway_Credit_Installment_24';
-        $methods[] = 'RY_NewebPay_Gateway_Credit_Installment_30';
+        if ('yes' === RY_WTP::get_option('newebpay_credit_installment', 'no')) {
+            $methods[] = 'RY_NewebPay_Gateway_Credit_Installment_3';
+            $methods[] = 'RY_NewebPay_Gateway_Credit_Installment_6';
+            $methods[] = 'RY_NewebPay_Gateway_Credit_Installment_12';
+            $methods[] = 'RY_NewebPay_Gateway_Credit_Installment_18';
+            $methods[] = 'RY_NewebPay_Gateway_Credit_Installment_24';
+            $methods[] = 'RY_NewebPay_Gateway_Credit_Installment_30';
+        }
 
         return $methods;
     }
