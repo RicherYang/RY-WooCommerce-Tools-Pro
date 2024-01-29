@@ -130,7 +130,7 @@ final class RY_WTP_ECPay_Shipping_Admin
         foreach ($order->get_items('shipping') as $item) {
             $shipping_method = RY_WT_WC_ECPay_Shipping::instance()->get_order_support_shipping($item);
             if (false !== $shipping_method && false !== strpos($shipping_method, 'cvs')) {
-                list($MerchantID, $HashKey, $HashIV, $CVS_type) = RY_WT_WC_ECPay_Shipping::instance()->get_api_info();
+                list($MerchantID, $HashKey, $HashIV, $cvs_type) = RY_WT_WC_ECPay_Shipping::instance()->get_api_info();
 
                 $choosed_cvs = '';
                 if (isset($_POST['MerchantID']) && $_POST['MerchantID'] == $MerchantID) {
@@ -148,7 +148,7 @@ final class RY_WTP_ECPay_Shipping_Admin
                     'postData' => [
                         'MerchantID' => $MerchantID,
                         'LogisticsType' => $method_class::Shipping_Type,
-                        'LogisticsSubType' => $method_class::Shipping_Sub_Type . (('C2C' == $CVS_type) ? 'C2C' : ''),
+                        'LogisticsSubType' => $method_class::Shipping_Sub_Type . (('C2C' === $cvs_type) ? 'C2C' : ''),
                         'IsCollection' => 'Y',
                         'ServerReplyURL' => esc_url(WC()->api_request_url('ry_ecpay_map_callback')),
                         'ExtraData' => 'ry' . $order->get_id()
@@ -175,10 +175,10 @@ final class RY_WTP_ECPay_Shipping_Admin
             $shipping_method = RY_WT_WC_ECPay_Shipping::instance()->get_order_support_shipping($item);
             if (false !== $shipping_method) {
                 $method_class = RY_WT_WC_ECPay_Shipping::$support_methods[$shipping_method];
-                if (in_array('2', $method_class::Support_Temp)) {
+                if (in_array('2', $method_class::get_support_temp())) {
                     $order_actions['get_new_ecpay_no_t2'] = __('Get new Ecpay shipping no (refrigerated)', 'ry-woocommerce-tools-pro');
                 }
-                if (in_array('3', $method_class::Support_Temp)) {
+                if (in_array('3', $method_class::get_support_temp())) {
                     $order_actions['get_new_ecpay_no_t3'] = __('Get new Ecpay shipping no (freezer)', 'ry-woocommerce-tools-pro');
                 }
             }

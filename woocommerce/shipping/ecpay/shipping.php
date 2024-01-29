@@ -51,7 +51,7 @@ final class RY_WTP_ECPay_Shipping
             if ('yes' === RY_WTP::get_option('ecpay_shipping_auto_with_scheduler', 'no')) {
                 remove_action('woocommerce_order_status_processing', [RY_WT_WC_ECPay_Shipping::instance(), 'get_code'], 10, 2);
                 add_action('woocommerce_order_status_processing', [$this, 'get_code'], 10, 2);
-                add_action('ry_wtp_get_ecpay_cvs_code', [RY_WT_WC_ECPay_Shipping_Api::instance(), 'get_code'], 10, 2);
+                add_action('ry_wtp_get_ecpay_code', [RY_WT_WC_ECPay_Shipping_Api::instance(), 'get_code'], 10, 2);
             }
         }
 
@@ -149,7 +149,7 @@ final class RY_WTP_ECPay_Shipping
             $shipping_list = [];
         }
         if (count($shipping_list) == 0) {
-            WC()->queue()->schedule_single(time() + 10, 'ry_wtp_get_ecpay_cvs_code', [$order_ID], '');
+            WC()->queue()->schedule_single(time() + 10, 'ry_wtp_get_ecpay_code', [$order_ID], '');
         }
     }
 

@@ -2,8 +2,6 @@
 
 class RY_ECPay_Shipping_CVS_Hilife_Pro extends RY_ECPay_Shipping_CVS_Hilife
 {
-    public const Support_Temp = ['1'];
-
     public function __construct($instance_ID = 0)
     {
         $this->instance_form_fields = include RY_WT_PLUGIN_DIR . 'woocommerce/shipping/ecpay/includes/settings/cvs.php';

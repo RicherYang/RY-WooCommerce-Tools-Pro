@@ -2,8 +2,6 @@
 
 class RY_ECPay_Shipping_Home_Tcat_Pro extends RY_ECPay_Shipping_Home_Tcat
 {
-    public const Support_Temp = ['1', '2', '3'];
-
     public function __construct($instance_ID = 0)
     {
         $this->instance_form_fields = include RY_WT_PLUGIN_DIR . 'woocommerce/shipping/ecpay/includes/settings/home.php';
@@ -30,5 +28,10 @@ class RY_ECPay_Shipping_Home_Tcat_Pro extends RY_ECPay_Shipping_Home_Tcat
         parent::__construct($instance_ID);
 
         $this->cost_cool = $this->get_option('cost_cool');
+    }
+
+    public static function get_support_temp()
+    {
+        return ['1', '2', '3'];
     }
 }
