@@ -77,42 +77,15 @@ final class RY_WTP_SmilePay_Shipping_Admin
     public function print_shipping_note($redirect_to, $action, $ids)
     {
         if (false !== strpos($action, 'ry_print_smilepay_')) {
-            $print_type = strrchr($action, '_');
-            $logistics_list = [];
-            foreach ($ids as $order_ID) {
-                $order = wc_get_order($order_ID);
-                if ($order) {
-                    foreach ($order->get_items('shipping') as $item) {
-                        $shipping_method = RY_WT_WC_SmilePay_Shipping::instance()->get_order_support_shipping($item);
-                        if (false === $shipping_method) {
-                            continue;
-                        }
-
-                        if (false === strpos($shipping_method, $print_type)) {
-                            continue;
-                        }
-
-                        $shipping_list = $order->get_meta('_smilepay_shipping_info', true);
-                        if (is_array($shipping_list)) {
-                            foreach ($shipping_list as $info) {
-                                if (empty($info['PaymentNo'])) {
-                                    RY_WT_WC_SmilePay_Shipping_Api::instance()->get_code_no($order_ID, $info['ID']);
-                                }
-                            }
-
-                            $order = wc_get_order($order_ID);
-                            $shipping_list = $order->get_meta('_smilepay_shipping_info', true);
-                            foreach ($shipping_list as $info) {
-                                $logistics_list[$info['ID']] = $info;
-                            }
-                        }
-                    }
-                }
-            }
-
-            if (count($logistics_list)) {
-                $redirect_to = RY_WT_WC_SmilePay_Shipping_Api::instance()->get_print_url(array_values($logistics_list), true);
-            }
+            $redirect_to = add_query_arg(
+                [
+                    'orderid' => implode(',', $ids),
+                    'type' => substr($action, 18)
+                ],
+                admin_url('admin-post.php?action=ry-print-smilepay-shipping')
+            );
+            wp_redirect($redirect_to);
+            exit();
         }
 
         return esc_url_raw($redirect_to);

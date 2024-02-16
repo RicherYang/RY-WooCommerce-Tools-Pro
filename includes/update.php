@@ -16,8 +16,8 @@ final class RY_WTP_Update
             RY_WTP::update_option('version', '3.0.0');
         }
 
-        if (version_compare($now_version, '3.1.0', '<')) {
-            RY_WTP::update_option('version', '3.1.0');
+        if (version_compare($now_version, '3.2.0', '<')) {
+            RY_WTP::update_option('version', '3.2.0');
         }
     }
 }

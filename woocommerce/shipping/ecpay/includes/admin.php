@@ -31,10 +31,6 @@ final class RY_WTP_ECPay_Shipping_Admin
 
         add_action('woocommerce_admin_order_data_after_shipping_address', [$this, 'add_choose_cvs_btn']);
 
-        add_filter('woocommerce_order_actions', [$this, 'add_order_actions']);
-        add_action('woocommerce_order_action_get_new_ecpay_no_t2', [RY_WT_WC_ECPay_Shipping_Api::instance(), 'get_code_t2']);
-        add_action('woocommerce_order_action_get_new_ecpay_no_t3', [RY_WT_WC_ECPay_Shipping_Api::instance(), 'get_code_t3']);
-
         // Support plugin (WooCommerce Print Invoice & Delivery Note)
         add_filter('wcdn_order_info_fields', [$this, 'add_wcdn_shipping_info'], 10, 2);
     }
@@ -82,6 +78,9 @@ final class RY_WTP_ECPay_Shipping_Admin
 
             $setting_idx = array_search(RY_WT::Option_Prefix . 'ecpay_shipping_cvs_type', array_column($settings, 'id'));
             $settings[$setting_idx]['options']['B2C'] = _x('B2C', 'Cvs type', 'ry-woocommerce-tools-pro');
+
+            $setting_idx = array_search(RY_WT::Option_Prefix . 'ecpay_shipping_declare_over', array_column($settings, 'id'));
+            $settings[$setting_idx]['options']['multi'] = __('multi package', 'ry-woocommerce-tools-pro');
         }
         return $settings;
     }
@@ -162,28 +161,6 @@ final class RY_WTP_ECPay_Shipping_Admin
                 break;
             }
         }
-    }
-
-    public function add_order_actions($order_actions)
-    {
-        global $theorder, $post;
-        if (!is_object($theorder)) {
-            $theorder = wc_get_order($post->ID);
-        }
-
-        foreach ($theorder->get_items('shipping') as $item) {
-            $shipping_method = RY_WT_WC_ECPay_Shipping::instance()->get_order_support_shipping($item);
-            if (false !== $shipping_method) {
-                $method_class = RY_WT_WC_ECPay_Shipping::$support_methods[$shipping_method];
-                if (in_array('2', $method_class::get_support_temp())) {
-                    $order_actions['get_new_ecpay_no_t2'] = __('Get new Ecpay shipping no (refrigerated)', 'ry-woocommerce-tools-pro');
-                }
-                if (in_array('3', $method_class::get_support_temp())) {
-                    $order_actions['get_new_ecpay_no_t3'] = __('Get new Ecpay shipping no (freezer)', 'ry-woocommerce-tools-pro');
-                }
-            }
-        }
-        return $order_actions;
     }
 
     public function add_wcdn_shipping_info($fields, $order)

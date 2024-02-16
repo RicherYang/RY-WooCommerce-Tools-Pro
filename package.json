@@ -1,7 +1,7 @@
 {
     "name": "ry-woocommerce-tools-pro",
     "title": "RY WooCommerce Tools Pro",
-    "version": "3.0.3",
+    "version": "3.2.0",
     "author": "Richer Yang",
     "license": "GPL-3.0",
     "devDependencies": {

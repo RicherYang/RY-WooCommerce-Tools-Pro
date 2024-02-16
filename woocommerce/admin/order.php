@@ -36,6 +36,7 @@ final class RY_WTP_WC_Admin_Order
         $array = [
             'ry_shipping_no' => __('Shipping payment no', 'ry-woocommerce-tools-pro')
         ];
+
         return array_merge($pre_array, $array, $columns);
     }
 
@@ -47,11 +48,20 @@ final class RY_WTP_WC_Admin_Order
                 $order = $the_order;
             }
 
-            $shipping_list = $order->get_meta('_ecpay_shipping_info', true);
-            if (is_array($shipping_list)) {
-                foreach ($shipping_list as $item) {
-                    if ('CVS' === $item['LogisticsType']) {
-                        echo $item['PaymentNo'] . ' ' . $item['ValidationNo'] . '<br>';
+            foreach(['_ecpay_shipping_info', '_newebpay_shipping_info', '_smilepay_shipping_info'] as $meta_key) {
+                $shipping_list = $order->get_meta($meta_key, true);
+                if (is_array($shipping_list)) {
+                    foreach ($shipping_list as $item) {
+                        if(!isset($item['LogisticsType'])) {
+                            $item['LogisticsType'] = 'CVS';
+                        }
+
+                        if ('CVS' == $item['LogisticsType']) {
+                            echo esc_html($item['PaymentNo']) . '<span class="validationno">' . esc_html($item['ValidationNo'] ?? '') . '<br>';
+                        }
+                        if ('HOME' == $item['LogisticsType']) {
+                            echo esc_html($item['BookingNote']) . '<br>';
+                        }
                     }
                 }
             }
