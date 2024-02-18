@@ -176,7 +176,7 @@ final class RY_WTP_License extends RY_WT_WC_Model
         $this->delete_license();
         $this->delete_license_key();
 
-        $this->log($message, 'error');
+        $this->log($message, WC_Log_Levels::ERROR);
         RY_WTP::update_option('license_auto_deactivate_date', current_time('Y-m-d'));
         RY_WTP_LicenseAutoDeactivate::add_note();
     }

@@ -81,21 +81,20 @@ final class RY_WTP_LinkServer
     protected function decode_response($response)
     {
         if (is_wp_error($response)) {
-            RY_WTP_License::instance()->log('Error: ' . implode("\n", $response->get_error_messages()), 'error');
+            RY_WTP_License::instance()->log('POST failed', WC_Log_Levels::ERROR, ['info' => $response->get_error_messages()]);
             return false;
         }
 
-        $response_code = wp_remote_retrieve_response_code($response);
-        if (200 != $response_code) {
-            RY_WTP_License::instance()->log('HTTP ' . $response_code . ' @ ' . $response['http_response']->get_response_object()->url, 'error');
+        if (wp_remote_retrieve_response_code($response) != '200') {
+            RY_WTP_License::instance()->log('POST HTTP status error', WC_Log_Levels::ERROR, ['code' => $response['response']['code']]);
             return false;
         }
 
-        $body = wp_remote_retrieve_body($response);
-        $data = @json_decode($body, true);
+        $data = @json_decode(wp_remote_retrieve_body($response), true);
         if (empty($data)) {
-            RY_WTP_License::instance()->log('Data decode error. ' . var_export($body, true), 'error');
+            RY_WTP_License::instance()->log('POST result parse failed', WC_Log_Levels::WARNING, ['data' => wp_remote_retrieve_body($response)]);
         }
+
         return $data;
     }
 }

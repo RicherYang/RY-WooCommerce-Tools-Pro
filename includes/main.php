@@ -3,7 +3,7 @@
 final class RY_WTP
 {
     public const Option_Prefix = 'RY_WTP_';
-    public const Min_Tools_Version = '3.2.1';
+    public const Min_Tools_Version = '3.2.2';
 
     protected static $_instance = null;
 
