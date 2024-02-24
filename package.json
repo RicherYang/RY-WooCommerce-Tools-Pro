@@ -1,16 +1,16 @@
 {
     "name": "ry-woocommerce-tools-pro",
     "title": "RY WooCommerce Tools Pro",
-    "version": "3.2.0",
+    "version": "3.2.2",
     "author": "Richer Yang",
     "license": "GPL-3.0",
     "devDependencies": {
         "@woocommerce/dependency-extraction-webpack-plugin": ">=2.3",
-        "@wordpress/blocks": ">=12.25",
-        "@wordpress/components": ">=25.14",
-        "@wordpress/i18n": ">=4.48",
-        "@wordpress/icons": ">=9.39",
-        "@wordpress/scripts": ">=26.19"
+        "@wordpress/blocks": ">=12.29",
+        "@wordpress/components": ">=27.0",
+        "@wordpress/i18n": ">=4.52",
+        "@wordpress/icons": ">=9.43",
+        "@wordpress/scripts": ">=27.3"
     },
     "scripts": {
         "start": "wp-scripts start",

@@ -40,7 +40,7 @@ final class RY_WTP_WC_SmilePay_Gateway
                 ],
                 [
                     'title' => __('Show payment info in email', 'ry-woocommerce-tools-pro'),
-                    'id' => RY_WTP::Option_Prefix . 'smilepay_email_payment_info',
+                    'id' => RY_WTP::OPTION_PREFIX . 'smilepay_email_payment_info',
                     'type' => 'checkbox',
                     'default' => 'yes',
                     'desc' => sprintf(

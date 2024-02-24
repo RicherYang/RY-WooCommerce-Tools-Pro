@@ -137,12 +137,6 @@ msgstr "前往選擇超商門市前不會儲存任何的變化。"
 msgid "After choose cvs, you need save the order to keep the change info."
 msgstr "選擇超商之後，你需要更新訂單以儲存相關資訊。"
 
-#. translators: Date
-#: woocommerce/admin/notes/license-auto-deactivate.php:24
-#, php-format
-msgid "License has auto deactivate at %1$s."
-msgstr "授權於 %1$s 自動終止。"
-
 #: woocommerce/admin/notes/license-auto-deactivate.php:35
 msgid "License Auto Deactivate!"
 msgstr "授權自動終止！"
@@ -546,22 +540,27 @@ msgid "Print SmilePay shipping booking note (family)"
 msgstr "列印速買配物流託運單 (全家)"
 
 #. Plugin Name of the plugin
+#: D:\WebServer\htdocs_80\ry-plugin.com\wp-content\plugins\ry-woocommerce-tools-pro\ry-woocommerce-tools-pro.php
 #~ msgid "RY WooCommerce Tools Pro"
 #~ msgstr "RY WooCommerce Tools Pro"
 
 #. Plugin URI of the plugin
+#: D:\WebServer\htdocs_80\ry-plugin.com\wp-content\plugins\ry-woocommerce-tools-pro\ry-woocommerce-tools-pro.php
 #~ msgid "https://ry-plugin.com/ry-woocommerce-tools-pro/"
 #~ msgstr "https://ry-plugin.com/ry-woocommerce-tools-pro/"
 
 #. Description of the plugin
+#: D:\WebServer\htdocs_80\ry-plugin.com\wp-content\plugins\ry-woocommerce-tools-pro\ry-woocommerce-tools-pro.php
 #~ msgid "WooCommerce paymet and shipping tools"
 #~ msgstr "WooCommerce paymet and shipping tools"
 
 #. Author of the plugin
+#: D:\WebServer\htdocs_80\ry-plugin.com\wp-content\plugins\ry-woocommerce-tools-pro\ry-woocommerce-tools-pro.php
 #~ msgid "Richer Yang"
 #~ msgstr "Richer Yang"
 
 #. Author URI of the plugin
+#: D:\WebServer\htdocs_80\ry-plugin.com\wp-content\plugins\ry-woocommerce-tools-pro\ry-woocommerce-tools-pro.php
 #~ msgid "https://richer.tw/"
 #~ msgstr "https://richer.tw/"
 
@@ -649,3 +648,8 @@ msgstr "列印速買配物流託運單 (全家)"
 #~ msgctxt "block title"
 #~ msgid "ECPay select cvs store"
 #~ msgstr "綠界選擇超商門市"
+
+#. translators: %s: Date
+#: woocommerce/admin/notes/license-auto-deactivate.php:24
+msgid "License has auto deactivate at %s."
+msgstr ""

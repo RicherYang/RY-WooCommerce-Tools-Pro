@@ -8,7 +8,7 @@ return [
     ],
     [
         'title' => __('License key', 'ry-woocommerce-tools-pro'),
-        'id' => RY_WTP::Option_Prefix . 'license_key',
+        'id' => RY_WTP::OPTION_PREFIX . 'license_key',
         'type' => 'text',
         'default' => ''
     ],

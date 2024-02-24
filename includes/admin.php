@@ -28,7 +28,7 @@ final class RY_WTP_Admin
                 'RY WooCommerce Tools Pro',
                 RY_WTP::Min_Tools_Version
             );
-            printf('<div class="error"><p>%s</p></div>', $message);
+            printf('<div class="error"><p>%s</p></div>', wp_kses($message, ['strong' => []]));
         }
     }
 }

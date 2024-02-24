@@ -22,41 +22,42 @@ if ($order->get_meta('_newebpay_payment_type') != 'VACC') {
 $text_align = is_rtl() ? 'right' : 'left';
 ?>
 <h2>
-    <?php esc_html_e('Payment details', 'ry-woocommerce-tools') ?>
+    <?php esc_html_e('Payment details', 'ry-woocommerce-tools'); ?>
 </h2>
 <div style="margin-bottom: 40px;">
     <table class="td" cellspacing="0" cellpadding="6" style="width: 100%;" border="1">
         <tbody>
             <tr>
-                <th class="td" scope="row" style="text-align:<?=esc_attr($text_align) ?>;">
-                    <?php esc_html_e('Bank', 'ry-woocommerce-tools') ?>
+                <th class="td" scope="row" style="text-align:<?php echo esc_attr($text_align); ?>;">
+                    <?php esc_html_e('Bank', 'ry-woocommerce-tools'); ?>
                 </th>
-                <td class="td" style="text-align:<?=esc_attr($text_align) ?>;">
-                    <?=_x($order->get_meta('_newebpay_atm_BankCode'), 'Bank code', 'ry-woocommerce-tools') ?>
+                <td class="td" style="text-align:<?php echo esc_attr($text_align); ?>;">
+                    <?php echo esc_html_x($order->get_meta('_newebpay_atm_BankCode'), 'Bank code', 'ry-woocommerce-tools'); ?>
                 </td>
             </tr>
             <tr>
-                <th class="td" scope="row" style="text-align:<?=esc_attr($text_align) ?>;">
-                    <?php esc_html_e('Bank code', 'ry-woocommerce-tools') ?>
+                <th class="td" scope="row" style="text-align:<?php echo esc_attr($text_align); ?>;">
+                    <?php esc_html_e('Bank code', 'ry-woocommerce-tools'); ?>
                 </th>
-                <td class="td" style="text-align:<?=esc_attr($text_align) ?>;"><?php echo esc_html($order->get_meta('_newebpay_atm_BankCode')); ?>
+                <td class="td" style="text-align:<?php echo esc_attr($text_align); ?>;">
+                    <?php echo esc_html($order->get_meta('_newebpay_atm_BankCode')); ?>
                 </td>
             </tr>
             <tr>
-                <th class="td" scope="row" style="text-align:<?=esc_attr($text_align) ?>;">
-                    <?php esc_html_e('ATM Bank account', 'ry-woocommerce-tools') ?>
+                <th class="td" scope="row" style="text-align:<?php echo esc_attr($text_align); ?>;">
+                    <?php esc_html_e('ATM Bank account', 'ry-woocommerce-tools'); ?>
                 </th>
-                <td class="td" style="text-align:<?=esc_attr($text_align) ?>;"><?=wordwrap($order->get_meta('_newebpay_atm_vAccount'), 4, '<span> </span>', true) ?>
+                <td class="td" style="text-align:<?php echo esc_attr($text_align); ?>;">
+                    <?php echo wordwrap($order->get_meta('_newebpay_atm_vAccount'), 4, '<span> </span>', true); ?>
                 </td>
             </tr>
             <tr>
-                <th class="td" scope="row" style="text-align:<?=esc_attr($text_align) ?>;">
-                    <?php esc_html_e('Payment deadline', 'ry-woocommerce-tools') ?>
+                <th class="td" scope="row" style="text-align:<?php echo esc_attr($text_align); ?>;">
+                    <?php esc_html_e('Payment deadline', 'ry-woocommerce-tools'); ?>
                 </th>
                 <?php $expireDate = wc_string_to_datetime($order->get_meta('_newebpay_atm_ExpireDate')); ?>
-                <?php $expireDate = $expireDate->date_i18n(wc_date_format()); ?>
-                <td class="td" style="text-align:<?=esc_attr($text_align) ?>;">
-                    <?=$expireDate ?>
+                <td class="td" style="text-align:<?php echo esc_attr($text_align); ?>;">
+                    <?php echo esc_html($expireDate->date_i18n(wc_date_format())); ?>
                 </td>
             </tr>
         </tbody>

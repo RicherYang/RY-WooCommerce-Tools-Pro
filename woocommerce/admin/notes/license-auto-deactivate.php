@@ -20,8 +20,8 @@ class RY_WTP_LicenseAutoDeactivate
     public static function get_note_with_data($deactivate_date)
     {
         $content = sprintf(
-            /* translators: Date */
-            __('License has auto deactivate at %1$s.', 'ry-woocommerce-tools-pro'),
+            /* translators: %s: Date */
+            __('License has auto deactivate at %s.', 'ry-woocommerce-tools-pro'),
             $deactivate_date
         );
 

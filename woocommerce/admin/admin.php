@@ -68,7 +68,7 @@ final class RY_WTP_WC_Admin
 
             $expire = RY_WTP_License::instance()->get_expire();
             if (!empty($expire)) {
-                $setting_idx = array_search(RY_WTP::Option_Prefix . 'license_key', array_column($settings, 'id'));
+                $setting_idx = array_search(RY_WTP::OPTION_PREFIX . 'license_key', array_column($settings, 'id'));
                 $settings[$setting_idx]['desc'] = sprintf(
                     /* translators: %s: Expiration date of pro license */
                     __('License Expiration Date %s', 'ry-woocommerce-tools-pro'),

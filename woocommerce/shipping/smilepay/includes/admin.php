@@ -38,11 +38,11 @@ final class RY_WTP_SmilePay_Shipping_Admin
         if ($current_section == 'smilepay_shipping') {
             wp_enqueue_script('ry-wtp-admin-shipping');
 
-            $setting_idx = array_search(RY_WT::Option_Prefix . 'smilepay_shipping_auto_get_no', array_column($settings, 'id'));
+            $setting_idx = array_search(RY_WT::OPTION_PREFIX . 'smilepay_shipping_auto_get_no', array_column($settings, 'id'));
             array_splice($settings, $setting_idx + 1, 0, [
                 [
                     'title' => __('Auto get with scheduler action', 'ry-woocommerce-tools-pro'),
-                    'id' => RY_WTP::Option_Prefix . 'smilepay_shipping_auto_with_scheduler',
+                    'id' => RY_WTP::OPTION_PREFIX . 'smilepay_shipping_auto_with_scheduler',
                     'type' => 'checkbox',
                     'default' => 'no',
                     'desc' => __('Get shipping payment no use scheduler action.', 'ry-woocommerce-tools-pro')
@@ -50,11 +50,11 @@ final class RY_WTP_SmilePay_Shipping_Admin
             ]);
 
             if(!$checkout_with_block) {
-                $setting_idx = array_search(RY_WT::Option_Prefix . 'smilepay_shipping_log_status_change', array_column($settings, 'id'));
+                $setting_idx = array_search(RY_WT::OPTION_PREFIX . 'smilepay_shipping_log_status_change', array_column($settings, 'id'));
                 array_splice($settings, $setting_idx, 0, [
                     [
                         'title' => __('cvs remove billing address', 'ry-woocommerce-tools-pro'),
-                        'id' => RY_WTP::Option_Prefix . 'smilepay_cvs_billing_address',
+                        'id' => RY_WTP::OPTION_PREFIX . 'smilepay_cvs_billing_address',
                         'type' => 'checkbox',
                         'default' => 'no',
                         'desc' => __('Remove billing address when shipping mode is cvs.', 'ry-woocommerce-tools-pro')

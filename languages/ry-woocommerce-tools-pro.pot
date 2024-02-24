@@ -2,35 +2,40 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: RY WooCommerce Tools Pro 3.2.0\n"
+"Project-Id-Version: RY WooCommerce Tools Pro 3.2.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ry-woocommerce-tools-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-02-16T11:19:44+08:00\n"
+"POT-Creation-Date: 2024-02-24T11:44:07+08:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.9.0\n"
+"X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: ry-woocommerce-tools-pro\n"
 
 #. Plugin Name of the plugin
+#: D:\WebServer\htdocs_80\ry-plugin.com\wp-content\plugins\ry-woocommerce-tools-pro\ry-woocommerce-tools-pro.php
 msgid "RY WooCommerce Tools Pro"
 msgstr ""
 
 #. Plugin URI of the plugin
+#: D:\WebServer\htdocs_80\ry-plugin.com\wp-content\plugins\ry-woocommerce-tools-pro\ry-woocommerce-tools-pro.php
 msgid "https://ry-plugin.com/ry-woocommerce-tools-pro/"
 msgstr ""
 
 #. Description of the plugin
+#: D:\WebServer\htdocs_80\ry-plugin.com\wp-content\plugins\ry-woocommerce-tools-pro\ry-woocommerce-tools-pro.php
 msgid "WooCommerce paymet and shipping tools"
 msgstr ""
 
 #. Author of the plugin
+#: D:\WebServer\htdocs_80\ry-plugin.com\wp-content\plugins\ry-woocommerce-tools-pro\ry-woocommerce-tools-pro.php
 msgid "Richer Yang"
 msgstr ""
 
 #. Author URI of the plugin
+#: D:\WebServer\htdocs_80\ry-plugin.com\wp-content\plugins\ry-woocommerce-tools-pro\ry-woocommerce-tools-pro.php
 msgid "https://richer.tw/"
 msgstr ""
 
@@ -144,9 +149,9 @@ msgstr ""
 msgid "After choose cvs, you need save the order to keep the change info."
 msgstr ""
 
-#. translators: Date
+#. translators: %s: Date
 #: woocommerce/admin/notes/license-auto-deactivate.php:24
-msgid "License has auto deactivate at %1$s."
+msgid "License has auto deactivate at %s."
 msgstr ""
 
 #: woocommerce/admin/notes/license-auto-deactivate.php:35

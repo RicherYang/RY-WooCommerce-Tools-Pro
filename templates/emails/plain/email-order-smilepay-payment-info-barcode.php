@@ -27,6 +27,10 @@ echo wp_kses_post(__('Barcode 1', 'ry-woocommerce-tools') . "\t " . $order->get_
 echo wp_kses_post(__('Barcode 2', 'ry-woocommerce-tools') . "\t " . $order->get_meta('_smilepay_barcode_Barcode2')) . "\n";
 echo wp_kses_post(__('Barcode 3', 'ry-woocommerce-tools') . "\t " . $order->get_meta('_smilepay_barcode_Barcode3')) . "\n";
 $expireDate = wc_string_to_datetime($order->get_meta('_smilepay_barcode_ExpireDate'));
-/* translators: %1$s: date %2$s: time */
-$expireDate = sprintf(_x('%1$s %2$s', 'Datetime', 'ry-woocommerce-tools'), $expireDate->date_i18n(wc_date_format()), $expireDate->date_i18n(wc_time_format()));
+$expireDate = sprintf(
+    /* translators: %1$s: date %2$s: time */
+    _x('%1$s %2$s', 'Datetime', 'ry-woocommerce-tools'),
+    $expireDate->date_i18n(wc_date_format()),
+    $expireDate->date_i18n(wc_time_format())
+);
 echo wp_kses_post(__('Payment deadline', 'ry-woocommerce-tools') . "\t " . $expireDate) . "\n";

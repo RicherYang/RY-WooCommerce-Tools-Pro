@@ -50,14 +50,14 @@ final class RY_WTP_WC_ECPay_Gateway
                 ],
                 [
                     'title' => __('Credit installment', 'ry-woocommerce-tools-pro'),
-                    'id' => RY_WTP::Option_Prefix . 'ecpay_credit_installment',
+                    'id' => RY_WTP::OPTION_PREFIX . 'ecpay_credit_installment',
                     'type' => 'checkbox',
                     'default' => 'no',
                     'desc' => __('Add each periods of credit installment as a payment gateway.', 'ry-woocommerce-tools-pro')
                 ],
                 [
                     'title' => __('Show payment info in email', 'ry-woocommerce-tools-pro'),
-                    'id' => RY_WTP::Option_Prefix . 'ecpay_email_payment_info',
+                    'id' => RY_WTP::OPTION_PREFIX . 'ecpay_email_payment_info',
                     'type' => 'checkbox',
                     'default' => 'yes',
                     'desc' => sprintf(

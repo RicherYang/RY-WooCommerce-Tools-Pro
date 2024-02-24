@@ -25,6 +25,10 @@ echo wp_kses_post(__('Payment details', 'ry-woocommerce-tools')) . "\n";
 
 echo wp_kses_post(__('CVS code', 'ry-woocommerce-tools') . "\t " . $order->get_meta('_ecpay_cvs_PaymentNo')) . "\n";
 $expireDate = wc_string_to_datetime($order->get_meta('_ecpay_cvs_ExpireDate'));
-/* translators: %1$s: date %2$s: time */
-$expireDate = sprintf(_x('%1$s %2$s', 'Datetime', 'ry-woocommerce-tools'), $expireDate->date_i18n(wc_date_format()), $expireDate->date_i18n(wc_time_format()));
+$expireDate = sprintf(
+    /* translators: %1$s: date %2$s: time */
+    _x('%1$s %2$s', 'Datetime', 'ry-woocommerce-tools'),
+    $expireDate->date_i18n(wc_date_format()),
+    $expireDate->date_i18n(wc_time_format())
+);
 echo wp_kses_post(__('Payment deadline', 'ry-woocommerce-tools') . "\t " . $expireDate) . "\n";

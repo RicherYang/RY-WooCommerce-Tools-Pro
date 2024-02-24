@@ -2,8 +2,8 @@
 
 final class RY_WTP
 {
-    public const Option_Prefix = 'RY_WTP_';
-    public const Min_Tools_Version = '3.2.2';
+    public const OPTION_PREFIX = 'RY_WTP_';
+    public const Min_Tools_Version = '3.2.4';
 
     protected static $_instance = null;
 
@@ -91,38 +91,38 @@ final class RY_WTP
 
     public static function get_option($option, $default = false)
     {
-        return get_option(self::Option_Prefix . $option, $default);
+        return get_option(self::OPTION_PREFIX . $option, $default);
     }
 
     public static function update_option($option, $value, $autoload = null): bool
     {
-        return update_option(self::Option_Prefix . $option, $value, $autoload);
+        return update_option(self::OPTION_PREFIX . $option, $value, $autoload);
     }
 
     public static function delete_option($option): bool
     {
-        return delete_option(self::Option_Prefix . $option);
+        return delete_option(self::OPTION_PREFIX . $option);
     }
 
     public static function get_transient($transient)
     {
-        return get_transient(self::Option_Prefix . $transient);
+        return get_transient(self::OPTION_PREFIX . $transient);
     }
 
     public static function set_transient($transient, $value, $expiration = 0): bool
     {
-        return set_transient(self::Option_Prefix . $transient, $value, $expiration);
+        return set_transient(self::OPTION_PREFIX . $transient, $value, $expiration);
     }
 
     public static function delete_transient($transient): bool
     {
-        return delete_transient(self::Option_Prefix . $transient);
+        return delete_transient(self::OPTION_PREFIX . $transient);
     }
 
     public static function plugin_activation() {}
 
     public static function plugin_deactivation()
     {
-        wp_unschedule_hook(self::Option_Prefix . 'check_expire');
+        wp_unschedule_hook(self::OPTION_PREFIX . 'check_expire');
     }
 }

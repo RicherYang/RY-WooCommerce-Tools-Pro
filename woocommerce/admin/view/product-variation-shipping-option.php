@@ -22,6 +22,5 @@
                 '2' => _x('Refrigerated', 'Transport temp', 'ry-woocommerce-tools'),
                 '3' => _x('Frozen', 'Transport temp', 'ry-woocommerce-tools'),
             ]
-        ]);
-        ?>
+        ]); ?>
     </p>

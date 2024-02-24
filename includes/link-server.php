@@ -75,7 +75,12 @@ final class RY_WTP_LinkServer
 
     protected function get_user_agent()
     {
-        return sprintf('RY_WTP %s (WordPress/%s WooCommerce/%s)', RY_WTP_VERSION, get_bloginfo('version'), WC_VERSION);
+        return sprintf(
+            'RY_WTP %s (WordPress/%s WooCommerce/%s)',
+            RY_WTP_VERSION,
+            get_bloginfo('version'),
+            WC_VERSION
+        );
     }
 
     protected function decode_response($response)

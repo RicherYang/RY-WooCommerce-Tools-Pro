@@ -4,7 +4,7 @@ final class RY_WTP_Cron
 {
     public static function add_action()
     {
-        add_action(RY_WTP::Option_Prefix . 'check_expire', [__CLASS__, 'check_expire']);
+        add_action(RY_WTP::OPTION_PREFIX . 'check_expire', [__CLASS__, 'check_expire']);
     }
 
     public static function check_expire()
