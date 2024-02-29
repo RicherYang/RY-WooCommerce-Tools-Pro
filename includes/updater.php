@@ -16,35 +16,25 @@ final class RY_WTP_Updater
 
     protected function do_init(): void
     {
-        add_filter('pre_set_site_transient_update_plugins', [$this, 'transient_update_plugins']);
+        add_filter('update_plugins_ry-plugin.com', [$this, 'update_plugin'], 10, 4);
 
         add_filter('plugins_api', [$this, 'modify_plugin_details'], 10, 3);
     }
 
-    public function transient_update_plugins($transient)
+    public function update_plugin($update, $plugin_data, $plugin_file, $locales)
     {
-        $json = RY_WTP_LinkServer::instance()->check_version();
-
-        if (is_array($json) && isset($json['new_version'])) {
-            if (version_compare(RY_WTP_VERSION, $json['new_version'], '<')) {
-                unset($json['version']);
-                unset($json['url']);
-                $json['slug'] = 'ry-woocommerce-tools-pro';
-                $json['plugin'] = RY_WTP_PLUGIN_BASENAME;
-
-                if (empty($transient)) {
-                    $transient = new stdClass();
-                }
-                $transient->last_checked = time();
-                $transient->response[RY_WTP_PLUGIN_BASENAME] = (object) $json;
-            } else {
-                if (isset($transient->response)) {
-                    unset($transient->response[RY_WTP_PLUGIN_BASENAME]);
-                }
-            }
+        if('RY Tools (Pro) for WooCommerce' !== $plugin_data['Name']) {
+            return $update;
         }
 
-        return $transient;
+        $update = RY_WTP_LinkServer::instance()->check_version();
+        if(is_array($update)) {
+            $update['id'] = 'https://ry-plugin.com/ry-woocommerce-tools-pro';
+            $update['url'] = 'https://ry-plugin.com/ry-woocommerce-tools-pro';
+            $update['slug'] = 'ry-woocommerce-tools-pro';
+        }
+
+        return $update;
     }
 
     public function modify_plugin_details($result, $action, $args)

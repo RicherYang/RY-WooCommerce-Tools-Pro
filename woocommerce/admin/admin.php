@@ -39,7 +39,7 @@ final class RY_WTP_WC_Admin
         }
 
         if (!RY_WTP_License::instance()->is_activated()) {
-            echo '<div class="notice notice-info"><p><strong>RY WooCommerce Tools Pro</strong> ' . __('Your license is not active!', 'ry-woocommerce-tools-pro') . '</p></div>';
+            echo '<div class="notice notice-info"><p><strong>RY Tools (Pro) for WooCommerce</strong> ' . esc_html__('Your license is not active!', 'ry-woocommerce-tools-pro') . '</p></div>';
         }
     }
 
@@ -111,12 +111,12 @@ final class RY_WTP_WC_Admin
             $json = RY_WTP_LinkServer::instance()->activate_key();
 
             if (false === $json) {
-                WC_Admin_Settings::add_error('RY WooCommerce Tools Pro: ' . __('Connect license server failed!', 'ry-woocommerce-tools-pro'));
+                WC_Admin_Settings::add_error('RY Tools (Pro) for WooCommerce: ' . __('Connect license server failed!', 'ry-woocommerce-tools-pro'));
             } else {
                 if (is_array($json)) {
                     if (empty($json['data'])) {
                         RY_WTP_License::instance()->delete_license();
-                        WC_Admin_Settings::add_error('RY WooCommerce Tools Pro: '
+                        WC_Admin_Settings::add_error('RY Tools (Pro) for WooCommerce: '
                             . sprintf(
                                 /* translators: %s: Error message */
                                 __('Verification error: %s', 'ry-woocommerce-tools-pro'),
@@ -134,7 +134,7 @@ final class RY_WTP_WC_Admin
                         return true;
                     }
                 } else {
-                    WC_Admin_Settings::add_error('RY WooCommerce Tools Pro: '
+                    WC_Admin_Settings::add_error('RY Tools (Pro) for WooCommerce: '
                     . __('Connect license server failed!', 'ry-woocommerce-tools-pro'));
                 }
             }

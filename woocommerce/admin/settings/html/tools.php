@@ -1,5 +1,5 @@
 <h2>
-    RY WooCommerce Tools Pro <?php esc_html_e('Tools', 'ry-woocommerce-tools-pro') ?>
+    RY Tools (Pro) for WooCommerce <?php esc_html_e('Tools', 'ry-woocommerce-tools-pro') ?>
 </h2>
 
 <p>配合 <a href="https://tw.wordpress.org/plugins/ry-wc-city-select/" target="_black">RY WC City Select</a>

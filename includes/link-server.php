@@ -98,6 +98,7 @@ final class RY_WTP_LinkServer
         $data = @json_decode(wp_remote_retrieve_body($response), true);
         if (empty($data)) {
             RY_WTP_License::instance()->log('POST result parse failed', WC_Log_Levels::WARNING, ['data' => wp_remote_retrieve_body($response)]);
+            return false;
         }
 
         return $data;

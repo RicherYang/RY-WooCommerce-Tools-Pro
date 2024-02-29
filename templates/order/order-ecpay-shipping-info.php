@@ -2,7 +2,7 @@
 /**
  * This template can be overridden by copying it to yourtheme/woocommerce/order/order-ecpay-shipping-info.php
  *
- * HOWEVER, on occasion RY WooCommerce Tools will need to update template files and you
+ * HOWEVER, on occasion RY Tools (Pro) for WooCommerce will need to update template files and you
  * (the theme developer) will need to copy the new files to your theme to
  * maintain compatibility. We try to do this as little as possible, but it does
  * happen. When this occurs the version of the template file will be bumped and
@@ -32,9 +32,9 @@ if (count($shipping_info_list)) { ?>
         <tr>
             <td class="woocommerce-table__shipping-no shipping-no">
                 <?php if ($shipping_info['LogisticsType'] == 'CVS') {
-                    echo empty($shipping_info['PaymentNo']) ? $shipping_info['ID'] : $shipping_info['PaymentNo'];
+                    echo esc_html(empty($shipping_info['PaymentNo']) ? $shipping_info['ID'] : $shipping_info['PaymentNo']);
                 } elseif ($shipping_info['LogisticsType'] == 'HOME') {
-                    echo $shipping_info['BookingNote'];
+                    echo esc_html($shipping_info['BookingNote']);
                 } ?>
             </td>
             <td class="woocommerce-table__shipping-status shipping-status">

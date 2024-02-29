@@ -2,7 +2,7 @@
 
 return [
     [
-        'title' => 'RY WooCommerce Tools Pro',
+        'title' => 'RY Tools (Pro) for WooCommerce',
         'id' => 'pro_options',
         'type' => 'title'
     ],

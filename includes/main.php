@@ -3,7 +3,7 @@
 final class RY_WTP
 {
     public const OPTION_PREFIX = 'RY_WTP_';
-    public const Min_Tools_Version = '3.2.4';
+    public const Min_Tools_Version = '3.3.0';
 
     protected static $_instance = null;
 
@@ -29,7 +29,7 @@ final class RY_WTP
             RY_WTP_Admin::instance();
         }
 
-        add_action('wp_woo_tools_loaded', [$this, 'do_woo_init']);
+        add_action('ry_woo_tools_loaded', [$this, 'do_woo_init']);
     }
 
     public function do_woo_init(): void
@@ -42,7 +42,6 @@ final class RY_WTP
         include_once RY_WTP_PLUGIN_DIR . 'includes/license.php';
         include_once RY_WTP_PLUGIN_DIR . 'includes/link-server.php';
         include_once RY_WTP_PLUGIN_DIR . 'includes/updater.php';
-
         RY_WTP_Updater::instance();
 
         if (is_admin()) {
