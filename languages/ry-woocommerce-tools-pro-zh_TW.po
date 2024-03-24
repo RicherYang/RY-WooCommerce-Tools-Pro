@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: RY WooCommerce Tools Pro\n"
+"Project-Id-Version: RY Tools (Pro) for WooCommerce\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: Richer Yang\n"
 "Language-Team: \n"
