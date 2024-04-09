@@ -1,9 +1,10 @@
 {
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
     "name": "ry-woocommerce-tools/ry-ecpay-cvs-select-block",
     "version": "3.3.1",
     "title": "ECPay select cvs store",
     "description": "",
-    "category": "ry-woo-tools",
     "parent": [
         "woocommerce/checkout-shipping-methods-block"
     ],
@@ -23,7 +24,5 @@
             }
         }
     },
-    "textdomain": "ry-woocommerce-tools-pro",
-    "$schema": "https://schemas.wp.org/trunk/block.json",
-    "apiVersion": 2
+    "textdomain": "ry-woocommerce-tools-pro"
 }
