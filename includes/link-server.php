@@ -18,8 +18,10 @@ final class RY_WTP_LinkServer
 
     public function check_version()
     {
+        wc_set_time_limit(30);
+
         $response = wp_remote_get($this->api_url . 'products/' . $this->plugin_type, [
-            'timeout' => 3,
+            'timeout' => 15,
             'httpversion' => '1.1',
             'user-agent' => $this->get_user_agent()
         ]);
@@ -29,8 +31,10 @@ final class RY_WTP_LinkServer
 
     public function get_info()
     {
+        wc_set_time_limit(30);
+
         $response = wp_remote_get($this->api_url . 'products/info/' . $this->plugin_type, [
-            'timeout' => 3,
+            'timeout' => 15,
             'httpversion' => '1.1',
             'user-agent' => $this->get_user_agent()
         ]);
@@ -40,8 +44,10 @@ final class RY_WTP_LinkServer
 
     public function activate_key()
     {
+        wc_set_time_limit(30);
+        
         $response = wp_remote_post($this->api_url . 'license/activate/' . $this->plugin_type, [
-            'timeout' => 10,
+            'timeout' => 15,
             'httpversion' => '1.1',
             'user-agent' => $this->get_user_agent(),
             'headers' => [
@@ -58,8 +64,10 @@ final class RY_WTP_LinkServer
 
     public function expire_data()
     {
+        wc_set_time_limit(30);
+
         $response = wp_remote_post($this->api_url . 'license/expire/' . $this->plugin_type, [
-            'timeout' => 5,
+            'timeout' => 15,
             'httpversion' => '1.1',
             'user-agent' => $this->get_user_agent(),
             'headers' => [
