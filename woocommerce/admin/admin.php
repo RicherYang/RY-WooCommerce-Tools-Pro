@@ -21,8 +21,6 @@ final class RY_WTP_WC_Admin
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/admin/order.php';
         RY_WTP_WC_Admin_Order::instance();
 
-        add_action('admin_enqueue_scripts', [$this, 'add_scripts']);
-
         add_filter('woocommerce_get_sections_rytools', [$this, 'add_sections'], 12);
         add_filter('woocommerce_get_settings_rytools', [$this, 'add_setting'], 11, 2);
         add_action('ry_setting_section_ouput_tools', [$this, 'output_tools']);
@@ -41,11 +39,6 @@ final class RY_WTP_WC_Admin
         if (!RY_WTP_License::instance()->is_activated()) {
             echo '<div class="notice notice-info"><p><strong>RY Tools (Pro) for WooCommerce</strong> ' . esc_html__('Your license is not active!', 'ry-woocommerce-tools-pro') . '</p></div>';
         }
-    }
-
-    public function add_scripts(): void
-    {
-        wp_register_script('ry-wtp-admin-shipping', RY_WTP_PLUGIN_URL . 'assets/js/admin/ry_shipping.js', ['jquery'], RY_WTP_VERSION, true);
     }
 
     public function add_sections($sections)
@@ -72,7 +65,7 @@ final class RY_WTP_WC_Admin
                 $settings[$setting_idx]['desc'] = sprintf(
                     /* translators: %s: Expiration date of pro license */
                     __('License Expiration Date %s', 'ry-woocommerce-tools-pro'),
-                    date_i18n(get_option('date_format'), $expire)
+                    date_i18n(get_option('date_format'), $expire),
                 );
             }
         }
@@ -120,7 +113,7 @@ final class RY_WTP_WC_Admin
                             . sprintf(
                                 /* translators: %s: Error message */
                                 __('Verification error: %s', 'ry-woocommerce-tools-pro'),
-                                __($json['error'], 'ry-woocommerce-tools-pro')
+                                __($json['error'], 'ry-woocommerce-tools-pro'),
                             ));
 
                         /* Error message list. For make .pot */

@@ -39,9 +39,6 @@ final class RY_WTP_ECPay_Shipping
 
         add_filter('woocommerce_checkout_fields', [$this, 'hide_billing_info'], 9999);
 
-        add_filter('woocommerce_update_order_review_fragments', [$this, 'shipping_choose_cvs_info'], 11);
-
-        add_filter('ry_ecpay_shipping_at_cvs_prev_status', [$this, 'add_transporting']);
         add_action('ry_ecpay_shipping_response_status_2030', [$this, 'shipping_transporting'], 10, 2);
         add_action('ry_ecpay_shipping_response_status_2068', [$this, 'shipping_transporting'], 10, 2);
         add_action('ry_ecpay_shipping_response_status_3006', [$this, 'shipping_transporting'], 10, 2);
@@ -66,26 +63,15 @@ final class RY_WTP_ECPay_Shipping
 
     public function hide_billing_info($fields)
     {
-        if (is_checkout()) {
-            $chosen_method = isset(WC()->session->chosen_shipping_methods) ? WC()->session->chosen_shipping_methods : [];
-            $is_support = false;
-            if (count($chosen_method)) {
-                foreach (RY_WT_WC_ECPay_Shipping::$support_methods as $method => $method_class) {
-                    if (0 === strpos($chosen_method[0], $method)) {
-                        $is_support = true;
-                    }
-                }
-            }
+        $cvs_hide_fields = ['billing_postcode', 'billing_state', 'billing_city', 'billing_address_1', 'billing_address_2'];
 
-            if ($is_support) {
-                if ('yes' == RY_WTP::get_option('ecpay_cvs_billing_address', 'no')) {
-                    if (strpos($chosen_method[0], '_cvs')) {
-                        $hide_fields = ['billing_country', 'billing_address_1', 'billing_address_2', 'billing_city', 'billing_state', 'billing_postcode'];
-                        foreach ($hide_fields as $field_name) {
-                            if (isset($fields['billing'][$field_name])) {
-                                $fields['billing'][$field_name]['class'][] = 'ry-hide';
-                            }
-                        }
+        if (is_checkout()) {
+            if ('yes' == RY_WTP::get_option('ecpay_cvs_billing_address', 'no')) {
+                foreach ($cvs_hide_fields as $key) {
+                    if(isset($fields['billing'][$key]['class'])) {
+                        $fields['billing'][$key]['class'][] = 'ry-cvs-hide';
+                    } else {
+                        $fields['billing'][$key]['class'] = ['ry-cvs-hide'];
                     }
                 }
             }
@@ -117,24 +103,6 @@ final class RY_WTP_ECPay_Shipping
         }
 
         return $fields;
-    }
-
-    public function shipping_choose_cvs_info($fragments)
-    {
-        if (isset($fragments['ecpay_shipping_info'])) {
-            if ('yes' == RY_WTP::get_option('ecpay_cvs_billing_address', 'no')) {
-                $chosen_method = isset(WC()->session->chosen_shipping_methods) ? WC()->session->chosen_shipping_methods : [];
-                $fragments['hide_billing_address'] = strpos($chosen_method[0], '_cvs');
-            }
-        }
-
-        return $fragments;
-    }
-
-    public function add_transporting($status)
-    {
-        $status[] = 'ry-transporting';
-        return array_unique($status);
     }
 
     public function shipping_transporting($ipn_info, $order)

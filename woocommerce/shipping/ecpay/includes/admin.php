@@ -47,8 +47,8 @@ final class RY_WTP_ECPay_Shipping_Admin
                     'id' => RY_WTP::OPTION_PREFIX . 'ecpay_shipping_auto_with_scheduler',
                     'type' => 'checkbox',
                     'default' => 'no',
-                    'desc' => __('Get shipping payment no use scheduler action.', 'ry-woocommerce-tools-pro')
-                ]
+                    'desc' => __('Get shipping payment no use scheduler action.', 'ry-woocommerce-tools-pro'),
+                ],
             ]);
 
             if(!$checkout_with_block) {
@@ -60,8 +60,8 @@ final class RY_WTP_ECPay_Shipping_Admin
                         'type' => 'checkbox',
                         'default' => 'no',
                         'desc' => __('Remove billing address when shipping mode is cvs.', 'ry-woocommerce-tools-pro')
-                            . '<p class="description" style="margin-bottom:2px">' . __('The billing address still will show in order details.', 'ry-woocommerce-tools-pro') . '</p>'
-                    ]
+                            . '<p class="description" style="margin-bottom:2px">' . __('The billing address still will show in order details.', 'ry-woocommerce-tools-pro') . '</p>',
+                    ],
                 ]);
             }
 
@@ -72,8 +72,8 @@ final class RY_WTP_ECPay_Shipping_Admin
                     'id' => RY_WT::OPTION_PREFIX . 'ecpay_shipping_cleanup_receiver_name',
                     'type' => 'checkbox',
                     'default' => 'no',
-                    'desc' => __('Clean up receiver name to comply with ECPay request.', 'ry-woocommerce-tools-pro')
-                ]
+                    'desc' => __('Clean up receiver name to comply with ECPay request.', 'ry-woocommerce-tools-pro'),
+                ],
             ]);
 
             $setting_idx = array_search(RY_WT::OPTION_PREFIX . 'ecpay_shipping_cvs_type', array_column($settings, 'id'));
@@ -113,9 +113,9 @@ final class RY_WTP_ECPay_Shipping_Admin
             $redirect_to = add_query_arg(
                 [
                     'orderid' => implode(',', $ids),
-                    'type' => substr($action, 15)
+                    'type' => substr($action, 15),
                 ],
-                admin_url('admin-post.php?action=ry-print-ecpay-shipping')
+                admin_url('admin-post.php?action=ry-print-ecpay-shipping'),
             );
             wp_redirect($redirect_to);
             exit();
@@ -137,7 +137,7 @@ final class RY_WTP_ECPay_Shipping_Admin
                         'CVSStoreID' => wc_clean(wp_unslash($_POST['CVSStoreID'])),
                         'CVSStoreName' => wc_clean(wp_unslash($_POST['CVSStoreName'])),
                         'CVSAddress' => wc_clean(wp_unslash($_POST['CVSAddress'])),
-                        'CVSTelephone' => wc_clean(wp_unslash($_POST['CVSTelephone']))
+                        'CVSTelephone' => wc_clean(wp_unslash($_POST['CVSTelephone'])),
                     ];
                 }
 
@@ -150,7 +150,7 @@ final class RY_WTP_ECPay_Shipping_Admin
                         'LogisticsSubType' => $method_class::Shipping_Sub_Type . (('C2C' === $cvs_type) ? 'C2C' : ''),
                         'IsCollection' => 'Y',
                         'ServerReplyURL' => esc_url(WC()->api_request_url('ry_ecpay_map_callback')),
-                        'ExtraData' => 'ry' . $order->get_id()
+                        'ExtraData' => 'ry' . $order->get_id(),
                     ],
                     'newStore' => $choosed_cvs,
                 ]);
@@ -178,8 +178,8 @@ final class RY_WTP_ECPay_Shipping_Admin
                     + [
                         'ry_ecpay_shipping_id' => [
                             'label' => __('ECPay shipping ID', 'ry-woocommerce-tools'),
-                            'value' => implode(', ', array_column($shipping_list, 'ID'))
-                        ]
+                            'value' => implode(', ', array_column($shipping_list, 'ID')),
+                        ],
                     ]
                     + array_slice($fields, $field_idx);
             }

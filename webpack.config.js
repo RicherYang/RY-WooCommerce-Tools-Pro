@@ -1,18 +1,20 @@
-const path = require('path');
-const glob = require('glob');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require('path', true);
+const glob = require('glob', true);
+const CopyWebpackPlugin = require('copy-webpack-plugin', true);
+const { CleanWebpackPlugin } = require('clean-webpack-plugin', true);
 
-const { fromProjectRoot } = require('@wordpress/scripts/utils/file');
-const defaultConfig = require('@wordpress/scripts/config/webpack.config');
-const WooCommerceDependencyExtractionWebpackPlugin = require('@woocommerce/dependency-extraction-webpack-plugin');
+const defaultConfig = require('@wordpress/scripts/config/webpack.config', true);
+const WooCommerceDependencyExtractionWebpackPlugin = require('@woocommerce/dependency-extraction-webpack-plugin', true);
+const { fromProjectRoot } = require('@wordpress/scripts/utils/file', true);
 
-const srcPath = fromProjectRoot('assets-src/blocks-js/');
+const srcPath = fromProjectRoot('assets-src');
+const distPath = fromProjectRoot('assets');
 
 function getWebpackEntryPoints() {
     let entryPoints = {};
 
     glob.sync(
-        path.join(srcPath, '**', '[^_]*.{js,tsx}')
+        path.join(srcPath, 'blocks', '**', '[^_]*.{js,tsx}')
     ).forEach((file) => {
         const relative = path.relative(srcPath, file);
         const entryName = relative.substring(0, relative.lastIndexOf('.')) || relative;
@@ -20,17 +22,21 @@ function getWebpackEntryPoints() {
         entryPoints[entryName] = '/' + file;
     });
 
+    entryPoints['admin/ry-shipping'] = path.join(srcPath, 'admin/ry-shipping.js');
+
     return entryPoints;
 }
 
 function getCopyPatterns() {
     let patterns = [];
-    patterns.push({ from: 'assets-src/js', to: './js' });
 
     glob.sync(
-        path.join(srcPath, '**', 'block.json')
+        path.join(srcPath, 'blocks', '**', 'block.json')
     ).forEach((file) => {
-        patterns.push({ from: file, to: path.join('js/blocks', path.relative(srcPath, file)) });
+        patterns.push({
+            from: file,
+            to: path.join('.', path.relative(srcPath, file))
+        });
     });
 
     return patterns;
@@ -40,15 +46,17 @@ module.exports = {
     ...defaultConfig,
     entry: getWebpackEntryPoints(),
     output: {
-        path: fromProjectRoot('assets'),
-        filename: 'js/blocks/[name].js',
+        ...defaultConfig.output,
+        path: distPath,
+        filename: '[name].js',
     },
     plugins: [
-        ...defaultConfig.plugins.filter(
-            function (plugin) {
-                return plugin.constructor.name !== 'DependencyExtractionWebpackPlugin';
-            }
-        ),
+        ...defaultConfig.plugins.filter((plugin) => plugin.constructor.name !== 'CleanWebpackPlugin' && plugin.constructor.name !== 'DependencyExtractionWebpackPlugin'),
+        new CleanWebpackPlugin({
+            //cleanOnceBeforeBuildPatterns: [],
+            cleanAfterEveryBuildPatterns: ['!fonts/**', '!images/**'],
+            cleanStaleWebpackAssets: false,
+        }),
         new WooCommerceDependencyExtractionWebpackPlugin(),
         new CopyWebpackPlugin({
             patterns: getCopyPatterns()

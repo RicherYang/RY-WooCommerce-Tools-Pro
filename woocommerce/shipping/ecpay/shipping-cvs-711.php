@@ -16,13 +16,14 @@ class RY_ECPay_Shipping_CVS_711_Pro extends RY_ECPay_Shipping_CVS_711
                     'min' => 0,
                     'step' => 1,
                     'description' => __('The total cost is cost plus off island cost.', 'ry-woocommerce-tools-pro'),
-                    'desc_tip' => true
-                ]
+                    'desc_tip' => true,
+                ],
             ]
             + array_slice($this->instance_form_fields, $field_idx);
 
         list($MerchantID, $HashKey, $HashIV, $cvs_type) = RY_WT_WC_ECPay_Shipping::instance()->get_api_info();
         if('B2C' === $cvs_type) {
+            $field_idx = array_search('cost', array_keys($this->instance_form_fields)) + 1;
             $this->instance_form_fields = array_slice($this->instance_form_fields, 0, $field_idx)
             + [
                 'cost_cool' => [
@@ -32,8 +33,8 @@ class RY_ECPay_Shipping_CVS_711_Pro extends RY_ECPay_Shipping_CVS_711
                     'min' => 0,
                     'step' => 1,
                     'description' => __('The total cost is cost plus cool cost.', 'ry-woocommerce-tools-pro'),
-                    'desc_tip' => true
-                ]
+                    'desc_tip' => true,
+                ],
             ]
             + array_slice($this->instance_form_fields, $field_idx);
         }

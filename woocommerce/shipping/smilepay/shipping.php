@@ -28,7 +28,6 @@ final class RY_WTP_SmilePay_Shipping
 
         add_filter('woocommerce_shipping_methods', [$this, 'use_pro_method'], 11);
         add_filter('woocommerce_checkout_fields', [$this, 'hide_billing_info'], 9999);
-        add_filter('woocommerce_update_order_review_fragments', [$this, 'shipping_choose_cvs_info'], 11);
 
         if ('yes' === RY_WT::get_option('smilepay_shipping_auto_get_no', 'yes')) {
             if ('yes' === RY_WTP::get_option('smilepay_shipping_auto_with_scheduler', 'no')) {
@@ -63,7 +62,7 @@ final class RY_WTP_SmilePay_Shipping
     public function hide_billing_info($fields)
     {
         if (is_checkout()) {
-            $chosen_method = isset(WC()->session->chosen_shipping_methods) ? WC()->session->chosen_shipping_methods : [];
+            $chosen_method = WC()->session->get('chosen_shipping_methods', []);
             $is_support = false;
             if (count($chosen_method)) {
                 foreach (RY_WT_WC_SmilePay_Shipping::$support_methods as $method => $method_class) {
@@ -113,18 +112,6 @@ final class RY_WTP_SmilePay_Shipping
         }
 
         return $fields;
-    }
-
-    public function shipping_choose_cvs_info($fragments)
-    {
-        if (isset($fragments['smilepay_shipping_info'])) {
-            if ('yes' == RY_WTP::get_option('smilepay_cvs_billing_address', 'no')) {
-                $chosen_method = isset(WC()->session->chosen_shipping_methods) ? WC()->session->chosen_shipping_methods : [];
-                $fragments['hide_billing_address'] = strpos($chosen_method[0], '_cvs');
-            }
-        }
-
-        return $fragments;
     }
 
     public function get_code($order_ID, $order)

@@ -22,9 +22,9 @@ final class RY_ECPay_Gateway_Credit_Installment_3_Blocks_Support extends Abstrac
 
     public function get_payment_method_script_handles()
     {
-        $script_asset = include RY_WTP_PLUGIN_DIR . 'assets/js/blocks/gateways/ecpay/credit-installment-3.asset.php';
+        $script_asset = include RY_WTP_PLUGIN_DIR . 'assets/blocks/gateways/ecpay/credit-installment-3.asset.php';
 
-        wp_register_script('ry-ecpay-credit-installment-3-block', RY_WTP_PLUGIN_URL . 'assets/js/blocks/gateways/ecpay/credit-installment-3.js', $script_asset['dependencies'], $script_asset['version'], true);
+        wp_register_script('ry-ecpay-credit-installment-3-block', RY_WTP_PLUGIN_URL . 'assets/blocks/gateways/ecpay/credit-installment-3.js', $script_asset['dependencies'], $script_asset['version'], true);
         wp_set_script_translations('ry-ecpay-credit-installment-3-block', 'ry-woocommerce-tools-pro', RY_WTP_PLUGIN_LANGUAGES_DIR);
 
         return ['ry-ecpay-credit-installment-3-block'];
@@ -40,8 +40,8 @@ final class RY_ECPay_Gateway_Credit_Installment_3_Blocks_Support extends Abstrac
             'icons' => [
                 'id' => $this->name,
                 'src' => $this->gateway->get_icon_url(),
-                'alt' => __('ECPay', 'ry-woocommerce-tools-pro')
-            ]
+                'alt' => __('ECPay', 'ry-woocommerce-tools-pro'),
+            ],
         ];
     }
 }

@@ -27,8 +27,6 @@ final class RY_WTP_NewebPay_Shipping
         add_filter('woocommerce_shipping_methods', [$this, 'use_pro_method'], 11);
         add_filter('woocommerce_checkout_fields', [$this, 'hide_billing_info'], 9999);
 
-        add_filter('woocommerce_update_order_review_fragments', [$this, 'shipping_choose_cvs_info'], 11);
-
         if (is_admin()) {
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/newebpay/includes/admin.php';
             RY_WTP_NewebPay_Shipping_Admin::instance();
@@ -49,7 +47,7 @@ final class RY_WTP_NewebPay_Shipping
     public function hide_billing_info($fields)
     {
         if (is_checkout()) {
-            $chosen_method = isset(WC()->session->chosen_shipping_methods) ? WC()->session->chosen_shipping_methods : [];
+            $chosen_method = WC()->session->get('chosen_shipping_methods', []);
             $is_support = false;
             if (count($chosen_method)) {
                 foreach (RY_WT_WC_NewebPay_Shipping::$support_methods as $method => $method_class) {
@@ -99,18 +97,6 @@ final class RY_WTP_NewebPay_Shipping
         }
 
         return $fields;
-    }
-
-    public function shipping_choose_cvs_info($fragments)
-    {
-        if (isset($fragments['newebpay_shipping_info'])) {
-            if (RY_WTP::get_option('newebpay_cvs_billing_address', 'no') == 'yes') {
-                $chosen_method = isset(WC()->session->chosen_shipping_methods) ? WC()->session->chosen_shipping_methods : [];
-                $fragments['hide_billing_address'] = strpos($chosen_method[0], '_cvs');
-            }
-        }
-
-        return $fragments;
     }
 
     public function shipping_choose_cvs()

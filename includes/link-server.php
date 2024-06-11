@@ -23,7 +23,7 @@ final class RY_WTP_LinkServer
         $response = wp_remote_get($this->api_url . 'products/' . $this->plugin_type, [
             'timeout' => 15,
             'httpversion' => '1.1',
-            'user-agent' => $this->get_user_agent()
+            'user-agent' => $this->get_user_agent(),
         ]);
 
         return $this->decode_response($response);
@@ -36,7 +36,7 @@ final class RY_WTP_LinkServer
         $response = wp_remote_get($this->api_url . 'products/info/' . $this->plugin_type, [
             'timeout' => 15,
             'httpversion' => '1.1',
-            'user-agent' => $this->get_user_agent()
+            'user-agent' => $this->get_user_agent(),
         ]);
 
         return $this->decode_response($response);
@@ -45,7 +45,7 @@ final class RY_WTP_LinkServer
     public function activate_key()
     {
         wc_set_time_limit(30);
-        
+
         $response = wp_remote_post($this->api_url . 'license/activate/' . $this->plugin_type, [
             'timeout' => 15,
             'httpversion' => '1.1',
@@ -55,8 +55,8 @@ final class RY_WTP_LinkServer
             ],
             'body' => wp_json_encode([
                 'license_key' => RY_WTP_License::instance()->get_license_key(),
-                'domain' => get_option('siteurl')
-            ])
+                'domain' => get_option('siteurl'),
+            ]),
         ]);
 
         return $this->decode_response($response);
@@ -74,8 +74,8 @@ final class RY_WTP_LinkServer
                 'Content-Type' => 'application/json;charset=' . get_bloginfo('charset'),
             ],
             'body' => wp_json_encode([
-                'domain' => get_option('siteurl')
-            ])
+                'domain' => get_option('siteurl'),
+            ]),
         ]);
 
         return $this->decode_response($response);
@@ -87,7 +87,7 @@ final class RY_WTP_LinkServer
             'RY_WTP %s (WordPress/%s WooCommerce/%s)',
             RY_WTP_VERSION,
             get_bloginfo('version'),
-            WC_VERSION
+            WC_VERSION,
         );
     }
 

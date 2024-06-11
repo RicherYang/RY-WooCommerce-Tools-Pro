@@ -4,7 +4,7 @@ final class RY_WTP_License extends RY_WT_WC_Model
 {
     protected static $_instance = null;
 
-    protected $log_source = 'ry_plguin_license';
+    protected $model_type = 'plguin_license';
 
     private $activated = false;
 

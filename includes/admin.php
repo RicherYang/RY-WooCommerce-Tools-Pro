@@ -21,12 +21,12 @@ final class RY_WTP_Admin
 
     public function need_ry_woocommerce_tools(): void
     {
-        if (!defined('RY_WT_VERSION') || version_compare(RY_WT_VERSION, RY_WTP::Min_Tools_Version, '<')) {
+        if (!defined('RY_WT_VERSION') || version_compare(RY_WT_VERSION, RY_WTP::MIN_TOOLS_VERSION, '<')) {
             $message = sprintf(
                 /* translators: %s: Name of this plugin %2$s: min require version */
                 __('<strong>%1$s</strong> is inactive. It require RY Tools for WooCommerce %2$s or newer.', 'ry-woocommerce-tools-pro'),
                 'RY Tools (Pro) for WooCommerce',
-                RY_WTP::Min_Tools_Version
+                RY_WTP::MIN_TOOLS_VERSION,
             );
             printf('<div class="error"><p>%s</p></div>', wp_kses($message, ['strong' => []]));
         }

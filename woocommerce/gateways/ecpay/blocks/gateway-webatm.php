@@ -22,9 +22,9 @@ final class RY_ECPay_Gateway_Webatm_Blocks_Support extends AbstractPaymentMethod
 
     public function get_payment_method_script_handles()
     {
-        $script_asset = include RY_WTP_PLUGIN_DIR . 'assets/js/blocks/gateways/ecpay/webatm.asset.php';
+        $script_asset = include RY_WTP_PLUGIN_DIR . 'assets/blocks/gateways/ecpay/webatm.asset.php';
 
-        wp_register_script('ry-ecpay-webatm-block', RY_WTP_PLUGIN_URL . 'assets/js/blocks/gateways/ecpay/webatm.js', $script_asset['dependencies'], $script_asset['version'], true);
+        wp_register_script('ry-ecpay-webatm-block', RY_WTP_PLUGIN_URL . 'assets/blocks/gateways/ecpay/webatm.js', $script_asset['dependencies'], $script_asset['version'], true);
         wp_set_script_translations('ry-ecpay-webatm-block', 'ry-woocommerce-tools-pro', RY_WTP_PLUGIN_LANGUAGES_DIR);
 
         return ['ry-ecpay-webatm-block'];
@@ -40,8 +40,8 @@ final class RY_ECPay_Gateway_Webatm_Blocks_Support extends AbstractPaymentMethod
             'icons' => [
                 'id' => $this->name,
                 'src' => $this->gateway->get_icon_url(),
-                'alt' => __('ECPay', 'ry-woocommerce-tools-pro')
-            ]
+                'alt' => __('ECPay', 'ry-woocommerce-tools-pro'),
+            ],
         ];
     }
 }

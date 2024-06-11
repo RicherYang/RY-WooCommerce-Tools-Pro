@@ -22,9 +22,9 @@ final class RY_NewebPay_Gateway_Credit_Blocks_Support extends AbstractPaymentMet
 
     public function get_payment_method_script_handles()
     {
-        $script_asset = include RY_WTP_PLUGIN_DIR . 'assets/js/blocks/gateways/newebpay/credit.asset.php';
+        $script_asset = include RY_WTP_PLUGIN_DIR . 'assets/blocks/gateways/newebpay/credit.asset.php';
 
-        wp_register_script('ry-newebpay-credit-block', RY_WTP_PLUGIN_URL . 'assets/js/blocks/gateways/newebpay/credit.js', $script_asset['dependencies'], $script_asset['version'], true);
+        wp_register_script('ry-newebpay-credit-block', RY_WTP_PLUGIN_URL . 'assets/blocks/gateways/newebpay/credit.js', $script_asset['dependencies'], $script_asset['version'], true);
         wp_set_script_translations('ry-newebpay-credit-block', 'ry-woocommerce-tools-pro', RY_WTP_PLUGIN_LANGUAGES_DIR);
 
         return ['ry-newebpay-credit-block'];
@@ -40,8 +40,8 @@ final class RY_NewebPay_Gateway_Credit_Blocks_Support extends AbstractPaymentMet
             'icons' => [
                 'id' => $this->name,
                 'src' => $this->gateway->get_icon_url(),
-                'alt' => __('NewebPay', 'ry-woocommerce-tools-pro')
-            ]
+                'alt' => __('NewebPay', 'ry-woocommerce-tools-pro'),
+            ],
         ];
     }
 }

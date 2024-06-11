@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-02-16 10:51+0800\n"
-"PO-Revision-Date: 2024-02-29 10:52+0800\n"
+"PO-Revision-Date: 2024-06-11 10:12+0800\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
@@ -72,54 +72,54 @@ msgctxt "Shipping status"
 msgid "Unknow"
 msgstr "未知"
 
-#: woocommerce/admin/admin.php:42
+#: woocommerce/admin/admin.php:40
 msgid "Your license is not active!"
 msgstr "你的授權尚未啟動！"
 
-#: woocommerce/admin/admin.php:55
+#: woocommerce/admin/admin.php:48
 #: woocommerce/admin/notes/license-auto-deactivate.php:41
 #: woocommerce/admin/settings/pro-info.php:10
 msgid "License key"
 msgstr "授權金鑰"
 
 #. translators: %s: Expiration date of pro license
-#: woocommerce/admin/admin.php:74
+#: woocommerce/admin/admin.php:67
 #, php-format
 msgid "License Expiration Date %s"
 msgstr "授權到期日 %s"
 
-#: woocommerce/admin/admin.php:114
-#: woocommerce/admin/admin.php:138
+#: woocommerce/admin/admin.php:107
+#: woocommerce/admin/admin.php:131
 msgid "Connect license server failed!"
 msgstr "連結授權伺服器失敗！"
 
 #. translators: %s: Error message
-#: woocommerce/admin/admin.php:122
+#: woocommerce/admin/admin.php:115
 #, php-format
 msgid "Verification error: %s"
 msgstr "驗證錯誤：%s"
 
-#: woocommerce/admin/admin.php:127
+#: woocommerce/admin/admin.php:120
 msgid "Unknown key"
 msgstr "未知的金鑰"
 
-#: woocommerce/admin/admin.php:128
+#: woocommerce/admin/admin.php:121
 msgid "Locked key"
 msgstr "鎖定的金鑰"
 
-#: woocommerce/admin/admin.php:129
+#: woocommerce/admin/admin.php:122
 msgid "Unknown target url"
 msgstr "未知的目標網址"
 
-#: woocommerce/admin/admin.php:130
+#: woocommerce/admin/admin.php:123
 msgid "Used key"
 msgstr "已使用的金鑰"
 
-#: woocommerce/admin/admin.php:131
+#: woocommerce/admin/admin.php:124
 msgid "Is tried"
 msgstr "已使用過測試版"
 
-#: assets/js/blocks/shipping/ecpay/cvs-select-map/frontend.js:1
+#: assets/blocks/shipping/ecpay/cvs-select-map/frontend.js:1
 msgid "Choose convenience store"
 msgstr "選擇超商門市"
 
@@ -155,15 +155,15 @@ msgstr "最新版本"
 msgid "update plugin"
 msgstr "升級外掛"
 
-#: woocommerce/admin/shipping.php:47
+#: woocommerce/admin/shipping.php:55
 msgid "Get shipping no (normal temperature)"
 msgstr "取得物流單號 (常溫)"
 
-#: woocommerce/admin/shipping.php:51
+#: woocommerce/admin/shipping.php:59
 msgid "Get shipping no (refrigerated)"
 msgstr "取得物流單號 (冷藏)"
 
-#: woocommerce/admin/shipping.php:55
+#: woocommerce/admin/shipping.php:63
 msgid "Get shipping no (frozen)"
 msgstr "取得物流單號 (冷凍)"
 
@@ -203,7 +203,7 @@ msgid "Pay via BNPL"
 msgstr "使用裕富無卡分期付款"
 
 #: woocommerce/gateways/ecpay/gateway-bnpl.php:15
-#: assets/js/blocks/gateways/ecpay/bnpl.js:1
+#: assets/blocks/gateways/ecpay/bnpl.js:1
 msgid "ECPay BNPL"
 msgstr "綠界裕富無卡分期"
 
@@ -225,7 +225,7 @@ msgid "Pay via Credit(12 installment)"
 msgstr "使用信用卡付款（分 12 期）"
 
 #: woocommerce/gateways/ecpay/gateway-credit-installment-12.php:9
-#: assets/js/blocks/gateways/ecpay/credit-installment-12.js:1
+#: assets/blocks/gateways/ecpay/credit-installment-12.js:1
 msgid "ECPay Credit(12 installment)"
 msgstr "綠界信用卡（分 12 期）"
 
@@ -239,7 +239,7 @@ msgid "Pay via Credit(18 installment)"
 msgstr "使用信用卡付款（分 18 期）"
 
 #: woocommerce/gateways/ecpay/gateway-credit-installment-18.php:9
-#: assets/js/blocks/gateways/ecpay/credit-installment-18.js:1
+#: assets/blocks/gateways/ecpay/credit-installment-18.js:1
 msgid "ECPay Credit(18 installment)"
 msgstr "綠界信用卡（分 18 期）"
 
@@ -253,7 +253,7 @@ msgid "Pay via Credit(24 installment)"
 msgstr "使用信用卡付款（分 24 期）"
 
 #: woocommerce/gateways/ecpay/gateway-credit-installment-24.php:9
-#: assets/js/blocks/gateways/ecpay/credit-installment-24.js:1
+#: assets/blocks/gateways/ecpay/credit-installment-24.js:1
 msgid "ECPay Credit(24 installment)"
 msgstr "綠界信用卡（分 24 期）"
 
@@ -267,7 +267,7 @@ msgid "Pay via Credit(3 installment)"
 msgstr "使用信用卡付款（分 3 期）"
 
 #: woocommerce/gateways/ecpay/gateway-credit-installment-3.php:9
-#: assets/js/blocks/gateways/ecpay/credit-installment-3.js:1
+#: assets/blocks/gateways/ecpay/credit-installment-3.js:1
 msgid "ECPay Credit(3 installment)"
 msgstr "綠界信用卡（分 3 期）"
 
@@ -281,7 +281,7 @@ msgid "Pay via Credit(6 installment)"
 msgstr "使用信用卡付款（分 6 期）"
 
 #: woocommerce/gateways/ecpay/gateway-credit-installment-6.php:9
-#: assets/js/blocks/gateways/ecpay/credit-installment-6.js:1
+#: assets/blocks/gateways/ecpay/credit-installment-6.js:1
 msgid "ECPay Credit(6 installment)"
 msgstr "綠界信用卡（分 6 期）"
 
@@ -289,32 +289,32 @@ msgstr "綠界信用卡（分 6 期）"
 msgid "Pay via ECPay Credit(6 installment)"
 msgstr "使用 綠界信用卡（分 6 期） 付款"
 
-#: woocommerce/gateways/ecpay/gateway.php:47
-#: woocommerce/gateways/newebpay/gateway.php:47
-#: woocommerce/gateways/smilepay/gateway.php:37
+#: woocommerce/gateways/ecpay/includes/admin.php:27
+#: woocommerce/gateways/newebpay/includes/admin.php:28
+#: woocommerce/gateways/smilepay/includes/admin.php:28
 msgid "Gateway options"
 msgstr "金流設定"
 
-#: woocommerce/gateways/ecpay/gateway.php:52
-#: woocommerce/gateways/newebpay/gateway.php:52
+#: woocommerce/gateways/ecpay/includes/admin.php:32
+#: woocommerce/gateways/newebpay/includes/admin.php:33
 msgid "Credit installment"
 msgstr "信用卡分期"
 
-#: woocommerce/gateways/ecpay/gateway.php:56
-#: woocommerce/gateways/newebpay/gateway.php:56
+#: woocommerce/gateways/ecpay/includes/admin.php:36
+#: woocommerce/gateways/newebpay/includes/admin.php:37
 msgid "Add each periods of credit installment as a payment gateway."
 msgstr "將每一個信用卡分期期數新增為一個付款方式。"
 
-#: woocommerce/gateways/ecpay/gateway.php:59
-#: woocommerce/gateways/newebpay/gateway.php:59
-#: woocommerce/gateways/smilepay/gateway.php:42
+#: woocommerce/gateways/ecpay/includes/admin.php:39
+#: woocommerce/gateways/newebpay/includes/admin.php:40
+#: woocommerce/gateways/smilepay/includes/admin.php:33
 msgid "Show payment info in email"
 msgstr "在信件中顯示付款資訊"
 
 #. translators: %s: email title
-#: woocommerce/gateways/ecpay/gateway.php:65
-#: woocommerce/gateways/newebpay/gateway.php:65
-#: woocommerce/gateways/smilepay/gateway.php:48
+#: woocommerce/gateways/ecpay/includes/admin.php:45
+#: woocommerce/gateways/newebpay/includes/admin.php:46
+#: woocommerce/gateways/smilepay/includes/admin.php:39
 #, php-format
 msgid "Add payment info in \"%s\" email."
 msgstr "在「%s」信件中顯示付款資訊。"
@@ -334,7 +334,7 @@ msgid "NewebPay"
 msgstr "藍新金流"
 
 #: woocommerce/gateways/newebpay/gateway-credit-installment-12.php:9
-#: assets/js/blocks/gateways/newebpay/credit-installment-12.js:1
+#: assets/blocks/gateways/newebpay/credit-installment-12.js:1
 msgid "NewebPay Credit(12 installment)"
 msgstr "藍新信用卡（分 12 期）"
 
@@ -343,7 +343,7 @@ msgid "Pay via NewebPay Credit(12 installment)"
 msgstr "使用 藍新信用卡（分 12 期） 付款"
 
 #: woocommerce/gateways/newebpay/gateway-credit-installment-18.php:9
-#: assets/js/blocks/gateways/newebpay/credit-installment-18.js:1
+#: assets/blocks/gateways/newebpay/credit-installment-18.js:1
 msgid "NewebPay Credit(18 installment)"
 msgstr "藍新信用卡（分 18 期）"
 
@@ -352,7 +352,7 @@ msgid "Pay via NewebPay Credit(18 installment)"
 msgstr "使用 藍新信用卡（分 18 期） 付款"
 
 #: woocommerce/gateways/newebpay/gateway-credit-installment-24.php:9
-#: assets/js/blocks/gateways/newebpay/credit-installment-24.js:1
+#: assets/blocks/gateways/newebpay/credit-installment-24.js:1
 msgid "NewebPay Credit(24 installment)"
 msgstr "藍新信用卡（分 24 期）"
 
@@ -361,7 +361,7 @@ msgid "Pay via NewebPay Credit(24 installment)"
 msgstr "使用 藍新信用卡（分 24 期） 付款"
 
 #: woocommerce/gateways/newebpay/gateway-credit-installment-3.php:9
-#: assets/js/blocks/gateways/newebpay/credit-installment-3.js:1
+#: assets/blocks/gateways/newebpay/credit-installment-3.js:1
 msgid "NewebPay Credit(3 installment)"
 msgstr "藍新信用卡（分 3 期）"
 
@@ -382,7 +382,7 @@ msgid "Pay via NewebPay Credit(30 installment)"
 msgstr "使用 藍新信用卡（分 30 期） 付款"
 
 #: woocommerce/gateways/newebpay/gateway-credit-installment-6.php:9
-#: assets/js/blocks/gateways/newebpay/credit-installment-6.js:1
+#: assets/blocks/gateways/newebpay/credit-installment-6.js:1
 msgid "NewebPay Credit(6 installment)"
 msgstr "藍新信用卡（分 6 期）"
 
@@ -479,17 +479,17 @@ msgstr "離島附加運費"
 msgid "The total cost is cost plus off island cost."
 msgstr "總運費是運費加離島附加運費。"
 
-#: woocommerce/shipping/ecpay/shipping-cvs-711.php:29
+#: woocommerce/shipping/ecpay/shipping-cvs-711.php:30
 #: woocommerce/shipping/ecpay/shipping-home-tcat.php:13
 msgid "Cool plus cost"
 msgstr "低溫附加運費"
 
-#: woocommerce/shipping/ecpay/shipping-cvs-711.php:34
+#: woocommerce/shipping/ecpay/shipping-cvs-711.php:35
 #: woocommerce/shipping/ecpay/shipping-home-tcat.php:18
 msgid "The total cost is cost plus cool cost."
 msgstr "總運費是運費加低溫附加運費。"
 
-#: woocommerce/shipping/ecpay/shipping-cvs-711.php:41
+#: woocommerce/shipping/ecpay/shipping-cvs-711.php:42
 #: woocommerce/shipping/ecpay/shipping-cvs-family.php:9
 #: woocommerce/shipping/ecpay/shipping-cvs-hilife.php:9
 #: woocommerce/shipping/ecpay/shipping-cvs-ok.php:9
@@ -501,7 +501,7 @@ msgstr "總運費是運費加低溫附加運費。"
 msgid "A minimum order amount ( except discount and tex )"
 msgstr "最小訂購金額（不包含折價及稅金）"
 
-#: woocommerce/shipping/ecpay/shipping-cvs-711.php:42
+#: woocommerce/shipping/ecpay/shipping-cvs-711.php:43
 #: woocommerce/shipping/ecpay/shipping-cvs-family.php:10
 #: woocommerce/shipping/ecpay/shipping-cvs-hilife.php:10
 #: woocommerce/shipping/ecpay/shipping-cvs-ok.php:10
@@ -513,7 +513,7 @@ msgstr "最小訂購金額（不包含折價及稅金）"
 msgid "A minimum order amount OR a coupon ( except discount and tex )"
 msgstr "最小訂購金額或使用折價券（不包含折價及稅金）"
 
-#: woocommerce/shipping/ecpay/shipping-cvs-711.php:43
+#: woocommerce/shipping/ecpay/shipping-cvs-711.php:44
 #: woocommerce/shipping/ecpay/shipping-cvs-family.php:11
 #: woocommerce/shipping/ecpay/shipping-cvs-hilife.php:11
 #: woocommerce/shipping/ecpay/shipping-cvs-ok.php:11
@@ -548,107 +548,115 @@ msgstr "RY Tools (Pro) for WooCommerce"
 msgid "<strong>%1$s</strong> is inactive. It require RY Tools for WooCommerce %2$s or newer."
 msgstr "<strong>%1$s</strong> 暫停運作。 需求 RY Tools for WooCommerce %2$s 或更新版本。"
 
+#: assets/blocks/shipping/ecpay/cvs-select-map/frontend.js:1
+msgid "Store name:"
+msgstr "門市名稱："
+
+#: assets/blocks/shipping/ecpay/cvs-select-map/frontend.js:1
+msgid "Store address:"
+msgstr "門市地址："
+
+#: assets/blocks/shipping/ecpay/cvs-select-map/frontend.js:1
+msgid "Store telephone:"
+msgstr "門市電話："
+
 #. Plugin URI of the plugin
 #: D:\WebServer\htdocs_80\ry-plugin.com\wp-content\plugins\ry-woocommerce-tools-pro\ry-woocommerce-tools-pro.php
-#~ msgid "https://ry-plugin.com/ry-woocommerce-tools-pro/"
-#~ msgstr "https://ry-plugin.com/ry-woocommerce-tools-pro/"
+msgid "https://ry-plugin.com/ry-woocommerce-tools-pro/"
+msgstr "https://ry-plugin.com/ry-woocommerce-tools-pro/"
 
 #. Description of the plugin
 #: D:\WebServer\htdocs_80\ry-plugin.com\wp-content\plugins\ry-woocommerce-tools-pro\ry-woocommerce-tools-pro.php
-#~ msgid "WooCommerce paymet and shipping tools"
-#~ msgstr "WooCommerce paymet and shipping tools"
+msgid "WooCommerce paymet and shipping tools"
+msgstr "WooCommerce paymet and shipping tools"
 
 #. Author of the plugin
 #: D:\WebServer\htdocs_80\ry-plugin.com\wp-content\plugins\ry-woocommerce-tools-pro\ry-woocommerce-tools-pro.php
-#~ msgid "Richer Yang"
-#~ msgstr "Richer Yang"
+msgid "Richer Yang"
+msgstr "Richer Yang"
 
 #. Author URI of the plugin
 #: D:\WebServer\htdocs_80\ry-plugin.com\wp-content\plugins\ry-woocommerce-tools-pro\ry-woocommerce-tools-pro.php
-#~ msgid "https://richer.tw/"
-#~ msgstr "https://richer.tw/"
+msgid "https://richer.tw/"
+msgstr "https://richer.tw/"
 
-#: assets/js/blocks/gateways/ecpay/atm.js:1
-#~ msgid "ECPay ATM"
-#~ msgstr "綠界 ATM 櫃員機"
+#: assets/blocks/gateways/ecpay/atm.js:1
+msgid "ECPay ATM"
+msgstr "綠界 ATM 櫃員機"
 
-#: assets/js/blocks/gateways/ecpay/barcode.js:1
-#~ msgid "ECPay BARCODE"
-#~ msgstr "綠界超商條碼"
+#: assets/blocks/gateways/ecpay/barcode.js:1
+msgid "ECPay BARCODE"
+msgstr "綠界超商條碼"
 
-#: assets/js/blocks/gateways/ecpay/credit-installment.js:1
-#~ msgid "ECPay Credit(installment)"
-#~ msgstr "綠界信用卡（分期）"
+#: assets/blocks/gateways/ecpay/credit-installment.js:1
+msgid "ECPay Credit(installment)"
+msgstr "綠界信用卡（分期）"
 
-#: assets/js/blocks/gateways/ecpay/credit.js:1
-#~ msgid "ECPay Credit"
-#~ msgstr "綠界信用卡"
+#: assets/blocks/gateways/ecpay/credit.js:1
+msgid "ECPay Credit"
+msgstr "綠界信用卡"
 
-#: assets/js/blocks/gateways/ecpay/cvs.js:1
-#~ msgid "ECPay CVS"
-#~ msgstr "綠界超商代碼"
+#: assets/blocks/gateways/ecpay/cvs.js:1
+msgid "ECPay CVS"
+msgstr "綠界超商代碼"
 
-#: assets/js/blocks/gateways/ecpay/twqr.js:1
-#~ msgid "ECPay TWQR"
-#~ msgstr "綠界 TWQR"
+#: assets/blocks/gateways/ecpay/twqr.js:1
+msgid "ECPay TWQR"
+msgstr "綠界 TWQR"
 
-#: assets/js/blocks/gateways/ecpay/webatm.js:1
-#~ msgid "ECPay WebATM"
-#~ msgstr "綠界網路 ATM"
+#: assets/blocks/gateways/ecpay/webatm.js:1
+msgid "ECPay WebATM"
+msgstr "綠界網路 ATM"
 
-#: assets/js/blocks/gateways/newebpay/atm.js:1
-#~ msgid "NewebPay ATM"
-#~ msgstr "藍新 ATM 櫃員機"
+#: assets/blocks/gateways/newebpay/atm.js:1
+msgid "NewebPay ATM"
+msgstr "藍新 ATM 櫃員機"
 
-#: assets/js/blocks/gateways/newebpay/barcode.js:1
-#~ msgid "NewebPay BARCODE"
-#~ msgstr "藍新超商條碼"
+#: assets/blocks/gateways/newebpay/barcode.js:1
+msgid "NewebPay BARCODE"
+msgstr "藍新超商條碼"
 
-#: assets/js/blocks/gateways/newebpay/credit-installment.js:1
-#~ msgid "NewebPay Credit(installment)"
-#~ msgstr "藍新信用卡（分期）"
+#: assets/blocks/gateways/newebpay/credit-installment.js:1
+msgid "NewebPay Credit(installment)"
+msgstr "藍新信用卡（分期）"
 
-#: assets/js/blocks/gateways/newebpay/credit.js:1
-#~ msgid "NewebPay Credit"
-#~ msgstr "藍新信用卡"
+#: assets/blocks/gateways/newebpay/credit.js:1
+msgid "NewebPay Credit"
+msgstr "藍新信用卡"
 
-#: assets/js/blocks/gateways/newebpay/cvs.js:1
-#~ msgid "NewebPay CVS"
-#~ msgstr "藍新超商代碼"
+#: assets/blocks/gateways/newebpay/cvs.js:1
+msgid "NewebPay CVS"
+msgstr "藍新超商代碼"
 
-#: assets/js/blocks/gateways/newebpay/webatm.js:1
-#~ msgid "NewebPay WebATM"
-#~ msgstr "藍新網路 ATM"
+#: assets/blocks/gateways/newebpay/webatm.js:1
+msgid "NewebPay WebATM"
+msgstr "藍新網路 ATM"
 
-#: assets/js/blocks/gateways/smilepay/atm.js:1
-#~ msgid "SmilePay ATM"
-#~ msgstr "速買配 ATM 櫃員機"
+#: assets/blocks/gateways/smilepay/atm.js:1
+msgid "SmilePay ATM"
+msgstr "速買配 ATM 櫃員機"
 
-#: assets/js/blocks/gateways/smilepay/barcode.js:1
-#~ msgid "SmilePay BARCODE"
-#~ msgstr "速買配超商條碼"
+#: assets/blocks/gateways/smilepay/barcode.js:1
+msgid "SmilePay BARCODE"
+msgstr "速買配超商條碼"
 
-#: assets/js/blocks/gateways/smilepay/credit.js:1
-#~ msgid "SmilePay Credit"
-#~ msgstr "速買配信用卡"
+#: assets/blocks/gateways/smilepay/credit.js:1
+msgid "SmilePay Credit"
+msgstr "速買配信用卡"
 
-#: assets/js/blocks/gateways/smilepay/cvs-711.js:1
-#~ msgid "SmilePay CVS 711"
-#~ msgstr "速買配超商代碼 7-11"
+#: assets/blocks/gateways/smilepay/cvs-711.js:1
+msgid "SmilePay CVS 711"
+msgstr "速買配 7-11 超商代碼"
 
-#: assets/js/blocks/gateways/smilepay/cvs-fami.js:1
-#~ msgid "SmilePay CVS FamilyMart"
-#~ msgstr "速買配超商代碼 全家"
+#: assets/blocks/gateways/smilepay/cvs-fami.js:1
+msgid "SmilePay CVS FamilyMart"
+msgstr "速買配全家超商代碼"
 
-#: assets/js/blocks/gateways/smilepay/webatm.js:1
-#~ msgid "SmilePay WebATM"
-#~ msgstr "速買配網路 ATM"
+#: assets/blocks/gateways/smilepay/webatm.js:1
+msgid "SmilePay WebATM"
+msgstr "速買配網路 ATM"
 
-#: assets/js/blocks/shipping/ecpay/cvs-select-map/frontend.js:1
-#~ msgid "Convenience store:"
-#~ msgstr "超商門市："
-
-#: assets/js/blocks/shipping/ecpay/cvs-select-map/block.json
-#~ msgctxt "block title"
-#~ msgid "ECPay select cvs store"
-#~ msgstr "綠界選擇超商門市"
+#: assets/blocks/shipping/ecpay/cvs-select-map/block.json
+msgctxt "block title"
+msgid "ECPay select cvs store"
+msgstr "綠界選擇超商門市"

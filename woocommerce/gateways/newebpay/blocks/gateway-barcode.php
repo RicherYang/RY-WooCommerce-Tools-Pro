@@ -22,9 +22,9 @@ final class RY_NewebPay_Gateway_Barcode_Blocks_Support extends AbstractPaymentMe
 
     public function get_payment_method_script_handles()
     {
-        $script_asset = include RY_WTP_PLUGIN_DIR . 'assets/js/blocks/gateways/newebpay/barcode.asset.php';
+        $script_asset = include RY_WTP_PLUGIN_DIR . 'assets/blocks/gateways/newebpay/barcode.asset.php';
 
-        wp_register_script('ry-newebpay-barcode-block', RY_WTP_PLUGIN_URL . 'assets/js/blocks/gateways/newebpay/barcode.js', $script_asset['dependencies'], $script_asset['version'], true);
+        wp_register_script('ry-newebpay-barcode-block', RY_WTP_PLUGIN_URL . 'assets/blocks/gateways/newebpay/barcode.js', $script_asset['dependencies'], $script_asset['version'], true);
         wp_set_script_translations('ry-newebpay-barcode-block', 'ry-woocommerce-tools-pro', RY_WTP_PLUGIN_LANGUAGES_DIR);
 
         return ['ry-newebpay-barcode-block'];
@@ -40,8 +40,8 @@ final class RY_NewebPay_Gateway_Barcode_Blocks_Support extends AbstractPaymentMe
             'icons' => [
                 'id' => $this->name,
                 'src' => $this->gateway->get_icon_url(),
-                'alt' => __('NewebPay', 'ry-woocommerce-tools-pro')
-            ]
+                'alt' => __('NewebPay', 'ry-woocommerce-tools-pro'),
+            ],
         ];
     }
 }

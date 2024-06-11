@@ -20,7 +20,8 @@ final class RY_WTP_WC_SmilePay_Gateway
         RY_WTP_WC_SmilePay_Gateway_Block::instance();
 
         if (is_admin()) {
-            add_filter('woocommerce_get_settings_rytools', [$this, 'add_setting'], 11, 2);
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/smilepay/includes/admin.php';
+            RY_WTP_WC_SmilePay_Gateway_Admin::instance();
         }
 
         if ('yes' === RY_WTP::get_option('smilepay_email_payment_info', 'yes')) {
@@ -28,35 +29,6 @@ final class RY_WTP_WC_SmilePay_Gateway
         }
     }
 
-    public function add_setting($settings, $current_section)
-    {
-        if ($current_section == 'smilepay_gateway') {
-            $setting_idx = array_search('api_options', array_column($settings, 'id'));
-            array_splice($settings, $setting_idx, 0, [
-                [
-                    'title' => __('Gateway options', 'ry-woocommerce-tools-pro'),
-                    'id' => 'gateway_options',
-                    'type' => 'title'
-                ],
-                [
-                    'title' => __('Show payment info in email', 'ry-woocommerce-tools-pro'),
-                    'id' => RY_WTP::OPTION_PREFIX . 'smilepay_email_payment_info',
-                    'type' => 'checkbox',
-                    'default' => 'yes',
-                    'desc' => sprintf(
-                        /* translators: %s: email title */
-                        __('Add payment info in "%s" email.', 'ry-woocommerce-tools-pro'),
-                        __('Order on-hold', 'woocommerce')
-                    )
-                ],
-                [
-                    'id' => 'gateway_options',
-                    'type' => 'sectionend'
-                ]
-            ]);
-        }
-        return $settings;
-    }
 
     public function add_payment_info($order, $sent_to_admin, $plain_text, $email)
     {
@@ -87,7 +59,7 @@ final class RY_WTP_WC_SmilePay_Gateway
                             'email' => $email,
                         ),
                         '',
-                        RY_WTP_PLUGIN_DIR . 'templates/'
+                        RY_WTP_PLUGIN_DIR . 'templates/',
                     );
                 } else {
                     wc_get_template(
@@ -99,7 +71,7 @@ final class RY_WTP_WC_SmilePay_Gateway
                             'email' => $email,
                         ),
                         '',
-                        RY_WTP_PLUGIN_DIR . 'templates/'
+                        RY_WTP_PLUGIN_DIR . 'templates/',
                     );
                 }
             }
