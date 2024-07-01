@@ -1,6 +1,6 @@
 <?php
 
-final class RY_WTP_License extends RY_WT_WC_Model
+final class RY_WTP_License extends RY_WT_Model
 {
     protected static $_instance = null;
 
