@@ -4,13 +4,13 @@ return [
     [
         'title' => 'RY Tools (Pro) for WooCommerce',
         'id' => 'pro_options',
-        'type' => 'title'
+        'type' => 'title',
     ],
     [
         'title' => __('License key', 'ry-woocommerce-tools-pro'),
         'id' => RY_WTP::OPTION_PREFIX . 'license_key',
         'type' => 'text',
-        'default' => ''
+        'default' => '',
     ],
     [
         'id' => 'ry_wtp_version_info',
@@ -18,6 +18,6 @@ return [
     ],
     [
         'id' => 'pro_options',
-        'type' => 'sectionend'
-    ]
+        'type' => 'sectionend',
+    ],
 ];

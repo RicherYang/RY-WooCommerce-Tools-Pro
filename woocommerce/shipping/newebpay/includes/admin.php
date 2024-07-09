@@ -30,8 +30,8 @@ final class RY_WTP_NewebPay_Shipping_Admin
                         'type' => 'checkbox',
                         'default' => 'no',
                         'desc' => __('Remove billing address when shipping mode is cvs.', 'ry-woocommerce-tools-pro')
-                            . '<p class="description" style="margin-bottom:2px">' . __('The billing address still will show in order details.', 'ry-woocommerce-tools-pro') . '</p>'
-                    ]
+                            . '<p class="description" style="margin-bottom:2px">' . __('The billing address still will show in order details.', 'ry-woocommerce-tools-pro') . '</p>',
+                    ],
                 ]);
             }
         }

@@ -16,8 +16,12 @@ final class RY_WTP_Update
             RY_WTP::update_option('version', '3.0.0');
         }
 
-        if (version_compare($now_version, '3.4.1', '<')) {
-            RY_WTP::update_option('version', '3.4.1');
+        if (version_compare($now_version, '3.4.2', '<')) {
+            if (! wp_next_scheduled(RY_WTP::OPTION_PREFIX . 'check_expire')) {
+                wp_schedule_event(time() + HOUR_IN_SECONDS, 'daily', RY_WTP::OPTION_PREFIX . 'check_expire');
+            }
+
+            RY_WTP::update_option('version', '3.4.2');
         }
     }
 }

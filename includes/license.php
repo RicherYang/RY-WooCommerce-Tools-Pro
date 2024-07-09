@@ -74,9 +74,6 @@ final class RY_WTP_License extends RY_WT_Model
             $this->set_license_data($json['data']);
             RY_WTP::delete_transient('expire_link_error');
         } elseif (false === $json) {
-            wp_clear_scheduled_hook(RY_WTP::OPTION_PREFIX . 'check_expire');
-            wp_schedule_event(time() + HOUR_IN_SECONDS, 'daily', RY_WTP::OPTION_PREFIX . 'check_expire');
-
             $link_error = (int) RY_WTP::get_transient('expire_link_error');
             if ($link_error > 3) {
                 $this->delete_license();
@@ -121,6 +118,10 @@ final class RY_WTP_License extends RY_WT_Model
 
         RY_WTP::delete_option('pro_Data');
         RY_WTP::delete_option('pro_Key');
+
+        if (! wp_next_scheduled(RY_WTP::OPTION_PREFIX . 'check_expire')) {
+            wp_schedule_event(time() + HOUR_IN_SECONDS, 'daily', RY_WTP::OPTION_PREFIX . 'check_expire');
+        }
     }
 
     public function delete_license(): void

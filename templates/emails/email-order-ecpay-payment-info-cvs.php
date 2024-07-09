@@ -45,7 +45,7 @@ $text_align = is_rtl() ? 'right' : 'left';
                         /* translators: %1$s: date %2$s: time */
                         _x('%1$s %2$s', 'Datetime', 'ry-woocommerce-tools'),
                         $expireDate->date_i18n(wc_date_format()),
-                        $expireDate->date_i18n(wc_time_format())
+                        $expireDate->date_i18n(wc_time_format()),
                     )); ?>
                 </td>
             </tr>

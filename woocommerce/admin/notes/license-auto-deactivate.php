@@ -22,7 +22,7 @@ class RY_WTP_LicenseAutoDeactivate
         $content = sprintf(
             /* translators: %s: Date */
             __('License has auto deactivate at %s.', 'ry-woocommerce-tools-pro'),
-            $deactivate_date
+            $deactivate_date,
         );
 
         $content_data = (object) [
@@ -52,7 +52,7 @@ class RY_WTP_LicenseAutoDeactivate
         $content_data = $note->get_content_data();
 
         return self::get_note_with_data(
-            $content_data->deactivate_date
+            $content_data->deactivate_date,
         );
     }
 }

@@ -16,8 +16,8 @@ class RY_ECPay_Shipping_Home_Tcat_Pro extends RY_ECPay_Shipping_Home_Tcat
                     'min' => 0,
                     'step' => 1,
                     'description' => __('The total cost is cost plus cool cost.', 'ry-woocommerce-tools-pro'),
-                    'desc_tip' => true
-                ]
+                    'desc_tip' => true,
+                ],
             ]
             + array_slice($this->instance_form_fields, $field_idx);
 

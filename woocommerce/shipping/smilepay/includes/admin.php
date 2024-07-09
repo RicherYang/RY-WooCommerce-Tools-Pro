@@ -45,8 +45,8 @@ final class RY_WTP_SmilePay_Shipping_Admin
                     'id' => RY_WTP::OPTION_PREFIX . 'smilepay_shipping_auto_with_scheduler',
                     'type' => 'checkbox',
                     'default' => 'no',
-                    'desc' => __('Get shipping payment no use scheduler action.', 'ry-woocommerce-tools-pro')
-                ]
+                    'desc' => __('Get shipping payment no use scheduler action.', 'ry-woocommerce-tools-pro'),
+                ],
             ]);
 
             if(!$checkout_with_block) {
@@ -58,8 +58,8 @@ final class RY_WTP_SmilePay_Shipping_Admin
                         'type' => 'checkbox',
                         'default' => 'no',
                         'desc' => __('Remove billing address when shipping mode is cvs.', 'ry-woocommerce-tools-pro')
-                            . '<p class="description" style="margin-bottom:2px">' . __('The billing address still will show in order details.', 'ry-woocommerce-tools-pro') . '</p>'
-                    ]
+                            . '<p class="description" style="margin-bottom:2px">' . __('The billing address still will show in order details.', 'ry-woocommerce-tools-pro') . '</p>',
+                    ],
                 ]);
             }
         }
@@ -80,9 +80,9 @@ final class RY_WTP_SmilePay_Shipping_Admin
             $redirect_to = add_query_arg(
                 [
                     'orderid' => implode(',', $ids),
-                    'type' => substr($action, 18)
+                    'type' => substr($action, 18),
                 ],
-                admin_url('admin-post.php?action=ry-print-smilepay-shipping')
+                admin_url('admin-post.php?action=ry-print-smilepay-shipping'),
             );
             wp_redirect($redirect_to);
             exit();
@@ -106,8 +106,8 @@ final class RY_WTP_SmilePay_Shipping_Admin
                     + [
                         'ry_smilepay_shipping_id' => [
                             'label' => __('SmilePay shipping ID', 'ry-woocommerce-tools'),
-                            'value' => implode(', ', array_column($shipping_list, 'ID'))
-                        ]
+                            'value' => implode(', ', array_column($shipping_list, 'ID')),
+                        ],
                     ]
                     + array_slice($fields, $field_idx);
             }

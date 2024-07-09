@@ -34,7 +34,10 @@ final class RY_WTP
 
     public function do_woo_init(): void
     {
-        if (version_compare(RY_WT_VERSION, self::MIN_TOOLS_VERSION, '<')) {
+        if (version_compare(RY_WT_VERSION, RY_WTP::MIN_TOOLS_VERSION, '<')) {
+            return;
+        }
+        if(defined('RY_WT::MIN_PRO_TOOLS_VERSION') && version_compare(RY_WTP_VERSION, RY_WT::MIN_PRO_TOOLS_VERSION, '<')) {
             return;
         }
 
