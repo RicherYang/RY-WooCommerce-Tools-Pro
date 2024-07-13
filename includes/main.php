@@ -3,7 +3,7 @@
 final class RY_WTP
 {
     public const OPTION_PREFIX = 'RY_WTP_';
-    public const MIN_TOOLS_VERSION = '3.4.3';
+    public const MIN_TOOLS_VERSION = '3.4.5';
 
     protected static $_instance = null;
 
@@ -126,5 +126,6 @@ final class RY_WTP
     public static function plugin_deactivation()
     {
         wp_unschedule_hook(self::OPTION_PREFIX . 'check_expire');
+        wp_unschedule_hook(self::OPTION_PREFIX . 'check_update');
     }
 }

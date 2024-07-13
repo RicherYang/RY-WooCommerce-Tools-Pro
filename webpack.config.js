@@ -53,8 +53,9 @@ module.exports = {
     plugins: [
         ...defaultConfig.plugins.filter((plugin) => plugin.constructor.name !== 'CleanWebpackPlugin' && plugin.constructor.name !== 'DependencyExtractionWebpackPlugin'),
         new CleanWebpackPlugin({
-            //cleanOnceBeforeBuildPatterns: [],
-            cleanAfterEveryBuildPatterns: ['!fonts/**', '!images/**'],
+            cleanOnceBeforeBuildPatterns: [
+                path.join(distPath)
+            ],
             cleanStaleWebpackAssets: false,
         }),
         new WooCommerceDependencyExtractionWebpackPlugin(),

@@ -31,7 +31,6 @@ final class RY_WTP_WC_Admin_Shipping
     public function add_scripts()
     {
         $asset_info = include RY_WTP_PLUGIN_DIR . 'assets/admin/ry-shipping.asset.php';
-
         wp_register_script('ry-wtp-admin-shipping', RY_WTP_PLUGIN_URL . 'assets/admin/ry-shipping.js', $asset_info['dependencies'], $asset_info['version'], true);
     }
 

@@ -99,13 +99,13 @@ final class RY_WTP_LinkServer
         }
 
         if (wp_remote_retrieve_response_code($response) != '200') {
-            RY_WTP_License::instance()->log('POST HTTP status error', WC_Log_Levels::ERROR, ['code' => $response['response']['code']]);
+            RY_WTP_License::instance()->log('POST HTTP status error', WC_Log_Levels::ERROR, ['code' => wp_remote_retrieve_response_code($response)]);
             return false;
         }
 
         $data = @json_decode(wp_remote_retrieve_body($response), true);
         if (empty($data)) {
-            RY_WTP_License::instance()->log('POST result parse failed', WC_Log_Levels::WARNING, ['data' => wp_remote_retrieve_body($response)]);
+            RY_WTP_License::instance()->log('POST result parse failed', WC_Log_Levels::ERROR, ['data' => wp_remote_retrieve_body($response)]);
             return false;
         }
 

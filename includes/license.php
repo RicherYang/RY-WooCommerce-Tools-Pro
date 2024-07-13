@@ -60,6 +60,9 @@ final class RY_WTP_License extends RY_WT_Model
         }
 
         $this->activated = true;
+        if (! wp_next_scheduled(RY_WTP::OPTION_PREFIX . 'check_expire')) {
+            wp_schedule_event(time() + HOUR_IN_SECONDS, 'daily', RY_WTP::OPTION_PREFIX . 'check_expire');
+        }
     }
 
     public function is_activated(): bool
@@ -118,10 +121,6 @@ final class RY_WTP_License extends RY_WT_Model
 
         RY_WTP::delete_option('pro_Data');
         RY_WTP::delete_option('pro_Key');
-
-        if (! wp_next_scheduled(RY_WTP::OPTION_PREFIX . 'check_expire')) {
-            wp_schedule_event(time() + HOUR_IN_SECONDS, 'daily', RY_WTP::OPTION_PREFIX . 'check_expire');
-        }
     }
 
     public function delete_license(): void

@@ -23,7 +23,7 @@ echo "\n==========\n\n";
 
 echo wp_kses_post(__('Payment details', 'ry-woocommerce-tools')) . "\n";
 
-echo wp_kses_post(__('Bank', 'ry-woocommerce-tools') . "\t " . _x($order->get_meta('_ecpay_atm_BankCode'), 'Bank code', 'ry-woocommerce-tools')) . "\n";
+echo wp_kses_post(__('Bank', 'ry-woocommerce-tools') . "\t " . rywt_bank_code_to_name($order->get_meta('_ecpay_atm_BankCode'))) . "\n";
 echo wp_kses_post(__('Bank code', 'ry-woocommerce-tools') . "\t " . $order->get_meta('_ecpay_atm_BankCode')) . "\n";
 echo wp_kses_post(__('ATM Bank account', 'ry-woocommerce-tools') . "\t " . wordwrap($order->get_meta('_ecpay_atm_vAccount'), 4, '<span> </span>', true)) . "\n";
 $expireDate = wc_string_to_datetime($order->get_meta('_ecpay_atm_ExpireDate'));

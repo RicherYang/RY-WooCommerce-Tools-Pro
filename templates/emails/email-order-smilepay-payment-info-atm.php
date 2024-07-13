@@ -32,7 +32,7 @@ $text_align = is_rtl() ? 'right' : 'left';
                     <?php esc_html_e('Bank', 'ry-woocommerce-tools'); ?>
                 </th>
                 <td class="td" style="text-align:<?php echo esc_attr($text_align); ?>;">
-                    <?php echo esc_html_x($order->get_meta('_smilepay_atm_BankCode'), 'Bank code', 'ry-woocommerce-tools'); ?>
+                    <?php echo esc_html(rywt_bank_code_to_name($order->get_meta('_smilepay_atm_BankCode'))); ?>
                 </td>
             </tr>
             <tr>

@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-02-16 10:51+0800\n"
-"PO-Revision-Date: 2024-07-01 14:50+0800\n"
+"PO-Revision-Date: 2024-07-12 16:48+0800\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
@@ -89,7 +89,7 @@ msgid "License Expiration Date %s"
 msgstr "授權到期日 %s"
 
 #: woocommerce/admin/admin.php:107
-#: woocommerce/admin/admin.php:131
+#: woocommerce/admin/admin.php:130
 msgid "Connect license server failed!"
 msgstr "連結授權伺服器失敗！"
 
@@ -155,15 +155,15 @@ msgstr "最新版本"
 msgid "update plugin"
 msgstr "升級外掛"
 
-#: woocommerce/admin/shipping.php:55
+#: woocommerce/admin/shipping.php:54
 msgid "Get shipping no (normal temperature)"
 msgstr "取得物流單號 (常溫)"
 
-#: woocommerce/admin/shipping.php:59
+#: woocommerce/admin/shipping.php:58
 msgid "Get shipping no (refrigerated)"
 msgstr "取得物流單號 (冷藏)"
 
-#: woocommerce/admin/shipping.php:63
+#: woocommerce/admin/shipping.php:62
 msgid "Get shipping no (frozen)"
 msgstr "取得物流單號 (冷凍)"
 
@@ -545,6 +545,7 @@ msgstr "RY Tools (Pro) for WooCommerce"
 
 #. translators: %s: Name of this plugin %2$s: min require version
 #: includes/admin.php:27
+#: includes/admin.php:37
 msgid "<strong>%1$s</strong> is inactive. It require RY Tools for WooCommerce %2$s or newer."
 msgstr "<strong>%1$s</strong> 暫停運作。 需求 RY Tools for WooCommerce %2$s 或更新版本。"
 

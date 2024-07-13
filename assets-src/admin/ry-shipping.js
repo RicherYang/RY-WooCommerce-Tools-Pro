@@ -3,7 +3,7 @@ import $ from 'jquery';
 $(function () {
     if ($('#RY_WT_ecpay_shipping_auto_get_no').length) {
         $('#RY_WT_ecpay_shipping_auto_get_no').on('click', function () {
-            var $item = $('#RY_WTP_ecpay_shipping_auto_with_scheduler').closest('tr');
+            const $item = $('#RY_WTP_ecpay_shipping_auto_with_scheduler').closest('tr');
             if ($('#RY_WT_ecpay_shipping_auto_get_no').prop('checked')) {
                 $item.show();
             } else {
@@ -14,7 +14,7 @@ $(function () {
 
     if ($('#_shipping_cvs_store_ID').length) {
         $('.ry-choose-cvs').on('click', function () {
-            var html = '<form id="RyECPayChooseCvs" action="' + ECPayInfo.postUrl + '" method="post">';
+            let html = '<form id="RyECPayChooseCvs" action="' + ECPayInfo.postUrl + '" method="post">';
             for (var idx in ECPayInfo.postData) {
                 html += '<input type="hidden" name="' + idx + '" value="' + ECPayInfo.postData[idx] + '">';
             }

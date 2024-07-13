@@ -52,7 +52,7 @@ final class RY_WTP_WC_Admin
 
     public function add_setting($settings, $current_section)
     {
-        if ($current_section == 'ry_key') {
+        if ('ry_key' === $current_section) {
             add_action('woocommerce_admin_field_ry_wtp_version_info', [$this, 'show_version_info']);
             if (empty($settings)) {
                 $settings = [];
@@ -127,8 +127,7 @@ final class RY_WTP_WC_Admin
                         return true;
                     }
                 } else {
-                    WC_Admin_Settings::add_error('RY Tools (Pro) for WooCommerce: '
-                    . __('Connect license server failed!', 'ry-woocommerce-tools-pro'));
+                    WC_Admin_Settings::add_error('RY Tools (Pro) for WooCommerce: ' . __('Connect license server failed!', 'ry-woocommerce-tools-pro'));
                 }
             }
         }
