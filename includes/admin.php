@@ -23,9 +23,10 @@ final class RY_WTP_Admin
     {
         if (!defined('RY_WT_VERSION') || version_compare(RY_WT_VERSION, RY_WTP::MIN_TOOLS_VERSION, '<')) {
             $message = sprintf(
-                /* translators: %s: Name of this plugin %2$s: min require version */
-                __('<strong>%1$s</strong> is inactive. It require RY Tools for WooCommerce %2$s or newer.', 'ry-woocommerce-tools-pro'),
+                /* translators: %1$s: Name of this plugin %2$s: Name of require plugin %3$s: min require version */
+                __('<strong>%1$s</strong> is inactive. It require %2$s %3$s or newer.', 'ry-woocommerce-tools-pro'),
                 'RY Tools (Pro) for WooCommerce',
+                'RY Tools for WooCommerce',
                 RY_WTP::MIN_TOOLS_VERSION,
             );
             printf('<div class="error"><p>%s</p></div>', wp_kses($message, ['strong' => []]));
@@ -33,8 +34,9 @@ final class RY_WTP_Admin
 
         if(defined('RY_WT::MIN_PRO_TOOLS_VERSION') && version_compare(RY_WTP_VERSION, RY_WT::MIN_PRO_TOOLS_VERSION, '<')) {
             $message = sprintf(
-                /* translators: %s: Name of this plugin %2$s: min require version */
-                __('<strong>%1$s</strong> is inactive. It require RY Tools for WooCommerce %2$s or newer.', 'ry-woocommerce-tools-pro'),
+                /* translators: %1$s: Name of this plugin %2$s: Name of require plugin %3$s: min require version */
+                __('<strong>%1$s</strong> is inactive. It require %2$s %3$s or newer.', 'ry-woocommerce-tools-pro'),
+                'RY Tools (Pro) for WooCommerce',
                 'RY Tools (Pro) for WooCommerce',
                 RY_WTP::MIN_TOOLS_VERSION,
             );

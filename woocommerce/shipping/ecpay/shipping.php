@@ -67,11 +67,15 @@ final class RY_WTP_ECPay_Shipping
 
         if (is_checkout()) {
             if ('yes' == RY_WTP::get_option('ecpay_cvs_billing_address', 'no')) {
-                foreach ($cvs_hide_fields as $key) {
-                    if(isset($fields['billing'][$key]['class'])) {
-                        $fields['billing'][$key]['class'][] = 'ry-cvs-hide';
-                    } else {
-                        $fields['billing'][$key]['class'] = ['ry-cvs-hide'];
+                if(isset($fields['billing'])) {
+                    foreach ($cvs_hide_fields as $key) {
+                        if(isset($fields['billing'][$key])) {
+                            if(isset($fields['billing'][$key]['class'])) {
+                                $fields['billing'][$key]['class'][] = 'ry-cvs-hide';
+                            } else {
+                                $fields['billing'][$key]['class'] = ['ry-cvs-hide'];
+                            }
+                        }
                     }
                 }
             }
