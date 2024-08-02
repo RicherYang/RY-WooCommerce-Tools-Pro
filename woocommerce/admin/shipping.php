@@ -81,7 +81,10 @@ final class RY_WTP_WC_Admin_Shipping
 
     public function save_shipping_options($product)
     {
-        $product->update_meta_data('_ry_shipping_amount', wc_clean(wp_unslash($_POST['ry_shipping_amount'] ?? '')));
+        $shipping_amount = wc_clean(wp_unslash($_POST['ry_shipping_amount'] ?? ''));
+        $shipping_amount = ('' === $shipping_amount) ? '' : wc_format_decimal($shipping_amount);
+        $product->update_meta_data('_ry_shipping_amount', $shipping_amount);
+
         $temp = wp_unslash($_POST['ry_shipping_temp']);
         if(!in_array($temp, ['1', '2', '3'])) {
             $temp = '1';
@@ -91,7 +94,10 @@ final class RY_WTP_WC_Admin_Shipping
 
     public function save_variation_shipping_options($variation, $i)
     {
-        $variation->update_meta_data('_ry_shipping_amount', wc_clean(wp_unslash($_POST['variable_ry_shipping_amount'][$i] ?? '')));
+        $shipping_amount = wc_clean(wp_unslash($_POST['variable_ry_shipping_amount'][$i] ?? ''));
+        $shipping_amount = ('' === $shipping_amount) ? '' : wc_format_decimal($shipping_amount);
+        $variation->update_meta_data('_ry_shipping_amount', $shipping_amount);
+
         $temp = wp_unslash($_POST['variable_ry_shipping_temp'][$i]);
         if(!in_array($temp, ['0', '1', '2', '3'])) {
             $temp = '0';

@@ -57,10 +57,14 @@ final class RY_WTP_WC_Admin_Order
                         }
 
                         if ('CVS' == $item['LogisticsType']) {
-                            echo esc_html($item['PaymentNo']) . '<span class="validationno">' . esc_html($item['ValidationNo'] ?? '') . '<br>';
+                            if(!empty($item['PaymentNo'])) {
+                                echo esc_html($item['PaymentNo']) . '<span class="validationno">' . esc_html($item['ValidationNo'] ?? '') . '<br>';
+                            }
                         }
                         if ('HOME' == $item['LogisticsType']) {
-                            echo esc_html($item['BookingNote']) . '<br>';
+                            if(!empty($item['BookingNote'])) {
+                                echo esc_html($item['BookingNote']) . '<br>';
+                            }
                         }
                     }
                 }
