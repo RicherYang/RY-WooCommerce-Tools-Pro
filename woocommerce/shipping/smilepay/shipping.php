@@ -42,6 +42,7 @@ final class RY_WTP_SmilePay_Shipping
             RY_WTP_SmilePay_Shipping_Admin::instance();
         } else {
             add_action('woocommerce_review_order_after_shipping', [$this, 'shipping_choose_cvs']);
+            add_action('woocommerce_after_checkout_validation', [$this, 'check_phone'], 10, 2);
             add_action('woocommerce_view_order', [$this, 'shipping_info']);
         }
     }
@@ -130,6 +131,35 @@ final class RY_WTP_SmilePay_Shipping
     public function shipping_choose_cvs()
     {
         wp_enqueue_script('ry-wtp-shipping');
+    }
+
+    public function check_phone($data, $errors)
+    {
+        if (WC()->cart->needs_shipping()) {
+            $chosen_method = WC()->session->get('chosen_shipping_methods', []);
+            $used = false;
+            if (count($chosen_method)) {
+                foreach ($chosen_method as $method) {
+                    $method = strstr($method, ':', true);
+                    if ($method && array_key_exists($method, RY_WT_WC_SmilePay_Shipping::$support_methods)) {
+                        $used = true;
+                        break;
+                    }
+                }
+            }
+
+            if($used) {
+                if((!$data['ship_to_different_address'] || !WC()->cart->needs_shipping_address())) {
+                    $phone = $data['billing_phone'];
+                } else {
+                    $phone = $data['shipping_phone'];
+                }
+                $phone = str_replace(['-', ' '], ' ', $phone);
+                if (!preg_match('/^09[0-9]{8}$/', $phone)) {
+                    $errors->add('validation', __('Invalid cellphone number', 'ry-woocommerce-tools-pro'));
+                }
+            }
+        }
     }
 
     public function shipping_info($order_ID)

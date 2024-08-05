@@ -128,7 +128,7 @@ final class RY_WTP_ECPay_Shipping_Admin
     {
         foreach ($order->get_items('shipping') as $item) {
             $shipping_method = RY_WT_WC_ECPay_Shipping::instance()->get_order_support_shipping($item);
-            if (false !== $shipping_method && false !== strpos($shipping_method, 'cvs')) {
+            if (false !== $shipping_method && false !== strpos($shipping_method, '_cvs')) {
                 list($MerchantID, $HashKey, $HashIV, $cvs_type) = RY_WT_WC_ECPay_Shipping::instance()->get_api_info();
 
                 $choosed_cvs = '';
