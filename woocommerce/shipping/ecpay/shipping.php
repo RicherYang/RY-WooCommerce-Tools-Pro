@@ -59,6 +59,8 @@ final class RY_WTP_ECPay_Shipping
             add_action('woocommerce_review_order_after_shipping', [$this, 'shipping_choose_cvs']);
             add_action('woocommerce_after_checkout_validation', [$this, 'check_phone'], 10, 2);
             add_action('woocommerce_view_order', [$this, 'shipping_info']);
+
+            add_action('woocommerce_api_ry_ecpay_map_callback', [$this, 'chang_polylang_lang'], 9);
         }
     }
 
@@ -176,5 +178,19 @@ final class RY_WTP_ECPay_Shipping
             'shipping_info_list' => $shipping_info_list,
         ];
         wc_get_template('order/order-ecpay-shipping-info.php', $args, '', RY_WTP_PLUGIN_DIR . 'templates/');
+    }
+
+    public function chang_polylang_lang()
+    {
+        if (isset($_GET['lang'])) {
+            // 針對 Polylang 外掛調整語系設定
+            if (function_exists('PLL')) {
+                $lang = wp_unslash($_GET['lang']);
+                if(strtolower($lang) === sanitize_key($lang)) {
+                    $lang = PLL()->model->get_language($lang);
+                    PLL()->curlang = $lang;
+                }
+            }
+        }
     }
 }
