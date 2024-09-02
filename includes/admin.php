@@ -32,7 +32,7 @@ final class RY_WTP_Admin
             printf('<div class="error"><p>%s</p></div>', wp_kses($message, ['strong' => []]));
         }
 
-        if(defined('RY_WT::MIN_PRO_TOOLS_VERSION') && version_compare(RY_WTP_VERSION, RY_WT::MIN_PRO_TOOLS_VERSION, '<')) {
+        if (defined('RY_WT::MIN_PRO_TOOLS_VERSION') && version_compare(RY_WTP_VERSION, RY_WT::MIN_PRO_TOOLS_VERSION, '<')) {
             $message = sprintf(
                 /* translators: %1$s: Name of this plugin %2$s: Name of require plugin %3$s: min require version */
                 __('<strong>%1$s</strong> is inactive. It require %2$s %3$s or newer.', 'ry-woocommerce-tools-pro'),

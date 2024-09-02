@@ -4,9 +4,9 @@ use Automattic\WooCommerce\Blocks\Payments\Integrations\AbstractPaymentMethodTyp
 
 final class RY_ECPay_Gateway_Credit_Installment_24_Blocks_Support extends AbstractPaymentMethodType
 {
-    private $gateway;
-
     protected $name = 'ry_ecpay_credit_installment_24';
+
+    private $gateway;
 
     public function initialize()
     {

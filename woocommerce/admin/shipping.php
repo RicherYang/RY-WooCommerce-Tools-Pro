@@ -49,7 +49,7 @@ final class RY_WTP_WC_Admin_Shipping
             }
         }
 
-        if(isset($support_temp)) {
+        if (isset($support_temp)) {
             if (in_array('1', $support_temp)) {
                 echo '<button type="button" class="button ry-' . esc_attr($type) . '-shipping-info" data-orderid="' . esc_attr($order->get_id()) . '" data-temp="1">' . esc_html__('Get shipping no (normal temperature)', 'ry-woocommerce-tools-pro') . '</button>';
             }
@@ -86,7 +86,7 @@ final class RY_WTP_WC_Admin_Shipping
         $product->update_meta_data('_ry_shipping_amount', $shipping_amount);
 
         $temp = wp_unslash($_POST['ry_shipping_temp']);
-        if(!in_array($temp, ['1', '2', '3'])) {
+        if (!in_array($temp, ['1', '2', '3'])) {
             $temp = '1';
         }
         $product->update_meta_data('_ry_shipping_temp', $temp);
@@ -99,7 +99,7 @@ final class RY_WTP_WC_Admin_Shipping
         $variation->update_meta_data('_ry_shipping_amount', $shipping_amount);
 
         $temp = wp_unslash($_POST['variable_ry_shipping_temp'][$i]);
-        if(!in_array($temp, ['0', '1', '2', '3'])) {
+        if (!in_array($temp, ['0', '1', '2', '3'])) {
             $temp = '0';
         }
         $variation->update_meta_data('_ry_shipping_temp', $temp);

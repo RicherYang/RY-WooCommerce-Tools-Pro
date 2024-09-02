@@ -22,7 +22,7 @@ class RY_ECPay_Shipping_CVS_711_Pro extends RY_ECPay_Shipping_CVS_711
             + array_slice($this->instance_form_fields, $field_idx);
 
         list($MerchantID, $HashKey, $HashIV, $cvs_type) = RY_WT_WC_ECPay_Shipping::instance()->get_api_info();
-        if('B2C' === $cvs_type) {
+        if ('B2C' === $cvs_type) {
             $field_idx = array_search('cost', array_keys($this->instance_form_fields)) + 1;
             $this->instance_form_fields = array_slice($this->instance_form_fields, 0, $field_idx)
             + [
@@ -52,7 +52,7 @@ class RY_ECPay_Shipping_CVS_711_Pro extends RY_ECPay_Shipping_CVS_711
     public static function get_support_temp()
     {
         list($MerchantID, $HashKey, $HashIV, $cvs_type) = RY_WT_WC_ECPay_Shipping::instance()->get_api_info();
-        if('B2C' === $cvs_type) {
+        if ('B2C' === $cvs_type) {
             return ['1', '3'];
         }
 

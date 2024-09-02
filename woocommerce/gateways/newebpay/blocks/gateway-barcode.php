@@ -4,9 +4,9 @@ use Automattic\WooCommerce\Blocks\Payments\Integrations\AbstractPaymentMethodTyp
 
 final class RY_NewebPay_Gateway_Barcode_Blocks_Support extends AbstractPaymentMethodType
 {
-    private $gateway;
-
     protected $name = 'ry_newebpay_barcode';
+
+    private $gateway;
 
     public function initialize()
     {

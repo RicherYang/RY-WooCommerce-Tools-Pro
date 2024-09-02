@@ -5,6 +5,7 @@ class RY_ECPay_Gateway_Bnpl extends RY_WT_WC_ECPay_Payment_Gateway
     public const Payment_Type = 'BNPL';
 
     protected $check_min_amount = 3000;
+
     protected $check_max_amount = 300000;
 
     public function __construct()
@@ -35,15 +36,15 @@ class RY_ECPay_Gateway_Bnpl extends RY_WT_WC_ECPay_Payment_Gateway
             return;
         }
         ?>
-<h3 style="clear:both"><?php esc_html_e('Payment details', 'ry-woocommerce-tools') ?></h3>
+<h3 style="clear:both"><?php esc_html_e('Payment details', 'ry-woocommerce-tools'); ?></h3>
 <table>
     <tr>
-        <td><?php esc_html_e('BNPL Trade No', 'ry-woocommerce-tools-pro') ?>
+        <td><?php esc_html_e('BNPL Trade No', 'ry-woocommerce-tools-pro'); ?>
         </td>
         <td><?php echo esc_html($order->get_meta('_ecpay_bnpl_TradeNo')); ?></td>
     </tr>
     <tr>
-        <td><?php esc_html_e('BNPL Installment', 'ry-woocommerce-tools-pro') ?>
+        <td><?php esc_html_e('BNPL Installment', 'ry-woocommerce-tools-pro'); ?>
         </td>
         <td><?php echo esc_html($order->get_meta('_ecpay_bnpl_Installment')); ?>
         </td>

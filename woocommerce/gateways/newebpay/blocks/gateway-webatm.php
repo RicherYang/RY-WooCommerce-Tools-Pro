@@ -4,9 +4,9 @@ use Automattic\WooCommerce\Blocks\Payments\Integrations\AbstractPaymentMethodTyp
 
 final class RY_NewebPay_Gateway_Webatm_Blocks_Support extends AbstractPaymentMethodType
 {
-    private $gateway;
-
     protected $name = 'ry_newebpay_webatm';
+
+    private $gateway;
 
     public function initialize()
     {

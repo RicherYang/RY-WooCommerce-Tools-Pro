@@ -4,9 +4,9 @@ use Automattic\WooCommerce\Blocks\Payments\Integrations\AbstractPaymentMethodTyp
 
 final class RY_SmilePay_Gateway_Credit_Blocks_Support extends AbstractPaymentMethodType
 {
-    private $gateway;
-
     protected $name = 'ry_smilepay_credit';
+
+    private $gateway;
 
     public function initialize()
     {

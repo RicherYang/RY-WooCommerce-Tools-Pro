@@ -13,7 +13,6 @@ final class RY_WTP_License extends RY_WT_Model
         if (null === self::$_instance) {
             self::$_instance = new self();
             self::$_instance->do_init();
-
         }
 
         return self::$_instance;

@@ -4,9 +4,9 @@ use Automattic\WooCommerce\Blocks\Payments\Integrations\AbstractPaymentMethodTyp
 
 final class RY_NewebPay_Gateway_Credit_Installment_18_Blocks_Support extends AbstractPaymentMethodType
 {
-    private $gateway;
-
     protected $name = 'ry_newebpay_credit_installment_18';
+
+    private $gateway;
 
     public function initialize()
     {

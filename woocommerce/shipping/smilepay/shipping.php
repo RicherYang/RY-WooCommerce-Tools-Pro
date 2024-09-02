@@ -148,8 +148,8 @@ final class RY_WTP_SmilePay_Shipping
                 }
             }
 
-            if($used) {
-                if((!$data['ship_to_different_address'] || !WC()->cart->needs_shipping_address())) {
+            if ($used) {
+                if ((!$data['ship_to_different_address'] || !WC()->cart->needs_shipping_address())) {
                     $phone = $data['billing_phone'];
                 } else {
                     $phone = $data['shipping_phone'];

@@ -20,7 +20,7 @@ final class RY_WTP_SmilePay_Shipping_Admin
         add_filter('woocommerce_get_settings_rytools', [$this, 'add_setting'], 11, 3);
 
         if (class_exists('Automattic\WooCommerce\Utilities\OrderUtil') && OrderUtil::custom_orders_table_usage_is_enabled()) {
-            if('edit' !== ($_GET['action'] ?? '')) {
+            if ('edit' !== ($_GET['action'] ?? '')) {
                 add_filter('bulk_actions-woocommerce_page_wc-orders', [$this, 'shop_order_list_action']);
                 add_filter('handle_bulk_actions-woocommerce_page_wc-orders', [$this, 'print_shipping_note'], 10, 3);
             }
@@ -49,7 +49,7 @@ final class RY_WTP_SmilePay_Shipping_Admin
                 ],
             ]);
 
-            if(!$checkout_with_block) {
+            if (!$checkout_with_block) {
                 $setting_idx = array_search(RY_WT::OPTION_PREFIX . 'smilepay_shipping_log_status_change', array_column($settings, 'id'));
                 array_splice($settings, $setting_idx, 0, [
                     [

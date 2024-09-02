@@ -21,7 +21,7 @@ final class RY_WTP_NewebPay_Shipping_Admin
     public function add_setting($settings, $current_section, $checkout_with_block)
     {
         if ($current_section == 'newebpay_shipping') {
-            if(!$checkout_with_block) {
+            if (!$checkout_with_block) {
                 $setting_idx = array_search('base_options', array_column($settings, 'id'));
                 array_splice($settings, $setting_idx + 1, 0, [
                     [

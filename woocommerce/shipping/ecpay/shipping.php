@@ -70,10 +70,10 @@ final class RY_WTP_ECPay_Shipping
 
         if (is_checkout()) {
             if ('yes' == RY_WTP::get_option('ecpay_cvs_billing_address', 'no')) {
-                if(isset($fields['billing'])) {
+                if (isset($fields['billing'])) {
                     foreach ($cvs_hide_fields as $key) {
-                        if(isset($fields['billing'][$key])) {
-                            if(isset($fields['billing'][$key]['class'])) {
+                        if (isset($fields['billing'][$key])) {
+                            if (isset($fields['billing'][$key]['class'])) {
                                 $fields['billing'][$key]['class'][] = 'ry-cvs-hide';
                             } else {
                                 $fields['billing'][$key]['class'] = ['ry-cvs-hide'];
@@ -148,8 +148,8 @@ final class RY_WTP_ECPay_Shipping
                 }
             }
 
-            if($used) {
-                if((!$data['ship_to_different_address'] || !WC()->cart->needs_shipping_address())) {
+            if ($used) {
+                if ((!$data['ship_to_different_address'] || !WC()->cart->needs_shipping_address())) {
                     $phone = $data['billing_phone'];
                 } else {
                     $phone = $data['shipping_phone'];
@@ -186,7 +186,7 @@ final class RY_WTP_ECPay_Shipping
             // 針對 Polylang 外掛調整語系設定
             if (function_exists('PLL')) {
                 $lang = wp_unslash($_GET['lang']);
-                if(strtolower($lang) === sanitize_key($lang)) {
+                if (strtolower($lang) === sanitize_key($lang)) {
                     $lang = PLL()->model->get_language($lang);
                     PLL()->curlang = $lang;
                 }

@@ -19,7 +19,7 @@ final class RY_WTP_WC_Admin_Order
     protected function do_init(): void
     {
         if (class_exists('Automattic\WooCommerce\Utilities\OrderUtil') && OrderUtil::custom_orders_table_usage_is_enabled()) {
-            if('edit' !== ($_GET['action'] ?? '')) {
+            if ('edit' !== ($_GET['action'] ?? '')) {
                 add_filter('manage_woocommerce_page_wc-orders_columns', [$this, 'shop_order_columns'], 11);
                 add_action('manage_woocommerce_page_wc-orders_custom_column', [$this, 'shop_order_column'], 11, 2);
             }
@@ -43,26 +43,26 @@ final class RY_WTP_WC_Admin_Order
     public function shop_order_column($column, $order)
     {
         if ('ry_shipping_no' == $column) {
-            if(!is_object($order)) {
+            if (!is_object($order)) {
                 global $the_order;
                 $order = $the_order;
             }
 
-            foreach(['_ecpay_shipping_info', '_newebpay_shipping_info', '_smilepay_shipping_info'] as $meta_key) {
+            foreach (['_ecpay_shipping_info', '_newebpay_shipping_info', '_smilepay_shipping_info'] as $meta_key) {
                 $shipping_list = $order->get_meta($meta_key, true);
                 if (is_array($shipping_list)) {
                     foreach ($shipping_list as $item) {
-                        if(!isset($item['LogisticsType'])) {
+                        if (!isset($item['LogisticsType'])) {
                             $item['LogisticsType'] = 'CVS';
                         }
 
                         if ('CVS' == $item['LogisticsType']) {
-                            if(!empty($item['PaymentNo'])) {
+                            if (!empty($item['PaymentNo'])) {
                                 echo esc_html($item['PaymentNo']) . '<span class="validationno">' . esc_html($item['ValidationNo'] ?? '') . '<br>';
                             }
                         }
                         if ('HOME' == $item['LogisticsType']) {
-                            if(!empty($item['BookingNote'])) {
+                            if (!empty($item['BookingNote'])) {
                                 echo esc_html($item['BookingNote']) . '<br>';
                             }
                         }

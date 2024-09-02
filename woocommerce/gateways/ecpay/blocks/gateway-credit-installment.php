@@ -1,13 +1,13 @@
 <?php
 
-use Automattic\WooCommerce\Blocks\Payments\PaymentContext;
 use Automattic\WooCommerce\Blocks\Payments\Integrations\AbstractPaymentMethodType;
+use Automattic\WooCommerce\Blocks\Payments\PaymentContext;
 
 final class RY_ECPay_Gateway_Credit_Installment_Blocks_Support extends AbstractPaymentMethodType
 {
-    private $gateway;
-
     protected $name = 'ry_ecpay_credit_installment';
+
+    private $gateway;
 
     public function __construct()
     {
