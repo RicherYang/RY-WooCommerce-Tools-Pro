@@ -24,7 +24,6 @@ final class RY_WTP_NewebPay_Shipping
 
         RY_WTP_WC_Shipping::instance();
 
-        add_filter('woocommerce_shipping_methods', [$this, 'use_pro_method'], 11);
         add_filter('woocommerce_checkout_fields', [$this, 'hide_billing_info'], 9999);
 
         if (is_admin()) {
@@ -35,15 +34,6 @@ final class RY_WTP_NewebPay_Shipping
         }
     }
 
-    public function use_pro_method($shipping_methods)
-    {
-        if (isset($shipping_methods['ry_newebpay_shipping_cvs'])) {
-            $shipping_methods['ry_newebpay_shipping_cvs'] = 'RY_NewebPay_Shipping_CVS_Pro';
-        }
-
-        return $shipping_methods;
-    }
-
     public function hide_billing_info($fields)
     {
         if (is_checkout()) {
@@ -51,7 +41,7 @@ final class RY_WTP_NewebPay_Shipping
             $is_support = false;
             if (count($chosen_method)) {
                 foreach (RY_WT_WC_NewebPay_Shipping::$support_methods as $method => $method_class) {
-                    if (0 === strpos($chosen_method[0], $method)) {
+                    if (str_starts_with($chosen_method[0], $method)) {
                         $is_support = true;
                     }
                 }
@@ -59,7 +49,7 @@ final class RY_WTP_NewebPay_Shipping
 
             if ($is_support) {
                 if ('yes' == RY_WTP::get_option('ecpay_cvs_billing_address', 'no')) {
-                    if (strpos($chosen_method[0], '_cvs')) {
+                    if (str_contains($chosen_method[0], '_cvs')) {
                         $hide_fields = ['billing_country', 'billing_address_1', 'billing_address_2', 'billing_city', 'billing_state', 'billing_postcode'];
                         foreach ($hide_fields as $field_name) {
                             if (isset($fields['billing'][$field_name])) {
@@ -78,7 +68,7 @@ final class RY_WTP_NewebPay_Shipping
                 foreach ($shipping_method as $method) {
                     $method = strstr($method, ':', true);
                     if (array_key_exists($method, RY_WT_WC_NewebPay_Shipping::$support_methods)) {
-                        if (strpos($method, '_cvs')) {
+                        if (str_contains($method, '_cvs')) {
                             $used_cvs = true;
                         }
                         break;

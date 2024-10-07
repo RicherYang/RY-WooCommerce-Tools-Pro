@@ -76,7 +76,7 @@ final class RY_WTP_SmilePay_Shipping_Admin
 
     public function print_shipping_note($redirect_to, $action, $ids)
     {
-        if (false !== strpos($action, 'ry_print_smilepay_')) {
+        if (str_starts_with($action, 'ry_print_smilepay_')) {
             $redirect_to = add_query_arg(
                 [
                     'orderid' => implode(',', $ids),

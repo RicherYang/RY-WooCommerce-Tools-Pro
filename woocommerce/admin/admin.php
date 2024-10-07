@@ -143,7 +143,7 @@ final class RY_WTP_WC_Admin
         set_time_limit(60);
         foreach ($states as $code => $name) {
             $states_change[$name] = $code;
-            if (false !== strpos($name, '臺')) {
+            if (str_contains($name, '臺')) {
                 $name = str_replace('臺', '台', $name);
                 $states_change[$name] = $code;
             }

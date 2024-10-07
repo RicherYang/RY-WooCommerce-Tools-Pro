@@ -19,14 +19,15 @@ final class RY_WTP_ECPay_Shipping_Admin
     {
         add_filter('woocommerce_get_settings_rytools', [$this, 'add_setting'], 11, 3);
 
+        add_action('admin_notices', [$this, 'bulk_action_notices']);
         if (class_exists('Automattic\WooCommerce\Utilities\OrderUtil') && OrderUtil::custom_orders_table_usage_is_enabled()) {
             if ('edit' !== ($_GET['action'] ?? '')) {
                 add_filter('bulk_actions-woocommerce_page_wc-orders', [$this, 'shop_order_list_action']);
-                add_filter('handle_bulk_actions-woocommerce_page_wc-orders', [$this, 'print_shipping_note'], 10, 3);
+                add_filter('handle_bulk_actions-woocommerce_page_wc-orders', [$this, 'do_shop_order_action'], 10, 3);
             }
         } else {
             add_filter('bulk_actions-edit-shop_order', [$this, 'shop_order_list_action']);
-            add_filter('handle_bulk_actions-edit-shop_order', [$this, 'print_shipping_note'], 10, 3);
+            add_filter('handle_bulk_actions-edit-shop_order', [$this, 'do_shop_order_action'], 10, 3);
         }
 
         add_action('woocommerce_admin_order_data_after_shipping_address', [$this, 'add_choose_cvs_btn']);
@@ -85,8 +86,25 @@ final class RY_WTP_ECPay_Shipping_Admin
         return $settings;
     }
 
+    public function bulk_action_notices()
+    {
+        if (empty($_GET['bulk_action'])) {
+            return;
+        }
+
+        $bulk_action = wc_clean(wp_unslash($_GET['bulk_action']));
+        $number = absint($_GET['ry_geted'] ?? 0);
+
+        if ('ry_get_ecpay_no' === $bulk_action) {
+            $message = sprintf(_n('%s order get shipping no.', '%s order get shipping no.', $number, 'woocommerce'), number_format_i18n($number));
+            echo '<div class="updated"><p>' . esc_html($message) . '</p></div>';
+        }
+    }
+
     public function shop_order_list_action($actions)
     {
+        $actions['ry_get_ecpay_no'] = __('Get ECPay shipping no', 'ry-woocommerce-tools-pro');
+
         switch (RY_WT::get_option('ecpay_shipping_cvs_type')) {
             case 'B2C':
                 $actions['ry_print_ecpay_cvs_711'] = __('Print ECPay shipping booking note (711)', 'ry-woocommerce-tools-pro');
@@ -107,9 +125,36 @@ final class RY_WTP_ECPay_Shipping_Admin
         return $actions;
     }
 
-    public function print_shipping_note($redirect_to, $action, $ids)
+    public function do_shop_order_action($redirect_to, $action, $ids)
     {
-        if (false !== strpos($action, 'ry_print_ecpay_')) {
+        if ('ry_get_ecpay_no' === $action) {
+            $geted = 0;
+
+            $ry_shipping = RY_WT_WC_ECPay_Shipping::instance();
+            $ry_shipping_api = RY_WT_WC_ECPay_Shipping_Api::instance();
+
+            foreach ($ids as $order_ID) {
+                $order = wc_get_order($order_ID);
+                foreach ($order->get_items('shipping') as $shipping_item) {
+                    $shipping_method = $ry_shipping->get_order_support_shipping($shipping_item);
+                    if (false != $shipping_method) {
+                        $geted += 1;
+                        $ry_shipping_api->get_code($order_ID, 'cod' === $order->get_payment_method());
+                    }
+                }
+            }
+
+            $redirect_to = add_query_arg(
+                [
+                    'bulk_action' => 'ry_get_ecpay_no',
+                    'ry_geted' => $geted,
+                    'ids' => implode(',', $ids),
+                ],
+                $redirect_to
+            );
+        }
+
+        if (str_starts_with($action, 'ry_print_ecpay_')) {
             $redirect_to = add_query_arg(
                 [
                     'orderid' => implode(',', $ids),
@@ -121,14 +166,14 @@ final class RY_WTP_ECPay_Shipping_Admin
             exit();
         }
 
-        return esc_url_raw($redirect_to);
+        return $redirect_to;
     }
 
     public function add_choose_cvs_btn($order)
     {
         foreach ($order->get_items('shipping') as $item) {
             $shipping_method = RY_WT_WC_ECPay_Shipping::instance()->get_order_support_shipping($item);
-            if (false !== $shipping_method && false !== strpos($shipping_method, '_cvs')) {
+            if (false !== $shipping_method && str_contains($shipping_method, '_cvs')) {
                 list($MerchantID, $HashKey, $HashIV, $cvs_type) = RY_WT_WC_ECPay_Shipping::instance()->get_api_info();
 
                 $choosed_cvs = '';

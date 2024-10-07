@@ -26,7 +26,6 @@ final class RY_WTP_SmilePay_Shipping
 
         RY_WTP_WC_Shipping::instance();
 
-        add_filter('woocommerce_shipping_methods', [$this, 'use_pro_method'], 11);
         add_filter('woocommerce_checkout_fields', [$this, 'hide_billing_info'], 9999);
 
         if ('yes' === RY_WT::get_option('smilepay_shipping_auto_get_no', 'yes')) {
@@ -47,19 +46,6 @@ final class RY_WTP_SmilePay_Shipping
         }
     }
 
-    public function use_pro_method($shipping_methods)
-    {
-        foreach ($shipping_methods as $method => $method_class) {
-            if (substr($method, 0, 12) == 'ry_smilepay_') {
-                if (substr($method_class, -4) != '_Pro') {
-                    $shipping_methods[$method] = $method_class . '_Pro';
-                }
-            }
-        }
-
-        return $shipping_methods;
-    }
-
     public function hide_billing_info($fields)
     {
         if (is_checkout()) {
@@ -67,7 +53,7 @@ final class RY_WTP_SmilePay_Shipping
             $is_support = false;
             if (count($chosen_method)) {
                 foreach (RY_WT_WC_SmilePay_Shipping::$support_methods as $method => $method_class) {
-                    if (0 === strpos($chosen_method[0], $method)) {
+                    if (str_starts_with($chosen_method[0], $method)) {
                         $is_support = true;
                     }
                 }
@@ -75,7 +61,7 @@ final class RY_WTP_SmilePay_Shipping
 
             if ($is_support) {
                 if ('yes' == RY_WTP::get_option('smilepay_cvs_billing_address', 'no')) {
-                    if (strpos($chosen_method[0], '_cvs')) {
+                    if (str_contains($chosen_method[0], '_cvs')) {
                         $hide_fields = ['billing_country', 'billing_address_1', 'billing_address_2', 'billing_city', 'billing_state', 'billing_postcode'];
                         foreach ($hide_fields as $field_name) {
                             if (isset($fields['billing'][$field_name])) {
@@ -94,7 +80,7 @@ final class RY_WTP_SmilePay_Shipping
                 foreach ($shipping_method as $method) {
                     $method = strstr($method, ':', true);
                     if (array_key_exists($method, RY_WT_WC_SmilePay_Shipping::$support_methods)) {
-                        if (strpos($method, '_cvs')) {
+                        if (str_contains($method, '_cvs')) {
                             $used_cvs = true;
                         }
                         break;

@@ -44,11 +44,11 @@ final class RY_WTP_ECPay_Shipping
         add_action('ry_ecpay_shipping_response_status_3006', [$this, 'shipping_transporting'], 10, 2);
         add_action('ry_ecpay_shipping_response_status_3032', [$this, 'shipping_transporting'], 10, 2);
 
+        add_action('ry_wtp_get_ecpay_code', [RY_WT_WC_ECPay_Shipping_Api::instance(), 'get_code'], 10, 2);
         if ('yes' === RY_WT::get_option('ecpay_shipping_auto_get_no', 'yes')) {
             if ('yes' === RY_WTP::get_option('ecpay_shipping_auto_with_scheduler', 'no')) {
                 remove_action('woocommerce_order_status_processing', [RY_WT_WC_ECPay_Shipping::instance(), 'get_code'], 10, 2);
                 add_action('woocommerce_order_status_processing', [$this, 'get_code'], 10, 2);
-                add_action('ry_wtp_get_ecpay_code', [RY_WT_WC_ECPay_Shipping_Api::instance(), 'get_code'], 10, 2);
             }
         }
 
@@ -60,6 +60,7 @@ final class RY_WTP_ECPay_Shipping
             add_action('woocommerce_after_checkout_validation', [$this, 'check_phone'], 10, 2);
             add_action('woocommerce_view_order', [$this, 'shipping_info']);
 
+            // 針對 Polylang 外掛調整語系設定
             add_action('woocommerce_api_ry_ecpay_map_callback', [$this, 'chang_polylang_lang'], 9);
         }
     }
@@ -91,7 +92,7 @@ final class RY_WTP_ECPay_Shipping
                 foreach ($shipping_method as $method) {
                     $method = strstr($method, ':', true);
                     if (array_key_exists($method, RY_WT_WC_ECPay_Shipping::$support_methods)) {
-                        if (strpos($method, '_cvs')) {
+                        if (str_contains($method, '_cvs')) {
                             $used_cvs = true;
                         }
                         break;
@@ -183,7 +184,6 @@ final class RY_WTP_ECPay_Shipping
     public function chang_polylang_lang()
     {
         if (isset($_GET['lang'])) {
-            // 針對 Polylang 外掛調整語系設定
             if (function_exists('PLL')) {
                 $lang = wp_unslash($_GET['lang']);
                 if (strtolower($lang) === sanitize_key($lang)) {
