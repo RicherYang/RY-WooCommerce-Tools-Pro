@@ -66,12 +66,11 @@ final class RY_WTP_NewebPay_Shipping
                 $used_cvs = false;
                 $shipping_method = isset($_POST['shipping_method']) ? wc_clean($_POST['shipping_method']) : [];
                 foreach ($shipping_method as $method) {
-                    $method = strstr($method, ':', true);
-                    if (array_key_exists($method, RY_WT_WC_NewebPay_Shipping::$support_methods)) {
-                        if (str_contains($method, '_cvs')) {
+                    $method_ID = strstr($method, ':', true);
+                    if (isset(RY_WT_WC_NewebPay_Shipping::$support_methods[$method_ID])) {
+                        if (str_contains($method_ID, '_cvs')) {
                             $used_cvs = true;
                         }
-                        break;
                     }
                 }
 

@@ -37,15 +37,15 @@ final class RY_WTP_WC_Admin_Shipping
     public function add_shipping_info_action($order, $type)
     {
         foreach ($order->get_items('shipping') as $item) {
-            $shipping_method_ID = $item->get_method_id();
-            if (class_exists('RY_WT_WC_ECPay_Shipping') && array_key_exists($shipping_method_ID, RY_WT_WC_ECPay_Shipping::$support_methods)) {
-                $support_temp = RY_WT_WC_ECPay_Shipping::$support_methods[$shipping_method_ID]::get_support_temp();
+            $method_ID = $item->get_method_id();
+            if (class_exists('RY_WT_WC_ECPay_Shipping') && isset(RY_WT_WC_ECPay_Shipping::$support_methods[$method_ID])) {
+                $support_temp = RY_WT_WC_ECPay_Shipping::$support_methods[$method_ID]::get_support_temp();
             }
-            if (class_exists('RY_WT_WC_NewebPay_Shipping') && array_key_exists($shipping_method_ID, RY_WT_WC_NewebPay_Shipping::$support_methods)) {
-                $support_temp = RY_WT_WC_NewebPay_Shipping::$support_methods[$shipping_method_ID]::get_support_temp();
+            if (class_exists('RY_WT_WC_NewebPay_Shipping') && isset(RY_WT_WC_NewebPay_Shipping::$support_methods[$method_ID])) {
+                $support_temp = RY_WT_WC_NewebPay_Shipping::$support_methods[$method_ID]::get_support_temp();
             }
-            if (class_exists('RY_WT_WC_SmilePay_Shipping') && array_key_exists($shipping_method_ID, RY_WT_WC_SmilePay_Shipping::$support_methods)) {
-                $support_temp = RY_WT_WC_SmilePay_Shipping::$support_methods[$shipping_method_ID]::get_support_temp();
+            if (class_exists('RY_WT_WC_SmilePay_Shipping') && isset(RY_WT_WC_SmilePay_Shipping::$support_methods[$method_ID])) {
+                $support_temp = RY_WT_WC_SmilePay_Shipping::$support_methods[$method_ID]::get_support_temp();
             }
         }
 

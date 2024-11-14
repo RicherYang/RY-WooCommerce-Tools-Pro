@@ -90,12 +90,11 @@ final class RY_WTP_ECPay_Shipping
                 $used_cvs = false;
                 $shipping_method = isset($_POST['shipping_method']) ? wc_clean($_POST['shipping_method']) : [];
                 foreach ($shipping_method as $method) {
-                    $method = strstr($method, ':', true);
-                    if (array_key_exists($method, RY_WT_WC_ECPay_Shipping::$support_methods)) {
-                        if (str_contains($method, '_cvs')) {
+                    $method_ID = strstr($method, ':', true);
+                    if (isset(RY_WT_WC_ECPay_Shipping::$support_methods[$method_ID])) {
+                        if (str_contains($method_ID, '_cvs')) {
                             $used_cvs = true;
                         }
-                        break;
                     }
                 }
 
@@ -141,10 +140,9 @@ final class RY_WTP_ECPay_Shipping
             $used = false;
             if (count($chosen_method)) {
                 foreach ($chosen_method as $method) {
-                    $method = strstr($method, ':', true);
-                    if ($method && array_key_exists($method, RY_WT_WC_ECPay_Shipping::$support_methods)) {
+                    $method_ID = strstr($method, ':', true);
+                    if ($method_ID && isset(RY_WT_WC_ECPay_Shipping::$support_methods[$method_ID])) {
                         $used = true;
-                        break;
                     }
                 }
             }
