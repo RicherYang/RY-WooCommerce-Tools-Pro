@@ -43,6 +43,7 @@ final class RY_WTP_ECPay_Shipping
         add_action('ry_ecpay_shipping_response_status_2068', [$this, 'shipping_transporting'], 10, 2);
         add_action('ry_ecpay_shipping_response_status_3006', [$this, 'shipping_transporting'], 10, 2);
         add_action('ry_ecpay_shipping_response_status_3032', [$this, 'shipping_transporting'], 10, 2);
+        add_action('ry_ecpay_shipping_response_status_3301', [$this, 'shipping_transporting'], 10, 2);
 
         add_action('ry_wtp_get_ecpay_code', [RY_WT_WC_ECPay_Shipping_Api::instance(), 'get_code'], 10, 2);
         if ('yes' === RY_WT::get_option('ecpay_shipping_auto_get_no', 'yes')) {

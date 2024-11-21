@@ -18,7 +18,7 @@ final class RY_WTP_WC_NewebPay_Gateway_Block
 
     protected function do_init(): void
     {
-        add_action('woocommerce_blocks_loaded', [$this, 'add_block_support']);
+        $this->add_block_support();
     }
 
     public function add_block_support()
