@@ -662,7 +662,7 @@ msgstr "綠界選擇超商門市"
 msgid "<strong>%1$s</strong> is inactive. It require %2$s %3$s or newer."
 msgstr "<strong>%1$s</strong> 暫停運作。 需求 %2$s %3$s 或更新版本。"
 
-#: woocommerce/shipping/ecpay/shipping.php:158
+#: woocommerce/shipping/ecpay/shipping.php:159
 #: woocommerce/shipping/smilepay/shipping.php:143
 msgid "Invalid cellphone number"
 msgstr "無效的手機號碼"
