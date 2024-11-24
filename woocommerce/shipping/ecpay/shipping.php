@@ -182,13 +182,11 @@ final class RY_WTP_ECPay_Shipping
 
     public function chang_polylang_lang()
     {
-        if (isset($_GET['lang'])) {
-            if (function_exists('PLL')) {
-                $lang = wp_unslash($_GET['lang']);
-                if (strtolower($lang) === sanitize_key($lang)) {
-                    $lang = PLL()->model->get_language($lang);
-                    PLL()->curlang = $lang;
-                }
+        if (isset($_GET['lang']) && function_exists('PLL')) {
+            $lang = wp_unslash($_GET['lang']);
+            if (strtolower($lang) === sanitize_key($lang)) {
+                $lang = PLL()->model->get_language($lang);
+                PLL()->curlang = $lang;
             }
         }
     }

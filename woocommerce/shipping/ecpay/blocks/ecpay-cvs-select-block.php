@@ -48,7 +48,10 @@ class RY_ECPay_Shipping_Cvs_Select_Block implements IntegrationInterface
             'postData' => [
                 'MerchantID' => $MerchantID,
                 'IsCollection' => 'Y',
-                'ServerReplyURL' => esc_url(WC()->api_request_url('ry_ecpay_map_callback')),
+                'ServerReplyURL' => esc_url(add_query_arg([
+                    'ry-ecpay-map-redirect' => 'ry-ecpay-map-redirect',
+                    'lang' => get_locale(),
+                ], WC()->api_request_url('ry_ecpay_map_callback'))),
             ],
         ];
     }
