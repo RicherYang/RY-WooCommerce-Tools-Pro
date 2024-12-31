@@ -39,11 +39,13 @@ final class RY_WTP_ECPay_Shipping
 
         add_filter('woocommerce_checkout_fields', [$this, 'hide_billing_info'], 9999);
 
-        add_action('ry_ecpay_shipping_response_status_2030', [$this, 'shipping_transporting'], 10, 2);
-        add_action('ry_ecpay_shipping_response_status_2068', [$this, 'shipping_transporting'], 10, 2);
-        add_action('ry_ecpay_shipping_response_status_3006', [$this, 'shipping_transporting'], 10, 2);
-        add_action('ry_ecpay_shipping_response_status_3032', [$this, 'shipping_transporting'], 10, 2);
-        add_action('ry_ecpay_shipping_response_status_3301', [$this, 'shipping_transporting'], 10, 2);
+        if ('yes' === RY_WT::get_option('ecpay_shipping_auto_order_status', 'yes')) {
+            add_action('ry_ecpay_shipping_response_status_2030', [$this, 'shipping_transporting'], 10, 2);
+            add_action('ry_ecpay_shipping_response_status_2068', [$this, 'shipping_transporting'], 10, 2);
+            add_action('ry_ecpay_shipping_response_status_3006', [$this, 'shipping_transporting'], 10, 2);
+            add_action('ry_ecpay_shipping_response_status_3032', [$this, 'shipping_transporting'], 10, 2);
+            add_action('ry_ecpay_shipping_response_status_3301', [$this, 'shipping_transporting'], 10, 2);
+        }
 
         add_action('ry_wtp_get_ecpay_code', [RY_WT_WC_ECPay_Shipping_Api::instance(), 'get_code'], 10, 2);
         if ('yes' === RY_WT::get_option('ecpay_shipping_auto_get_no', 'yes')) {
@@ -120,12 +122,18 @@ final class RY_WTP_ECPay_Shipping
 
     public function get_code($order_ID, $order)
     {
-        $shipping_list = $order->get_meta('_ecpay_shipping_info', true);
-        if (!is_array($shipping_list)) {
-            $shipping_list = [];
-        }
-        if (count($shipping_list) == 0) {
-            WC()->queue()->schedule_single(time() + 10, 'ry_wtp_get_ecpay_code', [$order_ID], '');
+        foreach ($order->get_items('shipping') as $shipping_item) {
+            $shipping_method = RY_WT_WC_ECPay_Shipping::instance()->get_order_support_shipping($shipping_item);
+            if (false !== $shipping_method) {
+                $shipping_list = $order->get_meta('_ecpay_shipping_info', true);
+                if (!is_array($shipping_list)) {
+                    $shipping_list = [];
+                }
+                if (count($shipping_list) == 0) {
+                    WC()->queue()->schedule_single(time() + 10, 'ry_wtp_get_ecpay_code', [$order_ID], '');
+                }
+                break;
+            }
         }
     }
 

@@ -28,11 +28,15 @@ final class RY_WTP_SmilePay_Shipping
 
         add_filter('woocommerce_checkout_fields', [$this, 'hide_billing_info'], 9999);
 
+        if ('yes' === RY_WT::get_option('smilepay_shipping_auto_order_status', 'yes')) {
+            add_action('ry_smilepay_shipping_response_status_1', [$this, 'shipping_transporting'], 10, 2);
+        }
+
+        add_action('ry_wtp_get_smilepay_cvs_code', [RY_WT_WC_SmilePay_Shipping_Api::instance(), 'get_code_no'], 10, 2);
         if ('yes' === RY_WT::get_option('smilepay_shipping_auto_get_no', 'yes')) {
             if ('yes' === RY_WTP::get_option('smilepay_shipping_auto_with_scheduler', 'no')) {
                 remove_action('woocommerce_order_status_processing', [RY_WT_WC_SmilePay_Shipping::instance(), 'get_code'], 10, 2);
                 add_action('woocommerce_order_status_processing', [$this, 'get_code'], 10, 2);
-                add_action('ry_wtp_get_smilepay_cvs_code', [RY_WT_WC_SmilePay_Shipping_Api::instance(), 'get_code_no'], 10, 2);
             }
         }
 
@@ -100,15 +104,25 @@ final class RY_WTP_SmilePay_Shipping
         return $fields;
     }
 
+    public function shipping_transporting($ipn_info, $order)
+    {
+        $order->update_status('ry-transporting');
+    }
+
     public function get_code($order_ID, $order)
     {
-        $shipping_list = $order->get_meta('_smilepay_shipping_info', true);
-        if (!is_array($shipping_list)) {
-            $shipping_list = [];
-        }
-        if (count($shipping_list) > 0) {
-            foreach ($shipping_list as $smse_ID => $info) {
-                WC()->queue()->schedule_single(time() + 10, 'ry_wtp_get_smilepay_cvs_code', [$order_ID, $smse_ID], '');
+        foreach ($order->get_items('shipping') as $item) {
+            $shipping_method = RY_WT_WC_SmilePay_Shipping::instance()->get_order_support_shipping($item);
+            if (false !== $shipping_method) {
+                $shipping_list = $order->get_meta('_smilepay_shipping_info', true);
+                if (!is_array($shipping_list)) {
+                    $shipping_list = [];
+                }
+                if (count($shipping_list) > 0) {
+                    foreach ($shipping_list as $smse_ID => $info) {
+                        WC()->queue()->schedule_single(time() + 10, 'ry_wtp_get_smilepay_cvs_code', [$order_ID, $smse_ID], '');
+                    }
+                }
             }
         }
     }

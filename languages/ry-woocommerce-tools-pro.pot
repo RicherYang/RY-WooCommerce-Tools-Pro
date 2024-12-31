@@ -2,14 +2,14 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: RY Tools (Pro) for WooCommerce 3.4.12\n"
+"Project-Id-Version: RY Tools (Pro) for WooCommerce 3.4.13\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ry-woocommerce-tools-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-11-24T15:04:29+08:00\n"
+"POT-Creation-Date: 2024-12-31T16:18:42+08:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: ry-woocommerce-tools-pro\n"
@@ -552,8 +552,8 @@ msgstr ""
 msgid "A minimum order amount AND a coupon ( except discount and tex )"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/shipping.php:159
-#: woocommerce/shipping/smilepay/shipping.php:143
+#: woocommerce/shipping/ecpay/shipping.php:167
+#: woocommerce/shipping/smilepay/shipping.php:157
 msgid "Invalid cellphone number"
 msgstr ""
 
