@@ -129,7 +129,7 @@ final class RY_WTP_ECPay_Shipping
                 if (!is_array($shipping_list)) {
                     $shipping_list = [];
                 }
-                if (count($shipping_list) == 0) {
+                if (0 === count($shipping_list)) {
                     WC()->queue()->schedule_single(time() + 10, 'ry_wtp_get_ecpay_code', [$order_ID], '');
                 }
                 break;
