@@ -124,7 +124,7 @@ final class RY_WTP_ECPay_Shipping
     {
         foreach ($order->get_items('shipping') as $shipping_item) {
             $shipping_method = RY_WT_WC_ECPay_Shipping::instance()->get_order_support_shipping($shipping_item);
-            if (false !== $shipping_method) {
+            if ($shipping_method) {
                 $shipping_list = $order->get_meta('_ecpay_shipping_info', true);
                 if (!is_array($shipping_list)) {
                     $shipping_list = [];
@@ -144,19 +144,11 @@ final class RY_WTP_ECPay_Shipping
 
     public function check_phone($data, $errors)
     {
-        if (WC()->cart->needs_shipping()) {
-            $chosen_method = WC()->session->get('chosen_shipping_methods', []);
-            $used = false;
-            if (count($chosen_method)) {
-                foreach ($chosen_method as $method) {
-                    $method_ID = strstr($method, ':', true);
-                    if ($method_ID && isset(RY_WT_WC_ECPay_Shipping::$support_methods[$method_ID])) {
-                        $used = true;
-                    }
-                }
-            }
+        if (WC()->cart && WC()->cart->needs_shipping()) {
+            $chosen_shipping = wc_get_chosen_shipping_method_ids();
+            $chosen_shipping = array_intersect($chosen_shipping, array_keys(RY_WT_WC_ECPay_Shipping::$support_methods));
 
-            if ($used) {
+            if (count($chosen_shipping)) {
                 if ((!$data['ship_to_different_address'] || !WC()->cart->needs_shipping_address())) {
                     $phone = $data['billing_phone'];
                 } else {

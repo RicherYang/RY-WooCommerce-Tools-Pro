@@ -70,6 +70,7 @@ final class RY_WTP_SmilePay_Shipping_Admin
     {
         $actions['ry_print_smilepay_cvs_711'] = __('Print smilepay shipping booking note (711)', 'ry-woocommerce-tools-pro');
         $actions['ry_print_smilepay_cvs_fami'] = __('Print SmilePay shipping booking note (family)', 'ry-woocommerce-tools-pro');
+        $actions['ry_print_smilepay_home_tcat'] = __('Print SmilePay shipping booking note (tcat)', 'ry-woocommerce-tools-pro');
 
         return $actions;
     }
@@ -93,23 +94,23 @@ final class RY_WTP_SmilePay_Shipping_Admin
 
     public function add_wcdn_shipping_info($fields, $order)
     {
-        foreach ($order->get_items('shipping') as $item) {
-            $shipping_method = RY_WT_WC_SmilePay_Shipping::instance()->get_order_support_shipping($item);
-            if (false === $shipping_method) {
-                continue;
-            }
-            $shipping_list = $order->get_meta('_smilepay_shipping_info', true);
-            if (is_array($shipping_list)) {
-                $field_keys = array_keys($fields);
-                $field_idx = array_search('order_number', $field_keys) + 1;
-                $fields = array_slice($fields, 0, $field_idx)
-                    + [
-                        'ry_smilepay_shipping_id' => [
-                            'label' => __('SmilePay shipping ID', 'ry-woocommerce-tools'),
-                            'value' => implode(', ', array_column($shipping_list, 'ID')),
-                        ],
-                    ]
-                    + array_slice($fields, $field_idx);
+        foreach ($order->get_items('shipping') as $shipping_item) {
+            $shipping_method = RY_WT_WC_SmilePay_Shipping::instance()->get_order_support_shipping($shipping_item);
+            if ($shipping_method) {
+                $shipping_list = $order->get_meta('_smilepay_shipping_info', true);
+                if (is_array($shipping_list)) {
+                    $field_keys = array_keys($fields);
+                    $field_idx = array_search('order_number', $field_keys) + 1;
+                    $fields = array_slice($fields, 0, $field_idx)
+                        + [
+                            'ry_smilepay_shipping_id' => [
+                                'label' => __('SmilePay shipping ID', 'ry-woocommerce-tools'),
+                                'value' => implode(', ', array_column($shipping_list, 'ID')),
+                            ],
+                        ]
+                        + array_slice($fields, $field_idx);
+                    break;
+                }
             }
         }
 

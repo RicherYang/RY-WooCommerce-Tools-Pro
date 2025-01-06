@@ -20,9 +20,11 @@ final class RY_WTP_SmilePay_Shipping
 
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/smilepay/shipping-cvs-711.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/smilepay/shipping-cvs-fami.php';
+        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/smilepay/shipping-home-tcat.php';
 
         RY_WT_WC_SmilePay_Shipping::$support_methods['ry_smilepay_shipping_cvs_711'] = 'RY_SmilePay_Shipping_CVS_711_Pro';
         RY_WT_WC_SmilePay_Shipping::$support_methods['ry_smilepay_shipping_cvs_fami'] = 'RY_SmilePay_Shipping_CVS_Fami_Pro';
+        RY_WT_WC_SmilePay_Shipping::$support_methods['ry_smilepay_shipping_home_tcat'] = 'RY_SmilePay_Shipping_Home_Tcat_Pro';
 
         RY_WTP_WC_Shipping::instance();
 
@@ -32,7 +34,8 @@ final class RY_WTP_SmilePay_Shipping
             add_action('ry_smilepay_shipping_response_status_1', [$this, 'shipping_transporting'], 10, 2);
         }
 
-        add_action('ry_wtp_get_smilepay_cvs_code', [RY_WT_WC_SmilePay_Shipping_Api::instance(), 'get_code_no'], 10, 2);
+        add_action('ry_wtp_get_smilepay_cvs_code', [RY_WT_WC_SmilePay_Shipping_Api::instance(), 'get_info_no'], 10, 2);
+        add_action('ry_wtp_get_smilepay_home_code', [RY_WT_WC_SmilePay_Shipping_Api::instance(), 'get_home_info'], 10, 1);
         if ('yes' === RY_WT::get_option('smilepay_shipping_auto_get_no', 'yes')) {
             if ('yes' === RY_WTP::get_option('smilepay_shipping_auto_with_scheduler', 'no')) {
                 remove_action('woocommerce_order_status_processing', [RY_WT_WC_SmilePay_Shipping::instance(), 'get_code'], 10, 2);
@@ -111,18 +114,26 @@ final class RY_WTP_SmilePay_Shipping
 
     public function get_code($order_ID, $order)
     {
-        foreach ($order->get_items('shipping') as $item) {
-            $shipping_method = RY_WT_WC_SmilePay_Shipping::instance()->get_order_support_shipping($item);
-            if (false !== $shipping_method) {
+        foreach ($order->get_items('shipping') as $shipping_item) {
+            $shipping_method = RY_WT_WC_SmilePay_Shipping::instance()->get_order_support_shipping($shipping_item);
+            if ($shipping_method) {
                 $shipping_list = $order->get_meta('_smilepay_shipping_info', true);
                 if (!is_array($shipping_list)) {
                     $shipping_list = [];
                 }
-                if (count($shipping_list) > 0) {
-                    foreach ($shipping_list as $smse_ID => $info) {
-                        WC()->queue()->schedule_single(time() + 10, 'ry_wtp_get_smilepay_cvs_code', [$order_ID, $smse_ID], '');
+                if (0 === count($shipping_list)) {
+                    if (str_contains($shipping_method, '_home')) {
+                        WC()->queue()->schedule_single(time() + 10, 'ry_wtp_get_smilepay_home_code', [$order_ID], '');
+                    }
+                } else {
+                    $list = array_filter(array_column($shipping_list, 'PaymentNo'));
+                    if (0 === count($list)) {
+                        foreach ($shipping_list as $smse_ID => $info) {
+                            WC()->queue()->schedule_single(time() + 10, 'ry_wtp_get_smilepay_cvs_code', [$order_ID, $smse_ID], '');
+                        }
                     }
                 }
+                break;
             }
         }
     }
@@ -134,19 +145,11 @@ final class RY_WTP_SmilePay_Shipping
 
     public function check_phone($data, $errors)
     {
-        if (WC()->cart->needs_shipping()) {
-            $chosen_method = WC()->session->get('chosen_shipping_methods', []);
-            $used = false;
-            if (count($chosen_method)) {
-                foreach ($chosen_method as $method) {
-                    $method_ID = strstr($method, ':', true);
-                    if ($method_ID && isset(RY_WT_WC_SmilePay_Shipping::$support_methods[$method_ID])) {
-                        $used = true;
-                    }
-                }
-            }
+        if (WC()->cart && WC()->cart->needs_shipping()) {
+            $chosen_shipping = wc_get_chosen_shipping_method_ids();
+            $chosen_shipping = array_intersect($chosen_shipping, array_keys(RY_WT_WC_SmilePay_Shipping::$support_methods));
 
-            if ($used) {
+            if (count($chosen_shipping)) {
                 if ((!$data['ship_to_different_address'] || !WC()->cart->needs_shipping_address())) {
                     $phone = $data['billing_phone'];
                 } else {

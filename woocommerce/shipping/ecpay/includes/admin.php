@@ -137,7 +137,7 @@ final class RY_WTP_ECPay_Shipping_Admin
                 $order = wc_get_order($order_ID);
                 foreach ($order->get_items('shipping') as $shipping_item) {
                     $shipping_method = $ry_shipping->get_order_support_shipping($shipping_item);
-                    if (false != $shipping_method) {
+                    if ($shipping_method) {
                         $geted += 1;
                         $ry_shipping_api->get_code($order_ID, 'cod' === $order->get_payment_method());
                     }
@@ -171,65 +171,67 @@ final class RY_WTP_ECPay_Shipping_Admin
 
     public function add_choose_cvs_btn($order)
     {
-        foreach ($order->get_items('shipping') as $item) {
-            $shipping_method = RY_WT_WC_ECPay_Shipping::instance()->get_order_support_shipping($item);
-            if (false !== $shipping_method && str_contains($shipping_method, '_cvs')) {
-                list($MerchantID, $HashKey, $HashIV, $cvs_type) = RY_WT_WC_ECPay_Shipping::instance()->get_api_info();
+        foreach ($order->get_items('shipping') as $shipping_item) {
+            $shipping_method = RY_WT_WC_ECPay_Shipping::instance()->get_order_support_shipping($shipping_item);
+            if ($shipping_method) {
+                if (str_contains($shipping_method, '_cvs')) {
+                    list($MerchantID, $HashKey, $HashIV, $cvs_type) = RY_WT_WC_ECPay_Shipping::instance()->get_api_info();
 
-                $choosed_cvs = '';
-                if (isset($_POST['MerchantID']) && $_POST['MerchantID'] == $MerchantID) {
-                    $choosed_cvs = [
-                        'CVSStoreID' => wc_clean(wp_unslash($_POST['CVSStoreID'])),
-                        'CVSStoreName' => wc_clean(wp_unslash($_POST['CVSStoreName'])),
-                        'CVSAddress' => wc_clean(wp_unslash($_POST['CVSAddress'])),
-                        'CVSTelephone' => wc_clean(wp_unslash($_POST['CVSTelephone'])),
-                    ];
+                    $choosed_cvs = '';
+                    if (isset($_POST['MerchantID']) && $_POST['MerchantID'] == $MerchantID) {
+                        $choosed_cvs = [
+                            'CVSStoreID' => wc_clean(wp_unslash($_POST['CVSStoreID'])),
+                            'CVSStoreName' => wc_clean(wp_unslash($_POST['CVSStoreName'])),
+                            'CVSAddress' => wc_clean(wp_unslash($_POST['CVSAddress'])),
+                            'CVSTelephone' => wc_clean(wp_unslash($_POST['CVSTelephone'])),
+                        ];
+                    }
+
+                    $method_class = RY_WT_WC_ECPay_Shipping::$support_methods[$shipping_method];
+                    wp_localize_script('ry-wtp-admin-shipping', 'ECPayInfo', [
+                        'postUrl' => RY_WT_WC_ECPay_Shipping_Api::instance()->get_map_post_url(),
+                        'postData' => [
+                            'MerchantID' => $MerchantID,
+                            'LogisticsType' => $method_class::Shipping_Type,
+                            'LogisticsSubType' => $method_class::Shipping_Sub_Type . (('C2C' === $cvs_type) ? 'C2C' : ''),
+                            'IsCollection' => 'Y',
+                            'ServerReplyURL' => esc_url(add_query_arg([
+                                'ry-ecpay-map-redirect' => 'ry-ecpay-map-redirect',
+                                'lang' => get_locale(),
+                            ], WC()->api_request_url('ry_ecpay_map_callback'))),
+                            'ExtraData' => 'ry' . $order->get_id(),
+                        ],
+                        'newStore' => $choosed_cvs,
+                    ]);
+
+                    wp_enqueue_script('ry-wtp-admin-shipping');
+
+                    include RY_WTP_PLUGIN_DIR . 'woocommerce/admin/meta-boxes/views/choose_cvs_btn.php';
+                    break;
                 }
-
-                $method_class = RY_WT_WC_ECPay_Shipping::$support_methods[$shipping_method];
-                wp_localize_script('ry-wtp-admin-shipping', 'ECPayInfo', [
-                    'postUrl' => RY_WT_WC_ECPay_Shipping_Api::instance()->get_map_post_url(),
-                    'postData' => [
-                        'MerchantID' => $MerchantID,
-                        'LogisticsType' => $method_class::Shipping_Type,
-                        'LogisticsSubType' => $method_class::Shipping_Sub_Type . (('C2C' === $cvs_type) ? 'C2C' : ''),
-                        'IsCollection' => 'Y',
-                        'ServerReplyURL' => esc_url(add_query_arg([
-                            'ry-ecpay-map-redirect' => 'ry-ecpay-map-redirect',
-                            'lang' => get_locale(),
-                        ], WC()->api_request_url('ry_ecpay_map_callback'))),
-                        'ExtraData' => 'ry' . $order->get_id(),
-                    ],
-                    'newStore' => $choosed_cvs,
-                ]);
-
-                wp_enqueue_script('ry-wtp-admin-shipping');
-
-                include RY_WTP_PLUGIN_DIR . 'woocommerce/admin/meta-boxes/views/choose_cvs_btn.php';
-                break;
             }
         }
     }
 
     public function add_wcdn_shipping_info($fields, $order)
     {
-        foreach ($order->get_items('shipping') as $item) {
-            $shipping_method = RY_WT_WC_ECPay_Shipping::instance()->get_order_support_shipping($item);
-            if (false === $shipping_method) {
-                continue;
-            }
-            $shipping_list = $order->get_meta('_ecpay_shipping_info', true);
-            if (is_array($shipping_list)) {
-                $field_keys = array_keys($fields);
-                $field_idx = array_search('order_number', $field_keys) + 1;
-                $fields = array_slice($fields, 0, $field_idx)
-                    + [
-                        'ry_ecpay_shipping_id' => [
-                            'label' => __('ECPay shipping ID', 'ry-woocommerce-tools'),
-                            'value' => implode(', ', array_column($shipping_list, 'ID')),
-                        ],
-                    ]
-                    + array_slice($fields, $field_idx);
+        foreach ($order->get_items('shipping') as $shipping_item) {
+            $shipping_method = RY_WT_WC_ECPay_Shipping::instance()->get_order_support_shipping($shipping_item);
+            if ($shipping_method) {
+                $shipping_list = $order->get_meta('_ecpay_shipping_info', true);
+                if (is_array($shipping_list)) {
+                    $field_keys = array_keys($fields);
+                    $field_idx = array_search('order_number', $field_keys) + 1;
+                    $fields = array_slice($fields, 0, $field_idx)
+                        + [
+                            'ry_ecpay_shipping_id' => [
+                                'label' => __('ECPay shipping ID', 'ry-woocommerce-tools'),
+                                'value' => implode(', ', array_column($shipping_list, 'ID')),
+                            ],
+                        ]
+                        + array_slice($fields, $field_idx);
+                    break;
+                }
             }
         }
 

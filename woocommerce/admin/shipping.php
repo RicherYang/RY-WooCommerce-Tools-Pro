@@ -36,8 +36,8 @@ final class RY_WTP_WC_Admin_Shipping
 
     public function add_shipping_info_action($order, $type)
     {
-        foreach ($order->get_items('shipping') as $item) {
-            $method_ID = $item->get_method_id();
+        foreach ($order->get_items('shipping') as $shipping_item) {
+            $method_ID = $shipping_item->get_method_id();
             if (class_exists('RY_WT_WC_ECPay_Shipping') && isset(RY_WT_WC_ECPay_Shipping::$support_methods[$method_ID])) {
                 $support_temp = RY_WT_WC_ECPay_Shipping::$support_methods[$method_ID]::get_support_temp();
             }

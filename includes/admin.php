@@ -38,7 +38,7 @@ final class RY_WTP_Admin
                 __('<strong>%1$s</strong> is inactive. It require %2$s %3$s or newer.', 'ry-woocommerce-tools-pro'),
                 'RY Tools (Pro) for WooCommerce',
                 'RY Tools (Pro) for WooCommerce',
-                RY_WTP::MIN_TOOLS_VERSION,
+                RY_WT::MIN_PRO_TOOLS_VERSION,
             );
             printf('<div class="error"><p>%s</p></div>', wp_kses($message, ['strong' => []]));
         }

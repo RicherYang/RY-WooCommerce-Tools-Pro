@@ -1,15 +1,15 @@
-# Copyright (C) 2024 Richer Yang
+# Copyright (C) 2025 Richer Yang
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: RY Tools (Pro) for WooCommerce 3.4.13\n"
+"Project-Id-Version: RY Tools (Pro) for WooCommerce 3.5.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ry-woocommerce-tools-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-12-31T16:35:01+08:00\n"
+"POT-Creation-Date: 2025-01-06T14:34:31+08:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: ry-woocommerce-tools-pro\n"
@@ -508,11 +508,13 @@ msgstr ""
 
 #: woocommerce/shipping/ecpay/shipping-cvs-711.php:30
 #: woocommerce/shipping/ecpay/shipping-home-tcat.php:13
+#: woocommerce/shipping/smilepay/shipping-home-tcat.php:13
 msgid "Cool plus cost"
 msgstr ""
 
 #: woocommerce/shipping/ecpay/shipping-cvs-711.php:35
 #: woocommerce/shipping/ecpay/shipping-home-tcat.php:18
+#: woocommerce/shipping/smilepay/shipping-home-tcat.php:18
 msgid "The total cost is cost plus cool cost."
 msgstr ""
 
@@ -525,6 +527,7 @@ msgstr ""
 #: woocommerce/shipping/newebpay/shipping-cvs.php:9
 #: woocommerce/shipping/smilepay/shipping-cvs-711.php:9
 #: woocommerce/shipping/smilepay/shipping-cvs-fami.php:9
+#: woocommerce/shipping/smilepay/shipping-home-tcat.php:24
 msgid "A minimum order amount ( except discount and tex )"
 msgstr ""
 
@@ -537,6 +540,7 @@ msgstr ""
 #: woocommerce/shipping/newebpay/shipping-cvs.php:10
 #: woocommerce/shipping/smilepay/shipping-cvs-711.php:10
 #: woocommerce/shipping/smilepay/shipping-cvs-fami.php:10
+#: woocommerce/shipping/smilepay/shipping-home-tcat.php:25
 msgid "A minimum order amount OR a coupon ( except discount and tex )"
 msgstr ""
 
@@ -549,11 +553,12 @@ msgstr ""
 #: woocommerce/shipping/newebpay/shipping-cvs.php:11
 #: woocommerce/shipping/smilepay/shipping-cvs-711.php:11
 #: woocommerce/shipping/smilepay/shipping-cvs-fami.php:11
+#: woocommerce/shipping/smilepay/shipping-home-tcat.php:26
 msgid "A minimum order amount AND a coupon ( except discount and tex )"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/shipping.php:167
-#: woocommerce/shipping/smilepay/shipping.php:157
+#: woocommerce/shipping/ecpay/shipping.php:159
+#: woocommerce/shipping/smilepay/shipping.php:160
 msgid "Invalid cellphone number"
 msgstr ""
 
@@ -563,6 +568,10 @@ msgstr ""
 
 #: woocommerce/shipping/smilepay/includes/admin.php:72
 msgid "Print SmilePay shipping booking note (family)"
+msgstr ""
+
+#: woocommerce/shipping/smilepay/includes/admin.php:73
+msgid "Print SmilePay shipping booking note (tcat)"
 msgstr ""
 
 #: assets/blocks/gateways/ecpay/atm.js:1
