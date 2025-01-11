@@ -18,9 +18,6 @@ final class RY_WTP_WC_Admin
     {
         add_action('woocommerce_settings_start', [$this, 'add_license_notice']);
 
-        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/admin/order.php';
-        RY_WTP_WC_Admin_Order::instance();
-
         add_filter('woocommerce_get_sections_rytools', [$this, 'add_sections'], 12);
         add_filter('woocommerce_get_settings_rytools', [$this, 'add_setting'], 11, 2);
         add_action('ry_setting_section_ouput_tools', [$this, 'output_tools']);

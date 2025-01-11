@@ -35,13 +35,6 @@ final class RY_WTP
 
     public function do_woo_init(): void
     {
-        if (version_compare(RY_WT_VERSION, RY_WTP::MIN_TOOLS_VERSION, '<')) {
-            return;
-        }
-        if (defined('RY_WT::MIN_PRO_TOOLS_VERSION') && version_compare(RY_WTP_VERSION, RY_WT::MIN_PRO_TOOLS_VERSION, '<')) {
-            return;
-        }
-
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/admin/notes/license-auto-deactivate.php';
         include_once RY_WTP_PLUGIN_DIR . 'includes/license.php';
         include_once RY_WTP_PLUGIN_DIR . 'includes/link-server.php';
@@ -54,6 +47,18 @@ final class RY_WTP
         }
 
         if (RY_WTP_License::instance()->is_activated()) {
+            if (version_compare(RY_WT_VERSION, RY_WTP::MIN_TOOLS_VERSION, '<')) {
+                return;
+            }
+            if (defined('RY_WT::MIN_PRO_TOOLS_VERSION') && version_compare(RY_WTP_VERSION, RY_WT::MIN_PRO_TOOLS_VERSION, '<')) {
+                return;
+            }
+
+            if (is_admin()) {
+                include_once RY_WTP_PLUGIN_DIR . 'woocommerce/admin/admin.php';
+                RY_WTP_WC_Admin::instance();
+            }
+
             include_once RY_WTP_PLUGIN_DIR . 'includes/cron.php';
             RY_WTP_Cron::add_action();
 
