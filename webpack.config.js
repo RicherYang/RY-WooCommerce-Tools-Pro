@@ -22,7 +22,8 @@ function getWebpackEntryPoints() {
         entryPoints[entryName] = '/' + file;
     });
 
-    entryPoints['admin/ry-shipping'] = path.join(srcPath, 'admin/ry-shipping.js');
+    entryPoints['admin/order'] = path.join(srcPath, 'admin/order.js');
+    entryPoints['admin/setting'] = path.join(srcPath, 'admin/setting.js');
 
     return entryPoints;
 }

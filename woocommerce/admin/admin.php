@@ -17,6 +17,7 @@ final class RY_WTP_WC_Admin
     protected function do_init(): void
     {
         add_action('woocommerce_settings_start', [$this, 'add_license_notice']);
+        add_action('admin_enqueue_scripts', [$this, 'add_scripts']);
 
         add_filter('woocommerce_get_sections_rytools', [$this, 'add_sections'], 12);
         add_filter('woocommerce_get_settings_rytools', [$this, 'add_setting'], 11, 2);
@@ -36,6 +37,15 @@ final class RY_WTP_WC_Admin
         if (!RY_WTP_License::instance()->is_activated()) {
             echo '<div class="notice notice-info"><p><strong>RY Tools (Pro) for WooCommerce</strong> ' . esc_html__('Your license is not active!', 'ry-woocommerce-tools-pro') . '</p></div>';
         }
+    }
+
+    public function add_scripts()
+    {
+        $asset_info = include RY_WTP_PLUGIN_DIR . 'assets/admin/order.asset.php';
+        wp_register_script('ry-wtp-admin-order', RY_WTP_PLUGIN_URL . 'assets/admin/order.js', $asset_info['dependencies'], $asset_info['version'], true);
+
+        $asset_info = include RY_WTP_PLUGIN_DIR . 'assets/admin/setting.asset.php';
+        wp_register_script('ry-wtp-admin-setting', RY_WTP_PLUGIN_URL . 'assets/admin/setting.js', $asset_info['dependencies'], $asset_info['version'], true);
     }
 
     public function add_sections($sections)

@@ -18,8 +18,6 @@ final class RY_WTP_WC_Admin_Shipping
 
     protected function do_init(): void
     {
-        add_action('admin_enqueue_scripts', [$this, 'add_scripts']);
-
         if (class_exists('Automattic\WooCommerce\Utilities\OrderUtil') && OrderUtil::custom_orders_table_usage_is_enabled()) {
             if ('edit' !== ($_GET['action'] ?? '')) {
                 add_filter('manage_woocommerce_page_wc-orders_columns', [$this, 'shop_order_columns'], 11);
@@ -37,12 +35,6 @@ final class RY_WTP_WC_Admin_Shipping
         add_action('woocommerce_admin_process_variation_object', [$this, 'save_variation_shipping_options'], 20, 2);
 
         add_action('ry_shipping_info-action', [$this, 'add_shipping_info_action'], 10, 2);
-    }
-
-    public function add_scripts()
-    {
-        $asset_info = include RY_WTP_PLUGIN_DIR . 'assets/admin/ry-shipping.asset.php';
-        wp_register_script('ry-wtp-admin-shipping', RY_WTP_PLUGIN_URL . 'assets/admin/ry-shipping.js', $asset_info['dependencies'], $asset_info['version'], true);
     }
 
     public function shop_order_columns($columns)

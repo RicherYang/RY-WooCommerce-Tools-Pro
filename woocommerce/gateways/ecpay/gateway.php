@@ -16,6 +16,8 @@ final class RY_WTP_WC_ECPay_Gateway
 
     protected function do_init(): void
     {
+        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways.php';
+
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/includes/gateway-credit-installment.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-bnpl.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-credit-installment-3.php';
@@ -26,6 +28,8 @@ final class RY_WTP_WC_ECPay_Gateway
 
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-block.php';
         RY_WTP_WC_ECPay_Gateway_Block::instance();
+
+        RY_WTP_WC_Gateways::instance();
 
         if (is_admin()) {
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/includes/admin.php';

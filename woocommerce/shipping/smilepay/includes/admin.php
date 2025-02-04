@@ -36,7 +36,7 @@ final class RY_WTP_SmilePay_Shipping_Admin
     public function add_setting($settings, $current_section, $checkout_with_block)
     {
         if ($current_section == 'smilepay_shipping') {
-            wp_enqueue_script('ry-wtp-admin-shipping');
+            wp_enqueue_script('ry-wtp-admin-setting');
 
             $setting_idx = array_search(RY_WT::OPTION_PREFIX . 'smilepay_shipping_auto_get_no', array_column($settings, 'id'));
             array_splice($settings, $setting_idx + 1, 0, [

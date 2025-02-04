@@ -25,32 +25,21 @@ class RY_ECPay_Gateway_Bnpl extends RY_WT_WC_ECPay_Payment_Gateway
         $this->min_amount = (int) $this->get_option('min_amount', 0);
         $this->max_amount = (int) $this->get_option('max_amount', 0);
 
-        add_action('woocommerce_admin_order_data_after_billing_address', [$this, 'admin_payment_info']);
+        add_filter('ry_admin_payment_info-ry_ecpay_bnpl', [$this, 'show_payment_info'], 10, 2);
 
         parent::__construct();
     }
 
-    public function admin_payment_info($order)
+    public function show_payment_info($html, $order)
     {
-        if ($order->get_payment_method() != 'ry_ecpay_bnpl') {
-            return;
-        }
-        ?>
-<h3 style="clear:both"><?php esc_html_e('Payment details', 'ry-woocommerce-tools'); ?></h3>
-<table>
-    <tr>
-        <td><?php esc_html_e('BNPL Trade No', 'ry-woocommerce-tools-pro'); ?>
-        </td>
-        <td><?php echo esc_html($order->get_meta('_ecpay_bnpl_TradeNo')); ?></td>
-    </tr>
-    <tr>
-        <td><?php esc_html_e('BNPL Installment', 'ry-woocommerce-tools-pro'); ?>
-        </td>
-        <td><?php echo esc_html($order->get_meta('_ecpay_bnpl_Installment')); ?>
-        </td>
-    </tr>
-</table>
-<?php
+        $html .= '<tr>
+            <td>' . esc_html__('BNPL Trade No', 'ry-woocommerce-tools-pro') . '</td>
+            <td>' . esc_html($order->get_meta('_ecpay_bnpl_TradeNo')) . '</td>
+            </tr>';
+        $html .= '<tr>
+            <td>' . esc_html__('BNPL Installment', 'ry-woocommerce-tools-pro') . '</td>
+            <td>' . esc_html($order->get_meta('_ecpay_bnpl_Installment')) . '</td>
+        </tr>';
+        return $html;
     }
 }
-?>

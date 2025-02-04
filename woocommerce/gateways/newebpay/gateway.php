@@ -16,6 +16,8 @@ final class RY_WTP_WC_NewebPay_Gateway
 
     protected function do_init(): void
     {
+        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways.php';
+
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/includes/gateway-credit-installment.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/gateway-credit-installment-3.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/gateway-credit-installment-6.php';
@@ -26,6 +28,8 @@ final class RY_WTP_WC_NewebPay_Gateway
 
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/gateway-block.php';
         RY_WTP_WC_NewebPay_Gateway_Block::instance();
+
+        RY_WTP_WC_Gateways::instance();
 
         if (is_admin()) {
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/includes/admin.php';

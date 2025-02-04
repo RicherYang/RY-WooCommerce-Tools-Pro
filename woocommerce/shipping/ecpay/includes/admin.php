@@ -39,7 +39,7 @@ final class RY_WTP_ECPay_Shipping_Admin
     public function add_setting($settings, $current_section, $checkout_with_block)
     {
         if ($current_section == 'ecpay_shipping') {
-            wp_enqueue_script('ry-wtp-admin-shipping');
+            wp_enqueue_script('ry-wtp-admin-setting');
 
             $setting_idx = array_search(RY_WT::OPTION_PREFIX . 'ecpay_shipping_auto_get_no', array_column($settings, 'id'));
             array_splice($settings, $setting_idx + 1, 0, [
@@ -188,25 +188,30 @@ final class RY_WTP_ECPay_Shipping_Admin
                     }
 
                     $method_class = RY_WT_WC_ECPay_Shipping::$support_methods[$shipping_method];
-                    wp_localize_script('ry-wtp-admin-shipping', 'ECPayInfo', [
-                        'postUrl' => RY_WT_WC_ECPay_Shipping_Api::instance()->get_map_post_url(),
-                        'postData' => [
-                            'MerchantID' => $MerchantID,
-                            'LogisticsType' => $method_class::Shipping_Type,
-                            'LogisticsSubType' => $method_class::Shipping_Sub_Type . (('C2C' === $cvs_type) ? 'C2C' : ''),
-                            'IsCollection' => 'Y',
-                            'ServerReplyURL' => esc_url(add_query_arg([
-                                'ry-ecpay-map-redirect' => 'ry-ecpay-map-redirect',
-                                'lang' => get_locale(),
-                            ], WC()->api_request_url('ry_ecpay_map_callback'))),
-                            'ExtraData' => 'ry' . $order->get_id(),
+                    wp_localize_script('ry-wtp-admin-order', 'RyInfo', [
+                        'ecpay' => [
+                            'postUrl' => RY_WT_WC_ECPay_Shipping_Api::instance()->get_map_post_url(),
+                            'postData' => [
+                                'MerchantID' => $MerchantID,
+                                'LogisticsType' => $method_class::Shipping_Type,
+                                'LogisticsSubType' => $method_class::Shipping_Sub_Type . (('C2C' === $cvs_type) ? 'C2C' : ''),
+                                'IsCollection' => 'Y',
+                                'ServerReplyURL' => esc_url(add_query_arg([
+                                    'ry-ecpay-map-redirect' => 'ry-ecpay-map-redirect',
+                                    'lang' => get_locale(),
+                                ], WC()->api_request_url('ry_ecpay_map_callback'))),
+                                'ExtraData' => 'ry' . $order->get_id(),
+                            ],
+                            'newStore' => $choosed_cvs,
                         ],
-                        'newStore' => $choosed_cvs,
+                        '_nonce' => [
+                            'get' => wp_create_nonce('get-payment-info'),
+                        ],
                     ]);
 
-                    wp_enqueue_script('ry-wtp-admin-shipping');
+                    wp_enqueue_script('ry-wtp-admin-order');
 
-                    include RY_WTP_PLUGIN_DIR . 'woocommerce/admin/meta-boxes/views/choose_cvs_btn.php';
+                    include RY_WTP_PLUGIN_DIR . 'woocommerce/admin/meta-boxes/view/choose_cvs_btn.php';
                     break;
                 }
             }

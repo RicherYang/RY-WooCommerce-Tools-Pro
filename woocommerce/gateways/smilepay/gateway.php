@@ -16,8 +16,12 @@ final class RY_WTP_WC_SmilePay_Gateway
 
     protected function do_init(): void
     {
+        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways.php';
+
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/smilepay/gateway-block.php';
         RY_WTP_WC_SmilePay_Gateway_Block::instance();
+
+        RY_WTP_WC_Gateways::instance();
 
         if (is_admin()) {
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/smilepay/includes/admin.php';

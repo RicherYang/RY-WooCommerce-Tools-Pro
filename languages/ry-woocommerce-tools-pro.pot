@@ -2,14 +2,14 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: RY Tools (Pro) for WooCommerce 3.5.0\n"
+"Project-Id-Version: RY Tools (Pro) for WooCommerce 3.5.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ry-woocommerce-tools-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-01-06T14:34:31+08:00\n"
+"POT-Creation-Date: 2025-02-04T11:14:24+08:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: ry-woocommerce-tools-pro\n"
@@ -52,7 +52,7 @@ msgstr ""
 
 #: templates/order/order-ecpay-shipping-info.php:23
 #: templates/order/order-smilepay-shipping-info.php:23
-#: woocommerce/admin/order.php:37
+#: woocommerce/admin/shipping.php:45
 msgid "Shipping payment no"
 msgstr ""
 
@@ -97,56 +97,60 @@ msgctxt "Shipping status"
 msgid "Unknow"
 msgstr ""
 
-#: woocommerce/admin/admin.php:40
+#: woocommerce/admin/admin.php:38
 msgid "Your license is not active!"
 msgstr ""
 
-#: woocommerce/admin/admin.php:48
+#: woocommerce/admin/admin.php:55
 #: woocommerce/admin/notes/license-auto-deactivate.php:41
 #: woocommerce/admin/settings/pro-info.php:10
 msgid "License key"
 msgstr ""
 
 #. translators: %s: Expiration date of pro license
-#: woocommerce/admin/admin.php:67
+#: woocommerce/admin/admin.php:74
 msgid "License Expiration Date %s"
 msgstr ""
 
-#: woocommerce/admin/admin.php:107
-#: woocommerce/admin/admin.php:130
+#: woocommerce/admin/admin.php:114
+#: woocommerce/admin/admin.php:137
 msgid "Connect license server failed!"
 msgstr ""
 
 #. translators: %s: Error message
-#: woocommerce/admin/admin.php:115
+#: woocommerce/admin/admin.php:122
 msgid "Verification error: %s"
 msgstr ""
 
-#: woocommerce/admin/admin.php:120
+#: woocommerce/admin/admin.php:127
 msgid "Unknown key"
 msgstr ""
 
-#: woocommerce/admin/admin.php:121
+#: woocommerce/admin/admin.php:128
 msgid "Locked key"
 msgstr ""
 
-#: woocommerce/admin/admin.php:122
+#: woocommerce/admin/admin.php:129
 msgid "Unknown target url"
 msgstr ""
 
-#: woocommerce/admin/admin.php:123
+#: woocommerce/admin/admin.php:130
 msgid "Used key"
 msgstr ""
 
-#: woocommerce/admin/admin.php:124
+#: woocommerce/admin/admin.php:131
 msgid "Is tried"
 msgstr ""
 
-#: woocommerce/admin/meta-boxes/views/choose_cvs_btn.php:3
+#: woocommerce/admin/gateways.php:46
+msgid "Get info"
+msgstr ""
+
+#: woocommerce/admin/meta-boxes/view/choose_cvs_btn.php:3
 msgid "It NOT save any change before choose cvs."
 msgstr ""
 
-#: woocommerce/admin/meta-boxes/views/choose_cvs_btn.php:4
+#: woocommerce/admin/meta-boxes/view/choose_cvs_btn.php:4
 msgid "After choose cvs, you need save the order to keep the change info."
 msgstr ""
 
@@ -179,16 +183,107 @@ msgstr ""
 msgid "update plugin"
 msgstr ""
 
-#: woocommerce/admin/shipping.php:54
+#: woocommerce/admin/shipping.php:141
 msgid "Get shipping no (normal temperature)"
 msgstr ""
 
-#: woocommerce/admin/shipping.php:58
+#: woocommerce/admin/shipping.php:145
 msgid "Get shipping no (refrigerated)"
 msgstr ""
 
-#: woocommerce/admin/shipping.php:62
+#: woocommerce/admin/shipping.php:149
 msgid "Get shipping no (frozen)"
+msgstr ""
+
+#: woocommerce/admin/view/payment-info-ecpay.php:3
+msgid "Order info"
+msgstr ""
+
+#: woocommerce/admin/view/payment-info-ecpay.php:4
+msgid "Trade no"
+msgstr ""
+
+#: woocommerce/admin/view/payment-info-ecpay.php:6
+msgid "ECPay trade no"
+msgstr ""
+
+#: woocommerce/admin/view/payment-info-ecpay.php:8
+msgid "ECPay trade date"
+msgstr ""
+
+#: woocommerce/admin/view/payment-info-ecpay.php:10
+msgid "ECPay trade status"
+msgstr ""
+
+#: woocommerce/admin/view/payment-info-ecpay.php:12
+msgid "Unpaid"
+msgstr ""
+
+#: woocommerce/admin/view/payment-info-ecpay.php:14
+msgid "Paid"
+msgstr ""
+
+#: woocommerce/admin/view/payment-info-ecpay.php:16
+msgid "Payment failed"
+msgstr ""
+
+#: woocommerce/admin/view/payment-info-ecpay.php:20
+msgid "Trade amount"
+msgstr ""
+
+#: woocommerce/admin/view/payment-info-ecpay.php:25
+msgid "Payment info"
+msgstr ""
+
+#: woocommerce/admin/view/payment-info-ecpay.php:26
+msgid "Payment type"
+msgstr ""
+
+#: woocommerce/admin/view/payment-info-ecpay.php:28
+msgid "Payment date"
+msgstr ""
+
+#: woocommerce/admin/view/payment-info-ecpay.php:30
+msgid "Payment amount"
+msgstr ""
+
+#: woocommerce/admin/view/payment-info-ecpay.php:34
+msgid "Card no"
+msgstr ""
+
+#: woocommerce/admin/view/payment-info-ecpay.php:36
+msgid "Auth code"
+msgstr ""
+
+#: woocommerce/admin/view/payment-info-ecpay.php:38
+msgid "eci"
+msgstr ""
+
+#: woocommerce/admin/view/payment-info-ecpay.php:42
+msgid "TWQR trade no"
+msgstr ""
+
+#: woocommerce/admin/view/payment-info-ecpay.php:46
+#: woocommerce/admin/view/payment-info-ecpay.php:52
+msgid "Payment bank"
+msgstr ""
+
+#: woocommerce/admin/view/payment-info-ecpay.php:48
+#: woocommerce/admin/view/payment-info-ecpay.php:54
+msgid "Payment bank no last 5"
+msgstr ""
+
+#: woocommerce/admin/view/payment-info-ecpay.php:58
+msgid "Payment cvs"
+msgstr ""
+
+#. translators: %s: order ID
+#: woocommerce/admin/view/payment-info-template.php:7
+msgid "Order #%s"
+msgstr ""
+
+#: woocommerce/admin/view/payment-info-template.php:9
+msgid "Close modal panel"
 msgstr ""
 
 #: woocommerce/admin/view/product-shipping-option.php:6
@@ -235,11 +330,11 @@ msgstr ""
 msgid "Pay via ECPay BNPL"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/gateway-bnpl.php:42
+#: woocommerce/gateways/ecpay/gateway-bnpl.php:36
 msgid "BNPL Trade No"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/gateway-bnpl.php:47
+#: woocommerce/gateways/ecpay/gateway-bnpl.php:40
 msgid "BNPL Installment"
 msgstr ""
 
