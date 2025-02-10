@@ -102,12 +102,12 @@ final class RY_WTP
         return get_option(self::OPTION_PREFIX . $option, $default);
     }
 
-    public static function update_option($option, $value, $autoload = null): bool
+    public static function update_option($option, $value, $autoload = null)
     {
         return update_option(self::OPTION_PREFIX . $option, $value, $autoload);
     }
 
-    public static function delete_option($option): bool
+    public static function delete_option($option)
     {
         return delete_option(self::OPTION_PREFIX . $option);
     }
@@ -117,12 +117,12 @@ final class RY_WTP
         return get_transient(self::OPTION_PREFIX . $transient);
     }
 
-    public static function set_transient($transient, $value, $expiration = 0): bool
+    public static function set_transient($transient, $value, $expiration = 0)
     {
         return set_transient(self::OPTION_PREFIX . $transient, $value, $expiration);
     }
 
-    public static function delete_transient($transient): bool
+    public static function delete_transient($transient)
     {
         return delete_transient(self::OPTION_PREFIX . $transient);
     }
