@@ -14,8 +14,6 @@
             echo esc_html_e('Paid', 'ry-woocommerce-tools-pro');
         } elseif ($info['TradeStatus'] == '10200095') {
             echo esc_html_e('Payment failed', 'ry-woocommerce-tools-pro');
-        } else {
-            echo esc_html($info['TradeStatus']);
         } ?>
         <strong><?php esc_html_e('Trade amount', 'ry-woocommerce-tools-pro'); ?></strong>
         <?php echo esc_html($info['TradeAmt']); ?>
@@ -37,6 +35,12 @@
         <?php echo esc_html($info['auth_code']); ?>
         <strong><?php esc_html_e('eci', 'ry-woocommerce-tools-pro'); ?></strong>
         <?php echo esc_html($info['eci']); ?>
+        <?php if ($info['stage']) { ?>
+        <strong><?php esc_html_e('number of periods', 'ry-woocommerce-tools-pro'); ?></strong>
+        <?php echo esc_html($info['stage']); ?>
+        <strong><?php esc_html_e('Period amount ( first / other )', 'ry-woocommerce-tools-pro'); ?></strong>
+        <?php echo esc_html($info['stast'] . ' / ' . $info['staed']); ?>
+        <?php } ?>
         <?php } ?>
         <?php if ($info['PaymentType'] === 'TWQR_OPAY') { ?>
         <strong><?php esc_html_e('TWQR trade no', 'ry-woocommerce-tools-pro'); ?></strong>

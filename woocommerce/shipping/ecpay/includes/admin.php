@@ -144,24 +144,20 @@ final class RY_WTP_ECPay_Shipping_Admin
                 }
             }
 
-            $redirect_to = add_query_arg(
-                [
-                    'bulk_action' => 'ry_get_ecpay_no',
-                    'ry_geted' => $geted,
-                    'ids' => implode(',', $ids),
-                ],
-                $redirect_to
-            );
+            $redirect_to = add_query_arg([
+                'bulk_action' => 'ry_get_ecpay_no',
+                'ry_geted' => $geted,
+                'ids' => implode(',', $ids),
+            ], $redirect_to);
         }
 
         if (str_starts_with($action, 'ry_print_ecpay_')) {
-            $redirect_to = add_query_arg(
-                [
-                    'orderid' => implode(',', $ids),
-                    'type' => substr($action, 15),
-                ],
-                admin_url('admin-post.php?action=ry-print-ecpay-shipping'),
-            );
+            $redirect_to = add_query_arg([
+                'action' => 'ry-print-ecpay-shipping',
+                'orderid' => implode(',', $ids),
+                'type' => substr($action, 15),
+                '_wpnonce' => wp_create_nonce('ry-print-shipping'),
+            ], admin_url('admin-post.php'));
             wp_redirect($redirect_to);
             exit();
         }

@@ -78,13 +78,12 @@ final class RY_WTP_SmilePay_Shipping_Admin
     public function print_shipping_note($redirect_to, $action, $ids)
     {
         if (str_starts_with($action, 'ry_print_smilepay_')) {
-            $redirect_to = add_query_arg(
-                [
-                    'orderid' => implode(',', $ids),
-                    'type' => substr($action, 18),
-                ],
-                admin_url('admin-post.php?action=ry-print-smilepay-shipping'),
-            );
+            $redirect_to = add_query_arg([
+                'action' => 'ry-print-smilepay-shipping',
+                'orderid' => implode(',', $ids),
+                'type' => substr($action, 18),
+                '_wpnonce' => wp_create_nonce('ry-print-shipping'),
+            ], admin_url('admin-post.php'));
             wp_redirect($redirect_to);
             exit();
         }
