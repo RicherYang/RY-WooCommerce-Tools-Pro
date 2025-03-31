@@ -29,13 +29,6 @@ final class RY_WTP_WC_Admin_Gateways
         }
 
         add_action('admin_footer', [$this, 'payment_info_template']);
-        wp_localize_script('ry-wtp-admin-order', 'RyInfo', [
-            '_nonce' => [
-                'get' => wp_create_nonce('get-payment-info'),
-            ],
-        ]);
-
-        wp_enqueue_script('ry-wtp-admin-order');
 
         if (empty($html)) {
             $html = '<tr><td>';
@@ -43,7 +36,7 @@ final class RY_WTP_WC_Admin_Gateways
             $html = '<tr><td><table>' . $html . '</table></td><td>';
         }
 
-        $html .= '<button id="ry_show_payment_info" type="button" class="button" data-orderid="' . esc_attr($order->get_id()) . '">' . esc_html__('Get info', 'ry-woocommerce-tools-pro') . '</button>
+        $html .= '<button id="ry-show-payment-info" type="button" class="button" data-orderid="' . esc_attr($order->get_id()) . '">' . esc_html__('Get info', 'ry-woocommerce-tools-pro') . '</button>
             </td></tr>';
 
         return $html;

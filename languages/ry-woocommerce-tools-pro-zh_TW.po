@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-02-16 10:51+0800\n"
-"PO-Revision-Date: 2025-02-11 12:10+0800\n"
+"PO-Revision-Date: 2025-03-31 13:39+0800\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
@@ -72,50 +72,50 @@ msgctxt "Shipping status"
 msgid "Unknow"
 msgstr "未知"
 
-#: woocommerce/admin/admin.php:38
+#: woocommerce/admin/admin.php:40
 msgid "Your license is not active!"
 msgstr "你的授權尚未啟動！"
 
-#: woocommerce/admin/admin.php:55
+#: woocommerce/admin/admin.php:57
 #: woocommerce/admin/notes/license-auto-deactivate.php:41
 #: woocommerce/admin/settings/pro-info.php:10
 msgid "License key"
 msgstr "授權金鑰"
 
 #. translators: %s: Expiration date of pro license
-#: woocommerce/admin/admin.php:74
+#: woocommerce/admin/admin.php:76
 #, php-format
 msgid "License Expiration Date %s"
 msgstr "授權到期日 %s"
 
-#: woocommerce/admin/admin.php:114
-#: woocommerce/admin/admin.php:137
+#: woocommerce/admin/admin.php:116
+#: woocommerce/admin/admin.php:139
 msgid "Connect license server failed!"
 msgstr "連結授權伺服器失敗！"
 
 #. translators: %s: Error message
-#: woocommerce/admin/admin.php:122
+#: woocommerce/admin/admin.php:124
 #, php-format
 msgid "Verification error: %s"
 msgstr "驗證錯誤：%s"
 
-#: woocommerce/admin/admin.php:127
+#: woocommerce/admin/admin.php:129
 msgid "Unknown key"
 msgstr "未知的金鑰"
 
-#: woocommerce/admin/admin.php:128
+#: woocommerce/admin/admin.php:130
 msgid "Locked key"
 msgstr "鎖定的金鑰"
 
-#: woocommerce/admin/admin.php:129
+#: woocommerce/admin/admin.php:131
 msgid "Unknown target url"
 msgstr "未知的目標網址"
 
-#: woocommerce/admin/admin.php:130
+#: woocommerce/admin/admin.php:132
 msgid "Used key"
 msgstr "已使用的金鑰"
 
-#: woocommerce/admin/admin.php:131
+#: woocommerce/admin/admin.php:133
 msgid "Is tried"
 msgstr "已使用過測試版"
 
@@ -289,30 +289,30 @@ msgstr "綠界信用卡（分 6 期）"
 msgid "Pay via ECPay Credit(6 installment)"
 msgstr "使用 綠界信用卡（分 6 期） 付款"
 
-#: woocommerce/gateways/ecpay/includes/admin.php:31
+#: woocommerce/gateways/ecpay/includes/admin.php:30
 #: woocommerce/gateways/newebpay/includes/admin.php:32
 #: woocommerce/gateways/smilepay/includes/admin.php:28
 msgid "Gateway options"
 msgstr "金流設定"
 
-#: woocommerce/gateways/ecpay/includes/admin.php:36
+#: woocommerce/gateways/ecpay/includes/admin.php:35
 #: woocommerce/gateways/newebpay/includes/admin.php:37
 msgid "Credit installment"
 msgstr "信用卡分期"
 
-#: woocommerce/gateways/ecpay/includes/admin.php:40
+#: woocommerce/gateways/ecpay/includes/admin.php:39
 #: woocommerce/gateways/newebpay/includes/admin.php:41
 msgid "Add each periods of credit installment as a payment gateway."
 msgstr "將每一個信用卡分期期數新增為一個付款方式。"
 
-#: woocommerce/gateways/ecpay/includes/admin.php:43
+#: woocommerce/gateways/ecpay/includes/admin.php:42
 #: woocommerce/gateways/newebpay/includes/admin.php:44
 #: woocommerce/gateways/smilepay/includes/admin.php:33
 msgid "Show payment info in email"
 msgstr "在信件中顯示付款資訊"
 
 #. translators: %s: email title
-#: woocommerce/gateways/ecpay/includes/admin.php:49
+#: woocommerce/gateways/ecpay/includes/admin.php:48
 #: woocommerce/gateways/newebpay/includes/admin.php:50
 #: woocommerce/gateways/smilepay/includes/admin.php:39
 #, php-format
@@ -399,75 +399,75 @@ msgstr "使用 藍新信用卡（分 6 期） 付款"
 msgid "SmilePay"
 msgstr "速買配"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:47
+#: woocommerce/shipping/ecpay/includes/admin.php:51
 #: woocommerce/shipping/smilepay/includes/admin.php:44
 msgid "Auto get with scheduler action"
 msgstr "使用排程來自動取得物流單號"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:51
+#: woocommerce/shipping/ecpay/includes/admin.php:55
 #: woocommerce/shipping/smilepay/includes/admin.php:48
 msgid "Get shipping payment no use scheduler action."
 msgstr "使用排程動作來取得物流寄件編號。"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:59
+#: woocommerce/shipping/ecpay/includes/admin.php:63
 #: woocommerce/shipping/newebpay/includes/admin.php:28
 #: woocommerce/shipping/smilepay/includes/admin.php:56
 msgid "cvs remove billing address"
 msgstr "超商取貨移除帳單地址"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:63
+#: woocommerce/shipping/ecpay/includes/admin.php:67
 #: woocommerce/shipping/newebpay/includes/admin.php:32
 #: woocommerce/shipping/smilepay/includes/admin.php:60
 msgid "Remove billing address when shipping mode is cvs."
 msgstr "當超商取貨的時候移除帳單中的地址欄位。"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:64
+#: woocommerce/shipping/ecpay/includes/admin.php:68
 #: woocommerce/shipping/newebpay/includes/admin.php:33
 #: woocommerce/shipping/smilepay/includes/admin.php:61
 msgid "The billing address still will show in order details."
 msgstr "在訂單明細當中依然會顯示帳單地址的資料。"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:72
+#: woocommerce/shipping/ecpay/includes/admin.php:76
 msgid "Clean up receiver name"
 msgstr "調整收件人姓名"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:76
+#: woocommerce/shipping/ecpay/includes/admin.php:80
 msgid "Clean up receiver name to comply with ECPay request."
 msgstr "自動調整收件人姓名以符合綠界的規定。"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:81
+#: woocommerce/shipping/ecpay/includes/admin.php:85
 msgctxt "Cvs type"
 msgid "B2C"
 msgstr "B2C"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:84
+#: woocommerce/shipping/ecpay/includes/admin.php:88
 msgid "multi package"
 msgstr "產生多筆物流單"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:110
-#: woocommerce/shipping/ecpay/includes/admin.php:115
+#: woocommerce/shipping/ecpay/includes/admin.php:114
+#: woocommerce/shipping/ecpay/includes/admin.php:119
 msgid "Print ECPay shipping booking note (711)"
 msgstr "列印綠界物流託運單 (7-11)"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:111
-#: woocommerce/shipping/ecpay/includes/admin.php:116
+#: woocommerce/shipping/ecpay/includes/admin.php:115
+#: woocommerce/shipping/ecpay/includes/admin.php:120
 msgid "Print ECPay shipping booking note (family)"
 msgstr "列印綠界物流託運單 (全家)"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:112
-#: woocommerce/shipping/ecpay/includes/admin.php:117
+#: woocommerce/shipping/ecpay/includes/admin.php:116
+#: woocommerce/shipping/ecpay/includes/admin.php:121
 msgid "Print ECPay shipping booking note (hilife)"
 msgstr "列印綠界物流託運單 (萊爾富)"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:118
+#: woocommerce/shipping/ecpay/includes/admin.php:122
 msgid "Print ECPay shipping booking note (ok)"
 msgstr "列印綠界物流託運單 (OK)"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:122
+#: woocommerce/shipping/ecpay/includes/admin.php:126
 msgid "Print ECPay shipping booking note (post)"
 msgstr "列印綠界物流託運單 (郵局)"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:123
+#: woocommerce/shipping/ecpay/includes/admin.php:127
 msgid "Print ECPay shipping booking note (tcat)"
 msgstr "列印綠界物流託運單 (黑貓)"
 
@@ -672,7 +672,7 @@ msgstr "<strong>%1$s</strong> 暫停運作。 需求 %2$s %3$s 或更新版本�
 msgid "Invalid cellphone number"
 msgstr "無效的手機號碼"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:106
+#: woocommerce/shipping/ecpay/includes/admin.php:110
 msgid "Get ECPay shipping no"
 msgstr "取得綠界託運單號"
 
@@ -680,28 +680,34 @@ msgstr "取得綠界託運單號"
 msgid "Print SmilePay shipping booking note (tcat)"
 msgstr "列印速買配物流託運單 (黑貓)"
 
-#: woocommerce/admin/gateways.php:46
+#: woocommerce/admin/gateways.php:39
+#: woocommerce/shipping/ecpay/includes/admin.php:226
 msgid "Get info"
-msgstr "付款資訊"
+msgstr "取得資訊"
 
 #. translators: %s: order ID
 #: woocommerce/admin/view/payment-info-template.php:7
+#: woocommerce/shipping/ecpay/includes/view/shipping-info-template.php:7
 msgid "Order #%s"
 msgstr "訂單 #%s"
 
 #: woocommerce/admin/view/payment-info-template.php:9
+#: woocommerce/shipping/ecpay/includes/view/shipping-info-template.php:9
 msgid "Close modal panel"
 msgstr "關閉視窗"
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:6
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:6
 msgid "ECPay trade no"
 msgstr "綠界交易編號"
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:8
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:8
 msgid "ECPay trade date"
 msgstr "綠界交易日期"
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:10
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:10
 msgid "ECPay trade status"
 msgstr "綠界交易狀態"
 
@@ -727,11 +733,13 @@ msgstr "付款日期"
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:3
 #: woocommerce/gateways/newebpay/includes/view/payment-info.php:3
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:3
 msgid "Order info"
 msgstr "訂單資訊"
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:4
 #: woocommerce/gateways/newebpay/includes/view/payment-info.php:4
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:4
 msgid "Trade no"
 msgstr "訂單交易編號"
 
@@ -788,12 +796,13 @@ msgid "Payment amount"
 msgstr "付款金額"
 
 #: woocommerce/gateways/ecpay/includes/ajax.php:37
+#: woocommerce/shipping/ecpay/includes/ajax.php:38
 msgid "Can not get info from ECPay."
-msgstr "無法向綠界取得付款資訊。"
+msgstr "無法向綠界取得相關資訊。"
 
 #: woocommerce/gateways/newebpay/includes/ajax.php:37
 msgid "Can not get info from NewebPay."
-msgstr "無法向藍新取得付款資訊。"
+msgstr "無法向藍新取得相關資訊。"
 
 #: woocommerce/gateways/newebpay/includes/view/payment-info.php:6
 msgid "NewebPay trade no"
@@ -833,3 +842,68 @@ msgstr "退款"
 #: woocommerce/gateways/newebpay/includes/ajax.php:39
 msgid "Unknow trade info."
 msgstr "無效的交易資訊。"
+
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:22
+msgid "Shipping info"
+msgstr "物流資訊"
+
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:27
+msgid "Declare amount"
+msgstr "申報價值"
+
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:25
+msgid "Goods name"
+msgstr "商品名稱"
+
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:46
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:54
+msgid "Shipping no"
+msgstr "物流編號"
+
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:59
+msgid "Declare weight"
+msgstr "申報重量"
+
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:23
+msgid "Shipping type"
+msgstr "物流類型"
+
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:61
+msgid "Package weight"
+msgstr "包裹重量"
+
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:13
+msgid "Sander name"
+msgstr "寄件人姓名"
+
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:15
+msgid "Sander phone"
+msgstr "寄件人電話"
+
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:17
+msgid "Sander Cellphone"
+msgstr "寄件人手機"
+
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:29
+msgid "Shipping fee"
+msgstr "物流費用"
+
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:31
+msgid "Shipping fee date"
+msgstr "物流費用扣款日"
+
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:35
+msgid "Collection amount"
+msgstr "代收金額"
+
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:37
+msgid "Collection charge fee"
+msgstr "代收手續費"
+
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:39
+msgid "Collection allocate amount"
+msgstr "代收款項撥款金額"
+
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:41
+msgid "Collection allocate date"
+msgstr "代收款項撥款日期"

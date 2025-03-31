@@ -16,7 +16,6 @@ final class RY_WTP_WC_ECPay_Gateway_Admin
     protected function do_init(): void
     {
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/includes/ajax.php';
-
         RY_WTP_WC_ECPay_Gateway_Admin_ajax::instance();
 
         add_filter('woocommerce_get_settings_rytools', [$this, 'add_setting'], 11, 2);

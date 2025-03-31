@@ -2,14 +2,14 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: RY Tools (Pro) for WooCommerce 3.5.5\n"
+"Project-Id-Version: RY Tools (Pro) for WooCommerce 3.5.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ry-woocommerce-tools-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-02-11T14:13:00+08:00\n"
+"POT-Creation-Date: 2025-03-31T15:15:39+08:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: ry-woocommerce-tools-pro\n"
@@ -97,52 +97,53 @@ msgctxt "Shipping status"
 msgid "Unknow"
 msgstr ""
 
-#: woocommerce/admin/admin.php:38
+#: woocommerce/admin/admin.php:40
 msgid "Your license is not active!"
 msgstr ""
 
-#: woocommerce/admin/admin.php:55
+#: woocommerce/admin/admin.php:57
 #: woocommerce/admin/notes/license-auto-deactivate.php:41
 #: woocommerce/admin/settings/pro-info.php:10
 msgid "License key"
 msgstr ""
 
 #. translators: %s: Expiration date of pro license
-#: woocommerce/admin/admin.php:74
+#: woocommerce/admin/admin.php:76
 msgid "License Expiration Date %s"
 msgstr ""
 
-#: woocommerce/admin/admin.php:114
-#: woocommerce/admin/admin.php:137
+#: woocommerce/admin/admin.php:116
+#: woocommerce/admin/admin.php:139
 msgid "Connect license server failed!"
 msgstr ""
 
 #. translators: %s: Error message
-#: woocommerce/admin/admin.php:122
+#: woocommerce/admin/admin.php:124
 msgid "Verification error: %s"
 msgstr ""
 
-#: woocommerce/admin/admin.php:127
+#: woocommerce/admin/admin.php:129
 msgid "Unknown key"
 msgstr ""
 
-#: woocommerce/admin/admin.php:128
+#: woocommerce/admin/admin.php:130
 msgid "Locked key"
 msgstr ""
 
-#: woocommerce/admin/admin.php:129
+#: woocommerce/admin/admin.php:131
 msgid "Unknown target url"
 msgstr ""
 
-#: woocommerce/admin/admin.php:130
+#: woocommerce/admin/admin.php:132
 msgid "Used key"
 msgstr ""
 
-#: woocommerce/admin/admin.php:131
+#: woocommerce/admin/admin.php:133
 msgid "Is tried"
 msgstr ""
 
-#: woocommerce/admin/gateways.php:46
+#: woocommerce/admin/gateways.php:39
+#: woocommerce/shipping/ecpay/includes/admin.php:226
 msgid "Get info"
 msgstr ""
 
@@ -197,10 +198,12 @@ msgstr ""
 
 #. translators: %s: order ID
 #: woocommerce/admin/view/payment-info-template.php:7
+#: woocommerce/shipping/ecpay/includes/view/shipping-info-template.php:7
 msgid "Order #%s"
 msgstr ""
 
 #: woocommerce/admin/view/payment-info-template.php:9
+#: woocommerce/shipping/ecpay/includes/view/shipping-info-template.php:9
 msgid "Close modal panel"
 msgstr ""
 
@@ -326,36 +329,37 @@ msgstr ""
 msgid "Pay via ECPay Credit(24 installment)"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/includes/admin.php:31
+#: woocommerce/gateways/ecpay/includes/admin.php:30
 #: woocommerce/gateways/newebpay/includes/admin.php:32
 #: woocommerce/gateways/smilepay/includes/admin.php:28
 msgid "Gateway options"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/includes/admin.php:36
+#: woocommerce/gateways/ecpay/includes/admin.php:35
 #: woocommerce/gateways/newebpay/includes/admin.php:37
 msgid "Credit installment"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/includes/admin.php:40
+#: woocommerce/gateways/ecpay/includes/admin.php:39
 #: woocommerce/gateways/newebpay/includes/admin.php:41
 msgid "Add each periods of credit installment as a payment gateway."
 msgstr ""
 
-#: woocommerce/gateways/ecpay/includes/admin.php:43
+#: woocommerce/gateways/ecpay/includes/admin.php:42
 #: woocommerce/gateways/newebpay/includes/admin.php:44
 #: woocommerce/gateways/smilepay/includes/admin.php:33
 msgid "Show payment info in email"
 msgstr ""
 
 #. translators: %s: email title
-#: woocommerce/gateways/ecpay/includes/admin.php:49
+#: woocommerce/gateways/ecpay/includes/admin.php:48
 #: woocommerce/gateways/newebpay/includes/admin.php:50
 #: woocommerce/gateways/smilepay/includes/admin.php:39
 msgid "Add payment info in \"%s\" email."
 msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/ajax.php:37
+#: woocommerce/shipping/ecpay/includes/ajax.php:38
 msgid "Can not get info from ECPay."
 msgstr ""
 
@@ -366,23 +370,28 @@ msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:3
 #: woocommerce/gateways/newebpay/includes/view/payment-info.php:3
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:3
 msgid "Order info"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:4
 #: woocommerce/gateways/newebpay/includes/view/payment-info.php:4
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:4
 msgid "Trade no"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:6
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:6
 msgid "ECPay trade no"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:8
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:8
 msgid "ECPay trade date"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:10
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:10
 msgid "ECPay trade status"
 msgstr ""
 
@@ -576,80 +585,145 @@ msgstr ""
 msgid "SmilePay"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:47
+#: woocommerce/shipping/ecpay/includes/admin.php:51
 #: woocommerce/shipping/smilepay/includes/admin.php:44
 msgid "Auto get with scheduler action"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:51
+#: woocommerce/shipping/ecpay/includes/admin.php:55
 #: woocommerce/shipping/smilepay/includes/admin.php:48
 msgid "Get shipping payment no use scheduler action."
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:59
+#: woocommerce/shipping/ecpay/includes/admin.php:63
 #: woocommerce/shipping/newebpay/includes/admin.php:28
 #: woocommerce/shipping/smilepay/includes/admin.php:56
 msgid "cvs remove billing address"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:63
+#: woocommerce/shipping/ecpay/includes/admin.php:67
 #: woocommerce/shipping/newebpay/includes/admin.php:32
 #: woocommerce/shipping/smilepay/includes/admin.php:60
 msgid "Remove billing address when shipping mode is cvs."
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:64
+#: woocommerce/shipping/ecpay/includes/admin.php:68
 #: woocommerce/shipping/newebpay/includes/admin.php:33
 #: woocommerce/shipping/smilepay/includes/admin.php:61
 msgid "The billing address still will show in order details."
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:72
+#: woocommerce/shipping/ecpay/includes/admin.php:76
 msgid "Clean up receiver name"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:76
+#: woocommerce/shipping/ecpay/includes/admin.php:80
 msgid "Clean up receiver name to comply with ECPay request."
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:81
+#: woocommerce/shipping/ecpay/includes/admin.php:85
 msgctxt "Cvs type"
 msgid "B2C"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:84
+#: woocommerce/shipping/ecpay/includes/admin.php:88
 msgid "multi package"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:106
+#: woocommerce/shipping/ecpay/includes/admin.php:110
 msgid "Get ECPay shipping no"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:110
-#: woocommerce/shipping/ecpay/includes/admin.php:115
+#: woocommerce/shipping/ecpay/includes/admin.php:114
+#: woocommerce/shipping/ecpay/includes/admin.php:119
 msgid "Print ECPay shipping booking note (711)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:111
-#: woocommerce/shipping/ecpay/includes/admin.php:116
+#: woocommerce/shipping/ecpay/includes/admin.php:115
+#: woocommerce/shipping/ecpay/includes/admin.php:120
 msgid "Print ECPay shipping booking note (family)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:112
-#: woocommerce/shipping/ecpay/includes/admin.php:117
+#: woocommerce/shipping/ecpay/includes/admin.php:116
+#: woocommerce/shipping/ecpay/includes/admin.php:121
 msgid "Print ECPay shipping booking note (hilife)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:118
+#: woocommerce/shipping/ecpay/includes/admin.php:122
 msgid "Print ECPay shipping booking note (ok)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:122
+#: woocommerce/shipping/ecpay/includes/admin.php:126
 msgid "Print ECPay shipping booking note (post)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:123
+#: woocommerce/shipping/ecpay/includes/admin.php:127
 msgid "Print ECPay shipping booking note (tcat)"
+msgstr ""
+
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:13
+msgid "Sander name"
+msgstr ""
+
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:15
+msgid "Sander phone"
+msgstr ""
+
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:17
+msgid "Sander Cellphone"
+msgstr ""
+
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:22
+msgid "Shipping info"
+msgstr ""
+
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:23
+msgid "Shipping type"
+msgstr ""
+
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:25
+msgid "Goods name"
+msgstr ""
+
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:27
+msgid "Declare amount"
+msgstr ""
+
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:29
+msgid "Shipping fee"
+msgstr ""
+
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:31
+msgid "Shipping fee date"
+msgstr ""
+
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:35
+msgid "Collection amount"
+msgstr ""
+
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:37
+msgid "Collection charge fee"
+msgstr ""
+
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:39
+msgid "Collection allocate amount"
+msgstr ""
+
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:41
+msgid "Collection allocate date"
+msgstr ""
+
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:46
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:54
+msgid "Shipping no"
+msgstr ""
+
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:59
+msgid "Declare weight"
+msgstr ""
+
+#: woocommerce/shipping/ecpay/includes/view/shipping-info.php:61
+msgid "Package weight"
 msgstr ""
 
 #: woocommerce/shipping/ecpay/shipping-cvs-711.php:13

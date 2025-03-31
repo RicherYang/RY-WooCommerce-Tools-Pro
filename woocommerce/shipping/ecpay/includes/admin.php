@@ -17,6 +17,9 @@ final class RY_WTP_ECPay_Shipping_Admin
 
     protected function do_init(): void
     {
+        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/includes/ajax.php';
+        RY_WTP_ECPay_Shipping_Admin_Ajax::instance();
+
         add_filter('woocommerce_get_settings_rytools', [$this, 'add_setting'], 11, 3);
 
         add_action('admin_notices', [$this, 'bulk_action_notices']);
@@ -31,6 +34,7 @@ final class RY_WTP_ECPay_Shipping_Admin
         }
 
         add_action('woocommerce_admin_order_data_after_shipping_address', [$this, 'add_choose_cvs_btn']);
+        add_action('ry_shipping_info_list-column_action', [$this, 'add_info_btn'], 10, 2);
 
         // Support plugin (WooCommerce Print Invoice & Delivery Note)
         add_filter('wcdn_order_info_fields', [$this, 'add_wcdn_shipping_info'], 10, 2);
@@ -201,7 +205,8 @@ final class RY_WTP_ECPay_Shipping_Admin
                             'newStore' => $choosed_cvs,
                         ],
                         '_nonce' => [
-                            'get' => wp_create_nonce('get-payment-info'),
+                            'payment' => wp_create_nonce('get-payment-info'),
+                            'shipping' => wp_create_nonce('get-shipping-info'),
                         ],
                     ]);
 
@@ -212,6 +217,18 @@ final class RY_WTP_ECPay_Shipping_Admin
                 }
             }
         }
+    }
+
+    public function add_info_btn($order, $item)
+    {
+        add_action('admin_footer', [$this, 'shipping_info_template']);
+
+        echo '<button type="button" class="button ry-show-shipping-info" data-orderid="' . esc_attr($order->get_id()) . '" data-id="' . esc_attr($item['ID']) . '">' . esc_html__('Get info', 'ry-woocommerce-tools-pro') . '</button>';
+    }
+
+    public function shipping_info_template()
+    {
+        include RY_WTP_PLUGIN_DIR . 'woocommerce/\shipping/ecpay/includes/view/shipping-info-template.php';
     }
 
     public function add_wcdn_shipping_info($fields, $order)

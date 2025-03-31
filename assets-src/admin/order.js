@@ -21,8 +21,8 @@ $(function () {
         }
     }
 
-    if ($('#ry_show_payment_info').length) {
-        $('#ry_show_payment_info').on('click', function () {
+    if ($('#ry-show-payment-info').length) {
+        $('#ry-show-payment-info').on('click', function () {
             let $btn = $(this);
             $btn.addClass(['disabled'])
                 .prop('disabled', true);
@@ -32,7 +32,7 @@ $(function () {
                 data: {
                     action: 'RY_payment_info',
                     orderid: $btn.data('orderid'),
-                    _ajax_nonce: RyInfo._nonce.get
+                    _ajax_nonce: RyInfo._nonce.payment
                 },
                 success: function (response) {
                     $btn.removeClass(['disabled'])
@@ -40,6 +40,36 @@ $(function () {
                     if (response.success) {
                         $(this).WCBackboneModal({
                             template: 'ry-modal-view-payment-info',
+                            variable: response.data
+                        });
+                    }
+                }
+            });
+
+        });
+    }
+
+    if ($('.ry-show-shipping-info').length) {
+        $('.ry-show-shipping-info').on('click', function () {
+            let $btn = $(this);
+            $btn.addClass(['disabled'])
+                .prop('disabled', true);
+            console.log(RyInfo);
+            $.ajax({
+                url: ajaxurl,
+                method: 'POST',
+                data: {
+                    action: 'RY_shipping_info',
+                    orderid: $btn.data('orderid'),
+                    id: $btn.data('id'),
+                    _ajax_nonce: RyInfo._nonce.shipping
+                },
+                success: function (response) {
+                    $btn.removeClass(['disabled'])
+                        .prop('disabled', false);
+                    if (response.success) {
+                        $(this).WCBackboneModal({
+                            template: 'ry-modal-view-shipping-info',
                             variable: response.data
                         });
                     }

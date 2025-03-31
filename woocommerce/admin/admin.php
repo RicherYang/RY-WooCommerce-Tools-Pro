@@ -24,6 +24,8 @@ final class RY_WTP_WC_Admin
         add_action('ry_setting_section_ouput_tools', [$this, 'output_tools']);
 
         add_action('woocommerce_update_options_rytools_ry_key', [$this, 'activate_key']);
+
+        add_action('woocommerce_admin_order_data_after_payment_info', [$this, 'load_script']);
     }
 
     public function add_license_notice(): void
@@ -168,5 +170,17 @@ final class RY_WTP_WC_Admin
             }
             $customer->save_data();
         }
+    }
+
+    public function load_script()
+    {
+        wp_localize_script('ry-wtp-admin-order', 'RyInfo', [
+            '_nonce' => [
+                'payment' => wp_create_nonce('get-payment-info'),
+                'shipping' => wp_create_nonce('get-shipping-info'),
+            ],
+        ]);
+
+        wp_enqueue_script('ry-wtp-admin-order');
     }
 }
