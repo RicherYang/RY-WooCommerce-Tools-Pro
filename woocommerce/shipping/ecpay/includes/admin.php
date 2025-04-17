@@ -228,7 +228,7 @@ final class RY_WTP_ECPay_Shipping_Admin
 
     public function shipping_info_template()
     {
-        include RY_WTP_PLUGIN_DIR . 'woocommerce/\shipping/ecpay/includes/view/shipping-info-template.php';
+        include RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/includes/view/shipping-info-template.php';
     }
 
     public function add_wcdn_shipping_info($fields, $order)
