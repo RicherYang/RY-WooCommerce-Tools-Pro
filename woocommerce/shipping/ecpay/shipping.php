@@ -18,6 +18,9 @@ final class RY_WTP_ECPay_Shipping
     {
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping.php';
 
+        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/includes/cron.php';
+        RY_WTP_ECPay_Shipping_Cron::add_action();
+
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/shipping-cvs-711.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/shipping-cvs-family.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/shipping-cvs-hilife.php';
@@ -47,13 +50,13 @@ final class RY_WTP_ECPay_Shipping
             add_action('ry_ecpay_shipping_response_status_3301', [$this, 'shipping_transporting'], 10, 2);
         }
 
-        add_action('ry_wtp_get_ecpay_code', [RY_WT_WC_ECPay_Shipping_Api::instance(), 'get_code'], 10, 2);
         if ('yes' === RY_WT::get_option('ecpay_shipping_auto_get_no', 'yes')) {
             if ('yes' === RY_WTP::get_option('ecpay_shipping_auto_with_scheduler', 'no')) {
                 remove_action('woocommerce_order_status_processing', [RY_WT_WC_ECPay_Shipping::instance(), 'get_code'], 10, 2);
                 add_action('woocommerce_order_status_processing', [$this, 'get_code'], 10, 2);
             }
         }
+        add_action('ry_ecpay_shipping_get_cvs_no', [$this, 'get_shipping_no'], 10, 3);
 
         if (is_admin()) {
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/includes/admin.php';
@@ -130,9 +133,18 @@ final class RY_WTP_ECPay_Shipping
                     $shipping_list = [];
                 }
                 if (0 === count($shipping_list)) {
-                    WC()->queue()->schedule_single(time() + 10, 'ry_wtp_get_ecpay_code', [$order_ID], '');
+                    WC()->queue()->schedule_single(time() + 10, 'ry_wtp_get_ecpay_shipping_code', [$order_ID], '');
                 }
                 break;
+            }
+        }
+    }
+
+    public function get_shipping_no($result, $shipping_list, $order)
+    {
+        if ('CVS' === $result['LogisticsType']) {
+            if (!str_ends_with($result['LogisticsSubType'], 'C2C')) {
+                WC()->queue()->schedule_single(time() + 10, 'ry_wtp_get_ecpay_shipping_no', [$order->get_id(), $shipping_list['ID']], '');
             }
         }
     }

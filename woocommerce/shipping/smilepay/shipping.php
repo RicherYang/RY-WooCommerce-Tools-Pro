@@ -18,6 +18,9 @@ final class RY_WTP_SmilePay_Shipping
     {
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping.php';
 
+        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/smilepay/includes/cron.php';
+        RY_WTP_SmilePay_Shipping_Cron::add_action();
+
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/smilepay/shipping-cvs-711.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/smilepay/shipping-cvs-fami.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/smilepay/shipping-home-tcat.php';
@@ -34,8 +37,6 @@ final class RY_WTP_SmilePay_Shipping
             add_action('ry_smilepay_shipping_response_status_1', [$this, 'shipping_transporting'], 10, 2);
         }
 
-        add_action('ry_wtp_get_smilepay_cvs_code', [RY_WT_WC_SmilePay_Shipping_Api::instance(), 'get_info_no'], 10, 2);
-        add_action('ry_wtp_get_smilepay_home_code', [RY_WT_WC_SmilePay_Shipping_Api::instance(), 'get_home_info'], 10, 1);
         if ('yes' === RY_WT::get_option('smilepay_shipping_auto_get_no', 'yes')) {
             if ('yes' === RY_WTP::get_option('smilepay_shipping_auto_with_scheduler', 'no')) {
                 remove_action('woocommerce_order_status_processing', [RY_WT_WC_SmilePay_Shipping::instance(), 'get_code'], 10, 2);

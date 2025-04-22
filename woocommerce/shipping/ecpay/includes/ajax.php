@@ -37,6 +37,16 @@ final class RY_WTP_ECPay_Shipping_Admin_Ajax
                 if (empty($info)) {
                     $data['info_html'] = esc_html__('Can not get info from ECPay.', 'ry-woocommerce-tools-pro');
                 } else {
+                    if (str_starts_with($info['LogisticsType'], 'CVS_')) {
+                        if (!str_ends_with($info['LogisticsType'], 'C2C')) {
+                            if (empty($shipping_list[$info_ID]['PaymentNo'])) {
+                                $shipping_list[$info_ID]['PaymentNo'] = $info['ShipmentNo'];
+                                $order->update_meta_data('_ecpay_shipping_info', $shipping_list);
+                                $order->save();
+                            }
+                        }
+                    }
+
                     ob_start();
                     include RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/includes/view/shipping-info.php';
                     $data['info_html'] = ob_get_clean();
