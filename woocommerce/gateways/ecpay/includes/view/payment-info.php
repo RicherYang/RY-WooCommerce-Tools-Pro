@@ -22,7 +22,7 @@
     <div class="wc-order-preview-address">
         <h2><?php esc_html_e('Payment info', 'ry-woocommerce-tools-pro'); ?></h2>
         <strong><?php esc_html_e('Payment type', 'ry-woocommerce-tools-pro'); ?></strong>
-        <?php echo esc_html(rywt_ecpay_info_to_name($info['PaymentType'])); ?>
+        <?php echo esc_html(rywtp_ecpay_info_to_name($info['PaymentType'])); ?>
         <strong><?php esc_html_e('Payment date', 'ry-woocommerce-tools-pro'); ?></strong>
         <?php echo esc_html($info['PaymentDate']); ?>
         <strong><?php esc_html_e('Payment amount', 'ry-woocommerce-tools-pro'); ?></strong>
@@ -60,7 +60,7 @@
         <?php } ?>
         <?php if (str_starts_with($info['PaymentType'], 'CVS_')) { ?>
         <strong><?php esc_html_e('Payment cvs', 'ry-woocommerce-tools-pro'); ?></strong>
-        <?php echo esc_html(rywt_ecpay_info_to_name($info['PayFrom'])); ?>
+        <?php echo esc_html(rywtp_ecpay_info_to_name($info['PayFrom'])); ?>
         <?php } ?>
     </div>
 </div>

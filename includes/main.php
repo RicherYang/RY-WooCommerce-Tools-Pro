@@ -35,6 +35,8 @@ final class RY_WTP
 
     public function do_woo_init(): void
     {
+        include_once RY_WTP_PLUGIN_DIR . 'includes/functions.php';
+
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/admin/notes/license-auto-deactivate.php';
         include_once RY_WTP_PLUGIN_DIR . 'includes/license.php';
         include_once RY_WTP_PLUGIN_DIR . 'includes/link-server.php';

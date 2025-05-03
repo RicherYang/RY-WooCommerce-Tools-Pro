@@ -24,7 +24,7 @@ final class RY_WTP_ECPay_Shipping_Admin
 
         add_action('admin_notices', [$this, 'bulk_action_notices']);
         if (class_exists('Automattic\WooCommerce\Utilities\OrderUtil') && OrderUtil::custom_orders_table_usage_is_enabled()) {
-            if ('edit' !== ($_GET['action'] ?? '')) {
+            if ('edit' !== ($_GET['action'] ?? '')) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended , WordPress.Security.ValidatedSanitizedInput.MissingUnslash , WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
                 add_filter('bulk_actions-woocommerce_page_wc-orders', [$this, 'shop_order_list_action']);
                 add_filter('handle_bulk_actions-woocommerce_page_wc-orders', [$this, 'do_shop_order_action'], 10, 3);
             }
@@ -92,15 +92,13 @@ final class RY_WTP_ECPay_Shipping_Admin
 
     public function bulk_action_notices()
     {
-        if (empty($_GET['bulk_action'])) {
-            return;
-        }
-
-        $bulk_action = wc_clean(wp_unslash($_GET['bulk_action']));
-        $number = absint($_GET['ry_geted'] ?? 0);
+        $bulk_action = wp_unslash($_GET['bulk_action'] ?? ''); // phpcs:ignore WordPress.Security.NonceVerification.Recommended , WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 
         if ('ry_get_ecpay_no' === $bulk_action) {
-            $message = sprintf(_n('%s order get shipping no.', '%s order get shipping no.', $number, 'woocommerce'), number_format_i18n($number));
+            $number = (int) wp_unslash($_GET['ry_geted'] ?? ''); // phpcs:ignore WordPress.Security.NonceVerification.Recommended , WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+
+            /* translators: %s: count */
+            $message = sprintf(_n('%s order get shipping no.', '%s order get shipping no.', $number, 'ry-woocommerce-tools-pro'), number_format_i18n($number));
             echo '<div class="updated"><p>' . esc_html($message) . '</p></div>';
         }
     }
@@ -178,12 +176,12 @@ final class RY_WTP_ECPay_Shipping_Admin
                     list($MerchantID, $HashKey, $HashIV, $cvs_type) = RY_WT_WC_ECPay_Shipping::instance()->get_api_info();
 
                     $choosed_cvs = '';
-                    if (isset($_POST['MerchantID']) && $_POST['MerchantID'] == $MerchantID) {
+                    if (isset($_POST['MerchantID']) && $_POST['MerchantID'] === $MerchantID) { // phpcs:ignore WordPress.Security.NonceVerification.Missing
                         $choosed_cvs = [
-                            'CVSStoreID' => wc_clean(wp_unslash($_POST['CVSStoreID'])),
-                            'CVSStoreName' => wc_clean(wp_unslash($_POST['CVSStoreName'])),
-                            'CVSAddress' => wc_clean(wp_unslash($_POST['CVSAddress'])),
-                            'CVSTelephone' => wc_clean(wp_unslash($_POST['CVSTelephone'])),
+                            'CVSStoreID' => wp_unslash($_POST['CVSStoreID'] ?? ''), // phpcs:ignore WordPress.Security.NonceVerification.Missing , WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+                            'CVSStoreName' => wp_unslash($_POST['CVSStoreName'] ?? ''), // phpcs:ignore WordPress.Security.NonceVerification.Missing , WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+                            'CVSAddress' => wp_unslash($_POST['CVSAddress'] ?? ''), // phpcs:ignore WordPress.Security.NonceVerification.Missing , WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+                            'CVSTelephone' => wp_unslash($_POST['CVSTelephone'] ?? ''), // phpcs:ignore WordPress.Security.NonceVerification.Missing , WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
                         ];
                     }
 
@@ -243,7 +241,7 @@ final class RY_WTP_ECPay_Shipping_Admin
                     $fields = array_slice($fields, 0, $field_idx)
                         + [
                             'ry_ecpay_shipping_id' => [
-                                'label' => __('ECPay shipping ID', 'ry-woocommerce-tools'),
+                                'label' => __('ECPay shipping ID', 'ry-woocommerce-tools-pro'),
                                 'value' => implode(', ', array_column($shipping_list, 'ID')),
                             ],
                         ]

@@ -37,7 +37,7 @@ final class RY_WTP_WC_SmilePay_Gateway_Admin
                     'desc' => sprintf(
                         /* translators: %s: email title */
                         __('Add payment info in "%s" email.', 'ry-woocommerce-tools-pro'),
-                        __('Order on-hold', 'woocommerce'),
+                        __('Order on-hold', 'ry-woocommerce-tools-pro'),
                     ),
                 ],
                 [

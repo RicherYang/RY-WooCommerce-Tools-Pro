@@ -20,7 +20,7 @@ final class RY_WTP_SmilePay_Shipping_Admin
         add_filter('woocommerce_get_settings_rytools', [$this, 'add_setting'], 11, 3);
 
         if (class_exists('Automattic\WooCommerce\Utilities\OrderUtil') && OrderUtil::custom_orders_table_usage_is_enabled()) {
-            if ('edit' !== ($_GET['action'] ?? '')) {
+            if ('edit' !== ($_GET['action'] ?? '')) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended , WordPress.Security.ValidatedSanitizedInput.MissingUnslash , WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
                 add_filter('bulk_actions-woocommerce_page_wc-orders', [$this, 'shop_order_list_action']);
                 add_filter('handle_bulk_actions-woocommerce_page_wc-orders', [$this, 'print_shipping_note'], 10, 3);
             }
@@ -103,7 +103,7 @@ final class RY_WTP_SmilePay_Shipping_Admin
                     $fields = array_slice($fields, 0, $field_idx)
                         + [
                             'ry_smilepay_shipping_id' => [
-                                'label' => __('SmilePay shipping ID', 'ry-woocommerce-tools'),
+                                'label' => __('SmilePay shipping ID', 'ry-woocommerce-tools-pro'),
                                 'value' => implode(', ', array_column($shipping_list, 'ID')),
                             ],
                         ]

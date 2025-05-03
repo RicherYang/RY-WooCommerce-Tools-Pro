@@ -30,7 +30,7 @@ final class RY_WTP_License extends RY_WT_Model
         $license_data = $this->get_license_data();
         if (!is_array($license_data)) {
             if (false !== $license_data) {
-                $this->add_valid_error_log('WTP data error. ' . var_export($license_data, true));
+                $this->add_valid_error_log('WTP data error. ' . var_export($license_data, true)); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_var_export
                 return;
             }
             $this->delete_license();
@@ -39,7 +39,7 @@ final class RY_WTP_License extends RY_WT_Model
         }
 
         if (!isset($license_data['secret'], $license_data['expire'], $license_data['url'])) {
-            $this->add_valid_error_log('WTP data error. ' . var_export($license_data, true));
+            $this->add_valid_error_log('WTP data error. ' . var_export($license_data, true)); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_var_export
             return;
         }
 

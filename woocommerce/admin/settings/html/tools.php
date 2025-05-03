@@ -8,6 +8,6 @@
 
 <?php if (defined('RY_WCS_VERSION')) { ?>
 <button name="change_address" class="button-primary" type="submit" value="change_address">
-    <?php esc_html_e('Change address', 'woocommerce'); ?></button>
+    <?php esc_html_e('Change address', 'ry-woocommerce-tools-pro'); ?></button>
 <?php }
 ?>

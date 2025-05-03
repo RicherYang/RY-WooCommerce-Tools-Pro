@@ -21,11 +21,11 @@ final class RY_WTP_ECPay_Shipping_Admin_Ajax
     public function get_shipping_info()
     {
         check_ajax_referer('get-shipping-info');
-        $order_ID = (int) wp_unslash($_POST['orderid'] ?? 0);
+        $order_ID = (int) wp_unslash($_POST['orderid'] ?? ''); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 
         $order = wc_get_order($order_ID);
         if (!empty($order)) {
-            $info_ID = wp_unslash($_POST['id'] ?? '');
+            $info_ID = wp_unslash($_POST['id'] ?? ''); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
             $shipping_list = $order->get_meta('_ecpay_shipping_info', true);
             if (is_array($shipping_list) && isset($shipping_list[$info_ID])) {
                 $data = [

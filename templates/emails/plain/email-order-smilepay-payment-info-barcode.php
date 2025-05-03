@@ -22,16 +22,21 @@ if ($order->get_meta('_smilepay_payment_type') != '3') {
 
 echo "\n==========\n\n";
 
+// phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
 echo wp_kses_post(__('Payment details', 'ry-woocommerce-tools')) . "\n";
 
+// phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
 echo wp_kses_post(__('Barcode 1', 'ry-woocommerce-tools') . "\t " . $order->get_meta('_smilepay_barcode_Barcode1')) . "\n";
+// phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
 echo wp_kses_post(__('Barcode 2', 'ry-woocommerce-tools') . "\t " . $order->get_meta('_smilepay_barcode_Barcode2')) . "\n";
+// phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
 echo wp_kses_post(__('Barcode 3', 'ry-woocommerce-tools') . "\t " . $order->get_meta('_smilepay_barcode_Barcode3')) . "\n";
 $expireDate = wc_string_to_datetime($order->get_meta('_smilepay_barcode_ExpireDate'));
 $expireDate = sprintf(
     /* translators: %1$s: date %2$s: time */
-    _x('%1$s %2$s', 'Datetime', 'ry-woocommerce-tools'),
+    _x('%1$s %2$s', 'Datetime', 'ry-woocommerce-tools'),// phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
     $expireDate->date_i18n(wc_date_format()),
     $expireDate->date_i18n(wc_time_format()),
 );
+// phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
 echo wp_kses_post(__('Payment deadline', 'ry-woocommerce-tools') . "\t " . $expireDate) . "\n";

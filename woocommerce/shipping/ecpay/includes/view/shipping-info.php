@@ -8,7 +8,7 @@
         <strong><?php esc_html_e('ECPay trade date', 'ry-woocommerce-tools-pro'); ?></strong>
         <?php echo esc_html($info['TradeDate']); ?>
         <strong><?php esc_html_e('ECPay trade status', 'ry-woocommerce-tools-pro'); ?></strong>
-        <?php echo esc_html(rywt_ecpay_info_to_name('status-' . $info['LogisticsStatus'])); ?>
+        <?php echo esc_html(rywtp_ecpay_status_to_name($info['LogisticsStatus'])); ?>
 
         <strong><?php esc_html_e('Sander name', 'ry-woocommerce-tools-pro'); ?></strong>
         <?php echo esc_html($info['SenderName']); ?>
@@ -21,7 +21,7 @@
     <div class="wc-order-preview-address">
         <h2><?php esc_html_e('Shipping info', 'ry-woocommerce-tools-pro'); ?></h2>
         <strong><?php esc_html_e('Shipping type', 'ry-woocommerce-tools-pro'); ?></strong>
-        <?php echo esc_html(rywt_ecpay_info_to_name('shipping-' . $info['LogisticsType'])); ?>
+        <?php echo esc_html(rywtp_ecpay_shipping_to_name($info['LogisticsType'])); ?>
         <strong><?php esc_html_e('Goods name', 'ry-woocommerce-tools-pro'); ?></strong>
         <?php echo esc_html($info['GoodsName']); ?>
         <strong><?php esc_html_e('Declare amount', 'ry-woocommerce-tools-pro'); ?></strong>

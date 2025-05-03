@@ -22,14 +22,14 @@ if ($order->get_meta('_ecpay_payment_type') != 'BARCODE') {
 $text_align = is_rtl() ? 'right' : 'left';
 ?>
 <h2>
-    <?php esc_html_e('Payment details', 'ry-woocommerce-tools'); ?>
+    <?php esc_html_e('Payment details', 'ry-woocommerce-tools'); // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch?>
 </h2>
 <div style="margin-bottom: 40px;">
     <table class="td" cellspacing="0" cellpadding="6" style="width: 100%;" border="1">
         <tbody>
             <tr>
                 <th class="td" scope="row" style="text-align:<?php echo esc_attr($text_align); ?>;">
-                    <?php esc_html_e('Barcode 1', 'ry-woocommerce-tools'); ?>
+                    <?php esc_html_e('Barcode 1', 'ry-woocommerce-tools'); // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch?>
                 </th>
                 <td class="td" style="text-align:<?php echo esc_attr($text_align); ?>;">
                     <span><?php echo esc_html($order->get_meta('_ecpay_barcode_Barcode1')); ?></span>
@@ -37,7 +37,7 @@ $text_align = is_rtl() ? 'right' : 'left';
             </tr>
             <tr>
                 <th class="td" scope="row" style="text-align:<?php echo esc_attr($text_align); ?>;">
-                    <?php esc_html_e('Barcode 2', 'ry-woocommerce-tools'); ?>
+                    <?php esc_html_e('Barcode 2', 'ry-woocommerce-tools'); // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch?>
                 </th>
                 <td class="td" style="text-align:<?php echo esc_attr($text_align); ?>;">
                     <span><?php echo esc_html($order->get_meta('_ecpay_barcode_Barcode2')); ?></span>
@@ -45,7 +45,7 @@ $text_align = is_rtl() ? 'right' : 'left';
             </tr>
             <tr>
                 <th class="td" scope="row" style="text-align:<?php echo esc_attr($text_align); ?>;">
-                    <?php esc_html_e('Barcode 3', 'ry-woocommerce-tools'); ?>
+                    <?php esc_html_e('Barcode 3', 'ry-woocommerce-tools'); // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch?>
                 </th>
                 <td class="td" style="text-align:<?php echo esc_attr($text_align); ?>;">
                     <span><?php echo esc_html($order->get_meta('_ecpay_barcode_Barcode3')); ?></span>
@@ -53,13 +53,13 @@ $text_align = is_rtl() ? 'right' : 'left';
             </tr>
             <tr>
                 <th class="td" scope="row" style="text-align:<?php echo esc_attr($text_align); ?>;">
-                    <?php esc_html_e('Payment deadline', 'ry-woocommerce-tools'); ?>
+                    <?php esc_html_e('Payment deadline', 'ry-woocommerce-tools'); // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch?>
                 </th>
                 <?php $expireDate = wc_string_to_datetime($order->get_meta('_ecpay_barcode_ExpireDate')); ?>
                 <td class="td" style="text-align:<?php echo esc_attr($text_align); ?>;">
                     <?php echo esc_html(sprintf(
                         /* translators: %1$s: date %2$s: time */
-                        _x('%1$s %2$s', 'Datetime', 'ry-woocommerce-tools'),
+                        _x('%1$s %2$s', 'Datetime', 'ry-woocommerce-tools'), // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
                         $expireDate->date_i18n(wc_date_format()),
                         $expireDate->date_i18n(wc_time_format()),
                     )); ?>

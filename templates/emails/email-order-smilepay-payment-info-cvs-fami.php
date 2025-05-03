@@ -22,14 +22,14 @@ if ($order->get_meta('_smilepay_payment_type') != '6') {
 $text_align = is_rtl() ? 'right' : 'left';
 ?>
 <h2>
-    <?php esc_html_e('Payment details', 'ry-woocommerce-tools'); ?>
+    <?php esc_html_e('Payment details', 'ry-woocommerce-tools'); // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch?>
 </h2>
 <div style="margin-bottom: 40px;">
     <table class="td" cellspacing="0" cellpadding="6" border="1" style="width: 100%;">
         <tbody>
             <tr>
                 <th class="td" scope="row" style="text-align:<?php echo esc_attr($text_align); ?>;">
-                    <?php esc_html_e('CVS code', 'ry-woocommerce-tools'); ?>
+                    <?php esc_html_e('CVS code', 'ry-woocommerce-tools'); // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch?>
                 </th>
                 <td class="td" style="text-align:<?php echo esc_attr($text_align); ?>;">
                     <?php echo esc_html($order->get_meta('_smilepay_cvs_PaymentNo')); ?>
@@ -37,7 +37,7 @@ $text_align = is_rtl() ? 'right' : 'left';
             </tr>
             <tr>
                 <th class="td" scope="row" style="text-align:<?php echo esc_attr($text_align); ?>;">
-                    <?php esc_html_e('Payment deadline', 'ry-woocommerce-tools'); ?>
+                    <?php esc_html_e('Payment deadline', 'ry-woocommerce-tools'); // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch?>
                 </th>
                 <?php $expireDate = wc_string_to_datetime($order->get_meta('_smilepay_cvs_ExpireDate')); ?>
                 <td class="td" style="text-align:<?php echo esc_attr($text_align); ?>;">

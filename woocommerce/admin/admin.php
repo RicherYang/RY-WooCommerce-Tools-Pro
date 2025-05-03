@@ -97,7 +97,7 @@ final class RY_WTP_WC_Admin
 
     public function output_tools()
     {
-        if (!empty($_POST['change_address'])) {
+        if (isset($_POST['change_address']) && 'change_address' === $_POST['change_address']) { // phpcs:ignore WordPress.Security.NonceVerification.Missing
             if (is_plugin_active('ry-wc-city-select/ry-wc-city-select.php')) {
                 $this->change_user_address();
             }
@@ -122,15 +122,8 @@ final class RY_WTP_WC_Admin
                             . sprintf(
                                 /* translators: %s: Error message */
                                 __('Verification error: %s', 'ry-woocommerce-tools-pro'),
-                                __($json['error'], 'ry-woocommerce-tools-pro'),
+                                rywtp_link_error_to_msg($json['error']),
                             ));
-
-                        /* Error message list. For make .pot */
-                        __('Unknown key', 'ry-woocommerce-tools-pro');
-                        __('Locked key', 'ry-woocommerce-tools-pro');
-                        __('Unknown target url', 'ry-woocommerce-tools-pro');
-                        __('Used key', 'ry-woocommerce-tools-pro');
-                        __('Is tried', 'ry-woocommerce-tools-pro');
                     } else {
                         RY_WTP_License::instance()->set_license_data($json['data']);
                         return true;
@@ -149,7 +142,7 @@ final class RY_WTP_WC_Admin
         $states = WC()->countries->get_states('TW');
         $states_change = [];
 
-        set_time_limit(60);
+        @set_time_limit(60); // phpcs:ignore Squiz.PHP.DiscouragedFunctions.Discouraged
         foreach ($states as $code => $name) {
             $states_change[$name] = $code;
             if (str_contains($name, '臺')) {

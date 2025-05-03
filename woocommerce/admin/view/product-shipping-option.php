@@ -13,8 +13,8 @@ woocommerce_wp_select([
     'label' => __('Transport temperature', 'ry-woocommerce-tools-pro'),
     'value' => $product_object->get_meta('_ry_shipping_temp', true),
     'options' => [
-        '1' => _x('Normal temperature', 'Transport temp', 'ry-woocommerce-tools'),
-        '2' => _x('Refrigerated', 'Transport temp', 'ry-woocommerce-tools'),
-        '3' => _x('Frozen', 'Transport temp', 'ry-woocommerce-tools'),
+        '1' => _x('Normal temperature', 'Transport temp', 'ry-woocommerce-tools'), // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
+        '2' => _x('Refrigerated', 'Transport temp', 'ry-woocommerce-tools'), // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
+        '3' => _x('Frozen', 'Transport temp', 'ry-woocommerce-tools'), // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
     ],
 ]);

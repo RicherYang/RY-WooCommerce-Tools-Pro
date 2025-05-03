@@ -26,7 +26,7 @@
     <div class="wc-order-preview-address">
         <h2><?php esc_html_e('Payment info', 'ry-woocommerce-tools-pro'); ?></h2>
         <strong><?php esc_html_e('Payment type', 'ry-woocommerce-tools-pro'); ?></strong>
-        <?php echo esc_html(rywt_newebpay_info_to_name($info['PaymentType'])); ?>
+        <?php echo esc_html(rywtp_newebpay_type_to_name($info['PaymentType'])); ?>
         <strong><?php esc_html_e('Payment date', 'ry-woocommerce-tools-pro'); ?></strong>
         <?php echo esc_html($info['PayTime']); ?>
 
@@ -34,7 +34,7 @@
         <strong><?php esc_html_e('Card no', 'ry-woocommerce-tools-pro'); ?></strong>
         <?php echo esc_html($info['Card6No'] . ' **** ' . $info['Card4No']); ?>
         <strong><?php esc_html_e('Card type', 'ry-woocommerce-tools-pro'); ?></strong>
-        <?php echo esc_html(rywt_newebpay_info_to_name('type-' . $info['PaymentMethod'])); ?>
+        <?php echo esc_html(rywtp_newebpay_method_to_name($info['PaymentMethod'])); ?>
         <strong><?php esc_html_e('Auth code', 'ry-woocommerce-tools-pro'); ?></strong>
         <?php echo esc_html($info['Auth']); ?>
         <strong><?php esc_html_e('eci', 'ry-woocommerce-tools-pro'); ?></strong>

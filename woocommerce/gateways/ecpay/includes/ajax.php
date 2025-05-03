@@ -22,7 +22,7 @@ final class RY_WTP_WC_ECPay_Gateway_Admin_ajax
     {
         check_ajax_referer('get-payment-info');
 
-        $order_ID = (int) wp_unslash($_POST['orderid'] ?? 0);
+        $order_ID = (int) wp_unslash($_POST['orderid'] ?? ''); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 
         $order = wc_get_order($order_ID);
         if (!empty($order)) {

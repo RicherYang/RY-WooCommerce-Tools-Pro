@@ -22,14 +22,17 @@ if ($order->get_meta('_smilepay_payment_type') != '6') {
 
 echo "\n==========\n\n";
 
+// phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
 echo wp_kses_post(__('Payment details', 'ry-woocommerce-tools')) . "\n";
 
+// phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
 echo wp_kses_post(__('CVS code', 'ry-woocommerce-tools') . "\t " . $order->get_meta('_smilepay_cvs_PaymentNo')) . "\n";
 $expireDate = wc_string_to_datetime($order->get_meta('_smilepay_cvs_ExpireDate'));
 $expireDate = sprintf(
     /* translators: %1$s: date %2$s: time */
-    _x('%1$s %2$s', 'Datetime', 'ry-woocommerce-tools'),
+    _x('%1$s %2$s', 'Datetime', 'ry-woocommerce-tools'),// phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
     $expireDate->date_i18n(wc_date_format()),
     $expireDate->date_i18n(wc_time_format()),
 );
+// phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
 echo wp_kses_post(__('Payment deadline', 'ry-woocommerce-tools') . "\t " . $expireDate) . "\n";
