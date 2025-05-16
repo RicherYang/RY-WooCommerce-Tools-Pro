@@ -95,7 +95,7 @@ final class RY_WTP_ECPay_Shipping_Admin
         $bulk_action = wp_unslash($_GET['bulk_action'] ?? ''); // phpcs:ignore WordPress.Security.NonceVerification.Recommended , WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 
         if ('ry_get_ecpay_no' === $bulk_action) {
-            $number = (int) wp_unslash($_GET['ry_geted'] ?? ''); // phpcs:ignore WordPress.Security.NonceVerification.Recommended , WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+            $number = intval($_GET['ry_geted'] ?? ''); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 
             /* translators: %s: count */
             $message = sprintf(_n('%s order get shipping no.', '%s order get shipping no.', $number, 'ry-woocommerce-tools-pro'), number_format_i18n($number));
@@ -178,10 +178,10 @@ final class RY_WTP_ECPay_Shipping_Admin
                     $choosed_cvs = '';
                     if (isset($_POST['MerchantID']) && $_POST['MerchantID'] === $MerchantID) { // phpcs:ignore WordPress.Security.NonceVerification.Missing
                         $choosed_cvs = [
-                            'CVSStoreID' => wp_unslash($_POST['CVSStoreID'] ?? ''), // phpcs:ignore WordPress.Security.NonceVerification.Missing , WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-                            'CVSStoreName' => wp_unslash($_POST['CVSStoreName'] ?? ''), // phpcs:ignore WordPress.Security.NonceVerification.Missing , WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-                            'CVSAddress' => wp_unslash($_POST['CVSAddress'] ?? ''), // phpcs:ignore WordPress.Security.NonceVerification.Missing , WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-                            'CVSTelephone' => wp_unslash($_POST['CVSTelephone'] ?? ''), // phpcs:ignore WordPress.Security.NonceVerification.Missing , WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+                            'CVSStoreID' => sanitize_text_field(wp_unslash($_POST['CVSStoreID'] ?? '')), // phpcs:ignore WordPress.Security.NonceVerification.Missing
+                            'CVSStoreName' => sanitize_text_field(wp_unslash($_POST['CVSStoreName'] ?? '')), // phpcs:ignore WordPress.Security.NonceVerification.Missing
+                            'CVSAddress' => sanitize_text_field(wp_unslash($_POST['CVSAddress'] ?? '')), // phpcs:ignore WordPress.Security.NonceVerification.Missing
+                            'CVSTelephone' => sanitize_text_field(wp_unslash($_POST['CVSTelephone'] ?? '')), // phpcs:ignore WordPress.Security.NonceVerification.Missing
                         ];
                     }
 

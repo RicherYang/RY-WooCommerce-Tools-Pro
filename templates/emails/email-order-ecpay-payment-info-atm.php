@@ -48,7 +48,7 @@ $text_align = is_rtl() ? 'right' : 'left';
                     <?php esc_html_e('ATM Bank account', 'ry-woocommerce-tools'); // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch?>
                 </th>
                 <td class="td" style="text-align:<?php echo esc_attr($text_align); ?>;">
-                    <?php echo wordwrap($order->get_meta('_ecpay_atm_vAccount'), 4, '<span> </span>', true); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>
+                    <?php echo wp_kses(wordwrap($order->get_meta('_ecpay_atm_vAccount'), 4, '<span> </span>', true), ['span' => []]); ?>
                 </td>
             </tr>
             <tr>

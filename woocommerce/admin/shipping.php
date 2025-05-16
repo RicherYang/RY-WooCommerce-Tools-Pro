@@ -97,12 +97,12 @@ final class RY_WTP_WC_Admin_Shipping
 
     public function save_shipping_options($product)
     {
-        $shipping_amount = wp_unslash($_POST['ry_shipping_amount'] ?? ''); // phpcs:ignore WordPress.Security.NonceVerification.Missing , WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+        $shipping_amount = sanitize_text_field(wp_unslash($_POST['ry_shipping_amount'] ?? '')); // phpcs:ignore WordPress.Security.NonceVerification.Missing
         $shipping_amount = ('' === $shipping_amount) ? '' : wc_format_decimal($shipping_amount);
         $product->update_meta_data('_ry_shipping_amount', $shipping_amount);
 
-        $temp = wp_unslash($_POST['ry_shipping_temp'] ?? ''); // phpcs:ignore WordPress.Security.NonceVerification.Missing , WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-        if (!in_array($temp, ['1', '2', '3'])) {
+        $temp = (string) intval($_POST['ry_shipping_temp'] ?? ''); // phpcs:ignore WordPress.Security.NonceVerification.Missing
+        if (!in_array($temp, ['1', '2', '3'], true)) {
             $temp = '1';
         }
         $product->update_meta_data('_ry_shipping_temp', $temp);
@@ -110,12 +110,12 @@ final class RY_WTP_WC_Admin_Shipping
 
     public function save_variation_shipping_options($variation, $i)
     {
-        $shipping_amount = wp_unslash($_POST['variable_ry_shipping_amount'][$i] ?? ''); // phpcs:ignore WordPress.Security.NonceVerification.Missing , WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+        $shipping_amount = sanitize_text_field(wp_unslash($_POST['variable_ry_shipping_amount'][$i] ?? '')); // phpcs:ignore WordPress.Security.NonceVerification.Missing
         $shipping_amount = ('' === $shipping_amount) ? '' : wc_format_decimal($shipping_amount);
         $variation->update_meta_data('_ry_shipping_amount', $shipping_amount);
 
-        $temp = wp_unslash($_POST['variable_ry_shipping_temp'][$i] ?? ''); // phpcs:ignore WordPress.Security.NonceVerification.Missing , WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-        if (!in_array($temp, ['0', '1', '2', '3'])) {
+        $temp = (string) intval($_POST['variable_ry_shipping_temp'][$i] ?? ''); // phpcs:ignore WordPress.Security.NonceVerification.Missing
+        if (!in_array($temp, ['0', '1', '2', '3'], true)) {
             $temp = '0';
         }
         $variation->update_meta_data('_ry_shipping_temp', $temp);

@@ -23,15 +23,15 @@ if ($order->get_meta('_newebpay_payment_type') != 'VACC') {
 echo "\n==========\n\n";
 
 // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
-echo wp_kses_post(__('Payment details', 'ry-woocommerce-tools')) . "\n";
+echo esc_html__('Payment details', 'ry-woocommerce-tools') . "\n";
 
 // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
-echo wp_kses_post(__('Bank', 'ry-woocommerce-tools') . "\t " . rywt_bank_code_to_name($order->get_meta('_newebpay_atm_BankCode'))) . "\n";
+echo esc_html__('Bank', 'ry-woocommerce-tools') . "\t " . esc_html(rywt_bank_code_to_name($order->get_meta('_newebpay_atm_BankCode'))) . "\n";
 // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
-echo wp_kses_post(__('Bank code', 'ry-woocommerce-tools') . "\t " . $order->get_meta('_newebpay_atm_BankCode')) . "\n";
+echo esc_html__('Bank code', 'ry-woocommerce-tools') . "\t " . esc_html($order->get_meta('_newebpay_atm_BankCode')) . "\n";
 // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
-echo wp_kses_post(__('ATM Bank account', 'ry-woocommerce-tools') . "\t " . wordwrap($order->get_meta('_newebpay_atm_vAccount'), 4, '<span> </span>', true)) . "\n";
+echo esc_html__('ATM Bank account', 'ry-woocommerce-tools') . "\t " . esc_html(wordwrap($order->get_meta('_newebpay_atm_vAccount'), 4, ' ', true)) . "\n";
 $expireDate = wc_string_to_datetime($order->get_meta('_newebpay_atm_ExpireDate'));
 $expireDate = $expireDate->date_i18n(wc_date_format());
 // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
-echo wp_kses_post(__('Payment deadline', 'ry-woocommerce-tools') . "\t " . $expireDate) . "\n";
+echo esc_html__('Payment deadline', 'ry-woocommerce-tools') . "\t " . esc_html($expireDate) . "\n";

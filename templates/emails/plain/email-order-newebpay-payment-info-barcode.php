@@ -23,15 +23,15 @@ if ($order->get_meta('_newebpay_payment_type') != 'BARCODE') {
 echo "\n==========\n\n";
 
 // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
-echo wp_kses_post(__('Payment details', 'ry-woocommerce-tools')) . "\n";
+echo esc_html__('Payment details', 'ry-woocommerce-tools') . "\n";
 
 // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
-echo wp_kses_post(__('Barcode 1', 'ry-woocommerce-tools') . "\t " . $order->get_meta('_newebpay_barcode_Barcode1')) . "\n";
+echo esc_html__('Barcode 1', 'ry-woocommerce-tools') . "\t " . esc_html($order->get_meta('_newebpay_barcode_Barcode1')) . "\n";
 // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
-echo wp_kses_post(__('Barcode 2', 'ry-woocommerce-tools') . "\t " . $order->get_meta('_newebpay_barcode_Barcode2')) . "\n";
+echo esc_html__('Barcode 2', 'ry-woocommerce-tools') . "\t " . esc_html($order->get_meta('_newebpay_barcode_Barcode2')) . "\n";
 // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
-echo wp_kses_post(__('Barcode 3', 'ry-woocommerce-tools') . "\t " . $order->get_meta('_newebpay_barcode_Barcode3')) . "\n";
+echo esc_html__('Barcode 3', 'ry-woocommerce-tools') . "\t " . esc_html($order->get_meta('_newebpay_barcode_Barcode3')) . "\n";
 $expireDate = wc_string_to_datetime($order->get_meta('_newebpay_barcode_ExpireDate'));
 $expireDate = $expireDate->date_i18n(wc_date_format());
 // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
-echo wp_kses_post(__('Payment deadline', 'ry-woocommerce-tools') . "\t " . $expireDate) . "\n";
+echo esc_html__('Payment deadline', 'ry-woocommerce-tools') . "\t " . esc_html($expireDate) . "\n";

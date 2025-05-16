@@ -23,11 +23,11 @@ if ($order->get_meta('_newebpay_payment_type') != 'CVS') {
 echo "\n==========\n\n";
 
 // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
-echo wp_kses_post(__('Payment details', 'ry-woocommerce-tools')) . "\n";
+echo esc_html__('Payment details', 'ry-woocommerce-tools') . "\n";
 
 // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
-echo wp_kses_post(__('CVS code', 'ry-woocommerce-tools') . "\t " . $order->get_meta('_newebpay_cvs_PaymentNo')) . "\n";
+echo esc_html__('CVS code', 'ry-woocommerce-tools') . "\t " . esc_html($order->get_meta('_newebpay_cvs_PaymentNo')) . "\n";
 $expireDate = wc_string_to_datetime($order->get_meta('_newebpay_cvs_ExpireDate'));
 $expireDate = $expireDate->date_i18n(wc_date_format());
 // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
-echo wp_kses_post(__('Payment deadline', 'ry-woocommerce-tools') . "\t " . $expireDate) . "\n";
+echo esc_html__('Payment deadline', 'ry-woocommerce-tools') . "\t " . esc_html($expireDate) . "\n";

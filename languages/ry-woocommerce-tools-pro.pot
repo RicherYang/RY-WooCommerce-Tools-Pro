@@ -2,14 +2,14 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: RY Tools (Pro) for WooCommerce 3.5.8\n"
+"Project-Id-Version: RY Tools (Pro) for WooCommerce 3.5.9\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ry-woocommerce-tools-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-05-02T11:57:38+08:00\n"
+"POT-Creation-Date: 2025-05-15T23:23:23+08:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: ry-woocommerce-tools-pro\n"
@@ -1583,8 +1583,13 @@ msgid "Verification error: %s"
 msgstr ""
 
 #: woocommerce/admin/gateways.php:39
-#: woocommerce/shipping/ecpay/includes/admin.php:226
+#: woocommerce/shipping/ecpay/includes/admin.php:224
 msgid "Get info"
+msgstr ""
+
+#: woocommerce/admin/meta-boxes/view/choose_cvs_btn.php:2
+#: assets/blocks/shipping/ecpay/cvs-select-map/frontend.js:1
+msgid "Choose convenience store"
 msgstr ""
 
 #: woocommerce/admin/meta-boxes/view/choose_cvs_btn.php:3
@@ -1606,6 +1611,10 @@ msgstr ""
 
 #: woocommerce/admin/settings/html/tools.php:2
 msgid "Tools"
+msgstr ""
+
+#: woocommerce/admin/settings/html/tools.php:11
+msgid "Change address"
 msgstr ""
 
 #: woocommerce/admin/settings/html/version-info.php:3
@@ -1796,6 +1805,12 @@ msgstr ""
 #: woocommerce/gateways/newebpay/includes/admin.php:50
 #: woocommerce/gateways/smilepay/includes/admin.php:39
 msgid "Add payment info in \"%s\" email."
+msgstr ""
+
+#: woocommerce/gateways/ecpay/includes/admin.php:49
+#: woocommerce/gateways/newebpay/includes/admin.php:51
+#: woocommerce/gateways/smilepay/includes/admin.php:40
+msgid "Order on-hold"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/ajax.php:37
@@ -2070,35 +2085,46 @@ msgstr ""
 msgid "multi package"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:110
+#. translators: %s: count
+#: woocommerce/shipping/ecpay/includes/admin.php:101
+msgid "%s order get shipping no."
+msgid_plural "%s order get shipping no."
+msgstr[0] ""
+msgstr[1] ""
+
+#: woocommerce/shipping/ecpay/includes/admin.php:108
 msgid "Get ECPay shipping no"
+msgstr ""
+
+#: woocommerce/shipping/ecpay/includes/admin.php:112
+#: woocommerce/shipping/ecpay/includes/admin.php:117
+msgid "Print ECPay shipping booking note (711)"
+msgstr ""
+
+#: woocommerce/shipping/ecpay/includes/admin.php:113
+#: woocommerce/shipping/ecpay/includes/admin.php:118
+msgid "Print ECPay shipping booking note (family)"
 msgstr ""
 
 #: woocommerce/shipping/ecpay/includes/admin.php:114
 #: woocommerce/shipping/ecpay/includes/admin.php:119
-msgid "Print ECPay shipping booking note (711)"
-msgstr ""
-
-#: woocommerce/shipping/ecpay/includes/admin.php:115
-#: woocommerce/shipping/ecpay/includes/admin.php:120
-msgid "Print ECPay shipping booking note (family)"
-msgstr ""
-
-#: woocommerce/shipping/ecpay/includes/admin.php:116
-#: woocommerce/shipping/ecpay/includes/admin.php:121
 msgid "Print ECPay shipping booking note (hilife)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:122
+#: woocommerce/shipping/ecpay/includes/admin.php:120
 msgid "Print ECPay shipping booking note (ok)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:126
+#: woocommerce/shipping/ecpay/includes/admin.php:124
 msgid "Print ECPay shipping booking note (post)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:127
+#: woocommerce/shipping/ecpay/includes/admin.php:125
 msgid "Print ECPay shipping booking note (tcat)"
+msgstr ""
+
+#: woocommerce/shipping/ecpay/includes/admin.php:244
+msgid "ECPay shipping ID"
 msgstr ""
 
 #: woocommerce/shipping/ecpay/includes/view/shipping-info.php:13
@@ -2242,6 +2268,10 @@ msgstr ""
 msgid "Print SmilePay shipping booking note (tcat)"
 msgstr ""
 
+#: woocommerce/shipping/smilepay/includes/admin.php:106
+msgid "SmilePay shipping ID"
+msgstr ""
+
 #: assets/blocks/gateways/ecpay/atm.js:1
 msgid "ECPay ATM"
 msgstr ""
@@ -2328,10 +2358,6 @@ msgstr ""
 
 #: assets/blocks/shipping/ecpay/cvs-select-map/frontend.js:1
 msgid "Store telephone:"
-msgstr ""
-
-#: assets/blocks/shipping/ecpay/cvs-select-map/frontend.js:1
-msgid "Choose convenience store"
 msgstr ""
 
 #: assets/blocks/shipping/ecpay/cvs-select-map/block.json

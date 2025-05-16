@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-02-16 10:51+0800\n"
-"PO-Revision-Date: 2025-05-02 11:43+0800\n"
+"PO-Revision-Date: 2025-05-15 23:16+0800\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
@@ -119,6 +119,7 @@ msgstr "已使用的金鑰"
 msgid "Is tried"
 msgstr "已使用過測試版"
 
+#: woocommerce/admin/meta-boxes/view/choose_cvs_btn.php:2
 #: assets/blocks/shipping/ecpay/cvs-select-map/frontend.js:1
 msgid "Choose convenience store"
 msgstr "選擇超商門市"
@@ -444,30 +445,30 @@ msgstr "B2C"
 msgid "multi package"
 msgstr "產生多筆物流單"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:114
-#: woocommerce/shipping/ecpay/includes/admin.php:119
+#: woocommerce/shipping/ecpay/includes/admin.php:112
+#: woocommerce/shipping/ecpay/includes/admin.php:117
 msgid "Print ECPay shipping booking note (711)"
 msgstr "列印綠界物流託運單 (7-11)"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:115
-#: woocommerce/shipping/ecpay/includes/admin.php:120
+#: woocommerce/shipping/ecpay/includes/admin.php:113
+#: woocommerce/shipping/ecpay/includes/admin.php:118
 msgid "Print ECPay shipping booking note (family)"
 msgstr "列印綠界物流託運單 (全家)"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:116
-#: woocommerce/shipping/ecpay/includes/admin.php:121
+#: woocommerce/shipping/ecpay/includes/admin.php:114
+#: woocommerce/shipping/ecpay/includes/admin.php:119
 msgid "Print ECPay shipping booking note (hilife)"
 msgstr "列印綠界物流託運單 (萊爾富)"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:122
+#: woocommerce/shipping/ecpay/includes/admin.php:120
 msgid "Print ECPay shipping booking note (ok)"
 msgstr "列印綠界物流託運單 (OK)"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:126
+#: woocommerce/shipping/ecpay/includes/admin.php:124
 msgid "Print ECPay shipping booking note (post)"
 msgstr "列印綠界物流託運單 (郵局)"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:127
+#: woocommerce/shipping/ecpay/includes/admin.php:125
 msgid "Print ECPay shipping booking note (tcat)"
 msgstr "列印綠界物流託運單 (黑貓)"
 
@@ -672,7 +673,7 @@ msgstr "<strong>%1$s</strong> 暫停運作。 需求 %2$s %3$s 或更新版本�
 msgid "Invalid cellphone number"
 msgstr "無效的手機號碼"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:110
+#: woocommerce/shipping/ecpay/includes/admin.php:108
 msgid "Get ECPay shipping no"
 msgstr "取得綠界託運單號"
 
@@ -681,7 +682,7 @@ msgid "Print SmilePay shipping booking note (tcat)"
 msgstr "列印速買配物流託運單 (黑貓)"
 
 #: woocommerce/admin/gateways.php:39
-#: woocommerce/shipping/ecpay/includes/admin.php:226
+#: woocommerce/shipping/ecpay/includes/admin.php:224
 msgid "Get info"
 msgstr "取得資訊"
 
@@ -2347,3 +2348,27 @@ msgstr "玉山銀行 WebATM"
 msgctxt "ecpay info"
 msgid "WebATM_TAISHIN"
 msgstr "台新銀行 WebATM"
+
+#: woocommerce/admin/settings/html/tools.php:11
+msgid "Change address"
+msgstr "變更地址"
+
+#: woocommerce/gateways/ecpay/includes/admin.php:49
+#: woocommerce/gateways/newebpay/includes/admin.php:51
+#: woocommerce/gateways/smilepay/includes/admin.php:40
+msgid "Order on-hold"
+msgstr "訂單保留"
+
+#. translators: %s: count
+#: woocommerce/shipping/ecpay/includes/admin.php:101
+msgid "%s order get shipping no."
+msgid_plural "%s order get shipping no."
+msgstr[0] "%s 筆訂單取得物流託運單。"
+
+#: woocommerce/shipping/ecpay/includes/admin.php:244
+msgid "ECPay shipping ID"
+msgstr "綠界物流編號"
+
+#: woocommerce/shipping/smilepay/includes/admin.php:106
+msgid "SmilePay shipping ID"
+msgstr "速買配物流編號"
