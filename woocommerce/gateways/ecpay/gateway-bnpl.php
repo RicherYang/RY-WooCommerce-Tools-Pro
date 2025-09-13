@@ -4,7 +4,7 @@ class RY_ECPay_Gateway_Bnpl extends RY_WT_WC_ECPay_Payment_Gateway
 {
     public const Payment_Type = 'BNPL';
 
-    protected $check_min_amount = 3000;
+    protected $check_min_amount = 50;
 
     protected $check_max_amount = 300000;
 

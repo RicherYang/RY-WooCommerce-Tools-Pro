@@ -16,12 +16,12 @@ final class RY_WTP_Updater
 
     protected function do_init(): void
     {
-        add_filter('update_plugins_ry-plugin.com', [$this, 'update_plugin'], 10, 4);
+        add_filter('update_plugins_ry-plugin.com', [$this, 'update_plugin'], 10, 2);
 
         add_filter('plugins_api', [$this, 'modify_plugin_details'], 10, 3);
     }
 
-    public function update_plugin($update, $plugin_data, $plugin_file, $locales)
+    public function update_plugin($update, $plugin_data)
     {
         if ('RY Tools (Pro) for WooCommerce' !== $plugin_data['Name']) {
             return $update;

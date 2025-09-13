@@ -2,14 +2,14 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: RY Tools (Pro) for WooCommerce 3.5.9\n"
+"Project-Id-Version: RY Tools (Pro) for WooCommerce 3.6.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ry-woocommerce-tools-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-05-15T23:23:23+08:00\n"
+"POT-Creation-Date: 2025-09-13T17:04:27+08:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: ry-woocommerce-tools-pro\n"
@@ -40,1467 +40,317 @@ msgid "https://richer.tw/"
 msgstr ""
 
 #. translators: %1$s: Name of this plugin %2$s: Name of require plugin %3$s: min require version
-#: includes/admin.php:27
-#: includes/admin.php:38
+#: admin/admin.php:50
+#: admin/admin.php:61
 msgid "<strong>%1$s</strong> is inactive. It require %2$s %3$s or newer."
 msgstr ""
 
-#: includes/functions.php:6
-msgid "Unknown key"
-msgstr ""
-
-#: includes/functions.php:7
-msgid "Locked key"
-msgstr ""
-
 #: includes/functions.php:8
-msgid "Unknown target url"
-msgstr ""
-
-#: includes/functions.php:9
-msgid "Used key"
-msgstr ""
-
-#: includes/functions.php:10
-msgid "Is tried"
-msgstr ""
-
-#: includes/functions.php:21
 msgctxt "ecpay info"
 msgid "WebATM_TAISHIN"
 msgstr ""
 
-#: includes/functions.php:22
+#: includes/functions.php:9
 msgctxt "ecpay info"
 msgid "WebATM_ESUN"
 msgstr ""
 
-#: includes/functions.php:23
+#: includes/functions.php:10
 msgctxt "ecpay info"
 msgid "WebATM_BOT"
 msgstr ""
 
-#: includes/functions.php:24
+#: includes/functions.php:11
 msgctxt "ecpay info"
 msgid "WebATM_FUBON"
 msgstr ""
 
-#: includes/functions.php:25
+#: includes/functions.php:12
 msgctxt "ecpay info"
 msgid "WebATM_CHINATRUST"
 msgstr ""
 
-#: includes/functions.php:26
+#: includes/functions.php:13
 msgctxt "ecpay info"
 msgid "WebATM_FIRST"
 msgstr ""
 
-#: includes/functions.php:27
+#: includes/functions.php:14
 msgctxt "ecpay info"
 msgid "WebATM_CATHAY"
 msgstr ""
 
-#: includes/functions.php:28
+#: includes/functions.php:15
 msgctxt "ecpay info"
 msgid "WebATM_MEGA"
 msgstr ""
 
-#: includes/functions.php:29
+#: includes/functions.php:16
 msgctxt "ecpay info"
 msgid "WebATM_LAND"
 msgstr ""
 
-#: includes/functions.php:30
+#: includes/functions.php:17
 msgctxt "ecpay info"
 msgid "WebATM_TACHONG"
 msgstr ""
 
-#: includes/functions.php:31
+#: includes/functions.php:18
 msgctxt "ecpay info"
 msgid "WebATM_SINOPAC"
 msgstr ""
 
-#: includes/functions.php:32
+#: includes/functions.php:19
 msgctxt "ecpay info"
 msgid "ATM_TAISHIN"
 msgstr ""
 
-#: includes/functions.php:33
+#: includes/functions.php:20
 msgctxt "ecpay info"
 msgid "ATM_ESUN"
 msgstr ""
 
-#: includes/functions.php:34
+#: includes/functions.php:21
 msgctxt "ecpay info"
 msgid "ATM_BOT"
 msgstr ""
 
-#: includes/functions.php:35
+#: includes/functions.php:22
 msgctxt "ecpay info"
 msgid "ATM_FUBON"
 msgstr ""
 
-#: includes/functions.php:36
+#: includes/functions.php:23
 msgctxt "ecpay info"
 msgid "ATM_CHINATRUST"
 msgstr ""
 
-#: includes/functions.php:37
+#: includes/functions.php:24
 msgctxt "ecpay info"
 msgid "ATM_FIRST"
 msgstr ""
 
-#: includes/functions.php:38
+#: includes/functions.php:25
 msgctxt "ecpay info"
 msgid "ATM_LAND"
 msgstr ""
 
-#: includes/functions.php:39
+#: includes/functions.php:26
 msgctxt "ecpay info"
 msgid "ATM_CATHAY"
 msgstr ""
 
-#: includes/functions.php:40
+#: includes/functions.php:27
 msgctxt "ecpay info"
 msgid "ATM_TACHONG"
 msgstr ""
 
-#: includes/functions.php:41
+#: includes/functions.php:28
 msgctxt "ecpay info"
 msgid "ATM_PANHSIN"
 msgstr ""
 
-#: includes/functions.php:42
+#: includes/functions.php:29
 msgctxt "ecpay info"
 msgid "CVS_CVS"
 msgstr ""
 
-#: includes/functions.php:43
+#: includes/functions.php:30
 msgctxt "ecpay info"
 msgid "CVS_OK"
 msgstr ""
 
-#: includes/functions.php:44
+#: includes/functions.php:31
 msgctxt "ecpay info"
 msgid "CVS_FAMILY"
 msgstr ""
 
-#: includes/functions.php:45
+#: includes/functions.php:32
 msgctxt "ecpay info"
 msgid "CVS_HILIFE"
 msgstr ""
 
-#: includes/functions.php:46
+#: includes/functions.php:33
 msgctxt "ecpay info"
 msgid "CVS_IBON"
 msgstr ""
 
-#: includes/functions.php:47
+#: includes/functions.php:34
 msgctxt "ecpay info"
 msgid "BARCODE_BARCODE"
 msgstr ""
 
-#: includes/functions.php:48
+#: includes/functions.php:35
 msgctxt "ecpay info"
 msgid "Credit_CreditCard"
 msgstr ""
 
-#: includes/functions.php:49
+#: includes/functions.php:36
 msgctxt "ecpay info"
 msgid "Flexible_Installment"
 msgstr ""
 
-#: includes/functions.php:50
+#: includes/functions.php:37
 msgctxt "ecpay info"
 msgid "TWQR_OPAY"
 msgstr ""
 
-#: includes/functions.php:51
+#: includes/functions.php:38
 msgctxt "ecpay info"
 msgid "BNPL_URICH"
 msgstr ""
 
-#: includes/functions.php:53
+#: includes/functions.php:40
 msgctxt "ecpay info"
 msgid "family"
 msgstr ""
 
-#: includes/functions.php:54
+#: includes/functions.php:41
 msgctxt "ecpay info"
 msgid "hilife"
 msgstr ""
 
-#: includes/functions.php:55
+#: includes/functions.php:42
 msgctxt "ecpay info"
 msgid "okmart"
 msgstr ""
 
-#: includes/functions.php:56
+#: includes/functions.php:43
 msgctxt "ecpay info"
 msgid "ibon"
 msgstr ""
 
-#: includes/functions.php:68
+#: includes/functions.php:55
 msgctxt "ecpay shipping"
 msgid "CVS_FAMI"
 msgstr ""
 
-#: includes/functions.php:69
+#: includes/functions.php:56
 msgctxt "ecpay shipping"
 msgid "CVS_UNIMART"
 msgstr ""
 
-#: includes/functions.php:70
+#: includes/functions.php:57
 msgctxt "ecpay shipping"
 msgid "CVS_UNIMARTFREEZE"
 msgstr ""
 
-#: includes/functions.php:71
+#: includes/functions.php:58
 msgctxt "ecpay shipping"
 msgid "CVS_FAMIC2C"
 msgstr ""
 
-#: includes/functions.php:72
+#: includes/functions.php:59
 msgctxt "ecpay shipping"
 msgid "CVS_UNIMARTC2C"
 msgstr ""
 
-#: includes/functions.php:73
+#: includes/functions.php:60
 msgctxt "ecpay shipping"
 msgid "CVS_HILIFE"
 msgstr ""
 
-#: includes/functions.php:74
+#: includes/functions.php:61
 msgctxt "ecpay shipping"
 msgid "CVS_HILIFEC2C"
 msgstr ""
 
-#: includes/functions.php:75
+#: includes/functions.php:62
 msgctxt "ecpay shipping"
 msgid "CVS_OKMARTC2C"
 msgstr ""
 
-#: includes/functions.php:76
+#: includes/functions.php:63
 msgctxt "ecpay shipping"
 msgid "HOME_TCAT"
 msgstr ""
 
-#: includes/functions.php:77
+#: includes/functions.php:64
 msgctxt "ecpay shipping"
 msgid "HOME_POST"
 msgstr ""
 
-#: includes/functions.php:89
-msgctxt "ecpay status"
-msgid "300"
-msgstr ""
-
-#: includes/functions.php:90
-msgctxt "ecpay status"
-msgid "310"
-msgstr ""
-
-#: includes/functions.php:91
-msgctxt "ecpay status"
-msgid "311"
-msgstr ""
-
-#: includes/functions.php:92
-msgctxt "ecpay status"
-msgid "320"
-msgstr ""
-
-#: includes/functions.php:93
-msgctxt "ecpay status"
-msgid "325"
-msgstr ""
-
-#: includes/functions.php:94
-msgctxt "ecpay status"
-msgid "2000"
-msgstr ""
-
-#: includes/functions.php:95
-msgctxt "ecpay status"
-msgid "2001"
-msgstr ""
-
-#: includes/functions.php:96
-msgctxt "ecpay status"
-msgid "2002"
-msgstr ""
-
-#: includes/functions.php:97
-msgctxt "ecpay status"
-msgid "2003"
-msgstr ""
-
-#: includes/functions.php:98
-msgctxt "ecpay status"
-msgid "2004"
-msgstr ""
-
-#: includes/functions.php:99
-msgctxt "ecpay status"
-msgid "2005"
-msgstr ""
-
-#: includes/functions.php:100
-msgctxt "ecpay status"
-msgid "2006"
-msgstr ""
-
-#: includes/functions.php:101
-msgctxt "ecpay status"
-msgid "2007"
-msgstr ""
-
-#: includes/functions.php:102
-msgctxt "ecpay status"
-msgid "2008"
-msgstr ""
-
-#: includes/functions.php:103
-msgctxt "ecpay status"
-msgid "2009"
-msgstr ""
-
-#: includes/functions.php:104
-msgctxt "ecpay status"
-msgid "2010"
-msgstr ""
-
-#: includes/functions.php:105
-msgctxt "ecpay status"
-msgid "2011"
-msgstr ""
-
-#: includes/functions.php:106
-msgctxt "ecpay status"
-msgid "2012"
-msgstr ""
-
-#: includes/functions.php:107
-msgctxt "ecpay status"
-msgid "2013"
-msgstr ""
-
-#: includes/functions.php:108
-msgctxt "ecpay status"
-msgid "2014"
-msgstr ""
-
-#: includes/functions.php:109
-msgctxt "ecpay status"
-msgid "2015"
-msgstr ""
-
-#: includes/functions.php:110
-msgctxt "ecpay status"
-msgid "2016"
-msgstr ""
-
-#: includes/functions.php:111
-msgctxt "ecpay status"
-msgid "2017"
-msgstr ""
-
-#: includes/functions.php:112
-msgctxt "ecpay status"
-msgid "2018"
-msgstr ""
-
-#: includes/functions.php:113
-msgctxt "ecpay status"
-msgid "2019"
-msgstr ""
-
-#: includes/functions.php:114
-msgctxt "ecpay status"
-msgid "2020"
-msgstr ""
-
-#: includes/functions.php:115
-msgctxt "ecpay status"
-msgid "2021"
-msgstr ""
-
-#: includes/functions.php:116
-msgctxt "ecpay status"
-msgid "2022"
-msgstr ""
-
-#: includes/functions.php:117
-msgctxt "ecpay status"
-msgid "2023"
-msgstr ""
-
-#: includes/functions.php:118
-msgctxt "ecpay status"
-msgid "2024"
-msgstr ""
-
-#: includes/functions.php:119
-msgctxt "ecpay status"
-msgid "2025"
-msgstr ""
-
-#: includes/functions.php:120
-msgctxt "ecpay status"
-msgid "2026"
-msgstr ""
-
-#: includes/functions.php:121
-msgctxt "ecpay status"
-msgid "2027"
-msgstr ""
-
-#: includes/functions.php:122
-msgctxt "ecpay status"
-msgid "2028"
-msgstr ""
-
-#: includes/functions.php:123
-msgctxt "ecpay status"
-msgid "2029"
-msgstr ""
-
-#: includes/functions.php:124
-msgctxt "ecpay status"
-msgid "2030"
-msgstr ""
-
-#: includes/functions.php:125
-msgctxt "ecpay status"
-msgid "2031"
-msgstr ""
-
-#: includes/functions.php:126
-msgctxt "ecpay status"
-msgid "2032"
-msgstr ""
-
-#: includes/functions.php:127
-msgctxt "ecpay status"
-msgid "2033"
-msgstr ""
-
-#: includes/functions.php:128
-msgctxt "ecpay status"
-msgid "2034"
-msgstr ""
-
-#: includes/functions.php:129
-msgctxt "ecpay status"
-msgid "2035"
-msgstr ""
-
-#: includes/functions.php:130
-msgctxt "ecpay status"
-msgid "2036"
-msgstr ""
-
-#: includes/functions.php:131
-msgctxt "ecpay status"
-msgid "2037"
-msgstr ""
-
-#: includes/functions.php:132
-msgctxt "ecpay status"
-msgid "2038"
-msgstr ""
-
-#: includes/functions.php:133
-msgctxt "ecpay status"
-msgid "2039"
-msgstr ""
-
-#: includes/functions.php:134
-msgctxt "ecpay status"
-msgid "2040"
-msgstr ""
-
-#: includes/functions.php:135
-msgctxt "ecpay status"
-msgid "2041"
-msgstr ""
-
-#: includes/functions.php:136
-msgctxt "ecpay status"
-msgid "2042"
-msgstr ""
-
-#: includes/functions.php:137
-msgctxt "ecpay status"
-msgid "2043"
-msgstr ""
-
-#: includes/functions.php:138
-msgctxt "ecpay status"
-msgid "2044"
-msgstr ""
-
-#: includes/functions.php:139
-msgctxt "ecpay status"
-msgid "2045"
-msgstr ""
-
-#: includes/functions.php:140
-msgctxt "ecpay status"
-msgid "2046"
-msgstr ""
-
-#: includes/functions.php:141
-msgctxt "ecpay status"
-msgid "2047"
-msgstr ""
-
-#: includes/functions.php:142
-msgctxt "ecpay status"
-msgid "2048"
-msgstr ""
-
-#: includes/functions.php:143
-msgctxt "ecpay status"
-msgid "2049"
-msgstr ""
-
-#: includes/functions.php:144
-msgctxt "ecpay status"
-msgid "2050"
-msgstr ""
-
-#: includes/functions.php:145
-msgctxt "ecpay status"
-msgid "2051"
-msgstr ""
-
-#: includes/functions.php:146
-msgctxt "ecpay status"
-msgid "2052"
-msgstr ""
-
-#: includes/functions.php:147
-msgctxt "ecpay status"
-msgid "2053"
-msgstr ""
-
-#: includes/functions.php:148
-msgctxt "ecpay status"
-msgid "2054"
-msgstr ""
-
-#: includes/functions.php:149
-msgctxt "ecpay status"
-msgid "2055"
-msgstr ""
-
-#: includes/functions.php:150
-msgctxt "ecpay status"
-msgid "2057"
-msgstr ""
-
-#: includes/functions.php:151
-msgctxt "ecpay status"
-msgid "2058"
-msgstr ""
-
-#: includes/functions.php:152
-msgctxt "ecpay status"
-msgid "2059"
-msgstr ""
-
-#: includes/functions.php:153
-msgctxt "ecpay status"
-msgid "2060"
-msgstr ""
-
-#: includes/functions.php:154
-msgctxt "ecpay status"
-msgid "2061"
-msgstr ""
-
-#: includes/functions.php:155
-msgctxt "ecpay status"
-msgid "2062"
-msgstr ""
-
-#: includes/functions.php:156
-msgctxt "ecpay status"
-msgid "2063"
-msgstr ""
-
-#: includes/functions.php:157
-msgctxt "ecpay status"
-msgid "2065"
-msgstr ""
-
-#: includes/functions.php:158
-msgctxt "ecpay status"
-msgid "2066"
-msgstr ""
-
-#: includes/functions.php:159
-msgctxt "ecpay status"
-msgid "2067"
-msgstr ""
-
-#: includes/functions.php:160
-msgctxt "ecpay status"
-msgid "2068"
-msgstr ""
-
-#: includes/functions.php:161
-msgctxt "ecpay status"
-msgid "2069"
-msgstr ""
-
-#: includes/functions.php:162
-msgctxt "ecpay status"
-msgid "2070"
-msgstr ""
-
-#: includes/functions.php:163
-msgctxt "ecpay status"
-msgid "2071"
-msgstr ""
-
-#: includes/functions.php:164
-msgctxt "ecpay status"
-msgid "2072"
-msgstr ""
-
-#: includes/functions.php:165
-msgctxt "ecpay status"
-msgid "2073"
-msgstr ""
-
-#: includes/functions.php:166
-msgctxt "ecpay status"
-msgid "2074"
-msgstr ""
-
-#: includes/functions.php:167
-msgctxt "ecpay status"
-msgid "2075"
-msgstr ""
-
-#: includes/functions.php:168
-msgctxt "ecpay status"
-msgid "2076"
-msgstr ""
-
-#: includes/functions.php:169
-msgctxt "ecpay status"
-msgid "2077"
-msgstr ""
-
-#: includes/functions.php:170
-msgctxt "ecpay status"
-msgid "2078"
-msgstr ""
-
-#: includes/functions.php:171
-msgctxt "ecpay status"
-msgid "2079"
-msgstr ""
-
-#: includes/functions.php:172
-msgctxt "ecpay status"
-msgid "2080"
-msgstr ""
-
-#: includes/functions.php:173
-msgctxt "ecpay status"
-msgid "2081"
-msgstr ""
-
-#: includes/functions.php:174
-msgctxt "ecpay status"
-msgid "2082"
-msgstr ""
-
-#: includes/functions.php:175
-msgctxt "ecpay status"
-msgid "2083"
-msgstr ""
-
-#: includes/functions.php:176
-msgctxt "ecpay status"
-msgid "2084"
-msgstr ""
-
-#: includes/functions.php:177
-msgctxt "ecpay status"
-msgid "2085"
-msgstr ""
-
-#: includes/functions.php:178
-msgctxt "ecpay status"
-msgid "2086"
-msgstr ""
-
-#: includes/functions.php:179
-msgctxt "ecpay status"
-msgid "2087"
-msgstr ""
-
-#: includes/functions.php:180
-msgctxt "ecpay status"
-msgid "2088"
-msgstr ""
-
-#: includes/functions.php:181
-msgctxt "ecpay status"
-msgid "2089"
-msgstr ""
-
-#: includes/functions.php:182
-msgctxt "ecpay status"
-msgid "2092"
-msgstr ""
-
-#: includes/functions.php:183
-msgctxt "ecpay status"
-msgid "2093"
-msgstr ""
-
-#: includes/functions.php:184
-msgctxt "ecpay status"
-msgid "2094"
-msgstr ""
-
-#: includes/functions.php:185
-msgctxt "ecpay status"
-msgid "2095"
-msgstr ""
-
-#: includes/functions.php:186
-msgctxt "ecpay status"
-msgid "2096"
-msgstr ""
-
-#: includes/functions.php:187
-msgctxt "ecpay status"
-msgid "2097"
-msgstr ""
-
-#: includes/functions.php:188
-msgctxt "ecpay status"
-msgid "2101"
-msgstr ""
-
-#: includes/functions.php:189
-msgctxt "ecpay status"
-msgid "2102"
-msgstr ""
-
-#: includes/functions.php:190
-msgctxt "ecpay status"
-msgid "2103"
-msgstr ""
-
-#: includes/functions.php:191
-msgctxt "ecpay status"
-msgid "2104"
-msgstr ""
-
-#: includes/functions.php:192
-msgctxt "ecpay status"
-msgid "2105"
-msgstr ""
-
-#: includes/functions.php:193
-msgctxt "ecpay status"
-msgid "3001"
-msgstr ""
-
-#: includes/functions.php:194
-msgctxt "ecpay status"
-msgid "3002"
-msgstr ""
-
-#: includes/functions.php:195
-msgctxt "ecpay status"
-msgid "3003"
-msgstr ""
-
-#: includes/functions.php:196
-msgctxt "ecpay status"
-msgid "3004"
-msgstr ""
-
-#: includes/functions.php:197
-msgctxt "ecpay status"
-msgid "3005"
-msgstr ""
-
-#: includes/functions.php:198
-msgctxt "ecpay status"
-msgid "3006"
-msgstr ""
-
-#: includes/functions.php:199
-msgctxt "ecpay status"
-msgid "3007"
-msgstr ""
-
-#: includes/functions.php:200
-msgctxt "ecpay status"
-msgid "3008"
-msgstr ""
-
-#: includes/functions.php:201
-msgctxt "ecpay status"
-msgid "3009"
-msgstr ""
-
-#: includes/functions.php:202
-msgctxt "ecpay status"
-msgid "3010"
-msgstr ""
-
-#: includes/functions.php:203
-msgctxt "ecpay status"
-msgid "3011"
-msgstr ""
-
-#: includes/functions.php:204
-msgctxt "ecpay status"
-msgid "3012"
-msgstr ""
-
-#: includes/functions.php:205
-msgctxt "ecpay status"
-msgid "3013"
-msgstr ""
-
-#: includes/functions.php:206
-msgctxt "ecpay status"
-msgid "3014"
-msgstr ""
-
-#: includes/functions.php:207
-msgctxt "ecpay status"
-msgid "3015"
-msgstr ""
-
-#: includes/functions.php:208
-msgctxt "ecpay status"
-msgid "3016"
-msgstr ""
-
-#: includes/functions.php:209
-msgctxt "ecpay status"
-msgid "3017"
-msgstr ""
-
-#: includes/functions.php:210
-msgctxt "ecpay status"
-msgid "3018"
-msgstr ""
-
-#: includes/functions.php:211
-msgctxt "ecpay status"
-msgid "3019"
-msgstr ""
-
-#: includes/functions.php:212
-msgctxt "ecpay status"
-msgid "3020"
-msgstr ""
-
-#: includes/functions.php:213
-msgctxt "ecpay status"
-msgid "3021"
-msgstr ""
-
-#: includes/functions.php:214
-msgctxt "ecpay status"
-msgid "3022"
-msgstr ""
-
-#: includes/functions.php:215
-msgctxt "ecpay status"
-msgid "3023"
-msgstr ""
-
-#: includes/functions.php:216
-msgctxt "ecpay status"
-msgid "3024"
-msgstr ""
-
-#: includes/functions.php:217
-msgctxt "ecpay status"
-msgid "3025"
-msgstr ""
-
-#: includes/functions.php:218
-msgctxt "ecpay status"
-msgid "3029"
-msgstr ""
-
-#: includes/functions.php:219
-msgctxt "ecpay status"
-msgid "3031"
-msgstr ""
-
-#: includes/functions.php:220
-msgctxt "ecpay status"
-msgid "3032"
-msgstr ""
-
-#: includes/functions.php:221
-msgctxt "ecpay status"
-msgid "3033"
-msgstr ""
-
-#: includes/functions.php:222
-msgctxt "ecpay status"
-msgid "3117"
-msgstr ""
-
-#: includes/functions.php:223
-msgctxt "ecpay status"
-msgid "3118"
-msgstr ""
-
-#: includes/functions.php:224
-msgctxt "ecpay status"
-msgid "3119"
-msgstr ""
-
-#: includes/functions.php:225
-msgctxt "ecpay status"
-msgid "3120"
-msgstr ""
-
-#: includes/functions.php:226
-msgctxt "ecpay status"
-msgid "3121"
-msgstr ""
-
-#: includes/functions.php:227
-msgctxt "ecpay status"
-msgid "3122"
-msgstr ""
-
-#: includes/functions.php:228
-msgctxt "ecpay status"
-msgid "3301"
-msgstr ""
-
-#: includes/functions.php:229
-msgctxt "ecpay status"
-msgid "3302"
-msgstr ""
-
-#: includes/functions.php:230
-msgctxt "ecpay status"
-msgid "3303"
-msgstr ""
-
-#: includes/functions.php:231
-msgctxt "ecpay status"
-msgid "3304"
-msgstr ""
-
-#: includes/functions.php:232
-msgctxt "ecpay status"
-msgid "3305"
-msgstr ""
-
-#: includes/functions.php:233
-msgctxt "ecpay status"
-msgid "3306"
-msgstr ""
-
-#: includes/functions.php:234
-msgctxt "ecpay status"
-msgid "3307"
-msgstr ""
-
-#: includes/functions.php:235
-msgctxt "ecpay status"
-msgid "3308"
-msgstr ""
-
-#: includes/functions.php:236
-msgctxt "ecpay status"
-msgid "3309"
-msgstr ""
-
-#: includes/functions.php:237
-msgctxt "ecpay status"
-msgid "3310"
-msgstr ""
-
-#: includes/functions.php:238
-msgctxt "ecpay status"
-msgid "3311"
-msgstr ""
-
-#: includes/functions.php:239
-msgctxt "ecpay status"
-msgid "3312"
-msgstr ""
-
-#: includes/functions.php:240
-msgctxt "ecpay status"
-msgid "3313"
-msgstr ""
-
-#: includes/functions.php:241
-msgctxt "ecpay status"
-msgid "3314"
-msgstr ""
-
-#: includes/functions.php:242
-msgctxt "ecpay status"
-msgid "3315"
-msgstr ""
-
-#: includes/functions.php:243
-msgctxt "ecpay status"
-msgid "4001"
-msgstr ""
-
-#: includes/functions.php:244
-msgctxt "ecpay status"
-msgid "4002"
-msgstr ""
-
-#: includes/functions.php:245
-msgctxt "ecpay status"
-msgid "4003"
-msgstr ""
-
-#: includes/functions.php:246
-msgctxt "ecpay status"
-msgid "4004"
-msgstr ""
-
-#: includes/functions.php:247
-msgctxt "ecpay status"
-msgid "5001"
-msgstr ""
-
-#: includes/functions.php:248
-msgctxt "ecpay status"
-msgid "5002"
-msgstr ""
-
-#: includes/functions.php:249
-msgctxt "ecpay status"
-msgid "5003"
-msgstr ""
-
-#: includes/functions.php:250
-msgctxt "ecpay status"
-msgid "5004"
-msgstr ""
-
-#: includes/functions.php:251
-msgctxt "ecpay status"
-msgid "5005"
-msgstr ""
-
-#: includes/functions.php:252
-msgctxt "ecpay status"
-msgid "5006"
-msgstr ""
-
-#: includes/functions.php:253
-msgctxt "ecpay status"
-msgid "5007"
-msgstr ""
-
-#: includes/functions.php:254
-msgctxt "ecpay status"
-msgid "5008"
-msgstr ""
-
-#: includes/functions.php:255
-msgctxt "ecpay status"
-msgid "5009"
-msgstr ""
-
-#: includes/functions.php:256
-msgctxt "ecpay status"
-msgid "7001"
-msgstr ""
-
-#: includes/functions.php:257
-msgctxt "ecpay status"
-msgid "7002"
-msgstr ""
-
-#: includes/functions.php:258
-msgctxt "ecpay status"
-msgid "7003"
-msgstr ""
-
-#: includes/functions.php:259
-msgctxt "ecpay status"
-msgid "7004"
-msgstr ""
-
-#: includes/functions.php:260
-msgctxt "ecpay status"
-msgid "7005"
-msgstr ""
-
-#: includes/functions.php:261
-msgctxt "ecpay status"
-msgid "7006"
-msgstr ""
-
-#: includes/functions.php:262
-msgctxt "ecpay status"
-msgid "7007"
-msgstr ""
-
-#: includes/functions.php:263
-msgctxt "ecpay status"
-msgid "7008"
-msgstr ""
-
-#: includes/functions.php:264
-msgctxt "ecpay status"
-msgid "7009"
-msgstr ""
-
-#: includes/functions.php:265
-msgctxt "ecpay status"
-msgid "7010"
-msgstr ""
-
-#: includes/functions.php:266
-msgctxt "ecpay status"
-msgid "7011"
-msgstr ""
-
-#: includes/functions.php:267
-msgctxt "ecpay status"
-msgid "7012"
-msgstr ""
-
-#: includes/functions.php:268
-msgctxt "ecpay status"
-msgid "7013"
-msgstr ""
-
-#: includes/functions.php:269
-msgctxt "ecpay status"
-msgid "7014"
-msgstr ""
-
-#: includes/functions.php:270
-msgctxt "ecpay status"
-msgid "7015"
-msgstr ""
-
-#: includes/functions.php:271
-msgctxt "ecpay status"
-msgid "7016"
-msgstr ""
-
-#: includes/functions.php:272
-msgctxt "ecpay status"
-msgid "7017"
-msgstr ""
-
-#: includes/functions.php:273
-msgctxt "ecpay status"
-msgid "7018"
-msgstr ""
-
-#: includes/functions.php:274
-msgctxt "ecpay status"
-msgid "7019"
-msgstr ""
-
-#: includes/functions.php:275
-msgctxt "ecpay status"
-msgid "7020"
-msgstr ""
-
-#: includes/functions.php:276
-msgctxt "ecpay status"
-msgid "7021"
-msgstr ""
-
-#: includes/functions.php:277
-msgctxt "ecpay status"
-msgid "7022"
-msgstr ""
-
-#: includes/functions.php:278
-msgctxt "ecpay status"
-msgid "7023"
-msgstr ""
-
-#: includes/functions.php:279
-msgctxt "ecpay status"
-msgid "7024"
-msgstr ""
-
-#: includes/functions.php:280
-msgctxt "ecpay status"
-msgid "7025"
-msgstr ""
-
-#: includes/functions.php:281
-msgctxt "ecpay status"
-msgid "7026"
-msgstr ""
-
-#: includes/functions.php:282
-msgctxt "ecpay status"
-msgid "7027"
-msgstr ""
-
-#: includes/functions.php:283
-msgctxt "ecpay status"
-msgid "7028"
-msgstr ""
-
-#: includes/functions.php:284
-msgctxt "ecpay status"
-msgid "7029"
-msgstr ""
-
-#: includes/functions.php:285
-msgctxt "ecpay status"
-msgid "7030"
-msgstr ""
-
-#: includes/functions.php:286
-msgctxt "ecpay status"
-msgid "7031"
-msgstr ""
-
-#: includes/functions.php:287
-msgctxt "ecpay status"
-msgid "7032"
-msgstr ""
-
-#: includes/functions.php:288
-msgctxt "ecpay status"
-msgid "7033"
-msgstr ""
-
-#: includes/functions.php:289
-msgctxt "ecpay status"
-msgid "7034"
-msgstr ""
-
-#: includes/functions.php:290
-msgctxt "ecpay status"
-msgid "7035"
-msgstr ""
-
-#: includes/functions.php:291
-msgctxt "ecpay status"
-msgid "7036"
-msgstr ""
-
-#: includes/functions.php:292
-msgctxt "ecpay status"
-msgid "7037"
-msgstr ""
-
-#: includes/functions.php:293
-msgctxt "ecpay status"
-msgid "7038"
-msgstr ""
-
-#: includes/functions.php:294
-msgctxt "ecpay status"
-msgid "7101"
-msgstr ""
-
-#: includes/functions.php:295
-msgctxt "ecpay status"
-msgid "7102"
-msgstr ""
-
-#: includes/functions.php:296
-msgctxt "ecpay status"
-msgid "7103"
-msgstr ""
-
-#: includes/functions.php:297
-msgctxt "ecpay status"
-msgid "7104"
-msgstr ""
-
-#: includes/functions.php:298
-msgctxt "ecpay status"
-msgid "7105"
-msgstr ""
-
-#: includes/functions.php:299
-msgctxt "ecpay status"
-msgid "7106"
-msgstr ""
-
-#: includes/functions.php:300
-msgctxt "ecpay status"
-msgid "7107"
-msgstr ""
-
-#: includes/functions.php:301
-msgctxt "ecpay status"
-msgid "7201"
-msgstr ""
-
-#: includes/functions.php:302
-msgctxt "ecpay status"
-msgid "7202"
-msgstr ""
-
-#: includes/functions.php:303
-msgctxt "ecpay status"
-msgid "7203"
-msgstr ""
-
-#: includes/functions.php:304
-msgctxt "ecpay status"
-msgid "7204"
-msgstr ""
-
-#: includes/functions.php:305
-msgctxt "ecpay status"
-msgid "7205"
-msgstr ""
-
-#: includes/functions.php:306
-msgctxt "ecpay status"
-msgid "7206"
-msgstr ""
-
-#: includes/functions.php:307
-msgctxt "ecpay status"
-msgid "7207"
-msgstr ""
-
-#: includes/functions.php:308
-msgctxt "ecpay status"
-msgid "7255"
-msgstr ""
-
-#: includes/functions.php:309
-msgctxt "ecpay status"
-msgid "7300"
-msgstr ""
-
-#: includes/functions.php:310
-msgctxt "ecpay status"
-msgid "7301"
-msgstr ""
-
-#: includes/functions.php:311
-msgctxt "ecpay status"
-msgid "7302"
-msgstr ""
-
-#: includes/functions.php:312
-msgctxt "ecpay status"
-msgid "9001"
-msgstr ""
-
 #: includes/functions.php:313
-msgctxt "ecpay status"
-msgid "9002"
-msgstr ""
-
-#: includes/functions.php:314
-msgctxt "ecpay status"
-msgid "9999"
-msgstr ""
-
-#: includes/functions.php:326
 msgctxt "newebpay type"
 msgid "CREDIT"
 msgstr ""
 
-#: includes/functions.php:327
+#: includes/functions.php:314
 msgctxt "newebpay type"
 msgid "VACC"
 msgstr ""
 
-#: includes/functions.php:328
+#: includes/functions.php:315
 msgctxt "newebpay type"
 msgid "WEBATM"
 msgstr ""
 
-#: includes/functions.php:329
+#: includes/functions.php:316
 msgctxt "newebpay type"
 msgid "BARCODE"
 msgstr ""
 
-#: includes/functions.php:330
+#: includes/functions.php:317
 msgctxt "newebpay type"
 msgid "CVS"
 msgstr ""
 
-#: includes/functions.php:331
+#: includes/functions.php:318
 msgctxt "newebpay type"
 msgid "LINEPAY"
 msgstr ""
 
-#: includes/functions.php:332
+#: includes/functions.php:319
 msgctxt "newebpay type"
 msgid "ESUNWALLET"
 msgstr ""
 
-#: includes/functions.php:333
+#: includes/functions.php:320
 msgctxt "newebpay type"
 msgid "TAIWANPAY"
 msgstr ""
 
-#: includes/functions.php:334
+#: includes/functions.php:321
 msgctxt "newebpay type"
 msgid "CVSCOM"
 msgstr ""
 
-#: includes/functions.php:335
+#: includes/functions.php:322
 msgctxt "newebpay type"
 msgid "FULA"
 msgstr ""
 
-#: includes/functions.php:347
+#: includes/functions.php:334
 msgctxt "newebpay method"
 msgid "CREDIT"
 msgstr ""
 
-#: includes/functions.php:348
+#: includes/functions.php:335
 msgctxt "newebpay method"
 msgid "FOREIGN"
 msgstr ""
 
-#: includes/functions.php:349
+#: includes/functions.php:336
 msgctxt "newebpay method"
 msgid "NTCB"
 msgstr ""
 
-#: includes/functions.php:350
+#: includes/functions.php:337
 msgctxt "newebpay method"
 msgid "UNIONPAY"
 msgstr ""
 
-#: includes/functions.php:351
+#: includes/functions.php:338
 msgctxt "newebpay method"
 msgid "APPLEPAY"
 msgstr ""
 
-#: includes/functions.php:352
+#: includes/functions.php:339
 msgctxt "newebpay method"
 msgid "GOOGLEPAY"
 msgstr ""
 
-#: includes/functions.php:353
+#: includes/functions.php:340
 msgctxt "newebpay method"
 msgid "SAMSUNGPAY"
 msgstr ""
@@ -1557,31 +407,6 @@ msgctxt "Shipping status"
 msgid "Unknow"
 msgstr ""
 
-#: woocommerce/admin/admin.php:40
-msgid "Your license is not active!"
-msgstr ""
-
-#: woocommerce/admin/admin.php:57
-#: woocommerce/admin/notes/license-auto-deactivate.php:41
-#: woocommerce/admin/settings/pro-info.php:10
-msgid "License key"
-msgstr ""
-
-#. translators: %s: Expiration date of pro license
-#: woocommerce/admin/admin.php:76
-msgid "License Expiration Date %s"
-msgstr ""
-
-#: woocommerce/admin/admin.php:116
-#: woocommerce/admin/admin.php:132
-msgid "Connect license server failed!"
-msgstr ""
-
-#. translators: %s: Error message
-#: woocommerce/admin/admin.php:124
-msgid "Verification error: %s"
-msgstr ""
-
 #: woocommerce/admin/gateways.php:39
 #: woocommerce/shipping/ecpay/includes/admin.php:224
 msgid "Get info"
@@ -1600,37 +425,12 @@ msgstr ""
 msgid "After choose cvs, you need save the order to keep the change info."
 msgstr ""
 
-#. translators: %s: Date
-#: woocommerce/admin/notes/license-auto-deactivate.php:24
-msgid "License has auto deactivate at %s."
-msgstr ""
-
-#: woocommerce/admin/notes/license-auto-deactivate.php:35
-msgid "License Auto Deactivate!"
-msgstr ""
-
 #: woocommerce/admin/settings/html/tools.php:2
 msgid "Tools"
 msgstr ""
 
 #: woocommerce/admin/settings/html/tools.php:11
 msgid "Change address"
-msgstr ""
-
-#: woocommerce/admin/settings/html/version-info.php:3
-msgid "version info"
-msgstr ""
-
-#: woocommerce/admin/settings/html/version-info.php:6
-msgid "Now Version:"
-msgstr ""
-
-#: woocommerce/admin/settings/html/version-info.php:9
-msgid "New Version:"
-msgstr ""
-
-#: woocommerce/admin/settings/html/version-info.php:11
-msgid "update plugin"
 msgstr ""
 
 #: woocommerce/admin/shipping.php:141
@@ -2193,10 +993,12 @@ msgid "Package weight"
 msgstr ""
 
 #: woocommerce/shipping/ecpay/shipping-cvs-711.php:13
+#: woocommerce/shipping/ecpay/shipping-cvs-family.php:13
 msgid "Off island plus cost"
 msgstr ""
 
 #: woocommerce/shipping/ecpay/shipping-cvs-711.php:18
+#: woocommerce/shipping/ecpay/shipping-cvs-family.php:18
 msgid "The total cost is cost plus off island cost."
 msgstr ""
 
@@ -2213,7 +1015,7 @@ msgid "The total cost is cost plus cool cost."
 msgstr ""
 
 #: woocommerce/shipping/ecpay/shipping-cvs-711.php:42
-#: woocommerce/shipping/ecpay/shipping-cvs-family.php:9
+#: woocommerce/shipping/ecpay/shipping-cvs-family.php:24
 #: woocommerce/shipping/ecpay/shipping-cvs-hilife.php:9
 #: woocommerce/shipping/ecpay/shipping-cvs-ok.php:9
 #: woocommerce/shipping/ecpay/shipping-home-post.php:9
@@ -2226,7 +1028,7 @@ msgid "A minimum order amount ( except discount and tex )"
 msgstr ""
 
 #: woocommerce/shipping/ecpay/shipping-cvs-711.php:43
-#: woocommerce/shipping/ecpay/shipping-cvs-family.php:10
+#: woocommerce/shipping/ecpay/shipping-cvs-family.php:25
 #: woocommerce/shipping/ecpay/shipping-cvs-hilife.php:10
 #: woocommerce/shipping/ecpay/shipping-cvs-ok.php:10
 #: woocommerce/shipping/ecpay/shipping-home-post.php:10
@@ -2239,7 +1041,7 @@ msgid "A minimum order amount OR a coupon ( except discount and tex )"
 msgstr ""
 
 #: woocommerce/shipping/ecpay/shipping-cvs-711.php:44
-#: woocommerce/shipping/ecpay/shipping-cvs-family.php:11
+#: woocommerce/shipping/ecpay/shipping-cvs-family.php:26
 #: woocommerce/shipping/ecpay/shipping-cvs-hilife.php:11
 #: woocommerce/shipping/ecpay/shipping-cvs-ok.php:11
 #: woocommerce/shipping/ecpay/shipping-home-post.php:11

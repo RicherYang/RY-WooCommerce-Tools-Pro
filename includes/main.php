@@ -1,12 +1,18 @@
 <?php
 
-final class RY_WTP
+include_once RY_WTP_PLUGIN_DIR . 'includes/ry-global/abstract-basic.php';
+
+final class RY_WTP extends RY_Abstract_Basic
 {
     public const OPTION_PREFIX = 'RY_WTP_';
+
+    public const PLUGIN_NAME = 'RY Tools (Pro) for WooCommerce';
 
     public const MIN_TOOLS_VERSION = '3.5.6';
 
     protected static $_instance = null;
+
+    public RY_WTP_Admin $admin;
 
     public static function instance(): RY_WTP
     {
@@ -25,9 +31,6 @@ final class RY_WTP
         if (is_admin()) {
             include_once RY_WTP_PLUGIN_DIR . 'includes/update.php';
             RY_WTP_Update::update();
-
-            include_once RY_WTP_PLUGIN_DIR . 'includes/admin.php';
-            RY_WTP_Admin::instance();
         }
 
         add_action('ry_woo_tools_loaded', [$this, 'do_woo_init']);
@@ -37,13 +40,16 @@ final class RY_WTP
     {
         include_once RY_WTP_PLUGIN_DIR . 'includes/functions.php';
 
-        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/admin/notes/license-auto-deactivate.php';
         include_once RY_WTP_PLUGIN_DIR . 'includes/license.php';
         include_once RY_WTP_PLUGIN_DIR . 'includes/link-server.php';
         include_once RY_WTP_PLUGIN_DIR . 'includes/updater.php';
         RY_WTP_Updater::instance();
 
         if (is_admin()) {
+            include_once RY_WTP_PLUGIN_DIR . 'includes/ry-global/admin-license.php';
+            include_once RY_WTP_PLUGIN_DIR . 'admin/admin.php';
+            $this->admin = RY_WTP_Admin::instance();
+
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/admin/admin.php';
             RY_WTP_WC_Admin::instance();
         }
@@ -97,36 +103,6 @@ final class RY_WTP
                 RY_WTP_SmilePay_Shipping::instance();
             }
         }
-    }
-
-    public static function get_option($option, $default = false)
-    {
-        return get_option(self::OPTION_PREFIX . $option, $default);
-    }
-
-    public static function update_option($option, $value, $autoload = null)
-    {
-        return update_option(self::OPTION_PREFIX . $option, $value, $autoload);
-    }
-
-    public static function delete_option($option)
-    {
-        return delete_option(self::OPTION_PREFIX . $option);
-    }
-
-    public static function get_transient($transient)
-    {
-        return get_transient(self::OPTION_PREFIX . $transient);
-    }
-
-    public static function set_transient($transient, $value, $expiration = 0)
-    {
-        return set_transient(self::OPTION_PREFIX . $transient, $value, $expiration);
-    }
-
-    public static function delete_transient($transient)
-    {
-        return delete_transient(self::OPTION_PREFIX . $transient);
     }
 
     public static function plugin_activation() {}

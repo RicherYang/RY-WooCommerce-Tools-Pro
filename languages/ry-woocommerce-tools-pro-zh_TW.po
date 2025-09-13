@@ -8,13 +8,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-02-16 10:51+0800\n"
-"PO-Revision-Date: 2025-05-15 23:16+0800\n"
+"PO-Revision-Date: 2025-09-13 17:04+0800\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.7\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: assets-src\n"
@@ -72,53 +72,6 @@ msgctxt "Shipping status"
 msgid "Unknow"
 msgstr "未知"
 
-#: woocommerce/admin/admin.php:40
-msgid "Your license is not active!"
-msgstr "你的授權尚未啟動！"
-
-#: woocommerce/admin/admin.php:57
-#: woocommerce/admin/notes/license-auto-deactivate.php:41
-#: woocommerce/admin/settings/pro-info.php:10
-msgid "License key"
-msgstr "授權金鑰"
-
-#. translators: %s: Expiration date of pro license
-#: woocommerce/admin/admin.php:76
-#, php-format
-msgid "License Expiration Date %s"
-msgstr "授權到期日 %s"
-
-#: woocommerce/admin/admin.php:116
-#: woocommerce/admin/admin.php:132
-msgid "Connect license server failed!"
-msgstr "連結授權伺服器失敗！"
-
-#. translators: %s: Error message
-#: woocommerce/admin/admin.php:124
-#, php-format
-msgid "Verification error: %s"
-msgstr "驗證錯誤：%s"
-
-#: includes/functions.php:6
-msgid "Unknown key"
-msgstr "未知的金鑰"
-
-#: includes/functions.php:7
-msgid "Locked key"
-msgstr "鎖定的金鑰"
-
-#: includes/functions.php:8
-msgid "Unknown target url"
-msgstr "未知的目標網址"
-
-#: includes/functions.php:9
-msgid "Used key"
-msgstr "已使用的金鑰"
-
-#: includes/functions.php:10
-msgid "Is tried"
-msgstr "已使用過測試版"
-
 #: woocommerce/admin/meta-boxes/view/choose_cvs_btn.php:2
 #: assets/blocks/shipping/ecpay/cvs-select-map/frontend.js:1
 msgid "Choose convenience store"
@@ -132,29 +85,9 @@ msgstr "前往選擇超商門市前不會儲存任何的變化。"
 msgid "After choose cvs, you need save the order to keep the change info."
 msgstr "選擇超商之後，你需要更新訂單以儲存相關資訊。"
 
-#: woocommerce/admin/notes/license-auto-deactivate.php:35
-msgid "License Auto Deactivate!"
-msgstr "授權自動終止！"
-
 #: woocommerce/admin/settings/html/tools.php:2
 msgid "Tools"
 msgstr "工具"
-
-#: woocommerce/admin/settings/html/version-info.php:3
-msgid "version info"
-msgstr "版本資訊"
-
-#: woocommerce/admin/settings/html/version-info.php:6
-msgid "Now Version:"
-msgstr "目前版本"
-
-#: woocommerce/admin/settings/html/version-info.php:9
-msgid "New Version:"
-msgstr "最新版本"
-
-#: woocommerce/admin/settings/html/version-info.php:11
-msgid "update plugin"
-msgstr "升級外掛"
 
 #: woocommerce/admin/shipping.php:141
 msgid "Get shipping no (normal temperature)"
@@ -473,10 +406,12 @@ msgid "Print ECPay shipping booking note (tcat)"
 msgstr "列印綠界物流託運單 (黑貓)"
 
 #: woocommerce/shipping/ecpay/shipping-cvs-711.php:13
+#: woocommerce/shipping/ecpay/shipping-cvs-family.php:13
 msgid "Off island plus cost"
 msgstr "離島附加運費"
 
 #: woocommerce/shipping/ecpay/shipping-cvs-711.php:18
+#: woocommerce/shipping/ecpay/shipping-cvs-family.php:18
 msgid "The total cost is cost plus off island cost."
 msgstr "總運費是運費加離島附加運費。"
 
@@ -493,7 +428,7 @@ msgid "The total cost is cost plus cool cost."
 msgstr "總運費是運費加低溫附加運費。"
 
 #: woocommerce/shipping/ecpay/shipping-cvs-711.php:42
-#: woocommerce/shipping/ecpay/shipping-cvs-family.php:9
+#: woocommerce/shipping/ecpay/shipping-cvs-family.php:24
 #: woocommerce/shipping/ecpay/shipping-cvs-hilife.php:9
 #: woocommerce/shipping/ecpay/shipping-cvs-ok.php:9
 #: woocommerce/shipping/ecpay/shipping-home-post.php:9
@@ -506,7 +441,7 @@ msgid "A minimum order amount ( except discount and tex )"
 msgstr "最小訂購金額（不包含折價及稅金）"
 
 #: woocommerce/shipping/ecpay/shipping-cvs-711.php:43
-#: woocommerce/shipping/ecpay/shipping-cvs-family.php:10
+#: woocommerce/shipping/ecpay/shipping-cvs-family.php:25
 #: woocommerce/shipping/ecpay/shipping-cvs-hilife.php:10
 #: woocommerce/shipping/ecpay/shipping-cvs-ok.php:10
 #: woocommerce/shipping/ecpay/shipping-home-post.php:10
@@ -519,7 +454,7 @@ msgid "A minimum order amount OR a coupon ( except discount and tex )"
 msgstr "最小訂購金額或使用折價券（不包含折價及稅金）"
 
 #: woocommerce/shipping/ecpay/shipping-cvs-711.php:44
-#: woocommerce/shipping/ecpay/shipping-cvs-family.php:11
+#: woocommerce/shipping/ecpay/shipping-cvs-family.php:26
 #: woocommerce/shipping/ecpay/shipping-cvs-hilife.php:11
 #: woocommerce/shipping/ecpay/shipping-cvs-ok.php:11
 #: woocommerce/shipping/ecpay/shipping-home-post.php:11
@@ -538,11 +473,6 @@ msgstr "列印速買配物流託運單 (7-11)"
 #: woocommerce/shipping/smilepay/includes/admin.php:72
 msgid "Print SmilePay shipping booking note (family)"
 msgstr "列印速買配物流託運單 (全家)"
-
-#. translators: %s: Date
-#: woocommerce/admin/notes/license-auto-deactivate.php:24
-msgid "License has auto deactivate at %s."
-msgstr "授權於 %s 自動終止。"
 
 #. Plugin Name of the plugin
 #: ry-woocommerce-tools-pro.php
@@ -663,8 +593,8 @@ msgid "ECPay select cvs store"
 msgstr "綠界選擇超商門市"
 
 #. translators: %1$s: Name of this plugin %2$s: Name of require plugin %3$s: min require version
-#: includes/admin.php:27
-#: includes/admin.php:38
+#: admin/admin.php:50
+#: admin/admin.php:61
 msgid "<strong>%1$s</strong> is inactive. It require %2$s %3$s or newer."
 msgstr "<strong>%1$s</strong> 暫停運作。 需求 %2$s %3$s 或更新版本。"
 
@@ -909,1442 +839,312 @@ msgstr "代收款項撥款金額"
 msgid "Collection allocate date"
 msgstr "代收款項撥款日期"
 
-#: includes/functions.php:314
-msgctxt "ecpay status"
-msgid "9999"
-msgstr "訂單取消"
-
-#: includes/functions.php:313
-msgctxt "ecpay status"
-msgid "9002"
-msgstr "退貨已取"
-
-#: includes/functions.php:312
-msgctxt "ecpay status"
-msgid "9001"
-msgstr "退貨已取"
-
-#: includes/functions.php:311
-msgctxt "ecpay status"
-msgid "7302"
-msgstr "郵件遺失"
-
-#: includes/functions.php:310
-msgctxt "ecpay status"
-msgid "7301"
-msgstr "郵件破損-無法投遞"
-
-#: includes/functions.php:309
-msgctxt "ecpay status"
-msgid "7300"
-msgstr "郵局接收資料異常"
-
-#: includes/functions.php:308
-msgctxt "ecpay status"
-msgid "7255"
-msgstr "包裹退至物流中心"
-
-#: includes/functions.php:307
-msgctxt "ecpay status"
-msgid "7207"
-msgstr "退貨包裹配送驗收異常-門市反應商品包裝不良(滲漏)"
-
-#: includes/functions.php:306
-msgctxt "ecpay status"
-msgid "7206"
-msgstr "退貨包裹配送驗收異常-小物流破損"
-
-#: includes/functions.php:305
-msgctxt "ecpay status"
-msgid "7205"
-msgstr "退貨包裹配送驗收異常-大物流包裝不良(滲漏)"
-
-#: includes/functions.php:304
-msgctxt "ecpay status"
-msgid "7204"
-msgstr "退貨包裹配送驗收異常-超材"
-
-#: includes/functions.php:303
-msgctxt "ecpay status"
-msgid "7203"
-msgstr "退貨包裹配送驗收異常-條碼錯誤"
-
-#: includes/functions.php:302
-msgctxt "ecpay status"
-msgid "7202"
-msgstr "退貨包裹配送驗收異常-無進貨資料"
-
-#: includes/functions.php:301
-msgctxt "ecpay status"
-msgid "7201"
-msgstr "寄件門市關轉，請重選門市"
-
-#: includes/functions.php:300
-msgctxt "ecpay status"
-msgid "7107"
-msgstr "包裹配送驗收異常-門市反應商品包裝不良(滲漏)"
-
-#: includes/functions.php:299
-msgctxt "ecpay status"
-msgid "7106"
-msgstr "包裹配送驗收異常-小物流破損"
-
-#: includes/functions.php:298
-msgctxt "ecpay status"
-msgid "7105"
-msgstr "包裹配送驗收異常-大物流包裝不良(滲漏)"
-
-#: includes/functions.php:297
-msgctxt "ecpay status"
-msgid "7104"
-msgstr "包裹配送驗收異常-超材"
-
-#: includes/functions.php:296
-msgctxt "ecpay status"
-msgid "7103"
-msgstr "包裹配送驗收異常-條碼錯誤"
-
-#: includes/functions.php:295
-msgctxt "ecpay status"
-msgid "7102"
-msgstr "包裹配送驗收異常-無進貨資料"
-
-#: includes/functions.php:294
-msgctxt "ecpay status"
-msgid "7101"
-msgstr "取件門市關轉，請重選門市"
-
-#: includes/functions.php:293
-msgctxt "ecpay status"
-msgid "7038"
-msgstr "門市驗收異常，請洽客服"
-
-#: includes/functions.php:292
-msgctxt "ecpay status"
-msgid "7037"
-msgstr "訂單上傳失敗"
-
-#: includes/functions.php:291
-msgctxt "ecpay status"
-msgid "7036"
-msgstr "貨件破損，請洽客服"
-
-#: includes/functions.php:290
-msgctxt "ecpay status"
-msgid "7035"
-msgstr "逾期未領，貨件銷毀"
-
-#: includes/functions.php:289
-msgctxt "ecpay status"
-msgid "7034"
-msgstr "貨物進店發生異常，請洽客服"
-
-#: includes/functions.php:288
-msgctxt "ecpay status"
-msgid "7033"
-msgstr "資料異常"
-
-#: includes/functions.php:287
-msgctxt "ecpay status"
-msgid "7032"
-msgstr "寄件門市關轉，請重選門市"
-
-#: includes/functions.php:286
-msgctxt "ecpay status"
-msgid "7031"
-msgstr "商品未到"
-
-#: includes/functions.php:285
-msgctxt "ecpay status"
-msgid "7030"
-msgstr "別家收走"
-
-#: includes/functions.php:284
-msgctxt "ecpay status"
-msgid "7029"
-msgstr "已回收"
-
-#: includes/functions.php:283
-msgctxt "ecpay status"
-msgid "7028"
-msgstr "超大超重"
-
-#: includes/functions.php:282
-msgctxt "ecpay status"
-msgid "7027"
-msgstr "無件可退"
-
-#: includes/functions.php:281
-msgctxt "ecpay status"
-msgid "7026"
-msgstr "資料有誤"
-
-#: includes/functions.php:280
-msgctxt "ecpay status"
-msgid "7025"
-msgstr "電聯不上"
-
-#: includes/functions.php:279
-msgctxt "ecpay status"
-msgid "7024"
-msgstr "另約時間"
-
-#: includes/functions.php:278
-msgctxt "ecpay status"
-msgid "7023"
-msgstr "包裹異常，請洽客服"
-
-#: includes/functions.php:277
-msgctxt "ecpay status"
-msgid "7022"
-msgstr "包裹異常，請洽客服"
-
-#: includes/functions.php:276
-msgctxt "ecpay status"
-msgid "7021"
-msgstr "包裹異常，請洽客服"
-
-#: includes/functions.php:275
-msgctxt "ecpay status"
-msgid "7020"
-msgstr "包裹遺失，進入賠償程序"
-
-#: includes/functions.php:274
-msgctxt "ecpay status"
-msgid "7019"
-msgstr "寄件包裹異常，協尋中"
-
-#: includes/functions.php:273
-msgctxt "ecpay status"
-msgid "7018"
-msgstr "包裹遺失，進入賠償程序"
-
-#: includes/functions.php:272
-msgctxt "ecpay status"
-msgid "7017"
-msgstr "取件包裹異常，協尋中"
-
-#: includes/functions.php:271
-msgctxt "ecpay status"
-msgid "7016"
-msgstr "包裹超材，退回賣家"
-
-#: includes/functions.php:270
-msgctxt "ecpay status"
-msgid "7015"
-msgstr "條碼重複，請洽客服"
-
-#: includes/functions.php:269
-msgctxt "ecpay status"
-msgid "7014"
-msgstr "等待賣家出貨"
-
-#: includes/functions.php:268
-msgctxt "ecpay status"
-msgid "7013"
-msgstr "訂單超過驗收期限(賣家未出貨)"
-
-#: includes/functions.php:267
-msgctxt "ecpay status"
-msgid "7012"
-msgstr "條碼錯誤，廠退處理"
-
-#: includes/functions.php:266
-msgctxt "ecpay status"
-msgid "7011"
-msgstr "取件門市關轉，請重選門市"
-
-#: includes/functions.php:265
-msgctxt "ecpay status"
-msgid "7010"
-msgstr "包裝異常，請洽客服"
-
-#: includes/functions.php:264
-msgctxt "ecpay status"
-msgid "7009"
-msgstr "包裝異常，請洽客服"
-
-#: includes/functions.php:263
-msgctxt "ecpay status"
-msgid "7008"
-msgstr "包裹破損，請洽客服"
-
-#: includes/functions.php:262
-msgctxt "ecpay status"
-msgid "7007"
-msgstr "包裹遺失，進入賠償程序"
-
-#: includes/functions.php:261
-msgctxt "ecpay status"
-msgid "7006"
-msgstr "包裹遺失，進入賠償程序"
-
-#: includes/functions.php:260
-msgctxt "ecpay status"
-msgid "7005"
-msgstr "託運單刪除"
-
-#: includes/functions.php:259
-msgctxt "ecpay status"
-msgid "7004"
-msgstr "航班延誤"
-
-#: includes/functions.php:258
-msgctxt "ecpay status"
-msgid "7003"
-msgstr "地址錯誤，聯繫收件人"
-
-#: includes/functions.php:257
-msgctxt "ecpay status"
-msgid "7002"
-msgstr "超重(通常發生於司機取件，不取件)"
-
-#: includes/functions.php:256
-msgctxt "ecpay status"
-msgid "7001"
-msgstr "超大(通常發生於司機取件，不取件)"
-
-#: includes/functions.php:255
-msgctxt "ecpay status"
-msgid "5009"
-msgstr "包裹異常，請洽客服"
-
-#: includes/functions.php:254
-msgctxt "ecpay status"
-msgid "5008"
-msgstr "退貨配完"
-
-#: includes/functions.php:253
-msgctxt "ecpay status"
-msgid "5007"
-msgstr "代收遺失"
-
-#: includes/functions.php:252
-msgctxt "ecpay status"
-msgid "5006"
-msgstr "代收毀損"
-
-#: includes/functions.php:251
-msgctxt "ecpay status"
-msgid "5005"
-msgstr "代收退貨"
-
-#: includes/functions.php:250
-msgctxt "ecpay status"
-msgid "5004"
-msgstr "賣家未取包裹，待申請退回"
-
-#: includes/functions.php:249
-msgctxt "ecpay status"
-msgid "5003"
-msgstr "BASE列管(寄件人和收件人聯絡不到)"
-
-#: includes/functions.php:248
-msgctxt "ecpay status"
-msgid "5002"
-msgstr "遺失"
-
-#: includes/functions.php:247
-msgctxt "ecpay status"
-msgid "5001"
-msgstr "損壞，站所將協助退貨"
-
-#: includes/functions.php:246
-msgctxt "ecpay status"
-msgid "4004"
-msgstr "包裹遺失，進入賠償程序"
-
-#: includes/functions.php:245
-msgctxt "ecpay status"
-msgid "4003"
-msgstr "退件包裹異常，協尋中"
-
-#: includes/functions.php:244
-msgctxt "ecpay status"
-msgid "4002"
-msgstr "退貨商品已至物流中心"
-
-#: includes/functions.php:243
-msgctxt "ecpay status"
-msgid "4001"
-msgstr "買家已到門市寄件"
-
-#: includes/functions.php:242
-msgctxt "ecpay status"
-msgid "3315"
-msgstr "i郵箱逾期退招領"
-
-#: includes/functions.php:241
-msgctxt "ecpay status"
-msgid "3314"
-msgstr "到達i郵箱"
-
-#: includes/functions.php:240
-msgctxt "ecpay status"
-msgid "3313"
-msgstr "郵局貨件運轉中"
-
-#: includes/functions.php:239
-msgctxt "ecpay status"
-msgid "3312"
-msgstr "貨件投遞中"
-
-#: includes/functions.php:238
-msgctxt "ecpay status"
-msgid "3311"
-msgstr "退回郵件投遞中"
-
-#: includes/functions.php:237
-msgctxt "ecpay status"
-msgid "3310"
-msgstr "已退回寄件人"
-
-#: includes/functions.php:236
-msgctxt "ecpay status"
-msgid "3309"
-msgstr "投遞成功(收受人領取)"
-
-#: includes/functions.php:235
-msgctxt "ecpay status"
-msgid "3308"
-msgstr "投遞成功"
-
-#: includes/functions.php:234
-msgctxt "ecpay status"
-msgid "3307"
-msgstr "i郵箱取件成功"
-
-#: includes/functions.php:233
-msgctxt "ecpay status"
-msgid "3306"
-msgstr "退回投遞不成功"
-
-#: includes/functions.php:232
-msgctxt "ecpay status"
-msgid "3305"
-msgstr "拒收"
-
-#: includes/functions.php:231
-msgctxt "ecpay status"
-msgid "3304"
-msgstr "依寄件人指示銷毀"
-
-#: includes/functions.php:230
-msgctxt "ecpay status"
-msgid "3303"
-msgstr "投遞不成功"
-
-#: includes/functions.php:229
-msgctxt "ecpay status"
-msgid "3302"
-msgstr "各區郵局招領中"
-
-#: includes/functions.php:228
-msgctxt "ecpay status"
-msgid "3301"
-msgstr "交寄郵件"
-
-#: includes/functions.php:227
-msgctxt "ecpay status"
-msgid "3122"
-msgstr "另約時間"
-
-#: includes/functions.php:226
-msgctxt "ecpay status"
-msgid "3121"
-msgstr "轉交門市配達"
-
-#: includes/functions.php:225
-msgctxt "ecpay status"
-msgid "3120"
-msgstr "預備配送中"
-
-#: includes/functions.php:224
-msgctxt "ecpay status"
-msgid "3119"
-msgstr "暫置營業所(假日暫置)"
-
-#: includes/functions.php:223
-msgctxt "ecpay status"
-msgid "3118"
-msgstr "暫置營業所"
-
-#: includes/functions.php:222
-msgctxt "ecpay status"
-msgid "3117"
-msgstr "拒收(調查處理中)"
-
-#: includes/functions.php:221
-msgctxt "ecpay status"
-msgid "3033"
-msgstr "EC客戶要求提早退貨"
-
-#: includes/functions.php:220
-msgctxt "ecpay status"
-msgid "3032"
-msgstr "賣家已到門市寄件"
-
-#: includes/functions.php:219
-msgctxt "ecpay status"
-msgid "3031"
-msgstr "包裹已退至指定寄件門市"
-
-#: includes/functions.php:218
-msgctxt "ecpay status"
-msgid "3029"
-msgstr "包裹已配達指定取件門市"
-
-#: includes/functions.php:217
-msgctxt "ecpay status"
-msgid "3025"
-msgstr "買家未取包裹，已退回物流中心"
-
-#: includes/functions.php:216
-msgctxt "ecpay status"
-msgid "3024"
-msgstr "物流中心驗收成功"
-
-#: includes/functions.php:215
-msgctxt "ecpay status"
-msgid "3023"
-msgstr "賣家已取退回包裹"
-
-#: includes/functions.php:214
-msgctxt "ecpay status"
-msgid "3022"
-msgstr "買家已到店取貨"
-
-#: includes/functions.php:213
-msgctxt "ecpay status"
-msgid "3021"
-msgstr "賣家未取包裹，待申請退回"
-
-#: includes/functions.php:212
-msgctxt "ecpay status"
-msgid "3020"
-msgstr "買家未取包裹，將退回物流中心"
-
-#: includes/functions.php:211
-msgctxt "ecpay status"
-msgid "3019"
-msgstr "包裹已退至原寄件門市"
-
-#: includes/functions.php:210
-msgctxt "ecpay status"
-msgid "3018"
-msgstr "包裹配達取件門市"
-
-#: includes/functions.php:209
-msgctxt "ecpay status"
-msgid "3017"
-msgstr "退回狀態刪除(代收退貨刪除)"
-
-#: includes/functions.php:208
-msgctxt "ecpay status"
-msgid "3016"
-msgstr "配完狀態刪除"
-
-#: includes/functions.php:207
-msgctxt "ecpay status"
-msgid "3015"
-msgstr "空運配送中"
-
-#: includes/functions.php:206
-msgctxt "ecpay status"
-msgid "3014"
-msgstr "當配上車(當日配送從A至B營業所，已抵達A營業所)"
-
-#: includes/functions.php:205
-msgctxt "ecpay status"
-msgid "3013"
-msgstr "當配下車(當日配送A至B營業所，已抵達B營業所)"
-
-#: includes/functions.php:204
-msgctxt "ecpay status"
-msgid "3012"
-msgstr "到所(收件人要求到站所取件)"
-
-#: includes/functions.php:203
-msgctxt "ecpay status"
-msgid "3011"
-msgstr "暫置營業所(收件人要求至營業所取貨)"
-
-#: includes/functions.php:202
-msgctxt "ecpay status"
-msgid "3010"
-msgstr "轉寄(如原本寄到A，改寄B)"
-
-#: includes/functions.php:201
-msgctxt "ecpay status"
-msgid "3009"
-msgstr "搬家"
-
-#: includes/functions.php:200
-msgctxt "ecpay status"
-msgid "3008"
-msgstr "地址錯誤，聯繫收件人"
-
-#: includes/functions.php:199
-msgctxt "ecpay status"
-msgid "3007"
-msgstr "公司行號休息"
-
-#: includes/functions.php:198
-msgctxt "ecpay status"
-msgid "3006"
-msgstr "配送中"
-
-#: includes/functions.php:197
-msgctxt "ecpay status"
-msgid "3005"
-msgstr "送錯CENTER(送錯轉運中心)"
-
-#: includes/functions.php:196
-msgctxt "ecpay status"
-msgid "3004"
-msgstr "送錯BASE(送錯營業所)"
-
-#: includes/functions.php:195
-msgctxt "ecpay status"
-msgid "3003"
-msgstr "配完"
-
-#: includes/functions.php:194
-msgctxt "ecpay status"
-msgid "3002"
-msgstr "不在家"
-
-#: includes/functions.php:193
-msgctxt "ecpay status"
-msgid "3001"
-msgstr "轉運中(即集貨)"
-
-#: includes/functions.php:192
-msgctxt "ecpay status"
-msgid "2105"
-msgstr "已申請門市變更"
-
-#: includes/functions.php:191
-msgctxt "ecpay status"
-msgid "2104"
-msgstr "門市關轉，請重選門市"
-
-#: includes/functions.php:190
-msgctxt "ecpay status"
-msgid "2103"
-msgstr "無取件門市資料"
-
-#: includes/functions.php:189
-msgctxt "ecpay status"
-msgid "2102"
-msgstr "門市舊店號更新"
-
-#: includes/functions.php:188
-msgctxt "ecpay status"
-msgid "2101"
-msgstr "門市關轉店"
-
-#: includes/functions.php:187
-msgctxt "ecpay status"
-msgid "2097"
-msgstr "賣家未取包裹，宅配退回中"
-
-#: includes/functions.php:186
-msgctxt "ecpay status"
-msgid "2096"
-msgstr "賣家未取包裹，待申請退回"
-
-#: includes/functions.php:185
-msgctxt "ecpay status"
-msgid "2095"
-msgstr "天候路況不佳"
-
-#: includes/functions.php:184
-msgctxt "ecpay status"
-msgid "2094"
-msgstr "包裹異常，請洽客服"
-
-#: includes/functions.php:183
-msgctxt "ecpay status"
-msgid "2093"
-msgstr "買家未取退回物流中心-爆量"
-
-#: includes/functions.php:182
-msgctxt "ecpay status"
-msgid "2092"
-msgstr "買家未取退回物流中心-門市關轉"
-
-#: includes/functions.php:181
-msgctxt "ecpay status"
-msgid "2089"
-msgstr "買家未取退回物流中心-門市指定不配送(六、日)"
-
-#: includes/functions.php:180
-msgctxt "ecpay status"
-msgid "2088"
-msgstr "買家未取貨退回物流中心-商品遺失"
-
-#: includes/functions.php:179
-msgctxt "ecpay status"
-msgid "2087"
-msgstr "買家未取貨退回物流中心-物流中心理貨中"
-
-#: includes/functions.php:178
-msgctxt "ecpay status"
-msgid "2086"
-msgstr "買家未取貨退回物流中心-第一段標籤資料錯誤"
-
-#: includes/functions.php:177
-msgctxt "ecpay status"
-msgid "2085"
-msgstr "買家未取貨退回物流中心-第一段標籤無法判讀"
-
-#: includes/functions.php:176
-msgctxt "ecpay status"
-msgid "2084"
-msgstr "買家未取貨退回物流中心-第一段標籤規格錯誤"
-
-#: includes/functions.php:175
-msgctxt "ecpay status"
-msgid "2083"
-msgstr "買家未取貨退回物流中心-已過門市進貨日(未於指定時間內寄至物流中心)"
-
-#: includes/functions.php:174
-msgctxt "ecpay status"
-msgid "2082"
-msgstr "買家未取貨退回物流中心-訂單資料重複上傳"
-
-#: includes/functions.php:173
-msgctxt "ecpay status"
-msgid "2081"
-msgstr "買家未取貨退回物流中心-違禁品(退貨及罰款處理)"
-
-#: includes/functions.php:172
-msgctxt "ecpay status"
-msgid "2080"
-msgstr "買家未取貨退回物流中心-超材"
-
-#: includes/functions.php:171
-msgctxt "ecpay status"
-msgid "2079"
-msgstr "買家未取貨退回物流中心-商品瑕疵(進物流中心)"
-
-#: includes/functions.php:170
-msgctxt "ecpay status"
-msgid "2078"
-msgstr "買家未取包裹，已退回物流中心"
-
-#: includes/functions.php:169
-msgctxt "ecpay status"
-msgid "2077"
-msgstr "賣家未取包裹，待申請退回"
-
-#: includes/functions.php:168
-msgctxt "ecpay status"
-msgid "2076"
-msgstr "買家未取包裹，已退回物流中心"
-
-#: includes/functions.php:167
-msgctxt "ecpay status"
-msgid "2075"
-msgstr "賣家未取包裹，將退回物流中心"
-
-#: includes/functions.php:166
-msgctxt "ecpay status"
-msgid "2074"
-msgstr "買家未取包裹，將退回物流中心"
-
-#: includes/functions.php:165
-msgctxt "ecpay status"
-msgid "2073"
-msgstr "包裹配達取件門市"
-
-#: includes/functions.php:164
-msgctxt "ecpay status"
-msgid "2072"
-msgstr "包裹已退至原寄件門市"
-
-#: includes/functions.php:163
-msgctxt "ecpay status"
-msgid "2071"
-msgstr "門市代碼格式錯誤"
-
-#: includes/functions.php:162
-msgctxt "ecpay status"
-msgid "2070"
-msgstr "賣家已取退回包裹"
-
-#: includes/functions.php:161
-msgctxt "ecpay status"
-msgid "2069"
-msgstr "退貨便收件(商品退回指定C門市)"
-
-#: includes/functions.php:160
-msgctxt "ecpay status"
-msgid "2068"
-msgstr "賣家已到門市寄件"
-
-#: includes/functions.php:159
-msgctxt "ecpay status"
-msgid "2067"
-msgstr "買家已到店取貨"
-
-#: includes/functions.php:158
-msgctxt "ecpay status"
-msgid "2066"
-msgstr "包裹異常，請洽客服"
-
-#: includes/functions.php:157
-msgctxt "ecpay status"
-msgid "2065"
-msgstr "買家未取包裹，將退回物流中心"
-
-#: includes/functions.php:156
-msgctxt "ecpay status"
-msgid "2063"
-msgstr "包裹配達取件門市"
-
-#: includes/functions.php:155
-msgctxt "ecpay status"
-msgid "2062"
-msgstr "包裹異常，請洽客服"
-
-#: includes/functions.php:154
-msgctxt "ecpay status"
-msgid "2061"
-msgstr "包裹異常，請洽客服"
-
-#: includes/functions.php:153
-msgctxt "ecpay status"
-msgid "2060"
-msgstr "門市停業，廠退處理"
-
-#: includes/functions.php:152
-msgctxt "ecpay status"
-msgid "2059"
-msgstr "道路中斷，後續配送中"
-
-#: includes/functions.php:151
-msgctxt "ecpay status"
-msgid "2058"
-msgstr "天候不佳，後續配送中"
-
-#: includes/functions.php:150
-msgctxt "ecpay status"
-msgid "2057"
-msgstr "車輛故障，後續配送中"
-
-#: includes/functions.php:149
-msgctxt "ecpay status"
-msgid "2055"
-msgstr "包裹退至物流中心"
-
-#: includes/functions.php:148
-msgctxt "ecpay status"
-msgid "2054"
-msgstr "賣家要求提早退貨"
-
-#: includes/functions.php:147
-msgctxt "ecpay status"
-msgid "2053"
-msgstr "門市刷A給B，請洽客服"
-
-#: includes/functions.php:146
-msgctxt "ecpay status"
-msgid "2052"
-msgstr "違禁品(退貨及罰款處理)"
-
-#: includes/functions.php:145
-msgctxt "ecpay status"
-msgid "2051"
-msgstr "賣家要求提早退貨"
-
-#: includes/functions.php:144
-msgctxt "ecpay status"
-msgid "2050"
-msgstr "門市轉店，將進行退貨處理"
-
-#: includes/functions.php:143
-msgctxt "ecpay status"
-msgid "2049"
-msgstr "門市關店，將進行退貨處理"
-
-#: includes/functions.php:142
-msgctxt "ecpay status"
-msgid "2048"
-msgstr "包裝異常，請洽客服"
-
-#: includes/functions.php:141
-msgctxt "ecpay status"
-msgid "2047"
-msgstr "正常二退(退貨時間延長，在判賠期限內退回)"
-
-#: includes/functions.php:140
-msgctxt "ecpay status"
-msgid "2046"
-msgstr "貨件未取退回大智通物流中心"
-
-#: includes/functions.php:139
-msgctxt "ecpay status"
-msgid "2045"
-msgstr "不正常到貨(商品提早到物流中心)，廠退處理"
-
-#: includes/functions.php:138
-msgctxt "ecpay status"
-msgid "2044"
-msgstr "賣家已取退回包裹"
-
-#: includes/functions.php:137
-msgctxt "ecpay status"
-msgid "2043"
-msgstr "門市指定時間不配送，後續配送中"
-
-#: includes/functions.php:136
-msgctxt "ecpay status"
-msgid "2042"
-msgstr "包裹遺失，進入賠償程序"
-
-#: includes/functions.php:135
-msgctxt "ecpay status"
-msgid "2041"
-msgstr "物流中心理貨中"
-
-#: includes/functions.php:134
-msgctxt "ecpay status"
-msgid "2040"
-msgstr "標籤錯誤，廠退處理"
-
-#: includes/functions.php:133
-msgctxt "ecpay status"
-msgid "2039"
-msgstr "標籤錯誤，廠退處理"
-
-#: includes/functions.php:132
-msgctxt "ecpay status"
-msgid "2038"
-msgstr "標籤錯誤，廠退處理"
-
-#: includes/functions.php:131
-msgctxt "ecpay status"
-msgid "2037"
-msgstr "取件門市關轉，請重選門市"
-
-#: includes/functions.php:130
-msgctxt "ecpay status"
-msgid "2036"
-msgstr "訂單超過驗收期限(賣家未出貨)"
-
-#: includes/functions.php:129
-msgctxt "ecpay status"
-msgid "2035"
-msgstr "訂單資料重複上傳"
-
-#: includes/functions.php:128
-msgctxt "ecpay status"
-msgid "2034"
-msgstr "違禁品(退貨及罰款處理)"
-
-#: includes/functions.php:127
-msgctxt "ecpay status"
-msgid "2033"
-msgstr "包裹超材，退回賣家"
-
-#: includes/functions.php:126
-msgctxt "ecpay status"
-msgid "2032"
-msgstr "包裝異常，請洽客服"
-
-#: includes/functions.php:125
-msgctxt "ecpay status"
-msgid "2031"
-msgstr "等待賣家出貨"
-
-#: includes/functions.php:124
-msgctxt "ecpay status"
-msgid "2030"
-msgstr "物流中心驗收成功"
-
-#: includes/functions.php:123
-msgctxt "ecpay status"
-msgid "2029"
-msgstr "門市尚未開店"
-
-#: includes/functions.php:122
-msgctxt "ecpay status"
-msgid "2028"
-msgstr "門市關轉店，3日內未更新SUP(新店號)便至退貨流程"
-
-#: includes/functions.php:121
-msgctxt "ecpay status"
-msgid "2027"
-msgstr "門市指定時間不配送，後續配送中"
-
-#: includes/functions.php:120
-msgctxt "ecpay status"
-msgid "2026"
-msgstr "無此門市，將進行退貨處理"
-
-#: includes/functions.php:119
-msgctxt "ecpay status"
-msgid "2025"
-msgstr "門市轉店號(舊門市店號已更新)"
-
-#: includes/functions.php:118
-msgctxt "ecpay status"
-msgid "2024"
-msgstr "訂單傳送超商成功"
-
-#: includes/functions.php:117
-msgctxt "ecpay status"
-msgid "2023"
-msgstr "取貨人姓名為空"
-
-#: includes/functions.php:116
-msgctxt "ecpay status"
-msgid "2022"
-msgstr "出貨金額不符規定"
-
-#: includes/functions.php:115
-msgctxt "ecpay status"
-msgid "2021"
-msgstr "同一批次出貨編號重複(批次)"
-
-#: includes/functions.php:114
-msgctxt "ecpay status"
-msgid "2020"
-msgstr "廠商尚未申請店配服務"
-
-#: includes/functions.php:113
-msgctxt "ecpay status"
-msgid "2019"
-msgstr "商品類型不符規定"
-
-#: includes/functions.php:112
-msgctxt "ecpay status"
-msgid "2018"
-msgstr "服務類型不符規定(如只開取貨付款服務，卻使用純取貨服務)"
-
-#: includes/functions.php:111
-msgctxt "ecpay status"
-msgid "2017"
-msgstr "出貨日期不符合規定"
-
-#: includes/functions.php:110
-msgctxt "ecpay status"
-msgid "2016"
-msgstr "門市已關轉店，將進行退貨處理"
-
-#: includes/functions.php:109
-msgctxt "ecpay status"
-msgid "2015"
-msgstr "出貨編號已存在(單筆)"
-
-#: includes/functions.php:108
-msgctxt "ecpay status"
-msgid "2014"
-msgstr "子廠商不存在"
-
-#: includes/functions.php:107
-msgctxt "ecpay status"
-msgid "2013"
-msgstr "母廠商不存在"
-
-#: includes/functions.php:106
-msgctxt "ecpay status"
-msgid "2012"
-msgstr "出貨編號不存在"
-
-#: includes/functions.php:105
-msgctxt "ecpay status"
-msgid "2011"
-msgstr "出貨金額為空"
-
-#: includes/functions.php:104
-msgctxt "ecpay status"
-msgid "2010"
-msgstr "出貨日期為空"
-
-#: includes/functions.php:103
-msgctxt "ecpay status"
-msgid "2009"
-msgstr "門市店號為空"
-
-#: includes/functions.php:102
-msgctxt "ecpay status"
-msgid "2008"
-msgstr "訂單為空"
-
-#: includes/functions.php:101
-msgctxt "ecpay status"
-msgid "2007"
-msgstr "商品類型為空"
-
-#: includes/functions.php:100
-msgctxt "ecpay status"
-msgid "2006"
-msgstr "訂單金額或代收金額錯誤"
-
-#: includes/functions.php:99
-msgctxt "ecpay status"
-msgid "2005"
-msgstr "日期格式不符"
-
-#: includes/functions.php:98
-msgctxt "ecpay status"
-msgid "2004"
-msgstr "出貨單號重複上傳使用(驗收時發現)"
-
-#: includes/functions.php:97
-msgctxt "ecpay status"
-msgid "2003"
-msgstr "XML檔內出貨單號重複"
-
-#: includes/functions.php:96
-msgctxt "ecpay status"
-msgid "2002"
-msgstr "出貨單號不合規則"
-
-#: includes/functions.php:95
-msgctxt "ecpay status"
-msgid "2001"
-msgstr "訂單傳送超商成功"
-
-#: includes/functions.php:94
-msgctxt "ecpay status"
-msgid "2000"
-msgstr "已申請門市變更"
-
-#: includes/functions.php:93
-msgctxt "ecpay status"
-msgid "325"
-msgstr "退貨訂單處理中(綠界已收到訂單資料)"
-
-#: includes/functions.php:92
-msgctxt "ecpay status"
-msgid "320"
-msgstr "郵局已確認資料，可列印"
-
-#: includes/functions.php:91
-msgctxt "ecpay status"
-msgid "311"
-msgstr "訂單傳送物流成功"
-
-#: includes/functions.php:90
-msgctxt "ecpay status"
-msgid "310"
-msgstr "訂單上傳物流中"
-
-#: includes/functions.php:89
-msgctxt "ecpay status"
-msgid "300"
-msgstr "訂單處理中(綠界已收到訂單資料)"
-
-#: includes/functions.php:77
+#: includes/functions.php:64
 msgctxt "ecpay shipping"
 msgid "HOME_POST"
 msgstr "中華郵政"
 
-#: includes/functions.php:76
+#: includes/functions.php:63
 msgctxt "ecpay shipping"
 msgid "HOME_TCAT"
 msgstr "黑貓物流"
 
-#: includes/functions.php:75
+#: includes/functions.php:62
 msgctxt "ecpay shipping"
 msgid "CVS_OKMARTC2C"
 msgstr "OK超商(C2C)"
 
-#: includes/functions.php:74
+#: includes/functions.php:61
 msgctxt "ecpay shipping"
 msgid "CVS_HILIFEC2C"
 msgstr "萊爾富物流(C2C)"
 
-#: includes/functions.php:73
+#: includes/functions.php:60
 msgctxt "ecpay shipping"
 msgid "CVS_HILIFE"
 msgstr "萊爾富物流(B2C)"
 
-#: includes/functions.php:72
+#: includes/functions.php:59
 msgctxt "ecpay shipping"
 msgid "CVS_UNIMARTC2C"
 msgstr "7-ELEVEN超商物流(C2C)"
 
-#: includes/functions.php:71
+#: includes/functions.php:58
 msgctxt "ecpay shipping"
 msgid "CVS_FAMIC2C"
 msgstr "全家物流(C2C)"
 
-#: includes/functions.php:70
+#: includes/functions.php:57
 msgctxt "ecpay shipping"
 msgid "CVS_UNIMARTFREEZE"
 msgstr "7-ELEVEN冷凍店取(B2C)"
 
-#: includes/functions.php:69
+#: includes/functions.php:56
 msgctxt "ecpay shipping"
 msgid "CVS_UNIMART"
 msgstr "7-ELEVEN超商物流(B2C)"
 
-#: includes/functions.php:68
+#: includes/functions.php:55
 msgctxt "ecpay shipping"
 msgid "CVS_FAMI"
 msgstr "全家物流(B2C)"
 
-#: includes/functions.php:353
+#: includes/functions.php:340
 msgctxt "newebpay method"
 msgid "SAMSUNGPAY"
 msgstr "Samsung Pay"
 
-#: includes/functions.php:352
+#: includes/functions.php:339
 msgctxt "newebpay method"
 msgid "GOOGLEPAY"
 msgstr "Google Pay"
 
-#: includes/functions.php:351
+#: includes/functions.php:338
 msgctxt "newebpay method"
 msgid "APPLEPAY"
 msgstr "Apple Pay"
 
-#: includes/functions.php:350
+#: includes/functions.php:337
 msgctxt "newebpay method"
 msgid "UNIONPAY"
 msgstr "銀聯卡"
 
-#: includes/functions.php:349
+#: includes/functions.php:336
 msgctxt "newebpay method"
 msgid "NTCB"
 msgstr "國民旅遊卡"
 
-#: includes/functions.php:348
+#: includes/functions.php:335
 msgctxt "newebpay method"
 msgid "FOREIGN"
 msgstr "國外核發信用卡"
 
-#: includes/functions.php:347
+#: includes/functions.php:334
 msgctxt "newebpay method"
 msgid "CREDIT"
 msgstr "台灣核發信用卡"
 
-#: includes/functions.php:335
+#: includes/functions.php:322
 msgctxt "newebpay type"
 msgid "FULA"
 msgstr "Fula 付啦"
 
-#: includes/functions.php:334
+#: includes/functions.php:321
 msgctxt "newebpay type"
 msgid "CVSCOM"
 msgstr "超商取貨付款"
 
-#: includes/functions.php:333
+#: includes/functions.php:320
 msgctxt "newebpay type"
 msgid "TAIWANPAY"
 msgstr "台灣 Pay"
 
-#: includes/functions.php:332
+#: includes/functions.php:319
 msgctxt "newebpay type"
 msgid "ESUNWALLET"
 msgstr "玉山 Wallet"
 
-#: includes/functions.php:331
+#: includes/functions.php:318
 msgctxt "newebpay type"
 msgid "LINEPAY"
 msgstr "LINE Pay"
 
-#: includes/functions.php:330
+#: includes/functions.php:317
 msgctxt "newebpay type"
 msgid "CVS"
 msgstr "超商代碼"
 
-#: includes/functions.php:329
+#: includes/functions.php:316
 msgctxt "newebpay type"
 msgid "BARCODE"
 msgstr "超商條碼"
 
-#: includes/functions.php:328
+#: includes/functions.php:315
 msgctxt "newebpay type"
 msgid "WEBATM"
 msgstr "網路銀行轉帳"
 
-#: includes/functions.php:327
+#: includes/functions.php:314
 msgctxt "newebpay type"
 msgid "VACC"
 msgstr "銀行 ATM 轉帳"
 
-#: includes/functions.php:326
+#: includes/functions.php:313
 msgctxt "newebpay type"
 msgid "CREDIT"
 msgstr "信用卡"
 
-#: includes/functions.php:56
+#: includes/functions.php:43
 msgctxt "ecpay info"
 msgid "ibon"
 msgstr "7-11"
 
-#: includes/functions.php:55
+#: includes/functions.php:42
 msgctxt "ecpay info"
 msgid "okmart"
 msgstr "OK 超商"
 
-#: includes/functions.php:54
+#: includes/functions.php:41
 msgctxt "ecpay info"
 msgid "hilife"
 msgstr "萊爾富"
 
-#: includes/functions.php:53
+#: includes/functions.php:40
 msgctxt "ecpay info"
 msgid "family"
 msgstr "全家"
 
-#: includes/functions.php:51
+#: includes/functions.php:38
 msgctxt "ecpay info"
 msgid "BNPL_URICH"
 msgstr "裕富數位無卡分期"
 
-#: includes/functions.php:50
+#: includes/functions.php:37
 msgctxt "ecpay info"
 msgid "TWQR_OPAY"
 msgstr "歐付寶TWQR 行動支付"
 
-#: includes/functions.php:49
+#: includes/functions.php:36
 msgctxt "ecpay info"
 msgid "Flexible_Installment"
 msgstr "圓夢彈性分期"
 
-#: includes/functions.php:48
+#: includes/functions.php:35
 msgctxt "ecpay info"
 msgid "Credit_CreditCard"
 msgstr "信用卡"
 
-#: includes/functions.php:47
+#: includes/functions.php:34
 msgctxt "ecpay info"
 msgid "BARCODE_BARCODE"
 msgstr "超商條碼繳款"
 
-#: includes/functions.php:46
+#: includes/functions.php:33
 msgctxt "ecpay info"
 msgid "CVS_IBON"
 msgstr "7-11 ibon 代碼繳款"
 
-#: includes/functions.php:45
+#: includes/functions.php:32
 msgctxt "ecpay info"
 msgid "CVS_HILIFE"
 msgstr "萊爾富超商代碼繳款"
 
-#: includes/functions.php:44
+#: includes/functions.php:31
 msgctxt "ecpay info"
 msgid "CVS_FAMILY"
 msgstr "全家超商代碼繳款"
 
-#: includes/functions.php:43
+#: includes/functions.php:30
 msgctxt "ecpay info"
 msgid "CVS_OK"
 msgstr "OK 超商代碼繳款"
 
-#: includes/functions.php:42
+#: includes/functions.php:29
 msgctxt "ecpay info"
 msgid "CVS_CVS"
 msgstr "超商代碼繳款"
 
-#: includes/functions.php:41
+#: includes/functions.php:28
 msgctxt "ecpay info"
 msgid "ATM_PANHSIN"
 msgstr "板信銀行 ATM"
 
-#: includes/functions.php:40
+#: includes/functions.php:27
 msgctxt "ecpay info"
 msgid "ATM_TACHONG"
 msgstr "大眾銀行 ATM"
 
-#: includes/functions.php:39
+#: includes/functions.php:26
 msgctxt "ecpay info"
 msgid "ATM_CATHAY"
 msgstr "國泰世華銀行 ATM"
 
-#: includes/functions.php:38
+#: includes/functions.php:25
 msgctxt "ecpay info"
 msgid "ATM_LAND"
 msgstr "土地銀行 ATM"
 
-#: includes/functions.php:37
+#: includes/functions.php:24
 msgctxt "ecpay info"
 msgid "ATM_FIRST"
 msgstr "第一銀行 ATM"
 
-#: includes/functions.php:36
+#: includes/functions.php:23
 msgctxt "ecpay info"
 msgid "ATM_CHINATRUST"
 msgstr "中國信託 ATM"
 
-#: includes/functions.php:35
+#: includes/functions.php:22
 msgctxt "ecpay info"
 msgid "ATM_FUBON"
 msgstr "台北富邦 ATM"
 
-#: includes/functions.php:34
+#: includes/functions.php:21
 msgctxt "ecpay info"
 msgid "ATM_BOT"
 msgstr "台灣銀行 ATM"
 
-#: includes/functions.php:33
+#: includes/functions.php:20
 msgctxt "ecpay info"
 msgid "ATM_ESUN"
 msgstr "玉山銀行 ATM"
 
-#: includes/functions.php:32
+#: includes/functions.php:19
 msgctxt "ecpay info"
 msgid "ATM_TAISHIN"
 msgstr "台新銀行 ATM"
 
-#: includes/functions.php:31
+#: includes/functions.php:18
 msgctxt "ecpay info"
 msgid "WebATM_SINOPAC"
 msgstr "永豐銀行 WebATM"
 
-#: includes/functions.php:30
+#: includes/functions.php:17
 msgctxt "ecpay info"
 msgid "WebATM_TACHONG"
 msgstr "大眾銀行 WebATM"
 
-#: includes/functions.php:29
+#: includes/functions.php:16
 msgctxt "ecpay info"
 msgid "WebATM_LAND"
 msgstr "土地銀行 WebATM"
 
-#: includes/functions.php:28
+#: includes/functions.php:15
 msgctxt "ecpay info"
 msgid "WebATM_MEGA"
 msgstr "兆豐銀行 WebATM"
 
-#: includes/functions.php:27
+#: includes/functions.php:14
 msgctxt "ecpay info"
 msgid "WebATM_CATHAY"
 msgstr "國泰世華 WebATM"
 
-#: includes/functions.php:26
+#: includes/functions.php:13
 msgctxt "ecpay info"
 msgid "WebATM_FIRST"
 msgstr "第一銀行 WebATM"
 
-#: includes/functions.php:25
+#: includes/functions.php:12
 msgctxt "ecpay info"
 msgid "WebATM_CHINATRUST"
 msgstr "中國信託 WebATM"
 
-#: includes/functions.php:24
+#: includes/functions.php:11
 msgctxt "ecpay info"
 msgid "WebATM_FUBON"
 msgstr "台北富邦 WebATM"
 
-#: includes/functions.php:23
+#: includes/functions.php:10
 msgctxt "ecpay info"
 msgid "WebATM_BOT"
 msgstr "台灣銀行 WebATM"
 
-#: includes/functions.php:22
+#: includes/functions.php:9
 msgctxt "ecpay info"
 msgid "WebATM_ESUN"
 msgstr "玉山銀行 WebATM"
 
-#: includes/functions.php:21
+#: includes/functions.php:8
 msgctxt "ecpay info"
 msgid "WebATM_TAISHIN"
 msgstr "台新銀行 WebATM"

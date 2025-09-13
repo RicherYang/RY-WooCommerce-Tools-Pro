@@ -2,7 +2,7 @@
 
 final class RY_WTP_ECPay_Shipping_Cron
 {
-    public static function add_action()
+    public static function add_action(): void
     {
         add_action('ry_wtp_get_ecpay_code', [RY_WT_WC_ECPay_Shipping_Api::instance(), 'get_code'], 10, 2); // keep for old cron hook
         add_action('ry_wtp_get_ecpay_shipping_code', [RY_WT_WC_ECPay_Shipping_Api::instance(), 'get_code'], 10, 2);
@@ -10,7 +10,7 @@ final class RY_WTP_ECPay_Shipping_Cron
         add_action('ry_wtp_get_ecpay_shipping_no', [__CLASS__, 'get_shipping_no'], 10, 2);
     }
 
-    public static function get_shipping_no($order_ID, $shipping_ID)
+    public static function get_shipping_no($order_ID, $shipping_ID): void
     {
         $order = wc_get_order($order_ID);
         if (!$order) {

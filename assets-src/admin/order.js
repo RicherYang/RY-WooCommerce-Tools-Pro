@@ -54,7 +54,6 @@ $(function () {
             let $btn = $(this);
             $btn.addClass(['disabled'])
                 .prop('disabled', true);
-            console.log(RyInfo);
             $.ajax({
                 url: ajaxurl,
                 method: 'POST',
