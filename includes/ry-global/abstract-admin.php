@@ -21,14 +21,25 @@ if (!class_exists('RY_Abstract_Admin', false)) {
             $menu_list = apply_filters('ry-plugin/menu_list', []);
             $this->main_slug = $menu_list[0]['slug'];
 
+            add_action('all_admin_notices', [$this, 'show_not_activated']);
             if (!isset($_parent_pages[$this->main_slug])) {
                 add_menu_page('RY Plugin', 'RY Plugin', 'read', $this->main_slug, '', $icon);
                 foreach ($menu_list as $menu_item) {
                     add_submenu_page($this->main_slug, $menu_item['name'], $menu_item['name'], 'manage_options', $menu_item['slug'], $menu_item['function']);
                 }
                 add_action('all_admin_notices', [$this, 'show_notices']);
-                add_action('all_admin_notices', [$this, 'show_not_activated']);
             }
+        }
+
+        public function show_not_activated(): void
+        {
+            if ($this->license->is_activated()) {
+                return;
+            }
+
+            echo '<div class="notice notice-info is-dismissible">';
+            echo '<p><strong>' . esc_html($this->license::$main_class::PLUGIN_NAME) . ': 你的授權尚未啟動！</strong></p>';
+            echo '</div>';
         }
 
         public function show_notices(): void
@@ -43,17 +54,6 @@ if (!class_exists('RY_Abstract_Admin', false)) {
 
                 set_transient('ry-notice', []);
             }
-        }
-
-        public function show_not_activated(): void
-        {
-            if ($this->license->is_activated()) {
-                return;
-            }
-
-            echo '<div class="notice notice-info is-dismissible">';
-            echo '<p><strong>' . esc_html($this->license::$main_class::PLUGIN_NAME) . ': 你的授權尚未啟動！</strong></p>';
-            echo '</div>';
         }
     }
 }

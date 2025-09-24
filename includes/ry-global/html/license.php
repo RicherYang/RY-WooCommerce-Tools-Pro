@@ -3,10 +3,10 @@
     <tbody>
         <tr>
             <th>
-                <label for="key-<?php echo hash('sha1', $basename); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>">授權金鑰</label>
+                <label for="key-<?php echo esc_attr($input_key); ?>">授權金鑰</label>
             </th>
             <td>
-                <input class="regular-text" name="key-<?php echo hash('sha1', $basename); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>" id="key-<?php echo hash('sha1', $basename); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>" type="text" value="<?php echo esc_attr($key); ?>">
+                <input class="regular-text" name="key-<?php echo esc_attr($input_key); ?>" id="key-<?php echo esc_attr($input_key); ?>" type="text" value="<?php echo esc_attr($key); ?>">
                 <?php if (!empty($expire)) {
                     printf(
                         '<p class="description">授權到期日 %s</p>',

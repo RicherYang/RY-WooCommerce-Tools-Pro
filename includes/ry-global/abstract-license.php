@@ -39,8 +39,8 @@ if (!class_exists('RY_Abstract_License', false)) {
 
         public function delete_license(): void
         {
-            static::$main_class::update_option('license_data', '', false);
             static::$main_class::update_option('license_key', '', false);
+            static::$main_class::update_option('license_data', '', false);
             static::$main_class::delete_transient('version_info');
             static::$main_class::delete_transient('expire_link_error');
 
@@ -79,9 +79,7 @@ if (!class_exists('RY_Abstract_License', false)) {
         {
             $license_data = $this->get_license_data();
             if (!is_array($license_data)) {
-                if ($license_data === '') {
-                    $this->delete_license();
-                } else {
+                if ($license_data !== '') {
                     $this->valid_error(static::$main_class::PLUGIN_NAME . ': Data unknown. ' . var_export($license_data, true)); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_var_export
                 }
                 return;

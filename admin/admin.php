@@ -32,7 +32,7 @@ final class RY_WTP_Admin extends RY_Abstract_Admin
 
     public function add_license($license_list): array
     {
-        $license_list[] = [
+        $license_list[RY_WTP_PLUGIN_BASENAME] = [
             'name' => $this->license::$main_class::PLUGIN_NAME,
             'license' => $this->license,
             'version' => RY_WTP_VERSION,

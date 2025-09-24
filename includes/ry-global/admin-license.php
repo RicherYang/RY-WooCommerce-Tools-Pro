@@ -56,11 +56,14 @@ if (!class_exists('RY_Admin_License', false)) {
             echo '<input type="hidden" name="action" value="ry/admin-license">';
             wp_nonce_field('ry/admin-license', '_wpnonce', false);
             foreach ($this->license_list as $license) {
-                $license['key'] = $license['license']->get_license_key();
-                $license['expire'] = $license['license']->get_expire();
-                $license['version_info'] = $license['license']->get_version_info();
-                unset($license['license']);
-                extract($license);
+                $name = $license['name'];
+                $basename = $license['basename'];
+                $version = $license['version'];
+
+                $input_key = hash('sha1', $license['basename']);
+                $key = $license['license']->get_license_key();
+                $expire = $license['license']->get_expire();
+                $version_info = $license['license']->get_version_info();
                 $version_info = array_merge(array_flip(['version']), is_array($version_info) ? $version_info : []);
 
                 include __DIR__ . '/html/license.php';
@@ -103,32 +106,30 @@ if (!class_exists('RY_Admin_License', false)) {
 
             if ($action === 'ry/admin-license') {
                 foreach ($this->license_list as $license) {
-                    if (is_array($license) && isset($license['name'], $license['license'])) {
-                        $key = sanitize_locale_name($_POST['key-' . hash('sha1', $license['basename'])] ?? '');
-                        if (hash_equals($key, $license['license']->get_license_key())) {
-                            $this->add_notice('success', $license['name'] . ': 金鑰未變更。');
-                            continue;
-                        }
+                    $key = sanitize_locale_name($_POST['key-' . hash('sha1', $license['basename'])] ?? '');
+                    if (hash_equals($key, $license['license']->get_license_key())) {
+                        $this->add_notice('success', $license['name'] . ': 金鑰未變更。');
+                        continue;
+                    }
 
-                        $license['license']->add_log('info', 'ry-license', 'User #' . get_current_user_id() . ' change "' . $license['name'] . '" license key');
-                        $license['license']->delete_license();
-                        $license['license']->set_license_key($key);
-                        if ($key !== '') {
-                            $json = $license['license']->activate_key();
+                    $license['license']->add_log('info', 'ry-license', 'User #' . get_current_user_id() . ' change "' . $license['name'] . '" license key: ' . $key);
+                    $license['license']->delete_license();
+                    $license['license']->set_license_key($key);
+                    if ($key !== '') {
+                        $json = $license['license']->activate_key();
 
-                            if (false === $json) {
-                                $this->add_notice('error', $license['name'] . ': 無法與授權伺服器連線。');
-                            } else {
-                                if (is_array($json)) {
-                                    if (empty($json['data'])) {
-                                        $this->add_notice('error', $license['name'] . ': 授權驗證失敗 ( ' . $error_msg[$json['error']] . ' )。');
-                                    } else {
-                                        $license['license']->set_license_data($json['data']);
-                                        $this->add_notice('success', $license['name'] . ': 授權驗證成功。');
-                                    }
+                        if (false === $json) {
+                            $this->add_notice('error', $license['name'] . ': 無法與授權伺服器連線。');
+                        } else {
+                            if (is_array($json)) {
+                                if (empty($json['data'])) {
+                                    $this->add_notice('error', $license['name'] . ': 授權驗證失敗 ( ' . $error_msg[$json['error']] . ' )。');
                                 } else {
-                                    $this->add_notice('error', $license['name'] . ': 與授權伺服器連線失敗。');
+                                    $license['license']->set_license_data($json['data']);
+                                    $this->add_notice('success', $license['name'] . ': 授權驗證成功。');
                                 }
+                            } else {
+                                $this->add_notice('error', $license['name'] . ': 與授權伺服器連線失敗。');
                             }
                         }
                     }
