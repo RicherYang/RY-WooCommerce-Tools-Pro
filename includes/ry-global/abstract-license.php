@@ -141,7 +141,7 @@ if (!class_exists('RY_Abstract_License', false)) {
         public function delete_log(string $handle): void
         {
             $log_path = $this->get_log_file_path($handle, false);
-            @unlink($log_path);
+            @unlink($log_path); // phpcs:ignore WordPress.WP.AlternativeFunctions.unlink_unlink
         }
 
         public function add_log(string $type, string $handle, string $message): void
