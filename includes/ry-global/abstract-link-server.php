@@ -7,7 +7,10 @@ if (!class_exists('RY_Abstract_Link_Server', false)) {
 
         protected $plugin_slug;
 
-        abstract protected function get_user_agent();
+        protected function get_base_info(): array
+        {
+            return [];
+        }
 
         public function check_version(): bool|array
         {
@@ -16,7 +19,6 @@ if (!class_exists('RY_Abstract_Link_Server', false)) {
             $response = wp_remote_get($this->api_url . 'products/' . $this->plugin_slug, [
                 'timeout' => 20,
                 'httpversion' => '1.1',
-                'user-agent' => $this->get_user_agent(),
             ]);
 
             return $this->decode_response($response);
@@ -29,7 +31,6 @@ if (!class_exists('RY_Abstract_Link_Server', false)) {
             $response = wp_remote_get($this->api_url . 'products/info/' . $this->plugin_slug, [
                 'timeout' => 20,
                 'httpversion' => '1.1',
-                'user-agent' => $this->get_user_agent(),
             ]);
 
             return $this->decode_response($response);
@@ -42,12 +43,12 @@ if (!class_exists('RY_Abstract_Link_Server', false)) {
             $response = wp_remote_post($this->api_url . 'license/expire/' . $this->plugin_slug, [
                 'timeout' => 20,
                 'httpversion' => '1.1',
-                'user-agent' => $this->get_user_agent(),
                 'headers' => [
                     'Content-Type' => 'application/json;charset=' . get_bloginfo('charset'),
                 ],
                 'body' => wp_json_encode([
                     'domain' => get_option('siteurl'),
+                    'base_info' => $this->get_base_info(),
                 ]),
             ]);
 
@@ -61,13 +62,13 @@ if (!class_exists('RY_Abstract_Link_Server', false)) {
             $response = wp_remote_post($this->api_url . 'license/activate/' . $this->plugin_slug, [
                 'timeout' => 20,
                 'httpversion' => '1.1',
-                'user-agent' => $this->get_user_agent(),
                 'headers' => [
                     'Content-Type' => 'application/json;charset=' . get_bloginfo('charset'),
                 ],
                 'body' => wp_json_encode([
                     'license_key' => $key,
                     'domain' => get_option('siteurl'),
+                    'base_info' => $this->get_base_info(),
                 ]),
             ]);
 
