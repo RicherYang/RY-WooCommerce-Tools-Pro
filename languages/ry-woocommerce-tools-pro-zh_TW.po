@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-02-16 10:51+0800\n"
-"PO-Revision-Date: 2025-09-13 17:04+0800\n"
+"PO-Revision-Date: 2025-10-20 15:45+0800\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
@@ -27,7 +27,7 @@ msgstr "物流資訊"
 
 #: templates/order/order-ecpay-shipping-info.php:23
 #: templates/order/order-smilepay-shipping-info.php:23
-#: woocommerce/admin/shipping.php:45
+#: woocommerce/admin/shipping.php:49
 msgid "Shipping payment no"
 msgstr "物流寄件編號"
 
@@ -89,15 +89,15 @@ msgstr "選擇超商之後，你需要更新訂單以儲存相關資訊。"
 msgid "Tools"
 msgstr "工具"
 
-#: woocommerce/admin/shipping.php:141
+#: woocommerce/admin/shipping.php:152
 msgid "Get shipping no (normal temperature)"
 msgstr "取得物流單號 (常溫)"
 
-#: woocommerce/admin/shipping.php:145
+#: woocommerce/admin/shipping.php:156
 msgid "Get shipping no (refrigerated)"
 msgstr "取得物流單號 (冷藏)"
 
-#: woocommerce/admin/shipping.php:149
+#: woocommerce/admin/shipping.php:160
 msgid "Get shipping no (frozen)"
 msgstr "取得物流單號 (冷凍)"
 
@@ -595,10 +595,11 @@ msgstr "綠界選擇超商門市"
 #. translators: %1$s: Name of this plugin %2$s: Name of require plugin %3$s: min require version
 #: admin/admin.php:50
 #: admin/admin.php:61
+#, php-format
 msgid "<strong>%1$s</strong> is inactive. It require %2$s %3$s or newer."
 msgstr "<strong>%1$s</strong> 暫停運作。 需求 %2$s %3$s 或更新版本。"
 
-#: woocommerce/shipping/ecpay/shipping.php:171
+#: woocommerce/shipping/ecpay/shipping.php:174
 #: woocommerce/shipping/smilepay/shipping.php:161
 msgid "Invalid cellphone number"
 msgstr "無效的手機號碼"
@@ -619,6 +620,7 @@ msgstr "取得資訊"
 #. translators: %s: order ID
 #: woocommerce/admin/view/payment-info-template.php:7
 #: woocommerce/shipping/ecpay/includes/view/shipping-info-template.php:7
+#, php-format
 msgid "Order #%s"
 msgstr "訂單 #%s"
 
@@ -1161,6 +1163,7 @@ msgstr "訂單保留"
 
 #. translators: %s: count
 #: woocommerce/shipping/ecpay/includes/admin.php:101
+#, php-format
 msgid "%s order get shipping no."
 msgid_plural "%s order get shipping no."
 msgstr[0] "%s 筆訂單取得物流託運單。"
@@ -1172,3 +1175,7 @@ msgstr "綠界物流編號"
 #: woocommerce/shipping/smilepay/includes/admin.php:106
 msgid "SmilePay shipping ID"
 msgstr "速買配物流編號"
+
+#: woocommerce/admin/shipping.php:89
+msgid "Change status to transporting"
+msgstr "將狀態變更為運送中"

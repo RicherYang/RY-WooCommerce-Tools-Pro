@@ -49,6 +49,7 @@ final class RY_WTP_ECPay_Shipping
             add_action('ry_ecpay_shipping_response_status_3006', [$this, 'shipping_transporting'], 10, 2);
             add_action('ry_ecpay_shipping_response_status_3024', [$this, 'shipping_transporting'], 10, 2);
             add_action('ry_ecpay_shipping_response_status_3032', [$this, 'shipping_transporting'], 10, 2);
+            add_action('ry_ecpay_shipping_response_status_3119', [$this, 'shipping_transporting'], 10, 2);
             add_action('ry_ecpay_shipping_response_status_3301', [$this, 'shipping_transporting'], 10, 2);
         }
 

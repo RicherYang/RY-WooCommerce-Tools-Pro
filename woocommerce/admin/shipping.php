@@ -22,10 +22,14 @@ final class RY_WTP_WC_Admin_Shipping
             if ('edit' !== ($_GET['action'] ?? '')) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended , WordPress.Security.ValidatedSanitizedInput.MissingUnslash , WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
                 add_filter('manage_woocommerce_page_wc-orders_columns', [$this, 'shop_order_columns'], 11);
                 add_action('manage_woocommerce_page_wc-orders_custom_column', [$this, 'shop_order_column'], 11, 2);
+
+                add_filter('bulk_actions-woocommerce_page_wc-orders', [$this, 'shop_order_list_action']);
             }
         } else {
             add_filter('manage_shop_order_posts_columns', [$this, 'shop_order_columns'], 11);
             add_action('manage_shop_order_posts_custom_column', [$this, 'shop_order_column'], 11, 2);
+
+            add_filter('bulk_actions-woocommerce_page_wc-orders', [$this, 'shop_order_list_action']);
         }
 
         add_action('woocommerce_product_options_dimensions', [$this, 'shipping_options'], 99);
@@ -78,6 +82,22 @@ final class RY_WTP_WC_Admin_Shipping
                 }
             }
         }
+    }
+
+    public function shop_order_list_action($actions)
+    {
+        $add_idx = count($actions);
+        $loog_idx = 0;
+        foreach ($actions as $key => $action) {
+            $loog_idx += 1;
+            if (str_starts_with($key, 'mark_')) {
+                $add_idx = $loog_idx;
+            }
+        }
+
+        return array_slice($actions, 0, $add_idx) + [
+            'mark_ry-transporting' => __('Change status to transporting', 'ry-woocommerce-tools-pro'),
+        ] + array_slice($actions, $add_idx);
     }
 
     public function shipping_options()
