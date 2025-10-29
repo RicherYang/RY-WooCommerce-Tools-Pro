@@ -19,6 +19,7 @@ final class RY_WTP_WC_ECPay_Gateway
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways.php';
 
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/includes/gateway-credit-installment.php';
+        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-applepay.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-bnpl.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-credit-installment-3.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-credit-installment-6.php';
@@ -45,6 +46,7 @@ final class RY_WTP_WC_ECPay_Gateway
 
     public function add_method($methods)
     {
+        $methods[] = 'RY_ECPay_Gateway_Applepay';
         $methods[] = 'RY_ECPay_Gateway_Bnpl';
 
         if ('yes' === RY_WTP::get_option('ecpay_credit_installment', 'no')) {

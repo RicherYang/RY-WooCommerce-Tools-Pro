@@ -36,8 +36,7 @@ final class RY_WTP_WC_Admin_Gateways
             $html = '<tr><td><table>' . $html . '</table></td><td>';
         }
 
-        $html .= '<button id="ry-show-payment-info" type="button" class="button" data-orderid="' . esc_attr($order->get_id()) . '">' . esc_html__('Get info', 'ry-woocommerce-tools-pro') . '</button>
-            </td></tr>';
+        $html .= '<button id="ry-show-payment-info" type="button" class="button" data-orderid="' . esc_attr($order->get_id()) . '">' . esc_html__('Get info', 'ry-woocommerce-tools-pro') . '</button></td></tr>';
 
         return $html;
     }

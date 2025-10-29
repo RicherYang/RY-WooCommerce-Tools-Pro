@@ -18,16 +18,10 @@ class RY_ECPay_Gateway_Bnpl extends RY_WT_WC_ECPay_Payment_Gateway
         $this->process_payment_note = __('Pay via ECPay BNPL', 'ry-woocommerce-tools-pro');
 
         $this->form_fields = include RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/includes/settings/bnpl.php';
-        $this->init_settings();
-
-        $this->title = $this->get_option('title') ?: $this->method_title;
-        $this->description = $this->get_option('description');
-        $this->min_amount = (int) $this->get_option('min_amount', 0);
-        $this->max_amount = (int) $this->get_option('max_amount', 0);
-
-        add_filter('ry_admin_payment_info-ry_ecpay_bnpl', [$this, 'show_payment_info'], 10, 2);
 
         parent::__construct();
+
+        add_filter('ry_admin_payment_info-ry_ecpay_bnpl', [$this, 'show_payment_info'], 10, 2);
     }
 
     public function show_payment_info($html, $order)

@@ -41,6 +41,13 @@ function rywtp_ecpay_info_to_name($info)
             'hilife' => _x('hilife', 'ecpay info', 'ry-woocommerce-tools-pro'), // 萊爾富
             'okmart' => _x('okmart', 'ecpay info', 'ry-woocommerce-tools-pro'), // OK超商
             'ibon' => _x('ibon', 'ecpay info', 'ry-woocommerce-tools-pro'), // 7-11
+
+            'Canceled' => _x('Canceled', 'ecpay info', 'ry-woocommerce-tools-pro'), // 交易已取消
+            'Unauthorized' => _x('Unauthorized', 'ecpay info', 'ry-woocommerce-tools-pro'), // 未授權
+            'Authorized' => _x('Authorized', 'ecpay info', 'ry-woocommerce-tools-pro'), // 已授權
+            'To be captured' => _x('To be captured', 'ecpay info', 'ry-woocommerce-tools-pro'), // 要關帳
+            'Captured' => _x('Captured', 'ecpay info', 'ry-woocommerce-tools-pro'), // 已關帳
+            'Operation canceled' => _x('Operation canceled', 'ecpay info', 'ry-woocommerce-tools-pro'), // 操作取消
         ];
     }
 

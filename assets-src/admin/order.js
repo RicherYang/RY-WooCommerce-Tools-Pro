@@ -33,19 +33,18 @@ $(function () {
                     action: 'RY_payment_info',
                     orderid: $btn.data('orderid'),
                     _ajax_nonce: RyInfo._nonce.payment
-                },
-                success: function (response) {
-                    $btn.removeClass(['disabled'])
-                        .prop('disabled', false);
-                    if (response.success) {
-                        $(this).WCBackboneModal({
-                            template: 'ry-modal-view-payment-info',
-                            variable: response.data
-                        });
-                    }
                 }
+            }).done(function (Jdata) {
+                if (Jdata.success) {
+                    $(this).WCBackboneModal({
+                        template: 'ry-modal-view-payment-info',
+                        variable: Jdata.data
+                    });
+                }
+            }).always(function () {
+                $btn.removeClass(['disabled'])
+                    .prop('disabled', false);
             });
-
         });
     }
 
@@ -62,19 +61,63 @@ $(function () {
                     orderid: $btn.data('orderid'),
                     id: $btn.data('id'),
                     _ajax_nonce: RyInfo._nonce.shipping
-                },
-                success: function (response) {
-                    $btn.removeClass(['disabled'])
-                        .prop('disabled', false);
-                    if (response.success) {
-                        $(this).WCBackboneModal({
-                            template: 'ry-modal-view-shipping-info',
-                            variable: response.data
-                        });
-                    }
                 }
+            }).done(function (Jdata) {
+                if (Jdata.success) {
+                    $(this).WCBackboneModal({
+                        template: 'ry-modal-view-shipping-info',
+                        variable: Jdata.data
+                    });
+                }
+            }).always(function () {
+                $btn.removeClass(['disabled'])
+                    .prop('disabled', false);
             });
+        });
+    }
 
+    if ($('#ry-show-refound-info').length) {
+        $('#ry-show-refound-info').on('click', function () {
+            let $btn = $(this);
+            $btn.addClass(['disabled'])
+                .prop('disabled', true);
+            $('#ry-refound-info').html('');
+            $.ajax({
+                url: ajaxurl,
+                method: 'POST',
+                data: {
+                    action: 'RY_refound_info',
+                    orderid: $btn.data('orderid'),
+                    _ajax_nonce: RyInfo._nonce.refound
+                }
+            }).done(function (Jdata) {
+                if (Jdata.success) {
+                    const template = wp.template('ry-refound-info');
+                    $('#ry-refound-info').html(template(Jdata.data));
+                }
+            }).always(function () {
+                $btn.removeClass(['disabled'])
+                    .prop('disabled', false);
+            });
+        });
+
+        $('#ry-refound-info').on('click', '.refound-action', function () {
+            let $btn = $(this);
+            $btn.addClass(['disabled'])
+                .prop('disabled', true);
+            $.ajax({
+                url: ajaxurl,
+                method: 'POST',
+                data: {
+                    action: 'RY_refound_action',
+                    orderid: $btn.data('orderid'),
+                    refound: $btn.data('refound'),
+                    amount: $('#ry-refound-amount').val(),
+                    _ajax_nonce: RyInfo._nonce.refound
+                }
+            }).always(function () {
+                location.reload();
+            });
         });
     }
 });

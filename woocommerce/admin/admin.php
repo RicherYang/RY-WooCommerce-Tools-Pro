@@ -85,6 +85,7 @@ final class RY_WTP_WC_Admin
             '_nonce' => [
                 'payment' => wp_create_nonce('get-payment-info'),
                 'shipping' => wp_create_nonce('get-shipping-info'),
+                'refound' => wp_create_nonce('get-refound-info'),
             ],
         ]);
 

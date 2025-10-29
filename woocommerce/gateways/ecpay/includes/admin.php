@@ -15,10 +15,18 @@ final class RY_WTP_WC_ECPay_Gateway_Admin
 
     protected function do_init(): void
     {
+        add_action('add_meta_boxes', [$this, 'add_meta_box'], 10, 2);
+
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/includes/ajax.php';
         RY_WTP_WC_ECPay_Gateway_Admin_ajax::instance();
 
         add_filter('woocommerce_get_settings_rytools', [$this, 'add_setting'], 11, 2);
+    }
+
+    public function add_meta_box($post_type, $data_object)
+    {
+        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/includes/meta-box.php';
+        RY_ECPay_Gateway_Meta_Box::add_meta_box($post_type, $data_object);
     }
 
     public function add_setting($settings, $current_section)
