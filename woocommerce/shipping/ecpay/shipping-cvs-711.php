@@ -45,8 +45,8 @@ class RY_ECPay_Shipping_CVS_711_Pro extends RY_ECPay_Shipping_CVS_711
 
         parent::__construct($instance_ID);
 
-        $this->cost_cool = $this->settings['cost_cool'];
-        $this->cost_offisland = $this->settings['cost_offisland'];
+        $this->cost_cool = $this->get_option('cost_cool');
+        $this->cost_offisland = $this->get_option('cost_offisland');
     }
 
     public static function get_support_temp()

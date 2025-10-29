@@ -27,7 +27,7 @@ class RY_ECPay_Shipping_Home_Tcat_Pro extends RY_ECPay_Shipping_Home_Tcat
 
         parent::__construct($instance_ID);
 
-        $this->cost_cool = $this->settings['cost_cool'];
+        $this->cost_cool = $this->get_option('cost_cool');
     }
 
     public static function get_support_temp()
