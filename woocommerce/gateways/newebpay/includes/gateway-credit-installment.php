@@ -14,12 +14,6 @@ class RY_NewebPay_Gateway_Credit_Installment_Base extends RY_WT_WC_NewebPay_Paym
 
         $this->form_fields = include RY_WT_PLUGIN_DIR . 'woocommerce/gateways/newebpay/includes/settings/credit-installment.php';
         unset($this->form_fields['number_of_periods']);
-        $this->init_settings();
-
-        $this->title = $this->settings['title'] ?: $this->method_title;
-        $this->description = $this->settings['description'];
-        $this->min_amount = (int) $this->settings['min_amount'];
-        $this->max_amount = (int) $this->settings['max_amount'];
 
         parent::__construct();
     }

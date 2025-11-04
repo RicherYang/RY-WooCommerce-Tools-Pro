@@ -14,12 +14,6 @@ class RY_ECPay_Gateway_Credit_Installment_Base extends RY_WT_WC_ECPay_Payment_Ga
 
         $this->form_fields = include RY_WT_PLUGIN_DIR . 'woocommerce/gateways/ecpay/includes/settings/credit-installment.php';
         unset($this->form_fields['number_of_periods']);
-        $this->init_settings();
-
-        $this->title = $this->settings['title'] ?: $this->method_title;
-        $this->description = $this->settings['description'];
-        $this->min_amount = (int) $this->settings['min_amount'];
-        $this->max_amount = (int) $this->settings['max_amount'];
 
         parent::__construct();
     }
