@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-02-16 10:51+0800\n"
-"PO-Revision-Date: 2025-10-29 14:27+0800\n"
+"PO-Revision-Date: 2025-12-03 16:07+0800\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
@@ -27,7 +27,7 @@ msgstr "物流資訊"
 
 #: templates/order/order-ecpay-shipping-info.php:23
 #: templates/order/order-smilepay-shipping-info.php:23
-#: woocommerce/admin/shipping.php:49
+#: woocommerce/admin/shipping.php:47
 msgid "Shipping payment no"
 msgstr "物流寄件編號"
 
@@ -89,15 +89,15 @@ msgstr "選擇超商之後，你需要更新訂單以儲存相關資訊。"
 msgid "Tools"
 msgstr "工具"
 
-#: woocommerce/admin/shipping.php:161
+#: woocommerce/admin/shipping.php:176
 msgid "Get shipping no (normal temperature)"
 msgstr "取得物流單號 (常溫)"
 
-#: woocommerce/admin/shipping.php:165
+#: woocommerce/admin/shipping.php:180
 msgid "Get shipping no (refrigerated)"
 msgstr "取得物流單號 (冷藏)"
 
-#: woocommerce/admin/shipping.php:169
+#: woocommerce/admin/shipping.php:184
 msgid "Get shipping no (frozen)"
 msgstr "取得物流單號 (冷凍)"
 
@@ -107,11 +107,11 @@ msgid "Shipping declare amount"
 msgstr "運送申報價值"
 
 #: woocommerce/admin/view/product-shipping-option.php:13
-#: woocommerce/admin/view/product-variation-shipping-option.php:17
+#: woocommerce/admin/view/product-variation-shipping-option.php:18
 msgid "Transport temperature"
 msgstr "運送溫層"
 
-#: woocommerce/admin/view/product-variation-shipping-option.php:20
+#: woocommerce/admin/view/product-variation-shipping-option.php:21
 msgctxt "Transport temp"
 msgid "Same as parent"
 msgstr "與上層相同"
@@ -593,8 +593,8 @@ msgid "ECPay select cvs store"
 msgstr "綠界選擇超商門市"
 
 #. translators: %1$s: Name of this plugin %2$s: Name of require plugin %3$s: min require version
-#: admin/admin.php:50
-#: admin/admin.php:61
+#: admin/admin.php:52
+#: admin/admin.php:63
 #, php-format
 msgid "<strong>%1$s</strong> is inactive. It require %2$s %3$s or newer."
 msgstr "<strong>%1$s</strong> 暫停運作。 需求 %2$s %3$s 或更新版本。"
@@ -1177,7 +1177,7 @@ msgstr "綠界物流編號"
 msgid "SmilePay shipping ID"
 msgstr "速買配物流編號"
 
-#: woocommerce/admin/shipping.php:99
+#: woocommerce/admin/shipping.php:98
 msgid "Change status to transporting"
 msgstr "將狀態變更為運送中"
 
@@ -1298,3 +1298,23 @@ msgstr "綠界 Apple Pay"
 #: woocommerce/gateways/ecpay/gateway-applepay.php:20
 msgid "Pay via ECPay Apple Pay"
 msgstr "使用 綠界 Apple Pay 付款"
+
+#. Translators: %1$s shipping method name.
+#: woocommerce/admin/shipping.php:205
+#, php-format
+msgid "Any &quot;%1$s&quot; method"
+msgstr "任何「%1$s」方式"
+
+#: woocommerce/admin/shipping.php:208
+msgid "Other locations"
+msgstr "其他區域"
+
+#: woocommerce/admin/view/product-shipping-option.php:25
+#: woocommerce/admin/view/product-variation-shipping-option.php:32
+msgid "Skip shipping method"
+msgstr "禁止的運送方式"
+
+#: woocommerce/admin/view/product-shipping-option.php:29
+#: woocommerce/admin/view/product-variation-shipping-option.php:36
+msgid "Select shipping methods to skip"
+msgstr "請選擇要禁止的運送方式"

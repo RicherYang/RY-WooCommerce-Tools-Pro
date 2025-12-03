@@ -20,6 +20,8 @@ final class RY_WTP_Admin extends RY_Abstract_Admin
     {
         parent::do_init();
 
+        include_once RY_WTP_PLUGIN_DIR . 'admin/functions.php';
+
         $this->license = RY_WTP_License::instance();
         add_filter('ry-plugin/license_list', [$this, 'add_license']);
 

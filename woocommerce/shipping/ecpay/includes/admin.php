@@ -160,7 +160,7 @@ final class RY_WTP_ECPay_Shipping_Admin
                 'type' => substr($action, 15),
                 '_wpnonce' => wp_create_nonce('ry-print-shipping'),
             ], admin_url('admin-post.php'));
-            wp_redirect($redirect_to);
+            wp_safe_redirect($redirect_to);
             exit();
         }
 

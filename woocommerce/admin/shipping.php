@@ -43,13 +43,12 @@ final class RY_WTP_WC_Admin_Shipping
 
     public function shop_order_columns($columns)
     {
-        $add_index = array_search('shipping_address', array_keys($columns)) + 1;
-        $pre_array = array_splice($columns, 0, $add_index);
-        $array = [
+        $pre_columns = [
             'ry_shipping_no' => __('Shipping payment no', 'ry-woocommerce-tools-pro'),
         ];
-
-        return array_merge($pre_array, $array, $columns);
+        $pre_idx = array_search('shipping_address', array_keys($columns)) + 1;
+        $pre_array = array_splice($columns, 0, $pre_idx);
+        return array_merge($pre_array, $pre_columns, $columns);
     }
 
     public function shop_order_column($column, $order)
@@ -126,6 +125,14 @@ final class RY_WTP_WC_Admin_Shipping
             $temp = '1';
         }
         $product->update_meta_data('_ry_shipping_temp', $temp);
+
+        $skip_shipping = (array) wp_unslash($_POST['ry_shipping_skip_shipping'] ?? ''); // phpcs:ignore WordPress.Security.NonceVerification.Missing , WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+        $skip_shipping = array_filter(array_map('sanitize_text_field', $skip_shipping));
+        if (count($skip_shipping)) {
+            $product->update_meta_data('_ry_shipping_skip_shipping', $skip_shipping);
+        } else {
+            $product->delete_meta_data('_ry_shipping_skip_shipping');
+        }
     }
 
     public function save_variation_shipping_options($variation, $i)
@@ -139,6 +146,14 @@ final class RY_WTP_WC_Admin_Shipping
             $temp = '0';
         }
         $variation->update_meta_data('_ry_shipping_temp', $temp);
+
+        $skip_shipping = (array) wp_unslash($_POST['variable_ry_shipping_skip_shipping'][$i] ?? ''); // phpcs:ignore WordPress.Security.NonceVerification.Missing , WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+        $skip_shipping = array_filter(array_map('sanitize_text_field', $skip_shipping));
+        if (count($skip_shipping)) {
+            $variation->update_meta_data('_ry_shipping_skip_shipping', $skip_shipping);
+        } else {
+            $variation->delete_meta_data('_ry_shipping_skip_shipping');
+        }
     }
 
     public function add_shipping_info_action($order, $type)
@@ -169,5 +184,41 @@ final class RY_WTP_WC_Admin_Shipping
                 echo '<button type="button" class="button ry-' . esc_attr($type) . '-shipping-info" data-orderid="' . esc_attr($order->get_id()) . '" data-temp="3">' . esc_html__('Get shipping no (frozen)', 'ry-woocommerce-tools-pro') . '</button>';
             }
         }
+    }
+
+    protected function get_options_shipping_methods()
+    {
+        static $shipping_methods = [];
+
+        if (count($shipping_methods) == 0) {
+            $data_store = WC_Data_Store::load('shipping-zone');
+            $raw_zones = $data_store->get_zones();
+            $zones = [];
+            foreach ($raw_zones as $raw_zone) {
+                $zones[] = new WC_Shipping_Zone($raw_zone);
+            }
+            $zones[] = new WC_Shipping_Zone(0);
+            foreach (WC()->shipping()->load_shipping_methods() as $method) {
+                $shipping_methods[$method->get_method_title()] = [];
+
+                // Translators: %1$s shipping method name.
+                $shipping_methods[$method->get_method_title()][$method->id] = sprintf(__('Any &quot;%1$s&quot; method', 'ry-woocommerce-tools-pro'), $method->get_method_title());
+
+                foreach ($zones as $zone) {
+                    $zone_title = $zone->get_id() ? $zone->get_zone_name() : __('Other locations', 'ry-woocommerce-tools-pro');
+
+                    foreach ($zone->get_shipping_methods() as $shipping_method_instance_id => $shipping_method_instance) {
+                        if ($shipping_method_instance->id !== $method->id) {
+                            continue;
+                        }
+
+                        $shipping_methods[$method->get_method_title()][$shipping_method_instance->get_rate_id()] = $zone_title . ' &ndash; '
+                            . $shipping_method_instance->get_title() . ' (#' . $shipping_method_instance_id . ')';
+                    }
+                }
+            }
+        }
+
+        return $shipping_methods;
     }
 }

@@ -18,3 +18,14 @@ woocommerce_wp_select([
         '3' => _x('Frozen', 'Transport temp', 'ry-woocommerce-tools'), // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
     ],
 ]);
+
+rywtp_multiselect([
+    'id' => 'ry_shipping_skip_shipping',
+    'name' => 'ry_shipping_skip_shipping[]',
+    'label' => __('Skip shipping method', 'ry-woocommerce-tools-pro'),
+    'value' => (array) $product_object->get_meta('_ry_shipping_skip_shipping', true),
+    'options' => $this->get_options_shipping_methods(),
+    'custom_attributes' => [
+        'data-placeholder' => __('Select shipping methods to skip', 'ry-woocommerce-tools-pro'),
+    ],
+]);

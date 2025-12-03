@@ -38,7 +38,7 @@ if (!class_exists('RY_Abstract_Admin', false)) {
             }
 
             echo '<div class="notice notice-info is-dismissible">';
-            echo '<p><strong>' . esc_html($this->license::$main_class::PLUGIN_NAME) . ': 你的授權尚未啟動！</strong></p>';
+            echo '<p><strong>' . esc_html($this->license::$main_class::PLUGIN_NAME) . ': 你的<a href="' . esc_url(admin_url('admin.php?page=ry-license')) . '">授權</a>尚未啟動！</strong></p>';
             echo '</div>';
         }
 
