@@ -12,7 +12,7 @@ if (!class_exists('RY_Abstract_Link_Server', false)) {
             return [];
         }
 
-        public function check_version(): bool|array
+        public function check_version()
         {
             @set_time_limit(30); // phpcs:ignore Squiz.PHP.DiscouragedFunctions.Discouraged
 
@@ -24,7 +24,7 @@ if (!class_exists('RY_Abstract_Link_Server', false)) {
             return $this->decode_response($response);
         }
 
-        public function get_info(): bool|array
+        public function get_info()
         {
             @set_time_limit(30); // phpcs:ignore Squiz.PHP.DiscouragedFunctions.Discouraged
 
@@ -36,7 +36,7 @@ if (!class_exists('RY_Abstract_Link_Server', false)) {
             return $this->decode_response($response);
         }
 
-        public function expire_data(): bool|array
+        public function expire_data()
         {
             @set_time_limit(30); // phpcs:ignore Squiz.PHP.DiscouragedFunctions.Discouraged
 
@@ -55,7 +55,7 @@ if (!class_exists('RY_Abstract_Link_Server', false)) {
             return $this->decode_response($response);
         }
 
-        public function activate_key(string $key): bool|array
+        public function activate_key(string $key)
         {
             @set_time_limit(30); // phpcs:ignore Squiz.PHP.DiscouragedFunctions.Discouraged
 
@@ -75,7 +75,7 @@ if (!class_exists('RY_Abstract_Link_Server', false)) {
             return $this->decode_response($response);
         }
 
-        protected function decode_response($response): bool|array
+        protected function decode_response($response)
         {
             if (is_wp_error($response)) {
                 return false;

@@ -7,12 +7,12 @@ if (!class_exists('RY_Abstract_Basic', false)) {
 
         public const PLUGIN_NAME = '';
 
-        public static function get_option(string $option, mixed $default = false): mixed
+        public static function get_option(string $option, $default = false)
         {
             return get_option(static::OPTION_PREFIX . $option, $default);
         }
 
-        public static function update_option(string $option, mixed $value, ?bool $autoload = null): bool
+        public static function update_option(string $option, $value, ?bool $autoload = null): bool
         {
             return update_option(static::OPTION_PREFIX . $option, $value, $autoload);
         }
@@ -22,12 +22,12 @@ if (!class_exists('RY_Abstract_Basic', false)) {
             return delete_option(static::OPTION_PREFIX . $option);
         }
 
-        public static function get_transient(string $transient): mixed
+        public static function get_transient(string $transient)
         {
             return get_transient(static::OPTION_PREFIX . $transient);
         }
 
-        public static function set_transient(string $transient, mixed $value, int $expiration = 0): bool
+        public static function set_transient(string $transient, $value, int $expiration = 0): bool
         {
             return set_transient(static::OPTION_PREFIX . $transient, $value, $expiration);
         }

@@ -1,23 +1,17 @@
 <?php
 
-use Automattic\WooCommerce\Blocks\Payments\Integrations\AbstractPaymentMethodType;
-
-final class RY_ECPay_Gateway_Credit_Installment_24_Blocks_Support extends AbstractPaymentMethodType
+final class RY_ECPay_Gateway_Credit_Installment_24_Blocks_Support extends RY_WTP_AbstractPaymentMethodType
 {
     protected $name = 'ry_ecpay_credit_installment_24';
-
-    private $gateway;
 
     public function initialize()
     {
         $this->settings = get_option('woocommerce_ry_ecpay_credit_installment_24_settings', []);
-        $payment_gateways = WC()->payment_gateways->payment_gateways();
-        $this->gateway = $payment_gateways[$this->name];
     }
 
     public function is_active()
     {
-        return $this->gateway->is_available();
+        return $this->get_gateway()->is_available();
     }
 
     public function get_payment_method_script_handles()
@@ -34,12 +28,12 @@ final class RY_ECPay_Gateway_Credit_Installment_24_Blocks_Support extends Abstra
     {
         return [
             'title' => $this->get_setting('title'),
-            'button_title' => $this->gateway->order_button_text,
+            'button_title' => $this->get_gateway()->order_button_text,
             'description' => $this->get_setting('description'),
-            'supports' => array_filter($this->gateway->supports, [$this->gateway, 'supports']),
+            'supports' => array_filter($this->get_gateway()->supports, [$this->get_gateway(), 'supports']),
             'icons' => [
                 'id' => $this->name,
-                'src' => $this->gateway->get_icon_url(),
+                'src' => $this->get_gateway()->get_icon_url(),
                 'alt' => __('ECPay', 'ry-woocommerce-tools-pro'),
             ],
         ];

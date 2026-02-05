@@ -24,6 +24,8 @@ final class RY_WTP_WC_SmilePay_Gateway_Block
     public function add_block_support()
     {
         if (class_exists('Automattic\WooCommerce\Blocks\Payments\Integrations\AbstractPaymentMethodType')) {
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/abstracts/abstract-payment-method-type.php';
+
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/smilepay/blocks/gateway-atm.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/smilepay/blocks/gateway-barcode.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/smilepay/blocks/gateway-credit.php';

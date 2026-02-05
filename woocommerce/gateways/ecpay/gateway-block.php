@@ -24,6 +24,8 @@ final class RY_WTP_WC_ECPay_Gateway_Block
     public function add_block_support()
     {
         if (class_exists('Automattic\WooCommerce\Blocks\Payments\Integrations\AbstractPaymentMethodType')) {
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/abstracts/abstract-payment-method-type.php';
+
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/blocks/gateway-atm.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/blocks/gateway-barcode.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/blocks/gateway-bnpl.php';
