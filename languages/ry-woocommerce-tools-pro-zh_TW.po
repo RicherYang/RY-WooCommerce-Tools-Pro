@@ -116,19 +116,19 @@ msgctxt "Transport temp"
 msgid "Same as parent"
 msgstr "與上層相同"
 
-#: woocommerce/gateways/ecpay/blocks/gateway-atm.php:43
-#: woocommerce/gateways/ecpay/blocks/gateway-barcode.php:43
-#: woocommerce/gateways/ecpay/blocks/gateway-bnpl.php:43
-#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-3.php:43
-#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-6.php:43
-#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-12.php:43
-#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-18.php:43
-#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-24.php:43
-#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment.php:59
-#: woocommerce/gateways/ecpay/blocks/gateway-credit.php:43
-#: woocommerce/gateways/ecpay/blocks/gateway-cvs.php:43
-#: woocommerce/gateways/ecpay/blocks/gateway-twqr.php:43
-#: woocommerce/gateways/ecpay/blocks/gateway-webatm.php:43
+#: woocommerce/gateways/ecpay/blocks/gateway-atm.php:37
+#: woocommerce/gateways/ecpay/blocks/gateway-barcode.php:37
+#: woocommerce/gateways/ecpay/blocks/gateway-bnpl.php:37
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-3.php:37
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-6.php:37
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-12.php:37
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-18.php:37
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-24.php:37
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment.php:54
+#: woocommerce/gateways/ecpay/blocks/gateway-credit.php:37
+#: woocommerce/gateways/ecpay/blocks/gateway-cvs.php:37
+#: woocommerce/gateways/ecpay/blocks/gateway-twqr.php:37
+#: woocommerce/gateways/ecpay/blocks/gateway-webatm.php:37
 msgid "ECPay"
 msgstr "綠界科技"
 
@@ -253,17 +253,17 @@ msgstr "在信件中顯示付款資訊"
 msgid "Add payment info in \"%s\" email."
 msgstr "在「%s」信件中顯示付款資訊。"
 
-#: woocommerce/gateways/newebpay/blocks/gateway-atm.php:43
-#: woocommerce/gateways/newebpay/blocks/gateway-barcode.php:43
-#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-3.php:43
-#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-6.php:43
-#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-12.php:43
-#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-18.php:43
-#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-24.php:43
-#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment.php:59
-#: woocommerce/gateways/newebpay/blocks/gateway-credit.php:43
-#: woocommerce/gateways/newebpay/blocks/gateway-cvs.php:43
-#: woocommerce/gateways/newebpay/blocks/gateway-webatm.php:43
+#: woocommerce/gateways/newebpay/blocks/gateway-atm.php:37
+#: woocommerce/gateways/newebpay/blocks/gateway-barcode.php:37
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-3.php:37
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-6.php:37
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-12.php:37
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-18.php:37
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-24.php:37
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment.php:54
+#: woocommerce/gateways/newebpay/blocks/gateway-credit.php:37
+#: woocommerce/gateways/newebpay/blocks/gateway-cvs.php:37
+#: woocommerce/gateways/newebpay/blocks/gateway-webatm.php:37
 msgid "NewebPay"
 msgstr "藍新金流"
 
@@ -324,12 +324,12 @@ msgstr "藍新信用卡（分 6 期）"
 msgid "Pay via NewebPay Credit(6 installment)"
 msgstr "使用 藍新信用卡（分 6 期） 付款"
 
-#: woocommerce/gateways/smilepay/blocks/gateway-atm.php:43
-#: woocommerce/gateways/smilepay/blocks/gateway-barcode.php:43
-#: woocommerce/gateways/smilepay/blocks/gateway-credit.php:43
-#: woocommerce/gateways/smilepay/blocks/gateway-cvs-711.php:43
-#: woocommerce/gateways/smilepay/blocks/gateway-cvs-fami.php:43
-#: woocommerce/gateways/smilepay/blocks/gateway-webatm.php:43
+#: woocommerce/gateways/smilepay/blocks/gateway-atm.php:37
+#: woocommerce/gateways/smilepay/blocks/gateway-barcode.php:37
+#: woocommerce/gateways/smilepay/blocks/gateway-credit.php:37
+#: woocommerce/gateways/smilepay/blocks/gateway-cvs-711.php:37
+#: woocommerce/gateways/smilepay/blocks/gateway-cvs-fami.php:37
+#: woocommerce/gateways/smilepay/blocks/gateway-webatm.php:37
 msgid "SmilePay"
 msgstr "速買配"
 

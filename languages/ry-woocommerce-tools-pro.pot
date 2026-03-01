@@ -1,15 +1,15 @@
-# Copyright (C) 2025 Richer Yang
+# Copyright (C) 2026 Richer Yang
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: RY Tools (Pro) for WooCommerce 3.6.9\n"
+"Project-Id-Version: RY Tools (Pro) for WooCommerce 3.6.11\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ry-woocommerce-tools-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-12-03T22:20:47+08:00\n"
+"POT-Creation-Date: 2026-03-01T10:34:14+08:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ry-woocommerce-tools-pro\n"
@@ -527,19 +527,19 @@ msgctxt "Transport temp"
 msgid "Same as parent"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/blocks/gateway-atm.php:43
-#: woocommerce/gateways/ecpay/blocks/gateway-barcode.php:43
-#: woocommerce/gateways/ecpay/blocks/gateway-bnpl.php:43
-#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-3.php:43
-#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-6.php:43
-#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-12.php:43
-#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-18.php:43
-#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-24.php:43
-#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment.php:59
-#: woocommerce/gateways/ecpay/blocks/gateway-credit.php:43
-#: woocommerce/gateways/ecpay/blocks/gateway-cvs.php:43
-#: woocommerce/gateways/ecpay/blocks/gateway-twqr.php:43
-#: woocommerce/gateways/ecpay/blocks/gateway-webatm.php:43
+#: woocommerce/gateways/ecpay/blocks/gateway-atm.php:37
+#: woocommerce/gateways/ecpay/blocks/gateway-barcode.php:37
+#: woocommerce/gateways/ecpay/blocks/gateway-bnpl.php:37
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-3.php:37
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-6.php:37
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-12.php:37
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-18.php:37
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-24.php:37
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment.php:54
+#: woocommerce/gateways/ecpay/blocks/gateway-credit.php:37
+#: woocommerce/gateways/ecpay/blocks/gateway-cvs.php:37
+#: woocommerce/gateways/ecpay/blocks/gateway-twqr.php:37
+#: woocommerce/gateways/ecpay/blocks/gateway-webatm.php:37
 msgid "ECPay"
 msgstr ""
 
@@ -878,17 +878,17 @@ msgstr ""
 msgid "Refound"
 msgstr ""
 
-#: woocommerce/gateways/newebpay/blocks/gateway-atm.php:43
-#: woocommerce/gateways/newebpay/blocks/gateway-barcode.php:43
-#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-3.php:43
-#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-6.php:43
-#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-12.php:43
-#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-18.php:43
-#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-24.php:43
-#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment.php:59
-#: woocommerce/gateways/newebpay/blocks/gateway-credit.php:43
-#: woocommerce/gateways/newebpay/blocks/gateway-cvs.php:43
-#: woocommerce/gateways/newebpay/blocks/gateway-webatm.php:43
+#: woocommerce/gateways/newebpay/blocks/gateway-atm.php:37
+#: woocommerce/gateways/newebpay/blocks/gateway-barcode.php:37
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-3.php:37
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-6.php:37
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-12.php:37
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-18.php:37
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-24.php:37
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment.php:54
+#: woocommerce/gateways/newebpay/blocks/gateway-credit.php:37
+#: woocommerce/gateways/newebpay/blocks/gateway-cvs.php:37
+#: woocommerce/gateways/newebpay/blocks/gateway-webatm.php:37
 msgid "NewebPay"
 msgstr ""
 
@@ -977,12 +977,12 @@ msgstr ""
 msgid "Card type"
 msgstr ""
 
-#: woocommerce/gateways/smilepay/blocks/gateway-atm.php:43
-#: woocommerce/gateways/smilepay/blocks/gateway-barcode.php:43
-#: woocommerce/gateways/smilepay/blocks/gateway-credit.php:43
-#: woocommerce/gateways/smilepay/blocks/gateway-cvs-711.php:43
-#: woocommerce/gateways/smilepay/blocks/gateway-cvs-fami.php:43
-#: woocommerce/gateways/smilepay/blocks/gateway-webatm.php:43
+#: woocommerce/gateways/smilepay/blocks/gateway-atm.php:37
+#: woocommerce/gateways/smilepay/blocks/gateway-barcode.php:37
+#: woocommerce/gateways/smilepay/blocks/gateway-credit.php:37
+#: woocommerce/gateways/smilepay/blocks/gateway-cvs-711.php:37
+#: woocommerce/gateways/smilepay/blocks/gateway-cvs-fami.php:37
+#: woocommerce/gateways/smilepay/blocks/gateway-webatm.php:37
 msgid "SmilePay"
 msgstr ""
 
