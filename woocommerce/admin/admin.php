@@ -19,6 +19,7 @@ final class RY_WTP_WC_Admin
         add_action('admin_enqueue_scripts', [$this, 'add_scripts']);
 
         add_filter('woocommerce_get_sections_rytools', [$this, 'add_sections'], 12);
+        add_filter('woocommerce_get_settings_rytools', [$this, 'add_setting'], 11, 2);
         add_action('ry_setting_section_ouput_tools', [$this, 'output_tools']);
 
         add_action('woocommerce_admin_order_data_after_payment_info', [$this, 'load_script']);
@@ -38,6 +39,23 @@ final class RY_WTP_WC_Admin
         unset($sections['pro_info']);
 
         return $sections;
+    }
+
+    public function add_setting($settings, $current_section)
+    {
+        if ($current_section == '') {
+            $setting_idx = array_search(RY_WT::OPTION_PREFIX . 'show_unpay_title', array_column($settings, 'id'));
+            array_splice($settings, $setting_idx + 1, 0, [
+                [
+                    'title' => __('Virtual product skip processing', 'ry-woocommerce-tools-pro'),
+                    'id' => RY_WTP::OPTION_PREFIX . 'virtual_skip_processing',
+                    'type' => 'checkbox',
+                    'default' => 'no',
+                    'desc' => __('Virtual product order skip processing status.', 'ry-woocommerce-tools-pro'),
+                ],
+            ]);
+        }
+        return $settings;
     }
 
     public function output_tools()
