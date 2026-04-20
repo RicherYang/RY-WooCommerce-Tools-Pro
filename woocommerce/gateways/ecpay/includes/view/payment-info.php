@@ -102,7 +102,7 @@
             <?php echo esc_html($info['ATMAccNo']); ?>
         </p>
         <?php } ?>
-        <?php if (str_starts_with($info['PaymentType'], 'CVS_')) { ?>
+        <?php if (str_starts_with($info['PaymentType'], 'CVS_') || str_starts_with($info['PaymentType'], 'BARCODE_')) { ?>
         <p>
             <strong><?php esc_html_e('Payment cvs', 'ry-woocommerce-tools-pro'); ?></strong><br>
             <?php echo esc_html(rywtp_ecpay_info_to_name($info['PayFrom'])); ?>

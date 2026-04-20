@@ -11,6 +11,9 @@ final class RY_SmilePay_Gateway_Barcode_Blocks_Support extends RY_WTP_AbstractPa
 
     public function is_active()
     {
+        if ($this->get_gateway() === null) {
+            return filter_var($this->get_setting('enabled', false), FILTER_VALIDATE_BOOLEAN);
+        }
         return $this->get_gateway()->is_available();
     }
 

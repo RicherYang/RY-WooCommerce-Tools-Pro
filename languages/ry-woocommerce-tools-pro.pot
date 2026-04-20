@@ -2,14 +2,14 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: RY Tools (Pro) for WooCommerce 3.6.12\n"
+"Project-Id-Version: RY Tools (Pro) for WooCommerce 3.7.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ry-woocommerce-tools-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-04-09T19:54:09+08:00\n"
+"POT-Creation-Date: 2026-04-19T17:40:33+08:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ry-woocommerce-tools-pro\n"
@@ -153,235 +153,260 @@ msgstr ""
 
 #: includes/functions.php:29
 msgctxt "ecpay info"
-msgid "CVS_CVS"
+msgid "ATM_KGI"
 msgstr ""
 
 #: includes/functions.php:30
 msgctxt "ecpay info"
-msgid "CVS_OK"
+msgid "CVS_CVS"
 msgstr ""
 
 #: includes/functions.php:31
 msgctxt "ecpay info"
-msgid "CVS_FAMILY"
+msgid "CVS_OK"
 msgstr ""
 
 #: includes/functions.php:32
 msgctxt "ecpay info"
-msgid "CVS_HILIFE"
+msgid "CVS_FAMILY"
 msgstr ""
 
 #: includes/functions.php:33
 msgctxt "ecpay info"
-msgid "CVS_IBON"
+msgid "CVS_HILIFE"
 msgstr ""
 
 #: includes/functions.php:34
 msgctxt "ecpay info"
-msgid "BARCODE_BARCODE"
+msgid "CVS_IBON"
 msgstr ""
 
 #: includes/functions.php:35
 msgctxt "ecpay info"
-msgid "Credit_CreditCard"
+msgid "BARCODE_BARCODE"
 msgstr ""
 
 #: includes/functions.php:36
 msgctxt "ecpay info"
-msgid "Flexible_Installment"
+msgid "Credit_CreditCard"
 msgstr ""
 
 #: includes/functions.php:37
 msgctxt "ecpay info"
-msgid "TWQR_OPAY"
+msgid "Flexible_Installment"
 msgstr ""
 
 #: includes/functions.php:38
 msgctxt "ecpay info"
-msgid "BNPL_URICH"
+msgid "TWQR_OPAY"
+msgstr ""
+
+#: includes/functions.php:39
+msgctxt "ecpay info"
+msgid "WeiXin_OPAY"
 msgstr ""
 
 #: includes/functions.php:40
 msgctxt "ecpay info"
-msgid "family"
+msgid "BNPL_URICH"
 msgstr ""
 
 #: includes/functions.php:41
 msgctxt "ecpay info"
-msgid "hilife"
+msgid "BNPL_ZINGALA"
 msgstr ""
 
 #: includes/functions.php:42
 msgctxt "ecpay info"
-msgid "okmart"
+msgid "iPASS Money"
 msgstr ""
 
 #: includes/functions.php:43
 msgctxt "ecpay info"
-msgid "ibon"
+msgid "Jkopay"
 msgstr ""
 
 #: includes/functions.php:45
 msgctxt "ecpay info"
-msgid "Canceled"
+msgid "family"
 msgstr ""
 
 #: includes/functions.php:46
 msgctxt "ecpay info"
-msgid "Unauthorized"
+msgid "hilife"
 msgstr ""
 
 #: includes/functions.php:47
 msgctxt "ecpay info"
-msgid "Authorized"
+msgid "okmart"
 msgstr ""
 
 #: includes/functions.php:48
 msgctxt "ecpay info"
-msgid "To be captured"
-msgstr ""
-
-#: includes/functions.php:49
-msgctxt "ecpay info"
-msgid "Captured"
+msgid "ibon"
 msgstr ""
 
 #: includes/functions.php:50
 msgctxt "ecpay info"
+msgid "Canceled"
+msgstr ""
+
+#: includes/functions.php:51
+msgctxt "ecpay info"
+msgid "Unauthorized"
+msgstr ""
+
+#: includes/functions.php:52
+msgctxt "ecpay info"
+msgid "Authorized"
+msgstr ""
+
+#: includes/functions.php:53
+msgctxt "ecpay info"
+msgid "To be captured"
+msgstr ""
+
+#: includes/functions.php:54
+msgctxt "ecpay info"
+msgid "Captured"
+msgstr ""
+
+#: includes/functions.php:55
+msgctxt "ecpay info"
 msgid "Operation canceled"
-msgstr ""
-
-#: includes/functions.php:62
-msgctxt "ecpay shipping"
-msgid "CVS_FAMI"
-msgstr ""
-
-#: includes/functions.php:63
-msgctxt "ecpay shipping"
-msgid "CVS_UNIMART"
-msgstr ""
-
-#: includes/functions.php:64
-msgctxt "ecpay shipping"
-msgid "CVS_UNIMARTFREEZE"
-msgstr ""
-
-#: includes/functions.php:65
-msgctxt "ecpay shipping"
-msgid "CVS_FAMIC2C"
-msgstr ""
-
-#: includes/functions.php:66
-msgctxt "ecpay shipping"
-msgid "CVS_UNIMARTC2C"
 msgstr ""
 
 #: includes/functions.php:67
 msgctxt "ecpay shipping"
-msgid "CVS_HILIFE"
+msgid "CVS_FAMI"
 msgstr ""
 
 #: includes/functions.php:68
 msgctxt "ecpay shipping"
-msgid "CVS_HILIFEC2C"
+msgid "CVS_UNIMART"
 msgstr ""
 
 #: includes/functions.php:69
 msgctxt "ecpay shipping"
-msgid "CVS_OKMARTC2C"
+msgid "CVS_UNIMARTFREEZE"
 msgstr ""
 
 #: includes/functions.php:70
 msgctxt "ecpay shipping"
-msgid "HOME_TCAT"
+msgid "CVS_FAMIC2C"
 msgstr ""
 
 #: includes/functions.php:71
 msgctxt "ecpay shipping"
+msgid "CVS_UNIMARTC2C"
+msgstr ""
+
+#: includes/functions.php:72
+msgctxt "ecpay shipping"
+msgid "CVS_HILIFE"
+msgstr ""
+
+#: includes/functions.php:73
+msgctxt "ecpay shipping"
+msgid "CVS_HILIFEC2C"
+msgstr ""
+
+#: includes/functions.php:74
+msgctxt "ecpay shipping"
+msgid "CVS_OKMARTC2C"
+msgstr ""
+
+#: includes/functions.php:75
+msgctxt "ecpay shipping"
+msgid "HOME_TCAT"
+msgstr ""
+
+#: includes/functions.php:76
+msgctxt "ecpay shipping"
 msgid "HOME_POST"
-msgstr ""
-
-#: includes/functions.php:320
-msgctxt "newebpay type"
-msgid "CREDIT"
-msgstr ""
-
-#: includes/functions.php:321
-msgctxt "newebpay type"
-msgid "VACC"
-msgstr ""
-
-#: includes/functions.php:322
-msgctxt "newebpay type"
-msgid "WEBATM"
-msgstr ""
-
-#: includes/functions.php:323
-msgctxt "newebpay type"
-msgid "BARCODE"
-msgstr ""
-
-#: includes/functions.php:324
-msgctxt "newebpay type"
-msgid "CVS"
 msgstr ""
 
 #: includes/functions.php:325
 msgctxt "newebpay type"
-msgid "LINEPAY"
+msgid "CREDIT"
 msgstr ""
 
 #: includes/functions.php:326
 msgctxt "newebpay type"
-msgid "ESUNWALLET"
+msgid "VACC"
 msgstr ""
 
 #: includes/functions.php:327
 msgctxt "newebpay type"
-msgid "TAIWANPAY"
+msgid "WEBATM"
 msgstr ""
 
 #: includes/functions.php:328
 msgctxt "newebpay type"
-msgid "CVSCOM"
+msgid "BARCODE"
 msgstr ""
 
 #: includes/functions.php:329
 msgctxt "newebpay type"
+msgid "CVS"
+msgstr ""
+
+#: includes/functions.php:330
+msgctxt "newebpay type"
+msgid "LINEPAY"
+msgstr ""
+
+#: includes/functions.php:331
+msgctxt "newebpay type"
+msgid "ESUNWALLET"
+msgstr ""
+
+#: includes/functions.php:332
+msgctxt "newebpay type"
+msgid "TAIWANPAY"
+msgstr ""
+
+#: includes/functions.php:333
+msgctxt "newebpay type"
+msgid "CVSCOM"
+msgstr ""
+
+#: includes/functions.php:334
+msgctxt "newebpay type"
 msgid "FULA"
-msgstr ""
-
-#: includes/functions.php:341
-msgctxt "newebpay method"
-msgid "CREDIT"
-msgstr ""
-
-#: includes/functions.php:342
-msgctxt "newebpay method"
-msgid "FOREIGN"
-msgstr ""
-
-#: includes/functions.php:343
-msgctxt "newebpay method"
-msgid "NTCB"
-msgstr ""
-
-#: includes/functions.php:344
-msgctxt "newebpay method"
-msgid "UNIONPAY"
-msgstr ""
-
-#: includes/functions.php:345
-msgctxt "newebpay method"
-msgid "APPLEPAY"
 msgstr ""
 
 #: includes/functions.php:346
 msgctxt "newebpay method"
-msgid "GOOGLEPAY"
+msgid "CREDIT"
 msgstr ""
 
 #: includes/functions.php:347
+msgctxt "newebpay method"
+msgid "FOREIGN"
+msgstr ""
+
+#: includes/functions.php:348
+msgctxt "newebpay method"
+msgid "NTCB"
+msgstr ""
+
+#: includes/functions.php:349
+msgctxt "newebpay method"
+msgid "UNIONPAY"
+msgstr ""
+
+#: includes/functions.php:350
+msgctxt "newebpay method"
+msgid "APPLEPAY"
+msgstr ""
+
+#: includes/functions.php:351
+msgctxt "newebpay method"
+msgid "GOOGLEPAY"
+msgstr ""
+
+#: includes/functions.php:352
 msgctxt "newebpay method"
 msgid "SAMSUNGPAY"
 msgstr ""
@@ -447,7 +472,7 @@ msgid "Virtual product order skip processing status."
 msgstr ""
 
 #: woocommerce/admin/gateways.php:39
-#: woocommerce/shipping/ecpay/includes/admin.php:224
+#: woocommerce/shipping/ecpay/includes/admin.php:225
 msgid "Get info"
 msgstr ""
 
@@ -535,19 +560,21 @@ msgctxt "Transport temp"
 msgid "Same as parent"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/blocks/gateway-atm.php:37
-#: woocommerce/gateways/ecpay/blocks/gateway-barcode.php:37
-#: woocommerce/gateways/ecpay/blocks/gateway-bnpl.php:37
-#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-3.php:37
-#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-6.php:37
-#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-12.php:37
-#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-18.php:37
-#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-24.php:37
-#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment.php:54
-#: woocommerce/gateways/ecpay/blocks/gateway-credit.php:37
-#: woocommerce/gateways/ecpay/blocks/gateway-cvs.php:37
-#: woocommerce/gateways/ecpay/blocks/gateway-twqr.php:37
-#: woocommerce/gateways/ecpay/blocks/gateway-webatm.php:37
+#: woocommerce/gateways/ecpay/blocks/gateway-atm.php:40
+#: woocommerce/gateways/ecpay/blocks/gateway-barcode.php:40
+#: woocommerce/gateways/ecpay/blocks/gateway-bnpl.php:40
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-3.php:40
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-6.php:40
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-12.php:40
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-18.php:40
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-24.php:40
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment.php:57
+#: woocommerce/gateways/ecpay/blocks/gateway-credit.php:40
+#: woocommerce/gateways/ecpay/blocks/gateway-cvs.php:40
+#: woocommerce/gateways/ecpay/blocks/gateway-ipass.php:40
+#: woocommerce/gateways/ecpay/blocks/gateway-jkopay.php:40
+#: woocommerce/gateways/ecpay/blocks/gateway-twqr.php:40
+#: woocommerce/gateways/ecpay/blocks/gateway-webatm.php:40
 msgid "ECPay"
 msgstr ""
 
@@ -654,6 +681,32 @@ msgstr ""
 msgid "Pay via ECPay Credit(24 installment)"
 msgstr ""
 
+#: woocommerce/gateways/ecpay/gateway-ipass.php:17
+msgid "Pay via iPASS"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/gateway-ipass.php:18
+#: assets/blocks/gateways/ecpay/ipass.js:1
+msgid "ECPay iPASS"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/gateway-ipass.php:20
+msgid "Pay via ECPay iPASS"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/gateway-jkopay.php:17
+msgid "Pay via JKOPay"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/gateway-jkopay.php:18
+#: assets/blocks/gateways/ecpay/jkopay.js:1
+msgid "ECPay JKOPay"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/gateway-jkopay.php:20
+msgid "Pay via ECPay JKOPay"
+msgstr ""
+
 #: woocommerce/gateways/ecpay/includes/admin.php:38
 #: woocommerce/gateways/newebpay/includes/admin.php:32
 #: woocommerce/gateways/smilepay/includes/admin.php:28
@@ -690,36 +743,36 @@ msgstr ""
 msgid "Order on-hold"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/includes/ajax.php:39
+#: woocommerce/gateways/ecpay/includes/ajax.php:40
 #: woocommerce/shipping/ecpay/includes/ajax.php:38
 msgid "Can not get info from ECPay."
 msgstr ""
 
-#: woocommerce/gateways/ecpay/includes/ajax.php:41
+#: woocommerce/gateways/ecpay/includes/ajax.php:42
 #: woocommerce/gateways/newebpay/includes/ajax.php:39
 msgid "Unknow trade info."
 msgstr ""
 
-#: woocommerce/gateways/ecpay/includes/ajax.php:67
+#: woocommerce/gateways/ecpay/includes/ajax.php:68
 msgid "Can not get payment detail."
 msgstr ""
 
-#: woocommerce/gateways/ecpay/includes/ajax.php:105
+#: woocommerce/gateways/ecpay/includes/ajax.php:106
 msgid "Cancel authorization completed"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/includes/ajax.php:108
+#: woocommerce/gateways/ecpay/includes/ajax.php:109
 msgid "Closure completed"
 msgstr ""
 
 #. translators: %d refound amount
-#: woocommerce/gateways/ecpay/includes/ajax.php:112
+#: woocommerce/gateways/ecpay/includes/ajax.php:113
 #, php-format
 msgid "Refound %d completed"
 msgstr ""
 
 #. translators: %1$s: status message, %2$d status code
-#: woocommerce/gateways/ecpay/includes/ajax.php:118
+#: woocommerce/gateways/ecpay/includes/ajax.php:119
 #, php-format
 msgid "Refound action failed: %1$s (%2$d)"
 msgstr ""
@@ -886,17 +939,17 @@ msgstr ""
 msgid "Refound"
 msgstr ""
 
-#: woocommerce/gateways/newebpay/blocks/gateway-atm.php:37
-#: woocommerce/gateways/newebpay/blocks/gateway-barcode.php:37
-#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-3.php:37
-#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-6.php:37
-#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-12.php:37
-#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-18.php:37
-#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-24.php:37
-#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment.php:54
-#: woocommerce/gateways/newebpay/blocks/gateway-credit.php:37
-#: woocommerce/gateways/newebpay/blocks/gateway-cvs.php:37
-#: woocommerce/gateways/newebpay/blocks/gateway-webatm.php:37
+#: woocommerce/gateways/newebpay/blocks/gateway-atm.php:40
+#: woocommerce/gateways/newebpay/blocks/gateway-barcode.php:40
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-3.php:40
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-6.php:40
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-12.php:40
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-18.php:40
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-24.php:40
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment.php:57
+#: woocommerce/gateways/newebpay/blocks/gateway-credit.php:40
+#: woocommerce/gateways/newebpay/blocks/gateway-cvs.php:40
+#: woocommerce/gateways/newebpay/blocks/gateway-webatm.php:40
 msgid "NewebPay"
 msgstr ""
 
@@ -985,12 +1038,12 @@ msgstr ""
 msgid "Card type"
 msgstr ""
 
-#: woocommerce/gateways/smilepay/blocks/gateway-atm.php:37
-#: woocommerce/gateways/smilepay/blocks/gateway-barcode.php:37
-#: woocommerce/gateways/smilepay/blocks/gateway-credit.php:37
-#: woocommerce/gateways/smilepay/blocks/gateway-cvs-711.php:37
-#: woocommerce/gateways/smilepay/blocks/gateway-cvs-fami.php:37
-#: woocommerce/gateways/smilepay/blocks/gateway-webatm.php:37
+#: woocommerce/gateways/smilepay/blocks/gateway-atm.php:40
+#: woocommerce/gateways/smilepay/blocks/gateway-barcode.php:40
+#: woocommerce/gateways/smilepay/blocks/gateway-credit.php:40
+#: woocommerce/gateways/smilepay/blocks/gateway-cvs-711.php:40
+#: woocommerce/gateways/smilepay/blocks/gateway-cvs-fami.php:40
+#: woocommerce/gateways/smilepay/blocks/gateway-webatm.php:40
 msgid "SmilePay"
 msgstr ""
 
@@ -1078,7 +1131,7 @@ msgstr ""
 msgid "Print ECPay shipping booking note (tcat)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:244
+#: woocommerce/shipping/ecpay/includes/admin.php:245
 msgid "ECPay shipping ID"
 msgstr ""
 

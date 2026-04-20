@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-02-16 10:51+0800\n"
-"PO-Revision-Date: 2026-04-09 19:44+0800\n"
+"PO-Revision-Date: 2026-04-19 16:34+0800\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
@@ -116,19 +116,21 @@ msgctxt "Transport temp"
 msgid "Same as parent"
 msgstr "與上層相同"
 
-#: woocommerce/gateways/ecpay/blocks/gateway-atm.php:37
-#: woocommerce/gateways/ecpay/blocks/gateway-barcode.php:37
-#: woocommerce/gateways/ecpay/blocks/gateway-bnpl.php:37
-#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-3.php:37
-#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-6.php:37
-#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-12.php:37
-#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-18.php:37
-#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-24.php:37
-#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment.php:54
-#: woocommerce/gateways/ecpay/blocks/gateway-credit.php:37
-#: woocommerce/gateways/ecpay/blocks/gateway-cvs.php:37
-#: woocommerce/gateways/ecpay/blocks/gateway-twqr.php:37
-#: woocommerce/gateways/ecpay/blocks/gateway-webatm.php:37
+#: woocommerce/gateways/ecpay/blocks/gateway-atm.php:40
+#: woocommerce/gateways/ecpay/blocks/gateway-barcode.php:40
+#: woocommerce/gateways/ecpay/blocks/gateway-bnpl.php:40
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-3.php:40
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-6.php:40
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-12.php:40
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-18.php:40
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-24.php:40
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment.php:57
+#: woocommerce/gateways/ecpay/blocks/gateway-credit.php:40
+#: woocommerce/gateways/ecpay/blocks/gateway-cvs.php:40
+#: woocommerce/gateways/ecpay/blocks/gateway-ipass.php:40
+#: woocommerce/gateways/ecpay/blocks/gateway-jkopay.php:40
+#: woocommerce/gateways/ecpay/blocks/gateway-twqr.php:40
+#: woocommerce/gateways/ecpay/blocks/gateway-webatm.php:40
 msgid "ECPay"
 msgstr "綠界科技"
 
@@ -253,17 +255,17 @@ msgstr "在信件中顯示付款資訊"
 msgid "Add payment info in \"%s\" email."
 msgstr "在「%s」信件中顯示付款資訊。"
 
-#: woocommerce/gateways/newebpay/blocks/gateway-atm.php:37
-#: woocommerce/gateways/newebpay/blocks/gateway-barcode.php:37
-#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-3.php:37
-#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-6.php:37
-#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-12.php:37
-#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-18.php:37
-#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-24.php:37
-#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment.php:54
-#: woocommerce/gateways/newebpay/blocks/gateway-credit.php:37
-#: woocommerce/gateways/newebpay/blocks/gateway-cvs.php:37
-#: woocommerce/gateways/newebpay/blocks/gateway-webatm.php:37
+#: woocommerce/gateways/newebpay/blocks/gateway-atm.php:40
+#: woocommerce/gateways/newebpay/blocks/gateway-barcode.php:40
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-3.php:40
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-6.php:40
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-12.php:40
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-18.php:40
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-24.php:40
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment.php:57
+#: woocommerce/gateways/newebpay/blocks/gateway-credit.php:40
+#: woocommerce/gateways/newebpay/blocks/gateway-cvs.php:40
+#: woocommerce/gateways/newebpay/blocks/gateway-webatm.php:40
 msgid "NewebPay"
 msgstr "藍新金流"
 
@@ -324,12 +326,12 @@ msgstr "藍新信用卡（分 6 期）"
 msgid "Pay via NewebPay Credit(6 installment)"
 msgstr "使用 藍新信用卡（分 6 期） 付款"
 
-#: woocommerce/gateways/smilepay/blocks/gateway-atm.php:37
-#: woocommerce/gateways/smilepay/blocks/gateway-barcode.php:37
-#: woocommerce/gateways/smilepay/blocks/gateway-credit.php:37
-#: woocommerce/gateways/smilepay/blocks/gateway-cvs-711.php:37
-#: woocommerce/gateways/smilepay/blocks/gateway-cvs-fami.php:37
-#: woocommerce/gateways/smilepay/blocks/gateway-webatm.php:37
+#: woocommerce/gateways/smilepay/blocks/gateway-atm.php:40
+#: woocommerce/gateways/smilepay/blocks/gateway-barcode.php:40
+#: woocommerce/gateways/smilepay/blocks/gateway-credit.php:40
+#: woocommerce/gateways/smilepay/blocks/gateway-cvs-711.php:40
+#: woocommerce/gateways/smilepay/blocks/gateway-cvs-fami.php:40
+#: woocommerce/gateways/smilepay/blocks/gateway-webatm.php:40
 msgid "SmilePay"
 msgstr "速買配"
 
@@ -608,7 +610,7 @@ msgid "Print SmilePay shipping booking note (tcat)"
 msgstr "列印速買配物流託運單 (黑貓)"
 
 #: woocommerce/admin/gateways.php:39
-#: woocommerce/shipping/ecpay/includes/admin.php:224
+#: woocommerce/shipping/ecpay/includes/admin.php:225
 msgid "Get info"
 msgstr "取得資訊"
 
@@ -724,7 +726,7 @@ msgstr "付款超商"
 msgid "Payment amount"
 msgstr "付款金額"
 
-#: woocommerce/gateways/ecpay/includes/ajax.php:39
+#: woocommerce/gateways/ecpay/includes/ajax.php:40
 #: woocommerce/shipping/ecpay/includes/ajax.php:38
 msgid "Can not get info from ECPay."
 msgstr "無法向綠界取得相關資訊。"
@@ -767,7 +769,7 @@ msgstr "分期金額 ( 首期 / 其餘 )"
 msgid "Refund"
 msgstr "退款"
 
-#: woocommerce/gateways/ecpay/includes/ajax.php:41
+#: woocommerce/gateways/ecpay/includes/ajax.php:42
 #: woocommerce/gateways/newebpay/includes/ajax.php:39
 msgid "Unknow trade info."
 msgstr "無效的交易資訊。"
@@ -837,207 +839,207 @@ msgstr "代收款項撥款金額"
 msgid "Collection allocate date"
 msgstr "代收款項撥款日期"
 
-#: includes/functions.php:71
+#: includes/functions.php:76
 msgctxt "ecpay shipping"
 msgid "HOME_POST"
 msgstr "中華郵政"
 
-#: includes/functions.php:70
+#: includes/functions.php:75
 msgctxt "ecpay shipping"
 msgid "HOME_TCAT"
 msgstr "黑貓物流"
 
-#: includes/functions.php:69
+#: includes/functions.php:74
 msgctxt "ecpay shipping"
 msgid "CVS_OKMARTC2C"
 msgstr "OK超商(C2C)"
 
-#: includes/functions.php:68
+#: includes/functions.php:73
 msgctxt "ecpay shipping"
 msgid "CVS_HILIFEC2C"
 msgstr "萊爾富物流(C2C)"
 
-#: includes/functions.php:67
+#: includes/functions.php:72
 msgctxt "ecpay shipping"
 msgid "CVS_HILIFE"
 msgstr "萊爾富物流(B2C)"
 
-#: includes/functions.php:66
+#: includes/functions.php:71
 msgctxt "ecpay shipping"
 msgid "CVS_UNIMARTC2C"
 msgstr "7-ELEVEN超商物流(C2C)"
 
-#: includes/functions.php:65
+#: includes/functions.php:70
 msgctxt "ecpay shipping"
 msgid "CVS_FAMIC2C"
 msgstr "全家物流(C2C)"
 
-#: includes/functions.php:64
+#: includes/functions.php:69
 msgctxt "ecpay shipping"
 msgid "CVS_UNIMARTFREEZE"
 msgstr "7-ELEVEN冷凍店取(B2C)"
 
-#: includes/functions.php:63
+#: includes/functions.php:68
 msgctxt "ecpay shipping"
 msgid "CVS_UNIMART"
 msgstr "7-ELEVEN超商物流(B2C)"
 
-#: includes/functions.php:62
+#: includes/functions.php:67
 msgctxt "ecpay shipping"
 msgid "CVS_FAMI"
 msgstr "全家物流(B2C)"
 
-#: includes/functions.php:347
+#: includes/functions.php:352
 msgctxt "newebpay method"
 msgid "SAMSUNGPAY"
 msgstr "Samsung Pay"
 
-#: includes/functions.php:346
+#: includes/functions.php:351
 msgctxt "newebpay method"
 msgid "GOOGLEPAY"
 msgstr "Google Pay"
 
-#: includes/functions.php:345
+#: includes/functions.php:350
 msgctxt "newebpay method"
 msgid "APPLEPAY"
 msgstr "Apple Pay"
 
-#: includes/functions.php:344
+#: includes/functions.php:349
 msgctxt "newebpay method"
 msgid "UNIONPAY"
 msgstr "銀聯卡"
 
-#: includes/functions.php:343
+#: includes/functions.php:348
 msgctxt "newebpay method"
 msgid "NTCB"
 msgstr "國民旅遊卡"
 
-#: includes/functions.php:342
+#: includes/functions.php:347
 msgctxt "newebpay method"
 msgid "FOREIGN"
 msgstr "國外核發信用卡"
 
-#: includes/functions.php:341
+#: includes/functions.php:346
 msgctxt "newebpay method"
 msgid "CREDIT"
 msgstr "台灣核發信用卡"
 
-#: includes/functions.php:329
+#: includes/functions.php:334
 msgctxt "newebpay type"
 msgid "FULA"
 msgstr "Fula 付啦"
 
-#: includes/functions.php:328
+#: includes/functions.php:333
 msgctxt "newebpay type"
 msgid "CVSCOM"
 msgstr "超商取貨付款"
 
-#: includes/functions.php:327
+#: includes/functions.php:332
 msgctxt "newebpay type"
 msgid "TAIWANPAY"
 msgstr "台灣 Pay"
 
-#: includes/functions.php:326
+#: includes/functions.php:331
 msgctxt "newebpay type"
 msgid "ESUNWALLET"
 msgstr "玉山 Wallet"
 
-#: includes/functions.php:325
+#: includes/functions.php:330
 msgctxt "newebpay type"
 msgid "LINEPAY"
 msgstr "LINE Pay"
 
-#: includes/functions.php:324
+#: includes/functions.php:329
 msgctxt "newebpay type"
 msgid "CVS"
 msgstr "超商代碼"
 
-#: includes/functions.php:323
+#: includes/functions.php:328
 msgctxt "newebpay type"
 msgid "BARCODE"
 msgstr "超商條碼"
 
-#: includes/functions.php:322
+#: includes/functions.php:327
 msgctxt "newebpay type"
 msgid "WEBATM"
 msgstr "網路銀行轉帳"
 
-#: includes/functions.php:321
+#: includes/functions.php:326
 msgctxt "newebpay type"
 msgid "VACC"
 msgstr "銀行 ATM 轉帳"
 
-#: includes/functions.php:320
+#: includes/functions.php:325
 msgctxt "newebpay type"
 msgid "CREDIT"
 msgstr "信用卡"
 
-#: includes/functions.php:43
+#: includes/functions.php:48
 msgctxt "ecpay info"
 msgid "ibon"
 msgstr "7-11"
 
-#: includes/functions.php:42
+#: includes/functions.php:47
 msgctxt "ecpay info"
 msgid "okmart"
 msgstr "OK 超商"
 
-#: includes/functions.php:41
+#: includes/functions.php:46
 msgctxt "ecpay info"
 msgid "hilife"
 msgstr "萊爾富"
 
-#: includes/functions.php:40
+#: includes/functions.php:45
 msgctxt "ecpay info"
 msgid "family"
 msgstr "全家"
 
-#: includes/functions.php:38
+#: includes/functions.php:40
 msgctxt "ecpay info"
 msgid "BNPL_URICH"
 msgstr "裕富數位無卡分期"
 
-#: includes/functions.php:37
+#: includes/functions.php:38
 msgctxt "ecpay info"
 msgid "TWQR_OPAY"
-msgstr "歐付寶TWQR 行動支付"
+msgstr "歐付寶 TWQR 行動支付"
 
-#: includes/functions.php:36
+#: includes/functions.php:37
 msgctxt "ecpay info"
 msgid "Flexible_Installment"
 msgstr "圓夢彈性分期"
 
-#: includes/functions.php:35
+#: includes/functions.php:36
 msgctxt "ecpay info"
 msgid "Credit_CreditCard"
 msgstr "信用卡"
 
-#: includes/functions.php:34
+#: includes/functions.php:35
 msgctxt "ecpay info"
 msgid "BARCODE_BARCODE"
 msgstr "超商條碼繳款"
 
-#: includes/functions.php:33
+#: includes/functions.php:34
 msgctxt "ecpay info"
 msgid "CVS_IBON"
 msgstr "7-11 ibon 代碼繳款"
 
-#: includes/functions.php:32
+#: includes/functions.php:33
 msgctxt "ecpay info"
 msgid "CVS_HILIFE"
 msgstr "萊爾富超商代碼繳款"
 
-#: includes/functions.php:31
+#: includes/functions.php:32
 msgctxt "ecpay info"
 msgid "CVS_FAMILY"
 msgstr "全家超商代碼繳款"
 
-#: includes/functions.php:30
+#: includes/functions.php:31
 msgctxt "ecpay info"
 msgid "CVS_OK"
 msgstr "OK 超商代碼繳款"
 
-#: includes/functions.php:29
+#: includes/functions.php:30
 msgctxt "ecpay info"
 msgid "CVS_CVS"
 msgstr "超商代碼繳款"
@@ -1164,7 +1166,7 @@ msgid "%s order get shipping no."
 msgid_plural "%s order get shipping no."
 msgstr[0] "%s 筆訂單取得物流託運單。"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:244
+#: woocommerce/shipping/ecpay/includes/admin.php:245
 msgid "ECPay shipping ID"
 msgstr "綠界物流編號"
 
@@ -1184,7 +1186,7 @@ msgstr "手續費"
 msgid "Transaction fee"
 msgstr "交易手續費"
 
-#: woocommerce/gateways/ecpay/includes/ajax.php:67
+#: woocommerce/gateways/ecpay/includes/ajax.php:68
 msgid "Can not get payment detail."
 msgstr "無法取得付款資訊，"
 
@@ -1208,32 +1210,32 @@ msgstr "關帳"
 msgid "Refound"
 msgstr "退刷"
 
-#: includes/functions.php:45
+#: includes/functions.php:50
 msgctxt "ecpay info"
 msgid "Canceled"
 msgstr "交易已取消"
 
-#: includes/functions.php:46
+#: includes/functions.php:51
 msgctxt "ecpay info"
 msgid "Unauthorized"
 msgstr "未授權"
 
-#: includes/functions.php:47
+#: includes/functions.php:52
 msgctxt "ecpay info"
 msgid "Authorized"
 msgstr "已授權"
 
-#: includes/functions.php:48
+#: includes/functions.php:53
 msgctxt "ecpay info"
 msgid "To be captured"
 msgstr "要關帳"
 
-#: includes/functions.php:49
+#: includes/functions.php:54
 msgctxt "ecpay info"
 msgid "Captured"
 msgstr "已關帳"
 
-#: includes/functions.php:50
+#: includes/functions.php:55
 msgctxt "ecpay info"
 msgid "Operation canceled"
 msgstr "操作取消"
@@ -1262,22 +1264,22 @@ msgstr "取得信用卡付款資訊"
 msgid "Credit trade status"
 msgstr "信用卡交易狀態"
 
-#: woocommerce/gateways/ecpay/includes/ajax.php:105
+#: woocommerce/gateways/ecpay/includes/ajax.php:106
 msgid "Cancel authorization completed"
 msgstr "取消授權完成"
 
-#: woocommerce/gateways/ecpay/includes/ajax.php:108
+#: woocommerce/gateways/ecpay/includes/ajax.php:109
 msgid "Closure completed"
 msgstr "關帳完成"
 
 #. translators: %d refound amount
-#: woocommerce/gateways/ecpay/includes/ajax.php:112
+#: woocommerce/gateways/ecpay/includes/ajax.php:113
 #, php-format
 msgid "Refound %d completed"
 msgstr "退款 %d 完成"
 
 #. translators: %1$s: status message, %2$d status code
-#: woocommerce/gateways/ecpay/includes/ajax.php:118
+#: woocommerce/gateways/ecpay/includes/ajax.php:119
 #, php-format
 msgid "Refound action failed: %1$s (%2$d)"
 msgstr "退款動作失敗：%1$s (%2$d)"
@@ -1325,4 +1327,55 @@ msgstr "虛擬商品的訂單跳過處理中狀態。"
 #. Description of the plugin
 #: ry-woocommerce-tools-pro.php
 msgid "WooCommerce payment and shipping tools"
-msgstr ""
+msgstr "WooCommerce payment and shipping tools"
+
+#: woocommerce/gateways/ecpay/gateway-ipass.php:17
+msgid "Pay via iPASS"
+msgstr "使用 iPASS MONEY 付款"
+
+#: woocommerce/gateways/ecpay/gateway-ipass.php:18
+#: assets/blocks/gateways/ecpay/ipass.js:1
+msgid "ECPay iPASS"
+msgstr "綠界 iPASS MONEY"
+
+#: woocommerce/gateways/ecpay/gateway-ipass.php:20
+msgid "Pay via ECPay iPASS"
+msgstr "使用 綠界 iPASS MONEY 付款"
+
+#: includes/functions.php:43
+msgctxt "ecpay info"
+msgid "Jkopay"
+msgstr "街口支付"
+
+#: includes/functions.php:42
+msgctxt "ecpay info"
+msgid "iPASS Money"
+msgstr "iPASS Money"
+
+#: includes/functions.php:29
+msgctxt "ecpay info"
+msgid "ATM_KGI"
+msgstr "凱基銀行 ATM"
+
+#: includes/functions.php:39
+msgctxt "ecpay info"
+msgid "WeiXin_OPAY"
+msgstr "歐付寶 微信支付"
+
+#: includes/functions.php:41
+msgctxt "ecpay info"
+msgid "BNPL_ZINGALA"
+msgstr "中租銀角零卡"
+
+#: woocommerce/gateways/ecpay/gateway-jkopay.php:17
+msgid "Pay via JKOPay"
+msgstr "使用街口支付付款"
+
+#: woocommerce/gateways/ecpay/gateway-jkopay.php:18
+#: assets/blocks/gateways/ecpay/jkopay.js:1
+msgid "ECPay JKOPay"
+msgstr "綠界街口支付"
+
+#: woocommerce/gateways/ecpay/gateway-jkopay.php:20
+msgid "Pay via ECPay JKOPay"
+msgstr "使用 綠界 街口支付 付款"

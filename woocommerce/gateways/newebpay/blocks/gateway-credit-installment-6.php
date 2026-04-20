@@ -11,6 +11,9 @@ final class RY_NewebPay_Gateway_Credit_Installment_6_Blocks_Support extends RY_W
 
     public function is_active()
     {
+        if ($this->get_gateway() === null) {
+            return filter_var($this->get_setting('enabled', false), FILTER_VALIDATE_BOOLEAN);
+        }
         return $this->get_gateway()->is_available();
     }
 

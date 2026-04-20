@@ -26,6 +26,7 @@ function rywtp_ecpay_info_to_name($info)
             'ATM_CATHAY' => _x('ATM_CATHAY', 'ecpay info', 'ry-woocommerce-tools-pro'), // 國泰世華銀行 ATM
             'ATM_TACHONG' => _x('ATM_TACHONG', 'ecpay info', 'ry-woocommerce-tools-pro'), // 大眾銀行 ATM
             'ATM_PANHSIN' => _x('ATM_PANHSIN', 'ecpay info', 'ry-woocommerce-tools-pro'), // 板信銀行 ATM
+            'ATM_KGI' => _x('ATM_KGI', 'ecpay info', 'ry-woocommerce-tools-pro'), // 凱基銀行 ATM
             'CVS_CVS' => _x('CVS_CVS', 'ecpay info', 'ry-woocommerce-tools-pro'), // 超商代碼繳款
             'CVS_OK' => _x('CVS_OK', 'ecpay info', 'ry-woocommerce-tools-pro'), // OK 超商代碼繳款
             'CVS_FAMILY' => _x('CVS_FAMILY', 'ecpay info', 'ry-woocommerce-tools-pro'), // 全家超商代碼繳款
@@ -35,7 +36,11 @@ function rywtp_ecpay_info_to_name($info)
             'Credit_CreditCard' => _x('Credit_CreditCard', 'ecpay info', 'ry-woocommerce-tools-pro'), // 信用卡
             'Flexible_Installment' => _x('Flexible_Installment', 'ecpay info', 'ry-woocommerce-tools-pro'), // 圓夢彈性分期
             'TWQR_OPAY' => _x('TWQR_OPAY', 'ecpay info', 'ry-woocommerce-tools-pro'), // 歐付寶TWQR 行動支付
+            'WeiXin_OPAY' => _x('WeiXin_OPAY', 'ecpay info', 'ry-woocommerce-tools-pro'), // 微信支付
             'BNPL_URICH' => _x('BNPL_URICH', 'ecpay info', 'ry-woocommerce-tools-pro'), // 裕富數位無卡分期
+            'BNPL_ZINGALA' => _x('BNPL_ZINGALA', 'ecpay info', 'ry-woocommerce-tools-pro'), // 中租銀角零卡
+            'DigitalPayment_IPASS' => _x('iPASS Money', 'ecpay info', 'ry-woocommerce-tools-pro'), // iPASS MONEY
+            'DigitalPayment_Jkopay' => _x('Jkopay', 'ecpay info', 'ry-woocommerce-tools-pro'), // 街口支付
 
             'family' => _x('family', 'ecpay info', 'ry-woocommerce-tools-pro'), // 全家
             'hilife' => _x('hilife', 'ecpay info', 'ry-woocommerce-tools-pro'), // 萊爾富
