@@ -7,7 +7,7 @@ if (!class_exists('RY_Admin_License', false)) {
     {
         protected static $_instance = null;
 
-        protected $license_list = [];
+        protected array $license_list = [];
 
         public static function init_menu(): void
         {
@@ -16,7 +16,7 @@ if (!class_exists('RY_Admin_License', false)) {
             add_action('admin_post_ry/admin-license-log', [__CLASS__, 'admin_action']);
         }
 
-        public static function add_menu($menu_list)
+        public static function add_menu(array $menu_list): array
         {
             $menu_list[] = [
                 'name' => '授權金鑰',

@@ -48,6 +48,6 @@ final class RY_WTP_WC_Shipping
             }
         }
 
-        return $available;
+        return true;
     }
 }

@@ -3,9 +3,9 @@
 if (!class_exists('RY_Abstract_Link_Server', false)) {
     abstract class RY_Abstract_Link_Server
     {
-        protected $api_url = 'https://ry-plugin.com/wp-json/ry/v2/';
+        protected string $api_url = 'https://ry-plugin.com/wp-json/ry/v2/';
 
-        protected $plugin_slug;
+        protected string $plugin_slug;
 
         protected function get_base_info(): array
         {

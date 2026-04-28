@@ -3,9 +3,9 @@
 if (!class_exists('RY_Abstract_License', false)) {
     abstract class RY_Abstract_License
     {
-        public static $main_class;
+        public static string $main_class;
 
-        protected $activated = false;
+        protected bool $activated = false;
 
         abstract public function activate_key();
 
@@ -29,7 +29,7 @@ if (!class_exists('RY_Abstract_License', false)) {
             return @unserialize(base64_decode($data, true));
         }
 
-        public function set_license_data($data): void
+        public function set_license_data(array $data): void
         {
             unset($data['type']);
             $data['url'] = $this->get_site_url();
@@ -69,7 +69,7 @@ if (!class_exists('RY_Abstract_License', false)) {
             return '';
         }
 
-        protected function get_site_url()
+        protected function get_site_url(): string
         {
             $url = str_replace(['http://', 'https://'], '', get_option('siteurl'));
             return rtrim($url, '/');
@@ -108,7 +108,7 @@ if (!class_exists('RY_Abstract_License', false)) {
             $this->activated = true;
         }
 
-        protected function valid_error($message)
+        protected function valid_error(string $message): void
         {
             $this->delete_license();
             $this->add_log('error', 'ry-license', $message);

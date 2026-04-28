@@ -6,7 +6,7 @@ final class RY_WTP_LinkServer extends RY_Abstract_Link_Server
 {
     protected static $_instance = null;
 
-    protected $plugin_slug = 'ry-woocommerce-tools-pro';
+    protected string $plugin_slug = 'ry-woocommerce-tools-pro';
 
     public static function instance(): RY_WTP_LinkServer
     {
