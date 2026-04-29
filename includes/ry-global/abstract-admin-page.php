@@ -1,5 +1,7 @@
 <?php
 
+defined('ABSPATH') or exit;
+
 if (!class_exists('RY_Abstract_Admin_Page', false)) {
     abstract class RY_Abstract_Admin_Page
     {

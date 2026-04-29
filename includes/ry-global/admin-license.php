@@ -1,5 +1,7 @@
 <?php
 
+defined('ABSPATH') or exit;
+
 if (!class_exists('RY_Admin_License', false)) {
     include_once __DIR__ . '/abstract-admin-page.php';
 

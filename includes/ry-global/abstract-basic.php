@@ -1,5 +1,7 @@
 <?php
 
+defined('ABSPATH') or exit;
+
 if (!class_exists('RY_Abstract_Basic', false)) {
     abstract class RY_Abstract_Basic
     {
@@ -7,7 +9,7 @@ if (!class_exists('RY_Abstract_Basic', false)) {
 
         public const PLUGIN_NAME = '';
 
-        public static function get_option(string $option, $default = false)
+        public static function get_option(string $option, mixed $default = false): mixed
         {
             return get_option(static::OPTION_PREFIX . $option, $default);
         }
