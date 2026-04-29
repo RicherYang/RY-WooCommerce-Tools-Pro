@@ -21,9 +21,17 @@ final class RY_WTP_WC_Shipping
             RY_WTP_WC_Admin_Shipping::instance();
         }
 
+        add_filter('ry_shipping_evaluate_cost_args', [$this, 'add_shipping_cost_args'], 10, 3);
         foreach (WC()->shipping()->get_shipping_methods() as $id => $shipping_method) {
             add_filter('woocommerce_shipping_' . $id . '_is_available', [$this, 'product_skip_shipping'], 11, 3);
         }
+    }
+
+    public function add_shipping_cost_args($args, $package, $rate)
+    {
+        $args['offisland'] = $rate['meta_data']['LogisticsInfo']['CVSOutSide'] ?? '';
+
+        return $args;
     }
 
     public function product_skip_shipping($available, $package, $shipping_method): bool
