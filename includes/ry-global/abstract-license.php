@@ -129,7 +129,7 @@ if (!class_exists('RY_Abstract_License', false)) {
                 preg_match('/([0-9\-]{10}T[0-9:]{8}\+[0-9:]{5}) \[([A-Z]+)\] (.*)/', $log_content, $log_array);
                 if (count($log_array) == 4) {
                     $logs[] = [
-                        'date' => date_i18n('Y-m-d H:i:s', $log_array[1]),
+                        'date' => date_i18n('Y-m-d H:i:s', strtotime($log_array[1])),
                         'type' => $log_array[2],
                         'message' => $log_array[3],
                     ];
