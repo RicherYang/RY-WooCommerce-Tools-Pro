@@ -117,6 +117,7 @@ final class RY_WTP_ECPay_Shipping_Admin
                 break;
             case 'C2C':
                 $actions['ry_print_ecpay_cvs_711'] = __('Print ECPay shipping booking note (711)', 'ry-woocommerce-tools-pro');
+                $actions['ry_print_ecpay_cvs_711_a6'] = __('Print ECPay shipping booking note A6 (711)', 'ry-woocommerce-tools-pro');
                 $actions['ry_print_ecpay_cvs_family'] = __('Print ECPay shipping booking note (family)', 'ry-woocommerce-tools-pro');
                 $actions['ry_print_ecpay_cvs_hilife'] = __('Print ECPay shipping booking note (hilife)', 'ry-woocommerce-tools-pro');
                 $actions['ry_print_ecpay_cvs_ok'] = __('Print ECPay shipping booking note (ok)', 'ry-woocommerce-tools-pro');
@@ -124,6 +125,7 @@ final class RY_WTP_ECPay_Shipping_Admin
         }
 
         $actions['ry_print_ecpay_home_post'] = __('Print ECPay shipping booking note (post)', 'ry-woocommerce-tools-pro');
+        $actions['ry_print_ecpay_home_post_a6'] = __('Print ECPay shipping booking note A6 (post)', 'ry-woocommerce-tools-pro');
         $actions['ry_print_ecpay_home_tcat'] = __('Print ECPay shipping booking note (tcat)', 'ry-woocommerce-tools-pro');
 
         return $actions;
@@ -156,10 +158,17 @@ final class RY_WTP_ECPay_Shipping_Admin
         }
 
         if (str_starts_with($action, 'ry_print_ecpay_')) {
+            $type = substr($action, 15);
+            $mode = '';
+            if (str_ends_with($type, '_a6')) {
+                $type = substr($type, 0, -3);
+                $mode = 'a6';
+            }
             $redirect_to = add_query_arg([
                 'action' => 'ry-print-ecpay-shipping',
                 'orderid' => implode(',', $ids),
-                'type' => substr($action, 15),
+                'type' => $type,
+                'mode' => $mode,
                 '_wpnonce' => wp_create_nonce('ry-print-shipping'),
             ], admin_url('admin-post.php'));
             wp_safe_redirect($redirect_to);
