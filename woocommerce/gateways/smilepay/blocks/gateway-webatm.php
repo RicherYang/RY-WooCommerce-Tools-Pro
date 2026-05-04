@@ -1,5 +1,7 @@
 <?php
 
+defined('ABSPATH') or exit;
+
 final class RY_SmilePay_Gateway_Webatm_Blocks_Support extends RY_WTP_AbstractPaymentMethodType
 {
     protected $name = 'ry_smilepay_webatm';

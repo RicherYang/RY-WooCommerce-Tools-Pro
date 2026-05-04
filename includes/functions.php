@@ -1,5 +1,7 @@
 <?php
 
+defined('ABSPATH') or exit;
+
 function rywtp_ecpay_info_to_name($info)
 {
     static $info_name = [];

@@ -1,5 +1,7 @@
 <?php
 
+defined('ABSPATH') or exit;
+
 use Automattic\WooCommerce\Blocks\Payments\Integrations\AbstractPaymentMethodType;
 
 abstract class RY_WTP_AbstractPaymentMethodType extends AbstractPaymentMethodType

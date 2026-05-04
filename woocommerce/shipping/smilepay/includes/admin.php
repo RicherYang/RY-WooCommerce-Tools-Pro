@@ -1,10 +1,12 @@
 <?php
 
+defined('ABSPATH') or exit;
+
 use Automattic\WooCommerce\Utilities\OrderUtil;
 
 final class RY_WTP_SmilePay_Shipping_Admin
 {
-    protected static $_instance = null;
+    protected static ?self $_instance = null;
 
     public static function instance(): RY_WTP_SmilePay_Shipping_Admin
     {

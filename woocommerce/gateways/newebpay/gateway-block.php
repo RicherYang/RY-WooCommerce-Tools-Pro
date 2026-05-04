@@ -1,10 +1,12 @@
 <?php
 
+defined('ABSPATH') or exit;
+
 use Automattic\WooCommerce\Blocks\Payments\PaymentMethodRegistry;
 
 final class RY_WTP_WC_NewebPay_Gateway_Block
 {
-    protected static $_instance = null;
+    protected static ?self $_instance = null;
 
     public static function instance(): RY_WTP_WC_NewebPay_Gateway_Block
     {

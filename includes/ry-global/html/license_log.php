@@ -1,3 +1,5 @@
+<?php defined('ABSPATH') or exit; ?>
+
 <style>
     #ry-license-log {
         background: #fff;

@@ -1,5 +1,7 @@
 <?php
 
+defined('ABSPATH') or exit;
+
 function rywtp_multiselect($field)
 {
     $field = wp_parse_args($field, [

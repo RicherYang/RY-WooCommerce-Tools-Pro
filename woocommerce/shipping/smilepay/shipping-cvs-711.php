@@ -1,5 +1,7 @@
 <?php
 
+defined('ABSPATH') or exit;
+
 class RY_SmilePay_Shipping_CVS_711_Pro extends RY_SmilePay_Shipping_CVS_711
 {
     public function __construct($instance_ID = 0)

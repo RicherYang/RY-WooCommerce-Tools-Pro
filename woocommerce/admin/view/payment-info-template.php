@@ -1,3 +1,5 @@
+<?php defined('ABSPATH') or exit; ?>
+
 <script type="text/template" id="tmpl-ry-modal-view-payment-info">
     <div class="wc-backbone-modal wc-order-preview">
         <div class="wc-backbone-modal-content">

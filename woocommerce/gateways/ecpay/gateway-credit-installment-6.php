@@ -1,5 +1,7 @@
 <?php
 
+defined('ABSPATH') or exit;
+
 class RY_ECPay_Gateway_Credit_Installment_6 extends RY_ECPay_Gateway_Credit_Installment_Base
 {
     public function __construct()

@@ -1,10 +1,12 @@
 <?php
 
+defined('ABSPATH') or exit;
+
 include_once RY_WTP_PLUGIN_DIR . 'includes/ry-global/abstract-admin.php';
 
 final class RY_WTP_Admin extends RY_Abstract_Admin
 {
-    protected static $_instance = null;
+    protected static ?self $_instance = null;
 
     public static function instance(): RY_WTP_Admin
     {
@@ -32,7 +34,7 @@ final class RY_WTP_Admin extends RY_Abstract_Admin
         }
     }
 
-    public function add_license($license_list): array
+    public function add_license(array $license_list): array
     {
         $license_list[RY_WTP_PLUGIN_BASENAME] = [
             'name' => $this->license::$main_class::PLUGIN_NAME,

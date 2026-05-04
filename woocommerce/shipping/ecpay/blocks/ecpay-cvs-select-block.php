@@ -1,8 +1,10 @@
 <?php
 
+defined('ABSPATH') or exit;
+
 use Automattic\WooCommerce\Blocks\Integrations\IntegrationInterface;
 
-class RY_ECPay_Shipping_Cvs_Select_Block implements IntegrationInterface
+final class RY_ECPay_Shipping_Cvs_Select_Block implements IntegrationInterface
 {
     public function get_name(): string
     {

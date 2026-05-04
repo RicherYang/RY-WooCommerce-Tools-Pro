@@ -1,3 +1,5 @@
+<?php defined('ABSPATH') or exit; ?>
+
 <p>
     <strong><?php esc_html_e('Credit trade status', 'ry-woocommerce-tools-pro'); ?></strong><br>
     <?php echo esc_html(rywtp_ecpay_info_to_name($info['RtnValue']['Status'])); ?>

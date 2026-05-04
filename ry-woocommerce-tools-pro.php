@@ -18,7 +18,7 @@
  * Domain Path: /languages
  */
 
-function_exists('plugin_dir_url') or exit('No direct script access allowed');
+defined('ABSPATH') or exit;
 
 define('RY_WTP_VERSION', '3.7.1');
 define('RY_WTP_PLUGIN_URL', plugin_dir_url(__FILE__));

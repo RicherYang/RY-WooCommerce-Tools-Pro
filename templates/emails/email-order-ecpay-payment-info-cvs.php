@@ -1,3 +1,5 @@
+<?php defined('ABSPATH') or exit; ?>
+
 <?php
 /**
  * This template can be overridden by copying it to yourtheme/woocommerce/emails/email-order-ecpay-payment-info-cvs.php
@@ -10,7 +12,6 @@
  *
  * @version 1.0.15
  */
-defined('ABSPATH') || exit;
 if ($order->get_payment_method() != 'ry_ecpay_cvs') {
     return;
 }

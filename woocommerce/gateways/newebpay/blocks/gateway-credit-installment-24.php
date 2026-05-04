@@ -1,5 +1,7 @@
 <?php
 
+defined('ABSPATH') or exit;
+
 final class RY_NewebPay_Gateway_Credit_Installment_24_Blocks_Support extends RY_WTP_AbstractPaymentMethodType
 {
     protected $name = 'ry_newebpay_credit_installment_24';

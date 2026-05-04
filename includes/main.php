@@ -1,5 +1,7 @@
 <?php
 
+defined('ABSPATH') or exit;
+
 include_once RY_WTP_PLUGIN_DIR . 'includes/ry-global/abstract-basic.php';
 
 final class RY_WTP extends RY_Abstract_Basic
@@ -10,7 +12,7 @@ final class RY_WTP extends RY_Abstract_Basic
 
     public const MIN_TOOLS_VERSION = '3.6.0';
 
-    protected static $_instance = null;
+    protected static ?self $_instance = null;
 
     public RY_WTP_Admin $admin;
 

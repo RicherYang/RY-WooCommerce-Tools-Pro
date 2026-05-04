@@ -1,5 +1,7 @@
 <?php
 
+defined('ABSPATH') or exit;
+
 class RY_ECPay_Shipping_Home_Tcat_Pro extends RY_ECPay_Shipping_Home_Tcat
 {
     public function __construct($instance_ID = 0)

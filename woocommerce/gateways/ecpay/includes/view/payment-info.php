@@ -1,3 +1,5 @@
+<?php defined('ABSPATH') or exit; ?>
+
 <div style="display:flex; flex-wrap:wrap;">
     <div style="flex:1 0 0; width:100%">
         <h2><?php esc_html_e('Order info', 'ry-woocommerce-tools-pro'); ?></h2>

@@ -1,10 +1,12 @@
 <?php
 
+defined('ABSPATH') or exit;
+
 include_once RY_WTP_PLUGIN_DIR . 'includes/ry-global/abstract-link-server.php';
 
 final class RY_WTP_LinkServer extends RY_Abstract_Link_Server
 {
-    protected static $_instance = null;
+    protected static ?self $_instance = null;
 
     protected string $plugin_slug = 'ry-woocommerce-tools-pro';
 

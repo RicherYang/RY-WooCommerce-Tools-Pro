@@ -1,5 +1,6 @@
-<?php
+<?php defined('ABSPATH') or exit; ?>
 
+<?php
 /**
  * This template can be overridden by copying it to yourtheme/woocommerce/emails/plain/emails-order-ecpay-payment-info-atm.php
  *
@@ -11,7 +12,6 @@
  *
  * @version 1.0.15
  */
-defined('ABSPATH') || exit;
 if ($order->get_payment_method() != 'ry_ecpay_atm') {
     return;
 }

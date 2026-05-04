@@ -1,5 +1,7 @@
 <?php
 
+defined('ABSPATH') or exit;
+
 final class RY_WTP_ECPay_Shipping_Cron
 {
     public static function add_action(): void

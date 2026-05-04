@@ -7,7 +7,7 @@ if (!class_exists('RY_Admin_License', false)) {
 
     final class RY_Admin_License extends RY_Abstract_Admin_Page
     {
-        protected static $_instance = null;
+        protected static ?self $_instance = null;
 
         protected array $license_list = [];
 

@@ -1,3 +1,5 @@
+<?php defined('ABSPATH') or exit; ?>
+
 <?php
 /**
  * This template can be overridden by copying it to yourtheme/woocommerce/order/order-smilepay-shipping-info.php
@@ -10,7 +12,6 @@
  *
  * @version 1.2.2
  */
-defined('ABSPATH') || exit;
 if (count($shipping_info_list)) { ?>
 <h2 class="woocommerce-order-details__title">
     <?php esc_html_e('Shipping details', 'ry-woocommerce-tools-pro'); ?>

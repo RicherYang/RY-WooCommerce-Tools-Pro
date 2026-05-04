@@ -1,5 +1,7 @@
 <?php
 
+defined('ABSPATH') or exit;
+
 class RY_ECPay_Shipping_CVS_Hilife_Pro extends RY_ECPay_Shipping_CVS_Hilife
 {
     public function __construct($instance_ID = 0)

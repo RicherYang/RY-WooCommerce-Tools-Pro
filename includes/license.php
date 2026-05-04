@@ -1,12 +1,14 @@
 <?php
 
+defined('ABSPATH') or exit;
+
 include_once RY_WTP_PLUGIN_DIR . 'includes/ry-global/abstract-license.php';
 
 final class RY_WTP_License extends RY_Abstract_License
 {
     public static string $main_class = RY_WTP::class;
 
-    protected static $_instance = null;
+    protected static ?self $_instance = null;
 
     public static function instance(): RY_WTP_License
     {

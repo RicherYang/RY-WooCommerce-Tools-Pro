@@ -1,3 +1,5 @@
+<?php defined('ABSPATH') or exit; ?>
+
 <h2>
     RY Tools (Pro) for WooCommerce <?php esc_html_e('Tools', 'ry-woocommerce-tools-pro'); ?>
 </h2>

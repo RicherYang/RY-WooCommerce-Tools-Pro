@@ -1,10 +1,12 @@
 <?php
 
+defined('ABSPATH') or exit;
+
 use Automattic\WooCommerce\Blocks\Integrations\IntegrationRegistry;
 
 final class RY_WTP_ECPay_Shipping_Block
 {
-    protected static $_instance = null;
+    protected static ?self $_instance = null;
 
     public static function instance(): RY_WTP_ECPay_Shipping_Block
     {

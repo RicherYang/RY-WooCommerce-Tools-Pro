@@ -1,5 +1,7 @@
 <?php
 
+defined('ABSPATH') or exit;
+
 final class RY_SmilePay_Gateway_Cvs_711_Blocks_Support extends RY_WTP_AbstractPaymentMethodType
 {
     protected $name = 'ry_smilepay_cvs_711';

@@ -1,5 +1,7 @@
 <?php
 
+defined('ABSPATH') or exit;
+
 class RY_NewebPay_Gateway_Credit_Installment_30 extends RY_NewebPay_Gateway_Credit_Installment_Base
 {
     public function __construct()

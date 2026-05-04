@@ -1,3 +1,5 @@
+<?php defined('ABSPATH') or exit; ?>
+
 <?php
 /**
  * This template can be overridden by copying it to yourtheme/woocommerce/emails/email-order-smilepay-payment-info-atm.php
@@ -10,7 +12,7 @@
  *
  * @version 1.2.0
  */
-defined('ABSPATH') || exit;
+
 if ($order->get_payment_method() != 'ry_smilepay_atm') {
     return;
 }

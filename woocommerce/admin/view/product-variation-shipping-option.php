@@ -1,3 +1,5 @@
+<?php defined('ABSPATH') or exit; ?>
+
 </div>
 <div>
 <?php
