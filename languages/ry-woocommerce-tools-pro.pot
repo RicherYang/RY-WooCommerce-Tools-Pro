@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-05-29T15:11:10+08:00\n"
+"POT-Creation-Date: 2026-05-29T16:58:21+08:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ry-woocommerce-tools-pro\n"
@@ -463,19 +463,77 @@ msgctxt "Shipping status"
 msgid "Unknow"
 msgstr ""
 
+#: woocommerce/account.php:63
+msgid "one"
+msgstr ""
+
+#: woocommerce/account.php:64
+msgid "two"
+msgstr ""
+
+#: woocommerce/account.php:65
+msgid "three"
+msgstr ""
+
+#: woocommerce/account.php:66
+msgid "four"
+msgstr ""
+
+#: woocommerce/account.php:67
+msgid "five"
+msgstr ""
+
+#: woocommerce/account.php:68
+msgid "six"
+msgstr ""
+
+#: woocommerce/account.php:69
+msgid "seven"
+msgstr ""
+
+#: woocommerce/account.php:70
+msgid "eight"
+msgstr ""
+
+#: woocommerce/account.php:71
+msgid "nine"
+msgstr ""
+
+#. translators: %1$s: first number, %2$s: second number, such as one, two, three.
+#: woocommerce/account.php:75
+#, php-format
+msgid "Please use numbers to enter the result of %1$s + %2$s."
+msgstr ""
+
+#: woocommerce/account.php:80
+msgid "bot check"
+msgstr ""
+
+#: woocommerce/account.php:95
+msgid "Bot check failed. Please make sure you enter the correct number."
+msgstr ""
+
 #: woocommerce/admin/admin.php:52
 msgid "Only to WooCommerce account"
 msgstr ""
 
 #: woocommerce/admin/admin.php:56
-msgid "Redirect loginm, register and lost-password from wp-login to WooCommerce account page."
+msgid "Redirect login, register and lost-password from wp-login to WooCommerce account page."
+msgstr ""
+
+#: woocommerce/admin/admin.php:60
+msgid "Simple CAPTCHA"
 msgstr ""
 
 #: woocommerce/admin/admin.php:64
+msgid "Enable simple CAPTCHA for WooCommerce register form."
+msgstr ""
+
+#: woocommerce/admin/admin.php:72
 msgid "Virtual product skip processing"
 msgstr ""
 
-#: woocommerce/admin/admin.php:68
+#: woocommerce/admin/admin.php:76
 msgid "Virtual product order skip processing status."
 msgstr ""
 

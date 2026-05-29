@@ -1294,11 +1294,11 @@ msgstr "禁止的運送方式"
 msgid "Select shipping methods to skip"
 msgstr "請選擇要禁止的運送方式"
 
-#: woocommerce/admin/admin.php:52
+#: woocommerce/admin/admin.php:72
 msgid "Virtual product skip processing"
 msgstr "虛擬商品跳過處理中"
 
-#: woocommerce/admin/admin.php:56
+#: woocommerce/admin/admin.php:76
 msgid "Virtual product order skip processing status."
 msgstr "虛擬商品的訂單跳過處理中狀態。"
 
@@ -1365,3 +1365,69 @@ msgstr "列印綠界物流託運單 A6 (7-11)"
 #: woocommerce/shipping/ecpay/includes/admin.php:128
 msgid "Print ECPay shipping booking note A6 (post)"
 msgstr "列印綠界物流託運單 A6 (郵局)"
+
+#: woocommerce/admin/admin.php:52
+msgid "Only to WooCommerce account"
+msgstr "限制使用 WooCommerce 帳號頁面"
+
+#: woocommerce/admin/admin.php:56
+msgid "Redirect login, register and lost-password from wp-login to WooCommerce account page."
+msgstr "將登入、註冊和忘記密碼頁面從 wp-login 重新導向到 WooCommerce 帳號頁面。"
+
+#: woocommerce/admin/admin.php:60
+msgid "Simple CAPTCHA"
+msgstr "簡易的驗證碼"
+
+#: woocommerce/admin/admin.php:64
+msgid "Enable simple CAPTCHA for WooCommerce register form."
+msgstr "啟用簡易驗證碼於 WooCommerce 註冊表單。"
+
+#: woocommerce/account.php:63
+msgid "one"
+msgstr "壹"
+
+#: woocommerce/account.php:64
+msgid "two"
+msgstr "貳"
+
+#: woocommerce/account.php:65
+msgid "three"
+msgstr "參"
+
+#: woocommerce/account.php:66
+msgid "four"
+msgstr "肆"
+
+#: woocommerce/account.php:67
+msgid "five"
+msgstr "伍"
+
+#: woocommerce/account.php:68
+msgid "six"
+msgstr "陸"
+
+#: woocommerce/account.php:69
+msgid "seven"
+msgstr "柒"
+
+#: woocommerce/account.php:70
+msgid "eight"
+msgstr "捌"
+
+#: woocommerce/account.php:71
+msgid "nine"
+msgstr "玖"
+
+#. translators: %1$s: first number, %2$s: second number, such as one, two, three.
+#: woocommerce/account.php:75
+#, php-format
+msgid "Please use numbers to enter the result of %1$s + %2$s."
+msgstr "請使用數字輸入 %1$s + %2$s 的結果。"
+
+#: woocommerce/account.php:80
+msgid "bot check"
+msgstr "機器人檢查"
+
+#: woocommerce/account.php:95
+msgid "Bot check failed. Please make sure you enter the correct number."
+msgstr "機器人檢查失敗。請確保您輸入正確的數字。"

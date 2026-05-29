@@ -46,6 +46,26 @@ final class RY_WTP_WC_Admin
     public function add_setting($settings, $current_section)
     {
         if ($current_section == '') {
+            $setting_idx = array_search(RY_WT::OPTION_PREFIX . 'strength_password', array_column($settings, 'id'));
+            array_splice($settings, $setting_idx + 1, 0, [
+                [
+                    'title' => __('Only to WooCommerce account', 'ry-woocommerce-tools-pro'),
+                    'id' => RY_WTP::OPTION_PREFIX . 'register_from_woocommerce',
+                    'type' => 'checkbox',
+                    'default' => 'no',
+                    'desc' => __('Redirect login, register and lost-password from wp-login to WooCommerce account page.', 'ry-woocommerce-tools-pro'),
+                    'autoload' => false,
+                ],
+                [
+                    'title' => __('Simple CAPTCHA', 'ry-woocommerce-tools-pro'),
+                    'id' => RY_WTP::OPTION_PREFIX . 'simple_captcha',
+                    'type' => 'checkbox',
+                    'default' => 'no',
+                    'desc' => __('Enable simple CAPTCHA for WooCommerce register form.', 'ry-woocommerce-tools-pro'),
+                    'autoload' => false,
+                ],
+            ]);
+
             $setting_idx = array_search(RY_WT::OPTION_PREFIX . 'show_unpay_title', array_column($settings, 'id'));
             array_splice($settings, $setting_idx + 1, 0, [
                 [
@@ -54,6 +74,7 @@ final class RY_WTP_WC_Admin
                     'type' => 'checkbox',
                     'default' => 'no',
                     'desc' => __('Virtual product order skip processing status.', 'ry-woocommerce-tools-pro'),
+                    'autoload' => false,
                 ],
             ]);
         }

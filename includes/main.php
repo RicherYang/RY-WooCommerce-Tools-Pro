@@ -72,6 +72,7 @@ final class RY_WTP extends RY_Abstract_Basic
             include_once RY_WTP_PLUGIN_DIR . 'includes/cron.php';
             RY_WTP_Cron::add_action();
 
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/account.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/order.php';
 
             // 綠界金流
