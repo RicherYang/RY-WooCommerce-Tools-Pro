@@ -43,7 +43,7 @@
         <h2><?php esc_html_e('Payment info', 'ry-woocommerce-tools-pro'); ?></h2>
         <p>
             <strong><?php esc_html_e('Payment type', 'ry-woocommerce-tools-pro'); ?></strong><br>
-            <?php echo esc_html(rywtp_ecpay_info_to_name($info['PaymentType'])); ?>
+            <?php echo esc_html(rywtp_ecpay_PaymentType_name($info['PaymentType'])); ?>
         </p>
         <p>
             <strong><?php esc_html_e('Payment date', 'ry-woocommerce-tools-pro'); ?></strong><br>
@@ -107,7 +107,7 @@
         <?php if (str_starts_with($info['PaymentType'], 'CVS_') || str_starts_with($info['PaymentType'], 'BARCODE_')) { ?>
         <p>
             <strong><?php esc_html_e('Payment cvs', 'ry-woocommerce-tools-pro'); ?></strong><br>
-            <?php echo esc_html(rywtp_ecpay_info_to_name($info['PayFrom'])); ?>
+            <?php echo esc_html(rywtp_ecpay_PayFrom_name($info['PayFrom'])); ?>
         </p>
         <?php } ?>
     </div>

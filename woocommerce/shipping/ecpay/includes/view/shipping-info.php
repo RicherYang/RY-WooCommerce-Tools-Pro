@@ -17,7 +17,7 @@
         </p>
         <p>
             <strong><?php esc_html_e('ECPay trade status', 'ry-woocommerce-tools-pro'); ?></strong><br>
-            <?php echo esc_html(rywtp_ecpay_status_to_name($info['LogisticsStatus'])); ?>
+            <?php echo esc_html(rywtp_ecpay_LogisticsStatus_name($info['LogisticsStatus'])); ?>
         </p>
         <p>
             <strong><?php esc_html_e('Sander name', 'ry-woocommerce-tools-pro'); ?></strong><br>
@@ -37,7 +37,7 @@
         <h2><?php esc_html_e('Shipping info', 'ry-woocommerce-tools-pro'); ?></h2>
         <p>
             <strong><?php esc_html_e('Shipping type', 'ry-woocommerce-tools-pro'); ?></strong><br>
-            <?php echo esc_html(rywtp_ecpay_shipping_to_name($info['LogisticsType'])); ?>
+            <?php echo esc_html(rywtp_ecpay_LogisticsType_name($info['LogisticsType'])); ?>
         </p>
         <p>
             <strong><?php esc_html_e('Goods name', 'ry-woocommerce-tools-pro'); ?></strong><br>
