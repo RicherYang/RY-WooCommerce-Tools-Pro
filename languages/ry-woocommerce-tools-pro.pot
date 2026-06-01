@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-05-29T17:32:48+08:00\n"
+"POT-Creation-Date: 2026-06-01T15:55:21+08:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ry-woocommerce-tools-pro\n"
@@ -326,87 +326,87 @@ msgctxt "ecpay shipping"
 msgid "HOME_POST"
 msgstr ""
 
-#: includes/functions.php:327
+#: includes/functions.php:324
 msgctxt "newebpay type"
 msgid "CREDIT"
 msgstr ""
 
-#: includes/functions.php:328
+#: includes/functions.php:325
 msgctxt "newebpay type"
 msgid "VACC"
 msgstr ""
 
-#: includes/functions.php:329
+#: includes/functions.php:326
 msgctxt "newebpay type"
 msgid "WEBATM"
 msgstr ""
 
-#: includes/functions.php:330
+#: includes/functions.php:327
 msgctxt "newebpay type"
 msgid "BARCODE"
 msgstr ""
 
-#: includes/functions.php:331
+#: includes/functions.php:328
 msgctxt "newebpay type"
 msgid "CVS"
 msgstr ""
 
-#: includes/functions.php:332
+#: includes/functions.php:329
 msgctxt "newebpay type"
 msgid "LINEPAY"
 msgstr ""
 
-#: includes/functions.php:333
+#: includes/functions.php:330
 msgctxt "newebpay type"
 msgid "ESUNWALLET"
 msgstr ""
 
-#: includes/functions.php:334
+#: includes/functions.php:331
 msgctxt "newebpay type"
 msgid "TAIWANPAY"
 msgstr ""
 
-#: includes/functions.php:335
+#: includes/functions.php:332
 msgctxt "newebpay type"
 msgid "CVSCOM"
 msgstr ""
 
-#: includes/functions.php:336
+#: includes/functions.php:333
 msgctxt "newebpay type"
 msgid "FULA"
 msgstr ""
 
-#: includes/functions.php:348
+#: includes/functions.php:345
 msgctxt "newebpay method"
 msgid "CREDIT"
 msgstr ""
 
-#: includes/functions.php:349
+#: includes/functions.php:346
 msgctxt "newebpay method"
 msgid "FOREIGN"
 msgstr ""
 
-#: includes/functions.php:350
+#: includes/functions.php:347
 msgctxt "newebpay method"
 msgid "NTCB"
 msgstr ""
 
-#: includes/functions.php:351
+#: includes/functions.php:348
 msgctxt "newebpay method"
 msgid "UNIONPAY"
 msgstr ""
 
-#: includes/functions.php:352
+#: includes/functions.php:349
 msgctxt "newebpay method"
 msgid "APPLEPAY"
 msgstr ""
 
-#: includes/functions.php:353
+#: includes/functions.php:350
 msgctxt "newebpay method"
 msgid "GOOGLEPAY"
 msgstr ""
 
-#: includes/functions.php:354
+#: includes/functions.php:351
 msgctxt "newebpay method"
 msgid "SAMSUNGPAY"
 msgstr ""
@@ -537,7 +537,7 @@ msgstr ""
 msgid "Virtual product order skip processing status."
 msgstr ""
 
-#: woocommerce/admin/gateways.php:41
+#: woocommerce/admin/gateways.php:43
 #: woocommerce/shipping/ecpay/includes/admin.php:236
 msgid "Get info"
 msgstr ""
@@ -679,6 +679,7 @@ msgstr ""
 
 #: woocommerce/gateways/ecpay/gateway-credit-installment-3.php:10
 #: woocommerce/gateways/newebpay/gateway-credit-installment-3.php:10
+#: woocommerce/gateways/payuni/gateway-credit-installment-3.php:10
 msgid "Pay via Credit(3 installment)"
 msgstr ""
 
@@ -693,6 +694,7 @@ msgstr ""
 
 #: woocommerce/gateways/ecpay/gateway-credit-installment-6.php:10
 #: woocommerce/gateways/newebpay/gateway-credit-installment-6.php:10
+#: woocommerce/gateways/payuni/gateway-credit-installment-6.php:10
 msgid "Pay via Credit(6 installment)"
 msgstr ""
 
@@ -707,6 +709,7 @@ msgstr ""
 
 #: woocommerce/gateways/ecpay/gateway-credit-installment-12.php:10
 #: woocommerce/gateways/newebpay/gateway-credit-installment-12.php:10
+#: woocommerce/gateways/payuni/gateway-credit-installment-12.php:10
 msgid "Pay via Credit(12 installment)"
 msgstr ""
 
@@ -721,6 +724,7 @@ msgstr ""
 
 #: woocommerce/gateways/ecpay/gateway-credit-installment-18.php:10
 #: woocommerce/gateways/newebpay/gateway-credit-installment-18.php:10
+#: woocommerce/gateways/payuni/gateway-credit-installment-18.php:10
 msgid "Pay via Credit(18 installment)"
 msgstr ""
 
@@ -735,6 +739,7 @@ msgstr ""
 
 #: woocommerce/gateways/ecpay/gateway-credit-installment-24.php:10
 #: woocommerce/gateways/newebpay/gateway-credit-installment-24.php:10
+#: woocommerce/gateways/payuni/gateway-credit-installment-24.php:10
 msgid "Pay via Credit(24 installment)"
 msgstr ""
 
@@ -775,22 +780,26 @@ msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/admin.php:40
 #: woocommerce/gateways/newebpay/includes/admin.php:34
+#: woocommerce/gateways/payuni/includes/admin.php:33
 #: woocommerce/gateways/smilepay/includes/admin.php:30
 msgid "Gateway options"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/admin.php:45
 #: woocommerce/gateways/newebpay/includes/admin.php:39
+#: woocommerce/gateways/payuni/includes/admin.php:38
 msgid "Credit installment"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/admin.php:49
 #: woocommerce/gateways/newebpay/includes/admin.php:43
+#: woocommerce/gateways/payuni/includes/admin.php:42
 msgid "Add each periods of credit installment as a payment gateway."
 msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/admin.php:52
 #: woocommerce/gateways/newebpay/includes/admin.php:46
+#: woocommerce/gateways/payuni/includes/admin.php:45
 #: woocommerce/gateways/smilepay/includes/admin.php:35
 msgid "Show payment info in email"
 msgstr ""
@@ -798,6 +807,7 @@ msgstr ""
 #. translators: %s: email title
 #: woocommerce/gateways/ecpay/includes/admin.php:58
 #: woocommerce/gateways/newebpay/includes/admin.php:52
+#: woocommerce/gateways/payuni/includes/admin.php:51
 #: woocommerce/gateways/smilepay/includes/admin.php:41
 #, php-format
 msgid "Add payment info in \"%s\" email."
@@ -805,6 +815,7 @@ msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/admin.php:59
 #: woocommerce/gateways/newebpay/includes/admin.php:53
+#: woocommerce/gateways/payuni/includes/admin.php:52
 #: woocommerce/gateways/smilepay/includes/admin.php:42
 msgid "Order on-hold"
 msgstr ""
@@ -816,6 +827,7 @@ msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/ajax.php:43
 #: woocommerce/gateways/newebpay/includes/ajax.php:41
+#: woocommerce/gateways/payuni/includes/ajax.php:41
 msgid "Unknow trade info."
 msgstr ""
 
@@ -853,29 +865,37 @@ msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:5
 #: woocommerce/gateways/newebpay/includes/view/payment-info.php:5
+#: woocommerce/gateways/payuni/includes/view/payment-info.php:5
 #: woocommerce/shipping/ecpay/includes/view/shipping-info.php:5
 msgid "Order info"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:7
 #: woocommerce/gateways/newebpay/includes/view/payment-info.php:7
+#: woocommerce/gateways/payuni/includes/view/payment-info.php:7
 #: woocommerce/shipping/ecpay/includes/view/shipping-info.php:7
 msgid "Trade no"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:11
+#: woocommerce/gateways/newebpay/includes/view/payment-info.php:11
+#: woocommerce/gateways/payuni/includes/view/payment-info.php:11
 #: woocommerce/shipping/ecpay/includes/view/shipping-info.php:11
-msgid "ECPay trade no"
+msgid "Service provider trade no"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:15
+#: woocommerce/gateways/newebpay/includes/view/payment-info.php:15
+#: woocommerce/gateways/payuni/includes/view/payment-info.php:15
 #: woocommerce/shipping/ecpay/includes/view/shipping-info.php:15
-msgid "ECPay trade date"
+msgid "Service provider trade date"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:19
+#: woocommerce/gateways/newebpay/includes/view/payment-info.php:19
+#: woocommerce/gateways/payuni/includes/view/payment-info.php:19
 #: woocommerce/shipping/ecpay/includes/view/shipping-info.php:19
-msgid "ECPay trade status"
+msgid "Service provider trade status"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:21
@@ -896,6 +916,7 @@ msgstr ""
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:29
 #: woocommerce/gateways/ecpay/includes/view/refound-info.php:8
 #: woocommerce/gateways/newebpay/includes/view/payment-info.php:33
+#: woocommerce/gateways/payuni/includes/view/payment-info.php:23
 msgid "Trade amount"
 msgstr ""
 
@@ -904,21 +925,25 @@ msgid "Handling fee"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:37
+#: woocommerce/gateways/payuni/includes/view/payment-info.php:27
 msgid "Transaction fee"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:43
 #: woocommerce/gateways/newebpay/includes/view/payment-info.php:39
+#: woocommerce/gateways/payuni/includes/view/payment-info.php:33
 msgid "Payment info"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:45
 #: woocommerce/gateways/newebpay/includes/view/payment-info.php:41
+#: woocommerce/gateways/payuni/includes/view/payment-info.php:35
 msgid "Payment type"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:49
 #: woocommerce/gateways/newebpay/includes/view/payment-info.php:45
+#: woocommerce/gateways/payuni/includes/view/payment-info.php:39
 msgid "Payment date"
 msgstr ""
 
@@ -928,11 +953,13 @@ msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:59
 #: woocommerce/gateways/newebpay/includes/view/payment-info.php:51
+#: woocommerce/gateways/payuni/includes/view/payment-info.php:45
 msgid "Card no"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:63
 #: woocommerce/gateways/newebpay/includes/view/payment-info.php:59
+#: woocommerce/gateways/payuni/includes/view/payment-info.php:53
 msgid "Auth code"
 msgstr ""
 
@@ -943,6 +970,7 @@ msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:72
 #: woocommerce/gateways/newebpay/includes/view/payment-info.php:68
+#: woocommerce/gateways/payuni/includes/view/payment-info.php:58
 msgid "number of periods"
 msgstr ""
 
@@ -957,6 +985,7 @@ msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:89
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:99
+#: woocommerce/gateways/payuni/includes/view/payment-info.php:66
 msgid "Payment bank"
 msgstr ""
 
@@ -1065,6 +1094,7 @@ msgid "Pay via NewebPay Credit(24 installment)"
 msgstr ""
 
 #: woocommerce/gateways/newebpay/gateway-credit-installment-30.php:10
+#: woocommerce/gateways/payuni/gateway-credit-installment-30.php:10
 msgid "Pay via Credit(30 installment)"
 msgstr ""
 
@@ -1080,18 +1110,6 @@ msgstr ""
 msgid "Can not get info from NewebPay."
 msgstr ""
 
-#: woocommerce/gateways/newebpay/includes/view/payment-info.php:11
-msgid "NewebPay trade no"
-msgstr ""
-
-#: woocommerce/gateways/newebpay/includes/view/payment-info.php:15
-msgid "NewebPay trade date"
-msgstr ""
-
-#: woocommerce/gateways/newebpay/includes/view/payment-info.php:19
-msgid "NewebPay trade status"
-msgstr ""
-
 #: woocommerce/gateways/newebpay/includes/view/payment-info.php:27
 msgid "Payment cancel"
 msgstr ""
@@ -1102,6 +1120,74 @@ msgstr ""
 
 #: woocommerce/gateways/newebpay/includes/view/payment-info.php:55
 msgid "Card type"
+msgstr ""
+
+#: woocommerce/gateways/payuni/gateway-credit-installment-3.php:11
+msgid "PAYUNi Credit(3 installment)"
+msgstr ""
+
+#: woocommerce/gateways/payuni/gateway-credit-installment-3.php:21
+msgid "Pay via PAYUNi Credit(3 installment)"
+msgstr ""
+
+#: woocommerce/gateways/payuni/gateway-credit-installment-6.php:11
+msgid "PAYUNi Credit(6 installment)"
+msgstr ""
+
+#: woocommerce/gateways/payuni/gateway-credit-installment-6.php:21
+msgid "Pay via PAYUNi Credit(6 installment)"
+msgstr ""
+
+#: woocommerce/gateways/payuni/gateway-credit-installment-9.php:10
+msgid "Pay via Credit(9 installment)"
+msgstr ""
+
+#: woocommerce/gateways/payuni/gateway-credit-installment-9.php:11
+msgid "PAYUNi Credit(9 installment)"
+msgstr ""
+
+#: woocommerce/gateways/payuni/gateway-credit-installment-9.php:21
+msgid "Pay via PAYUNi Credit(9 installment)"
+msgstr ""
+
+#: woocommerce/gateways/payuni/gateway-credit-installment-12.php:11
+msgid "PAYUNi Credit(12 installment)"
+msgstr ""
+
+#: woocommerce/gateways/payuni/gateway-credit-installment-12.php:21
+msgid "Pay via PAYUNi Credit(12 installment)"
+msgstr ""
+
+#: woocommerce/gateways/payuni/gateway-credit-installment-18.php:11
+msgid "PAYUNi Credit(18 installment)"
+msgstr ""
+
+#: woocommerce/gateways/payuni/gateway-credit-installment-18.php:21
+msgid "Pay via PAYUNi Credit(18 installment)"
+msgstr ""
+
+#: woocommerce/gateways/payuni/gateway-credit-installment-24.php:11
+msgid "PAYUNi Credit(24 installment)"
+msgstr ""
+
+#: woocommerce/gateways/payuni/gateway-credit-installment-24.php:21
+msgid "Pay via PAYUNi Credit(24 installment)"
+msgstr ""
+
+#: woocommerce/gateways/payuni/gateway-credit-installment-30.php:11
+msgid "PAYUNi Credit(30 installment)"
+msgstr ""
+
+#: woocommerce/gateways/payuni/gateway-credit-installment-30.php:21
+msgid "Pay via PAYUNi Credit(30 installment)"
+msgstr ""
+
+#: woocommerce/gateways/payuni/includes/ajax.php:39
+msgid "Can not get info from PAYUNi."
+msgstr ""
+
+#: woocommerce/gateways/payuni/includes/view/payment-info.php:49
+msgid "Auth type"
 msgstr ""
 
 #: woocommerce/gateways/smilepay/blocks/gateway-atm.php:42

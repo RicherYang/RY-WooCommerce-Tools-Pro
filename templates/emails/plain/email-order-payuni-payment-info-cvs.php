@@ -1,0 +1,33 @@
+<?php defined('ABSPATH') or exit; ?>
+
+<?php
+/**
+ * This template can be overridden by copying it to yourtheme/woocommerce/emails/plain/emails-order-payuni-payment-info-cvs.php
+ *
+ * HOWEVER, on occasion RY Tools (Pro) for WooCommerce will need to update template files and you
+ * (the theme developer) will need to copy the new files to your theme to
+ * maintain compatibility. We try to do this as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped and
+ * the readme will list any important changes.
+ *
+ * @version 3.7.5
+ */
+if ($order->get_payment_method() != 'ry_payuni_cvs') {
+    return;
+}
+
+if ($order->get_meta('_payuni_payment_type') != '3') {
+    return;
+}
+
+echo "\n==========\n\n";
+
+// phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
+echo esc_html__('Payment details', 'ry-woocommerce-tools') . "\n";
+
+// phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
+echo esc_html__('CVS code', 'ry-woocommerce-tools') . "\t " . esc_html($order->get_meta('_payuni_cvs_PayNo')) . "\n";
+$expireDate = wc_string_to_datetime($order->get_meta('_payuni_cvs_ExpireDate'));
+$expireDate = $expireDate->date_i18n(wc_date_format());
+// phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
+echo esc_html__('Payment deadline', 'ry-woocommerce-tools') . "\t " . esc_html($expireDate) . "\n";

@@ -8,15 +8,15 @@
             <?php echo esc_html($info['MerchantTradeNo']); ?>
         </p>
         <p>
-            <strong><?php esc_html_e('ECPay trade no', 'ry-woocommerce-tools-pro'); ?></strong><br>
+            <strong><?php esc_html_e('Service provider trade no', 'ry-woocommerce-tools-pro'); ?></strong><br>
             <?php echo esc_html($info['TradeNo']); ?>
         </p>
         <p>
-            <strong><?php esc_html_e('ECPay trade date', 'ry-woocommerce-tools-pro'); ?></strong><br>
+            <strong><?php esc_html_e('Service provider trade date', 'ry-woocommerce-tools-pro'); ?></strong><br>
             <?php echo esc_html($info['TradeDate']); ?>
         </p>
         <p>
-            <strong><?php esc_html_e('ECPay trade status', 'ry-woocommerce-tools-pro'); ?></strong><br>
+            <strong><?php esc_html_e('Service provider trade status', 'ry-woocommerce-tools-pro'); ?></strong><br>
             <?php if ($info['TradeStatus'] == '0') {
                 echo esc_html_e('Unpaid', 'ry-woocommerce-tools-pro');
             } elseif ($info['TradeStatus'] == '1') {

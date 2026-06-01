@@ -75,34 +75,33 @@ final class RY_WTP extends RY_Abstract_Basic
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/account.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/order.php';
 
-            // 綠界金流
             if ('yes' === RY_WT::get_option('enabled_ecpay_gateway', 'no')) {
                 include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway.php';
                 RY_WTP_WC_ECPay_Gateway::instance();
             }
-            // 綠界物流
             if ('yes' === RY_WT::get_option('enabled_ecpay_shipping', 'no')) {
                 include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/shipping.php';
                 RY_WTP_ECPay_Shipping::instance();
             }
 
-            // 藍新金流
             if ('yes' === RY_WT::get_option('enabled_newebpay_gateway', 'no')) {
                 include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/gateway.php';
                 RY_WTP_WC_NewebPay_Gateway::instance();
             }
-            // 藍新物流
             if ('yes' === RY_WT::get_option('enabled_newebpay_shipping', 'no')) {
                 include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/newebpay/shipping.php';
                 RY_WTP_NewebPay_Shipping::instance();
             }
 
-            // 速買配金流
+            if ('yes' === RY_WT::get_option('enabled_payuni_gateway', 'no')) {
+                include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/gateway.php';
+                RY_WTP_WC_PAYUNi_Gateway::instance();
+            }
+
             if ('yes' === RY_WT::get_option('enabled_smilepay_gateway', 'no')) {
                 include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/smilepay/gateway.php';
                 RY_WTP_WC_SmilePay_Gateway::instance();
             }
-            // 速買配物流
             if ('yes' === RY_WT::get_option('enabled_smilepay_shipping', 'no')) {
                 include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/smilepay/shipping.php';
                 RY_WTP_SmilePay_Shipping::instance();

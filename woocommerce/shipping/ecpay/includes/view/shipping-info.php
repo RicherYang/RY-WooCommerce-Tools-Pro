@@ -8,15 +8,15 @@
             <?php echo esc_html($info['MerchantTradeNo']); ?>
         </p>
         <p>
-            <strong><?php esc_html_e('ECPay trade no', 'ry-woocommerce-tools-pro'); ?></strong><br>
+            <strong><?php esc_html_e('Service provider trade no', 'ry-woocommerce-tools-pro'); ?></strong><br>
             <?php echo esc_html($info['AllPayLogisticsID']); ?>
         </p>
         <p>
-            <strong><?php esc_html_e('ECPay trade date', 'ry-woocommerce-tools-pro'); ?></strong><br>
+            <strong><?php esc_html_e('Service provider trade date', 'ry-woocommerce-tools-pro'); ?></strong><br>
             <?php echo esc_html($info['TradeDate']); ?>
         </p>
         <p>
-            <strong><?php esc_html_e('ECPay trade status', 'ry-woocommerce-tools-pro'); ?></strong><br>
+            <strong><?php esc_html_e('Service provider trade status', 'ry-woocommerce-tools-pro'); ?></strong><br>
             <?php echo esc_html(rywtp_ecpay_status_to_name($info['LogisticsStatus'])); ?>
         </p>
         <p>

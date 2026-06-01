@@ -26,7 +26,9 @@ final class RY_WTP_WC_Admin_Gateways
         $payment_method = $order->get_payment_method();
         if (!str_starts_with($payment_method, 'ry_ecpay_')) {
             if (!str_starts_with($payment_method, 'ry_newebpay_')) {
-                return $html;
+                if (!str_starts_with($payment_method, 'ry_payuni_')) {
+                    return $html;
+                }
             }
         }
 
