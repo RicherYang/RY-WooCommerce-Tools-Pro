@@ -39,7 +39,7 @@
         <h2><?php esc_html_e('Payment info', 'ry-woocommerce-tools-pro'); ?></h2>
         <p>
             <strong><?php esc_html_e('Payment type', 'ry-woocommerce-tools-pro'); ?></strong><br>
-            <?php echo esc_html(rywtp_newebpay_type_to_name($info['PaymentType'])); ?>
+            <?php echo esc_html(rywtp_newebpay_PaymentType_name($info['PaymentType'])); ?>
         </p>
         <p>
             <strong><?php esc_html_e('Payment date', 'ry-woocommerce-tools-pro'); ?></strong><br>
@@ -53,7 +53,7 @@
         </p>
         <p>
             <strong><?php esc_html_e('Card type', 'ry-woocommerce-tools-pro'); ?></strong><br>
-            <?php echo esc_html(rywtp_newebpay_method_to_name($info['PaymentMethod'])); ?>
+            <?php echo esc_html(rywtp_newebpay_PaymentMethod_name($info['PaymentMethod'])); ?>
         </p>
         <p>
             <strong><?php esc_html_e('Auth code', 'ry-woocommerce-tools-pro'); ?></strong><br>

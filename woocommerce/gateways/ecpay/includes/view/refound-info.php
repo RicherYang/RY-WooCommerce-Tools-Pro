@@ -2,7 +2,7 @@
 
 <p>
     <strong><?php esc_html_e('Credit trade status', 'ry-woocommerce-tools-pro'); ?></strong><br>
-    <?php echo esc_html(rywtp_ecpay_info_to_name($info['RtnValue']['Status'])); ?>
+    <?php echo esc_html(rywtp_ecpay_RtnValueStatus_name($info['RtnValue']['Status'])); ?>
 </p>
 <p>
     <strong><?php esc_html_e('Trade amount', 'ry-woocommerce-tools-pro'); ?></strong><br>
@@ -18,7 +18,7 @@
         echo esc_html(sprintf(
             /* translators: %1$s: status %2$s: amount */
             __('Status: %1$s Amount: %2$s', 'ry-woocommerce-tools-pro'),
-            rywtp_ecpay_info_to_name($history['Status']),
+            rywtp_ecpay_CloseDataStatus_name($history['Status']),
             $history['Amount']
         ));
         echo '<br>';
