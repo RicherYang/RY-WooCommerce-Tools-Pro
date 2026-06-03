@@ -26,7 +26,7 @@ final class RY_WTP_ECPay_Shipping_Admin_Ajax
         $order_ID = intval($_POST['orderid'] ?? '');
 
         $order = wc_get_order($order_ID);
-        if (!empty($order)) {
+        if ($order) {
             $info_ID = sanitize_locale_name($_POST['id'] ?? '');
             $shipping_list = $order->get_meta('_ecpay_shipping_info', true);
             if (is_array($shipping_list) && isset($shipping_list[$info_ID])) {

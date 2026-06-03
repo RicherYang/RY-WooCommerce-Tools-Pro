@@ -131,5 +131,6 @@ final class RY_WTP_WC_Admin
         ]);
 
         wp_enqueue_script('ry-wtp-admin-order');
+        wp_set_script_translations('ry-wtp-admin-order', 'ry-woocommerce-tools-pro', RY_WTP_PLUGIN_DIR . 'languages');
     }
 }

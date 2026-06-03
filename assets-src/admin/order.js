@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import { __ } from '@wordpress/i18n';
 
 $(function () {
     if ($('.ry-choose-cvs').length) {
@@ -103,6 +104,14 @@ $(function () {
 
         $('#ry-refound-info').on('click', '.refound-action', function () {
             let $btn = $(this);
+
+            if ($btn.data('refound') === 'refound') {
+                const amount = parseInt($('#ry-refound-amount').val());
+                if (isNaN(amount) || amount <= 0) {
+                    alert(__('Invalid amount', 'ry-woocommerce-tools-pro'));
+                    return;
+                }
+            }
             $btn.addClass(['disabled'])
                 .prop('disabled', true);
             $.ajax({

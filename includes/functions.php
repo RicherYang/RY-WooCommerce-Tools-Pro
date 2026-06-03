@@ -383,7 +383,22 @@ function rywtp_newebpay_PaymentMethod_name(string $info): string
     return $names[$info] ?? $info;
 }
 
-function rywtp_payuni_TradeStatus_name($status)
+function rywtp_newebpay_AuthType_name(string $info): string
+{
+    static $names = [
+        '1' => '一次',
+        '2' => '分期',
+        '3' => '紅利',
+        '4' => 'Apple Pay',
+        '5' => 'Google Pay',
+        '6' => 'Samsung Pay',
+        '7' => '銀聯',
+    ];
+
+    return $names[$info] ?? $info;
+}
+
+function rywtp_payuni_TradeStatus_name(string $info): string
 {
     static $names = [
         '0' => '取號成功',
@@ -395,10 +410,10 @@ function rywtp_payuni_TradeStatus_name($status)
         '8' => '訂單待確認',
     ];
 
-    return $names[$status] ?? $status;
+    return $names[$info] ?? $info;
 }
 
-function rywtp_payuni_PaymentType_name($type)
+function rywtp_payuni_PaymentType_name(string $info): string
 {
     static $names = [
         '1' => '信用卡',
@@ -413,20 +428,18 @@ function rywtp_payuni_PaymentType_name($type)
         '11' => '街口支付',
     ];
 
-    return $names[$type] ?? $type;
+    return $names[$info] ?? $info;
 }
 
-function rywtp_newebpay_AuthType_name($type)
+function rywtp_payuni_CloseStatus_name(string $info): string
 {
     static $names = [
-        '1' => '一次',
-        '2' => '分期',
-        '3' => '紅利',
-        '4' => 'Apple Pay',
-        '5' => 'Google Pay',
-        '6' => 'Samsung Pay',
-        '7' => '銀聯 ',
+        '1' => '請款申請中',
+        '2' => '請款成功',
+        '3' => '請款取消',
+        '7' => '請款處理中',
+        '9' => '未申請',
     ];
 
-    return $names[$type] ?? $type;
+    return $names[$info] ?? $info;
 }

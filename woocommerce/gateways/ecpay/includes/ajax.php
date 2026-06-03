@@ -27,9 +27,8 @@ final class RY_WTP_WC_ECPay_Gateway_Admin_ajax
         check_ajax_referer('get-payment-info');
 
         $order_ID = intval($_POST['orderid'] ?? '');
-
         $order = wc_get_order($order_ID);
-        if (!empty($order)) {
+        if ($order) {
             $payment_method = $order->get_payment_method();
             if (str_starts_with($payment_method, 'ry_ecpay_')) {
                 $data = [
@@ -57,9 +56,8 @@ final class RY_WTP_WC_ECPay_Gateway_Admin_ajax
         check_ajax_referer('get-refound-info');
 
         $order_ID = intval($_POST['orderid'] ?? '');
-
         $order = wc_get_order($order_ID);
-        if (!empty($order)) {
+        if ($order) {
             $payment_method = $order->get_payment_method();
             if (str_starts_with($payment_method, 'ry_ecpay_credit')) {
                 $data = [];
@@ -84,7 +82,7 @@ final class RY_WTP_WC_ECPay_Gateway_Admin_ajax
 
         $order_ID = intval($_POST['orderid'] ?? '');
         $order = wc_get_order($order_ID);
-        if (!empty($order)) {
+        if ($order) {
             $payment_method = $order->get_payment_method();
             if (str_starts_with($payment_method, 'ry_ecpay_credit')) {
                 $action_type = sanitize_key($_POST['refound'] ?? '');
