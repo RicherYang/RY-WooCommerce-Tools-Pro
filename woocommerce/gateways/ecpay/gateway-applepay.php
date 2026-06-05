@@ -4,7 +4,7 @@ defined('ABSPATH') or exit;
 
 class RY_ECPay_Gateway_Applepay extends RY_WT_WC_ECPay_Payment_Gateway
 {
-    public const Payment_Type = 'ApplePay';
+    public const PAYMENT_TYPE = 'ApplePay';
 
     protected int $check_min_amount = 6;
 

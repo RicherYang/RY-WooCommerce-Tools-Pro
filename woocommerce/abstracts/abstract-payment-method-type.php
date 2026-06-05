@@ -11,7 +11,7 @@ abstract class RY_WTP_AbstractPaymentMethodType extends AbstractPaymentMethodTyp
     protected function get_gateway()
     {
         if (null === $this->gateway) {
-            $payment_gateways = WC()->payment_gateways->payment_gateways();
+            $payment_gateways = WC()->payment_gateways()->payment_gateways();
             $this->gateway = $payment_gateways[$this->name];
         }
 

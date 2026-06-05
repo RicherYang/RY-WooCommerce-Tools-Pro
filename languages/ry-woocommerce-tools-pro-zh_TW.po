@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-02-16 10:51+0800\n"
-"PO-Revision-Date: 2026-06-03 10:04+0800\n"
+"PO-Revision-Date: 2026-06-03 17:02+0800\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
@@ -230,26 +230,26 @@ msgstr "綠界信用卡（分 6 期）"
 msgid "Pay via ECPay Credit(6 installment)"
 msgstr "使用 綠界信用卡（分 6 期） 付款"
 
-#: woocommerce/gateways/ecpay/includes/admin.php:40
+#: woocommerce/gateways/ecpay/includes/admin.php:32
 #: woocommerce/gateways/newebpay/includes/admin.php:34
 #: woocommerce/gateways/payuni/includes/admin.php:33
 #: woocommerce/gateways/smilepay/includes/admin.php:30
 msgid "Gateway options"
 msgstr "金流設定"
 
-#: woocommerce/gateways/ecpay/includes/admin.php:45
+#: woocommerce/gateways/ecpay/includes/admin.php:37
 #: woocommerce/gateways/newebpay/includes/admin.php:39
 #: woocommerce/gateways/payuni/includes/admin.php:38
 msgid "Credit installment"
 msgstr "信用卡分期"
 
-#: woocommerce/gateways/ecpay/includes/admin.php:49
+#: woocommerce/gateways/ecpay/includes/admin.php:41
 #: woocommerce/gateways/newebpay/includes/admin.php:43
 #: woocommerce/gateways/payuni/includes/admin.php:42
 msgid "Add each periods of credit installment as a payment gateway."
 msgstr "將每一個信用卡分期期數新增為一個付款方式。"
 
-#: woocommerce/gateways/ecpay/includes/admin.php:52
+#: woocommerce/gateways/ecpay/includes/admin.php:44
 #: woocommerce/gateways/newebpay/includes/admin.php:46
 #: woocommerce/gateways/payuni/includes/admin.php:45
 #: woocommerce/gateways/smilepay/includes/admin.php:35
@@ -257,7 +257,7 @@ msgid "Show payment info in email"
 msgstr "在信件中顯示付款資訊"
 
 #. translators: %s: email title
-#: woocommerce/gateways/ecpay/includes/admin.php:58
+#: woocommerce/gateways/ecpay/includes/admin.php:50
 #: woocommerce/gateways/newebpay/includes/admin.php:52
 #: woocommerce/gateways/payuni/includes/admin.php:51
 #: woocommerce/gateways/smilepay/includes/admin.php:41
@@ -659,7 +659,8 @@ msgstr "付款資訊"
 #: woocommerce/gateways/ecpay/includes/view/refound-info.php:8
 #: woocommerce/gateways/newebpay/includes/view/payment-info.php:33
 #: woocommerce/gateways/payuni/includes/view/payment-info.php:23
-#: woocommerce/gateways/payuni/includes/view/refound-info.php:8
+#: woocommerce/gateways/payuni/includes/view/refound-info-credit.php:8
+#: woocommerce/gateways/payuni/includes/view/refound-info.php:4
 msgid "Trade amount"
 msgstr "交易金額"
 
@@ -709,7 +710,7 @@ msgstr "付款超商"
 msgid "Payment amount"
 msgstr "付款金額"
 
-#: woocommerce/gateways/ecpay/includes/ajax.php:40
+#: woocommerce/gateways/ecpay/includes/ajax.php:39
 #: woocommerce/shipping/ecpay/includes/ajax.php:40
 msgid "Can not get info from ECPay."
 msgstr "無法向綠界取得相關資訊。"
@@ -741,9 +742,9 @@ msgstr "分期金額 ( 首期 / 其餘 )"
 msgid "Refund"
 msgstr "退款"
 
-#: woocommerce/gateways/ecpay/includes/ajax.php:42
+#: woocommerce/gateways/ecpay/includes/ajax.php:41
 #: woocommerce/gateways/newebpay/includes/ajax.php:40
-#: woocommerce/gateways/payuni/includes/ajax.php:42
+#: woocommerce/gateways/payuni/includes/ajax.php:41
 msgid "Unknow trade info."
 msgstr "無效的交易資訊。"
 
@@ -816,7 +817,7 @@ msgstr "代收款項撥款日期"
 msgid "Change address"
 msgstr "變更地址"
 
-#: woocommerce/gateways/ecpay/includes/admin.php:59
+#: woocommerce/gateways/ecpay/includes/admin.php:51
 #: woocommerce/gateways/newebpay/includes/admin.php:53
 #: woocommerce/gateways/payuni/includes/admin.php:52
 #: woocommerce/gateways/smilepay/includes/admin.php:42
@@ -856,22 +857,19 @@ msgstr "交易手續費"
 msgid "Can not get payment detail."
 msgstr "無法取得付款資訊，"
 
-#: woocommerce/gateways/ecpay/includes/view/refound-info.php:12
-msgid "Closed amount"
-msgstr "已關帳金額"
-
 #: woocommerce/gateways/ecpay/includes/view/refound-info.php:35
-#: woocommerce/gateways/payuni/includes/view/refound-info.php:13
+#: woocommerce/gateways/payuni/includes/view/refound-info-credit.php:17
 msgid "Cancel authorization"
 msgstr "取消授權"
 
 #: woocommerce/gateways/ecpay/includes/view/refound-info.php:37
-#: woocommerce/gateways/payuni/includes/view/refound-info.php:15
+#: woocommerce/gateways/payuni/includes/view/refound-info-credit.php:19
 msgid "Closure"
 msgstr "關帳"
 
 #: woocommerce/gateways/ecpay/includes/view/refound-info.php:43
-#: woocommerce/gateways/payuni/includes/view/refound-info.php:21
+#: woocommerce/gateways/payuni/includes/view/refound-info-credit.php:25
+#: woocommerce/gateways/payuni/includes/view/refound-info.php:9
 msgid "Refound"
 msgstr "退款"
 
@@ -892,30 +890,30 @@ msgid "Date: %s"
 msgstr "日期：%s"
 
 #: woocommerce/gateways/ecpay/includes/view/refound-info.php:4
-#: woocommerce/gateways/payuni/includes/view/refound-info.php:4
+#: woocommerce/gateways/payuni/includes/view/refound-info-credit.php:4
 msgid "Credit trade status"
 msgstr "信用卡交易狀態"
 
-#: woocommerce/gateways/ecpay/includes/ajax.php:105
-#: woocommerce/gateways/payuni/includes/ajax.php:107
+#: woocommerce/gateways/ecpay/includes/ajax.php:107
+#: woocommerce/gateways/payuni/includes/ajax.php:121
 msgid "Cancel authorization completed"
 msgstr "取消授權完成"
 
-#: woocommerce/gateways/ecpay/includes/ajax.php:108
-#: woocommerce/gateways/payuni/includes/ajax.php:110
+#: woocommerce/gateways/ecpay/includes/ajax.php:110
+#: woocommerce/gateways/payuni/includes/ajax.php:124
 msgid "Closure completed"
 msgstr "關帳完成"
 
 #. translators: %d refound amount
-#: woocommerce/gateways/ecpay/includes/ajax.php:112
-#: woocommerce/gateways/payuni/includes/ajax.php:114
+#: woocommerce/gateways/ecpay/includes/ajax.php:114
+#: woocommerce/gateways/payuni/includes/ajax.php:128
 #, php-format
 msgid "Refound %d completed"
 msgstr "退款 %d 完成"
 
 #. translators: %1$s: status message, %2$d status code
-#: woocommerce/gateways/ecpay/includes/ajax.php:118
-#: woocommerce/gateways/payuni/includes/ajax.php:120
+#: woocommerce/gateways/ecpay/includes/ajax.php:120
+#: woocommerce/gateways/payuni/includes/ajax.php:134
 #, php-format
 msgid "Refound action failed: %1$s (%2$d)"
 msgstr "退款動作失敗：%1$s (%2$d)"
@@ -979,6 +977,7 @@ msgid "Pay via ECPay iPASS"
 msgstr "使用 綠界 iPASS MONEY 付款"
 
 #: woocommerce/gateways/ecpay/gateway-jkopay.php:19
+#: woocommerce/gateways/payuni/gateway-jkopay.php:19
 msgid "Pay via JKOPay"
 msgstr "使用街口支付付款"
 
@@ -989,7 +988,7 @@ msgstr "綠界街口支付"
 
 #: woocommerce/gateways/ecpay/gateway-jkopay.php:22
 msgid "Pay via ECPay JKOPay"
-msgstr "使用 綠界 街口支付 付款"
+msgstr "使用 綠界街口支付 付款"
 
 #: woocommerce/shipping/ecpay/includes/admin.php:120
 msgid "Print ECPay shipping booking note A6 (711)"
@@ -1125,7 +1124,7 @@ msgstr "統一信用卡（分 30 期）"
 msgid "Pay via PAYUNi Credit(30 installment)"
 msgstr "使用 統一信用卡（分 30 期） 付款"
 
-#: woocommerce/gateways/payuni/includes/ajax.php:40
+#: woocommerce/gateways/payuni/includes/ajax.php:39
 msgid "Can not get info from PAYUNi."
 msgstr "無法向統一金流取得相關資訊。"
 
@@ -1154,15 +1153,64 @@ msgstr "服務供應商交易日期"
 msgid "Service provider trade status"
 msgstr "服務供應商交易狀態"
 
-#: woocommerce/gateways/ecpay/includes/meta-box.php:14
+#: woocommerce/admin/meta-box.php:16
 msgid "Refund through service provider"
 msgstr "透過服務供應商退款"
 
-#: woocommerce/admin/gateways.php:43
-#: woocommerce/gateways/ecpay/includes/meta-box.php:22
+#: woocommerce/admin/meta-box.php:28
+#: woocommerce/admin/order.php:61
 msgid "Get payment info"
 msgstr "取得付款資訊"
 
 #: assets/admin/order.js:1
 msgid "Invalid amount"
 msgstr "無效的金額"
+
+#: woocommerce/gateways/payuni/gateway-aftee.php:19
+msgid "Pay via Aftee"
+msgstr "使用 AFTEE 付款"
+
+#: woocommerce/gateways/payuni/gateway-aftee.php:20
+msgid "PAYUNi Aftee"
+msgstr "統一 AFTEE 先享後付"
+
+#: woocommerce/gateways/payuni/gateway-aftee.php:22
+msgid "Pay via PAYUNi Aftee"
+msgstr "使用 統一 AFTEE 先享後付 付款"
+
+#: woocommerce/gateways/payuni/gateway-icash.php:19
+msgid "Pay via ICash"
+msgstr "使用 icash Pay 付款"
+
+#: woocommerce/gateways/payuni/gateway-icash.php:20
+msgid "PAYUNi ICash"
+msgstr "統一 icash Pay"
+
+#: woocommerce/gateways/payuni/gateway-icash.php:22
+msgid "Pay via PAYUNi ICash"
+msgstr "使用 統一 icash Pay 付款"
+
+#: woocommerce/gateways/payuni/gateway-jkopay.php:20
+msgid "PAYUNi JKOPay"
+msgstr "統一街口支付"
+
+#: woocommerce/gateways/payuni/gateway-jkopay.php:22
+msgid "Pay via PAYUNi JKOPay"
+msgstr "使用 統一街口支付 付款"
+
+#: woocommerce/gateways/payuni/gateway-linepay.php:19
+msgid "Pay via LinePay"
+msgstr "使用 LINE Pay 付款"
+
+#: woocommerce/gateways/payuni/gateway-linepay.php:20
+msgid "PAYUNi LinePay"
+msgstr "統一 LINE Pay"
+
+#: woocommerce/gateways/payuni/gateway-linepay.php:22
+msgid "Pay via PAYUNi LinePay"
+msgstr "使用 統一 LINE Pay 付款"
+
+#: woocommerce/gateways/ecpay/includes/view/refound-info.php:12
+#: woocommerce/gateways/payuni/includes/view/refound-info-credit.php:12
+msgid "Received amount"
+msgstr "收款金額"

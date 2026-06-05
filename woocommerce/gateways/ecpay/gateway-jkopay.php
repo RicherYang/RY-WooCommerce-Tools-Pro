@@ -4,9 +4,9 @@ defined('ABSPATH') or exit;
 
 class RY_ECPay_Gateway_Jkopay extends RY_WT_WC_ECPay_Payment_Gateway
 {
-    public const Payment_Type = 'DigitalPayment';
+    public const PAYMENT_TYPE = 'DigitalPayment';
 
-    public const Sub_Payment_Type = 'Jkopay';
+    public const SUB_PAYMENT_TYPE = 'Jkopay';
 
     protected int $check_min_amount = 50;
 

@@ -18,9 +18,8 @@ final class RY_WTP_WC_PAYUNi_Gateway
 
     protected function do_init(): void
     {
-        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways.php';
-
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/includes/gateway-credit-installment.php';
+        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/gateway-aftee.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/gateway-credit-installment-3.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/gateway-credit-installment-6.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/gateway-credit-installment-9.php';
@@ -28,11 +27,12 @@ final class RY_WTP_WC_PAYUNi_Gateway
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/gateway-credit-installment-18.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/gateway-credit-installment-24.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/gateway-credit-installment-30.php';
+        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/gateway-icash.php';
+        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/gateway-jkopay.php';
+        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/gateway-linepay.php';
 
         // include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/gateway-block.php';
         // RY_WTP_WC_PAYUNi_Gateway_Block::instance();
-
-        RY_WTP_WC_Gateways::instance();
 
         if (is_admin()) {
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/includes/admin.php';
@@ -48,6 +48,11 @@ final class RY_WTP_WC_PAYUNi_Gateway
 
     public function add_method($methods)
     {
+        $methods[] = 'RY_PAYUNi_Gateway_Aftee';
+        $methods[] = 'RY_PAYUNi_Gateway_Icash';
+        $methods[] = 'RY_PAYUNi_Gateway_Jkopay';
+        $methods[] = 'RY_PAYUNi_Gateway_Linepay';
+
         if ('yes' === RY_WTP::get_option('payuni_credit_installment', 'no')) {
             $methods[] = 'RY_PAYUNi_Gateway_Credit_Installment_3';
             $methods[] = 'RY_PAYUNi_Gateway_Credit_Installment_6';

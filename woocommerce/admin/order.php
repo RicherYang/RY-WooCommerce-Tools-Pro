@@ -2,11 +2,11 @@
 
 defined('ABSPATH') or exit;
 
-final class RY_WTP_WC_Admin_Gateways
+final class RY_WTP_WC_Admin_Order
 {
     protected static ?self $_instance = null;
 
-    public static function instance(): RY_WTP_WC_Admin_Gateways
+    public static function instance(): RY_WTP_WC_Admin_Order
     {
         if (null === self::$_instance) {
             self::$_instance = new self();
@@ -32,14 +32,21 @@ final class RY_WTP_WC_Admin_Gateways
     public function show_payment_info($html, $order)
     {
         $payment_method = $order->get_payment_method();
-        if (!str_starts_with($payment_method, 'ry_ecpay_')) {
-            if (!str_starts_with($payment_method, 'ry_newebpay_')) {
-                if (!str_starts_with($payment_method, 'ry_payuni_')) {
-                    return $html;
-                }
-            }
+        if (str_starts_with($payment_method, 'ry_ecpay_')) {
+            $html = $this->add_html($html, $order);
+        }
+        if (str_starts_with($payment_method, 'ry_newebpay_')) {
+            $html = $this->add_html($html, $order);
+        }
+        if (str_starts_with($payment_method, 'ry_payuni_')) {
+            $html = $this->add_html($html, $order);
         }
 
+        return $html;
+    }
+
+    protected function add_html($html, $order)
+    {
         add_action('admin_footer', [$this, 'payment_info_template']);
 
         if (empty($html)) {
@@ -48,7 +55,11 @@ final class RY_WTP_WC_Admin_Gateways
             $html = '<tr><td><table>' . $html . '</table></td><td>';
         }
 
-        $html .= '<button id="ry-show-payment-info" type="button" class="button" data-orderid="' . esc_attr($order->get_id()) . '">' . esc_html__('Get payment info', 'ry-woocommerce-tools-pro') . '</button></td></tr>';
+        $html .= sprintf(
+            '<button id="ry-show-payment-info" type="button" class="button" data-orderid="%1$s">%2$s</button></td></tr>',
+            esc_attr($order->get_id()),
+            esc_html__('Get payment info', 'ry-woocommerce-tools-pro')
+        );
 
         return $html;
     }
