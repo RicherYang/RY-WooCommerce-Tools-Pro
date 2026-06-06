@@ -5,14 +5,12 @@
     "author": "Richer Yang",
     "private": true,
     "devDependencies": {
-        "react": "^19.2.4",
-        "clean-webpack-plugin": "^4.0.0",
-        "@wordpress/i18n": "^6.20.0",
-        "@wordpress/scripts": "^32.3.0",
+        "@wordpress/i18n": "^6.21.0",
+        "@wordpress/scripts": "^32.4.0",
         "@woocommerce/dependency-extraction-webpack-plugin": "^4.0.0",
-        "@wordpress/blocks": "^15.20.0",
-        "@wordpress/components": "^34.0.0",
-        "@wordpress/icons": "^13.1.0"
+        "@wordpress/blocks": "^15.21.0",
+        "@wordpress/components": "^35.0.0",
+        "@wordpress/icons": "^13.3.0"
     },
     "scripts": {
         "start": "wp-scripts start",
