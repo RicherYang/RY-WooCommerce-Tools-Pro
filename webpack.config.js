@@ -1,7 +1,6 @@
 const path = require('path');
 const glob = require('glob');
 const CopyWebpackPlugin = require('copy-webpack-plugin', true);
-const { CleanWebpackPlugin } = require('clean-webpack-plugin', true);
 
 const defaultConfig = require('@wordpress/scripts/config/webpack.config', true);
 const WooCommerceDependencyExtractionWebpackPlugin = require('@woocommerce/dependency-extraction-webpack-plugin', true);
@@ -52,13 +51,7 @@ module.exports = {
         filename: '[name].js',
     },
     plugins: [
-        ...defaultConfig.plugins.filter((plugin) => plugin.constructor.name !== 'CleanWebpackPlugin' && plugin.constructor.name !== 'DependencyExtractionWebpackPlugin'),
-        new CleanWebpackPlugin({
-            cleanOnceBeforeBuildPatterns: [
-                path.join(distPath)
-            ],
-            cleanStaleWebpackAssets: false,
-        }),
+        ...defaultConfig.plugins.filter((plugin) => plugin.constructor.name !== 'DependencyExtractionWebpackPlugin'),
         new WooCommerceDependencyExtractionWebpackPlugin(),
         new CopyWebpackPlugin({
             patterns: getCopyPatterns()
