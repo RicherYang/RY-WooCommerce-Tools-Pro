@@ -29,14 +29,7 @@ final class RY_WTP_Updater
             return $update;
         }
 
-        $update = RY_WTP_LinkServer::instance()->check_version();
-        if (is_array($update)) {
-            $update['id'] = 'https://ry-plugin.com/ry-woocommerce-tools-pro';
-            $update['url'] = 'https://ry-plugin.com/ry-woocommerce-tools-pro';
-            $update['slug'] = 'ry-woocommerce-tools-pro';
-        }
-
-        return $update;
+        return RY_WTP_LinkServer::instance()->check_version();
     }
 
     public function modify_plugin_details($result, $action, $args)
