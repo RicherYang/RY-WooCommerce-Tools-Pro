@@ -11,9 +11,9 @@ final class RY_WTP_WC_Admin_Meta_Box extends RY_WT_Meta_Box
             $payment_method = $order->get_payment_method();
             $payment_gateways = WC()->payment_gateways()->payment_gateways();
 
-            if (isset($payment_gateways[$payment_method])) {
-                if ($payment_gateways[$payment_method]::SUPPORT_REFUNOD ?? false) {
-                    add_meta_box('ry-gateway-refound', __('Refund through service provider', 'ry-woocommerce-tools-pro'), [__CLASS__, 'output'], $post_type, 'side', 'core');
+            if (isset($payment_gateways[$payment_method]) && defined(get_class($payment_gateways[$payment_method]) . '::SUPPORT_REFUND')) {
+                if ($payment_gateways[$payment_method]::SUPPORT_REFUND) {
+                    add_meta_box('ry-gateway-refund', __('Refund through service provider', 'ry-woocommerce-tools-pro'), [__CLASS__, 'output'], $post_type, 'side', 'core');
                 }
             }
         }

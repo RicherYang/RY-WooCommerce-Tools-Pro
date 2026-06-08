@@ -6,7 +6,7 @@ class RY_PAYUNi_Gateway_Jkopay extends RY_WT_WC_PAYUNi_Payment_Gateway
 {
     public const PAYMENT_TYPE = 'JKoPay';
 
-    public const bool SUPPORT_REFUNOD = true;
+    public const bool SUPPORT_REFUND = true;
 
     protected int $check_min_amount = 50;
 

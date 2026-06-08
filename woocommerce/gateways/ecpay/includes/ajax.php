@@ -59,7 +59,7 @@ final class RY_WTP_WC_ECPay_Gateway_Admin_ajax
             $payment_method = $order->get_payment_method();
             if (str_starts_with($payment_method, 'ry_ecpay_')) {
                 $gateway_class_name = str_replace('ry_ecpay_', 'RY_ECPay_Gateway_', $payment_method);
-                if (class_exists($gateway_class_name) && $gateway_class_name::SUPPORT_REFUNOD) {
+                if (class_exists($gateway_class_name) && $gateway_class_name::SUPPORT_REFUND) {
                     $data = [];
 
                     $info = RY_WT_WC_ECPay_Gateway_Api::instance()->get_credit_info($order);
@@ -86,7 +86,7 @@ final class RY_WTP_WC_ECPay_Gateway_Admin_ajax
             $payment_method = $order->get_payment_method();
             if (str_starts_with($payment_method, 'ry_ecpay_')) {
                 $gateway_class_name = str_replace('ry_ecpay_', 'RY_ECPay_Gateway_', $payment_method);
-                if (class_exists($gateway_class_name) && $gateway_class_name::SUPPORT_REFUNOD) {
+                if (class_exists($gateway_class_name) && $gateway_class_name::SUPPORT_REFUND) {
                     $action_type = sanitize_key($_POST['refound'] ?? '');
                     switch ($action_type) {
                         case 'cancel':

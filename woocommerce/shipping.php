@@ -31,7 +31,7 @@ final class RY_WTP_WC_Shipping
 
     public function add_shipping_cost_args($args, $package, $rate)
     {
-        $args['offisland'] = $rate['meta_data']['LogisticsInfo']['CVSOutSide'] ?? '';
+        $args['offisland'] = $rate['meta_data']['RYCvsInfo']['CVSOutSide'] ?? '';
 
         return $args;
     }

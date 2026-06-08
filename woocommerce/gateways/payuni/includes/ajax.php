@@ -60,7 +60,7 @@ final class RY_WTP_WC_PAYUNi_Gateway_Admin_ajax
             $payment_method = $order->get_payment_method();
             if (str_starts_with($payment_method, 'ry_payuni_')) {
                 $gateway_class_name = str_replace('ry_payuni_', 'RY_PAYUNi_Gateway_', $payment_method);
-                if (class_exists($gateway_class_name) && $gateway_class_name::SUPPORT_REFUNOD) {
+                if (class_exists($gateway_class_name) && $gateway_class_name::SUPPORT_REFUND) {
                     $data = [];
 
                     $info = RY_WT_WC_PAYUNi_Gateway_Api::instance()->get_info($order);
@@ -92,7 +92,7 @@ final class RY_WTP_WC_PAYUNi_Gateway_Admin_ajax
             $payment_method = $order->get_payment_method();
             if (str_starts_with($payment_method, 'ry_payuni_')) {
                 $gateway_class_name = str_replace('ry_payuni_', 'RY_PAYUNi_Gateway_', $payment_method);
-                if (class_exists($gateway_class_name) && $gateway_class_name::SUPPORT_REFUNOD) {
+                if (class_exists($gateway_class_name) && $gateway_class_name::SUPPORT_REFUND) {
                     $action_type = sanitize_key($_POST['refound'] ?? '');
                     switch ($action_type) {
                         case 'cancel':
@@ -102,19 +102,20 @@ final class RY_WTP_WC_PAYUNi_Gateway_Admin_ajax
                             $result = RY_WT_WC_PAYUNi_Gateway_Api::instance()->credit_close($order, 'C', ceil($order->get_total()));
                             break;
                         case 'refound':
-                            match ($gateway_class_name::PAYMENT_TYPE) {
-                                'Credit' => $result = RY_WT_WC_PAYUNi_Gateway_Api::instance()->credit_close($order, 'R', intval($_POST['amount'] ?? 0)),
-                                'CreditInst' => $result = RY_WT_WC_PAYUNi_Gateway_Api::instance()->credit_close($order, 'R', intval($_POST['amount'] ?? 0)),
-                                'Aftee' => $result = RY_WT_WC_PAYUNi_Gateway_Api::instance()->aftee_refound($order, intval($_POST['amount'] ?? 0)),
-                                'ICash' => $result = RY_WT_WC_PAYUNi_Gateway_Api::instance()->icash_refound($order, intval($_POST['amount'] ?? 0)),
-                                'JKoPay' => $result = RY_WT_WC_PAYUNi_Gateway_Api::instance()->jkopay_refound($order, intval($_POST['amount'] ?? 0)),
-                                'LinePay' => $result = RY_WT_WC_PAYUNi_Gateway_Api::instance()->linepay_refound($order, intval($_POST['amount'] ?? 0)),
+                            $result = match ($gateway_class_name::PAYMENT_TYPE) {
+                                'Credit' => RY_WT_WC_PAYUNi_Gateway_Api::instance()->credit_close($order, 'R', intval($_POST['amount'] ?? 0)),
+                                'CreditInst' => RY_WT_WC_PAYUNi_Gateway_Api::instance()->credit_close($order, 'R', intval($_POST['amount'] ?? 0)),
+                                'Aftee' => RY_WT_WC_PAYUNi_Gateway_Api::instance()->aftee_refound($order, intval($_POST['amount'] ?? 0)),
+                                'ICash' => RY_WT_WC_PAYUNi_Gateway_Api::instance()->icash_refound($order, intval($_POST['amount'] ?? 0)),
+                                'JKoPay' => RY_WT_WC_PAYUNi_Gateway_Api::instance()->jkopay_refound($order, intval($_POST['amount'] ?? 0)),
+                                'LinePay' => RY_WT_WC_PAYUNi_Gateway_Api::instance()->linepay_refound($order, intval($_POST['amount'] ?? 0)),
+                                default => null,
                             };
 
                             break;
                     }
 
-                    if (isset($result)) {
+                    if (isset($result) && is_array($result)) {
                         if ($result['Status'] === 'SUCCESS') {
                             switch ($action_type) {
                                 case 'cancel':

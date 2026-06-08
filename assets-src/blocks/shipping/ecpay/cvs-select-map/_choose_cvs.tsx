@@ -21,7 +21,7 @@ const ChooseCvsForm = ({ label, selectedRate }: formProps): JSX.Element | null =
         LogisticsSubType: getRateMetaValue(selectedRate, 'LogisticsSubType')
     });
 
-    const cvsInfo = getRateMetaValue(selectedRate, 'LogisticsInfo');
+    const cvsInfo = getRateMetaValue(selectedRate, 'RYCvsInfo');
     const hasCvsInfo = '' !== cvsInfo;
 
     return (
