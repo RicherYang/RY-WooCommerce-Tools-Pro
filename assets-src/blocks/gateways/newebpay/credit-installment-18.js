@@ -5,7 +5,7 @@ import { getSetting } from '@woocommerce/settings';
 
 import PaymentLabel from '../../base/_payment-label';
 
-const defaultLabel = __('NewebPay Credit(18 installment)', 'ry-woocommerce-tools-pro');
+const defaultLabel = __('NewebPay Credit (18 installment)', 'ry-woocommerce-tools-pro');
 const settings = getSetting('ry_newebpay_credit_installment_18_data', {});
 const label = decodeEntities(settings.title || defaultLabel);
 

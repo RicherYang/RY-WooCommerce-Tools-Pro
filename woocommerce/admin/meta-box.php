@@ -23,11 +23,11 @@ final class RY_WTP_WC_Admin_Meta_Box extends RY_WT_Meta_Box
     {
         $order = self::get_order_object($data_object);
         printf(
-            '<button id="ry-show-refound-info" type="button" class="button" data-orderid="%1$s">%2$s</button>',
+            '<button id="ry-show-refund-info" type="button" class="button" data-orderid="%1$s">%2$s</button>',
             esc_attr($order->get_id()),
             esc_html__('Get payment info', 'ry-woocommerce-tools-pro')
         );
 
-        include RY_WTP_PLUGIN_DIR . 'woocommerce/admin/meta-boxes/view/refound-info-template.php';
+        include RY_WTP_PLUGIN_DIR . 'woocommerce/admin/meta-boxes/view/refund-info-template.php';
     }
 }

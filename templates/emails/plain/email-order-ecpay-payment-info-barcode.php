@@ -12,11 +12,11 @@
  *
  * @version 1.0.15
  */
-if ($order->get_payment_method() != 'ry_ecpay_barcode') {
+if ($order->get_payment_method() !== 'ry_ecpay_barcode') {
     return;
 }
 
-if ($order->get_meta('_ecpay_payment_type') != 'BARCODE') {
+if ($order->get_meta('_ecpay_payment_type') !== 'BARCODE') {
     return;
 }
 

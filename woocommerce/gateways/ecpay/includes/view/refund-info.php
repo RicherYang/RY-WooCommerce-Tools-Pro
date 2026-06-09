@@ -32,14 +32,14 @@
 </p>
 <?php if ($info['RtnValue']['Status'] === 'Authorized') { ?>
 <p>
-    <button class="button refound-action" type="button" data-refound="cancel" data-orderid="<?php echo esc_attr($order->get_id()); ?>"><?php echo esc_html__('Cancel authorization', 'ry-woocommerce-tools-pro'); ?></button>
+    <button class="button refund-action" type="button" data-refund="cancel" data-orderid="<?php echo esc_attr($order->get_id()); ?>"><?php echo esc_html__('Cancel authorization', 'ry-woocommerce-tools-pro'); ?></button>
     &emsp;
-    <button class="button refound-action" type="button" data-refound="closure" data-orderid="<?php echo esc_attr($order->get_id()); ?>"><?php echo esc_html__('Closure', 'ry-woocommerce-tools-pro'); ?></button>
+    <button class="button refund-action" type="button" data-refund="closure" data-orderid="<?php echo esc_attr($order->get_id()); ?>"><?php echo esc_html__('Closure', 'ry-woocommerce-tools-pro'); ?></button>
 </p>
 <?php } ?>
 <?php if ($info['RtnValue']['Status'] === 'Captured' || $info['RtnValue']['Status'] === 'To be captured') { ?>
 <p>
-    <input type="text" class="small-text" id="ry-refound-amount">
-    <button class="button refound-action" type="button" data-refound="refound" data-orderid="<?php echo esc_attr($order->get_id()); ?>"><?php echo esc_html__('Refound', 'ry-woocommerce-tools-pro'); ?></button>
+    <input type="text" class="small-text" id="ry-refund-amount">
+    <button class="button refund-action" type="button" data-refund="refund" data-orderid="<?php echo esc_attr($order->get_id()); ?>"><?php echo esc_html__('Refund', 'ry-woocommerce-tools-pro'); ?></button>
 </p>
 <?php } ?>

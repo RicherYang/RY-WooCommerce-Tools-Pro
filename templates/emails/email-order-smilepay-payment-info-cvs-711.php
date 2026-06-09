@@ -12,11 +12,11 @@
  *
  * @version 1.2.0
  */
-if ($order->get_payment_method() != 'ry_smilepay_cvs_711') {
+if ($order->get_payment_method() !== 'ry_smilepay_cvs_711') {
     return;
 }
 
-if ($order->get_meta('_smilepay_payment_type') != '4') {
+if ($order->get_meta('_smilepay_payment_type') !== '4') {
     return;
 }
 

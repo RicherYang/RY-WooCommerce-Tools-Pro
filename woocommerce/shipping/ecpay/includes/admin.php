@@ -216,7 +216,7 @@ final class RY_WTP_ECPay_Shipping_Admin
                         '_nonce' => [
                             'payment' => wp_create_nonce('get-payment-info'),
                             'shipping' => wp_create_nonce('get-shipping-info'),
-                            'refound' => wp_create_nonce('get-refound-info'),
+                            'refund' => wp_create_nonce('get-refund-info'),
                         ],
                     ]);
 

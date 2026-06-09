@@ -4,15 +4,13 @@ defined('ABSPATH') or exit;
 
 class RY_ECPay_Gateway_Applepay extends RY_WT_WC_ECPay_Payment_Gateway
 {
+    public const ID = 'ry_ecpay_applepay';
+
     public const PAYMENT_TYPE = 'ApplePay';
-
-    protected int $check_min_amount = 6;
-
-    protected int $check_max_amount = 199999;
 
     public function __construct()
     {
-        $this->id = 'ry_ecpay_applepay';
+        $this->id = self::ID;
         $this->has_fields = false;
         $this->order_button_text = __('Pay via Apple Pay', 'ry-woocommerce-tools-pro');
         $this->method_title = __('ECPay Apple Pay', 'ry-woocommerce-tools-pro');

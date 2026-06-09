@@ -12,11 +12,11 @@
  *
  * @version 3.7.5
  */
-if ($order->get_payment_method() != 'ry_payuni_cvs') {
+if ($order->get_payment_method() !== 'ry_payuni_cvs') {
     return;
 }
 
-if ($order->get_meta('_payuni_payment_type') != '3') {
+if ($order->get_meta('_payuni_payment_type') !== '3') {
     return;
 }
 

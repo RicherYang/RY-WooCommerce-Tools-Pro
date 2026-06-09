@@ -77,24 +77,24 @@ $(function () {
         });
     }
 
-    if ($('#ry-show-refound-info').length) {
-        $('#ry-show-refound-info').on('click', function () {
+    if ($('#ry-show-refund-info').length) {
+        $('#ry-show-refund-info').on('click', function () {
             let $btn = $(this);
             $btn.addClass(['disabled'])
                 .prop('disabled', true);
-            $('#ry-refound-info').html('');
+            $('#ry-refund-info').html('');
             $.ajax({
                 url: ajaxurl,
                 method: 'POST',
                 data: {
-                    action: 'RY_refound_info',
+                    action: 'RY_refund_info',
                     orderid: $btn.data('orderid'),
-                    _ajax_nonce: RyInfo._nonce.refound
+                    _ajax_nonce: RyInfo._nonce.refund
                 }
             }).done(function (Jdata) {
                 if (Jdata.success) {
-                    const template = wp.template('ry-refound-info');
-                    $('#ry-refound-info').html(template(Jdata.data));
+                    const template = wp.template('ry-refund-info');
+                    $('#ry-refund-info').html(template(Jdata.data));
                 }
             }).always(function () {
                 $btn.removeClass(['disabled'])
@@ -102,11 +102,11 @@ $(function () {
             });
         });
 
-        $('#ry-refound-info').on('click', '.refound-action', function () {
+        $('#ry-refund-info').on('click', '.refund-action', function () {
             let $btn = $(this);
 
-            if ($btn.data('refound') === 'refound') {
-                const amount = parseInt($('#ry-refound-amount').val());
+            if ($btn.data('refund') === 'refund') {
+                const amount = parseInt($('#ry-refund-amount').val());
                 if (isNaN(amount) || amount <= 0) {
                     alert(__('Invalid amount', 'ry-woocommerce-tools-pro'));
                     return;
@@ -118,11 +118,11 @@ $(function () {
                 url: ajaxurl,
                 method: 'POST',
                 data: {
-                    action: 'RY_refound_action',
+                    action: 'RY_refund_action',
                     orderid: $btn.data('orderid'),
-                    refound: $btn.data('refound'),
-                    amount: $('#ry-refound-amount').val(),
-                    _ajax_nonce: RyInfo._nonce.refound
+                    refund: $btn.data('refund'),
+                    amount: $('#ry-refund-amount').val(),
+                    _ajax_nonce: RyInfo._nonce.refund
                 }
             }).always(function () {
                 location.reload();

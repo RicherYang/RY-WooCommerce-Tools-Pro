@@ -6,7 +6,7 @@ import { getSetting } from '@woocommerce/settings';
 import NumberOfPeriods from '../../base/_number-of-periods';
 import PaymentLabel from '../../base/_payment-label';
 
-const defaultLabel = __('ECPay Credit(installment)', 'ry-woocommerce-tools-pro');
+const defaultLabel = __('ECPay Credit (installment)', 'ry-woocommerce-tools-pro');
 const settings = getSetting('ry_ecpay_credit_installment_data', {});
 const label = decodeEntities(settings.title || defaultLabel);
 

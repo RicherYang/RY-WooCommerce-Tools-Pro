@@ -12,11 +12,11 @@
  *
  * @version 1.0.15
  */
-if ($order->get_payment_method() != 'ry_newebpay_atm') {
+if ($order->get_payment_method() !== 'ry_newebpay_atm') {
     return;
 }
 
-if ($order->get_meta('_newebpay_payment_type') != 'VACC') {
+if ($order->get_meta('_newebpay_payment_type') !== 'VACC') {
     return;
 }
 

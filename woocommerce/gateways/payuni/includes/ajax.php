@@ -18,8 +18,8 @@ final class RY_WTP_WC_PAYUNi_Gateway_Admin_ajax
     protected function do_init(): void
     {
         add_action('wp_ajax_RY_payment_info', [$this, 'get_payment_info']);
-        add_action('wp_ajax_RY_refound_info', [$this, 'get_refound_info']);
-        add_action('wp_ajax_RY_refound_action', [$this, 'do_refound_action']);
+        add_action('wp_ajax_RY_refund_info', [$this, 'get_refund_info']);
+        add_action('wp_ajax_RY_refund_action', [$this, 'do_refund_action']);
     }
 
     public function get_payment_info()
@@ -51,9 +51,9 @@ final class RY_WTP_WC_PAYUNi_Gateway_Admin_ajax
         }
     }
 
-    public function get_refound_info()
+    public function get_refund_info()
     {
-        check_ajax_referer('get-refound-info');
+        check_ajax_referer('get-refund-info');
 
         $order = wc_get_order(intval($_POST['orderid'] ?? ''));
         if ($order) {
@@ -70,9 +70,9 @@ final class RY_WTP_WC_PAYUNi_Gateway_Admin_ajax
                         $info = $info['Result'][0];
                         ob_start();
                         if ($info['PaymentType'] === '1') {
-                            include RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/includes/view/refound-info-credit.php';
+                            include RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/includes/view/refund-info-credit.php';
                         } else {
-                            include RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/includes/view/refound-info.php';
+                            include RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/includes/view/refund-info.php';
                         }
                         $data['info_html'] = ob_get_clean();
                     }
@@ -83,9 +83,9 @@ final class RY_WTP_WC_PAYUNi_Gateway_Admin_ajax
         }
     }
 
-    public function do_refound_action()
+    public function do_refund_action()
     {
-        check_ajax_referer('get-refound-info');
+        check_ajax_referer('get-refund-info');
 
         $order = wc_get_order(intval($_POST['orderid'] ?? ''));
         if ($order) {
@@ -93,7 +93,7 @@ final class RY_WTP_WC_PAYUNi_Gateway_Admin_ajax
             if (str_starts_with($payment_method, 'ry_payuni_')) {
                 $gateway_class_name = str_replace('ry_payuni_', 'RY_PAYUNi_Gateway_', $payment_method);
                 if (class_exists($gateway_class_name) && $gateway_class_name::SUPPORT_REFUND) {
-                    $action_type = sanitize_key($_POST['refound'] ?? '');
+                    $action_type = sanitize_key($_POST['refund'] ?? '');
                     switch ($action_type) {
                         case 'cancel':
                             $result = RY_WT_WC_PAYUNi_Gateway_Api::instance()->credit_cancel($order);
@@ -101,14 +101,14 @@ final class RY_WTP_WC_PAYUNi_Gateway_Admin_ajax
                         case 'closure':
                             $result = RY_WT_WC_PAYUNi_Gateway_Api::instance()->credit_close($order, 'C', ceil($order->get_total()));
                             break;
-                        case 'refound':
+                        case 'refund':
                             $result = match ($gateway_class_name::PAYMENT_TYPE) {
                                 'Credit' => RY_WT_WC_PAYUNi_Gateway_Api::instance()->credit_close($order, 'R', intval($_POST['amount'] ?? 0)),
                                 'CreditInst' => RY_WT_WC_PAYUNi_Gateway_Api::instance()->credit_close($order, 'R', intval($_POST['amount'] ?? 0)),
-                                'Aftee' => RY_WT_WC_PAYUNi_Gateway_Api::instance()->aftee_refound($order, intval($_POST['amount'] ?? 0)),
-                                'ICash' => RY_WT_WC_PAYUNi_Gateway_Api::instance()->icash_refound($order, intval($_POST['amount'] ?? 0)),
-                                'JKoPay' => RY_WT_WC_PAYUNi_Gateway_Api::instance()->jkopay_refound($order, intval($_POST['amount'] ?? 0)),
-                                'LinePay' => RY_WT_WC_PAYUNi_Gateway_Api::instance()->linepay_refound($order, intval($_POST['amount'] ?? 0)),
+                                'Aftee' => RY_WT_WC_PAYUNi_Gateway_Api::instance()->aftee_refund($order, intval($_POST['amount'] ?? 0)),
+                                'ICash' => RY_WT_WC_PAYUNi_Gateway_Api::instance()->icash_refund($order, intval($_POST['amount'] ?? 0)),
+                                'JKoPay' => RY_WT_WC_PAYUNi_Gateway_Api::instance()->jkopay_refund($order, intval($_POST['amount'] ?? 0)),
+                                'LinePay' => RY_WT_WC_PAYUNi_Gateway_Api::instance()->linepay_refund($order, intval($_POST['amount'] ?? 0)),
                                 default => null,
                             };
 
@@ -124,15 +124,15 @@ final class RY_WTP_WC_PAYUNi_Gateway_Admin_ajax
                                 case 'closure':
                                     $order->add_order_note(__('Closure completed', 'ry-woocommerce-tools-pro'));
                                     break;
-                                case 'refound':
-                                    /* translators: %d refound amount */
-                                    $order->add_order_note(sprintf(__('Refound %d completed', 'ry-woocommerce-tools-pro'), intval($_POST['amount'] ?? 0)));
+                                case 'refund':
+                                    /* translators: %d refund amount */
+                                    $order->add_order_note(sprintf(__('Refund %d completed', 'ry-woocommerce-tools-pro'), intval($_POST['amount'] ?? 0)));
                                     break;
                             }
                         } else {
                             $order->add_order_note(sprintf(
                                 /* translators: %1$s: status message, %2$d status code */
-                                __('Refound action failed: %1$s (%2$d)', 'ry-woocommerce-tools-pro'),
+                                __('Refund action failed: %1$s (%2$d)', 'ry-woocommerce-tools-pro'),
                                 $result['Message'],
                                 $result['Status'],
                             ));
