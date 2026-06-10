@@ -90,7 +90,7 @@ final class RY_WTP_WC_Account
         }
 
         $check = intval($_POST['ry-wtp-check'] ?? '');
-        $nonce_value = wp_unslash($_POST['ry-wtp-botcheck-nonce'] ?? ''); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+        $nonce_value = wp_unslash($_POST['ry-wtp-botcheck-nonce'] ?? '');
         if (!wp_verify_nonce($nonce_value, 'ry-wtp-botcheck_' . $check)) {
             $errors->add('botcheck', __('Bot check failed. Please make sure you enter the correct number.', 'ry-woocommerce-tools-pro'));
         }

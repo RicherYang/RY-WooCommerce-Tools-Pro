@@ -32,7 +32,7 @@ function rywtp_multiselect($field)
 <p <?php echo wc_implode_html_attributes($wrapper_attributes); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>>
     <label <?php echo wc_implode_html_attributes($label_attributes); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>><?php echo wp_kses_post($field['label']); ?></label>
     <?php if ($tooltip) { ?>
-    <?php echo wc_help_tip($tooltip); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>
+    <?php echo wp_kses_post(wc_help_tip($tooltip)); ?>
     <?php } ?>
     <select multiple="multiple" <?php echo wc_implode_html_attributes($field_attributes); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>>
         <?php foreach ((array) $field['options'] as $option_key => $option_value) { ?>

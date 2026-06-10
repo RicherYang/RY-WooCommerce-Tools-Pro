@@ -28,7 +28,7 @@ if (!class_exists('RY_Abstract_Admin_Page', false)) {
 
         public static function admin_action(): void
         {
-            $action = sanitize_text_field(wp_unslash($_REQUEST['action'] ?? '')); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+            $action = sanitize_text_field(wp_unslash($_REQUEST['action'] ?? ''));
             static::instance()->do_admin_action($action);
         }
 

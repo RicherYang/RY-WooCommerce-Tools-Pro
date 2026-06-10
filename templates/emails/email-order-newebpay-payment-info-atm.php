@@ -23,14 +23,14 @@ if ($order->get_meta('_newebpay_payment_type') !== 'VACC') {
 $text_align = is_rtl() ? 'right' : 'left';
 ?>
 <h2>
-    <?php esc_html_e('Payment details', 'ry-woocommerce-tools'); // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch?>
+    <?php esc_html_e('Payment details', 'ry-woocommerce-tools'); ?>
 </h2>
 <div style="margin-bottom: 40px;">
     <table class="td" cellspacing="0" cellpadding="6" style="width: 100%;" border="1">
         <tbody>
             <tr>
                 <th class="td" scope="row" style="text-align:<?php echo esc_attr($text_align); ?>;">
-                    <?php esc_html_e('Bank', 'ry-woocommerce-tools'); // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch?>
+                    <?php esc_html_e('Bank', 'ry-woocommerce-tools'); ?>
                 </th>
                 <td class="td" style="text-align:<?php echo esc_attr($text_align); ?>;">
                     <?php echo esc_html(rywt_bank_code_to_name($order->get_meta('_newebpay_atm_BankCode'))); ?>
@@ -38,7 +38,7 @@ $text_align = is_rtl() ? 'right' : 'left';
             </tr>
             <tr>
                 <th class="td" scope="row" style="text-align:<?php echo esc_attr($text_align); ?>;">
-                    <?php esc_html_e('Bank code', 'ry-woocommerce-tools'); // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch?>
+                    <?php esc_html_e('Bank code', 'ry-woocommerce-tools'); ?>
                 </th>
                 <td class="td" style="text-align:<?php echo esc_attr($text_align); ?>;">
                     <?php echo esc_html($order->get_meta('_newebpay_atm_BankCode')); ?>
@@ -46,7 +46,7 @@ $text_align = is_rtl() ? 'right' : 'left';
             </tr>
             <tr>
                 <th class="td" scope="row" style="text-align:<?php echo esc_attr($text_align); ?>;">
-                    <?php esc_html_e('ATM Bank account', 'ry-woocommerce-tools'); // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch?>
+                    <?php esc_html_e('ATM Bank account', 'ry-woocommerce-tools'); ?>
                 </th>
                 <td class="td" style="text-align:<?php echo esc_attr($text_align); ?>;">
                     <?php echo wp_kses(wordwrap($order->get_meta('_newebpay_atm_vAccount'), 4, '<span> </span>', true), ['span' => []]); ?>
@@ -54,7 +54,7 @@ $text_align = is_rtl() ? 'right' : 'left';
             </tr>
             <tr>
                 <th class="td" scope="row" style="text-align:<?php echo esc_attr($text_align); ?>;">
-                    <?php esc_html_e('Payment deadline', 'ry-woocommerce-tools'); // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch?>
+                    <?php esc_html_e('Payment deadline', 'ry-woocommerce-tools'); ?>
                 </th>
                 <?php $expireDate = wc_string_to_datetime($order->get_meta('_newebpay_atm_ExpireDate')); ?>
                 <td class="td" style="text-align:<?php echo esc_attr($text_align); ?>;">

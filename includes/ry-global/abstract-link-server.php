@@ -16,7 +16,7 @@ if (!class_exists('RY_Abstract_Link_Server', false)) {
 
         public function check_version()
         {
-            @set_time_limit(30); // phpcs:ignore Squiz.PHP.DiscouragedFunctions.Discouraged
+            @set_time_limit(30);
 
             $response = wp_remote_get($this->api_url . 'products/' . $this->plugin_slug, [
                 'timeout' => 20,
@@ -28,7 +28,7 @@ if (!class_exists('RY_Abstract_Link_Server', false)) {
 
         public function get_info()
         {
-            @set_time_limit(30); // phpcs:ignore Squiz.PHP.DiscouragedFunctions.Discouraged
+            @set_time_limit(30);
 
             $response = wp_remote_get($this->api_url . 'products/info/' . $this->plugin_slug, [
                 'timeout' => 20,
@@ -40,7 +40,7 @@ if (!class_exists('RY_Abstract_Link_Server', false)) {
 
         public function expire_data()
         {
-            @set_time_limit(30); // phpcs:ignore Squiz.PHP.DiscouragedFunctions.Discouraged
+            @set_time_limit(30);
 
             $response = wp_remote_post($this->api_url . 'license/expire/' . $this->plugin_slug, [
                 'timeout' => 20,
@@ -59,7 +59,7 @@ if (!class_exists('RY_Abstract_Link_Server', false)) {
 
         public function activate_key(string $key)
         {
-            @set_time_limit(30); // phpcs:ignore Squiz.PHP.DiscouragedFunctions.Discouraged
+            @set_time_limit(30);
 
             $response = wp_remote_post($this->api_url . 'license/activate/' . $this->plugin_slug, [
                 'timeout' => 20,

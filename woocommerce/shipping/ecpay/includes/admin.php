@@ -26,7 +26,7 @@ final class RY_WTP_ECPay_Shipping_Admin
 
         add_action('admin_notices', [$this, 'bulk_action_notices']);
         if (class_exists('Automattic\WooCommerce\Utilities\OrderUtil') && OrderUtil::custom_orders_table_usage_is_enabled()) {
-            if ('edit' !== ($_GET['action'] ?? '')) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended , WordPress.Security.ValidatedSanitizedInput.MissingUnslash , WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+            if ('edit' !== ($_GET['action'] ?? '')) {
                 add_filter('bulk_actions-woocommerce_page_wc-orders', [$this, 'shop_order_list_action']);
                 add_filter('handle_bulk_actions-woocommerce_page_wc-orders', [$this, 'do_shop_order_action'], 10, 3);
             }
@@ -94,10 +94,10 @@ final class RY_WTP_ECPay_Shipping_Admin
 
     public function bulk_action_notices()
     {
-        $bulk_action = wp_unslash($_GET['bulk_action'] ?? ''); // phpcs:ignore WordPress.Security.NonceVerification.Recommended , WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+        $bulk_action = wp_unslash($_GET['bulk_action'] ?? '');
 
         if ('ry_get_ecpay_no' === $bulk_action) {
-            $number = intval($_GET['ry_geted'] ?? ''); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+            $number = intval($_GET['ry_geted'] ?? '');
 
             /* translators: %s: count */
             $message = sprintf(_n('%s order get shipping no.', '%s order get shipping no.', $number, 'ry-woocommerce-tools-pro'), number_format_i18n($number));
@@ -187,12 +187,12 @@ final class RY_WTP_ECPay_Shipping_Admin
                     list($MerchantID, $HashKey, $HashIV, $cvs_type) = RY_WT_WC_ECPay_Shipping::instance()->get_api_info();
 
                     $choosed_cvs = '';
-                    if (isset($_POST['MerchantID']) && $_POST['MerchantID'] === $MerchantID) { // phpcs:ignore WordPress.Security.NonceVerification.Missing
+                    if (isset($_POST['MerchantID']) && $_POST['MerchantID'] === $MerchantID) {
                         $choosed_cvs = [
-                            'CVSStoreID' => sanitize_text_field(wp_unslash($_POST['CVSStoreID'] ?? '')), // phpcs:ignore WordPress.Security.NonceVerification.Missing
-                            'CVSStoreName' => sanitize_text_field(wp_unslash($_POST['CVSStoreName'] ?? '')), // phpcs:ignore WordPress.Security.NonceVerification.Missing
-                            'CVSAddress' => sanitize_text_field(wp_unslash($_POST['CVSAddress'] ?? '')), // phpcs:ignore WordPress.Security.NonceVerification.Missing
-                            'CVSTelephone' => sanitize_text_field(wp_unslash($_POST['CVSTelephone'] ?? '')), // phpcs:ignore WordPress.Security.NonceVerification.Missing
+                            'CVSStoreID' => sanitize_text_field(wp_unslash($_POST['CVSStoreID'] ?? '')),
+                            'CVSStoreName' => sanitize_text_field(wp_unslash($_POST['CVSStoreName'] ?? '')),
+                            'CVSAddress' => sanitize_text_field(wp_unslash($_POST['CVSAddress'] ?? '')),
+                            'CVSTelephone' => sanitize_text_field(wp_unslash($_POST['CVSTelephone'] ?? '')),
                         ];
                     }
 

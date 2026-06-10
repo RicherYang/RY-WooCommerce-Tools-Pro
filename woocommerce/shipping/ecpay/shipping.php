@@ -99,7 +99,7 @@ final class RY_WTP_ECPay_Shipping
         if (did_action('woocommerce_checkout_process')) {
             if (RY_WTP::get_option('ecpay_cvs_billing_address', 'no') == 'yes') {
                 $used_cvs = false;
-                $shipping_method = wp_unslash($_POST['shipping_method'] ?? []); // phpcs:ignore WordPress.Security.NonceVerification.Missing , WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+                $shipping_method = wp_unslash($_POST['shipping_method'] ?? []);
                 foreach ($shipping_method as $method) {
                     $method_ID = strstr($method, ':', true);
                     if (isset(RY_WT_WC_ECPay_Shipping::$support_methods[$method_ID])) {
@@ -191,7 +191,6 @@ final class RY_WTP_ECPay_Shipping
         }
 
         $args = [
-            'order' => $order,
             'shipping_info_list' => $shipping_info_list,
         ];
         wc_get_template('order/order-ecpay-shipping-info.php', $args, '', RY_WTP_PLUGIN_DIR . 'templates/');
@@ -199,8 +198,8 @@ final class RY_WTP_ECPay_Shipping
 
     public function chang_polylang_lang()
     {
-        if (isset($_GET['lang']) && function_exists('PLL')) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-            $lang = wp_unslash($_GET['lang']); // phpcs:ignore WordPress.Security.NonceVerification.Recommended , WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+        if (isset($_GET['lang']) && function_exists('PLL')) {
+            $lang = wp_unslash($_GET['lang']);
             if (strtolower($lang) === sanitize_key($lang)) {
                 $lang = PLL()->model->get_language($lang);
                 PLL()->curlang = $lang;

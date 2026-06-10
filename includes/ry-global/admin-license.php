@@ -102,7 +102,7 @@ if (!class_exists('RY_Admin_License', false)) {
                 return;
             }
 
-            if (!wp_verify_nonce($_POST['_wpnonce'] ?? '', $action)) { // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash , WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+            if (!wp_verify_nonce($_POST['_wpnonce'] ?? '', $action)) {
                 wp_die('Invalid nonce');
             }
 

@@ -10,7 +10,7 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @version 1.2.2
+ * @version 4.0.0
  */
 if (count($shipping_info_list)) { ?>
 <h2 class="woocommerce-order-details__title">

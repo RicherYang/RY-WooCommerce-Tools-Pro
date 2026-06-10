@@ -21,7 +21,7 @@ final class RY_WTP_WC_Admin_Shipping
     protected function do_init(): void
     {
         if (class_exists('Automattic\WooCommerce\Utilities\OrderUtil') && OrderUtil::custom_orders_table_usage_is_enabled()) {
-            if ('edit' !== ($_GET['action'] ?? '')) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended , WordPress.Security.ValidatedSanitizedInput.MissingUnslash , WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+            if ('edit' !== ($_GET['action'] ?? '')) {
                 add_filter('manage_woocommerce_page_wc-orders_columns', [$this, 'shop_order_columns'], 11);
                 add_action('manage_woocommerce_page_wc-orders_custom_column', [$this, 'shop_order_column'], 11, 2);
 
@@ -118,17 +118,17 @@ final class RY_WTP_WC_Admin_Shipping
 
     public function save_shipping_options($product)
     {
-        $shipping_amount = sanitize_text_field(wp_unslash($_POST['ry_shipping_amount'] ?? '')); // phpcs:ignore WordPress.Security.NonceVerification.Missing
+        $shipping_amount = sanitize_text_field(wp_unslash($_POST['ry_shipping_amount'] ?? ''));
         $shipping_amount = ('' === $shipping_amount) ? '' : wc_format_decimal($shipping_amount);
         $product->update_meta_data('_ry_shipping_amount', $shipping_amount);
 
-        $temp = (string) intval($_POST['ry_shipping_temp'] ?? ''); // phpcs:ignore WordPress.Security.NonceVerification.Missing
+        $temp = (string) intval($_POST['ry_shipping_temp'] ?? '');
         if (!in_array($temp, ['1', '2', '3'], true)) {
             $temp = '1';
         }
         $product->update_meta_data('_ry_shipping_temp', $temp);
 
-        $skip_shipping = (array) wp_unslash($_POST['ry_shipping_skip_shipping'] ?? ''); // phpcs:ignore WordPress.Security.NonceVerification.Missing , WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+        $skip_shipping = (array) wp_unslash($_POST['ry_shipping_skip_shipping'] ?? '');
         $skip_shipping = array_filter(array_map('sanitize_text_field', $skip_shipping));
         if (count($skip_shipping)) {
             $product->update_meta_data('_ry_shipping_skip_shipping', $skip_shipping);
@@ -139,17 +139,17 @@ final class RY_WTP_WC_Admin_Shipping
 
     public function save_variation_shipping_options($variation, $i)
     {
-        $shipping_amount = sanitize_text_field(wp_unslash($_POST['variable_ry_shipping_amount'][$i] ?? '')); // phpcs:ignore WordPress.Security.NonceVerification.Missing
+        $shipping_amount = sanitize_text_field(wp_unslash($_POST['variable_ry_shipping_amount'][$i] ?? ''));
         $shipping_amount = ('' === $shipping_amount) ? '' : wc_format_decimal($shipping_amount);
         $variation->update_meta_data('_ry_shipping_amount', $shipping_amount);
 
-        $temp = (string) intval($_POST['variable_ry_shipping_temp'][$i] ?? ''); // phpcs:ignore WordPress.Security.NonceVerification.Missing
+        $temp = (string) intval($_POST['variable_ry_shipping_temp'][$i] ?? '');
         if (!in_array($temp, ['0', '1', '2', '3'], true)) {
             $temp = '0';
         }
         $variation->update_meta_data('_ry_shipping_temp', $temp);
 
-        $skip_shipping = (array) wp_unslash($_POST['variable_ry_shipping_skip_shipping'][$i] ?? ''); // phpcs:ignore WordPress.Security.NonceVerification.Missing , WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+        $skip_shipping = (array) wp_unslash($_POST['variable_ry_shipping_skip_shipping'][$i] ?? '');
         $skip_shipping = array_filter(array_map('sanitize_text_field', $skip_shipping));
         if (count($skip_shipping)) {
             $variation->update_meta_data('_ry_shipping_skip_shipping', $skip_shipping);

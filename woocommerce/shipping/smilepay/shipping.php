@@ -86,7 +86,7 @@ final class RY_WTP_SmilePay_Shipping
         if (did_action('woocommerce_checkout_process')) {
             if (RY_WTP::get_option('smilepay_cvs_billing_address', 'no') == 'yes') {
                 $used_cvs = false;
-                $shipping_method = wp_unslash($_POST['shipping_method'] ?? []); // phpcs:ignore WordPress.Security.NonceVerification.Missing , WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+                $shipping_method = wp_unslash($_POST['shipping_method'] ?? []);
                 foreach ($shipping_method as $method) {
                     $method_ID = strstr($method, ':', true);
                     if (isset(RY_WT_WC_SmilePay_Shipping::$support_methods[$method_ID])) {
@@ -177,7 +177,6 @@ final class RY_WTP_SmilePay_Shipping
         }
 
         $args = [
-            'order' => $order,
             'shipping_info_list' => $shipping_info_list,
         ];
         wc_get_template('order/order-smilepay-shipping-info.php', $args, '', RY_WTP_PLUGIN_DIR . 'templates/');

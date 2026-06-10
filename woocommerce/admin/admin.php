@@ -83,7 +83,7 @@ final class RY_WTP_WC_Admin
 
     public function output_tools()
     {
-        if (isset($_POST['change_address']) && 'change_address' === $_POST['change_address']) { // phpcs:ignore WordPress.Security.NonceVerification.Missing
+        if (isset($_POST['change_address']) && 'change_address' === $_POST['change_address']) {
             if (is_plugin_active('ry-wc-city-select/ry-wc-city-select.php')) {
                 $this->change_user_address();
             }
@@ -97,7 +97,7 @@ final class RY_WTP_WC_Admin
         $states = WC()->countries->get_states('TW');
         $states_change = [];
 
-        @set_time_limit(60); // phpcs:ignore Squiz.PHP.DiscouragedFunctions.Discouraged
+        @set_time_limit(60);
         foreach ($states as $code => $name) {
             $states_change[$name] = $code;
             if (str_contains($name, '臺')) {

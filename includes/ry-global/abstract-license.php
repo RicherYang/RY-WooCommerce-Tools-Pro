@@ -82,13 +82,13 @@ if (!class_exists('RY_Abstract_License', false)) {
             $license_data = $this->get_license_data();
             if (!is_array($license_data)) {
                 if ($license_data !== '') {
-                    $this->valid_error(static::$main_class::PLUGIN_NAME . ': Data unknown. ' . var_export($license_data, true)); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_var_export
+                    $this->valid_error(static::$main_class::PLUGIN_NAME . ': Data unknown. ' . var_export($license_data, true));
                 }
                 return;
             }
 
             if (!isset($license_data['secret'], $license_data['expire'], $license_data['url'])) {
-                $this->valid_error(static::$main_class::PLUGIN_NAME . ': Data error. ' . var_export($license_data, true)); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_var_export
+                $this->valid_error(static::$main_class::PLUGIN_NAME . ': Data error. ' . var_export($license_data, true));
                 return;
             }
 
@@ -162,8 +162,8 @@ if (!class_exists('RY_Abstract_License', false)) {
                 if (! file_exists($log_path)) {
                     $result = wp_mkdir_p($log_path);
                     if (true === $result) {
-                        @file_put_contents($log_path . '.htaccess', 'deny from all');
-                        @file_put_contents($log_path . 'index.html', '');
+                        @file_put_contents($log_path . '.htaccess', 'deny from all'); // phpcs:ignore PluginCheck.CodeAnalysis.WriteFile.PluginDirectoryWrite
+                        @file_put_contents($log_path . 'index.html', ''); // phpcs:ignore PluginCheck.CodeAnalysis.WriteFile.PluginDirectoryWrite
                     }
                 }
             }
