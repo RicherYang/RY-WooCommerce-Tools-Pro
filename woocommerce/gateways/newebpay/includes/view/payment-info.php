@@ -17,17 +17,7 @@
         </p>
         <p>
             <strong><?php esc_html_e('Service provider trade status', 'ry-woocommerce-tools-pro'); ?></strong><br>
-            <?php if ($info['TradeStatus'] == '0') {
-                echo esc_html_e('Unpaid', 'ry-woocommerce-tools-pro');
-            } elseif ($info['TradeStatus'] == '1') {
-                echo esc_html_e('Paid', 'ry-woocommerce-tools-pro');
-            } elseif ($info['TradeStatus'] == '2') {
-                echo esc_html_e('Payment failed', 'ry-woocommerce-tools-pro');
-            } elseif ($info['TradeStatus'] == '3') {
-                echo esc_html_e('Payment cancel', 'ry-woocommerce-tools-pro');
-            } elseif ($info['TradeStatus'] == '46') {
-                echo esc_html_e('Refund', 'ry-woocommerce-tools-pro');
-            } ?>
+            <?php echo esc_html(rywtp_newebpay_TradeStatus_name($info['TradeStatus'])); ?>
         </p>
         <p>
             <strong><?php esc_html_e('Trade amount', 'ry-woocommerce-tools-pro'); ?></strong><br>

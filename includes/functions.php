@@ -349,6 +349,19 @@ function rywtp_ecpay_LogisticsStatus_name(string $info): string
     return $names[$info] ?? $info;
 }
 
+function rywtp_newebpay_TradeStatus_name(string $info): string
+{
+    static $names = [
+        '0' => '未付款',
+        '1' => '付款成功',
+        '2' => '付款失敗',
+        '3' => '取消付款',
+        '6' => '退款',
+    ];
+
+    return $names[$info] ?? $info;
+}
+
 function rywtp_newebpay_PaymentType_name(string $info): string
 {
     static $names = [
