@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: RY Tools (Pro) for WooCommerce\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-16 10:51+0800\n"
-"PO-Revision-Date: 2026-06-10 10:34+0800\n"
 "Last-Translator: Richer Yang\n"
 "Language-Team: \n"
-"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-02-16 10:51+0800\n"
+"PO-Revision-Date: 2026-06-12 15:21+0800\n"
+"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
 "X-Poedit-Basepath: ..\n"
@@ -124,7 +124,7 @@ msgstr "與上層相同"
 #: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-12.php:42
 #: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-18.php:42
 #: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-24.php:42
-#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment.php:59
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment.php:44
 #: woocommerce/gateways/ecpay/blocks/gateway-credit.php:42
 #: woocommerce/gateways/ecpay/blocks/gateway-cvs.php:42
 #: woocommerce/gateways/ecpay/blocks/gateway-ipass.php:42
@@ -268,7 +268,7 @@ msgstr "在「%s」信件中顯示付款資訊。"
 #: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-12.php:42
 #: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-18.php:42
 #: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-24.php:42
-#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment.php:59
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment.php:44
 #: woocommerce/gateways/newebpay/blocks/gateway-credit.php:42
 #: woocommerce/gateways/newebpay/blocks/gateway-cvs.php:42
 #: woocommerce/gateways/newebpay/blocks/gateway-webatm.php:42
@@ -575,7 +575,8 @@ msgid "ECPay select cvs store"
 msgstr "綠界選擇超商門市"
 
 #. translators: %1$s: Name of this plugin %2$s: Name of require plugin %3$s: min require version
-#: admin/admin.php:54 admin/admin.php:65
+#: admin/admin.php:59
+#: admin/admin.php:75
 #, php-format
 msgid "<strong>%1$s</strong> is inactive. It require %2$s %3$s or newer."
 msgstr "<strong>%1$s</strong> 暫停運作。 需求 %2$s %3$s 或更新版本。"
@@ -610,22 +611,19 @@ msgid "Close modal panel"
 msgstr "關閉視窗"
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:21
-#: woocommerce/gateways/newebpay/includes/view/payment-info.php:21
 msgid "Unpaid"
 msgstr "未付款"
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:23
-#: woocommerce/gateways/newebpay/includes/view/payment-info.php:23
 msgid "Paid"
 msgstr "已付款"
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:25
-#: woocommerce/gateways/newebpay/includes/view/payment-info.php:25
 msgid "Payment failed"
 msgstr "付款失敗"
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:49
-#: woocommerce/gateways/newebpay/includes/view/payment-info.php:45
+#: woocommerce/gateways/newebpay/includes/view/payment-info.php:35
 #: woocommerce/gateways/payuni/includes/view/payment-info.php:39
 msgid "Payment date"
 msgstr "付款日期"
@@ -645,14 +643,14 @@ msgid "Trade no"
 msgstr "訂單交易編號"
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:43
-#: woocommerce/gateways/newebpay/includes/view/payment-info.php:39
+#: woocommerce/gateways/newebpay/includes/view/payment-info.php:29
 #: woocommerce/gateways/payuni/includes/view/payment-info.php:33
 msgid "Payment info"
 msgstr "付款資訊"
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:29
 #: woocommerce/gateways/ecpay/includes/view/refund-info.php:8
-#: woocommerce/gateways/newebpay/includes/view/payment-info.php:33
+#: woocommerce/gateways/newebpay/includes/view/payment-info.php:23
 #: woocommerce/gateways/payuni/includes/view/payment-info.php:23
 #: woocommerce/gateways/payuni/includes/view/refund-info-credit.php:8
 #: woocommerce/gateways/payuni/includes/view/refund-info.php:4
@@ -660,25 +658,25 @@ msgid "Trade amount"
 msgstr "交易金額"
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:45
-#: woocommerce/gateways/newebpay/includes/view/payment-info.php:41
+#: woocommerce/gateways/newebpay/includes/view/payment-info.php:31
 #: woocommerce/gateways/payuni/includes/view/payment-info.php:35
 msgid "Payment type"
 msgstr "付款方式"
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:59
-#: woocommerce/gateways/newebpay/includes/view/payment-info.php:51
+#: woocommerce/gateways/newebpay/includes/view/payment-info.php:41
 #: woocommerce/gateways/payuni/includes/view/payment-info.php:45
 msgid "Card no"
 msgstr "信用卡號"
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:63
-#: woocommerce/gateways/newebpay/includes/view/payment-info.php:59
+#: woocommerce/gateways/newebpay/includes/view/payment-info.php:49
 #: woocommerce/gateways/payuni/includes/view/payment-info.php:53
 msgid "Auth code"
 msgstr "授權碼"
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:67
-#: woocommerce/gateways/newebpay/includes/view/payment-info.php:63
+#: woocommerce/gateways/newebpay/includes/view/payment-info.php:53
 msgid "eci"
 msgstr "eci"
 
@@ -714,27 +712,22 @@ msgstr "無法向綠界金流取得相關資訊。"
 msgid "Can not get info from NewebPay."
 msgstr "無法向藍新金流取得相關資訊。"
 
-#: woocommerce/gateways/newebpay/includes/view/payment-info.php:27
-msgid "Payment cancel"
-msgstr "交易取消"
-
-#: woocommerce/gateways/newebpay/includes/view/payment-info.php:55
+#: woocommerce/gateways/newebpay/includes/view/payment-info.php:45
 msgid "Card type"
 msgstr "卡片類型"
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:72
-#: woocommerce/gateways/newebpay/includes/view/payment-info.php:68
+#: woocommerce/gateways/newebpay/includes/view/payment-info.php:58
 #: woocommerce/gateways/payuni/includes/view/payment-info.php:58
 msgid "number of periods"
 msgstr "分期數"
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:76
-#: woocommerce/gateways/newebpay/includes/view/payment-info.php:72
+#: woocommerce/gateways/newebpay/includes/view/payment-info.php:62
 msgid "Period amount ( first / other )"
 msgstr "分期金額 ( 首期 / 其餘 )"
 
 #: woocommerce/gateways/ecpay/includes/view/refund-info.php:43
-#: woocommerce/gateways/newebpay/includes/view/payment-info.php:29
 #: woocommerce/gateways/payuni/includes/view/refund-info-credit.php:25
 #: woocommerce/gateways/payuni/includes/view/refund-info.php:9
 msgid "Refund"
@@ -1060,7 +1053,8 @@ msgstr "機器人檢查失敗。請確保您輸入正確的數字。"
 msgid "Refund through service provider"
 msgstr "透過服務供應商退款"
 
-#: woocommerce/admin/meta-box.php:28 woocommerce/admin/order.php:61
+#: woocommerce/admin/meta-box.php:28
+#: woocommerce/admin/order.php:61
 msgid "Get payment info"
 msgstr "取得付款交易資訊"
 
@@ -1095,6 +1089,7 @@ msgid "Pay via Aftee"
 msgstr "使用 AFTEE 先享後付 付款"
 
 #: woocommerce/gateways/payuni/gateway-aftee.php:22
+#: assets/blocks/gateways/payuni/aftee.js:1
 msgid "PAYUNi Aftee"
 msgstr "統一 AFTEE 先享後付"
 
@@ -1103,6 +1098,7 @@ msgid "Pay via PAYUNi Aftee"
 msgstr "使用 統一金流 AFTEE 先享後付 付款"
 
 #: woocommerce/gateways/payuni/gateway-credit-installment-3.php:13
+#: assets/blocks/gateways/payuni/credit-installment-3.js:1
 msgid "PAYUNi Credit (3 installment)"
 msgstr "統一信用卡（分 3 期）"
 
@@ -1111,6 +1107,7 @@ msgid "Pay via PAYUNi Credit (3 installment)"
 msgstr "使用 統一金流信用卡（分 3 期） 付款"
 
 #: woocommerce/gateways/payuni/gateway-credit-installment-6.php:13
+#: assets/blocks/gateways/payuni/credit-installment-6.js:1
 msgid "PAYUNi Credit (6 installment)"
 msgstr "統一信用卡（分 6 期）"
 
@@ -1123,6 +1120,7 @@ msgid "Pay via Credit (9 installment)"
 msgstr "使用信用卡付款（分 9 期）"
 
 #: woocommerce/gateways/payuni/gateway-credit-installment-9.php:13
+#: assets/blocks/gateways/payuni/credit-installment-9.js:1
 msgid "PAYUNi Credit (9 installment)"
 msgstr "統一信用卡（分 9 期）"
 
@@ -1131,6 +1129,7 @@ msgid "Pay via PAYUNi Credit (9 installment)"
 msgstr "使用 統一金流信用卡（分 9 期） 付款"
 
 #: woocommerce/gateways/payuni/gateway-credit-installment-12.php:13
+#: assets/blocks/gateways/payuni/credit-installment-12.js:1
 msgid "PAYUNi Credit (12 installment)"
 msgstr "統一信用卡（分 12 期）"
 
@@ -1139,6 +1138,7 @@ msgid "Pay via PAYUNi Credit (12 installment)"
 msgstr "使用 統一金流信用卡（分 12 期） 付款"
 
 #: woocommerce/gateways/payuni/gateway-credit-installment-18.php:13
+#: assets/blocks/gateways/payuni/credit-installment-18.js:1
 msgid "PAYUNi Credit (18 installment)"
 msgstr "統一信用卡（分 18 期）"
 
@@ -1147,6 +1147,7 @@ msgid "Pay via PAYUNi Credit (18 installment)"
 msgstr "使用 統一金流信用卡（分 18 期） 付款"
 
 #: woocommerce/gateways/payuni/gateway-credit-installment-24.php:13
+#: assets/blocks/gateways/payuni/credit-installment-24.js:1
 msgid "PAYUNi Credit (24 installment)"
 msgstr "統一信用卡（分 24 期）"
 
@@ -1155,6 +1156,7 @@ msgid "Pay via PAYUNi Credit (24 installment)"
 msgstr "使用 統一金流信用卡（分 24 期） 付款"
 
 #: woocommerce/gateways/payuni/gateway-credit-installment-30.php:13
+#: assets/blocks/gateways/payuni/credit-installment-30.js:1
 msgid "PAYUNi Credit (30 installment)"
 msgstr "統一信用卡（分 30 期）"
 
@@ -1162,19 +1164,8 @@ msgstr "統一信用卡（分 30 期）"
 msgid "Pay via PAYUNi Credit (30 installment)"
 msgstr "使用 統一金流信用卡（分 30 期） 付款"
 
-#: woocommerce/gateways/payuni/gateway-icash.php:17
-msgid "Pay via ICash"
-msgstr "使用 icash Pay 付款"
-
-#: woocommerce/gateways/payuni/gateway-icash.php:18
-msgid "PAYUNi ICash"
-msgstr "統一 icash Pay"
-
-#: woocommerce/gateways/payuni/gateway-icash.php:20
-msgid "Pay via PAYUNi ICash"
-msgstr "使用 統一金流 icash Pay 付款"
-
 #: woocommerce/gateways/payuni/gateway-jkopay.php:18
+#: assets/blocks/gateways/payuni/jkopay.js:1
 msgid "PAYUNi JKOPay"
 msgstr "統一街口支付"
 
@@ -1187,6 +1178,7 @@ msgid "Pay via LinePay"
 msgstr "使用 LINE Pay 付款"
 
 #: woocommerce/gateways/payuni/gateway-linepay.php:18
+#: assets/blocks/gateways/payuni/linepay.js:1
 msgid "PAYUNi LinePay"
 msgstr "統一 LINE Pay"
 
@@ -1209,3 +1201,60 @@ msgstr "無效的金額"
 #: woocommerce/gateways/ecpay/gateway-credit-installment-3.php:14
 msgid "Pay via ECPay Credit (3 installment)"
 msgstr "使用 綠界金流信用卡（分 3 期） 付款"
+
+#: admin/admin.php:55
+msgid "WordPress Plugin Directory"
+msgstr "WordPress 外掛目錄庫"
+
+#. translators: %1$s: Name of require plugin
+#: admin/admin.php:66
+#, php-format
+msgid "You can download from %s and manual update to the latest version."
+msgstr "你可以從 %s 下載並且手動更新至最新版本。"
+
+#: woocommerce/gateways/payuni/blocks/gateway-aftee.php:42
+#: woocommerce/gateways/payuni/blocks/gateway-atm.php:42
+#: woocommerce/gateways/payuni/blocks/gateway-credit-installment-3.php:42
+#: woocommerce/gateways/payuni/blocks/gateway-credit-installment-6.php:42
+#: woocommerce/gateways/payuni/blocks/gateway-credit-installment-9.php:42
+#: woocommerce/gateways/payuni/blocks/gateway-credit-installment-12.php:42
+#: woocommerce/gateways/payuni/blocks/gateway-credit-installment-18.php:42
+#: woocommerce/gateways/payuni/blocks/gateway-credit-installment-24.php:42
+#: woocommerce/gateways/payuni/blocks/gateway-credit-installment-30.php:42
+#: woocommerce/gateways/payuni/blocks/gateway-credit-installment.php:44
+#: woocommerce/gateways/payuni/blocks/gateway-credit.php:42
+#: woocommerce/gateways/payuni/blocks/gateway-cvs.php:42
+#: woocommerce/gateways/payuni/blocks/gateway-icash.php:42
+#: woocommerce/gateways/payuni/blocks/gateway-jkopay.php:42
+#: woocommerce/gateways/payuni/blocks/gateway-linepay.php:42
+msgid "PAYUNi"
+msgstr "統一金流"
+
+#: assets/blocks/gateways/payuni/atm.js:1
+msgid "PAYUNi ATM"
+msgstr "統一 ATM 櫃員機"
+
+#: assets/blocks/gateways/payuni/credit-installment.js:1
+msgid "PAYUNi Credit (installment)"
+msgstr "統一信用卡（分期）"
+
+#: assets/blocks/gateways/payuni/credit.js:1
+msgid "PAYUNi Credit"
+msgstr "統一信用卡"
+
+#: assets/blocks/gateways/payuni/cvs.js:1
+msgid "PAYUNi CVS"
+msgstr "統一超商代碼"
+
+#: woocommerce/gateways/payuni/gateway-icash.php:17
+msgid "Pay via icash Pay"
+msgstr "使用 icash Pay 付款"
+
+#: woocommerce/gateways/payuni/gateway-icash.php:18
+#: assets/blocks/gateways/payuni/icash.js:1
+msgid "PAYUNi icash Pay"
+msgstr "統一 icash Pay"
+
+#: woocommerce/gateways/payuni/gateway-icash.php:20
+msgid "Pay via PAYUNi icash Pay"
+msgstr "使用 統一金流 icash Pay 付款"
