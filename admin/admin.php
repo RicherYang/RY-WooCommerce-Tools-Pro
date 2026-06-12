@@ -49,12 +49,22 @@ final class RY_WTP_Admin extends RY_Abstract_Admin
     public function need_ry_woocommerce_tools(): void
     {
         if (!defined('RY_WT_VERSION') || version_compare(RY_WT_VERSION, RY_WTP::MIN_TOOLS_VERSION, '<')) {
+            $download_link = sprintf(
+                '<a href="%1$s" target="_blank">%2$s</a>',
+                'https://wordpress.org/plugins/ry-woocommerce-tools/',
+                __('WordPress Plugin Directory', 'ry-woocommerce-tools-pro')
+            );
             $message = sprintf(
                 /* translators: %1$s: Name of this plugin %2$s: Name of require plugin %3$s: min require version */
                 __('<strong>%1$s</strong> is inactive. It require %2$s %3$s or newer.', 'ry-woocommerce-tools-pro'),
                 $this->license::$main_class::PLUGIN_NAME,
                 'RY Tools for WooCommerce',
                 RY_WTP::MIN_TOOLS_VERSION,
+            );
+            $message .= sprintf(
+                /* translators: %1$s: Name of require plugin */
+                __('You can download from %s and manual update to the latest version.', 'ry-woocommerce-tools-pro'),
+                $download_link
             );
             printf('<div class="error"><p>%s</p></div>', wp_kses($message, ['strong' => []]));
         }

@@ -31,8 +31,8 @@ final class RY_WTP_WC_PAYUNi_Gateway
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/gateway-jkopay.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/gateway-linepay.php';
 
-        // include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/gateway-block.php';
-        // RY_WTP_WC_PAYUNi_Gateway_Block::instance();
+        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/gateway-block.php';
+        RY_WTP_WC_PAYUNi_Gateway_Block::instance();
 
         if (is_admin()) {
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/includes/admin.php';

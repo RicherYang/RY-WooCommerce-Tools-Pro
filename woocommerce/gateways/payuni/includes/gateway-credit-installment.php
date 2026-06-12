@@ -8,7 +8,7 @@ class RY_PAYUNi_Gateway_Credit_Installment_Base extends RY_WT_WC_PAYUNi_Payment_
 
     public const bool SUPPORT_REFUND = true;
 
-    public $number_of_periods = '';
+    public array $number_of_periods = [];
 
     public function __construct()
     {

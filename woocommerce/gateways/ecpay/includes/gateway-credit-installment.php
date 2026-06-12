@@ -8,7 +8,7 @@ class RY_ECPay_Gateway_Credit_Installment_Base extends RY_WT_WC_ECPay_Payment_Ga
 
     public const bool SUPPORT_REFUND = true;
 
-    public $number_of_periods = '';
+    public array $number_of_periods = [];
 
     public function __construct()
     {

@@ -8,21 +8,6 @@ final class RY_NewebPay_Gateway_Credit_Installment_Blocks_Support extends RY_WTP
 {
     protected $name = 'ry_newebpay_credit_installment';
 
-    public function __construct()
-    {
-        add_action('woocommerce_rest_checkout_process_payment_with_context', [$this, 'save_payment_data']);
-    }
-
-    public function save_payment_data(PaymentContext $context)
-    {
-        $data = $context->payment_data;
-        $order = $context->order;
-        if (! empty($data['number_of_period']) && $this->name === $context->payment_method) {
-            $order->update_meta_data('_newebpay_payment_number_of_periods', (int) $data['number_of_period']);
-            $order->save();
-        }
-    }
-
     public function initialize()
     {
         $this->settings = get_option('woocommerce_ry_newebpay_credit_installment_settings', []);
@@ -58,7 +43,6 @@ final class RY_NewebPay_Gateway_Credit_Installment_Blocks_Support extends RY_WTP
                 'src' => $this->get_gateway()->get_icon_url(),
                 'alt' => __('NewebPay', 'ry-woocommerce-tools-pro'),
             ],
-            'number_of_periods' => $this->get_setting('number_of_periods'),
         ];
     }
 }

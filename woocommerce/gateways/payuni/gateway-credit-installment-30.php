@@ -13,7 +13,7 @@ class RY_PAYUNi_Gateway_Credit_Installment_30 extends RY_PAYUNi_Gateway_Credit_I
         $this->method_title = __('PAYUNi Credit (30 installment)', 'ry-woocommerce-tools-pro');
         $this->process_payment_note = __('Pay via PAYUNi Credit (30 installment)', 'ry-woocommerce-tools-pro');
 
-        $this->number_of_periods = 30;
+        $this->number_of_periods = [30];
 
         parent::__construct();
     }

@@ -6,7 +6,7 @@ class RY_NewebPay_Gateway_Credit_Installment_Base extends RY_WT_WC_NewebPay_Paym
 {
     public const PAYMENT_TYPE = 'InstFlag';
 
-    public $number_of_periods = '';
+    public array $number_of_periods = [];
 
     public function __construct()
     {

@@ -3,7 +3,6 @@ import { decodeEntities } from '@wordpress/html-entities';
 import { registerPaymentMethod } from '@woocommerce/blocks-registry';
 import { getSetting } from '@woocommerce/settings';
 
-import NumberOfPeriods from '../../base/_number-of-periods';
 import PaymentLabel from '../../base/_payment-label';
 
 const defaultLabel = __('NewebPay Credit (installment)', 'ry-woocommerce-tools-pro');
@@ -17,14 +16,8 @@ const Label = ({ ...props }) => {
         {...props} />;
 };
 
-
-const Content = ({ ...props }) => {
-    return (<>
-        {decodeEntities(settings.description || '')}
-        <NumberOfPeriods
-            allPeriods={settings.number_of_periods}
-            {...props} />
-    </>);
+const Content = () => {
+    return decodeEntities(settings.description || '');
 };
 
 const RY_NewebPay_Credit_Installment = {

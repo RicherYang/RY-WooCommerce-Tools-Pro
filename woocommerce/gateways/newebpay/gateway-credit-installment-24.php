@@ -13,7 +13,7 @@ class RY_NewebPay_Gateway_Credit_Installment_24 extends RY_NewebPay_Gateway_Cred
         $this->method_title = __('NewebPay Credit (24 installment)', 'ry-woocommerce-tools-pro');
         $this->process_payment_note = __('Pay via NewebPay Credit (24 installment)', 'ry-woocommerce-tools-pro');
 
-        $this->number_of_periods = 24;
+        $this->number_of_periods = [24];
 
         parent::__construct();
     }

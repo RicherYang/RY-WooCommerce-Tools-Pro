@@ -10,7 +10,7 @@ final class RY_WTP extends RY_Abstract_Basic
 
     public const PLUGIN_NAME = 'RY Tools (Pro) for WooCommerce';
 
-    public const MIN_TOOLS_VERSION = '3.6.4';
+    public const MIN_TOOLS_VERSION = '3.6.6';
 
     protected static ?self $_instance = null;
 
@@ -52,6 +52,12 @@ final class RY_WTP extends RY_Abstract_Basic
             include_once RY_WTP_PLUGIN_DIR . 'admin/admin.php';
             $this->admin = RY_WTP_Admin::instance();
 
+            if (version_compare(RY_WT_VERSION, RY_WTP::MIN_TOOLS_VERSION, '<')) {
+                return;
+            }
+            if (defined('RY_WT::MIN_PRO_TOOLS_VERSION') && version_compare(RY_WTP_VERSION, RY_WT::MIN_PRO_TOOLS_VERSION, '<')) {
+                return;
+            }
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/admin/admin.php';
             RY_WTP_WC_Admin::instance();
         }
