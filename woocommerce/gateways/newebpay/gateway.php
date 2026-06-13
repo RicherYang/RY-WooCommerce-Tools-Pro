@@ -58,19 +58,14 @@ final class RY_WTP_WC_NewebPay_Gateway
     public function add_payment_info($order, $sent_to_admin, $plain_text, $email)
     {
         if ($email->id == 'customer_on_hold_order') {
-            switch ($order->get_payment_method()) {
-                case 'ry_newebpay_atm':
-                    $template_file = 'emails/email-order-newebpay-payment-info-atm.php';
-                    break;
-                case 'ry_newebpay_barcode':
-                    $template_file = 'emails/email-order-newebpay-payment-info-barcode.php';
-                    break;
-                case 'ry_newebpay_cvs':
-                    $template_file = 'emails/email-order-newebpay-payment-info-cvs.php';
-                    break;
-            }
+            $template_file = match ($order->get_payment_method()) {
+                'ry_newebpay_atm' => 'emails/email-order-newebpay-payment-info-atm.php',
+                'ry_newebpay_barcode' => 'emails/email-order-newebpay-payment-info-barcode.php',
+                'ry_newebpay_cvs' => 'emails/email-order-newebpay-payment-info-cvs.php',
+                default => '',
+            };
 
-            if (isset($template_file)) {
+            if ($template_file !== '') {
                 if ($plain_text) {
                     wc_get_template(
                         str_replace('emails/', 'emails/plain/', $template_file),

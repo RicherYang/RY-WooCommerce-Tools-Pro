@@ -95,16 +95,16 @@ function rywtp_ecpay_LogisticsType_name(string $info): string
     static $names = [];
     if (empty($names)) {
         $names = [
-            'FAMI' => '全家物流(B2C)',
-            'UNIMART' => '7-ELEVEN超商物流(B2C)',
-            'UNIMARTFREEZE' => '7-ELEVEN冷凍店取(B2C)',
-            'FAMIC2C' => '全家物流(C2C)',
-            'UNIMARTC2C' => '7-ELEVEN超商物流(C2C)',
-            'HILIFE' => '萊爾富物流(B2C)',
-            'HILIFEC2C' => '萊爾富物流(C2C)',
-            'OKMARTC2C' => 'OK超商(C2C)',
-            'TCAT' => '黑貓物流',
-            'POST' => '中華郵政',
+            'CVS_FAMI' => '全家物流(B2C)',
+            'CVS_UNIMART' => '7-ELEVEN超商物流(B2C)',
+            'CVS_UNIMARTFREEZE' => '7-ELEVEN冷凍店取(B2C)',
+            'CVS_FAMIC2C' => '全家物流(C2C)',
+            'CVS_UNIMARTC2C' => '7-ELEVEN超商物流(C2C)',
+            'CVS_HILIFE' => '萊爾富物流(B2C)',
+            'CVS_HILIFEC2C' => '萊爾富物流(C2C)',
+            'CVS_OKMARTC2C' => 'OK超商(C2C)',
+            'HOME_TCAT' => '黑貓物流',
+            'HOME_POST' => '中華郵政',
         ];
     }
 

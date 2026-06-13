@@ -17,7 +17,7 @@
         </p>
         <p>
             <strong><?php esc_html_e('Service provider trade status', 'ry-woocommerce-tools-pro'); ?></strong><br>
-            <?php echo esc_html(rywtp_ecpay_LogisticsStatus_name($info['LogisticsStatus'])); ?>
+            <?php echo esc_html($info['LogisticsStatus'] . ' (' . rywtp_ecpay_LogisticsStatus_name($info['LogisticsStatus']) . ')'); ?>
         </p>
         <p>
             <strong><?php esc_html_e('Sander name', 'ry-woocommerce-tools-pro'); ?></strong><br>

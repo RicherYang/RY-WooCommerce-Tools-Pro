@@ -34,22 +34,15 @@ final class RY_WTP_WC_SmilePay_Gateway
     public function add_payment_info($order, $sent_to_admin, $plain_text, $email)
     {
         if ($email->id == 'customer_on_hold_order') {
-            switch ($order->get_payment_method()) {
-                case 'ry_smilepay_atm':
-                    $template_file = 'emails/email-order-smilepay-payment-info-atm.php';
-                    break;
-                case 'ry_smilepay_barcode':
-                    $template_file = 'emails/email-order-smilepay-payment-info-barcode.php';
-                    break;
-                case 'ry_smilepay_cvs_711':
-                    $template_file = 'emails/email-order-smilepay-payment-info-cvs-711.php';
-                    break;
-                case 'ry_smilepay_cvs_fami':
-                    $template_file = 'emails/email-order-smilepay-payment-info-cvs-fami.php';
-                    break;
-            }
+            $template_file = match ($order->get_payment_method()) {
+                'ry_smilepay_atm' => 'emails/email-order-smilepay-payment-info-atm.php',
+                'ry_smilepay_barcode' => 'emails/email-order-smilepay-payment-info-barcode.php',
+                'ry_smilepay_cvs_711' => 'emails/email-order-smilepay-payment-info-cvs-711.php',
+                'ry_smilepay_cvs_fami' => 'emails/email-order-smilepay-payment-info-cvs-fami.php',
+                default => '',
+            };
 
-            if (isset($template_file)) {
+            if ($template_file !== '') {
                 if ($plain_text) {
                     wc_get_template(
                         str_replace('emails/', 'emails/plain/', $template_file),
