@@ -35,10 +35,10 @@ final class RY_WTP_WC_SmilePay_Gateway
     {
         if ($email->id == 'customer_on_hold_order') {
             $template_file = match ($order->get_payment_method()) {
-                'ry_smilepay_atm' => 'emails/email-order-smilepay-payment-info-atm.php',
-                'ry_smilepay_barcode' => 'emails/email-order-smilepay-payment-info-barcode.php',
-                'ry_smilepay_cvs_711' => 'emails/email-order-smilepay-payment-info-cvs-711.php',
-                'ry_smilepay_cvs_fami' => 'emails/email-order-smilepay-payment-info-cvs-fami.php',
+                RY_SmilePay_Gateway_Atm::ID => 'emails/email-order-smilepay-payment-info-atm.php',
+                RY_SmilePay_Gateway_Barcode::ID => 'emails/email-order-smilepay-payment-info-barcode.php',
+                RY_SmilePay_Gateway_Cvs_711::ID => 'emails/email-order-smilepay-payment-info-cvs-711.php',
+                RY_SmilePay_Gateway_Cvs_Fami::ID => 'emails/email-order-smilepay-payment-info-cvs-fami.php',
                 default => '',
             };
 

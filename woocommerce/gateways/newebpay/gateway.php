@@ -59,9 +59,9 @@ final class RY_WTP_WC_NewebPay_Gateway
     {
         if ($email->id == 'customer_on_hold_order') {
             $template_file = match ($order->get_payment_method()) {
-                'ry_newebpay_atm' => 'emails/email-order-newebpay-payment-info-atm.php',
-                'ry_newebpay_barcode' => 'emails/email-order-newebpay-payment-info-barcode.php',
-                'ry_newebpay_cvs' => 'emails/email-order-newebpay-payment-info-cvs.php',
+                RY_NewebPay_Gateway_Atm::ID => 'emails/email-order-newebpay-payment-info-atm.php',
+                RY_NewebPay_Gateway_Barcode::ID => 'emails/email-order-newebpay-payment-info-barcode.php',
+                RY_NewebPay_Gateway_Cvs::ID => 'emails/email-order-newebpay-payment-info-cvs.php',
                 default => '',
             };
 

@@ -66,9 +66,9 @@ final class RY_WTP_WC_ECPay_Gateway
     {
         if ($email->id == 'customer_on_hold_order') {
             $template_file = match ($order->get_payment_method()) {
-                'ry_ecpay_atm' => 'emails/email-order-ecpay-payment-info-atm.php',
-                'ry_ecpay_barcode' => 'emails/email-order-ecpay-payment-info-barcode.php',
-                'ry_ecpay_cvs' => 'emails/email-order-ecpay-payment-info-cvs.php',
+                RY_ECPay_Gateway_Atm::ID => 'emails/email-order-ecpay-payment-info-atm.php',
+                RY_ECPay_Gateway_Barcode::ID => 'emails/email-order-ecpay-payment-info-barcode.php',
+                RY_ECPay_Gateway_Cvs::ID => 'emails/email-order-ecpay-payment-info-cvs.php',
                 default => '',
             };
 

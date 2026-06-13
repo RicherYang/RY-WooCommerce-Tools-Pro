@@ -70,8 +70,8 @@ final class RY_WTP_WC_PAYUNi_Gateway
     {
         if ($email->id == 'customer_on_hold_order') {
             $template_file = match ($order->get_payment_method()) {
-                'ry_payuni_atm' => 'emails/email-order-payuni-payment-info-atm.php',
-                'ry_payuni_cvs' => 'emails/email-order-payuni-payment-info-cvs.php',
+                RY_PAYUNi_Gateway_Atm::ID => 'emails/email-order-payuni-payment-info-atm.php',
+                RY_PAYUNi_Gateway_Cvs::ID => 'emails/email-order-payuni-payment-info-cvs.php',
                 default => '',
             };
 
