@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-06-13T12:26:22+08:00\n"
+"POT-Creation-Date: 2026-06-14T18:00:43+08:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ry-woocommerce-tools-pro\n"
@@ -438,7 +438,7 @@ msgstr ""
 #: woocommerce/gateways/ecpay/includes/admin.php:37
 #: woocommerce/gateways/newebpay/includes/admin.php:39
 #: woocommerce/gateways/payuni/includes/admin.php:38
-msgid "Credit installment"
+msgid "Independent credit installment"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/admin.php:41

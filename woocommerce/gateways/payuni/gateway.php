@@ -54,6 +54,7 @@ final class RY_WTP_WC_PAYUNi_Gateway
         $methods[] = 'RY_PAYUNi_Gateway_Linepay';
 
         if ('yes' === RY_WTP::get_option('payuni_credit_installment', 'no')) {
+            unset($methods[array_search('WC_Gateway_PAYUNi_Credit_Installment', $methods)]);
             $methods[] = 'RY_PAYUNi_Gateway_Credit_Installment_3';
             $methods[] = 'RY_PAYUNi_Gateway_Credit_Installment_6';
             $methods[] = 'RY_PAYUNi_Gateway_Credit_Installment_9';

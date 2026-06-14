@@ -44,6 +44,7 @@ final class RY_WTP_WC_NewebPay_Gateway
     public function add_method($methods)
     {
         if ('yes' === RY_WTP::get_option('newebpay_credit_installment', 'no')) {
+            unset($methods[array_search('WC_Gateway_NewebPay_Credit_Installment', $methods)]);
             $methods[] = 'RY_NewebPay_Gateway_Credit_Installment_3';
             $methods[] = 'RY_NewebPay_Gateway_Credit_Installment_6';
             $methods[] = 'RY_NewebPay_Gateway_Credit_Installment_12';

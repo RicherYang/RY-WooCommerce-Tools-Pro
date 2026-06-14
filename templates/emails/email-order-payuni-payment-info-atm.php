@@ -33,7 +33,7 @@ $text_align = is_rtl() ? 'right' : 'left';
                     <?php esc_html_e('Bank', 'ry-woocommerce-tools'); ?>
                 </th>
                 <td class="td" style="text-align:<?php echo esc_attr($text_align); ?>;">
-                    <?php echo esc_html(rywt_bank_code_to_name($order->get_meta('_payuni_atm_BankType'))); ?>
+                    <?php echo esc_html(rywt_bank_code_to_name($order->get_meta('_payuni_atm_BankCode'))); ?>
                 </td>
             </tr>
             <tr>
@@ -41,7 +41,7 @@ $text_align = is_rtl() ? 'right' : 'left';
                     <?php esc_html_e('Bank code', 'ry-woocommerce-tools'); ?>
                 </th>
                 <td class="td" style="text-align:<?php echo esc_attr($text_align); ?>;">
-                    <?php echo esc_html($order->get_meta('_payuni_atm_BankType')); ?>
+                    <?php echo esc_html($order->get_meta('_payuni_atm_BankCode')); ?>
                 </td>
             </tr>
             <tr>
@@ -49,7 +49,7 @@ $text_align = is_rtl() ? 'right' : 'left';
                     <?php esc_html_e('ATM Bank account', 'ry-woocommerce-tools'); ?>
                 </th>
                 <td class="td" style="text-align:<?php echo esc_attr($text_align); ?>;">
-                    <?php echo wp_kses(wordwrap($order->get_meta('_payuni_atm_PayNo'), 4, '<span> </span>', true), ['span' => []]); ?>
+                    <?php echo wp_kses(wordwrap($order->get_meta('_payuni_atm_vAccount'), 4, '<span> </span>', true), ['span' => []]); ?>
                 </td>
             </tr>
             <tr>

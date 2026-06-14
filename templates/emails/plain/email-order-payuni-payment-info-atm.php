@@ -26,11 +26,11 @@ echo "\n==========\n\n";
 echo esc_html__('Payment details', 'ry-woocommerce-tools') . "\n";
 
 // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
-echo esc_html__('Bank', 'ry-woocommerce-tools') . "\t " . esc_html(rywt_bank_code_to_name($order->get_meta('_payuni_atm_BankType'))) . "\n";
+echo esc_html__('Bank', 'ry-woocommerce-tools') . "\t " . esc_html(rywt_bank_code_to_name($order->get_meta('_payuni_atm_BankCode'))) . "\n";
 // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
-echo esc_html__('Bank code', 'ry-woocommerce-tools') . "\t " . esc_html($order->get_meta('_payuni_atm_BankType')) . "\n";
+echo esc_html__('Bank code', 'ry-woocommerce-tools') . "\t " . esc_html($order->get_meta('_payuni_atm_BankCode')) . "\n";
 // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
-echo esc_html__('ATM Bank account', 'ry-woocommerce-tools') . "\t " . esc_html(wordwrap($order->get_meta('_payuni_atm_PayNo'), 4, ' ', true)) . "\n";
+echo esc_html__('ATM Bank account', 'ry-woocommerce-tools') . "\t " . esc_html(wordwrap($order->get_meta('_payuni_atm_vAccount'), 4, ' ', true)) . "\n";
 $expireDate = wc_string_to_datetime($order->get_meta('_payuni_atm_ExpireDate'));
 $expireDate = $expireDate->date_i18n(wc_date_format());
 // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch

@@ -32,7 +32,7 @@ $text_align = is_rtl() ? 'right' : 'left';
                     <?php esc_html_e('CVS code', 'ry-woocommerce-tools'); ?>
                 </th>
                 <td class="td" style="text-align:<?php echo esc_attr($text_align); ?>;">
-                    <?php echo esc_html($order->get_meta('_payuni_cvs_PayNo')); ?>
+                    <?php echo esc_html($order->get_meta('_payuni_cvs_PaymentNo')); ?>
                 </td>
             </tr>
             <tr>

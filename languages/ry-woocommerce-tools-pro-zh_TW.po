@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-02-16 10:51+0800\n"
-"PO-Revision-Date: 2026-06-12 15:21+0800\n"
+"PO-Revision-Date: 2026-06-14 18:00+0800\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
@@ -232,12 +232,6 @@ msgstr "使用 綠界金流信用卡（分 6 期） 付款"
 #: woocommerce/gateways/smilepay/includes/admin.php:30
 msgid "Gateway options"
 msgstr "金流設定"
-
-#: woocommerce/gateways/ecpay/includes/admin.php:37
-#: woocommerce/gateways/newebpay/includes/admin.php:39
-#: woocommerce/gateways/payuni/includes/admin.php:38
-msgid "Credit installment"
-msgstr "信用卡分期"
 
 #: woocommerce/gateways/ecpay/includes/admin.php:41
 #: woocommerce/gateways/newebpay/includes/admin.php:43
@@ -1258,3 +1252,9 @@ msgstr "統一 icash Pay"
 #: woocommerce/gateways/payuni/gateway-icash.php:20
 msgid "Pay via PAYUNi icash Pay"
 msgstr "使用 統一金流 icash Pay 付款"
+
+#: woocommerce/gateways/ecpay/includes/admin.php:37
+#: woocommerce/gateways/newebpay/includes/admin.php:39
+#: woocommerce/gateways/payuni/includes/admin.php:38
+msgid "Independent credit installment"
+msgstr "獨立信用卡分期"

@@ -34,7 +34,7 @@ final class RY_WTP_WC_ECPay_Gateway_Admin
                     'type' => 'title',
                 ],
                 [
-                    'title' => __('Credit installment', 'ry-woocommerce-tools-pro'),
+                    'title' => __('Independent credit installment', 'ry-woocommerce-tools-pro'),
                     'id' => RY_WTP::OPTION_PREFIX . 'ecpay_credit_installment',
                     'type' => 'checkbox',
                     'default' => 'no',

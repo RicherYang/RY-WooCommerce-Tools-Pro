@@ -202,7 +202,7 @@ final class RY_WTP_ECPay_Shipping_Admin
                             'postUrl' => RY_WT_WC_ECPay_Shipping_Api::instance()->get_map_post_url(),
                             'postData' => [
                                 'MerchantID' => $MerchantID,
-                                'LogisticsType' => $method_class::Shipping_Type,
+                                'LogisticsType' => $method_class::SHIPPING_TYPE,
                                 'LogisticsSubType' => $method_class::Shipping_Sub_Type . (('C2C' === $cvs_type) ? 'C2C' : ''),
                                 'IsCollection' => 'Y',
                                 'ServerReplyURL' => esc_url(add_query_arg([

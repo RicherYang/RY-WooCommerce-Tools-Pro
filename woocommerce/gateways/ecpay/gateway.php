@@ -21,8 +21,8 @@ final class RY_WTP_WC_ECPay_Gateway
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/includes/gateway-credit-installment.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-applepay.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-bnpl.php';
-        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-jkopay.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-ipass.php';
+        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-jkopay.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-credit-installment-3.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-credit-installment-6.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-credit-installment-12.php';
@@ -52,6 +52,7 @@ final class RY_WTP_WC_ECPay_Gateway
         $methods[] = 'RY_ECPay_Gateway_Jkopay';
 
         if ('yes' === RY_WTP::get_option('ecpay_credit_installment', 'no')) {
+            unset($methods[array_search('WC_Gateway_ECPay_Credit_Installment', $methods)]);
             $methods[] = 'RY_ECPay_Gateway_Credit_Installment_3';
             $methods[] = 'RY_ECPay_Gateway_Credit_Installment_6';
             $methods[] = 'RY_ECPay_Gateway_Credit_Installment_12';
