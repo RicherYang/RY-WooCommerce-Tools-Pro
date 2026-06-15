@@ -39,7 +39,7 @@ if (count($shipping_info_list)) { ?>
                 } ?>
             </td>
             <td class="woocommerce-table__shipping-status shipping-status">
-                <?php if (in_array($shipping_info['status'], apply_filters('ry_ecpay_shipping_status_info_wait', [300, 310, 320]))) {
+                <?php if (in_array($shipping_info['status'], apply_filters('ry_ecpay_shipping_status_info_wait', [300, 310, 311, 320, 2001, 2024]))) {
                     echo esc_html_x('Wait shipment', 'Shipping status', 'ry-woocommerce-tools-pro');
                 } elseif (in_array($shipping_info['status'], apply_filters('ry_ecpay_shipping_status_info_transporting', [2030, 2068, 3001, 3002, 3006, 3024, 3032, 3112, 3301]))) {
                     echo esc_html_x('Transporting', 'Shipping status', 'ry-woocommerce-tools-pro');
@@ -47,7 +47,7 @@ if (count($shipping_info_list)) { ?>
                     echo esc_html_x('Waiting for pick up', 'Shipping status', 'ry-woocommerce-tools-pro');
                 } elseif (in_array($shipping_info['status'], apply_filters('ry_ecpay_shipping_status_info_completed', [2067, 3003, 3022, 3308, 3309]))) {
                     echo esc_html_x('Completed', 'Shipping status', 'ry-woocommerce-tools-pro');
-                } elseif (in_array($shipping_info['status'], apply_filters('ry_ecpay_shipping_status_info_overdue', [2065, 2070, 2072, 2074, 2076, 3019, 3020, 3023, 3025]))) {
+                } elseif (in_array($shipping_info['status'], apply_filters('ry_ecpay_shipping_status_info_overdue', [2044, 2065, 2070, 2072, 2074, 2076, 2078, 3019, 3020, 3023, 3025]))) {
                     echo esc_html_x('Overdue return', 'Shipping status', 'ry-woocommerce-tools-pro');
                 } else {
                     echo esc_html_x('Unknow', 'Shipping status', 'ry-woocommerce-tools-pro');
