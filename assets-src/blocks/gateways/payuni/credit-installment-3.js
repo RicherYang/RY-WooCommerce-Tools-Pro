@@ -1,4 +1,4 @@
-﻿import { decodeEntities } from '@wordpress/html-entities';
+import { decodeEntities } from '@wordpress/html-entities';
 import { registerPaymentMethod } from '@woocommerce/blocks-registry';
 import { getSetting } from '@woocommerce/settings';
 

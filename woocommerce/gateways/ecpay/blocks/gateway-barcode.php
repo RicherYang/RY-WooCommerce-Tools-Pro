@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 defined('ABSPATH') or exit;
 
@@ -47,4 +47,3 @@ final class RY_ECPay_Gateway_Barcode_Blocks_Support extends RY_WTP_AbstractPayme
         ];
     }
 }
-
