@@ -109,7 +109,7 @@ final class RY_WTP_ECPay_Shipping_Admin
     {
         $actions['ry_get_ecpay_no'] = __('Get ECPay shipping no', 'ry-woocommerce-tools-pro');
 
-        switch (RY_WT::get_option('ecpay_shipping_cvs_type')) {
+        switch (RY_WT::get_option('ecpay_shipping_cvs_type', 'C2C')) {
             case 'B2C':
                 $actions['ry_print_ecpay_cvs_711'] = __('Print ECPay shipping booking note (711)', 'ry-woocommerce-tools-pro');
                 $actions['ry_print_ecpay_cvs_family'] = __('Print ECPay shipping booking note (family)', 'ry-woocommerce-tools-pro');
@@ -184,10 +184,10 @@ final class RY_WTP_ECPay_Shipping_Admin
             $shipping_method = RY_WT_WC_ECPay_Shipping::instance()->get_order_support_shipping($shipping_item);
             if ($shipping_method) {
                 if (str_contains($shipping_method, '_cvs')) {
-                    list($MerchantID, $HashKey, $HashIV, $cvs_type) = RY_WT_WC_ECPay_Shipping::instance()->get_api_info();
+                    $api_info = RY_WT_WC_ECPay_Shipping::instance()->get_api_info();
 
                     $choosed_cvs = '';
-                    if (isset($_POST['MerchantID']) && $_POST['MerchantID'] === $MerchantID) {
+                    if (isset($_POST['MerchantID']) && $_POST['MerchantID'] === $api_info['MerchantID']) {
                         $choosed_cvs = [
                             'CVSStoreID' => sanitize_text_field(wp_unslash($_POST['CVSStoreID'] ?? '')),
                             'CVSStoreName' => sanitize_text_field(wp_unslash($_POST['CVSStoreName'] ?? '')),
@@ -201,9 +201,9 @@ final class RY_WTP_ECPay_Shipping_Admin
                         'ecpay' => [
                             'postUrl' => RY_WT_WC_ECPay_Shipping_Api::instance()->get_map_post_url(),
                             'postData' => [
-                                'MerchantID' => $MerchantID,
+                                'MerchantID' => $api_info['MerchantID'],
                                 'LogisticsType' => $method_class::SHIPPING_TYPE,
-                                'LogisticsSubType' => $method_class::Shipping_Sub_Type . (('C2C' === $cvs_type) ? 'C2C' : ''),
+                                'LogisticsSubType' => $method_class::Shipping_Sub_Type . (('C2C' === RY_WT::get_option('ecpay_shipping_cvs_type', 'C2C')) ? 'C2C' : ''),
                                 'IsCollection' => 'Y',
                                 'ServerReplyURL' => esc_url(add_query_arg([
                                     'ry-ecpay-map-redirect' => 'ry-ecpay-map-redirect',

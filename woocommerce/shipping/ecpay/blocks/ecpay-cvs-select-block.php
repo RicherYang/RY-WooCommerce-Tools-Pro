@@ -43,12 +43,12 @@ final class RY_ECPay_Shipping_Cvs_Select_Block implements IntegrationInterface
 
     public function get_script_data()
     {
-        list($MerchantID, $HashKey, $HashIV, $cvs_type) = RY_WT_WC_ECPay_Shipping::instance()->get_api_info();
+        $api_info = RY_WT_WC_ECPay_Shipping::instance()->get_api_info();
 
         return [
             'postUrl' => RY_WT_WC_ECPay_Shipping_Api::instance()->get_map_post_url(),
             'postData' => [
-                'MerchantID' => $MerchantID,
+                'MerchantID' => $api_info['MerchantID'],
                 'IsCollection' => 'Y',
                 'ServerReplyURL' => esc_url(add_query_arg([
                     'ry-ecpay-map-redirect' => 'ry-ecpay-map-redirect',

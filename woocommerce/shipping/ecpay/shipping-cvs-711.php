@@ -17,8 +17,8 @@ class RY_ECPay_Shipping_CVS_711_Pro extends RY_ECPay_Shipping_CVS_711
 
     public static function get_support_temp()
     {
-        list($MerchantID, $HashKey, $HashIV, $cvs_type) = RY_WT_WC_ECPay_Shipping::instance()->get_api_info();
-        if ('B2C' === $cvs_type) {
+        $api_info = RY_WT_WC_ECPay_Shipping::instance()->get_api_info();
+        if ('B2C' === RY_WT::get_option('ecpay_shipping_cvs_type', 'C2C')) {
             return ['1', '3'];
         }
 
