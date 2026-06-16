@@ -1,10 +1,10 @@
-<?php
+﻿<?php
 
 defined('ABSPATH') or exit;
 
 final class RY_ECPay_Gateway_Twqr_Blocks_Support extends RY_WTP_AbstractPaymentMethodType
 {
-    protected $name = 'ry_ecpay_twqr';
+    protected $name = RY_ECPay_Gateway_Twqr::ID;
 
     public function initialize()
     {
@@ -24,6 +24,9 @@ final class RY_ECPay_Gateway_Twqr_Blocks_Support extends RY_WTP_AbstractPaymentM
         $script_asset = include RY_WTP_PLUGIN_DIR . 'assets/blocks/gateways/ecpay/twqr.asset.php';
 
         wp_register_script('ry-ecpay-twqr-block', RY_WTP_PLUGIN_URL . 'assets/blocks/gateways/ecpay/twqr.js', $script_asset['dependencies'], $script_asset['version'], true);
+        wp_localize_script('ry-ecpay-twqr-block', 'RyEcpayTwqrBlockParams', [
+            'defaultTitle' => __('ECPay TWQR', 'ry-woocommerce-tools-pro'),
+        ]);
         wp_set_script_translations('ry-ecpay-twqr-block', 'ry-woocommerce-tools-pro', RY_WTP_PLUGIN_LANGUAGES_DIR);
 
         return ['ry-ecpay-twqr-block'];
@@ -44,3 +47,4 @@ final class RY_ECPay_Gateway_Twqr_Blocks_Support extends RY_WTP_AbstractPaymentM
         ];
     }
 }
+

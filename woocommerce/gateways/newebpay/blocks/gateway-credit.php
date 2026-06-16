@@ -1,10 +1,10 @@
-<?php
+﻿<?php
 
 defined('ABSPATH') or exit;
 
 final class RY_NewebPay_Gateway_Credit_Blocks_Support extends RY_WTP_AbstractPaymentMethodType
 {
-    protected $name = 'ry_newebpay_credit';
+    protected $name = RY_NewebPay_Gateway_Credit::ID;
 
     public function initialize()
     {
@@ -24,6 +24,9 @@ final class RY_NewebPay_Gateway_Credit_Blocks_Support extends RY_WTP_AbstractPay
         $script_asset = include RY_WTP_PLUGIN_DIR . 'assets/blocks/gateways/newebpay/credit.asset.php';
 
         wp_register_script('ry-newebpay-credit-block', RY_WTP_PLUGIN_URL . 'assets/blocks/gateways/newebpay/credit.js', $script_asset['dependencies'], $script_asset['version'], true);
+        wp_localize_script('ry-newebpay-credit-block', 'RyNewebpayCreditBlockParams', [
+            'defaultTitle' => __('NewebPay Credit', 'ry-woocommerce-tools-pro'),
+        ]);
         wp_set_script_translations('ry-newebpay-credit-block', 'ry-woocommerce-tools-pro', RY_WTP_PLUGIN_LANGUAGES_DIR);
 
         return ['ry-newebpay-credit-block'];
@@ -44,3 +47,4 @@ final class RY_NewebPay_Gateway_Credit_Blocks_Support extends RY_WTP_AbstractPay
         ];
     }
 }
+

@@ -1,10 +1,10 @@
-<?php
+﻿<?php
 
 defined('ABSPATH') or exit;
 
 final class RY_NewebPay_Gateway_Cvs_Blocks_Support extends RY_WTP_AbstractPaymentMethodType
 {
-    protected $name = 'ry_newebpay_cvs';
+    protected $name = RY_NewebPay_Gateway_Cvs::ID;
 
     public function initialize()
     {
@@ -24,6 +24,9 @@ final class RY_NewebPay_Gateway_Cvs_Blocks_Support extends RY_WTP_AbstractPaymen
         $script_asset = include RY_WTP_PLUGIN_DIR . 'assets/blocks/gateways/newebpay/cvs.asset.php';
 
         wp_register_script('ry-newebpay-cvs-block', RY_WTP_PLUGIN_URL . 'assets/blocks/gateways/newebpay/cvs.js', $script_asset['dependencies'], $script_asset['version'], true);
+        wp_localize_script('ry-newebpay-cvs-block', 'RyNewebpayCvsBlockParams', [
+            'defaultTitle' => __('NewebPay CVS', 'ry-woocommerce-tools-pro'),
+        ]);
         wp_set_script_translations('ry-newebpay-cvs-block', 'ry-woocommerce-tools-pro', RY_WTP_PLUGIN_LANGUAGES_DIR);
 
         return ['ry-newebpay-cvs-block'];
@@ -44,3 +47,4 @@ final class RY_NewebPay_Gateway_Cvs_Blocks_Support extends RY_WTP_AbstractPaymen
         ];
     }
 }
+

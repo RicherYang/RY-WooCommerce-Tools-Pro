@@ -2,14 +2,14 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: RY Tools (Pro) for WooCommerce 3.7.5\n"
+"Project-Id-Version: RY Tools (Pro) for WooCommerce 3.7.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ry-woocommerce-tools-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-06-14T18:00:43+08:00\n"
+"POT-Creation-Date: 2026-06-16T11:44:00+08:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ry-woocommerce-tools-pro\n"
@@ -275,30 +275,118 @@ msgctxt "Transport temp"
 msgid "Same as parent"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/blocks/gateway-atm.php:42
-#: woocommerce/gateways/ecpay/blocks/gateway-barcode.php:42
-#: woocommerce/gateways/ecpay/blocks/gateway-bnpl.php:42
-#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-3.php:42
-#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-6.php:42
-#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-12.php:42
-#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-18.php:42
-#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-24.php:42
-#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment.php:44
-#: woocommerce/gateways/ecpay/blocks/gateway-credit.php:42
-#: woocommerce/gateways/ecpay/blocks/gateway-cvs.php:42
-#: woocommerce/gateways/ecpay/blocks/gateway-ipass.php:42
-#: woocommerce/gateways/ecpay/blocks/gateway-jkopay.php:42
-#: woocommerce/gateways/ecpay/blocks/gateway-twqr.php:42
-#: woocommerce/gateways/ecpay/blocks/gateway-webatm.php:42
+#: woocommerce/gateways/ecpay/blocks/gateway-applepay.php:28
+#: woocommerce/gateways/ecpay/gateway-applepay.php:16
+msgid "ECPay Apple Pay"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/blocks/gateway-applepay.php:44
+#: woocommerce/gateways/ecpay/blocks/gateway-atm.php:45
+#: woocommerce/gateways/ecpay/blocks/gateway-barcode.php:45
+#: woocommerce/gateways/ecpay/blocks/gateway-bnpl.php:45
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-3.php:45
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-6.php:45
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-12.php:45
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-18.php:45
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-24.php:45
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment.php:47
+#: woocommerce/gateways/ecpay/blocks/gateway-credit.php:45
+#: woocommerce/gateways/ecpay/blocks/gateway-cvs.php:45
+#: woocommerce/gateways/ecpay/blocks/gateway-ipass.php:45
+#: woocommerce/gateways/ecpay/blocks/gateway-jkopay.php:45
+#: woocommerce/gateways/ecpay/blocks/gateway-twqr.php:45
+#: woocommerce/gateways/ecpay/blocks/gateway-urich.php:45
+#: woocommerce/gateways/ecpay/blocks/gateway-webatm.php:45
+#: woocommerce/gateways/ecpay/blocks/gateway-zingala.php:45
 msgid "ECPay"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/blocks/gateway-atm.php:28
+msgid "ECPay ATM"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/blocks/gateway-barcode.php:28
+msgid "ECPay BARCODE"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/blocks/gateway-bnpl.php:28
+#: woocommerce/gateways/ecpay/gateway-bnpl.php:20
+msgid "ECPay BNPL"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-3.php:28
+#: woocommerce/gateways/ecpay/gateway-credit-installment-3.php:13
+msgid "ECPay Credit (3 installment)"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-6.php:28
+#: woocommerce/gateways/ecpay/gateway-credit-installment-6.php:13
+msgid "ECPay Credit (6 installment)"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-12.php:28
+#: woocommerce/gateways/ecpay/gateway-credit-installment-12.php:13
+msgid "ECPay Credit (12 installment)"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-18.php:28
+#: woocommerce/gateways/ecpay/gateway-credit-installment-18.php:13
+msgid "ECPay Credit (18 installment)"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment-24.php:28
+#: woocommerce/gateways/ecpay/gateway-credit-installment-24.php:13
+msgid "ECPay Credit (24 installment)"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/blocks/gateway-credit-installment.php:30
+msgid "ECPay Credit (installment)"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/blocks/gateway-credit.php:28
+msgid "ECPay Credit"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/blocks/gateway-cvs.php:28
+msgid "ECPay CVS"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/blocks/gateway-digital.php:28
+#: woocommerce/gateways/ecpay/blocks/gateway-digital.php:45
+#: woocommerce/gateways/ecpay/gateway-digital.php:16
+msgid "ECPay Digital Payment"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/blocks/gateway-ipass.php:28
+#: woocommerce/gateways/ecpay/gateway-ipass.php:18
+msgid "ECPay iPASS"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/blocks/gateway-jkopay.php:28
+#: woocommerce/gateways/ecpay/gateway-jkopay.php:18
+msgid "ECPay JKOPay"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/blocks/gateway-twqr.php:28
+msgid "ECPay TWQR"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/blocks/gateway-urich.php:28
+#: woocommerce/gateways/ecpay/gateway-urich.php:22
+msgid "ECPay URich"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/blocks/gateway-webatm.php:28
+msgid "ECPay WebATM"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/blocks/gateway-zingala.php:28
+#: woocommerce/gateways/ecpay/gateway-zingala.php:22
+msgid "ECPay Zingala"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/gateway-applepay.php:15
 msgid "Pay via Apple Pay"
-msgstr ""
-
-#: woocommerce/gateways/ecpay/gateway-applepay.php:16
-msgid "ECPay Apple Pay"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/gateway-applepay.php:18
@@ -309,20 +397,19 @@ msgstr ""
 msgid "Pay via BNPL"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/gateway-bnpl.php:20
-#: assets/blocks/gateways/ecpay/bnpl.js:1
-msgid "ECPay BNPL"
-msgstr ""
-
 #: woocommerce/gateways/ecpay/gateway-bnpl.php:22
 msgid "Pay via ECPay BNPL"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/gateway-bnpl.php:34
+#: woocommerce/gateways/ecpay/gateway-urich.php:36
+#: woocommerce/gateways/ecpay/gateway-zingala.php:36
 msgid "BNPL Trade No"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/gateway-bnpl.php:38
+#: woocommerce/gateways/ecpay/gateway-urich.php:40
+#: woocommerce/gateways/ecpay/gateway-zingala.php:40
 msgid "BNPL Installment"
 msgstr ""
 
@@ -330,11 +417,6 @@ msgstr ""
 #: woocommerce/gateways/newebpay/gateway-credit-installment-3.php:12
 #: woocommerce/gateways/payuni/gateway-credit-installment-3.php:12
 msgid "Pay via Credit (3 installment)"
-msgstr ""
-
-#: woocommerce/gateways/ecpay/gateway-credit-installment-3.php:13
-#: assets/blocks/gateways/ecpay/credit-installment-3.js:1
-msgid "ECPay Credit (3 installment)"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/gateway-credit-installment-3.php:14
@@ -347,11 +429,6 @@ msgstr ""
 msgid "Pay via Credit (6 installment)"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/gateway-credit-installment-6.php:13
-#: assets/blocks/gateways/ecpay/credit-installment-6.js:1
-msgid "ECPay Credit (6 installment)"
-msgstr ""
-
 #: woocommerce/gateways/ecpay/gateway-credit-installment-6.php:14
 msgid "Pay via ECPay Credit (6 installment)"
 msgstr ""
@@ -360,11 +437,6 @@ msgstr ""
 #: woocommerce/gateways/newebpay/gateway-credit-installment-12.php:12
 #: woocommerce/gateways/payuni/gateway-credit-installment-12.php:12
 msgid "Pay via Credit (12 installment)"
-msgstr ""
-
-#: woocommerce/gateways/ecpay/gateway-credit-installment-12.php:13
-#: assets/blocks/gateways/ecpay/credit-installment-12.js:1
-msgid "ECPay Credit (12 installment)"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/gateway-credit-installment-12.php:14
@@ -377,11 +449,6 @@ msgstr ""
 msgid "Pay via Credit (18 installment)"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/gateway-credit-installment-18.php:13
-#: assets/blocks/gateways/ecpay/credit-installment-18.js:1
-msgid "ECPay Credit (18 installment)"
-msgstr ""
-
 #: woocommerce/gateways/ecpay/gateway-credit-installment-18.php:14
 msgid "Pay via ECPay Credit (18 installment)"
 msgstr ""
@@ -392,22 +459,20 @@ msgstr ""
 msgid "Pay via Credit (24 installment)"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/gateway-credit-installment-24.php:13
-#: assets/blocks/gateways/ecpay/credit-installment-24.js:1
-msgid "ECPay Credit (24 installment)"
-msgstr ""
-
 #: woocommerce/gateways/ecpay/gateway-credit-installment-24.php:14
 msgid "Pay via ECPay Credit (24 installment)"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/gateway-ipass.php:17
-msgid "Pay via iPASS"
+#: woocommerce/gateways/ecpay/gateway-digital.php:15
+msgid "Pay via Digital Payment"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/gateway-ipass.php:18
-#: assets/blocks/gateways/ecpay/ipass.js:1
-msgid "ECPay iPASS"
+#: woocommerce/gateways/ecpay/gateway-digital.php:18
+msgid "Pay via ECPay Digital Payment"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/gateway-ipass.php:17
+msgid "Pay via iPASS"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/gateway-ipass.php:20
@@ -419,13 +484,24 @@ msgstr ""
 msgid "Pay via JKOPay"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/gateway-jkopay.php:18
-#: assets/blocks/gateways/ecpay/jkopay.js:1
-msgid "ECPay JKOPay"
-msgstr ""
-
 #: woocommerce/gateways/ecpay/gateway-jkopay.php:20
 msgid "Pay via ECPay JKOPay"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/gateway-urich.php:21
+msgid "Pay via URich"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/gateway-urich.php:24
+msgid "Pay via ECPay URich"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/gateway-zingala.php:21
+msgid "Pay via Zingala"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/gateway-zingala.php:24
+msgid "Pay via ECPay Zingala"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/admin.php:32
@@ -438,7 +514,7 @@ msgstr ""
 #: woocommerce/gateways/ecpay/includes/admin.php:37
 #: woocommerce/gateways/newebpay/includes/admin.php:39
 #: woocommerce/gateways/payuni/includes/admin.php:38
-msgid "Independent credit installment"
+msgid "Independent payment gateway"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/admin.php:41
@@ -447,25 +523,41 @@ msgstr ""
 msgid "Add each periods of credit installment as a payment gateway."
 msgstr ""
 
-#: woocommerce/gateways/ecpay/includes/admin.php:44
-#: woocommerce/gateways/newebpay/includes/admin.php:46
-#: woocommerce/gateways/payuni/includes/admin.php:45
+#: woocommerce/gateways/ecpay/includes/admin.php:42
+#: woocommerce/gateways/ecpay/includes/admin.php:50
+#: woocommerce/gateways/ecpay/includes/admin.php:58
+#: woocommerce/gateways/newebpay/includes/admin.php:44
+#: woocommerce/gateways/payuni/includes/admin.php:43
+msgid "Note: This option will remove the original payment gateway."
+msgstr ""
+
+#: woocommerce/gateways/ecpay/includes/admin.php:49
+msgid "Add each type of BNPL as a payment gateway."
+msgstr ""
+
+#: woocommerce/gateways/ecpay/includes/admin.php:57
+msgid "Add each type of digital payment as a payment gateway."
+msgstr ""
+
+#: woocommerce/gateways/ecpay/includes/admin.php:62
+#: woocommerce/gateways/newebpay/includes/admin.php:47
+#: woocommerce/gateways/payuni/includes/admin.php:46
 #: woocommerce/gateways/smilepay/includes/admin.php:35
 msgid "Show payment info in email"
 msgstr ""
 
 #. translators: %s: email title
-#: woocommerce/gateways/ecpay/includes/admin.php:50
-#: woocommerce/gateways/newebpay/includes/admin.php:52
-#: woocommerce/gateways/payuni/includes/admin.php:51
+#: woocommerce/gateways/ecpay/includes/admin.php:68
+#: woocommerce/gateways/newebpay/includes/admin.php:53
+#: woocommerce/gateways/payuni/includes/admin.php:52
 #: woocommerce/gateways/smilepay/includes/admin.php:41
 #, php-format
 msgid "Add payment info in \"%s\" email."
 msgstr ""
 
-#: woocommerce/gateways/ecpay/includes/admin.php:51
-#: woocommerce/gateways/newebpay/includes/admin.php:53
-#: woocommerce/gateways/payuni/includes/admin.php:52
+#: woocommerce/gateways/ecpay/includes/admin.php:69
+#: woocommerce/gateways/newebpay/includes/admin.php:54
+#: woocommerce/gateways/payuni/includes/admin.php:53
 #: woocommerce/gateways/smilepay/includes/admin.php:42
 msgid "Order on-hold"
 msgstr ""
@@ -686,59 +778,83 @@ msgstr ""
 msgid "Refund"
 msgstr ""
 
-#: woocommerce/gateways/newebpay/blocks/gateway-atm.php:42
-#: woocommerce/gateways/newebpay/blocks/gateway-barcode.php:42
-#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-3.php:42
-#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-6.php:42
-#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-12.php:42
-#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-18.php:42
-#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-24.php:42
-#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment.php:44
-#: woocommerce/gateways/newebpay/blocks/gateway-credit.php:42
-#: woocommerce/gateways/newebpay/blocks/gateway-cvs.php:42
-#: woocommerce/gateways/newebpay/blocks/gateway-webatm.php:42
+#: woocommerce/gateways/newebpay/blocks/gateway-atm.php:28
+msgid "NewebPay ATM"
+msgstr ""
+
+#: woocommerce/gateways/newebpay/blocks/gateway-atm.php:45
+#: woocommerce/gateways/newebpay/blocks/gateway-barcode.php:45
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-3.php:45
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-6.php:45
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-12.php:45
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-18.php:45
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-24.php:45
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment.php:47
+#: woocommerce/gateways/newebpay/blocks/gateway-credit.php:45
+#: woocommerce/gateways/newebpay/blocks/gateway-cvs.php:45
+#: woocommerce/gateways/newebpay/blocks/gateway-webatm.php:45
 msgid "NewebPay"
 msgstr ""
 
+#: woocommerce/gateways/newebpay/blocks/gateway-barcode.php:28
+msgid "NewebPay BARCODE"
+msgstr ""
+
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-3.php:28
 #: woocommerce/gateways/newebpay/gateway-credit-installment-3.php:13
-#: assets/blocks/gateways/newebpay/credit-installment-3.js:1
 msgid "NewebPay Credit (3 installment)"
+msgstr ""
+
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-6.php:28
+#: woocommerce/gateways/newebpay/gateway-credit-installment-6.php:13
+msgid "NewebPay Credit (6 installment)"
+msgstr ""
+
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-12.php:28
+#: woocommerce/gateways/newebpay/gateway-credit-installment-12.php:13
+msgid "NewebPay Credit (12 installment)"
+msgstr ""
+
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-18.php:28
+#: woocommerce/gateways/newebpay/gateway-credit-installment-18.php:13
+msgid "NewebPay Credit (18 installment)"
+msgstr ""
+
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-24.php:28
+#: woocommerce/gateways/newebpay/gateway-credit-installment-24.php:13
+msgid "NewebPay Credit (24 installment)"
+msgstr ""
+
+#: woocommerce/gateways/newebpay/blocks/gateway-credit-installment.php:30
+msgid "NewebPay Credit (installment)"
+msgstr ""
+
+#: woocommerce/gateways/newebpay/blocks/gateway-credit.php:28
+msgid "NewebPay Credit"
+msgstr ""
+
+#: woocommerce/gateways/newebpay/blocks/gateway-cvs.php:28
+msgid "NewebPay CVS"
+msgstr ""
+
+#: woocommerce/gateways/newebpay/blocks/gateway-webatm.php:28
+msgid "NewebPay WebATM"
 msgstr ""
 
 #: woocommerce/gateways/newebpay/gateway-credit-installment-3.php:14
 msgid "Pay via NewebPay Credit (3 installment)"
 msgstr ""
 
-#: woocommerce/gateways/newebpay/gateway-credit-installment-6.php:13
-#: assets/blocks/gateways/newebpay/credit-installment-6.js:1
-msgid "NewebPay Credit (6 installment)"
-msgstr ""
-
 #: woocommerce/gateways/newebpay/gateway-credit-installment-6.php:14
 msgid "Pay via NewebPay Credit (6 installment)"
-msgstr ""
-
-#: woocommerce/gateways/newebpay/gateway-credit-installment-12.php:13
-#: assets/blocks/gateways/newebpay/credit-installment-12.js:1
-msgid "NewebPay Credit (12 installment)"
 msgstr ""
 
 #: woocommerce/gateways/newebpay/gateway-credit-installment-12.php:14
 msgid "Pay via NewebPay Credit (12 installment)"
 msgstr ""
 
-#: woocommerce/gateways/newebpay/gateway-credit-installment-18.php:13
-#: assets/blocks/gateways/newebpay/credit-installment-18.js:1
-msgid "NewebPay Credit (18 installment)"
-msgstr ""
-
 #: woocommerce/gateways/newebpay/gateway-credit-installment-18.php:14
 msgid "Pay via NewebPay Credit (18 installment)"
-msgstr ""
-
-#: woocommerce/gateways/newebpay/gateway-credit-installment-24.php:13
-#: assets/blocks/gateways/newebpay/credit-installment-24.js:1
-msgid "NewebPay Credit (24 installment)"
 msgstr ""
 
 #: woocommerce/gateways/newebpay/gateway-credit-installment-24.php:14
@@ -766,49 +882,105 @@ msgstr ""
 msgid "Card type"
 msgstr ""
 
-#: woocommerce/gateways/payuni/blocks/gateway-aftee.php:42
-#: woocommerce/gateways/payuni/blocks/gateway-atm.php:42
-#: woocommerce/gateways/payuni/blocks/gateway-credit-installment-3.php:42
-#: woocommerce/gateways/payuni/blocks/gateway-credit-installment-6.php:42
-#: woocommerce/gateways/payuni/blocks/gateway-credit-installment-9.php:42
-#: woocommerce/gateways/payuni/blocks/gateway-credit-installment-12.php:42
-#: woocommerce/gateways/payuni/blocks/gateway-credit-installment-18.php:42
-#: woocommerce/gateways/payuni/blocks/gateway-credit-installment-24.php:42
-#: woocommerce/gateways/payuni/blocks/gateway-credit-installment-30.php:42
-#: woocommerce/gateways/payuni/blocks/gateway-credit-installment.php:44
-#: woocommerce/gateways/payuni/blocks/gateway-credit.php:42
-#: woocommerce/gateways/payuni/blocks/gateway-cvs.php:42
-#: woocommerce/gateways/payuni/blocks/gateway-icash.php:42
-#: woocommerce/gateways/payuni/blocks/gateway-jkopay.php:42
-#: woocommerce/gateways/payuni/blocks/gateway-linepay.php:42
+#: woocommerce/gateways/payuni/blocks/gateway-aftee.php:28
+#: woocommerce/gateways/payuni/gateway-aftee.php:22
+msgid "PAYUNi Aftee"
+msgstr ""
+
+#: woocommerce/gateways/payuni/blocks/gateway-aftee.php:45
+#: woocommerce/gateways/payuni/blocks/gateway-atm.php:45
+#: woocommerce/gateways/payuni/blocks/gateway-credit-installment-3.php:45
+#: woocommerce/gateways/payuni/blocks/gateway-credit-installment-6.php:45
+#: woocommerce/gateways/payuni/blocks/gateway-credit-installment-9.php:45
+#: woocommerce/gateways/payuni/blocks/gateway-credit-installment-12.php:45
+#: woocommerce/gateways/payuni/blocks/gateway-credit-installment-18.php:45
+#: woocommerce/gateways/payuni/blocks/gateway-credit-installment-24.php:45
+#: woocommerce/gateways/payuni/blocks/gateway-credit-installment-30.php:45
+#: woocommerce/gateways/payuni/blocks/gateway-credit-installment.php:47
+#: woocommerce/gateways/payuni/blocks/gateway-credit.php:45
+#: woocommerce/gateways/payuni/blocks/gateway-cvs.php:45
+#: woocommerce/gateways/payuni/blocks/gateway-icash.php:45
+#: woocommerce/gateways/payuni/blocks/gateway-jkopay.php:45
+#: woocommerce/gateways/payuni/blocks/gateway-linepay.php:45
 msgid "PAYUNi"
+msgstr ""
+
+#: woocommerce/gateways/payuni/blocks/gateway-atm.php:28
+msgid "PAYUNi ATM"
+msgstr ""
+
+#: woocommerce/gateways/payuni/blocks/gateway-credit-installment-3.php:28
+#: woocommerce/gateways/payuni/gateway-credit-installment-3.php:13
+msgid "PAYUNi Credit (3 installment)"
+msgstr ""
+
+#: woocommerce/gateways/payuni/blocks/gateway-credit-installment-6.php:28
+#: woocommerce/gateways/payuni/gateway-credit-installment-6.php:13
+msgid "PAYUNi Credit (6 installment)"
+msgstr ""
+
+#: woocommerce/gateways/payuni/blocks/gateway-credit-installment-9.php:28
+#: woocommerce/gateways/payuni/gateway-credit-installment-9.php:13
+msgid "PAYUNi Credit (9 installment)"
+msgstr ""
+
+#: woocommerce/gateways/payuni/blocks/gateway-credit-installment-12.php:28
+#: woocommerce/gateways/payuni/gateway-credit-installment-12.php:13
+msgid "PAYUNi Credit (12 installment)"
+msgstr ""
+
+#: woocommerce/gateways/payuni/blocks/gateway-credit-installment-18.php:28
+#: woocommerce/gateways/payuni/gateway-credit-installment-18.php:13
+msgid "PAYUNi Credit (18 installment)"
+msgstr ""
+
+#: woocommerce/gateways/payuni/blocks/gateway-credit-installment-24.php:28
+#: woocommerce/gateways/payuni/gateway-credit-installment-24.php:13
+msgid "PAYUNi Credit (24 installment)"
+msgstr ""
+
+#: woocommerce/gateways/payuni/blocks/gateway-credit-installment-30.php:28
+#: woocommerce/gateways/payuni/gateway-credit-installment-30.php:13
+msgid "PAYUNi Credit (30 installment)"
+msgstr ""
+
+#: woocommerce/gateways/payuni/blocks/gateway-credit-installment.php:30
+msgid "PAYUNi Credit (installment)"
+msgstr ""
+
+#: woocommerce/gateways/payuni/blocks/gateway-credit.php:28
+msgid "PAYUNi Credit"
+msgstr ""
+
+#: woocommerce/gateways/payuni/blocks/gateway-cvs.php:28
+msgid "PAYUNi CVS"
+msgstr ""
+
+#: woocommerce/gateways/payuni/blocks/gateway-icash.php:28
+#: woocommerce/gateways/payuni/gateway-icash.php:18
+msgid "PAYUNi icash Pay"
+msgstr ""
+
+#: woocommerce/gateways/payuni/blocks/gateway-jkopay.php:28
+#: woocommerce/gateways/payuni/gateway-jkopay.php:18
+msgid "PAYUNi JKOPay"
+msgstr ""
+
+#: woocommerce/gateways/payuni/blocks/gateway-linepay.php:28
+#: woocommerce/gateways/payuni/gateway-linepay.php:18
+msgid "PAYUNi LinePay"
 msgstr ""
 
 #: woocommerce/gateways/payuni/gateway-aftee.php:21
 msgid "Pay via Aftee"
 msgstr ""
 
-#: woocommerce/gateways/payuni/gateway-aftee.php:22
-#: assets/blocks/gateways/payuni/aftee.js:1
-msgid "PAYUNi Aftee"
-msgstr ""
-
 #: woocommerce/gateways/payuni/gateway-aftee.php:24
 msgid "Pay via PAYUNi Aftee"
 msgstr ""
 
-#: woocommerce/gateways/payuni/gateway-credit-installment-3.php:13
-#: assets/blocks/gateways/payuni/credit-installment-3.js:1
-msgid "PAYUNi Credit (3 installment)"
-msgstr ""
-
 #: woocommerce/gateways/payuni/gateway-credit-installment-3.php:14
 msgid "Pay via PAYUNi Credit (3 installment)"
-msgstr ""
-
-#: woocommerce/gateways/payuni/gateway-credit-installment-6.php:13
-#: assets/blocks/gateways/payuni/credit-installment-6.js:1
-msgid "PAYUNi Credit (6 installment)"
 msgstr ""
 
 #: woocommerce/gateways/payuni/gateway-credit-installment-6.php:14
@@ -819,45 +991,20 @@ msgstr ""
 msgid "Pay via Credit (9 installment)"
 msgstr ""
 
-#: woocommerce/gateways/payuni/gateway-credit-installment-9.php:13
-#: assets/blocks/gateways/payuni/credit-installment-9.js:1
-msgid "PAYUNi Credit (9 installment)"
-msgstr ""
-
 #: woocommerce/gateways/payuni/gateway-credit-installment-9.php:14
 msgid "Pay via PAYUNi Credit (9 installment)"
-msgstr ""
-
-#: woocommerce/gateways/payuni/gateway-credit-installment-12.php:13
-#: assets/blocks/gateways/payuni/credit-installment-12.js:1
-msgid "PAYUNi Credit (12 installment)"
 msgstr ""
 
 #: woocommerce/gateways/payuni/gateway-credit-installment-12.php:14
 msgid "Pay via PAYUNi Credit (12 installment)"
 msgstr ""
 
-#: woocommerce/gateways/payuni/gateway-credit-installment-18.php:13
-#: assets/blocks/gateways/payuni/credit-installment-18.js:1
-msgid "PAYUNi Credit (18 installment)"
-msgstr ""
-
 #: woocommerce/gateways/payuni/gateway-credit-installment-18.php:14
 msgid "Pay via PAYUNi Credit (18 installment)"
 msgstr ""
 
-#: woocommerce/gateways/payuni/gateway-credit-installment-24.php:13
-#: assets/blocks/gateways/payuni/credit-installment-24.js:1
-msgid "PAYUNi Credit (24 installment)"
-msgstr ""
-
 #: woocommerce/gateways/payuni/gateway-credit-installment-24.php:14
 msgid "Pay via PAYUNi Credit (24 installment)"
-msgstr ""
-
-#: woocommerce/gateways/payuni/gateway-credit-installment-30.php:13
-#: assets/blocks/gateways/payuni/credit-installment-30.js:1
-msgid "PAYUNi Credit (30 installment)"
 msgstr ""
 
 #: woocommerce/gateways/payuni/gateway-credit-installment-30.php:14
@@ -868,18 +1015,8 @@ msgstr ""
 msgid "Pay via icash Pay"
 msgstr ""
 
-#: woocommerce/gateways/payuni/gateway-icash.php:18
-#: assets/blocks/gateways/payuni/icash.js:1
-msgid "PAYUNi icash Pay"
-msgstr ""
-
 #: woocommerce/gateways/payuni/gateway-icash.php:20
 msgid "Pay via PAYUNi icash Pay"
-msgstr ""
-
-#: woocommerce/gateways/payuni/gateway-jkopay.php:18
-#: assets/blocks/gateways/payuni/jkopay.js:1
-msgid "PAYUNi JKOPay"
 msgstr ""
 
 #: woocommerce/gateways/payuni/gateway-jkopay.php:20
@@ -888,11 +1025,6 @@ msgstr ""
 
 #: woocommerce/gateways/payuni/gateway-linepay.php:17
 msgid "Pay via LinePay"
-msgstr ""
-
-#: woocommerce/gateways/payuni/gateway-linepay.php:18
-#: assets/blocks/gateways/payuni/linepay.js:1
-msgid "PAYUNi LinePay"
 msgstr ""
 
 #: woocommerce/gateways/payuni/gateway-linepay.php:20
@@ -907,13 +1039,37 @@ msgstr ""
 msgid "Auth type"
 msgstr ""
 
-#: woocommerce/gateways/smilepay/blocks/gateway-atm.php:42
-#: woocommerce/gateways/smilepay/blocks/gateway-barcode.php:42
-#: woocommerce/gateways/smilepay/blocks/gateway-credit.php:42
-#: woocommerce/gateways/smilepay/blocks/gateway-cvs-711.php:42
-#: woocommerce/gateways/smilepay/blocks/gateway-cvs-fami.php:42
-#: woocommerce/gateways/smilepay/blocks/gateway-webatm.php:42
+#: woocommerce/gateways/smilepay/blocks/gateway-atm.php:28
+msgid "SmilePay ATM"
+msgstr ""
+
+#: woocommerce/gateways/smilepay/blocks/gateway-atm.php:45
+#: woocommerce/gateways/smilepay/blocks/gateway-barcode.php:45
+#: woocommerce/gateways/smilepay/blocks/gateway-credit.php:45
+#: woocommerce/gateways/smilepay/blocks/gateway-cvs-711.php:45
+#: woocommerce/gateways/smilepay/blocks/gateway-cvs-fami.php:45
+#: woocommerce/gateways/smilepay/blocks/gateway-webatm.php:45
 msgid "SmilePay"
+msgstr ""
+
+#: woocommerce/gateways/smilepay/blocks/gateway-barcode.php:28
+msgid "SmilePay BARCODE"
+msgstr ""
+
+#: woocommerce/gateways/smilepay/blocks/gateway-credit.php:28
+msgid "SmilePay Credit"
+msgstr ""
+
+#: woocommerce/gateways/smilepay/blocks/gateway-cvs-711.php:28
+msgid "SmilePay CVS 711"
+msgstr ""
+
+#: woocommerce/gateways/smilepay/blocks/gateway-cvs-fami.php:28
+msgid "SmilePay CVS FamilyMart"
+msgstr ""
+
+#: woocommerce/gateways/smilepay/blocks/gateway-webatm.php:28
+msgid "SmilePay WebATM"
 msgstr ""
 
 #: woocommerce/shipping/ecpay/includes/admin.php:53
@@ -1143,98 +1299,6 @@ msgstr ""
 
 #: assets/admin/order.js:1
 msgid "Invalid amount"
-msgstr ""
-
-#: assets/blocks/gateways/ecpay/atm.js:1
-msgid "ECPay ATM"
-msgstr ""
-
-#: assets/blocks/gateways/ecpay/barcode.js:1
-msgid "ECPay BARCODE"
-msgstr ""
-
-#: assets/blocks/gateways/ecpay/credit-installment.js:1
-msgid "ECPay Credit (installment)"
-msgstr ""
-
-#: assets/blocks/gateways/ecpay/credit.js:1
-msgid "ECPay Credit"
-msgstr ""
-
-#: assets/blocks/gateways/ecpay/cvs.js:1
-msgid "ECPay CVS"
-msgstr ""
-
-#: assets/blocks/gateways/ecpay/twqr.js:1
-msgid "ECPay TWQR"
-msgstr ""
-
-#: assets/blocks/gateways/ecpay/webatm.js:1
-msgid "ECPay WebATM"
-msgstr ""
-
-#: assets/blocks/gateways/newebpay/atm.js:1
-msgid "NewebPay ATM"
-msgstr ""
-
-#: assets/blocks/gateways/newebpay/barcode.js:1
-msgid "NewebPay BARCODE"
-msgstr ""
-
-#: assets/blocks/gateways/newebpay/credit-installment.js:1
-msgid "NewebPay Credit (installment)"
-msgstr ""
-
-#: assets/blocks/gateways/newebpay/credit.js:1
-msgid "NewebPay Credit"
-msgstr ""
-
-#: assets/blocks/gateways/newebpay/cvs.js:1
-msgid "NewebPay CVS"
-msgstr ""
-
-#: assets/blocks/gateways/newebpay/webatm.js:1
-msgid "NewebPay WebATM"
-msgstr ""
-
-#: assets/blocks/gateways/payuni/atm.js:1
-msgid "PAYUNi ATM"
-msgstr ""
-
-#: assets/blocks/gateways/payuni/credit-installment.js:1
-msgid "PAYUNi Credit (installment)"
-msgstr ""
-
-#: assets/blocks/gateways/payuni/credit.js:1
-msgid "PAYUNi Credit"
-msgstr ""
-
-#: assets/blocks/gateways/payuni/cvs.js:1
-msgid "PAYUNi CVS"
-msgstr ""
-
-#: assets/blocks/gateways/smilepay/atm.js:1
-msgid "SmilePay ATM"
-msgstr ""
-
-#: assets/blocks/gateways/smilepay/barcode.js:1
-msgid "SmilePay BARCODE"
-msgstr ""
-
-#: assets/blocks/gateways/smilepay/credit.js:1
-msgid "SmilePay Credit"
-msgstr ""
-
-#: assets/blocks/gateways/smilepay/cvs-711.js:1
-msgid "SmilePay CVS 711"
-msgstr ""
-
-#: assets/blocks/gateways/smilepay/cvs-fami.js:1
-msgid "SmilePay CVS FamilyMart"
-msgstr ""
-
-#: assets/blocks/gateways/smilepay/webatm.js:1
-msgid "SmilePay WebATM"
 msgstr ""
 
 #: assets/blocks/shipping/ecpay/cvs-select-map/frontend.js:1

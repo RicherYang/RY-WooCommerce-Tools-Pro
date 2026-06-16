@@ -1,10 +1,10 @@
-<?php
+﻿<?php
 
 defined('ABSPATH') or exit;
 
 final class RY_SmilePay_Gateway_Webatm_Blocks_Support extends RY_WTP_AbstractPaymentMethodType
 {
-    protected $name = 'ry_smilepay_webatm';
+    protected $name = RY_SmilePay_Gateway_Webatm::ID;
 
     public function initialize()
     {
@@ -24,6 +24,9 @@ final class RY_SmilePay_Gateway_Webatm_Blocks_Support extends RY_WTP_AbstractPay
         $script_asset = include RY_WTP_PLUGIN_DIR . 'assets/blocks/gateways/smilepay/webatm.asset.php';
 
         wp_register_script('ry-smilepay-webatm-block', RY_WTP_PLUGIN_URL . 'assets/blocks/gateways/smilepay/webatm.js', $script_asset['dependencies'], $script_asset['version'], true);
+        wp_localize_script('ry-smilepay-webatm-block', 'RySmilepayWebatmBlockParams', [
+            'defaultTitle' => __('SmilePay WebATM', 'ry-woocommerce-tools-pro'),
+        ]);
         wp_set_script_translations('ry-smilepay-webatm-block', 'ry-woocommerce-tools-pro', RY_WTP_PLUGIN_LANGUAGES_DIR);
 
         return ['ry-smilepay-webatm-block'];
@@ -44,3 +47,4 @@ final class RY_SmilePay_Gateway_Webatm_Blocks_Support extends RY_WTP_AbstractPay
         ];
     }
 }
+

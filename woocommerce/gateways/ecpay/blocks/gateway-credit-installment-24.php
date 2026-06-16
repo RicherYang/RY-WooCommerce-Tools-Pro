@@ -1,10 +1,10 @@
-<?php
+﻿<?php
 
 defined('ABSPATH') or exit;
 
 final class RY_ECPay_Gateway_Credit_Installment_24_Blocks_Support extends RY_WTP_AbstractPaymentMethodType
 {
-    protected $name = 'ry_ecpay_credit_installment_24';
+    protected $name = RY_ECPay_Gateway_Credit_Installment_24::ID;
 
     public function initialize()
     {
@@ -24,6 +24,9 @@ final class RY_ECPay_Gateway_Credit_Installment_24_Blocks_Support extends RY_WTP
         $script_asset = include RY_WTP_PLUGIN_DIR . 'assets/blocks/gateways/ecpay/credit-installment-24.asset.php';
 
         wp_register_script('ry-ecpay-credit-installment-24-block', RY_WTP_PLUGIN_URL . 'assets/blocks/gateways/ecpay/credit-installment-24.js', $script_asset['dependencies'], $script_asset['version'], true);
+        wp_localize_script('ry-ecpay-credit-installment-24-block', 'RyEcpayCreditInstallment24BlockParams', [
+            'defaultTitle' => __('ECPay Credit (24 installment)', 'ry-woocommerce-tools-pro'),
+        ]);
         wp_set_script_translations('ry-ecpay-credit-installment-24-block', 'ry-woocommerce-tools-pro', RY_WTP_PLUGIN_LANGUAGES_DIR);
 
         return ['ry-ecpay-credit-installment-24-block'];
@@ -44,3 +47,4 @@ final class RY_ECPay_Gateway_Credit_Installment_24_Blocks_Support extends RY_WTP
         ];
     }
 }
+

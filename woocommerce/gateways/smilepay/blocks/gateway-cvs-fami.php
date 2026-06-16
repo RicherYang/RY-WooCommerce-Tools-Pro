@@ -1,10 +1,10 @@
-<?php
+﻿<?php
 
 defined('ABSPATH') or exit;
 
 final class RY_SmilePay_Gateway_Cvs_Fami_Blocks_Support extends RY_WTP_AbstractPaymentMethodType
 {
-    protected $name = 'ry_smilepay_cvs_fami';
+    protected $name = RY_SmilePay_Gateway_Cvs_Fami::ID;
 
     public function initialize()
     {
@@ -24,6 +24,9 @@ final class RY_SmilePay_Gateway_Cvs_Fami_Blocks_Support extends RY_WTP_AbstractP
         $script_asset = include RY_WTP_PLUGIN_DIR . 'assets/blocks/gateways/smilepay/cvs-fami.asset.php';
 
         wp_register_script('ry-smilepay-cvs-fami-block', RY_WTP_PLUGIN_URL . 'assets/blocks/gateways/smilepay/cvs-fami.js', $script_asset['dependencies'], $script_asset['version'], true);
+        wp_localize_script('ry-smilepay-cvs-fami-block', 'RySmilepayCvsFamiBlockParams', [
+            'defaultTitle' => __('SmilePay CVS FamilyMart', 'ry-woocommerce-tools-pro'),
+        ]);
         wp_set_script_translations('ry-smilepay-cvs-fami-block', 'ry-woocommerce-tools-pro', RY_WTP_PLUGIN_LANGUAGES_DIR);
 
         return ['ry-smilepay-cvs-fami-block'];
@@ -44,3 +47,4 @@ final class RY_SmilePay_Gateway_Cvs_Fami_Blocks_Support extends RY_WTP_AbstractP
         ];
     }
 }
+

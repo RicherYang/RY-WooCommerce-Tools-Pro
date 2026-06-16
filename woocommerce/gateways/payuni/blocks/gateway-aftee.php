@@ -1,10 +1,10 @@
-<?php
+﻿<?php
 
 defined('ABSPATH') or exit;
 
 final class RY_PAYUNi_Gateway_Aftee_Blocks_Support extends RY_WTP_AbstractPaymentMethodType
 {
-    protected $name = 'ry_payuni_aftee';
+    protected $name = RY_PAYUNi_Gateway_Aftee::ID;
 
     public function initialize()
     {
@@ -24,6 +24,9 @@ final class RY_PAYUNi_Gateway_Aftee_Blocks_Support extends RY_WTP_AbstractPaymen
         $script_asset = include RY_WTP_PLUGIN_DIR . 'assets/blocks/gateways/payuni/aftee.asset.php';
 
         wp_register_script('ry-payuni-aftee-block', RY_WTP_PLUGIN_URL . 'assets/blocks/gateways/payuni/aftee.js', $script_asset['dependencies'], $script_asset['version'], true);
+        wp_localize_script('ry-payuni-aftee-block', 'RyPayuniAfteeBlockParams', [
+            'defaultTitle' => __('PAYUNi Aftee', 'ry-woocommerce-tools-pro'),
+        ]);
         wp_set_script_translations('ry-payuni-aftee-block', 'ry-woocommerce-tools-pro', RY_WTP_PLUGIN_LANGUAGES_DIR);
 
         return ['ry-payuni-aftee-block'];
@@ -44,3 +47,4 @@ final class RY_PAYUNi_Gateway_Aftee_Blocks_Support extends RY_WTP_AbstractPaymen
         ];
     }
 }
+

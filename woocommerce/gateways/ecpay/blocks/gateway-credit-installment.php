@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 defined('ABSPATH') or exit;
 
@@ -6,7 +6,7 @@ use Automattic\WooCommerce\Blocks\Payments\PaymentContext;
 
 final class RY_ECPay_Gateway_Credit_Installment_Blocks_Support extends RY_WTP_AbstractPaymentMethodType
 {
-    protected $name = 'ry_ecpay_credit_installment';
+    protected $name = RY_ECPay_Gateway_Credit_Installment::ID;
 
     public function initialize()
     {
@@ -26,6 +26,9 @@ final class RY_ECPay_Gateway_Credit_Installment_Blocks_Support extends RY_WTP_Ab
         $script_asset = include RY_WTP_PLUGIN_DIR . 'assets/blocks/gateways/ecpay/credit-installment.asset.php';
 
         wp_register_script('ry-ecpay-credit-installment-block', RY_WTP_PLUGIN_URL . 'assets/blocks/gateways/ecpay/credit-installment.js', $script_asset['dependencies'], $script_asset['version'], true);
+        wp_localize_script('ry-ecpay-credit-installment-block', 'RyEcpayCreditInstallmentBlockParams', [
+            'defaultTitle' => __('ECPay Credit (installment)', 'ry-woocommerce-tools-pro'),
+        ]);
         wp_set_script_translations('ry-ecpay-credit-installment-block', 'ry-woocommerce-tools-pro', RY_WTP_PLUGIN_LANGUAGES_DIR);
 
         return ['ry-ecpay-credit-installment-block'];
@@ -46,3 +49,4 @@ final class RY_ECPay_Gateway_Credit_Installment_Blocks_Support extends RY_WTP_Ab
         ];
     }
 }
+

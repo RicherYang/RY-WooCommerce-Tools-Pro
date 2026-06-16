@@ -1,5 +1,3 @@
-import React from "react";
-
 const PaymentLabel = ({ label, icon, ...props }): JSX.Element => {
     const { PaymentMethodLabel, PaymentMethodIcons } = props.components;
     return <>

@@ -1,1 +1,1 @@
-<?php return array('dependencies' => array('react', 'react-jsx-runtime', 'wc-blocks-registry', 'wc-settings', 'wp-html-entities', 'wp-i18n'), 'version' => 'c89790f82dd17e5bba37');
+<?php return array('dependencies' => array('react-jsx-runtime', 'wc-blocks-registry', 'wc-settings', 'wp-html-entities'), 'version' => 'd95c3019165768261992');

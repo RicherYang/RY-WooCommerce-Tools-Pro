@@ -1,13 +1,11 @@
-import { __ } from '@wordpress/i18n';
-import { decodeEntities } from '@wordpress/html-entities';
+﻿import { decodeEntities } from '@wordpress/html-entities';
 import { registerPaymentMethod } from '@woocommerce/blocks-registry';
 import { getSetting } from '@woocommerce/settings';
 
 import PaymentLabel from '../../base/_payment-label';
 
-const defaultLabel = __('ECPay Credit (3 installment)', 'ry-woocommerce-tools-pro');
 const settings = getSetting('ry_ecpay_credit_installment_3_data', {});
-const label = decodeEntities(settings.title || defaultLabel);
+const label = decodeEntities(settings.title || RyEcpayCreditInstallment3BlockParams.defaultTitle);
 
 const Label = ({ ...props }) => {
     return <PaymentLabel
@@ -20,7 +18,7 @@ const Content = () => {
     return decodeEntities(settings.description || '');
 };
 
-const RY_ECPay_Credit = {
+registerPaymentMethod({
     name: 'ry_ecpay_credit_installment_3',
     label: <Label />,
     placeOrderButtonLabel: decodeEntities(settings.button_title || ''),
@@ -31,6 +29,4 @@ const RY_ECPay_Credit = {
     supports: {
         features: settings.supports,
     },
-};
-
-registerPaymentMethod(RY_ECPay_Credit);
+});

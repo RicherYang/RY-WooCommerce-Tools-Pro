@@ -1,10 +1,10 @@
-<?php
+﻿<?php
 
 defined('ABSPATH') or exit;
 
 final class RY_ECPay_Gateway_Barcode_Blocks_Support extends RY_WTP_AbstractPaymentMethodType
 {
-    protected $name = 'ry_ecpay_barcode';
+    protected $name = RY_ECPay_Gateway_Barcode::ID;
 
     public function initialize()
     {
@@ -24,6 +24,9 @@ final class RY_ECPay_Gateway_Barcode_Blocks_Support extends RY_WTP_AbstractPayme
         $script_asset = include RY_WTP_PLUGIN_DIR . 'assets/blocks/gateways/ecpay/barcode.asset.php';
 
         wp_register_script('ry-ecpay-barcode-block', RY_WTP_PLUGIN_URL . 'assets/blocks/gateways/ecpay/barcode.js', $script_asset['dependencies'], $script_asset['version'], true);
+        wp_localize_script('ry-ecpay-barcode-block', 'RyEcpayBarcodeBlockParams', [
+            'defaultTitle' => __('ECPay BARCODE', 'ry-woocommerce-tools-pro'),
+        ]);
         wp_set_script_translations('ry-ecpay-barcode-block', 'ry-woocommerce-tools-pro', RY_WTP_PLUGIN_LANGUAGES_DIR);
 
         return ['ry-ecpay-barcode-block'];
@@ -44,3 +47,4 @@ final class RY_ECPay_Gateway_Barcode_Blocks_Support extends RY_WTP_AbstractPayme
         ];
     }
 }
+

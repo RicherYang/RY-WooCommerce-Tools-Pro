@@ -1,10 +1,10 @@
-<?php
+﻿<?php
 
 defined('ABSPATH') or exit;
 
 final class RY_SmilePay_Gateway_Cvs_711_Blocks_Support extends RY_WTP_AbstractPaymentMethodType
 {
-    protected $name = 'ry_smilepay_cvs_711';
+    protected $name = RY_SmilePay_Gateway_Cvs_711::ID;
 
     public function initialize()
     {
@@ -24,6 +24,9 @@ final class RY_SmilePay_Gateway_Cvs_711_Blocks_Support extends RY_WTP_AbstractPa
         $script_asset = include RY_WTP_PLUGIN_DIR . 'assets/blocks/gateways/smilepay/cvs-711.asset.php';
 
         wp_register_script('ry-smilepay-cvs-711-block', RY_WTP_PLUGIN_URL . 'assets/blocks/gateways/smilepay/cvs-711.js', $script_asset['dependencies'], $script_asset['version'], true);
+        wp_localize_script('ry-smilepay-cvs-711-block', 'RySmilepayCvs711BlockParams', [
+            'defaultTitle' => __('SmilePay CVS 711', 'ry-woocommerce-tools-pro'),
+        ]);
         wp_set_script_translations('ry-smilepay-cvs-711-block', 'ry-woocommerce-tools-pro', RY_WTP_PLUGIN_LANGUAGES_DIR);
 
         return ['ry-smilepay-cvs-711-block'];
@@ -44,3 +47,4 @@ final class RY_SmilePay_Gateway_Cvs_711_Blocks_Support extends RY_WTP_AbstractPa
         ];
     }
 }
+

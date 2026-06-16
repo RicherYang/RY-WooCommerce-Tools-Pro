@@ -18,16 +18,30 @@ final class RY_WTP_WC_ECPay_Gateway
 
     protected function do_init(): void
     {
-        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/includes/gateway-credit-installment.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-applepay.php';
-        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-bnpl.php';
-        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-ipass.php';
-        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-jkopay.php';
-        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-credit-installment-3.php';
-        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-credit-installment-6.php';
-        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-credit-installment-12.php';
-        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-credit-installment-18.php';
-        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-credit-installment-24.php';
+
+        if ('yes' === RY_WTP::get_option('ecpay_independent_credit_installment', 'no')) {
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/includes/gateway-credit-installment.php';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-credit-installment-3.php';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-credit-installment-6.php';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-credit-installment-12.php';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-credit-installment-18.php';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-credit-installment-24.php';
+        }
+
+        if ('yes' === RY_WTP::get_option('ecpay_independent_bnpl', 'no')) {
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-urich.php';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-zingala.php';
+        } else {
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-bnpl.php';
+        }
+
+        if ('yes' === RY_WTP::get_option('ecpay_independent_digital', 'no')) {
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-ipass.php';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-jkopay.php';
+        } else {
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-digital.php';
+        }
 
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-block.php';
         RY_WTP_WC_ECPay_Gateway_Block::instance();
@@ -47,17 +61,28 @@ final class RY_WTP_WC_ECPay_Gateway
     public function add_method($methods)
     {
         $methods[] = 'RY_ECPay_Gateway_Applepay';
-        $methods[] = 'RY_ECPay_Gateway_Bnpl';
-        $methods[] = 'RY_ECPay_Gateway_Ipass';
-        $methods[] = 'RY_ECPay_Gateway_Jkopay';
 
-        if ('yes' === RY_WTP::get_option('ecpay_credit_installment', 'no')) {
+        if ('yes' === RY_WTP::get_option('ecpay_independent_credit_installment', 'no')) {
             unset($methods[array_search('WC_Gateway_ECPay_Credit_Installment', $methods)]);
             $methods[] = 'RY_ECPay_Gateway_Credit_Installment_3';
             $methods[] = 'RY_ECPay_Gateway_Credit_Installment_6';
             $methods[] = 'RY_ECPay_Gateway_Credit_Installment_12';
             $methods[] = 'RY_ECPay_Gateway_Credit_Installment_18';
             $methods[] = 'RY_ECPay_Gateway_Credit_Installment_24';
+        }
+
+        if ('yes' === RY_WTP::get_option('ecpay_independent_bnpl', 'no')) {
+            $methods[] = 'RY_ECPay_Gateway_Urich';
+            $methods[] = 'RY_ECPay_Gateway_Zingala';
+        } else {
+            $methods[] = 'RY_ECPay_Gateway_Bnpl';
+        }
+
+        if ('yes' === RY_WTP::get_option('ecpay_independent_digital', 'no')) {
+            $methods[] = 'RY_ECPay_Gateway_Ipass';
+            $methods[] = 'RY_ECPay_Gateway_Jkopay';
+        } else {
+            $methods[] = 'RY_ECPay_Gateway_Digital';
         }
 
         return $methods;

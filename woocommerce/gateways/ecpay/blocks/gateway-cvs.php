@@ -1,10 +1,10 @@
-<?php
+﻿<?php
 
 defined('ABSPATH') or exit;
 
 final class RY_ECPay_Gateway_Cvs_Blocks_Support extends RY_WTP_AbstractPaymentMethodType
 {
-    protected $name = 'ry_ecpay_cvs';
+    protected $name = RY_ECPay_Gateway_Cvs::ID;
 
     public function initialize()
     {
@@ -24,6 +24,9 @@ final class RY_ECPay_Gateway_Cvs_Blocks_Support extends RY_WTP_AbstractPaymentMe
         $script_asset = include RY_WTP_PLUGIN_DIR . 'assets/blocks/gateways/ecpay/cvs.asset.php';
 
         wp_register_script('ry-ecpay-cvs-block', RY_WTP_PLUGIN_URL . 'assets/blocks/gateways/ecpay/cvs.js', $script_asset['dependencies'], $script_asset['version'], true);
+        wp_localize_script('ry-ecpay-cvs-block', 'RyEcpayCvsBlockParams', [
+            'defaultTitle' => __('ECPay CVS', 'ry-woocommerce-tools-pro'),
+        ]);
         wp_set_script_translations('ry-ecpay-cvs-block', 'ry-woocommerce-tools-pro', RY_WTP_PLUGIN_LANGUAGES_DIR);
 
         return ['ry-ecpay-cvs-block'];
@@ -44,3 +47,4 @@ final class RY_ECPay_Gateway_Cvs_Blocks_Support extends RY_WTP_AbstractPaymentMe
         ];
     }
 }
+

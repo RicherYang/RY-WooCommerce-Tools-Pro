@@ -1,0 +1,45 @@
+<?php
+
+defined('ABSPATH') or exit;
+
+class RY_ECPay_Gateway_Urich extends RY_WT_WC_ECPay_Payment_Gateway
+{
+    public const ID = 'ry_ecpay_urich';
+
+    public const PAYMENT_TYPE = 'BNPL';
+
+    public const SUB_PAYMENT_TYPE = 'URICH';
+
+    protected int $check_min_amount = 1000;
+
+    protected int $check_max_amount = 500000;
+
+    public function __construct()
+    {
+        $this->id = self::ID;
+        $this->has_fields = false;
+        $this->order_button_text = __('Pay via URich', 'ry-woocommerce-tools-pro');
+        $this->method_title = __('ECPay URich', 'ry-woocommerce-tools-pro');
+        $this->method_description = '';
+        $this->process_payment_note = __('Pay via ECPay URich', 'ry-woocommerce-tools-pro');
+
+        $this->form_fields = include RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/includes/settings/bnpl.php';
+
+        parent::__construct();
+
+        add_filter('ry_admin_payment_info-' . $this->id, [$this, 'show_payment_info'], 10, 2);
+    }
+
+    public function show_payment_info($html, $order)
+    {
+        $html .= '<tr>
+            <td>' . esc_html__('BNPL Trade No', 'ry-woocommerce-tools-pro') . '</td>
+            <td>' . esc_html($order->get_meta('_ecpay_bnpl_TradeNo')) . '</td>
+            </tr>';
+        $html .= '<tr>
+            <td>' . esc_html__('BNPL Installment', 'ry-woocommerce-tools-pro') . '</td>
+            <td>' . esc_html($order->get_meta('_ecpay_bnpl_Installment')) . '</td>
+        </tr>';
+        return $html;
+    }
+}

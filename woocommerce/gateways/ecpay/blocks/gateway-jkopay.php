@@ -1,10 +1,10 @@
-<?php
+﻿<?php
 
 defined('ABSPATH') or exit;
 
 final class RY_ECPay_Gateway_Jkopay_Blocks_Support extends RY_WTP_AbstractPaymentMethodType
 {
-    protected $name = 'ry_ecpay_jkopay';
+    protected $name = RY_ECPay_Gateway_Jkopay::ID;
 
     public function initialize()
     {
@@ -24,6 +24,9 @@ final class RY_ECPay_Gateway_Jkopay_Blocks_Support extends RY_WTP_AbstractPaymen
         $script_asset = include RY_WTP_PLUGIN_DIR . 'assets/blocks/gateways/ecpay/jkopay.asset.php';
 
         wp_register_script('ry-ecpay-jkopay-block', RY_WTP_PLUGIN_URL . 'assets/blocks/gateways/ecpay/jkopay.js', $script_asset['dependencies'], $script_asset['version'], true);
+        wp_localize_script('ry-ecpay-jkopay-block', 'RyEcpayJkopayBlockParams', [
+            'defaultTitle' => __('ECPay JKOPay', 'ry-woocommerce-tools-pro'),
+        ]);
         wp_set_script_translations('ry-ecpay-jkopay-block', 'ry-woocommerce-tools-pro', RY_WTP_PLUGIN_LANGUAGES_DIR);
 
         return ['ry-ecpay-jkopay-block'];
@@ -44,3 +47,4 @@ final class RY_ECPay_Gateway_Jkopay_Blocks_Support extends RY_WTP_AbstractPaymen
         ];
     }
 }
+

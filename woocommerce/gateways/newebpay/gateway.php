@@ -18,13 +18,15 @@ final class RY_WTP_WC_NewebPay_Gateway
 
     protected function do_init(): void
     {
-        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/includes/gateway-credit-installment.php';
-        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/gateway-credit-installment-3.php';
-        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/gateway-credit-installment-6.php';
-        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/gateway-credit-installment-12.php';
-        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/gateway-credit-installment-18.php';
-        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/gateway-credit-installment-24.php';
-        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/gateway-credit-installment-30.php';
+        if ('yes' === RY_WTP::get_option('newebpay_independent_credit_installment', 'no')) {
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/includes/gateway-credit-installment.php';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/gateway-credit-installment-3.php';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/gateway-credit-installment-6.php';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/gateway-credit-installment-12.php';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/gateway-credit-installment-18.php';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/gateway-credit-installment-24.php';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/gateway-credit-installment-30.php';
+        }
 
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/gateway-block.php';
         RY_WTP_WC_NewebPay_Gateway_Block::instance();
@@ -43,7 +45,7 @@ final class RY_WTP_WC_NewebPay_Gateway
 
     public function add_method($methods)
     {
-        if ('yes' === RY_WTP::get_option('newebpay_credit_installment', 'no')) {
+        if ('yes' === RY_WTP::get_option('newebpay_independent_credit_installment', 'no')) {
             unset($methods[array_search('WC_Gateway_NewebPay_Credit_Installment', $methods)]);
             $methods[] = 'RY_NewebPay_Gateway_Credit_Installment_3';
             $methods[] = 'RY_NewebPay_Gateway_Credit_Installment_6';

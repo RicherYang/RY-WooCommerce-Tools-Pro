@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 defined('ABSPATH') or exit;
 
@@ -6,7 +6,7 @@ use Automattic\WooCommerce\Blocks\Payments\PaymentContext;
 
 final class RY_PAYUNi_Gateway_Credit_Installment_Blocks_Support extends RY_WTP_AbstractPaymentMethodType
 {
-    protected $name = 'ry_payuni_credit_installment';
+    protected $name = RY_PAYUNi_Gateway_Credit_Installment::ID;
 
     public function initialize()
     {
@@ -26,6 +26,9 @@ final class RY_PAYUNi_Gateway_Credit_Installment_Blocks_Support extends RY_WTP_A
         $script_asset = include RY_WTP_PLUGIN_DIR . 'assets/blocks/gateways/payuni/credit-installment.asset.php';
 
         wp_register_script('ry-payuni-credit-installment-block', RY_WTP_PLUGIN_URL . 'assets/blocks/gateways/payuni/credit-installment.js', $script_asset['dependencies'], $script_asset['version'], true);
+        wp_localize_script('ry-payuni-credit-installment-block', 'RyPayuniCreditInstallmentBlockParams', [
+            'defaultTitle' => __('PAYUNi Credit (installment)', 'ry-woocommerce-tools-pro'),
+        ]);
         wp_set_script_translations('ry-payuni-credit-installment-block', 'ry-woocommerce-tools-pro', RY_WTP_PLUGIN_LANGUAGES_DIR);
 
         return ['ry-payuni-credit-installment-block'];
@@ -46,3 +49,4 @@ final class RY_PAYUNi_Gateway_Credit_Installment_Blocks_Support extends RY_WTP_A
         ];
     }
 }
+

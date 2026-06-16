@@ -19,7 +19,7 @@ class RY_ECPay_Gateway_Ipass extends RY_WT_WC_ECPay_Payment_Gateway
         $this->method_description = '';
         $this->process_payment_note = __('Pay via ECPay iPASS', 'ry-woocommerce-tools-pro');
 
-        $this->form_fields = include RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/includes/settings/ipass.php';
+        $this->form_fields = include RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/includes/settings/digital.php';
 
         parent::__construct();
     }

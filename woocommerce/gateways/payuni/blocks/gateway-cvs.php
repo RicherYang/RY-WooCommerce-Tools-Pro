@@ -1,10 +1,10 @@
-<?php
+﻿<?php
 
 defined('ABSPATH') or exit;
 
 final class RY_PAYUNi_Gateway_Cvs_Blocks_Support extends RY_WTP_AbstractPaymentMethodType
 {
-    protected $name = 'ry_payuni_cvs';
+    protected $name = RY_PAYUNi_Gateway_Cvs::ID;
 
     public function initialize()
     {
@@ -24,6 +24,9 @@ final class RY_PAYUNi_Gateway_Cvs_Blocks_Support extends RY_WTP_AbstractPaymentM
         $script_asset = include RY_WTP_PLUGIN_DIR . 'assets/blocks/gateways/payuni/cvs.asset.php';
 
         wp_register_script('ry-payuni-cvs-block', RY_WTP_PLUGIN_URL . 'assets/blocks/gateways/payuni/cvs.js', $script_asset['dependencies'], $script_asset['version'], true);
+        wp_localize_script('ry-payuni-cvs-block', 'RyPayuniCvsBlockParams', [
+            'defaultTitle' => __('PAYUNi CVS', 'ry-woocommerce-tools-pro'),
+        ]);
         wp_set_script_translations('ry-payuni-cvs-block', 'ry-woocommerce-tools-pro', RY_WTP_PLUGIN_LANGUAGES_DIR);
 
         return ['ry-payuni-cvs-block'];
@@ -44,3 +47,4 @@ final class RY_PAYUNi_Gateway_Cvs_Blocks_Support extends RY_WTP_AbstractPaymentM
         ];
     }
 }
+

@@ -30,16 +30,18 @@ final class RY_WTP_WC_NewebPay_Gateway_Block
 
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/blocks/gateway-atm.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/blocks/gateway-barcode.php';
-            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/blocks/gateway-credit-installment.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/blocks/gateway-credit.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/blocks/gateway-cvs.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/blocks/gateway-webatm.php';
-            if ('yes' === RY_WTP::get_option('newebpay_credit_installment', 'no')) {
+
+            if ('yes' === RY_WTP::get_option('newebpay_independent_credit_installment', 'no')) {
                 include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/blocks/gateway-credit-installment-3.php';
                 include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/blocks/gateway-credit-installment-6.php';
                 include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/blocks/gateway-credit-installment-12.php';
                 include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/blocks/gateway-credit-installment-18.php';
                 include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/blocks/gateway-credit-installment-24.php';
+            } else {
+                include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/blocks/gateway-credit-installment.php';
             }
 
             add_action('woocommerce_blocks_payment_method_type_registration', [$this, 'register_block']);
@@ -50,16 +52,18 @@ final class RY_WTP_WC_NewebPay_Gateway_Block
     {
         $payment_method_registry->register(new RY_NewebPay_Gateway_Atm_Blocks_Support());
         $payment_method_registry->register(new RY_NewebPay_Gateway_Barcode_Blocks_Support());
-        $payment_method_registry->register(new RY_NewebPay_Gateway_Credit_Installment_Blocks_Support());
         $payment_method_registry->register(new RY_NewebPay_Gateway_Credit_Blocks_Support());
         $payment_method_registry->register(new RY_NewebPay_Gateway_Cvs_Blocks_Support());
         $payment_method_registry->register(new RY_NewebPay_Gateway_Webatm_Blocks_Support());
-        if ('yes' === RY_WTP::get_option('newebpay_credit_installment', 'no')) {
+
+        if ('yes' === RY_WTP::get_option('newebpay_independent_credit_installment', 'no')) {
             $payment_method_registry->register(new RY_NewebPay_Gateway_Credit_Installment_3_Blocks_Support());
             $payment_method_registry->register(new RY_NewebPay_Gateway_Credit_Installment_6_Blocks_Support());
             $payment_method_registry->register(new RY_NewebPay_Gateway_Credit_Installment_12_Blocks_Support());
             $payment_method_registry->register(new RY_NewebPay_Gateway_Credit_Installment_18_Blocks_Support());
             $payment_method_registry->register(new RY_NewebPay_Gateway_Credit_Installment_24_Blocks_Support());
+        } else {
+            $payment_method_registry->register(new RY_NewebPay_Gateway_Credit_Installment_Blocks_Support());
         }
     }
 }

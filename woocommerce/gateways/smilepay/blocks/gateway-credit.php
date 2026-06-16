@@ -1,10 +1,10 @@
-<?php
+﻿<?php
 
 defined('ABSPATH') or exit;
 
 final class RY_SmilePay_Gateway_Credit_Blocks_Support extends RY_WTP_AbstractPaymentMethodType
 {
-    protected $name = 'ry_smilepay_credit';
+    protected $name = RY_SmilePay_Gateway_Credit::ID;
 
     public function initialize()
     {
@@ -24,6 +24,9 @@ final class RY_SmilePay_Gateway_Credit_Blocks_Support extends RY_WTP_AbstractPay
         $script_asset = include RY_WTP_PLUGIN_DIR . 'assets/blocks/gateways/smilepay/credit.asset.php';
 
         wp_register_script('ry-smilepay-credit-block', RY_WTP_PLUGIN_URL . 'assets/blocks/gateways/smilepay/credit.js', $script_asset['dependencies'], $script_asset['version'], true);
+        wp_localize_script('ry-smilepay-credit-block', 'RySmilepayCreditBlockParams', [
+            'defaultTitle' => __('SmilePay Credit', 'ry-woocommerce-tools-pro'),
+        ]);
         wp_set_script_translations('ry-smilepay-credit-block', 'ry-woocommerce-tools-pro', RY_WTP_PLUGIN_LANGUAGES_DIR);
 
         return ['ry-smilepay-credit-block'];
@@ -44,3 +47,4 @@ final class RY_SmilePay_Gateway_Credit_Blocks_Support extends RY_WTP_AbstractPay
         ];
     }
 }
+

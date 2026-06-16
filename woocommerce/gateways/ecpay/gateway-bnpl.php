@@ -10,7 +10,7 @@ class RY_ECPay_Gateway_Bnpl extends RY_WT_WC_ECPay_Payment_Gateway
 
     protected int $check_min_amount = 50;
 
-    protected int $check_max_amount = 300000;
+    protected int $check_max_amount = 500000;
 
     public function __construct()
     {

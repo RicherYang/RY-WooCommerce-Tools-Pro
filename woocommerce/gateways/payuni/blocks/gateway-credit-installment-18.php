@@ -1,10 +1,10 @@
-<?php
+﻿<?php
 
 defined('ABSPATH') or exit;
 
 final class RY_PAYUNi_Gateway_Credit_Installment_18_Blocks_Support extends RY_WTP_AbstractPaymentMethodType
 {
-    protected $name = 'ry_payuni_credit_installment_18';
+    protected $name = RY_PAYUNi_Gateway_Credit_Installment_18::ID;
 
     public function initialize()
     {
@@ -24,6 +24,9 @@ final class RY_PAYUNi_Gateway_Credit_Installment_18_Blocks_Support extends RY_WT
         $script_asset = include RY_WTP_PLUGIN_DIR . 'assets/blocks/gateways/payuni/credit-installment-18.asset.php';
 
         wp_register_script('ry-payuni-credit-installment-18-block', RY_WTP_PLUGIN_URL . 'assets/blocks/gateways/payuni/credit-installment-18.js', $script_asset['dependencies'], $script_asset['version'], true);
+        wp_localize_script('ry-payuni-credit-installment-18-block', 'RyPayuniCreditInstallment18BlockParams', [
+            'defaultTitle' => __('PAYUNi Credit (18 installment)', 'ry-woocommerce-tools-pro'),
+        ]);
         wp_set_script_translations('ry-payuni-credit-installment-18-block', 'ry-woocommerce-tools-pro', RY_WTP_PLUGIN_LANGUAGES_DIR);
 
         return ['ry-payuni-credit-installment-18-block'];
@@ -44,3 +47,4 @@ final class RY_PAYUNi_Gateway_Credit_Installment_18_Blocks_Support extends RY_WT
         ];
     }
 }
+

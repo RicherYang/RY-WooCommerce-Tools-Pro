@@ -36,11 +36,12 @@ final class RY_WTP_WC_NewebPay_Gateway_Admin
                     'type' => 'title',
                 ],
                 [
-                    'title' => __('Independent credit installment', 'ry-woocommerce-tools-pro'),
-                    'id' => RY_WTP::OPTION_PREFIX . 'newebpay_credit_installment',
+                    'title' => __('Independent payment gateway', 'ry-woocommerce-tools-pro'),
+                    'id' => RY_WTP::OPTION_PREFIX . 'newebpay_independent_credit_installment',
                     'type' => 'checkbox',
                     'default' => 'no',
-                    'desc' => __('Add each periods of credit installment as a payment gateway.', 'ry-woocommerce-tools-pro'),
+                    'desc' => __('Add each periods of credit installment as a payment gateway.', 'ry-woocommerce-tools-pro')
+                        . ' ' . __('Note: This option will remove the original payment gateway.', 'ry-woocommerce-tools-pro'),
                 ],
                 [
                     'title' => __('Show payment info in email', 'ry-woocommerce-tools-pro'),
