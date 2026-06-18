@@ -41,6 +41,15 @@ final class RY_WTP_WC_PAYUNi_Gateway_Admin
                     'default' => 'no',
                     'desc' => __('Add each periods of credit installment as a payment gateway.', 'ry-woocommerce-tools-pro')
                         . ' ' . __('Note: This option will remove the original payment gateway.', 'ry-woocommerce-tools-pro'),
+                    'checkboxgroup' => 'start',
+                ],
+                [
+                    'id' => RY_WTP::OPTION_PREFIX . 'payuni_independent_digital',
+                    'type' => 'checkbox',
+                    'default' => 'no',
+                    'desc' => __('Add each type of digital payment as a payment gateway.', 'ry-woocommerce-tools-pro')
+                        . ' ' . __('Note: This option will remove the original payment gateway.', 'ry-woocommerce-tools-pro'),
+                    'checkboxgroup' => 'end',
                 ],
                 [
                     'title' => __('Show payment info in email', 'ry-woocommerce-tools-pro'),

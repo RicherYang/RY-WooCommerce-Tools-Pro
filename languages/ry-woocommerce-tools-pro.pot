@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-06-16T16:26:07+08:00\n"
+"POT-Creation-Date: 2026-06-18T20:57:34+08:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ry-woocommerce-tools-pro\n"
@@ -464,6 +464,7 @@ msgid "Pay via ECPay Credit (24 installment)"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/gateway-digital.php:15
+#: woocommerce/gateways/payuni/gateway-digital.php:17
 msgid "Pay via Digital Payment"
 msgstr ""
 
@@ -528,6 +529,7 @@ msgstr ""
 #: woocommerce/gateways/ecpay/includes/admin.php:58
 #: woocommerce/gateways/newebpay/includes/admin.php:44
 #: woocommerce/gateways/payuni/includes/admin.php:43
+#: woocommerce/gateways/payuni/includes/admin.php:51
 msgid "Note: This option will remove the original payment gateway."
 msgstr ""
 
@@ -536,12 +538,13 @@ msgid "Add each type of BNPL as a payment gateway."
 msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/admin.php:57
+#: woocommerce/gateways/payuni/includes/admin.php:50
 msgid "Add each type of digital payment as a payment gateway."
 msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/admin.php:62
 #: woocommerce/gateways/newebpay/includes/admin.php:47
-#: woocommerce/gateways/payuni/includes/admin.php:46
+#: woocommerce/gateways/payuni/includes/admin.php:55
 #: woocommerce/gateways/smilepay/includes/admin.php:35
 msgid "Show payment info in email"
 msgstr ""
@@ -549,7 +552,7 @@ msgstr ""
 #. translators: %s: email title
 #: woocommerce/gateways/ecpay/includes/admin.php:68
 #: woocommerce/gateways/newebpay/includes/admin.php:53
-#: woocommerce/gateways/payuni/includes/admin.php:52
+#: woocommerce/gateways/payuni/includes/admin.php:61
 #: woocommerce/gateways/smilepay/includes/admin.php:41
 #, php-format
 msgid "Add payment info in \"%s\" email."
@@ -557,7 +560,7 @@ msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/admin.php:69
 #: woocommerce/gateways/newebpay/includes/admin.php:54
-#: woocommerce/gateways/payuni/includes/admin.php:53
+#: woocommerce/gateways/payuni/includes/admin.php:62
 #: woocommerce/gateways/smilepay/includes/admin.php:42
 msgid "Order on-hold"
 msgstr ""
@@ -899,6 +902,7 @@ msgstr ""
 #: woocommerce/gateways/payuni/blocks/gateway-credit-installment.php:47
 #: woocommerce/gateways/payuni/blocks/gateway-credit.php:45
 #: woocommerce/gateways/payuni/blocks/gateway-cvs.php:45
+#: woocommerce/gateways/payuni/blocks/gateway-digital.php:45
 #: woocommerce/gateways/payuni/blocks/gateway-icash.php:45
 #: woocommerce/gateways/payuni/blocks/gateway-jkopay.php:45
 #: woocommerce/gateways/payuni/blocks/gateway-linepay.php:45
@@ -956,6 +960,11 @@ msgstr ""
 msgid "PAYUNi CVS"
 msgstr ""
 
+#: woocommerce/gateways/payuni/blocks/gateway-digital.php:28
+#: woocommerce/gateways/payuni/gateway-digital.php:18
+msgid "PAYUNi Digital Payment"
+msgstr ""
+
 #: woocommerce/gateways/payuni/blocks/gateway-icash.php:28
 #: woocommerce/gateways/payuni/gateway-icash.php:18
 msgid "PAYUNi icash Pay"
@@ -1009,6 +1018,10 @@ msgstr ""
 
 #: woocommerce/gateways/payuni/gateway-credit-installment-30.php:14
 msgid "Pay via PAYUNi Credit (30 installment)"
+msgstr ""
+
+#: woocommerce/gateways/payuni/gateway-digital.php:20
+msgid "Pay via PAYUNi Digital Payment"
 msgstr ""
 
 #: woocommerce/gateways/payuni/gateway-icash.php:17
@@ -1148,27 +1161,23 @@ msgstr ""
 msgid "Print ECPay shipping booking note A6 (711)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:123
-msgid "Print ECPay shipping booking note (ok)"
-msgstr ""
-
-#: woocommerce/shipping/ecpay/includes/admin.php:127
+#: woocommerce/shipping/ecpay/includes/admin.php:126
 msgid "Print ECPay shipping booking note (post)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:128
+#: woocommerce/shipping/ecpay/includes/admin.php:127
 msgid "Print ECPay shipping booking note A6 (post)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:129
+#: woocommerce/shipping/ecpay/includes/admin.php:128
 msgid "Print ECPay shipping booking note (tcat)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:236
+#: woocommerce/shipping/ecpay/includes/admin.php:235
 msgid "Get info"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:256
+#: woocommerce/shipping/ecpay/includes/admin.php:255
 msgid "ECPay shipping ID"
 msgstr ""
 
@@ -1240,7 +1249,6 @@ msgstr ""
 #: woocommerce/shipping/ecpay/shipping-cvs-711.php:11
 #: woocommerce/shipping/ecpay/shipping-cvs-family.php:11
 #: woocommerce/shipping/ecpay/shipping-cvs-hilife.php:11
-#: woocommerce/shipping/ecpay/shipping-cvs-ok.php:11
 #: woocommerce/shipping/ecpay/shipping-home-post.php:11
 #: woocommerce/shipping/ecpay/shipping-home-tcat.php:11
 #: woocommerce/shipping/newebpay/shipping-cvs.php:11
@@ -1253,7 +1261,6 @@ msgstr ""
 #: woocommerce/shipping/ecpay/shipping-cvs-711.php:12
 #: woocommerce/shipping/ecpay/shipping-cvs-family.php:12
 #: woocommerce/shipping/ecpay/shipping-cvs-hilife.php:12
-#: woocommerce/shipping/ecpay/shipping-cvs-ok.php:12
 #: woocommerce/shipping/ecpay/shipping-home-post.php:12
 #: woocommerce/shipping/ecpay/shipping-home-tcat.php:12
 #: woocommerce/shipping/newebpay/shipping-cvs.php:12
@@ -1266,7 +1273,6 @@ msgstr ""
 #: woocommerce/shipping/ecpay/shipping-cvs-711.php:13
 #: woocommerce/shipping/ecpay/shipping-cvs-family.php:13
 #: woocommerce/shipping/ecpay/shipping-cvs-hilife.php:13
-#: woocommerce/shipping/ecpay/shipping-cvs-ok.php:13
 #: woocommerce/shipping/ecpay/shipping-home-post.php:13
 #: woocommerce/shipping/ecpay/shipping-home-tcat.php:13
 #: woocommerce/shipping/newebpay/shipping-cvs.php:13
@@ -1276,7 +1282,7 @@ msgstr ""
 msgid "A minimum order amount AND a coupon ( except discount and tex )"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/shipping.php:176
+#: woocommerce/shipping/ecpay/shipping.php:174
 #: woocommerce/shipping/smilepay/shipping.php:163
 msgid "Invalid cellphone number"
 msgstr ""

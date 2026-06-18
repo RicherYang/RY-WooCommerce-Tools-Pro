@@ -19,7 +19,7 @@ class RY_PAYUNi_Gateway_Icash extends RY_WT_WC_PAYUNi_Payment_Gateway
         $this->method_description = '';
         $this->process_payment_note = __('Pay via PAYUNi icash Pay', 'ry-woocommerce-tools-pro');
 
-        $this->form_fields = include RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/includes/settings/icash.php';
+        $this->form_fields = include RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/includes/settings/digital.php';
 
         parent::__construct();
     }

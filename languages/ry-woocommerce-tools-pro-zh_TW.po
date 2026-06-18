@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-02-16 10:51+0800\n"
-"PO-Revision-Date: 2026-06-16 11:43+0800\n"
+"PO-Revision-Date: 2026-06-18 16:09+0800\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
@@ -248,7 +248,7 @@ msgstr "將每一個信用卡分期期數新增為一個付款方式。"
 
 #: woocommerce/gateways/ecpay/includes/admin.php:62
 #: woocommerce/gateways/newebpay/includes/admin.php:47
-#: woocommerce/gateways/payuni/includes/admin.php:46
+#: woocommerce/gateways/payuni/includes/admin.php:55
 #: woocommerce/gateways/smilepay/includes/admin.php:35
 msgid "Show payment info in email"
 msgstr "在信件中顯示付款資訊"
@@ -256,7 +256,7 @@ msgstr "在信件中顯示付款資訊"
 #. translators: %s: email title
 #: woocommerce/gateways/ecpay/includes/admin.php:68
 #: woocommerce/gateways/newebpay/includes/admin.php:53
-#: woocommerce/gateways/payuni/includes/admin.php:52
+#: woocommerce/gateways/payuni/includes/admin.php:61
 #: woocommerce/gateways/smilepay/includes/admin.php:41
 #, php-format
 msgid "Add payment info in \"%s\" email."
@@ -403,22 +403,17 @@ msgstr "列印綠界物流託運單 (全家)"
 msgid "Print ECPay shipping booking note (hilife)"
 msgstr "列印綠界物流託運單 (萊爾富)"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:123
-msgid "Print ECPay shipping booking note (ok)"
-msgstr "列印綠界物流託運單 (OK)"
-
-#: woocommerce/shipping/ecpay/includes/admin.php:127
+#: woocommerce/shipping/ecpay/includes/admin.php:126
 msgid "Print ECPay shipping booking note (post)"
 msgstr "列印綠界物流託運單 (郵局)"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:129
+#: woocommerce/shipping/ecpay/includes/admin.php:128
 msgid "Print ECPay shipping booking note (tcat)"
 msgstr "列印綠界物流託運單 (黑貓)"
 
 #: woocommerce/shipping/ecpay/shipping-cvs-711.php:11
 #: woocommerce/shipping/ecpay/shipping-cvs-family.php:11
 #: woocommerce/shipping/ecpay/shipping-cvs-hilife.php:11
-#: woocommerce/shipping/ecpay/shipping-cvs-ok.php:11
 #: woocommerce/shipping/ecpay/shipping-home-post.php:11
 #: woocommerce/shipping/ecpay/shipping-home-tcat.php:11
 #: woocommerce/shipping/newebpay/shipping-cvs.php:11
@@ -431,7 +426,6 @@ msgstr "最小訂購金額（不包含折價及稅金）"
 #: woocommerce/shipping/ecpay/shipping-cvs-711.php:12
 #: woocommerce/shipping/ecpay/shipping-cvs-family.php:12
 #: woocommerce/shipping/ecpay/shipping-cvs-hilife.php:12
-#: woocommerce/shipping/ecpay/shipping-cvs-ok.php:12
 #: woocommerce/shipping/ecpay/shipping-home-post.php:12
 #: woocommerce/shipping/ecpay/shipping-home-tcat.php:12
 #: woocommerce/shipping/newebpay/shipping-cvs.php:12
@@ -444,7 +438,6 @@ msgstr "最小訂購金額或使用折價券（不包含折價及稅金）"
 #: woocommerce/shipping/ecpay/shipping-cvs-711.php:13
 #: woocommerce/shipping/ecpay/shipping-cvs-family.php:13
 #: woocommerce/shipping/ecpay/shipping-cvs-hilife.php:13
-#: woocommerce/shipping/ecpay/shipping-cvs-ok.php:13
 #: woocommerce/shipping/ecpay/shipping-home-post.php:13
 #: woocommerce/shipping/ecpay/shipping-home-tcat.php:13
 #: woocommerce/shipping/newebpay/shipping-cvs.php:13
@@ -582,7 +575,7 @@ msgstr "綠界選擇超商門市"
 msgid "<strong>%1$s</strong> is inactive. It require %2$s %3$s or newer."
 msgstr "<strong>%1$s</strong> 暫停運作。 需求 %2$s %3$s 或更新版本。"
 
-#: woocommerce/shipping/ecpay/shipping.php:176
+#: woocommerce/shipping/ecpay/shipping.php:174
 #: woocommerce/shipping/smilepay/shipping.php:163
 msgid "Invalid cellphone number"
 msgstr "無效的手機號碼"
@@ -595,7 +588,7 @@ msgstr "取得綠界託運單號"
 msgid "Print SmilePay shipping booking note (tcat)"
 msgstr "列印速買配物流託運單 (黑貓)"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:236
+#: woocommerce/shipping/ecpay/includes/admin.php:235
 msgid "Get info"
 msgstr "取得資訊"
 
@@ -811,7 +804,7 @@ msgstr "變更地址"
 
 #: woocommerce/gateways/ecpay/includes/admin.php:69
 #: woocommerce/gateways/newebpay/includes/admin.php:54
-#: woocommerce/gateways/payuni/includes/admin.php:53
+#: woocommerce/gateways/payuni/includes/admin.php:62
 #: woocommerce/gateways/smilepay/includes/admin.php:42
 msgid "Order on-hold"
 msgstr "訂單保留"
@@ -823,7 +816,7 @@ msgid "%s order get shipping no."
 msgid_plural "%s order get shipping no."
 msgstr[0] "%s 筆訂單取得物流託運單。"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:256
+#: woocommerce/shipping/ecpay/includes/admin.php:255
 msgid "ECPay shipping ID"
 msgstr "綠界物流編號"
 
@@ -981,7 +974,7 @@ msgstr "使用 綠界金流街口支付 付款"
 msgid "Print ECPay shipping booking note A6 (711)"
 msgstr "列印綠界物流託運單 A6 (7-11)"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:128
+#: woocommerce/shipping/ecpay/includes/admin.php:127
 msgid "Print ECPay shipping booking note A6 (post)"
 msgstr "列印綠界物流託運單 A6 (郵局)"
 
@@ -1226,6 +1219,7 @@ msgstr "你可以從 %s 下載並且手動更新至最新版本。"
 #: woocommerce/gateways/payuni/blocks/gateway-credit-installment.php:47
 #: woocommerce/gateways/payuni/blocks/gateway-credit.php:45
 #: woocommerce/gateways/payuni/blocks/gateway-cvs.php:45
+#: woocommerce/gateways/payuni/blocks/gateway-digital.php:45
 #: woocommerce/gateways/payuni/blocks/gateway-icash.php:45
 #: woocommerce/gateways/payuni/blocks/gateway-jkopay.php:45
 #: woocommerce/gateways/payuni/blocks/gateway-linepay.php:45
@@ -1270,6 +1264,7 @@ msgstr "將每一個先買後付新增為一個付款方式。"
 #: woocommerce/gateways/ecpay/includes/admin.php:58
 #: woocommerce/gateways/newebpay/includes/admin.php:44
 #: woocommerce/gateways/payuni/includes/admin.php:43
+#: woocommerce/gateways/payuni/includes/admin.php:51
 msgid "Note: This option will remove the original payment gateway."
 msgstr "注意：將移除原本的付款方式。"
 
@@ -1312,6 +1307,7 @@ msgid "ECPay Digital Payment"
 msgstr "綠界電子支付"
 
 #: woocommerce/gateways/ecpay/gateway-digital.php:15
+#: woocommerce/gateways/payuni/gateway-digital.php:17
 msgid "Pay via Digital Payment"
 msgstr "使用電子支付付款"
 
@@ -1320,5 +1316,15 @@ msgid "Pay via ECPay Digital Payment"
 msgstr "使用綠界金流電子支付付款"
 
 #: woocommerce/gateways/ecpay/includes/admin.php:57
+#: woocommerce/gateways/payuni/includes/admin.php:50
 msgid "Add each type of digital payment as a payment gateway."
 msgstr "將每一個電子支付新增為一個付款方式。"
+
+#: woocommerce/gateways/payuni/blocks/gateway-digital.php:28
+#: woocommerce/gateways/payuni/gateway-digital.php:18
+msgid "PAYUNi Digital Payment"
+msgstr "統一電子支付"
+
+#: woocommerce/gateways/payuni/gateway-digital.php:20
+msgid "Pay via PAYUNi Digital Payment"
+msgstr "使用 統一電子支付 付款"

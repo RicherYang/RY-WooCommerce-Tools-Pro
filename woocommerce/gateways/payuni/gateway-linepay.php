@@ -19,7 +19,7 @@ class RY_PAYUNi_Gateway_Linepay extends RY_WT_WC_PAYUNi_Payment_Gateway
         $this->method_description = '';
         $this->process_payment_note = __('Pay via PAYUNi LinePay', 'ry-woocommerce-tools-pro');
 
-        $this->form_fields = include RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/includes/settings/linepay.php';
+        $this->form_fields = include RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/includes/settings/digital.php';
 
         parent::__construct();
     }
