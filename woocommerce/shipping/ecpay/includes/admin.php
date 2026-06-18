@@ -120,7 +120,6 @@ final class RY_WTP_ECPay_Shipping_Admin
                 $actions['ry_print_ecpay_cvs_711_a6'] = __('Print ECPay shipping booking note A6 (711)', 'ry-woocommerce-tools-pro');
                 $actions['ry_print_ecpay_cvs_family'] = __('Print ECPay shipping booking note (family)', 'ry-woocommerce-tools-pro');
                 $actions['ry_print_ecpay_cvs_hilife'] = __('Print ECPay shipping booking note (hilife)', 'ry-woocommerce-tools-pro');
-                $actions['ry_print_ecpay_cvs_ok'] = __('Print ECPay shipping booking note (ok)', 'ry-woocommerce-tools-pro');
                 break;
         }
 

@@ -26,7 +26,6 @@ final class RY_WTP_ECPay_Shipping
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/shipping-cvs-711.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/shipping-cvs-family.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/shipping-cvs-hilife.php';
-        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/shipping-cvs-ok.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/shipping-home-post.php';
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/shipping/ecpay/shipping-home-tcat.php';
 
@@ -36,7 +35,6 @@ final class RY_WTP_ECPay_Shipping
         RY_WT_WC_ECPay_Shipping::$support_methods['ry_ecpay_shipping_cvs_711'] = 'RY_ECPay_Shipping_CVS_711_Pro';
         RY_WT_WC_ECPay_Shipping::$support_methods['ry_ecpay_shipping_cvs_family'] = 'RY_ECPay_Shipping_CVS_Family_Pro';
         RY_WT_WC_ECPay_Shipping::$support_methods['ry_ecpay_shipping_cvs_hilife'] = 'RY_ECPay_Shipping_CVS_Hilife_Pro';
-        RY_WT_WC_ECPay_Shipping::$support_methods['ry_ecpay_shipping_cvs_ok'] = 'RY_ECPay_Shipping_CVS_Ok_Pro';
         RY_WT_WC_ECPay_Shipping::$support_methods['ry_ecpay_shipping_home_post'] = 'RY_ECPay_Shipping_Home_Post_Pro';
         RY_WT_WC_ECPay_Shipping::$support_methods['ry_ecpay_shipping_home_tcat'] = 'RY_ECPay_Shipping_Home_Tcat_Pro';
 
