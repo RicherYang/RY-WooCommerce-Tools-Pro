@@ -47,7 +47,7 @@ final class RY_WTP_WC_NewebPay_Gateway_Admin
                     'title' => __('Show payment info in email', 'ry-woocommerce-tools-pro'),
                     'id' => RY_WTP::OPTION_PREFIX . 'newebpay_email_payment_info',
                     'type' => 'checkbox',
-                    'default' => 'yes',
+                    'default' => 'no',
                     'desc' => sprintf(
                         /* translators: %s: email title */
                         __('Add payment info in "%s" email.', 'ry-woocommerce-tools-pro'),

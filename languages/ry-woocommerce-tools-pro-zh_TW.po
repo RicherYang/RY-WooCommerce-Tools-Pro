@@ -388,26 +388,23 @@ msgstr "B2C"
 msgid "multi package"
 msgstr "產生多筆物流單"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:114
-#: woocommerce/shipping/ecpay/includes/admin.php:119
+#: woocommerce/shipping/ecpay/includes/admin.php:112
 msgid "Print ECPay shipping booking note (711)"
 msgstr "列印綠界物流託運單 (7-11)"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:115
-#: woocommerce/shipping/ecpay/includes/admin.php:121
+#: woocommerce/shipping/ecpay/includes/admin.php:113
 msgid "Print ECPay shipping booking note (family)"
 msgstr "列印綠界物流託運單 (全家)"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:116
-#: woocommerce/shipping/ecpay/includes/admin.php:122
+#: woocommerce/shipping/ecpay/includes/admin.php:114
 msgid "Print ECPay shipping booking note (hilife)"
 msgstr "列印綠界物流託運單 (萊爾富)"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:126
+#: woocommerce/shipping/ecpay/includes/admin.php:115
 msgid "Print ECPay shipping booking note (post)"
 msgstr "列印綠界物流託運單 (郵局)"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:128
+#: woocommerce/shipping/ecpay/includes/admin.php:116
 msgid "Print ECPay shipping booking note (tcat)"
 msgstr "列印綠界物流託運單 (黑貓)"
 
@@ -588,7 +585,7 @@ msgstr "取得綠界託運單號"
 msgid "Print SmilePay shipping booking note (tcat)"
 msgstr "列印速買配物流託運單 (黑貓)"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:235
+#: woocommerce/shipping/ecpay/includes/admin.php:218
 msgid "Get info"
 msgstr "取得資訊"
 
@@ -816,7 +813,7 @@ msgid "%s order get shipping no."
 msgid_plural "%s order get shipping no."
 msgstr[0] "%s 筆訂單取得物流託運單。"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:255
+#: woocommerce/shipping/ecpay/includes/admin.php:238
 msgid "ECPay shipping ID"
 msgstr "綠界物流編號"
 
@@ -969,14 +966,6 @@ msgstr "綠界街口支付"
 #: woocommerce/gateways/ecpay/gateway-jkopay.php:20
 msgid "Pay via ECPay JKOPay"
 msgstr "使用 綠界金流街口支付 付款"
-
-#: woocommerce/shipping/ecpay/includes/admin.php:120
-msgid "Print ECPay shipping booking note A6 (711)"
-msgstr "列印綠界物流託運單 A6 (7-11)"
-
-#: woocommerce/shipping/ecpay/includes/admin.php:127
-msgid "Print ECPay shipping booking note A6 (post)"
-msgstr "列印綠界物流託運單 A6 (郵局)"
 
 #: woocommerce/admin/admin.php:52
 msgid "Only to WooCommerce account"

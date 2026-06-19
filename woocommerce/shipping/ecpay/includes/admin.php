@@ -72,11 +72,11 @@ final class RY_WTP_ECPay_Shipping_Admin
                 ]);
             }
 
-            $setting_idx = array_search(RY_WT::OPTION_PREFIX . 'ecpay_shipping_order_prefix', array_column($settings, 'id'));
+            $setting_idx = array_search(RY_WT::OPTION_PREFIX . 'ecpay_shipping_apiinfo[prefix]', array_column($settings, 'id'));
             array_splice($settings, $setting_idx, 0, [
                 [
                     'title' => __('Clean up receiver name', 'ry-woocommerce-tools-pro'),
-                    'id' => RY_WT::OPTION_PREFIX . 'ecpay_shipping_cleanup_receiver_name',
+                    'id' => RY_WT::OPTION_PREFIX . 'ecpay_shipping_apiinfo[cleanup_name]',
                     'type' => 'checkbox',
                     'default' => 'no',
                     'desc' => __('Clean up receiver name to comply with ECPay request.', 'ry-woocommerce-tools-pro'),
@@ -86,7 +86,7 @@ final class RY_WTP_ECPay_Shipping_Admin
             $setting_idx = array_search(RY_WT::OPTION_PREFIX . 'ecpay_shipping_cvs_type', array_column($settings, 'id'));
             $settings[$setting_idx]['options']['B2C'] = _x('B2C', 'Cvs type', 'ry-woocommerce-tools-pro');
 
-            $setting_idx = array_search(RY_WT::OPTION_PREFIX . 'ecpay_shipping_declare_over', array_column($settings, 'id'));
+            $setting_idx = array_search(RY_WT::OPTION_PREFIX . 'ecpay_shipping_apiinfo[declare_over]', array_column($settings, 'id'));
             $settings[$setting_idx]['options']['multi'] = __('multi package', 'ry-woocommerce-tools-pro');
         }
         return $settings;
@@ -109,22 +109,10 @@ final class RY_WTP_ECPay_Shipping_Admin
     {
         $actions['ry_get_ecpay_no'] = __('Get ECPay shipping no', 'ry-woocommerce-tools-pro');
 
-        switch (RY_WT::get_option('ecpay_shipping_cvs_type', 'C2C')) {
-            case 'B2C':
-                $actions['ry_print_ecpay_cvs_711'] = __('Print ECPay shipping booking note (711)', 'ry-woocommerce-tools-pro');
-                $actions['ry_print_ecpay_cvs_family'] = __('Print ECPay shipping booking note (family)', 'ry-woocommerce-tools-pro');
-                $actions['ry_print_ecpay_cvs_hilife'] = __('Print ECPay shipping booking note (hilife)', 'ry-woocommerce-tools-pro');
-                break;
-            case 'C2C':
-                $actions['ry_print_ecpay_cvs_711'] = __('Print ECPay shipping booking note (711)', 'ry-woocommerce-tools-pro');
-                $actions['ry_print_ecpay_cvs_711_a6'] = __('Print ECPay shipping booking note A6 (711)', 'ry-woocommerce-tools-pro');
-                $actions['ry_print_ecpay_cvs_family'] = __('Print ECPay shipping booking note (family)', 'ry-woocommerce-tools-pro');
-                $actions['ry_print_ecpay_cvs_hilife'] = __('Print ECPay shipping booking note (hilife)', 'ry-woocommerce-tools-pro');
-                break;
-        }
-
+        $actions['ry_print_ecpay_cvs_711'] = __('Print ECPay shipping booking note (711)', 'ry-woocommerce-tools-pro');
+        $actions['ry_print_ecpay_cvs_family'] = __('Print ECPay shipping booking note (family)', 'ry-woocommerce-tools-pro');
+        $actions['ry_print_ecpay_cvs_hilife'] = __('Print ECPay shipping booking note (hilife)', 'ry-woocommerce-tools-pro');
         $actions['ry_print_ecpay_home_post'] = __('Print ECPay shipping booking note (post)', 'ry-woocommerce-tools-pro');
-        $actions['ry_print_ecpay_home_post_a6'] = __('Print ECPay shipping booking note A6 (post)', 'ry-woocommerce-tools-pro');
         $actions['ry_print_ecpay_home_tcat'] = __('Print ECPay shipping booking note (tcat)', 'ry-woocommerce-tools-pro');
 
         return $actions;
@@ -159,15 +147,10 @@ final class RY_WTP_ECPay_Shipping_Admin
         if (str_starts_with($action, 'ry_print_ecpay_')) {
             $type = substr($action, 15);
             $mode = '';
-            if (str_ends_with($type, '_a6')) {
-                $type = substr($type, 0, -3);
-                $mode = 'a6';
-            }
             $redirect_to = add_query_arg([
                 'action' => 'ry-print-ecpay-shipping',
                 'orderid' => implode(',', $ids),
                 'type' => $type,
-                'mode' => $mode,
                 '_wpnonce' => wp_create_nonce('ry-print-shipping'),
             ], admin_url('admin-post.php'));
             wp_safe_redirect($redirect_to);

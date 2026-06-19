@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-06-18T20:57:34+08:00\n"
+"POT-Creation-Date: 2026-06-19T15:50:02+08:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ry-woocommerce-tools-pro\n"
@@ -1142,42 +1142,31 @@ msgstr[1] ""
 msgid "Get ECPay shipping no"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:114
-#: woocommerce/shipping/ecpay/includes/admin.php:119
+#: woocommerce/shipping/ecpay/includes/admin.php:112
 msgid "Print ECPay shipping booking note (711)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:115
-#: woocommerce/shipping/ecpay/includes/admin.php:121
+#: woocommerce/shipping/ecpay/includes/admin.php:113
 msgid "Print ECPay shipping booking note (family)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:116
-#: woocommerce/shipping/ecpay/includes/admin.php:122
+#: woocommerce/shipping/ecpay/includes/admin.php:114
 msgid "Print ECPay shipping booking note (hilife)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:120
-msgid "Print ECPay shipping booking note A6 (711)"
-msgstr ""
-
-#: woocommerce/shipping/ecpay/includes/admin.php:126
+#: woocommerce/shipping/ecpay/includes/admin.php:115
 msgid "Print ECPay shipping booking note (post)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:127
-msgid "Print ECPay shipping booking note A6 (post)"
-msgstr ""
-
-#: woocommerce/shipping/ecpay/includes/admin.php:128
+#: woocommerce/shipping/ecpay/includes/admin.php:116
 msgid "Print ECPay shipping booking note (tcat)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:235
+#: woocommerce/shipping/ecpay/includes/admin.php:218
 msgid "Get info"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:255
+#: woocommerce/shipping/ecpay/includes/admin.php:238
 msgid "ECPay shipping ID"
 msgstr ""
 

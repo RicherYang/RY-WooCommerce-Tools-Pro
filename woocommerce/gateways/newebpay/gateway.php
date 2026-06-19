@@ -38,7 +38,7 @@ final class RY_WTP_WC_NewebPay_Gateway
 
         add_filter('woocommerce_payment_gateways', [$this, 'add_method']);
 
-        if ('yes' === RY_WTP::get_option('newebpay_email_payment_info', 'yes')) {
+        if ('yes' === RY_WTP::get_option('newebpay_email_payment_info', 'no')) {
             add_action('woocommerce_email_after_order_table', [$this, 'add_payment_info'], 10, 4);
         }
     }

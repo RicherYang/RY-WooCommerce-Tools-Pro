@@ -26,7 +26,7 @@ final class RY_WTP_WC_SmilePay_Gateway
             RY_WTP_WC_SmilePay_Gateway_Admin::instance();
         }
 
-        if ('yes' === RY_WTP::get_option('smilepay_email_payment_info', 'yes')) {
+        if ('yes' === RY_WTP::get_option('smilepay_email_payment_info', 'no')) {
             add_action('woocommerce_email_after_order_table', [$this, 'add_payment_info'], 10, 4);
         }
     }
