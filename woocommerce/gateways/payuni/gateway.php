@@ -18,7 +18,7 @@ final class RY_WTP_WC_PAYUNi_Gateway
 
     protected function do_init(): void
     {
-        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/gateway-aftee.php';
+        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/gateway-bnpl.php';
 
         if ('yes' === RY_WTP::get_option('payuni_independent_credit_installment', 'no')) {
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/includes/gateway-credit-installment.php';
@@ -56,7 +56,7 @@ final class RY_WTP_WC_PAYUNi_Gateway
 
     public function add_method($methods)
     {
-        $methods[] = 'RY_PAYUNi_Gateway_Aftee';
+        $methods[] = 'RY_PAYUNi_Gateway_Bnpl';
 
         if ('yes' === RY_WTP::get_option('payuni_independent_credit_installment', 'no')) {
             unset($methods[array_search('WC_Gateway_PAYUNi_Credit_Installment', $methods)]);

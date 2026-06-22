@@ -4,8 +4,8 @@ import { getSetting } from '@woocommerce/settings';
 
 import PaymentLabel from '../../base/_payment-label';
 
-const settings = getSetting('ry_payuni_aftee_data', {});
-const label = decodeEntities(settings.title || RyPayuniAfteeBlockParams.defaultTitle);
+const settings = getSetting('ry_payuni_bnpl_data', {});
+const label = decodeEntities(settings.title || RyPayuniBnplBlockParams.defaultTitle);
 
 const Label = ({ ...props }) => {
     return <PaymentLabel
@@ -19,7 +19,7 @@ const Content = () => {
 };
 
 registerPaymentMethod({
-    name: 'ry_payuni_aftee',
+    name: 'ry_payuni_bnpl',
     label: <Label />,
     placeOrderButtonLabel: decodeEntities(settings.button_title || ''),
     content: <Content />,

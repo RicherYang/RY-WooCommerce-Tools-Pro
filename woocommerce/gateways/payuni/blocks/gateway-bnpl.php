@@ -2,13 +2,13 @@
 
 defined('ABSPATH') or exit;
 
-final class RY_PAYUNi_Gateway_Aftee_Blocks_Support extends RY_WTP_AbstractPaymentMethodType
+final class RY_PAYUNi_Gateway_Bnpl_Blocks_Support extends RY_WTP_AbstractPaymentMethodType
 {
-    protected $name = RY_PAYUNi_Gateway_Aftee::ID;
+    protected $name = RY_PAYUNi_Gateway_Bnpl::ID;
 
     public function initialize()
     {
-        $this->settings = get_option('woocommerce_ry_payuni_aftee_settings', []);
+        $this->settings = get_option('woocommerce_ry_payuni_bnpl_settings', []);
     }
 
     public function is_active()
@@ -21,15 +21,15 @@ final class RY_PAYUNi_Gateway_Aftee_Blocks_Support extends RY_WTP_AbstractPaymen
 
     public function get_payment_method_script_handles()
     {
-        $script_asset = include RY_WTP_PLUGIN_DIR . 'assets/blocks/gateways/payuni/aftee.asset.php';
+        $script_asset = include RY_WTP_PLUGIN_DIR . 'assets/blocks/gateways/payuni/bnpl.asset.php';
 
-        wp_register_script('ry-payuni-aftee-block', RY_WTP_PLUGIN_URL . 'assets/blocks/gateways/payuni/aftee.js', $script_asset['dependencies'], $script_asset['version'], true);
-        wp_localize_script('ry-payuni-aftee-block', 'RyPayuniAfteeBlockParams', [
-            'defaultTitle' => __('PAYUNi Aftee', 'ry-woocommerce-tools-pro'),
+        wp_register_script('ry-payuni-bnpl-block', RY_WTP_PLUGIN_URL . 'assets/blocks/gateways/payuni/bnpl.js', $script_asset['dependencies'], $script_asset['version'], true);
+        wp_localize_script('ry-payuni-bnpl-block', 'RyPayuniBnplBlockParams', [
+            'defaultTitle' => __('PAYUNi BNPL', 'ry-woocommerce-tools-pro'),
         ]);
-        wp_set_script_translations('ry-payuni-aftee-block', 'ry-woocommerce-tools-pro', RY_WTP_PLUGIN_LANGUAGES_DIR);
+        wp_set_script_translations('ry-payuni-bnpl-block', 'ry-woocommerce-tools-pro', RY_WTP_PLUGIN_LANGUAGES_DIR);
 
-        return ['ry-payuni-aftee-block'];
+        return ['ry-payuni-bnpl-block'];
     }
 
     public function get_payment_method_data()
@@ -47,4 +47,3 @@ final class RY_PAYUNi_Gateway_Aftee_Blocks_Support extends RY_WTP_AbstractPaymen
         ];
     }
 }
-

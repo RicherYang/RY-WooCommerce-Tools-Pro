@@ -105,7 +105,7 @@ final class RY_WTP_WC_PAYUNi_Gateway_Admin_ajax
                             $result = match ($gateway_class_name::PAYMENT_TYPE) {
                                 'Credit' => RY_WT_WC_PAYUNi_Gateway_Api::instance()->credit_close($order, 'R', intval($_POST['amount'] ?? 0)),
                                 'CreditInst' => RY_WT_WC_PAYUNi_Gateway_Api::instance()->credit_close($order, 'R', intval($_POST['amount'] ?? 0)),
-                                'Aftee' => RY_WT_WC_PAYUNi_Gateway_Api::instance()->aftee_refund($order, intval($_POST['amount'] ?? 0)),
+                                'BNPL' => RY_WT_WC_PAYUNi_Gateway_Api::instance()->aftee_refund($order, intval($_POST['amount'] ?? 0)),
                                 'ICash' => RY_WT_WC_PAYUNi_Gateway_Api::instance()->icash_refund($order, intval($_POST['amount'] ?? 0)),
                                 'JKoPay' => RY_WT_WC_PAYUNi_Gateway_Api::instance()->jkopay_refund($order, intval($_POST['amount'] ?? 0)),
                                 'LinePay' => RY_WT_WC_PAYUNi_Gateway_Api::instance()->linepay_refund($order, intval($_POST['amount'] ?? 0)),

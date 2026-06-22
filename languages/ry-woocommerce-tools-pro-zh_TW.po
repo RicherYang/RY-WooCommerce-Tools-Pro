@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-02-16 10:51+0800\n"
-"PO-Revision-Date: 2026-06-18 16:09+0800\n"
+"PO-Revision-Date: 2026-06-22 14:34+0800\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
@@ -138,6 +138,7 @@ msgid "ECPay"
 msgstr "綠界科技"
 
 #: woocommerce/gateways/ecpay/gateway-bnpl.php:19
+#: woocommerce/gateways/payuni/gateway-bnpl.php:21
 msgid "Pay via BNPL"
 msgstr "使用先買後付付款"
 
@@ -1068,19 +1069,6 @@ msgstr "服務供應商交易狀態"
 msgid "Received amount"
 msgstr "收款金額"
 
-#: woocommerce/gateways/payuni/gateway-aftee.php:21
-msgid "Pay via Aftee"
-msgstr "使用 AFTEE 先享後付 付款"
-
-#: woocommerce/gateways/payuni/blocks/gateway-aftee.php:28
-#: woocommerce/gateways/payuni/gateway-aftee.php:22
-msgid "PAYUNi Aftee"
-msgstr "統一 AFTEE 先享後付"
-
-#: woocommerce/gateways/payuni/gateway-aftee.php:24
-msgid "Pay via PAYUNi Aftee"
-msgstr "使用 統一金流 AFTEE 先享後付 付款"
-
 #: woocommerce/gateways/payuni/blocks/gateway-credit-installment-3.php:28
 #: woocommerce/gateways/payuni/gateway-credit-installment-3.php:13
 msgid "PAYUNi Credit (3 installment)"
@@ -1196,8 +1184,8 @@ msgstr "WordPress 外掛目錄庫"
 msgid "You can download from %s and manual update to the latest version."
 msgstr "你可以從 %s 下載並且手動更新至最新版本。"
 
-#: woocommerce/gateways/payuni/blocks/gateway-aftee.php:45
 #: woocommerce/gateways/payuni/blocks/gateway-atm.php:45
+#: woocommerce/gateways/payuni/blocks/gateway-bnpl.php:45
 #: woocommerce/gateways/payuni/blocks/gateway-credit-installment-3.php:45
 #: woocommerce/gateways/payuni/blocks/gateway-credit-installment-6.php:45
 #: woocommerce/gateways/payuni/blocks/gateway-credit-installment-9.php:45
@@ -1317,3 +1305,12 @@ msgstr "統一電子支付"
 #: woocommerce/gateways/payuni/gateway-digital.php:20
 msgid "Pay via PAYUNi Digital Payment"
 msgstr "使用 統一電子支付 付款"
+
+#: woocommerce/gateways/payuni/blocks/gateway-bnpl.php:28
+#: woocommerce/gateways/payuni/gateway-bnpl.php:22
+msgid "PAYUNi BNPL"
+msgstr "統一先買後付"
+
+#: woocommerce/gateways/payuni/gateway-bnpl.php:24
+msgid "Pay via PAYUNi BNPL"
+msgstr "使用 統一先買後付 付款"
