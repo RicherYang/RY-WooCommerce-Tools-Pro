@@ -585,7 +585,7 @@ msgstr "取得綠界託運單號"
 msgid "Print SmilePay shipping booking note (tcat)"
 msgstr "列印速買配物流託運單 (黑貓)"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:218
+#: woocommerce/shipping/ecpay/includes/admin.php:222
 msgid "Get info"
 msgstr "取得資訊"
 
@@ -813,7 +813,7 @@ msgid "%s order get shipping no."
 msgid_plural "%s order get shipping no."
 msgstr[0] "%s 筆訂單取得物流託運單。"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:238
+#: woocommerce/shipping/ecpay/includes/admin.php:242
 msgid "ECPay shipping ID"
 msgstr "綠界物流編號"
 

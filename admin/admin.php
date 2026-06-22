@@ -51,7 +51,7 @@ final class RY_WTP_Admin extends RY_Abstract_Admin
         if (!defined('RY_WT_VERSION') || version_compare(RY_WT_VERSION, RY_WTP::MIN_TOOLS_VERSION, '<')) {
             $download_link = sprintf(
                 '<a href="%1$s" target="_blank">%2$s</a>',
-                'https://wordpress.org/plugins/ry-woocommerce-tools/',
+                'https://tw.wordpress.org/plugins/ry-woocommerce-tools/',
                 __('WordPress Plugin Directory', 'ry-woocommerce-tools-pro')
             );
             $message = sprintf(

@@ -18,7 +18,7 @@ final class RY_WTP_Update
             RY_WTP::update_option('version', '3.0.0', true);
         }
 
-        if (version_compare($now_version, '3.7.6', '<')) {
+        if (version_compare($now_version, '3.8.0', '<')) {
             if (version_compare($now_version, '0.0.0', '!=')) {
                 RY_WTP::update_option('ecpay_independent_digital', 'yes', true);
             }
@@ -45,7 +45,7 @@ final class RY_WTP_Update
                 RY_WTP::delete_option('payuni_credit_installment');
             }
 
-            RY_WTP::update_option('version', '3.7.6', true);
+            RY_WTP::update_option('version', '3.8.0', true);
         }
     }
 }

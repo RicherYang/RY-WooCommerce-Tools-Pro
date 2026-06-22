@@ -36,7 +36,7 @@ final class RY_WTP_ECPay_Shipping_Admin
         }
 
         add_action('woocommerce_admin_order_data_after_shipping_address', [$this, 'add_choose_cvs_btn']);
-        add_action('ry_shipping_info_list-column_action', [$this, 'add_info_btn'], 10, 2);
+        add_action('ry_shipping_info_list-column_action', [$this, 'add_info_btn'], 10, 3);
 
         // Support plugin (WooCommerce Print Invoice & Delivery Note)
         add_filter('wcdn_order_info_fields', [$this, 'add_wcdn_shipping_info'], 10, 2);
@@ -211,8 +211,12 @@ final class RY_WTP_ECPay_Shipping_Admin
         }
     }
 
-    public function add_info_btn($order, $item)
+    public function add_info_btn($order, $item, $type)
     {
+        if ($type !== '_ecpay_shipping_info') {
+            return;
+        }
+
         add_action('admin_footer', [$this, 'shipping_info_template']);
 
         echo '<button type="button" class="button ry-show-shipping-info" data-orderid="' . esc_attr($order->get_id()) . '" data-id="' . esc_attr($item['ID']) . '">' . esc_html__('Get info', 'ry-woocommerce-tools-pro') . '</button>';
