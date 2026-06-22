@@ -28,8 +28,8 @@ final class RY_WTP_WC_PAYUNi_Gateway_Block
         if (class_exists('Automattic\WooCommerce\Blocks\Payments\Integrations\AbstractPaymentMethodType')) {
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/abstracts/abstract-payment-method-type.php';
 
-            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/blocks/gateway-bnpl.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/blocks/gateway-atm.php';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/blocks/gateway-bnpl.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/blocks/gateway-credit.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/blocks/gateway-cvs.php';
 
@@ -59,8 +59,8 @@ final class RY_WTP_WC_PAYUNi_Gateway_Block
 
     public function register_block(PaymentMethodRegistry $payment_method_registry)
     {
-        $payment_method_registry->register(new RY_PAYUNi_Gateway_Bnpl_Blocks_Support());
         $payment_method_registry->register(new RY_PAYUNi_Gateway_Atm_Blocks_Support());
+        $payment_method_registry->register(new RY_PAYUNi_Gateway_Bnpl_Blocks_Support());
         $payment_method_registry->register(new RY_PAYUNi_Gateway_Credit_Blocks_Support());
         $payment_method_registry->register(new RY_PAYUNi_Gateway_Cvs_Blocks_Support());
 

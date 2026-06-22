@@ -18,6 +18,8 @@ final class RY_WTP_WC_NewebPay_Gateway
 
     protected function do_init(): void
     {
+        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/gateway-bnpl.php';
+
         if ('yes' === RY_WTP::get_option('newebpay_independent_credit_installment', 'no')) {
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/includes/gateway-credit-installment.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/gateway-credit-installment-3.php';

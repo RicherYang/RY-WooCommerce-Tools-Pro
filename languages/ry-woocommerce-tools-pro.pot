@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-06-22T14:35:14+08:00\n"
+"POT-Creation-Date: 2026-06-22T14:58:17+08:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ry-woocommerce-tools-pro\n"
@@ -394,6 +394,7 @@ msgid "Pay via ECPay Apple Pay"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/gateway-bnpl.php:19
+#: woocommerce/gateways/newebpay/gateway-bnpl.php:19
 #: woocommerce/gateways/payuni/gateway-bnpl.php:21
 msgid "Pay via BNPL"
 msgstr ""
@@ -788,6 +789,7 @@ msgstr ""
 
 #: woocommerce/gateways/newebpay/blocks/gateway-atm.php:45
 #: woocommerce/gateways/newebpay/blocks/gateway-barcode.php:45
+#: woocommerce/gateways/newebpay/blocks/gateway-bnpl.php:45
 #: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-3.php:45
 #: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-6.php:45
 #: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-12.php:45
@@ -802,6 +804,11 @@ msgstr ""
 
 #: woocommerce/gateways/newebpay/blocks/gateway-barcode.php:28
 msgid "NewebPay BARCODE"
+msgstr ""
+
+#: woocommerce/gateways/newebpay/blocks/gateway-bnpl.php:28
+#: woocommerce/gateways/newebpay/gateway-bnpl.php:20
+msgid "NewebPay BNPL"
 msgstr ""
 
 #: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-3.php:28
@@ -843,6 +850,10 @@ msgstr ""
 
 #: woocommerce/gateways/newebpay/blocks/gateway-webatm.php:28
 msgid "NewebPay WebATM"
+msgstr ""
+
+#: woocommerce/gateways/newebpay/gateway-bnpl.php:22
+msgid "Pay via NewebPay BNPL"
 msgstr ""
 
 #: woocommerce/gateways/newebpay/gateway-credit-installment-3.php:14

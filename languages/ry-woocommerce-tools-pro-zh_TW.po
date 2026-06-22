@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: RY Tools (Pro) for WooCommerce\n"
 "Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-16 10:51+0800\n"
+"PO-Revision-Date: 2026-06-22 14:58+0800\n"
 "Last-Translator: Richer Yang\n"
 "Language-Team: \n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-02-16 10:51+0800\n"
-"PO-Revision-Date: 2026-06-22 14:34+0800\n"
-"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
 "X-Poedit-Basepath: ..\n"
@@ -138,6 +138,7 @@ msgid "ECPay"
 msgstr "綠界科技"
 
 #: woocommerce/gateways/ecpay/gateway-bnpl.php:19
+#: woocommerce/gateways/newebpay/gateway-bnpl.php:19
 #: woocommerce/gateways/payuni/gateway-bnpl.php:21
 msgid "Pay via BNPL"
 msgstr "使用先買後付付款"
@@ -265,6 +266,7 @@ msgstr "在「%s」信件中顯示付款資訊。"
 
 #: woocommerce/gateways/newebpay/blocks/gateway-atm.php:45
 #: woocommerce/gateways/newebpay/blocks/gateway-barcode.php:45
+#: woocommerce/gateways/newebpay/blocks/gateway-bnpl.php:45
 #: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-3.php:45
 #: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-6.php:45
 #: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-12.php:45
@@ -567,8 +569,7 @@ msgid "ECPay select cvs store"
 msgstr "綠界選擇超商門市"
 
 #. translators: %1$s: Name of this plugin %2$s: Name of require plugin %3$s: min require version
-#: admin/admin.php:59
-#: admin/admin.php:75
+#: admin/admin.php:59 admin/admin.php:75
 #, php-format
 msgid "<strong>%1$s</strong> is inactive. It require %2$s %3$s or newer."
 msgstr "<strong>%1$s</strong> 暫停運作。 需求 %2$s %3$s 或更新版本。"
@@ -1038,8 +1039,7 @@ msgstr "機器人檢查失敗。請確保您輸入正確的數字。"
 msgid "Refund through service provider"
 msgstr "透過服務供應商退款"
 
-#: woocommerce/admin/meta-box.php:28
-#: woocommerce/admin/order.php:61
+#: woocommerce/admin/meta-box.php:28 woocommerce/admin/order.php:61
 msgid "Get payment info"
 msgstr "取得付款交易資訊"
 
@@ -1304,7 +1304,7 @@ msgstr "統一電子支付"
 
 #: woocommerce/gateways/payuni/gateway-digital.php:20
 msgid "Pay via PAYUNi Digital Payment"
-msgstr "使用 統一電子支付 付款"
+msgstr "使用 統一金流電子支付 付款"
 
 #: woocommerce/gateways/payuni/blocks/gateway-bnpl.php:28
 #: woocommerce/gateways/payuni/gateway-bnpl.php:22
@@ -1313,4 +1313,13 @@ msgstr "統一先買後付"
 
 #: woocommerce/gateways/payuni/gateway-bnpl.php:24
 msgid "Pay via PAYUNi BNPL"
-msgstr "使用 統一先買後付 付款"
+msgstr "使用 統一金流先買後付 付款"
+
+#: woocommerce/gateways/newebpay/blocks/gateway-bnpl.php:28
+#: woocommerce/gateways/newebpay/gateway-bnpl.php:20
+msgid "NewebPay BNPL"
+msgstr "藍新先買後付"
+
+#: woocommerce/gateways/newebpay/gateway-bnpl.php:22
+msgid "Pay via NewebPay BNPL"
+msgstr "使用 藍新金流先買後付 付款"

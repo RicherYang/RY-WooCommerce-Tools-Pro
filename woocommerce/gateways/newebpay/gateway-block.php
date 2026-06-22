@@ -29,6 +29,7 @@ final class RY_WTP_WC_NewebPay_Gateway_Block
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/abstracts/abstract-payment-method-type.php';
 
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/blocks/gateway-atm.php';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/blocks/gateway-bnpl.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/blocks/gateway-barcode.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/blocks/gateway-credit.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/blocks/gateway-cvs.php';
@@ -51,6 +52,7 @@ final class RY_WTP_WC_NewebPay_Gateway_Block
     public function register_block(PaymentMethodRegistry $payment_method_registry)
     {
         $payment_method_registry->register(new RY_NewebPay_Gateway_Atm_Blocks_Support());
+        $payment_method_registry->register(new RY_NewebPay_Gateway_Bnpl_Blocks_Support());
         $payment_method_registry->register(new RY_NewebPay_Gateway_Barcode_Blocks_Support());
         $payment_method_registry->register(new RY_NewebPay_Gateway_Credit_Blocks_Support());
         $payment_method_registry->register(new RY_NewebPay_Gateway_Cvs_Blocks_Support());
