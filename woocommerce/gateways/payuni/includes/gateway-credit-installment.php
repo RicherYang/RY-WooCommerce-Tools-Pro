@@ -6,7 +6,7 @@ class RY_PAYUNi_Gateway_Credit_Installment_Base extends RY_WT_WC_PAYUNi_Payment_
 {
     public const PAYMENT_TYPE = 'CreditInst';
 
-    public const bool SUPPORT_REFUND = true;
+    public const SUPPORT_REFUND = true;
 
     public array $number_of_periods = [];
 
