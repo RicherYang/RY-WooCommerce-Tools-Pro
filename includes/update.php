@@ -47,5 +47,9 @@ final class RY_WTP_Update
 
             RY_WTP::update_option('version', '3.8.0', true);
         }
+
+        if (version_compare($now_version, '3.8.1', '<')) {
+            RY_WTP::update_option('version', '3.8.1', true);
+        }
     }
 }
