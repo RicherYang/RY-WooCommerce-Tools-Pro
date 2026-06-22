@@ -66,7 +66,7 @@ final class RY_WTP_Admin extends RY_Abstract_Admin
                 __('You can download from %s and manual update to the latest version.', 'ry-woocommerce-tools-pro'),
                 $download_link
             );
-            printf('<div class="error"><p>%s</p></div>', wp_kses($message, ['strong' => []]));
+            printf('<div class="error"><p>%s</p></div>', wp_kses($message, ['strong' => [], 'a' => ['href' => true, 'target' => true]]));
         }
 
         if (defined('RY_WT::MIN_PRO_TOOLS_VERSION') && version_compare(RY_WTP_VERSION, RY_WT::MIN_PRO_TOOLS_VERSION, '<')) {
