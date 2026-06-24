@@ -12,6 +12,11 @@ final class RY_WTP_Update
             return;
         }
 
+        if ($now_version === '0.0.0') {
+            RY_WTP::update_option('version', RY_WTP_VERSION, true);
+            return;
+        }
+
         if (version_compare($now_version, '3.0.0', '<')) {
             wp_unschedule_hook(RY_WTP::OPTION_PREFIX . 'check_update');
 
@@ -19,9 +24,7 @@ final class RY_WTP_Update
         }
 
         if (version_compare($now_version, '3.8.0', '<')) {
-            if (version_compare($now_version, '0.0.0', '!=')) {
-                RY_WTP::update_option('ecpay_independent_digital', 'yes', true);
-            }
+            RY_WTP::update_option('ecpay_independent_digital', 'yes', true);
 
             $setting = RY_WTP::get_option('ecpay_credit_installment', false);
             if ($setting !== false) {
