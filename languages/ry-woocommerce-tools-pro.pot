@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-06-24T14:57:21+08:00\n"
+"POT-Creation-Date: 2026-06-24T16:25:12+08:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ry-woocommerce-tools-pro\n"
@@ -294,7 +294,6 @@ msgstr ""
 #: woocommerce/gateways/ecpay/blocks/gateway-cvs.php:45
 #: woocommerce/gateways/ecpay/blocks/gateway-ipass.php:45
 #: woocommerce/gateways/ecpay/blocks/gateway-jkopay.php:45
-#: woocommerce/gateways/ecpay/blocks/gateway-twqr.php:45
 #: woocommerce/gateways/ecpay/blocks/gateway-urich.php:45
 #: woocommerce/gateways/ecpay/blocks/gateway-webatm.php:45
 #: woocommerce/gateways/ecpay/blocks/gateway-zingala.php:45
@@ -367,10 +366,6 @@ msgstr ""
 msgid "ECPay JKOPay"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/blocks/gateway-twqr.php:28
-msgid "ECPay TWQR"
-msgstr ""
-
 #: woocommerce/gateways/ecpay/blocks/gateway-urich.php:28
 #: woocommerce/gateways/ecpay/gateway-urich.php:22
 msgid "ECPay URich"
@@ -438,6 +433,7 @@ msgid "Pay via Credit (24 installment)"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/gateway-digital.php:15
+#: woocommerce/gateways/newebpay/gateway-digital.php:15
 #: woocommerce/gateways/payuni/gateway-digital.php:17
 msgid "Pay via Digital Payment"
 msgstr ""
@@ -482,6 +478,7 @@ msgstr ""
 #: woocommerce/gateways/ecpay/includes/admin.php:50
 #: woocommerce/gateways/ecpay/includes/admin.php:58
 #: woocommerce/gateways/newebpay/includes/admin.php:44
+#: woocommerce/gateways/newebpay/includes/admin.php:52
 #: woocommerce/gateways/payuni/includes/admin.php:43
 #: woocommerce/gateways/payuni/includes/admin.php:51
 msgid "Note: This option will remove the original payment gateway."
@@ -492,12 +489,13 @@ msgid "Add each type of BNPL as a payment gateway."
 msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/admin.php:57
+#: woocommerce/gateways/newebpay/includes/admin.php:51
 #: woocommerce/gateways/payuni/includes/admin.php:50
 msgid "Add each type of digital payment as a payment gateway."
 msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/admin.php:62
-#: woocommerce/gateways/newebpay/includes/admin.php:47
+#: woocommerce/gateways/newebpay/includes/admin.php:56
 #: woocommerce/gateways/payuni/includes/admin.php:55
 #: woocommerce/gateways/smilepay/includes/admin.php:35
 msgid "Show payment info in email"
@@ -505,7 +503,7 @@ msgstr ""
 
 #. translators: %s: email title
 #: woocommerce/gateways/ecpay/includes/admin.php:68
-#: woocommerce/gateways/newebpay/includes/admin.php:53
+#: woocommerce/gateways/newebpay/includes/admin.php:62
 #: woocommerce/gateways/payuni/includes/admin.php:61
 #: woocommerce/gateways/smilepay/includes/admin.php:41
 #, php-format
@@ -513,7 +511,7 @@ msgid "Add payment info in \"%s\" email."
 msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/admin.php:69
-#: woocommerce/gateways/newebpay/includes/admin.php:54
+#: woocommerce/gateways/newebpay/includes/admin.php:63
 #: woocommerce/gateways/payuni/includes/admin.php:62
 #: woocommerce/gateways/smilepay/includes/admin.php:42
 msgid "Order on-hold"
@@ -675,21 +673,17 @@ msgid "Period amount ( first / other )"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:83
-msgid "TWQR trade no"
-msgstr ""
-
-#: woocommerce/gateways/ecpay/includes/view/payment-info.php:89
-#: woocommerce/gateways/ecpay/includes/view/payment-info.php:99
+#: woocommerce/gateways/ecpay/includes/view/payment-info.php:93
 #: woocommerce/gateways/payuni/includes/view/payment-info.php:66
 msgid "Payment bank"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/includes/view/payment-info.php:93
-#: woocommerce/gateways/ecpay/includes/view/payment-info.php:103
+#: woocommerce/gateways/ecpay/includes/view/payment-info.php:87
+#: woocommerce/gateways/ecpay/includes/view/payment-info.php:97
 msgid "Payment bank no last 5"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/includes/view/payment-info.php:109
+#: woocommerce/gateways/ecpay/includes/view/payment-info.php:103
 msgid "Payment cvs"
 msgstr ""
 
@@ -750,6 +744,10 @@ msgstr ""
 #: woocommerce/gateways/newebpay/blocks/gateway-credit-installment.php:47
 #: woocommerce/gateways/newebpay/blocks/gateway-credit.php:45
 #: woocommerce/gateways/newebpay/blocks/gateway-cvs.php:45
+#: woocommerce/gateways/newebpay/blocks/gateway-digital.php:45
+#: woocommerce/gateways/newebpay/blocks/gateway-esunwallet.php:45
+#: woocommerce/gateways/newebpay/blocks/gateway-linepay.php:45
+#: woocommerce/gateways/newebpay/blocks/gateway-twpay.php:45
 #: woocommerce/gateways/newebpay/blocks/gateway-webatm.php:45
 msgid "NewebPay"
 msgstr ""
@@ -800,6 +798,26 @@ msgstr ""
 msgid "NewebPay CVS"
 msgstr ""
 
+#: woocommerce/gateways/newebpay/blocks/gateway-digital.php:28
+#: woocommerce/gateways/newebpay/gateway-digital.php:16
+msgid "NewebPay Digital Payment"
+msgstr ""
+
+#: woocommerce/gateways/newebpay/blocks/gateway-esunwallet.php:28
+#: woocommerce/gateways/newebpay/gateway-esunwallet.php:16
+msgid "NewebPay Esun Wallet"
+msgstr ""
+
+#: woocommerce/gateways/newebpay/blocks/gateway-linepay.php:28
+#: woocommerce/gateways/newebpay/gateway-linepay.php:16
+msgid "NewebPay LinePay"
+msgstr ""
+
+#: woocommerce/gateways/newebpay/blocks/gateway-twpay.php:28
+#: woocommerce/gateways/newebpay/gateway-twpay.php:16
+msgid "NewebPay Taiwan Pay"
+msgstr ""
+
 #: woocommerce/gateways/newebpay/blocks/gateway-webatm.php:28
 msgid "NewebPay WebATM"
 msgstr ""
@@ -811,6 +829,19 @@ msgstr ""
 
 #: woocommerce/gateways/newebpay/gateway-credit-installment-30.php:13
 msgid "NewebPay Credit (30 installment)"
+msgstr ""
+
+#: woocommerce/gateways/newebpay/gateway-esunwallet.php:15
+msgid "Pay via Esun Wallet"
+msgstr ""
+
+#: woocommerce/gateways/newebpay/gateway-linepay.php:15
+#: woocommerce/gateways/payuni/gateway-linepay.php:17
+msgid "Pay via LinePay"
+msgstr ""
+
+#: woocommerce/gateways/newebpay/gateway-twpay.php:15
+msgid "Pay via Taiwan Pay"
 msgstr ""
 
 #: woocommerce/gateways/newebpay/includes/ajax.php:38
@@ -922,10 +953,6 @@ msgstr ""
 
 #: woocommerce/gateways/payuni/gateway-icash.php:17
 msgid "Pay via icash Pay"
-msgstr ""
-
-#: woocommerce/gateways/payuni/gateway-linepay.php:17
-msgid "Pay via LinePay"
 msgstr ""
 
 #: woocommerce/gateways/payuni/includes/ajax.php:39

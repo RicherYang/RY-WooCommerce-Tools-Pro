@@ -4,8 +4,8 @@ import { getSetting } from '@woocommerce/settings';
 
 import PaymentLabel from '../../base/_payment-label';
 
-const settings = getSetting('ry_ecpay_twqr_data', {});
-const label = decodeEntities(settings.title || RyEcpayTwqrBlockParams.defaultTitle);
+const settings = getSetting('ry_newebpay_esunwallet_data', {});
+const label = decodeEntities(settings.title || RyNewebpayEsunwalletBlockParams.defaultTitle);
 
 const Label = ({ ...props }) => {
     return <PaymentLabel
@@ -19,7 +19,7 @@ const Content = () => {
 };
 
 registerPaymentMethod({
-    name: 'ry_ecpay_twqr',
+    name: 'ry_newebpay_esunwallet',
     label: <Label />,
     placeOrderButtonLabel: decodeEntities(settings.button_title || ''),
     content: <Content />,

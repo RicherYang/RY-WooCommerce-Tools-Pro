@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-02-16 10:51+0800\n"
-"PO-Revision-Date: 2026-06-22 14:58+0800\n"
+"PO-Revision-Date: 2026-06-24 16:09+0800\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
@@ -130,7 +130,6 @@ msgstr "與上層相同"
 #: woocommerce/gateways/ecpay/blocks/gateway-cvs.php:45
 #: woocommerce/gateways/ecpay/blocks/gateway-ipass.php:45
 #: woocommerce/gateways/ecpay/blocks/gateway-jkopay.php:45
-#: woocommerce/gateways/ecpay/blocks/gateway-twqr.php:45
 #: woocommerce/gateways/ecpay/blocks/gateway-urich.php:45
 #: woocommerce/gateways/ecpay/blocks/gateway-webatm.php:45
 #: woocommerce/gateways/ecpay/blocks/gateway-zingala.php:45
@@ -229,7 +228,7 @@ msgid "Add each periods of credit installment as a payment gateway."
 msgstr "將每一個信用卡分期期數新增為一個付款方式。"
 
 #: woocommerce/gateways/ecpay/includes/admin.php:62
-#: woocommerce/gateways/newebpay/includes/admin.php:47
+#: woocommerce/gateways/newebpay/includes/admin.php:56
 #: woocommerce/gateways/payuni/includes/admin.php:55
 #: woocommerce/gateways/smilepay/includes/admin.php:35
 msgid "Show payment info in email"
@@ -237,7 +236,7 @@ msgstr "在信件中顯示付款資訊"
 
 #. translators: %s: email title
 #: woocommerce/gateways/ecpay/includes/admin.php:68
-#: woocommerce/gateways/newebpay/includes/admin.php:53
+#: woocommerce/gateways/newebpay/includes/admin.php:62
 #: woocommerce/gateways/payuni/includes/admin.php:61
 #: woocommerce/gateways/smilepay/includes/admin.php:41
 #, php-format
@@ -255,6 +254,10 @@ msgstr "在「%s」信件中顯示付款資訊。"
 #: woocommerce/gateways/newebpay/blocks/gateway-credit-installment.php:47
 #: woocommerce/gateways/newebpay/blocks/gateway-credit.php:45
 #: woocommerce/gateways/newebpay/blocks/gateway-cvs.php:45
+#: woocommerce/gateways/newebpay/blocks/gateway-digital.php:45
+#: woocommerce/gateways/newebpay/blocks/gateway-esunwallet.php:45
+#: woocommerce/gateways/newebpay/blocks/gateway-linepay.php:45
+#: woocommerce/gateways/newebpay/blocks/gateway-twpay.php:45
 #: woocommerce/gateways/newebpay/blocks/gateway-webatm.php:45
 msgid "NewebPay"
 msgstr "藍新金流"
@@ -463,10 +466,6 @@ msgstr "綠界信用卡"
 msgid "ECPay CVS"
 msgstr "綠界超商代碼"
 
-#: woocommerce/gateways/ecpay/blocks/gateway-twqr.php:28
-msgid "ECPay TWQR"
-msgstr "綠界 TWQR"
-
 #: woocommerce/gateways/ecpay/blocks/gateway-webatm.php:28
 msgid "ECPay WebATM"
 msgstr "綠界網路 ATM"
@@ -631,21 +630,17 @@ msgid "eci"
 msgstr "eci"
 
 #: woocommerce/gateways/ecpay/includes/view/payment-info.php:83
-msgid "TWQR trade no"
-msgstr "TWQR 交易編號"
-
-#: woocommerce/gateways/ecpay/includes/view/payment-info.php:89
-#: woocommerce/gateways/ecpay/includes/view/payment-info.php:99
+#: woocommerce/gateways/ecpay/includes/view/payment-info.php:93
 #: woocommerce/gateways/payuni/includes/view/payment-info.php:66
 msgid "Payment bank"
 msgstr "付款銀行"
 
-#: woocommerce/gateways/ecpay/includes/view/payment-info.php:93
-#: woocommerce/gateways/ecpay/includes/view/payment-info.php:103
+#: woocommerce/gateways/ecpay/includes/view/payment-info.php:87
+#: woocommerce/gateways/ecpay/includes/view/payment-info.php:97
 msgid "Payment bank no last 5"
 msgstr "付款銀行帳號末五碼"
 
-#: woocommerce/gateways/ecpay/includes/view/payment-info.php:109
+#: woocommerce/gateways/ecpay/includes/view/payment-info.php:103
 msgid "Payment cvs"
 msgstr "付款超商"
 
@@ -759,7 +754,7 @@ msgid "Change address"
 msgstr "變更地址"
 
 #: woocommerce/gateways/ecpay/includes/admin.php:69
-#: woocommerce/gateways/newebpay/includes/admin.php:54
+#: woocommerce/gateways/newebpay/includes/admin.php:63
 #: woocommerce/gateways/payuni/includes/admin.php:62
 #: woocommerce/gateways/smilepay/includes/admin.php:42
 msgid "Order on-hold"
@@ -1059,6 +1054,7 @@ msgstr "統一信用卡（30 期）"
 msgid "PAYUNi JKOPay"
 msgstr "統一街口支付"
 
+#: woocommerce/gateways/newebpay/gateway-linepay.php:15
 #: woocommerce/gateways/payuni/gateway-linepay.php:17
 msgid "Pay via LinePay"
 msgstr "使用 LINE Pay 付款"
@@ -1142,6 +1138,7 @@ msgstr "將每一個先買後付新增為一個付款方式。"
 #: woocommerce/gateways/ecpay/includes/admin.php:50
 #: woocommerce/gateways/ecpay/includes/admin.php:58
 #: woocommerce/gateways/newebpay/includes/admin.php:44
+#: woocommerce/gateways/newebpay/includes/admin.php:52
 #: woocommerce/gateways/payuni/includes/admin.php:43
 #: woocommerce/gateways/payuni/includes/admin.php:51
 msgid "Note: This option will remove the original payment gateway."
@@ -1178,11 +1175,13 @@ msgid "ECPay Digital Payment"
 msgstr "綠界電子支付"
 
 #: woocommerce/gateways/ecpay/gateway-digital.php:15
+#: woocommerce/gateways/newebpay/gateway-digital.php:15
 #: woocommerce/gateways/payuni/gateway-digital.php:17
 msgid "Pay via Digital Payment"
 msgstr "使用電子支付付款"
 
 #: woocommerce/gateways/ecpay/includes/admin.php:57
+#: woocommerce/gateways/newebpay/includes/admin.php:51
 #: woocommerce/gateways/payuni/includes/admin.php:50
 msgid "Add each type of digital payment as a payment gateway."
 msgstr "將每一個電子支付新增為一個付款方式。"
@@ -1201,3 +1200,31 @@ msgstr "統一先買後付"
 #: woocommerce/gateways/newebpay/gateway-bnpl.php:20
 msgid "NewebPay BNPL"
 msgstr "藍新先買後付"
+
+#: woocommerce/gateways/newebpay/blocks/gateway-digital.php:28
+#: woocommerce/gateways/newebpay/gateway-digital.php:16
+msgid "NewebPay Digital Payment"
+msgstr "藍新電子支付"
+
+#: woocommerce/gateways/newebpay/gateway-esunwallet.php:15
+msgid "Pay via Esun Wallet"
+msgstr "使用玉山 Wallet 付款"
+
+#: woocommerce/gateways/newebpay/blocks/gateway-esunwallet.php:28
+#: woocommerce/gateways/newebpay/gateway-esunwallet.php:16
+msgid "NewebPay Esun Wallet"
+msgstr "藍新玉山 Wallet"
+
+#: woocommerce/gateways/newebpay/blocks/gateway-linepay.php:28
+#: woocommerce/gateways/newebpay/gateway-linepay.php:16
+msgid "NewebPay LinePay"
+msgstr "藍新 LINE Pay"
+
+#: woocommerce/gateways/newebpay/gateway-twpay.php:15
+msgid "Pay via Taiwan Pay"
+msgstr "使用台灣 Pay 路款"
+
+#: woocommerce/gateways/newebpay/blocks/gateway-twpay.php:28
+#: woocommerce/gateways/newebpay/gateway-twpay.php:16
+msgid "NewebPay Taiwan Pay"
+msgstr "藍新台灣 Pay"

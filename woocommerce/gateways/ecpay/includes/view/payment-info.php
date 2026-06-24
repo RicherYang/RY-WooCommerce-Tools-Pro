@@ -78,12 +78,6 @@
         </p>
         <?php } ?>
         <?php } ?>
-        <?php if ($info['PaymentType'] === 'TWQR_OPAY') { ?>
-        <p>
-            <strong><?php esc_html_e('TWQR trade no', 'ry-woocommerce-tools-pro'); ?></strong><br>
-            <?php echo esc_html($info['TWQRTradeNo']); ?>
-        </p>
-        <?php } ?>
         <?php if (str_starts_with($info['PaymentType'], 'WebATM_')) { ?>
         <p>
             <strong><?php esc_html_e('Payment bank', 'ry-woocommerce-tools-pro'); ?></strong><br>

@@ -30,6 +30,14 @@ final class RY_WTP_WC_NewebPay_Gateway
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/gateway-credit-installment-30.php';
         }
 
+        if ('yes' === RY_WTP::get_option('newebpay_independent_digital', 'no')) {
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/gateway-esunwallet.php';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/gateway-linepay.php';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/gateway-twpay.php';
+        } else {
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/gateway-digital.php';
+        }
+
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/gateway-block.php';
         RY_WTP_WC_NewebPay_Gateway_Block::instance();
 
@@ -55,6 +63,14 @@ final class RY_WTP_WC_NewebPay_Gateway
             $methods[] = 'RY_NewebPay_Gateway_Credit_Installment_18';
             $methods[] = 'RY_NewebPay_Gateway_Credit_Installment_24';
             $methods[] = 'RY_NewebPay_Gateway_Credit_Installment_30';
+        }
+
+        if ('yes' === RY_WTP::get_option('newebpay_independent_digital', 'no')) {
+            $methods[] = 'RY_NewebPay_Gateway_Esunwallet';
+            $methods[] = 'RY_NewebPay_Gateway_Linepay';
+            $methods[] = 'RY_NewebPay_Gateway_Twpay';
+        } else {
+            $methods[] = 'RY_NewebPay_Gateway_Digital';
         }
 
         return $methods;

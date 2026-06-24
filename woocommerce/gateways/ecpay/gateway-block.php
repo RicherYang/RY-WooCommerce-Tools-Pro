@@ -33,7 +33,6 @@ final class RY_WTP_WC_ECPay_Gateway_Block
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/blocks/gateway-barcode.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/blocks/gateway-credit.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/blocks/gateway-cvs.php';
-            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/blocks/gateway-twqr.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/blocks/gateway-webatm.php';
 
             if ('yes' === RY_WTP::get_option('ecpay_independent_credit_installment', 'no')) {
@@ -71,7 +70,6 @@ final class RY_WTP_WC_ECPay_Gateway_Block
         $payment_method_registry->register(new RY_ECPay_Gateway_Barcode_Blocks_Support());
         $payment_method_registry->register(new RY_ECPay_Gateway_Credit_Blocks_Support());
         $payment_method_registry->register(new RY_ECPay_Gateway_Cvs_Blocks_Support());
-        $payment_method_registry->register(new RY_ECPay_Gateway_Twqr_Blocks_Support());
         $payment_method_registry->register(new RY_ECPay_Gateway_Webatm_Blocks_Support());
 
         if ('yes' === RY_WTP::get_option('ecpay_independent_credit_installment', 'no')) {
