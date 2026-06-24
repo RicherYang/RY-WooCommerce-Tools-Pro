@@ -13,7 +13,6 @@ class RY_ECPay_Gateway_Credit_Installment_Base extends RY_WT_WC_ECPay_Payment_Ga
     public function __construct()
     {
         $this->has_fields = false;
-        $this->method_description = '';
 
         $this->form_fields = include RY_WT_PLUGIN_DIR . 'woocommerce/gateways/ecpay/includes/settings/credit-installment.php';
         unset($this->form_fields['number_of_periods']);

@@ -11,7 +11,6 @@ class RY_ECPay_Gateway_Credit_Installment_6 extends RY_ECPay_Gateway_Credit_Inst
         $this->id = self::ID;
         $this->order_button_text = __('Pay via Credit (6 installment)', 'ry-woocommerce-tools-pro');
         $this->method_title = __('ECPay Credit (6 installment)', 'ry-woocommerce-tools-pro');
-        $this->process_payment_note = __('Pay via ECPay Credit (6 installment)', 'ry-woocommerce-tools-pro');
 
         $this->number_of_periods = [6];
 

@@ -11,7 +11,6 @@ class RY_PAYUNi_Gateway_Credit_Installment_3 extends RY_PAYUNi_Gateway_Credit_In
         $this->id = self::ID;
         $this->order_button_text = __('Pay via Credit (3 installment)', 'ry-woocommerce-tools-pro');
         $this->method_title = __('PAYUNi Credit (3 installment)', 'ry-woocommerce-tools-pro');
-        $this->process_payment_note = __('Pay via PAYUNi Credit (3 installment)', 'ry-woocommerce-tools-pro');
 
         $this->number_of_periods = [3];
 

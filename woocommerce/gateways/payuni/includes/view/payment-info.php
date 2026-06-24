@@ -53,7 +53,7 @@
             <strong><?php esc_html_e('Auth code', 'ry-woocommerce-tools-pro'); ?></strong><br>
             <?php echo esc_html($info['AuthCode']); ?>
         </p>
-        <?php if ($info['CardInst']) { ?>
+        <?php if ($info['CardInst'] > 1) { ?>
         <p>
             <strong><?php esc_html_e('number of periods', 'ry-woocommerce-tools-pro'); ?></strong><br>
             <?php echo esc_html($info['CardInst']); ?>

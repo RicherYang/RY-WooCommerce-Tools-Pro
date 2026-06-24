@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-06-22T19:35:22+08:00\n"
+"POT-Creation-Date: 2026-06-24T14:57:21+08:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ry-woocommerce-tools-pro\n"
@@ -389,29 +389,21 @@ msgstr ""
 msgid "Pay via Apple Pay"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/gateway-applepay.php:18
-msgid "Pay via ECPay Apple Pay"
-msgstr ""
-
 #: woocommerce/gateways/ecpay/gateway-bnpl.php:19
 #: woocommerce/gateways/newebpay/gateway-bnpl.php:19
 #: woocommerce/gateways/payuni/gateway-bnpl.php:21
 msgid "Pay via BNPL"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/gateway-bnpl.php:22
-msgid "Pay via ECPay BNPL"
-msgstr ""
-
-#: woocommerce/gateways/ecpay/gateway-bnpl.php:34
-#: woocommerce/gateways/ecpay/gateway-urich.php:36
-#: woocommerce/gateways/ecpay/gateway-zingala.php:36
+#: woocommerce/gateways/ecpay/gateway-bnpl.php:32
+#: woocommerce/gateways/ecpay/gateway-urich.php:34
+#: woocommerce/gateways/ecpay/gateway-zingala.php:34
 msgid "BNPL Trade No"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/gateway-bnpl.php:38
-#: woocommerce/gateways/ecpay/gateway-urich.php:40
-#: woocommerce/gateways/ecpay/gateway-zingala.php:40
+#: woocommerce/gateways/ecpay/gateway-bnpl.php:36
+#: woocommerce/gateways/ecpay/gateway-urich.php:38
+#: woocommerce/gateways/ecpay/gateway-zingala.php:38
 msgid "BNPL Installment"
 msgstr ""
 
@@ -421,18 +413,10 @@ msgstr ""
 msgid "Pay via Credit (3 installment)"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/gateway-credit-installment-3.php:14
-msgid "Pay via ECPay Credit (3 installment)"
-msgstr ""
-
 #: woocommerce/gateways/ecpay/gateway-credit-installment-6.php:12
 #: woocommerce/gateways/newebpay/gateway-credit-installment-6.php:12
 #: woocommerce/gateways/payuni/gateway-credit-installment-6.php:12
 msgid "Pay via Credit (6 installment)"
-msgstr ""
-
-#: woocommerce/gateways/ecpay/gateway-credit-installment-6.php:14
-msgid "Pay via ECPay Credit (6 installment)"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/gateway-credit-installment-12.php:12
@@ -441,18 +425,10 @@ msgstr ""
 msgid "Pay via Credit (12 installment)"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/gateway-credit-installment-12.php:14
-msgid "Pay via ECPay Credit (12 installment)"
-msgstr ""
-
 #: woocommerce/gateways/ecpay/gateway-credit-installment-18.php:12
 #: woocommerce/gateways/newebpay/gateway-credit-installment-18.php:12
 #: woocommerce/gateways/payuni/gateway-credit-installment-18.php:12
 msgid "Pay via Credit (18 installment)"
-msgstr ""
-
-#: woocommerce/gateways/ecpay/gateway-credit-installment-18.php:14
-msgid "Pay via ECPay Credit (18 installment)"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/gateway-credit-installment-24.php:12
@@ -461,25 +437,13 @@ msgstr ""
 msgid "Pay via Credit (24 installment)"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/gateway-credit-installment-24.php:14
-msgid "Pay via ECPay Credit (24 installment)"
-msgstr ""
-
 #: woocommerce/gateways/ecpay/gateway-digital.php:15
 #: woocommerce/gateways/payuni/gateway-digital.php:17
 msgid "Pay via Digital Payment"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/gateway-digital.php:18
-msgid "Pay via ECPay Digital Payment"
-msgstr ""
-
 #: woocommerce/gateways/ecpay/gateway-ipass.php:17
 msgid "Pay via iPASS"
-msgstr ""
-
-#: woocommerce/gateways/ecpay/gateway-ipass.php:20
-msgid "Pay via ECPay iPASS"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/gateway-jkopay.php:17
@@ -487,24 +451,12 @@ msgstr ""
 msgid "Pay via JKOPay"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/gateway-jkopay.php:20
-msgid "Pay via ECPay JKOPay"
-msgstr ""
-
 #: woocommerce/gateways/ecpay/gateway-urich.php:21
 msgid "Pay via URich"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/gateway-urich.php:24
-msgid "Pay via ECPay URich"
-msgstr ""
-
 #: woocommerce/gateways/ecpay/gateway-zingala.php:21
 msgid "Pay via Zingala"
-msgstr ""
-
-#: woocommerce/gateways/ecpay/gateway-zingala.php:24
-msgid "Pay via ECPay Zingala"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/admin.php:32
@@ -852,30 +804,6 @@ msgstr ""
 msgid "NewebPay WebATM"
 msgstr ""
 
-#: woocommerce/gateways/newebpay/gateway-bnpl.php:22
-msgid "Pay via NewebPay BNPL"
-msgstr ""
-
-#: woocommerce/gateways/newebpay/gateway-credit-installment-3.php:14
-msgid "Pay via NewebPay Credit (3 installment)"
-msgstr ""
-
-#: woocommerce/gateways/newebpay/gateway-credit-installment-6.php:14
-msgid "Pay via NewebPay Credit (6 installment)"
-msgstr ""
-
-#: woocommerce/gateways/newebpay/gateway-credit-installment-12.php:14
-msgid "Pay via NewebPay Credit (12 installment)"
-msgstr ""
-
-#: woocommerce/gateways/newebpay/gateway-credit-installment-18.php:14
-msgid "Pay via NewebPay Credit (18 installment)"
-msgstr ""
-
-#: woocommerce/gateways/newebpay/gateway-credit-installment-24.php:14
-msgid "Pay via NewebPay Credit (24 installment)"
-msgstr ""
-
 #: woocommerce/gateways/newebpay/gateway-credit-installment-30.php:12
 #: woocommerce/gateways/payuni/gateway-credit-installment-30.php:12
 msgid "Pay via Credit (30 installment)"
@@ -883,10 +811,6 @@ msgstr ""
 
 #: woocommerce/gateways/newebpay/gateway-credit-installment-30.php:13
 msgid "NewebPay Credit (30 installment)"
-msgstr ""
-
-#: woocommerce/gateways/newebpay/gateway-credit-installment-30.php:14
-msgid "Pay via NewebPay Credit (30 installment)"
 msgstr ""
 
 #: woocommerce/gateways/newebpay/includes/ajax.php:38
@@ -992,64 +916,16 @@ msgstr ""
 msgid "PAYUNi LinePay"
 msgstr ""
 
-#: woocommerce/gateways/payuni/gateway-bnpl.php:24
-msgid "Pay via PAYUNi BNPL"
-msgstr ""
-
-#: woocommerce/gateways/payuni/gateway-credit-installment-3.php:14
-msgid "Pay via PAYUNi Credit (3 installment)"
-msgstr ""
-
-#: woocommerce/gateways/payuni/gateway-credit-installment-6.php:14
-msgid "Pay via PAYUNi Credit (6 installment)"
-msgstr ""
-
 #: woocommerce/gateways/payuni/gateway-credit-installment-9.php:12
 msgid "Pay via Credit (9 installment)"
-msgstr ""
-
-#: woocommerce/gateways/payuni/gateway-credit-installment-9.php:14
-msgid "Pay via PAYUNi Credit (9 installment)"
-msgstr ""
-
-#: woocommerce/gateways/payuni/gateway-credit-installment-12.php:14
-msgid "Pay via PAYUNi Credit (12 installment)"
-msgstr ""
-
-#: woocommerce/gateways/payuni/gateway-credit-installment-18.php:14
-msgid "Pay via PAYUNi Credit (18 installment)"
-msgstr ""
-
-#: woocommerce/gateways/payuni/gateway-credit-installment-24.php:14
-msgid "Pay via PAYUNi Credit (24 installment)"
-msgstr ""
-
-#: woocommerce/gateways/payuni/gateway-credit-installment-30.php:14
-msgid "Pay via PAYUNi Credit (30 installment)"
-msgstr ""
-
-#: woocommerce/gateways/payuni/gateway-digital.php:20
-msgid "Pay via PAYUNi Digital Payment"
 msgstr ""
 
 #: woocommerce/gateways/payuni/gateway-icash.php:17
 msgid "Pay via icash Pay"
 msgstr ""
 
-#: woocommerce/gateways/payuni/gateway-icash.php:20
-msgid "Pay via PAYUNi icash Pay"
-msgstr ""
-
-#: woocommerce/gateways/payuni/gateway-jkopay.php:20
-msgid "Pay via PAYUNi JKOPay"
-msgstr ""
-
 #: woocommerce/gateways/payuni/gateway-linepay.php:17
 msgid "Pay via LinePay"
-msgstr ""
-
-#: woocommerce/gateways/payuni/gateway-linepay.php:20
-msgid "Pay via PAYUNi LinePay"
 msgstr ""
 
 #: woocommerce/gateways/payuni/includes/ajax.php:39

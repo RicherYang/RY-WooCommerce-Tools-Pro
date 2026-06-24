@@ -148,19 +148,15 @@ msgstr "使用先買後付付款"
 msgid "ECPay BNPL"
 msgstr "綠界先買後付"
 
-#: woocommerce/gateways/ecpay/gateway-bnpl.php:22
-msgid "Pay via ECPay BNPL"
-msgstr "使用 綠界金流先買後付 付款"
-
-#: woocommerce/gateways/ecpay/gateway-bnpl.php:34
-#: woocommerce/gateways/ecpay/gateway-urich.php:36
-#: woocommerce/gateways/ecpay/gateway-zingala.php:36
+#: woocommerce/gateways/ecpay/gateway-bnpl.php:32
+#: woocommerce/gateways/ecpay/gateway-urich.php:34
+#: woocommerce/gateways/ecpay/gateway-zingala.php:34
 msgid "BNPL Trade No"
 msgstr "先買後付交易編號"
 
-#: woocommerce/gateways/ecpay/gateway-bnpl.php:38
-#: woocommerce/gateways/ecpay/gateway-urich.php:40
-#: woocommerce/gateways/ecpay/gateway-zingala.php:40
+#: woocommerce/gateways/ecpay/gateway-bnpl.php:36
+#: woocommerce/gateways/ecpay/gateway-urich.php:38
+#: woocommerce/gateways/ecpay/gateway-zingala.php:38
 msgid "BNPL Installment"
 msgstr "先買後付分期數"
 
@@ -175,10 +171,6 @@ msgstr "使用信用卡（12 期）付款"
 msgid "ECPay Credit (12 installment)"
 msgstr "綠界信用卡（分 12 期）"
 
-#: woocommerce/gateways/ecpay/gateway-credit-installment-12.php:14
-msgid "Pay via ECPay Credit (12 installment)"
-msgstr "使用 綠界金流信用卡 ( 12 期） 付款"
-
 #: woocommerce/gateways/ecpay/gateway-credit-installment-18.php:12
 #: woocommerce/gateways/newebpay/gateway-credit-installment-18.php:12
 #: woocommerce/gateways/payuni/gateway-credit-installment-18.php:12
@@ -190,10 +182,6 @@ msgstr "使用信用卡（18 期）付款"
 msgid "ECPay Credit (18 installment)"
 msgstr "綠界信用卡（分 18 期）"
 
-#: woocommerce/gateways/ecpay/gateway-credit-installment-18.php:14
-msgid "Pay via ECPay Credit (18 installment)"
-msgstr "使用 綠界金流信用卡（18 期） 付款"
-
 #: woocommerce/gateways/ecpay/gateway-credit-installment-24.php:12
 #: woocommerce/gateways/newebpay/gateway-credit-installment-24.php:12
 #: woocommerce/gateways/payuni/gateway-credit-installment-24.php:12
@@ -204,10 +192,6 @@ msgstr "使用信用卡（24 期）付款"
 #: woocommerce/gateways/ecpay/gateway-credit-installment-24.php:13
 msgid "ECPay Credit (24 installment)"
 msgstr "綠界信用卡（分 24 期）"
-
-#: woocommerce/gateways/ecpay/gateway-credit-installment-24.php:14
-msgid "Pay via ECPay Credit (24 installment)"
-msgstr "使用 綠界金流信用卡（24 期） 付款"
 
 #: woocommerce/gateways/ecpay/gateway-credit-installment-3.php:12
 #: woocommerce/gateways/newebpay/gateway-credit-installment-3.php:12
@@ -230,10 +214,6 @@ msgstr "使用信用卡（6 期）付款"
 #: woocommerce/gateways/ecpay/gateway-credit-installment-6.php:13
 msgid "ECPay Credit (6 installment)"
 msgstr "綠界信用卡（分 6 期）"
-
-#: woocommerce/gateways/ecpay/gateway-credit-installment-6.php:14
-msgid "Pay via ECPay Credit (6 installment)"
-msgstr "使用 綠界金流信用卡（6 期） 付款"
 
 #: woocommerce/gateways/ecpay/includes/admin.php:32
 #: woocommerce/gateways/newebpay/includes/admin.php:34
@@ -284,36 +264,20 @@ msgstr "藍新金流"
 msgid "NewebPay Credit (12 installment)"
 msgstr "藍新信用卡（12 期）"
 
-#: woocommerce/gateways/newebpay/gateway-credit-installment-12.php:14
-msgid "Pay via NewebPay Credit (12 installment)"
-msgstr "使用 藍新金流信用卡（12 期） 付款"
-
 #: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-18.php:28
 #: woocommerce/gateways/newebpay/gateway-credit-installment-18.php:13
 msgid "NewebPay Credit (18 installment)"
 msgstr "藍新信用卡（18 期）"
-
-#: woocommerce/gateways/newebpay/gateway-credit-installment-18.php:14
-msgid "Pay via NewebPay Credit (18 installment)"
-msgstr "使用 藍新金流信用卡（18 期） 付款"
 
 #: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-24.php:28
 #: woocommerce/gateways/newebpay/gateway-credit-installment-24.php:13
 msgid "NewebPay Credit (24 installment)"
 msgstr "藍新信用卡（24 期）"
 
-#: woocommerce/gateways/newebpay/gateway-credit-installment-24.php:14
-msgid "Pay via NewebPay Credit (24 installment)"
-msgstr "使用 藍新金流信用卡（24 期） 付款"
-
 #: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-3.php:28
 #: woocommerce/gateways/newebpay/gateway-credit-installment-3.php:13
 msgid "NewebPay Credit (3 installment)"
 msgstr "藍新信用卡（3 期）"
-
-#: woocommerce/gateways/newebpay/gateway-credit-installment-3.php:14
-msgid "Pay via NewebPay Credit (3 installment)"
-msgstr "使用 藍新金流信用卡（3 期） 付款"
 
 #: woocommerce/gateways/newebpay/gateway-credit-installment-30.php:12
 #: woocommerce/gateways/payuni/gateway-credit-installment-30.php:12
@@ -324,18 +288,10 @@ msgstr "使用信用卡（30 期）付款"
 msgid "NewebPay Credit (30 installment)"
 msgstr "藍新信用卡（30 期）"
 
-#: woocommerce/gateways/newebpay/gateway-credit-installment-30.php:14
-msgid "Pay via NewebPay Credit (30 installment)"
-msgstr "使用 藍新金流信用卡（30 期） 付款"
-
 #: woocommerce/gateways/newebpay/blocks/gateway-credit-installment-6.php:28
 #: woocommerce/gateways/newebpay/gateway-credit-installment-6.php:13
 msgid "NewebPay Credit (6 installment)"
 msgstr "藍新信用卡（6 期）"
-
-#: woocommerce/gateways/newebpay/gateway-credit-installment-6.php:14
-msgid "Pay via NewebPay Credit (6 installment)"
-msgstr "使用 藍新金流信用卡（6 期） 付款"
 
 #: woocommerce/gateways/smilepay/blocks/gateway-atm.php:45
 #: woocommerce/gateways/smilepay/blocks/gateway-barcode.php:45
@@ -906,10 +862,6 @@ msgstr "使用 Apple Pay 付款"
 msgid "ECPay Apple Pay"
 msgstr "綠界 Apple Pay"
 
-#: woocommerce/gateways/ecpay/gateway-applepay.php:18
-msgid "Pay via ECPay Apple Pay"
-msgstr "使用 綠界金流 Apple Pay 付款"
-
 #. Translators: %1$s shipping method name.
 #: woocommerce/admin/shipping.php:207
 #, php-format
@@ -952,10 +904,6 @@ msgstr "使用 iPASS MONEY 付款"
 msgid "ECPay iPASS"
 msgstr "綠界 iPASS MONEY"
 
-#: woocommerce/gateways/ecpay/gateway-ipass.php:20
-msgid "Pay via ECPay iPASS"
-msgstr "使用 綠界金流 iPASS MONEY 付款"
-
 #: woocommerce/gateways/ecpay/gateway-jkopay.php:17
 #: woocommerce/gateways/payuni/gateway-jkopay.php:17
 msgid "Pay via JKOPay"
@@ -965,10 +913,6 @@ msgstr "使用街口支付付款"
 #: woocommerce/gateways/ecpay/gateway-jkopay.php:18
 msgid "ECPay JKOPay"
 msgstr "綠界街口支付"
-
-#: woocommerce/gateways/ecpay/gateway-jkopay.php:20
-msgid "Pay via ECPay JKOPay"
-msgstr "使用 綠界金流街口支付 付款"
 
 #: woocommerce/admin/admin.php:52
 msgid "Only to WooCommerce account"
@@ -1076,18 +1020,10 @@ msgstr "收款金額"
 msgid "PAYUNi Credit (3 installment)"
 msgstr "統一信用卡（3 期）"
 
-#: woocommerce/gateways/payuni/gateway-credit-installment-3.php:14
-msgid "Pay via PAYUNi Credit (3 installment)"
-msgstr "使用 統一金流信用卡（3 期） 付款"
-
 #: woocommerce/gateways/payuni/blocks/gateway-credit-installment-6.php:28
 #: woocommerce/gateways/payuni/gateway-credit-installment-6.php:13
 msgid "PAYUNi Credit (6 installment)"
 msgstr "統一信用卡（6 期）"
-
-#: woocommerce/gateways/payuni/gateway-credit-installment-6.php:14
-msgid "Pay via PAYUNi Credit (6 installment)"
-msgstr "使用 統一金流信用卡（6 期） 付款"
 
 #: woocommerce/gateways/payuni/gateway-credit-installment-9.php:12
 msgid "Pay via Credit (9 installment)"
@@ -1098,54 +1034,30 @@ msgstr "使用信用卡（9 期）付款"
 msgid "PAYUNi Credit (9 installment)"
 msgstr "統一信用卡（9 期）"
 
-#: woocommerce/gateways/payuni/gateway-credit-installment-9.php:14
-msgid "Pay via PAYUNi Credit (9 installment)"
-msgstr "使用 統一金流信用卡（9 期） 付款"
-
 #: woocommerce/gateways/payuni/blocks/gateway-credit-installment-12.php:28
 #: woocommerce/gateways/payuni/gateway-credit-installment-12.php:13
 msgid "PAYUNi Credit (12 installment)"
 msgstr "統一信用卡（12 期）"
-
-#: woocommerce/gateways/payuni/gateway-credit-installment-12.php:14
-msgid "Pay via PAYUNi Credit (12 installment)"
-msgstr "使用 統一金流信用卡（12 期） 付款"
 
 #: woocommerce/gateways/payuni/blocks/gateway-credit-installment-18.php:28
 #: woocommerce/gateways/payuni/gateway-credit-installment-18.php:13
 msgid "PAYUNi Credit (18 installment)"
 msgstr "統一信用卡（18 期）"
 
-#: woocommerce/gateways/payuni/gateway-credit-installment-18.php:14
-msgid "Pay via PAYUNi Credit (18 installment)"
-msgstr "使用 統一金流信用卡（18 期） 付款"
-
 #: woocommerce/gateways/payuni/blocks/gateway-credit-installment-24.php:28
 #: woocommerce/gateways/payuni/gateway-credit-installment-24.php:13
 msgid "PAYUNi Credit (24 installment)"
 msgstr "統一信用卡（24 期）"
-
-#: woocommerce/gateways/payuni/gateway-credit-installment-24.php:14
-msgid "Pay via PAYUNi Credit (24 installment)"
-msgstr "使用 統一金流信用卡（24 期） 付款"
 
 #: woocommerce/gateways/payuni/blocks/gateway-credit-installment-30.php:28
 #: woocommerce/gateways/payuni/gateway-credit-installment-30.php:13
 msgid "PAYUNi Credit (30 installment)"
 msgstr "統一信用卡（30 期）"
 
-#: woocommerce/gateways/payuni/gateway-credit-installment-30.php:14
-msgid "Pay via PAYUNi Credit (30 installment)"
-msgstr "使用 統一金流信用卡（30 期） 付款"
-
 #: woocommerce/gateways/payuni/blocks/gateway-jkopay.php:28
 #: woocommerce/gateways/payuni/gateway-jkopay.php:18
 msgid "PAYUNi JKOPay"
 msgstr "統一街口支付"
-
-#: woocommerce/gateways/payuni/gateway-jkopay.php:20
-msgid "Pay via PAYUNi JKOPay"
-msgstr "使用 統一金流街口支付 付款"
 
 #: woocommerce/gateways/payuni/gateway-linepay.php:17
 msgid "Pay via LinePay"
@@ -1155,10 +1067,6 @@ msgstr "使用 LINE Pay 付款"
 #: woocommerce/gateways/payuni/gateway-linepay.php:18
 msgid "PAYUNi LinePay"
 msgstr "統一 LINE Pay"
-
-#: woocommerce/gateways/payuni/gateway-linepay.php:20
-msgid "Pay via PAYUNi LinePay"
-msgstr "使用 統一金流 LINE Pay 付款"
 
 #: woocommerce/gateways/payuni/includes/ajax.php:39
 msgid "Can not get info from PAYUNi."
@@ -1171,10 +1079,6 @@ msgstr "授權類型"
 #: assets/admin/order.js:1
 msgid "Invalid amount"
 msgstr "無效的金額"
-
-#: woocommerce/gateways/ecpay/gateway-credit-installment-3.php:14
-msgid "Pay via ECPay Credit (3 installment)"
-msgstr "使用 綠界金流信用卡（3 期） 付款"
 
 #: admin/admin.php:55
 msgid "WordPress Plugin Directory"
@@ -1230,10 +1134,6 @@ msgstr "使用 icash Pay 付款"
 msgid "PAYUNi icash Pay"
 msgstr "統一 icash Pay"
 
-#: woocommerce/gateways/payuni/gateway-icash.php:20
-msgid "Pay via PAYUNi icash Pay"
-msgstr "使用 統一金流 icash Pay 付款"
-
 #: woocommerce/gateways/ecpay/includes/admin.php:49
 msgid "Add each type of BNPL as a payment gateway."
 msgstr "將每一個先買後付新增為一個付款方式。"
@@ -1256,10 +1156,6 @@ msgstr "使用 裕富無卡分期 付款"
 msgid "ECPay URich"
 msgstr "綠界裕富無卡分期"
 
-#: woocommerce/gateways/ecpay/gateway-urich.php:24
-msgid "Pay via ECPay URich"
-msgstr "使用 綠界金流裕富無卡分期 付款"
-
 #: woocommerce/gateways/ecpay/gateway-zingala.php:21
 msgid "Pay via Zingala"
 msgstr "使用 中租銀角零卡 付款"
@@ -1268,10 +1164,6 @@ msgstr "使用 中租銀角零卡 付款"
 #: woocommerce/gateways/ecpay/gateway-zingala.php:22
 msgid "ECPay Zingala"
 msgstr "綠界中租銀角零卡"
-
-#: woocommerce/gateways/ecpay/gateway-zingala.php:24
-msgid "Pay via ECPay Zingala"
-msgstr "使用 綠界金流中租銀角零卡 付款"
 
 #: woocommerce/gateways/ecpay/includes/admin.php:37
 #: woocommerce/gateways/newebpay/includes/admin.php:39
@@ -1290,10 +1182,6 @@ msgstr "綠界電子支付"
 msgid "Pay via Digital Payment"
 msgstr "使用電子支付付款"
 
-#: woocommerce/gateways/ecpay/gateway-digital.php:18
-msgid "Pay via ECPay Digital Payment"
-msgstr "使用綠界金流電子支付付款"
-
 #: woocommerce/gateways/ecpay/includes/admin.php:57
 #: woocommerce/gateways/payuni/includes/admin.php:50
 msgid "Add each type of digital payment as a payment gateway."
@@ -1304,24 +1192,12 @@ msgstr "將每一個電子支付新增為一個付款方式。"
 msgid "PAYUNi Digital Payment"
 msgstr "統一電子支付"
 
-#: woocommerce/gateways/payuni/gateway-digital.php:20
-msgid "Pay via PAYUNi Digital Payment"
-msgstr "使用 統一金流電子支付 付款"
-
 #: woocommerce/gateways/payuni/blocks/gateway-bnpl.php:28
 #: woocommerce/gateways/payuni/gateway-bnpl.php:22
 msgid "PAYUNi BNPL"
 msgstr "統一先買後付"
 
-#: woocommerce/gateways/payuni/gateway-bnpl.php:24
-msgid "Pay via PAYUNi BNPL"
-msgstr "使用 統一金流先買後付 付款"
-
 #: woocommerce/gateways/newebpay/blocks/gateway-bnpl.php:28
 #: woocommerce/gateways/newebpay/gateway-bnpl.php:20
 msgid "NewebPay BNPL"
 msgstr "藍新先買後付"
-
-#: woocommerce/gateways/newebpay/gateway-bnpl.php:22
-msgid "Pay via NewebPay BNPL"
-msgstr "使用 藍新金流先買後付 付款"
