@@ -10,8 +10,9 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @version 4.0.0
+ * @version 3.8.3
  */
+
 if (count($shipping_info_list)) { ?>
 <h2 class="woocommerce-order-details__title">
     <?php esc_html_e('Shipping details', 'ry-woocommerce-tools-pro'); ?>

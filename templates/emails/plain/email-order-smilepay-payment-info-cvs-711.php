@@ -10,11 +10,8 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @version 1.0.15
+ * @version 3.8.3
  */
-if ($order->get_payment_method() !== 'ry_smilepay_cvs') {
-    return;
-}
 
 if ($order->get_meta('_smilepay_payment_type') !== '4') {
     return;

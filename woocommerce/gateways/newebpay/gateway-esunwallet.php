@@ -15,7 +15,7 @@ class RY_NewebPay_Gateway_Esunwallet extends RY_WT_WC_NewebPay_Payment_Gateway
         $this->order_button_text = __('Pay via Esun Wallet', 'ry-woocommerce-tools-pro');
         $this->method_title = __('NewebPay Esun Wallet', 'ry-woocommerce-tools-pro');
 
-        $this->form_fields = include RY_WT_PLUGIN_DIR . 'woocommerce/gateways/newebpay/includes/settings/digital.php';
+        $this->form_fields = include RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/includes/settings/digital.php';
 
         parent::__construct();
     }

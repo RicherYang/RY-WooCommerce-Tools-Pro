@@ -10,11 +10,8 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @version 3.7.5
+ * @version 3.8.3
  */
-if ($order->get_payment_method() !== 'ry_payuni_cvs') {
-    return;
-}
 
 if ($order->get_meta('_payuni_payment_type') !== '3') {
     return;

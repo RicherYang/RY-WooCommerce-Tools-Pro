@@ -2,7 +2,7 @@
 
 defined('ABSPATH') or exit;
 
-final class RY_WTP_WC_SmilePay_Gateway
+final class RY_WTP_WC_SmilePay_Gateway extends RY_WTP_Gateway_Model
 {
     protected static ?self $_instance = null;
 
@@ -28,47 +28,6 @@ final class RY_WTP_WC_SmilePay_Gateway
 
         if ('yes' === RY_WTP::get_option('smilepay_email_payment_info', 'no')) {
             add_action('woocommerce_email_after_order_table', [$this, 'add_payment_info'], 10, 4);
-        }
-    }
-
-    public function add_payment_info($order, $sent_to_admin, $plain_text, $email)
-    {
-        if ($email->id == 'customer_on_hold_order') {
-            $template_file = match ($order->get_payment_method()) {
-                RY_SmilePay_Gateway_Atm::ID => 'emails/email-order-smilepay-payment-info-atm.php',
-                RY_SmilePay_Gateway_Barcode::ID => 'emails/email-order-smilepay-payment-info-barcode.php',
-                RY_SmilePay_Gateway_Cvs_711::ID => 'emails/email-order-smilepay-payment-info-cvs-711.php',
-                RY_SmilePay_Gateway_Cvs_Fami::ID => 'emails/email-order-smilepay-payment-info-cvs-fami.php',
-                default => '',
-            };
-
-            if ($template_file !== '') {
-                if ($plain_text) {
-                    wc_get_template(
-                        str_replace('emails/', 'emails/plain/', $template_file),
-                        [
-                            'order' => $order,
-                            'sent_to_admin' => $sent_to_admin,
-                            'plain_text' => $plain_text,
-                            'email' => $email,
-                        ],
-                        '',
-                        RY_WTP_PLUGIN_DIR . 'templates/',
-                    );
-                } else {
-                    wc_get_template(
-                        $template_file,
-                        [
-                            'order' => $order,
-                            'sent_to_admin' => $sent_to_admin,
-                            'plain_text' => $plain_text,
-                            'email' => $email,
-                        ],
-                        '',
-                        RY_WTP_PLUGIN_DIR . 'templates/',
-                    );
-                }
-            }
         }
     }
 }

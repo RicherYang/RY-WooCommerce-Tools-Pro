@@ -75,6 +75,8 @@ final class RY_WTP extends RY_Abstract_Basic
                 RY_WTP_WC_Admin::instance();
             }
 
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/abstracts/abstract-gateway-model.php';
+
             include_once RY_WTP_PLUGIN_DIR . 'includes/cron.php';
             RY_WTP_Cron::add_action();
 

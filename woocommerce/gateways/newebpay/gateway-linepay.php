@@ -15,7 +15,7 @@ class RY_NewebPay_Gateway_Linepay extends RY_WT_WC_NewebPay_Payment_Gateway
         $this->order_button_text = __('Pay via LinePay', 'ry-woocommerce-tools-pro');
         $this->method_title = __('NewebPay LinePay', 'ry-woocommerce-tools-pro');
 
-        $this->form_fields = include RY_WT_PLUGIN_DIR . 'woocommerce/gateways/newebpay/includes/settings/digital.php';
+        $this->form_fields = include RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/includes/settings/digital.php';
 
         parent::__construct();
     }
