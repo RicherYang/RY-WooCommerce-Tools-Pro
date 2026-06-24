@@ -12,7 +12,9 @@ abstract class RY_WTP_AbstractPaymentMethodType extends AbstractPaymentMethodTyp
     {
         if (null === $this->gateway) {
             $payment_gateways = WC()->payment_gateways()->payment_gateways();
-            $this->gateway = $payment_gateways[$this->name];
+            if (isset($payment_gateways[$this->name])) {
+                $this->gateway = $payment_gateways[$this->name];
+            }
         }
 
         return $this->gateway;
