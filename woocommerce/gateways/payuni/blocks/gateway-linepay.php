@@ -47,4 +47,3 @@ final class RY_PAYUNi_Gateway_Linepay_Blocks_Support extends RY_WTP_AbstractPaym
         ];
     }
 }
-

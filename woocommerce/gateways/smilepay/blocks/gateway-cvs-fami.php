@@ -47,4 +47,3 @@ final class RY_SmilePay_Gateway_Cvs_Fami_Blocks_Support extends RY_WTP_AbstractP
         ];
     }
 }
-

@@ -47,4 +47,3 @@ final class RY_NewebPay_Gateway_Webatm_Blocks_Support extends RY_WTP_AbstractPay
         ];
     }
 }
-

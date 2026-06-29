@@ -47,4 +47,3 @@ final class RY_SmilePay_Gateway_Webatm_Blocks_Support extends RY_WTP_AbstractPay
         ];
     }
 }
-

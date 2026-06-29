@@ -47,4 +47,3 @@ final class RY_PAYUNi_Gateway_Icash_Blocks_Support extends RY_WTP_AbstractPaymen
         ];
     }
 }
-

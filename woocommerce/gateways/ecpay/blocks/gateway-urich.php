@@ -47,4 +47,3 @@ final class RY_ECPay_Gateway_Urich_Blocks_Support extends RY_WTP_AbstractPayment
         ];
     }
 }
-

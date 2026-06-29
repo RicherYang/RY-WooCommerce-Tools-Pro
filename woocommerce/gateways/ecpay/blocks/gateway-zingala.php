@@ -47,4 +47,3 @@ final class RY_ECPay_Gateway_Zingala_Blocks_Support extends RY_WTP_AbstractPayme
         ];
     }
 }
-

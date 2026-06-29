@@ -49,4 +49,3 @@ final class RY_PAYUNi_Gateway_Credit_Installment_Blocks_Support extends RY_WTP_A
         ];
     }
 }
-

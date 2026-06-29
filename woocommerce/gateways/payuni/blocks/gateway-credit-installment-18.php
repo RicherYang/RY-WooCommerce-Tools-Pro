@@ -47,4 +47,3 @@ final class RY_PAYUNi_Gateway_Credit_Installment_18_Blocks_Support extends RY_WT
         ];
     }
 }
-
