@@ -3,7 +3,7 @@
 defined('ABSPATH') or exit;
 
 if (!class_exists('RY_Admin_License', false)) {
-    include_once __DIR__ . '/abstract-admin-page.php';
+    include_once __DIR__ . '/../ry-general/abstract-admin-page.php';
 
     final class RY_Admin_License extends RY_Abstract_Admin_Page
     {
@@ -14,8 +14,7 @@ if (!class_exists('RY_Admin_License', false)) {
         public static function init_menu(): void
         {
             add_filter('ry-plugin/menu_list', [__CLASS__, 'add_menu'], 9999);
-            add_action('admin_post_ry/admin-license', [__CLASS__, 'admin_action']);
-            add_action('admin_post_ry/admin-license-log', [__CLASS__, 'admin_action']);
+            add_action('admin_post_ry-paid-admin-license', [__CLASS__, 'admin_action']);
         }
 
         public static function add_menu(array $menu_list): array
@@ -55,8 +54,8 @@ if (!class_exists('RY_Admin_License', false)) {
         {
             echo '<div class="wrap"><h1>授權金鑰</h1>';
             echo '<form method="post" action="admin-post.php">';
-            echo '<input type="hidden" name="action" value="ry/admin-license">';
-            wp_nonce_field('ry/admin-license', '_wpnonce', false);
+            echo '<input type="hidden" name="action" value="ry-paid-admin-license">';
+            wp_nonce_field('ry-paid-admin-license', '_wpnonce', false);
             foreach ($this->license_list as $license) {
                 $name = $license['name'];
                 $basename = $license['basename'];
@@ -73,15 +72,6 @@ if (!class_exists('RY_Admin_License', false)) {
             submit_button();
             echo '</form>';
 
-            $license_logs = $this->license_list[array_key_first($this->license_list)]['license']->get_logs('ry-license');
-            if (count($license_logs)) {
-                echo '<form method="post" action="admin-post.php">';
-                echo '<input type="hidden" name="action" value="ry/admin-license-log">';
-                wp_nonce_field('ry/admin-license-log', '_wpnonce', false);
-                include __DIR__ . '/html/license_log.php';
-                submit_button('刪除紀錄');
-                echo '</form>';
-            }
             echo '</div>';
         }
 
@@ -98,7 +88,7 @@ if (!class_exists('RY_Admin_License', false)) {
                 ];
             }
 
-            if (in_array($action, ['ry/admin-license', 'ry/admin-license-log'], true) === false) {
+            if ('ry-paid-admin-license' !== $action) {
                 return;
             }
 
@@ -106,41 +96,34 @@ if (!class_exists('RY_Admin_License', false)) {
                 wp_die('Invalid nonce');
             }
 
-            if ($action === 'ry/admin-license') {
-                foreach ($this->license_list as $license) {
-                    $key = sanitize_locale_name($_POST['key-' . hash('sha1', $license['basename'])] ?? '');
-                    if (hash_equals($key, $license['license']->get_license_key())) {
-                        $this->add_notice('success', $license['name'] . ': 金鑰未變更。');
-                        continue;
-                    }
+            foreach ($this->license_list as $license) {
+                $key = sanitize_locale_name($_POST['key-' . hash('sha1', $license['basename'])] ?? '');
+                if (hash_equals($key, $license['license']->get_license_key())) {
+                    $this->add_notice('success', $license['name'] . ': 金鑰未變更。');
+                    continue;
+                }
 
-                    $license['license']->add_log('info', 'ry-license', 'User #' . get_current_user_id() . ' change "' . $license['name'] . '" license key: ' . $key);
-                    $license['license']->delete_license();
-                    $license['license']->set_license_key($key);
-                    if ($key !== '') {
-                        $json = $license['license']->activate_key();
+                RY_Logs::log('ry-license', 'info', 'User #' . get_current_user_id() . ' change "' . $license['name'] . '" license key: ' . $key);
+                $license['license']->delete_license();
+                $license['license']->set_license_key($key);
+                if ($key !== '') {
+                    $json = $license['license']->activate_key();
 
-                        if (false === $json) {
-                            $this->add_notice('error', $license['name'] . ': 無法與授權伺服器連線。');
-                        } else {
-                            if (is_array($json)) {
-                                if (empty($json['data'])) {
-                                    $this->add_notice('error', $license['name'] . ': 授權驗證失敗 ( ' . $error_msg[$json['error']] . ' )。');
-                                } else {
-                                    $license['license']->set_license_data($json['data']);
-                                    $this->add_notice('success', $license['name'] . ': 授權驗證成功。');
-                                }
+                    if (false === $json) {
+                        $this->add_notice('error', $license['name'] . ': 無法與授權伺服器連線。');
+                    } else {
+                        if (is_array($json)) {
+                            if (empty($json['data'])) {
+                                $this->add_notice('error', $license['name'] . ': 授權驗證失敗 ( ' . $error_msg[$json['error']] . ' )。');
                             } else {
-                                $this->add_notice('error', $license['name'] . ': 與授權伺服器連線失敗。');
+                                $license['license']->set_license_data($json['data']);
+                                $this->add_notice('success', $license['name'] . ': 授權驗證成功。');
                             }
+                        } else {
+                            $this->add_notice('error', $license['name'] . ': 與授權伺服器連線失敗。');
                         }
                     }
                 }
-            }
-
-            if ($action === 'ry/admin-license-log') {
-                $this->license_list[array_key_first($this->license_list)]['license']->delete_log('ry-license');
-                $this->add_notice('success', '授權日誌紀錄已刪除。');
             }
 
             wp_safe_redirect(admin_url('admin.php?page=ry-license'));

@@ -35,12 +35,21 @@ if (!class_exists('RY_Abstract_Admin', false)) {
 
         public function show_not_activated(): void
         {
+            if (!isset($this->license)) {
+                return;
+            }
+
             if ($this->license->is_activated()) {
                 return;
             }
 
             echo '<div class="notice notice-info is-dismissible">';
-            echo '<p><strong>' . esc_html($this->license::$main_class::PLUGIN_NAME) . ': 你的<a href="' . esc_url(admin_url('admin.php?page=ry-license')) . '">授權</a>尚未啟動！</strong></p>';
+            echo '<p>' . wp_kses(sprintf(
+                /* translators: %1$s: Plugin name, %2$s: License URL */
+                __('%1$s: Your <a href="%2$s">license</a> is not activated yet!', 'ry-woocommerce-tools-pro'),
+                '<strong>' . esc_html($this->license::$main_class::PLUGIN_NAME) . '</strong>',
+                esc_url(admin_url('admin.php?page=ry-license'))
+            ), ['strong' => [], 'a' => ['href' => []]]) . '</p>';
             echo '</div>';
         }
 
@@ -50,7 +59,7 @@ if (!class_exists('RY_Abstract_Admin', false)) {
             if (is_array($notice) && count($notice)) {
                 foreach ($notice as $status => $message) {
                     echo '<div class="notice notice-' . esc_attr($status) . ' is-dismissible">';
-                    echo '<p><strong>' . implode('</strong></p><p><strong>', array_map('esc_html', $message)) . '</strong></p>';
+                    echo '<p>' . implode('</p><p>', array_map('esc_html', $message)) . '</p>';
                     echo '</div>';
                 }
 

@@ -5,25 +5,26 @@
     "author": "Richer Yang",
     "private": true,
     "devDependencies": {
-        "@wordpress/i18n": "^6.21.0",
-        "@wordpress/scripts": "^32.4.0",
-        "@woocommerce/dependency-extraction-webpack-plugin": "^5.0.0",
-        "@wordpress/blocks": "^15.21.0",
-        "@wordpress/components": "^35.0.0",
-        "@wordpress/icons": "^13.3.0"
+        "@wordpress/i18n": "^6.23.0",
+        "@wordpress/scripts": "^32.6.0",
+        "@woocommerce/dependency-extraction-webpack-plugin": "^5.1.0",
+        "@wordpress/blocks": "^15.23.0",
+        "@wordpress/components": "^36.1.0",
+        "@wordpress/icons": "^15.1.0"
     },
     "scripts": {
         "start": "wp-scripts start",
         "build": "npm run build:assets && npm run i18n:pot && npm run i18n:po",
         "build:all": "npm run build:assets && npm run build:i18n",
         "build:assets": "wp-scripts build",
-        "build:i18n": "npm run i18n:pot && npm run i18n:po && npm run i18n:mo && npm run i18n:php && npm run i18n:json && npm run i18n:clear",
+        "build:i18n": "npm run i18n:pot && npm run i18n:po && npm run i18n:mo && npm run i18n:php && npm run i18n:json && npm run i18n:clearpot && npm run i18n:clearjson",
         "i18n:pot": "wp i18n make-pot \"\" \"languages/ry-woocommerce-tools-pro.pot\" --slug=\"ry-woocommerce-tools-pro\" --domain=\"ry-woocommerce-tools-pro\" --exclude=\"node_modules,assets-src\"",
         "i18n:po": "wp i18n update-po \"languages/ry-woocommerce-tools-pro.pot\" languages",
         "i18n:mo": "wp i18n make-mo \"languages\"",
         "i18n:php": "wp i18n make-php \"languages\"",
         "i18n:json": "del-cli -f \"languages/*.json\" && wp i18n make-json \"languages\" --no-purge",
-        "i18n:clear": "node -e \"const fs=require('fs');const path=require('path');const dir='languages';for(const file of fs.readdirSync(dir)){if(!file.endsWith('.json'))continue;const full=path.join(dir,file);const data=JSON.parse(fs.readFileSync(full,'utf8'));if(Object.prototype.hasOwnProperty.call(data,'translation-revision-date')){delete data['translation-revision-date'];fs.writeFileSync(full,JSON.stringify(data));}}\"",
+        "i18n:clearpot": "node -e \"const fs=require('fs');const path=require('path');const dir='languages';for(const file of fs.readdirSync(dir)){if(!file.endsWith('.pot'))continue;const full=path.join(dir,file);const data=fs.readFileSync(full,'utf8').split('\\n');const newData=data.filter(line=>!line.startsWith('\\\"POT-Creation-Date:'));fs.writeFileSync(full,newData.join('\\n'));}\"",
+        "i18n:clearjson": "node -e \"const fs=require('fs');const path=require('path');const dir='languages';for(const file of fs.readdirSync(dir)){if(!file.endsWith('.json'))continue;const full=path.join(dir,file);const data=JSON.parse(fs.readFileSync(full,'utf8'));if(Object.prototype.hasOwnProperty.call(data,'translation-revision-date')){delete data['translation-revision-date'];fs.writeFileSync(full,JSON.stringify(data));}}\"",
         "update": "npm update"
     }
 }

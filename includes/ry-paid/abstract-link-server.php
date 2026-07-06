@@ -83,7 +83,7 @@ if (!class_exists('RY_Abstract_Link_Server', false)) {
                 return false;
             }
 
-            if (wp_remote_retrieve_response_code($response) != '200') {
+            if (wp_remote_retrieve_response_code($response) != 200) {
                 return false;
             }
 

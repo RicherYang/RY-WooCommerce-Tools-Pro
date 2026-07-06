@@ -2,14 +2,13 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: RY Tools (Pro) for WooCommerce 3.8.2\n"
+"Project-Id-Version: RY Tools (Pro) for WooCommerce 3.8.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ry-woocommerce-tools-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-06-24T16:25:12+08:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ry-woocommerce-tools-pro\n"
@@ -56,54 +55,99 @@ msgstr ""
 msgid "You can download from %s and manual update to the latest version."
 msgstr ""
 
-#: templates/order/order-ecpay-shipping-info.php:17
-#: templates/order/order-smilepay-shipping-info.php:17
+#. translators: %1$s: Plugin name, %2$s: License URL
+#: includes/ry-general/abstract-admin.php:49
+#, php-format
+msgid "%1$s: Your <a href=\"%2$s\">license</a> is not activated yet!"
+msgstr ""
+
+#: includes/ry-general/admin-logs.php:25
+#: includes/ry-general/admin-logs.php:96
+msgid "Logs"
+msgstr ""
+
+#: includes/ry-general/admin-logs.php:141
+msgid "Delete successful."
+msgstr ""
+
+#: includes/ry-general/admin-logs.php:148
+msgid "Delete failed."
+msgstr ""
+
+#. translators: %s: Path of log file
+#: includes/ry-general/html/log-info.php:5
+#, php-format
+msgid "Viewing log file %s"
+msgstr ""
+
+#: includes/ry-general/html/log-info.php:36
+msgid "Details"
+msgstr ""
+
+#: includes/ry-general/html/log-info.php:63
+msgid "Download"
+msgstr ""
+
+#: includes/ry-general/html/log-info.php:71
+msgid "Delete Permanently"
+msgstr ""
+
+#: includes/ry-general/html/logs-select.php:3
+msgid "Log Categories"
+msgstr ""
+
+#: includes/ry-general/html/logs-select.php:19
+msgid "Log Files"
+msgstr ""
+
+#: templates/order/order-ecpay-shipping-info.php:18
+#: templates/order/order-smilepay-shipping-info.php:18
 msgid "Shipping details"
 msgstr ""
 
-#: templates/order/order-ecpay-shipping-info.php:24
-#: templates/order/order-smilepay-shipping-info.php:24
+#: templates/order/order-ecpay-shipping-info.php:25
+#: templates/order/order-smilepay-shipping-info.php:25
 #: woocommerce/admin/shipping.php:49
 msgid "Shipping payment no"
 msgstr ""
 
-#: templates/order/order-ecpay-shipping-info.php:27
-#: templates/order/order-smilepay-shipping-info.php:27
+#: templates/order/order-ecpay-shipping-info.php:28
+#: templates/order/order-smilepay-shipping-info.php:28
 msgid "Shipping status"
 msgstr ""
 
-#: templates/order/order-ecpay-shipping-info.php:43
-#: templates/order/order-smilepay-shipping-info.php:43
+#: templates/order/order-ecpay-shipping-info.php:44
+#: templates/order/order-smilepay-shipping-info.php:44
 msgctxt "Shipping status"
 msgid "Wait shipment"
 msgstr ""
 
-#: templates/order/order-ecpay-shipping-info.php:45
-#: templates/order/order-smilepay-shipping-info.php:45
+#: templates/order/order-ecpay-shipping-info.php:46
+#: templates/order/order-smilepay-shipping-info.php:46
 msgctxt "Shipping status"
 msgid "Transporting"
 msgstr ""
 
-#: templates/order/order-ecpay-shipping-info.php:47
-#: templates/order/order-smilepay-shipping-info.php:47
+#: templates/order/order-ecpay-shipping-info.php:48
+#: templates/order/order-smilepay-shipping-info.php:48
 msgctxt "Shipping status"
 msgid "Waiting for pick up"
 msgstr ""
 
-#: templates/order/order-ecpay-shipping-info.php:49
-#: templates/order/order-smilepay-shipping-info.php:49
+#: templates/order/order-ecpay-shipping-info.php:50
+#: templates/order/order-smilepay-shipping-info.php:50
 msgctxt "Shipping status"
 msgid "Completed"
 msgstr ""
 
-#: templates/order/order-ecpay-shipping-info.php:51
-#: templates/order/order-smilepay-shipping-info.php:51
+#: templates/order/order-ecpay-shipping-info.php:52
+#: templates/order/order-smilepay-shipping-info.php:52
 msgctxt "Shipping status"
 msgid "Overdue return"
 msgstr ""
 
-#: templates/order/order-ecpay-shipping-info.php:53
-#: templates/order/order-smilepay-shipping-info.php:53
+#: templates/order/order-ecpay-shipping-info.php:54
+#: templates/order/order-smilepay-shipping-info.php:54
 msgctxt "Shipping status"
 msgid "Unknow"
 msgstr ""
@@ -309,7 +353,7 @@ msgid "ECPay BARCODE"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/blocks/gateway-bnpl.php:28
-#: woocommerce/gateways/ecpay/gateway-bnpl.php:20
+#: woocommerce/gateways/ecpay/gateway-bnpl.php:22
 msgid "ECPay BNPL"
 msgstr ""
 
@@ -384,19 +428,19 @@ msgstr ""
 msgid "Pay via Apple Pay"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/gateway-bnpl.php:19
+#: woocommerce/gateways/ecpay/gateway-bnpl.php:21
 #: woocommerce/gateways/newebpay/gateway-bnpl.php:19
 #: woocommerce/gateways/payuni/gateway-bnpl.php:21
 msgid "Pay via BNPL"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/gateway-bnpl.php:32
+#: woocommerce/gateways/ecpay/gateway-bnpl.php:34
 #: woocommerce/gateways/ecpay/gateway-urich.php:34
 #: woocommerce/gateways/ecpay/gateway-zingala.php:34
 msgid "BNPL Trade No"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/gateway-bnpl.php:36
+#: woocommerce/gateways/ecpay/gateway-bnpl.php:38
 #: woocommerce/gateways/ecpay/gateway-urich.php:38
 #: woocommerce/gateways/ecpay/gateway-zingala.php:38
 msgid "BNPL Installment"

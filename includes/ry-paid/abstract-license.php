@@ -51,7 +51,7 @@ if (!class_exists('RY_Abstract_License', false)) {
 
         public function check_expire_cron(): void
         {
-            if (! wp_next_scheduled(static::$main_class::OPTION_PREFIX . 'check_expire')) {
+            if (!wp_next_scheduled(static::$main_class::OPTION_PREFIX . 'check_expire')) {
                 wp_schedule_event(time() + HOUR_IN_SECONDS, 'daily', static::$main_class::OPTION_PREFIX . 'check_expire');
             }
         }
@@ -113,63 +113,7 @@ if (!class_exists('RY_Abstract_License', false)) {
         protected function valid_error(string $message): void
         {
             $this->delete_license();
-            $this->add_log('error', 'ry-license', $message);
-        }
-
-        public function get_logs(string $handle): array
-        {
-            $logs = [];
-            $log_path = $this->get_log_file_path($handle, false);
-            if (! file_exists($log_path)) {
-                return $logs;
-            }
-
-            $log_contents = explode("\n", file_get_contents($log_path));
-            foreach ($log_contents as $log_content) {
-                preg_match('/([0-9\-]{10}T[0-9:]{8}\+[0-9:]{5}) \[([A-Z]+)\] (.*)/', $log_content, $log_array);
-                if (count($log_array) == 4) {
-                    $logs[] = [
-                        'date' => date_i18n('Y-m-d H:i:s', strtotime($log_array[1])),
-                        'type' => $log_array[2],
-                        'message' => $log_array[3],
-                    ];
-                }
-            }
-            return $logs;
-        }
-
-        public function delete_log(string $handle): void
-        {
-            $log_path = $this->get_log_file_path($handle, false);
-            wp_delete_file($log_path);
-        }
-
-        public function add_log(string $type, string $handle, string $message): void
-        {
-            $log_path = $this->get_log_file_path($handle, true);
-            if (! file_exists($log_path)) {
-                @file_put_contents($log_path, '');
-            }
-
-            $add_message = current_time('c') . ' [' . strtoupper($type) . '] ' . $message . "\n";
-            @file_put_contents($log_path, $add_message, FILE_APPEND);
-        }
-
-        protected function get_log_file_path(string $handle, bool $create): string
-        {
-            $log_path = trailingslashit(WP_CONTENT_DIR . '/ry-logs');
-            if ($create) {
-                if (! file_exists($log_path)) {
-                    $result = wp_mkdir_p($log_path);
-                    if (true === $result) {
-                        @file_put_contents($log_path . '.htaccess', 'deny from all'); // phpcs:ignore PluginCheck.CodeAnalysis.WriteFile.PluginDirectoryWrite
-                        @file_put_contents($log_path . 'index.html', ''); // phpcs:ignore PluginCheck.CodeAnalysis.WriteFile.PluginDirectoryWrite
-                    }
-                }
-            }
-            $hash_suffix = wp_hash($handle);
-
-            return $log_path . sanitize_file_name(implode('-', [$handle, $hash_suffix]) . '.log');
+            RY_Logs::log('ry-license', 'error', $message);
         }
     }
 }

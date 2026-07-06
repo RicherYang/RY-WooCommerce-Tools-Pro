@@ -2,7 +2,7 @@
 
 defined('ABSPATH') or exit;
 
-include_once RY_WTP_PLUGIN_DIR . 'includes/ry-global/abstract-basic.php';
+include_once RY_WTP_PLUGIN_DIR . 'includes/ry-general/abstract-basic.php';
 
 final class RY_WTP extends RY_Abstract_Basic
 {
@@ -30,6 +30,8 @@ final class RY_WTP extends RY_Abstract_Basic
     {
         load_plugin_textdomain('ry-woocommerce-tools-pro', false, plugin_basename(dirname(__DIR__)) . '/languages');
 
+        include_once RY_WTP_PLUGIN_DIR . 'includes/ry-general/logs.php';
+
         if (is_admin()) {
             include_once RY_WTP_PLUGIN_DIR . 'includes/update.php';
             RY_WTP_Update::update();
@@ -41,14 +43,14 @@ final class RY_WTP extends RY_Abstract_Basic
     public function do_woo_init(): void
     {
         include_once RY_WTP_PLUGIN_DIR . 'includes/functions.php';
-
         include_once RY_WTP_PLUGIN_DIR . 'includes/license.php';
         include_once RY_WTP_PLUGIN_DIR . 'includes/link-server.php';
         include_once RY_WTP_PLUGIN_DIR . 'includes/updater.php';
         RY_WTP_Updater::instance();
 
         if (is_admin()) {
-            include_once RY_WTP_PLUGIN_DIR . 'includes/ry-global/admin-license.php';
+            include_once RY_WTP_PLUGIN_DIR . 'includes/ry-paid/admin-license.php';
+            include_once RY_WTP_PLUGIN_DIR . 'includes/ry-general/admin-logs.php';
             include_once RY_WTP_PLUGIN_DIR . 'admin/admin.php';
             $this->admin = RY_WTP_Admin::instance();
 

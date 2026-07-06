@@ -2,7 +2,7 @@
 
 defined('ABSPATH') or exit;
 
-include_once RY_WTP_PLUGIN_DIR . 'includes/ry-global/abstract-admin.php';
+include_once RY_WTP_PLUGIN_DIR . 'includes/ry-general/abstract-admin.php';
 
 final class RY_WTP_Admin extends RY_Abstract_Admin
 {
