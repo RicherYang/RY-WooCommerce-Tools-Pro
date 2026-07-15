@@ -6,7 +6,7 @@ use Automattic\WooCommerce\Blocks\Payments\PaymentMethodRegistry;
 
 final class RY_WTP_WC_PAYUNi_Gateway_Block
 {
-    protected static ?self $_instance = null;
+    private static ?self $_instance = null;
 
     public static function instance(): RY_WTP_WC_PAYUNi_Gateway_Block
     {

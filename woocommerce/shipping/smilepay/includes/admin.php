@@ -6,7 +6,7 @@ use Automattic\WooCommerce\Utilities\OrderUtil;
 
 final class RY_WTP_SmilePay_Shipping_Admin
 {
-    protected static ?self $_instance = null;
+    private static ?self $_instance = null;
 
     public static function instance(): RY_WTP_SmilePay_Shipping_Admin
     {

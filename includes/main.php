@@ -12,7 +12,7 @@ final class RY_WTP extends AbstractBasic
 
     public const MIN_TOOLS_VERSION = '3.8.4';
 
-    protected static ?self $_instance = null;
+    private static ?self $_instance = null;
 
     public RY_WTP_Admin $admin;
 

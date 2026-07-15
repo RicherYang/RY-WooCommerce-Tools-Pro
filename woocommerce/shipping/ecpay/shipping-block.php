@@ -6,7 +6,7 @@ use Automattic\WooCommerce\Blocks\Integrations\IntegrationRegistry;
 
 final class RY_WTP_ECPay_Shipping_Block
 {
-    protected static ?self $_instance = null;
+    private static ?self $_instance = null;
 
     public static function instance(): RY_WTP_ECPay_Shipping_Block
     {
