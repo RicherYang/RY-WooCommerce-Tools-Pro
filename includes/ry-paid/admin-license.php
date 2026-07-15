@@ -2,10 +2,11 @@
 
 defined('ABSPATH') or exit;
 
-if (!class_exists('RY_Admin_License', false)) {
-    include_once __DIR__ . '/../ry-general/abstract-admin-page.php';
+use RY\General\AbstractAdminPage;
+use RY\General\Logs;
 
-    final class RY_Admin_License extends RY_Abstract_Admin_Page
+if (!class_exists('RY_Admin_License', false)) {
+    final class RY_Admin_License extends AbstractAdminPage
     {
         protected static $_instance = null;
 
@@ -103,7 +104,7 @@ if (!class_exists('RY_Admin_License', false)) {
                     continue;
                 }
 
-                RY_Logs::log('ry-license', 'info', 'User #' . get_current_user_id() . ' change "' . $license['name'] . '" license key: ' . $key);
+                Logs::log('ry-license', 'info', 'User #' . get_current_user_id() . ' change "' . $license['name'] . '" license key: ' . $key);
                 $license['license']->delete_license();
                 $license['license']->set_license_key($key);
                 if ($key !== '') {

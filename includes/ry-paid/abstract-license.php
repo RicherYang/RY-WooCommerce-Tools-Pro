@@ -2,6 +2,8 @@
 
 defined('ABSPATH') or exit;
 
+use RY\General\Logs;
+
 if (!class_exists('RY_Abstract_License', false)) {
     abstract class RY_Abstract_License
     {
@@ -113,7 +115,7 @@ if (!class_exists('RY_Abstract_License', false)) {
         protected function valid_error(string $message): void
         {
             $this->delete_license();
-            RY_Logs::log('ry-license', 'error', $message);
+            Logs::log('ry-license', 'error', $message);
         }
     }
 }
