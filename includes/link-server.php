@@ -2,9 +2,9 @@
 
 defined('ABSPATH') or exit;
 
-include_once RY_WTP_PLUGIN_DIR . 'includes/ry-paid/abstract-link-server.php';
+use RY\Paid\AbstractLinkServer;
 
-final class RY_WTP_LinkServer extends RY_Abstract_Link_Server
+final class RY_WTP_LinkServer extends AbstractLinkServer
 {
     protected static ?self $_instance = null;
 
