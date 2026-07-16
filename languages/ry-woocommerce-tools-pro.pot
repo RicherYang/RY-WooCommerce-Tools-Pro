@@ -2,7 +2,7 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: RY Tools (Pro) for WooCommerce 3.8.3\n"
+"Project-Id-Version: RY Tools (Pro) for WooCommerce 2026.7.16\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ry-woocommerce-tools-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,66 +38,70 @@ msgstr ""
 msgid "https://richer.tw/"
 msgstr ""
 
-#: admin/admin.php:55
+#: admin/admin.php:60
 msgid "WordPress Plugin Directory"
 msgstr ""
 
 #. translators: %1$s: Name of this plugin %2$s: Name of require plugin %3$s: min require version
-#: admin/admin.php:59
-#: admin/admin.php:75
+#: admin/admin.php:64
+#: admin/admin.php:80
 #, php-format
 msgid "<strong>%1$s</strong> is inactive. It require %2$s %3$s or newer."
 msgstr ""
 
 #. translators: %1$s: Name of require plugin
-#: admin/admin.php:66
+#: admin/admin.php:71
 #, php-format
 msgid "You can download from %s and manual update to the latest version."
 msgstr ""
 
 #. translators: %1$s: Plugin name, %2$s: License URL
-#: includes/ry-general/abstract-admin.php:49
+#: includes/ry-general/AbstractAdmin.php:52
 #, php-format
 msgid "%1$s: Your <a href=\"%2$s\">license</a> is not activated yet!"
 msgstr ""
 
-#: includes/ry-general/admin-logs.php:25
-#: includes/ry-general/admin-logs.php:96
-msgid "Logs"
-msgstr ""
-
-#: includes/ry-general/admin-logs.php:141
-msgid "Delete successful."
-msgstr ""
-
-#: includes/ry-general/admin-logs.php:148
-msgid "Delete failed."
-msgstr ""
-
 #. translators: %s: Path of log file
-#: includes/ry-general/html/log-info.php:5
+#: includes/ry-general/Page/html/log-info.php:5
 #, php-format
 msgid "Viewing log file %s"
 msgstr ""
 
-#: includes/ry-general/html/log-info.php:36
+#: includes/ry-general/Page/html/log-info.php:36
 msgid "Details"
 msgstr ""
 
-#: includes/ry-general/html/log-info.php:63
+#: includes/ry-general/Page/html/log-info.php:63
 msgid "Download"
 msgstr ""
 
-#: includes/ry-general/html/log-info.php:71
+#: includes/ry-general/Page/html/log-info.php:71
 msgid "Delete Permanently"
 msgstr ""
 
-#: includes/ry-general/html/logs-select.php:3
+#: includes/ry-general/Page/html/logs-select.php:3
 msgid "Log Categories"
 msgstr ""
 
-#: includes/ry-general/html/logs-select.php:19
+#: includes/ry-general/Page/html/logs-select.php:19
 msgid "Log Files"
+msgstr ""
+
+#: includes/ry-general/Page/Logs.php:24
+#: includes/ry-general/Page/Logs.php:85
+msgid "Logs"
+msgstr ""
+
+#: includes/ry-general/Page/Logs.php:87
+msgid "No logs found."
+msgstr ""
+
+#: includes/ry-general/Page/Logs.php:145
+msgid "Delete successful."
+msgstr ""
+
+#: includes/ry-general/Page/Logs.php:152
+msgid "Delete failed."
 msgstr ""
 
 #: templates/order/order-ecpay-shipping-info.php:18

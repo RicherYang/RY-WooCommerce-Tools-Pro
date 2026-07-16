@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-02-16 10:51+0800\n"
-"PO-Revision-Date: 2026-07-06 11:04+0800\n"
+"PO-Revision-Date: 2026-07-16 10:24+0800\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
@@ -524,8 +524,8 @@ msgid "ECPay select cvs store"
 msgstr "綠界選擇超商門市"
 
 #. translators: %1$s: Name of this plugin %2$s: Name of require plugin %3$s: min require version
-#: admin/admin.php:59
-#: admin/admin.php:75
+#: admin/admin.php:64
+#: admin/admin.php:80
 #, php-format
 msgid "<strong>%1$s</strong> is inactive. It require %2$s %3$s or newer."
 msgstr "<strong>%1$s</strong> 暫停運作。 需求 %2$s %3$s 或更新版本。"
@@ -1076,12 +1076,12 @@ msgstr "授權類型"
 msgid "Invalid amount"
 msgstr "無效的金額"
 
-#: admin/admin.php:55
+#: admin/admin.php:60
 msgid "WordPress Plugin Directory"
 msgstr "WordPress 外掛目錄庫"
 
 #. translators: %1$s: Name of require plugin
-#: admin/admin.php:66
+#: admin/admin.php:71
 #, php-format
 msgid "You can download from %s and manual update to the latest version."
 msgstr "你可以從 %s 下載並且手動更新至最新版本。"
@@ -1230,46 +1230,50 @@ msgid "NewebPay Taiwan Pay"
 msgstr "藍新台灣 Pay"
 
 #. translators: %1$s: Plugin name, %2$s: License URL
-#: includes/ry-general/abstract-admin.php:49
+#: includes/ry-general/AbstractAdmin.php:52
 #, php-format
 msgid "%1$s: Your <a href=\"%2$s\">license</a> is not activated yet!"
 msgstr "%1$s: 你的<a href=\"%2$s\">授權</a>尚未啟用！"
 
-#: includes/ry-general/admin-logs.php:25
-#: includes/ry-general/admin-logs.php:96
+#: includes/ry-general/Page/Logs.php:24
+#: includes/ry-general/Page/Logs.php:85
 msgid "Logs"
 msgstr "紀錄"
 
-#: includes/ry-general/admin-logs.php:141
+#: includes/ry-general/Page/Logs.php:145
 msgid "Delete successful."
 msgstr "刪除成功。"
 
-#: includes/ry-general/admin-logs.php:148
+#: includes/ry-general/Page/Logs.php:152
 msgid "Delete failed."
 msgstr "刪除失敗。"
 
 #. translators: %s: Path of log file
-#: includes/ry-general/html/log-info.php:5
+#: includes/ry-general/Page/html/log-info.php:5
 #, php-format
 msgid "Viewing log file %s"
 msgstr "檢視紀錄檔 %s"
 
-#: includes/ry-general/html/log-info.php:36
+#: includes/ry-general/Page/html/log-info.php:36
 msgid "Details"
 msgstr "詳細資訊"
 
-#: includes/ry-general/html/log-info.php:63
+#: includes/ry-general/Page/html/log-info.php:63
 msgid "Download"
 msgstr "下載"
 
-#: includes/ry-general/html/log-info.php:71
+#: includes/ry-general/Page/html/log-info.php:71
 msgid "Delete Permanently"
 msgstr "永久刪除"
 
-#: includes/ry-general/html/logs-select.php:3
+#: includes/ry-general/Page/html/logs-select.php:3
 msgid "Log Categories"
 msgstr "紀錄類別"
 
-#: includes/ry-general/html/logs-select.php:19
+#: includes/ry-general/Page/html/logs-select.php:19
 msgid "Log Files"
 msgstr "紀錄檔案"
+
+#: includes/ry-general/Page/Logs.php:87
+msgid "No logs found."
+msgstr "没有紀錄檔案。"
