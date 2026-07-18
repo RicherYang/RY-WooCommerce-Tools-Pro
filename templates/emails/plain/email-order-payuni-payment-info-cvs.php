@@ -20,11 +20,11 @@ if ($order->get_meta('_payuni_payment_type') !== '3') {
 echo "\n==========\n\n";
 
 // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
-echo esc_html__('Payment details', 'ry-woocommerce-tools') . "\n";
+echo esc_html__('Payment details', 'ry-woocommerce-tools-pro') . "\n";
 
 // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
-echo esc_html__('CVS code', 'ry-woocommerce-tools') . "\t " . esc_html($order->get_meta('_payuni_cvs_PaymentNo')) . "\n";
+echo esc_html__('CVS code', 'ry-woocommerce-tools-pro') . "\t " . esc_html($order->get_meta('_payuni_cvs_PaymentNo')) . "\n";
 $expireDate = wc_string_to_datetime($order->get_meta('_payuni_cvs_ExpireDate'));
 $expireDate = $expireDate->date_i18n(wc_date_format());
 // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
-echo esc_html__('Payment deadline', 'ry-woocommerce-tools') . "\t " . esc_html($expireDate) . "\n";
+echo esc_html__('Payment deadline', 'ry-woocommerce-tools-pro') . "\t " . esc_html($expireDate) . "\n";

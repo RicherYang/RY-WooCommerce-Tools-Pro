@@ -20,15 +20,15 @@ if ($order->get_meta('_ecpay_payment_type') !== 'ATM') {
 echo "\n==========\n\n";
 
 // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
-echo esc_html__('Payment details', 'ry-woocommerce-tools') . "\n";
+echo esc_html__('Payment details', 'ry-woocommerce-tools-pro') . "\n";
 
 // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
-echo esc_html__('Bank', 'ry-woocommerce-tools') . "\t " . esc_html(rywt_bank_code_to_name($order->get_meta('_ecpay_atm_BankCode'))) . "\n";
+echo esc_html__('Bank', 'ry-woocommerce-tools-pro') . "\t " . esc_html(rywt_bank_code_to_name($order->get_meta('_ecpay_atm_BankCode'))) . "\n";
 // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
-echo esc_html__('Bank code', 'ry-woocommerce-tools') . "\t " . esc_html($order->get_meta('_ecpay_atm_BankCode')) . "\n";
+echo esc_html__('Bank code', 'ry-woocommerce-tools-pro') . "\t " . esc_html($order->get_meta('_ecpay_atm_BankCode')) . "\n";
 // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
-echo esc_html__('ATM Bank account', 'ry-woocommerce-tools') . "\t " . esc_html(wordwrap($order->get_meta('_ecpay_atm_vAccount'), 4, ' ', true)) . "\n";
+echo esc_html__('ATM Bank account', 'ry-woocommerce-tools-pro') . "\t " . esc_html(wordwrap($order->get_meta('_ecpay_atm_vAccount'), 4, ' ', true)) . "\n";
 $expireDate = wc_string_to_datetime($order->get_meta('_ecpay_atm_ExpireDate'));
 $expireDate = $expireDate->date_i18n(wc_date_format());
 // phpcs:ignore WordPress.WP.I18n.TextDomainMismatch
-echo esc_html__('Payment deadline', 'ry-woocommerce-tools') . "\t " . esc_html($expireDate) . "\n";
+echo esc_html__('Payment deadline', 'ry-woocommerce-tools-pro') . "\t " . esc_html($expireDate) . "\n";

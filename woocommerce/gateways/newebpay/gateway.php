@@ -47,6 +47,7 @@ final class RY_WTP_WC_NewebPay_Gateway extends RY_WTP_Gateway_Model
         }
 
         add_filter('woocommerce_payment_gateways', [$this, 'add_method']);
+        add_filter('woocommerce_settings_api_form_fields_ry_newebpay_credit', [$this, 'add_credit_settings']);
 
         if ('yes' === RY_WTP::get_option('newebpay_email_payment_info', 'no')) {
             add_action('woocommerce_email_after_order_table', [$this, 'add_payment_info'], 10, 4);
@@ -74,5 +75,42 @@ final class RY_WTP_WC_NewebPay_Gateway extends RY_WTP_Gateway_Model
         }
 
         return $methods;
+    }
+
+    public function add_credit_settings($settings)
+    {
+        $settings['applepay'] = [
+            'title' => __('Apple Pay', 'ry-woocommerce-tools-pro'),
+            'label' => __('Support Apple Pay', 'ry-woocommerce-tools-pro'),
+            'type' => 'checkbox',
+            'default' => 'no',
+        ];
+        $settings['googlepay'] = [
+            'title' => __('Google Pay', 'ry-woocommerce-tools-pro'),
+            'label' => __('Support Google Pay', 'ry-woocommerce-tools-pro'),
+            'type' => 'checkbox',
+            'default' => 'no',
+        ];
+        $settings['samsungpay'] = [
+            'title' => __('Samsung Pay', 'ry-woocommerce-tools-pro'),
+            'label' => __('Support Samsung Pay', 'ry-woocommerce-tools-pro'),
+            'type' => 'checkbox',
+            'default' => 'no',
+        ];
+
+        $settings['ae'] = [
+            'title' => __('AE', 'ry-woocommerce-tools-pro'),
+            'label' => __('Support AE', 'ry-woocommerce-tools-pro'),
+            'type' => 'checkbox',
+            'default' => 'no',
+        ];
+        $settings['union'] = [
+            'title' => __('UnionPay', 'ry-woocommerce-tools-pro'),
+            'label' => __('Support UnionPay', 'ry-woocommerce-tools-pro'),
+            'type' => 'checkbox',
+            'default' => 'no',
+        ];
+
+        return $settings;
     }
 }

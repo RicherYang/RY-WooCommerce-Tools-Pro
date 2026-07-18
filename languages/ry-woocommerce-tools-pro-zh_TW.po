@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-02-16 10:51+0800\n"
-"PO-Revision-Date: 2026-07-16 10:24+0800\n"
+"PO-Revision-Date: 2026-07-17 12:16+0800\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
@@ -1175,7 +1175,7 @@ msgid "ECPay Digital Payment"
 msgstr "綠界電子支付"
 
 #: woocommerce/gateways/ecpay/gateway-digital.php:15
-#: woocommerce/gateways/newebpay/gateway-digital.php:15
+#: woocommerce/gateways/newebpay/gateway-digital.php:21
 #: woocommerce/gateways/payuni/gateway-digital.php:17
 msgid "Pay via Digital Payment"
 msgstr "使用電子支付付款"
@@ -1202,7 +1202,7 @@ msgid "NewebPay BNPL"
 msgstr "藍新先買後付"
 
 #: woocommerce/gateways/newebpay/blocks/gateway-digital.php:28
-#: woocommerce/gateways/newebpay/gateway-digital.php:16
+#: woocommerce/gateways/newebpay/gateway-digital.php:22
 msgid "NewebPay Digital Payment"
 msgstr "藍新電子支付"
 
@@ -1277,3 +1277,245 @@ msgstr "紀錄檔案"
 #: includes/ry-general/Page/Logs.php:87
 msgid "No logs found."
 msgstr "没有紀錄檔案。"
+
+#: woocommerce/gateways/ecpay/gateway.php:95
+#: woocommerce/gateways/newebpay/gateway.php:83
+#: woocommerce/gateways/payuni/gateway.php:87
+msgid "Apple Pay"
+msgstr "Apple Pay"
+
+#: woocommerce/gateways/ecpay/gateway.php:96
+#: woocommerce/gateways/newebpay/gateway.php:84
+#: woocommerce/gateways/payuni/gateway.php:88
+msgid "Support Apple Pay"
+msgstr "支援 Apple Pay"
+
+#: woocommerce/gateways/ecpay/gateway.php:101
+#: woocommerce/gateways/newebpay/gateway.php:108
+msgid "UnionPay"
+msgstr "銀聯卡"
+
+#: woocommerce/gateways/ecpay/gateway.php:102
+#: woocommerce/gateways/newebpay/gateway.php:109
+msgid "Support UnionPay"
+msgstr "支援銀聯卡"
+
+#: woocommerce/gateways/newebpay/gateway.php:89
+#: woocommerce/gateways/payuni/gateway.php:93
+msgid "Google Pay"
+msgstr "Google Pay"
+
+#: woocommerce/gateways/newebpay/gateway.php:90
+#: woocommerce/gateways/payuni/gateway.php:94
+msgid "Support Google Pay"
+msgstr "支援 Google Pay"
+
+#: woocommerce/gateways/newebpay/gateway.php:95
+#: woocommerce/gateways/payuni/gateway.php:99
+msgid "Samsung Pay"
+msgstr "Samsung Pay"
+
+#: woocommerce/gateways/newebpay/gateway.php:96
+#: woocommerce/gateways/payuni/gateway.php:100
+msgid "Support Samsung Pay"
+msgstr "支援 Samsung Pay"
+
+#: woocommerce/gateways/newebpay/gateway.php:102
+msgid "AE"
+msgstr "美國運通卡"
+
+#: woocommerce/gateways/newebpay/gateway.php:103
+msgid "Support AE"
+msgstr "支援 美國運通卡"
+
+#: woocommerce/gateways/newebpay/gateway-digital.php:27
+msgid "Esun Wallet"
+msgstr "玉山 Wallet"
+
+#: woocommerce/gateways/newebpay/gateway-digital.php:28
+msgid "Support Esun Wallet"
+msgstr "支援玉山 Wallet"
+
+#: woocommerce/gateways/newebpay/gateway-digital.php:33
+msgid "LinePay"
+msgstr "LINE Pay"
+
+#: woocommerce/gateways/newebpay/gateway-digital.php:34
+msgid "Support LinePay"
+msgstr "支援 LINE Pay"
+
+#: woocommerce/gateways/newebpay/gateway-digital.php:39
+msgid "Taiwan Pay"
+msgstr "台灣 Pay"
+
+#: woocommerce/gateways/newebpay/gateway-digital.php:40
+msgid "Support Taiwan Pay"
+msgstr "支援台灣 Pay"
+
+#: templates/emails/email-order-ecpay-payment-info-atm.php:23
+#: templates/emails/email-order-ecpay-payment-info-barcode.php:23
+#: templates/emails/email-order-ecpay-payment-info-cvs.php:23
+#: templates/emails/email-order-newebpay-payment-info-atm.php:23
+#: templates/emails/email-order-newebpay-payment-info-barcode.php:23
+#: templates/emails/email-order-newebpay-payment-info-cvs.php:22
+#: templates/emails/email-order-payuni-payment-info-atm.php:23
+#: templates/emails/email-order-payuni-payment-info-cvs.php:22
+#: templates/emails/email-order-smilepay-payment-info-atm.php:23
+#: templates/emails/email-order-smilepay-payment-info-barcode.php:23
+#: templates/emails/email-order-smilepay-payment-info-cvs-711.php:23
+#: templates/emails/email-order-smilepay-payment-info-cvs-fami.php:23
+#: templates/emails/plain/email-order-ecpay-payment-info-atm.php:23
+#: templates/emails/plain/email-order-ecpay-payment-info-barcode.php:23
+#: templates/emails/plain/email-order-ecpay-payment-info-cvs.php:23
+#: templates/emails/plain/email-order-newebpay-payment-info-atm.php:23
+#: templates/emails/plain/email-order-newebpay-payment-info-barcode.php:23
+#: templates/emails/plain/email-order-newebpay-payment-info-cvs.php:23
+#: templates/emails/plain/email-order-payuni-payment-info-atm.php:23
+#: templates/emails/plain/email-order-payuni-payment-info-cvs.php:23
+#: templates/emails/plain/email-order-smilepay-payment-info-atm.php:23
+#: templates/emails/plain/email-order-smilepay-payment-info-barcode.php:23
+#: templates/emails/plain/email-order-smilepay-payment-info-cvs-711.php:23
+#: templates/emails/plain/email-order-smilepay-payment-info-cvs-fami.php:23
+msgid "Payment details"
+msgstr "付款詳細資料"
+
+#: templates/emails/email-order-ecpay-payment-info-atm.php:30
+#: templates/emails/email-order-newebpay-payment-info-atm.php:30
+#: templates/emails/email-order-payuni-payment-info-atm.php:30
+#: templates/emails/email-order-smilepay-payment-info-atm.php:30
+#: templates/emails/plain/email-order-ecpay-payment-info-atm.php:26
+#: templates/emails/plain/email-order-newebpay-payment-info-atm.php:26
+#: templates/emails/plain/email-order-payuni-payment-info-atm.php:26
+#: templates/emails/plain/email-order-smilepay-payment-info-atm.php:26
+msgid "Bank"
+msgstr "銀行"
+
+#: templates/emails/email-order-ecpay-payment-info-atm.php:38
+#: templates/emails/email-order-newebpay-payment-info-atm.php:38
+#: templates/emails/email-order-payuni-payment-info-atm.php:38
+#: templates/emails/email-order-smilepay-payment-info-atm.php:38
+#: templates/emails/plain/email-order-ecpay-payment-info-atm.php:28
+#: templates/emails/plain/email-order-newebpay-payment-info-atm.php:28
+#: templates/emails/plain/email-order-payuni-payment-info-atm.php:28
+#: templates/emails/plain/email-order-smilepay-payment-info-atm.php:28
+msgid "Bank code"
+msgstr "銀行代碼"
+
+#: templates/emails/email-order-ecpay-payment-info-atm.php:46
+#: templates/emails/email-order-newebpay-payment-info-atm.php:46
+#: templates/emails/email-order-payuni-payment-info-atm.php:46
+#: templates/emails/email-order-smilepay-payment-info-atm.php:46
+#: templates/emails/plain/email-order-ecpay-payment-info-atm.php:30
+#: templates/emails/plain/email-order-newebpay-payment-info-atm.php:30
+#: templates/emails/plain/email-order-payuni-payment-info-atm.php:30
+#: templates/emails/plain/email-order-smilepay-payment-info-atm.php:30
+msgid "ATM Bank account"
+msgstr "ATM 繳費帳號"
+
+#: templates/emails/email-order-ecpay-payment-info-atm.php:54
+#: templates/emails/email-order-ecpay-payment-info-barcode.php:54
+#: templates/emails/email-order-ecpay-payment-info-cvs.php:38
+#: templates/emails/email-order-newebpay-payment-info-atm.php:54
+#: templates/emails/email-order-newebpay-payment-info-barcode.php:54
+#: templates/emails/email-order-newebpay-payment-info-cvs.php:37
+#: templates/emails/email-order-payuni-payment-info-atm.php:54
+#: templates/emails/email-order-payuni-payment-info-cvs.php:37
+#: templates/emails/email-order-smilepay-payment-info-atm.php:54
+#: templates/emails/email-order-smilepay-payment-info-barcode.php:54
+#: templates/emails/email-order-smilepay-payment-info-cvs-711.php:38
+#: templates/emails/email-order-smilepay-payment-info-cvs-fami.php:38
+#: templates/emails/plain/email-order-ecpay-payment-info-atm.php:34
+#: templates/emails/plain/email-order-ecpay-payment-info-barcode.php:39
+#: templates/emails/plain/email-order-ecpay-payment-info-cvs.php:35
+#: templates/emails/plain/email-order-newebpay-payment-info-atm.php:34
+#: templates/emails/plain/email-order-newebpay-payment-info-barcode.php:34
+#: templates/emails/plain/email-order-newebpay-payment-info-cvs.php:30
+#: templates/emails/plain/email-order-payuni-payment-info-atm.php:34
+#: templates/emails/plain/email-order-payuni-payment-info-cvs.php:30
+#: templates/emails/plain/email-order-smilepay-payment-info-atm.php:34
+#: templates/emails/plain/email-order-smilepay-payment-info-barcode.php:39
+#: templates/emails/plain/email-order-smilepay-payment-info-cvs-711.php:35
+#: templates/emails/plain/email-order-smilepay-payment-info-cvs-fami.php:35
+msgid "Payment deadline"
+msgstr "付款截止日"
+
+#. translators: %1$s: date %2$s: time
+#: templates/emails/email-order-ecpay-payment-info-atm.php:60
+#: templates/emails/email-order-ecpay-payment-info-barcode.php:60
+#: templates/emails/email-order-ecpay-payment-info-cvs.php:44
+#: templates/emails/email-order-newebpay-payment-info-atm.php:60
+#: templates/emails/email-order-newebpay-payment-info-barcode.php:60
+#: templates/emails/email-order-newebpay-payment-info-cvs.php:43
+#: templates/emails/email-order-payuni-payment-info-atm.php:60
+#: templates/emails/email-order-payuni-payment-info-cvs.php:43
+#: templates/emails/email-order-smilepay-payment-info-atm.php:60
+#: templates/emails/email-order-smilepay-payment-info-barcode.php:60
+#: templates/emails/email-order-smilepay-payment-info-cvs-711.php:44
+#: templates/emails/email-order-smilepay-payment-info-cvs-fami.php:44
+#: templates/emails/plain/email-order-ecpay-payment-info-barcode.php:34
+#: templates/emails/plain/email-order-ecpay-payment-info-cvs.php:30
+#: templates/emails/plain/email-order-smilepay-payment-info-barcode.php:34
+#: templates/emails/plain/email-order-smilepay-payment-info-cvs-711.php:30
+#: templates/emails/plain/email-order-smilepay-payment-info-cvs-fami.php:30
+#, php-format
+msgctxt "Datetime"
+msgid "%1$s %2$s"
+msgstr "%1$s %2$s"
+
+#: templates/emails/email-order-ecpay-payment-info-barcode.php:30
+#: templates/emails/email-order-newebpay-payment-info-barcode.php:30
+#: templates/emails/email-order-smilepay-payment-info-barcode.php:30
+#: templates/emails/plain/email-order-ecpay-payment-info-barcode.php:26
+#: templates/emails/plain/email-order-newebpay-payment-info-barcode.php:26
+#: templates/emails/plain/email-order-smilepay-payment-info-barcode.php:26
+msgid "Barcode 1"
+msgstr "Barcode 1"
+
+#: templates/emails/email-order-ecpay-payment-info-barcode.php:38
+#: templates/emails/email-order-newebpay-payment-info-barcode.php:38
+#: templates/emails/email-order-smilepay-payment-info-barcode.php:38
+#: templates/emails/plain/email-order-ecpay-payment-info-barcode.php:28
+#: templates/emails/plain/email-order-newebpay-payment-info-barcode.php:28
+#: templates/emails/plain/email-order-smilepay-payment-info-barcode.php:28
+msgid "Barcode 2"
+msgstr "Barcode 2"
+
+#: templates/emails/email-order-ecpay-payment-info-barcode.php:46
+#: templates/emails/email-order-newebpay-payment-info-barcode.php:46
+#: templates/emails/email-order-smilepay-payment-info-barcode.php:46
+#: templates/emails/plain/email-order-ecpay-payment-info-barcode.php:30
+#: templates/emails/plain/email-order-newebpay-payment-info-barcode.php:30
+#: templates/emails/plain/email-order-smilepay-payment-info-barcode.php:30
+msgid "Barcode 3"
+msgstr "Barcode 3"
+
+#: templates/emails/email-order-ecpay-payment-info-cvs.php:30
+#: templates/emails/email-order-newebpay-payment-info-cvs.php:29
+#: templates/emails/email-order-payuni-payment-info-cvs.php:29
+#: templates/emails/email-order-smilepay-payment-info-cvs-711.php:30
+#: templates/emails/email-order-smilepay-payment-info-cvs-fami.php:30
+#: templates/emails/plain/email-order-ecpay-payment-info-cvs.php:26
+#: templates/emails/plain/email-order-newebpay-payment-info-cvs.php:26
+#: templates/emails/plain/email-order-payuni-payment-info-cvs.php:26
+#: templates/emails/plain/email-order-smilepay-payment-info-cvs-711.php:26
+#: templates/emails/plain/email-order-smilepay-payment-info-cvs-fami.php:26
+msgid "CVS code"
+msgstr "繳費代碼"
+
+#: woocommerce/admin/view/product-shipping-option.php:18
+#: woocommerce/admin/view/product-variation-shipping-option.php:24
+msgctxt "Transport temp"
+msgid "Normal temperature"
+msgstr "常溫"
+
+#: woocommerce/admin/view/product-shipping-option.php:19
+#: woocommerce/admin/view/product-variation-shipping-option.php:25
+msgctxt "Transport temp"
+msgid "Refrigerated"
+msgstr "冷藏"
+
+#: woocommerce/admin/view/product-shipping-option.php:20
+#: woocommerce/admin/view/product-variation-shipping-option.php:26
+msgctxt "Transport temp"
+msgid "Frozen"
+msgstr "冷凍"

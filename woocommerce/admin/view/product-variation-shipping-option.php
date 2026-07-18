@@ -21,9 +21,9 @@ woocommerce_wp_select([
     'value' => $variation_object->get_meta('_ry_shipping_temp', true),
     'options' => [
         '0' => _x('Same as parent', 'Transport temp', 'ry-woocommerce-tools-pro'),
-        '1' => _x('Normal temperature', 'Transport temp', 'ry-woocommerce-tools'),
-        '2' => _x('Refrigerated', 'Transport temp', 'ry-woocommerce-tools'),
-        '3' => _x('Frozen', 'Transport temp', 'ry-woocommerce-tools'),
+        '1' => _x('Normal temperature', 'Transport temp', 'ry-woocommerce-tools-pro'),
+        '2' => _x('Refrigerated', 'Transport temp', 'ry-woocommerce-tools-pro'),
+        '3' => _x('Frozen', 'Transport temp', 'ry-woocommerce-tools-pro'),
     ],
 ]);
 

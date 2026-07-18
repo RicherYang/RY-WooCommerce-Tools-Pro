@@ -2,7 +2,7 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: RY Tools (Pro) for WooCommerce 2026.7.16\n"
+"Project-Id-Version: RY Tools (Pro) for WooCommerce 2026.7.18\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ry-woocommerce-tools-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -102,6 +102,156 @@ msgstr ""
 
 #: includes/ry-general/Page/Logs.php:152
 msgid "Delete failed."
+msgstr ""
+
+#: templates/emails/email-order-ecpay-payment-info-atm.php:23
+#: templates/emails/email-order-ecpay-payment-info-barcode.php:23
+#: templates/emails/email-order-ecpay-payment-info-cvs.php:23
+#: templates/emails/email-order-newebpay-payment-info-atm.php:23
+#: templates/emails/email-order-newebpay-payment-info-barcode.php:23
+#: templates/emails/email-order-newebpay-payment-info-cvs.php:22
+#: templates/emails/email-order-payuni-payment-info-atm.php:23
+#: templates/emails/email-order-payuni-payment-info-cvs.php:22
+#: templates/emails/email-order-smilepay-payment-info-atm.php:23
+#: templates/emails/email-order-smilepay-payment-info-barcode.php:23
+#: templates/emails/email-order-smilepay-payment-info-cvs-711.php:23
+#: templates/emails/email-order-smilepay-payment-info-cvs-fami.php:23
+#: templates/emails/plain/email-order-ecpay-payment-info-atm.php:23
+#: templates/emails/plain/email-order-ecpay-payment-info-barcode.php:23
+#: templates/emails/plain/email-order-ecpay-payment-info-cvs.php:23
+#: templates/emails/plain/email-order-newebpay-payment-info-atm.php:23
+#: templates/emails/plain/email-order-newebpay-payment-info-barcode.php:23
+#: templates/emails/plain/email-order-newebpay-payment-info-cvs.php:23
+#: templates/emails/plain/email-order-payuni-payment-info-atm.php:23
+#: templates/emails/plain/email-order-payuni-payment-info-cvs.php:23
+#: templates/emails/plain/email-order-smilepay-payment-info-atm.php:23
+#: templates/emails/plain/email-order-smilepay-payment-info-barcode.php:23
+#: templates/emails/plain/email-order-smilepay-payment-info-cvs-711.php:23
+#: templates/emails/plain/email-order-smilepay-payment-info-cvs-fami.php:23
+msgid "Payment details"
+msgstr ""
+
+#: templates/emails/email-order-ecpay-payment-info-atm.php:30
+#: templates/emails/email-order-newebpay-payment-info-atm.php:30
+#: templates/emails/email-order-payuni-payment-info-atm.php:30
+#: templates/emails/email-order-smilepay-payment-info-atm.php:30
+#: templates/emails/plain/email-order-ecpay-payment-info-atm.php:26
+#: templates/emails/plain/email-order-newebpay-payment-info-atm.php:26
+#: templates/emails/plain/email-order-payuni-payment-info-atm.php:26
+#: templates/emails/plain/email-order-smilepay-payment-info-atm.php:26
+msgid "Bank"
+msgstr ""
+
+#: templates/emails/email-order-ecpay-payment-info-atm.php:38
+#: templates/emails/email-order-newebpay-payment-info-atm.php:38
+#: templates/emails/email-order-payuni-payment-info-atm.php:38
+#: templates/emails/email-order-smilepay-payment-info-atm.php:38
+#: templates/emails/plain/email-order-ecpay-payment-info-atm.php:28
+#: templates/emails/plain/email-order-newebpay-payment-info-atm.php:28
+#: templates/emails/plain/email-order-payuni-payment-info-atm.php:28
+#: templates/emails/plain/email-order-smilepay-payment-info-atm.php:28
+msgid "Bank code"
+msgstr ""
+
+#: templates/emails/email-order-ecpay-payment-info-atm.php:46
+#: templates/emails/email-order-newebpay-payment-info-atm.php:46
+#: templates/emails/email-order-payuni-payment-info-atm.php:46
+#: templates/emails/email-order-smilepay-payment-info-atm.php:46
+#: templates/emails/plain/email-order-ecpay-payment-info-atm.php:30
+#: templates/emails/plain/email-order-newebpay-payment-info-atm.php:30
+#: templates/emails/plain/email-order-payuni-payment-info-atm.php:30
+#: templates/emails/plain/email-order-smilepay-payment-info-atm.php:30
+msgid "ATM Bank account"
+msgstr ""
+
+#: templates/emails/email-order-ecpay-payment-info-atm.php:54
+#: templates/emails/email-order-ecpay-payment-info-barcode.php:54
+#: templates/emails/email-order-ecpay-payment-info-cvs.php:38
+#: templates/emails/email-order-newebpay-payment-info-atm.php:54
+#: templates/emails/email-order-newebpay-payment-info-barcode.php:54
+#: templates/emails/email-order-newebpay-payment-info-cvs.php:37
+#: templates/emails/email-order-payuni-payment-info-atm.php:54
+#: templates/emails/email-order-payuni-payment-info-cvs.php:37
+#: templates/emails/email-order-smilepay-payment-info-atm.php:54
+#: templates/emails/email-order-smilepay-payment-info-barcode.php:54
+#: templates/emails/email-order-smilepay-payment-info-cvs-711.php:38
+#: templates/emails/email-order-smilepay-payment-info-cvs-fami.php:38
+#: templates/emails/plain/email-order-ecpay-payment-info-atm.php:34
+#: templates/emails/plain/email-order-ecpay-payment-info-barcode.php:39
+#: templates/emails/plain/email-order-ecpay-payment-info-cvs.php:35
+#: templates/emails/plain/email-order-newebpay-payment-info-atm.php:34
+#: templates/emails/plain/email-order-newebpay-payment-info-barcode.php:34
+#: templates/emails/plain/email-order-newebpay-payment-info-cvs.php:30
+#: templates/emails/plain/email-order-payuni-payment-info-atm.php:34
+#: templates/emails/plain/email-order-payuni-payment-info-cvs.php:30
+#: templates/emails/plain/email-order-smilepay-payment-info-atm.php:34
+#: templates/emails/plain/email-order-smilepay-payment-info-barcode.php:39
+#: templates/emails/plain/email-order-smilepay-payment-info-cvs-711.php:35
+#: templates/emails/plain/email-order-smilepay-payment-info-cvs-fami.php:35
+msgid "Payment deadline"
+msgstr ""
+
+#. translators: %1$s: date %2$s: time
+#: templates/emails/email-order-ecpay-payment-info-atm.php:60
+#: templates/emails/email-order-ecpay-payment-info-barcode.php:60
+#: templates/emails/email-order-ecpay-payment-info-cvs.php:44
+#: templates/emails/email-order-newebpay-payment-info-atm.php:60
+#: templates/emails/email-order-newebpay-payment-info-barcode.php:60
+#: templates/emails/email-order-newebpay-payment-info-cvs.php:43
+#: templates/emails/email-order-payuni-payment-info-atm.php:60
+#: templates/emails/email-order-payuni-payment-info-cvs.php:43
+#: templates/emails/email-order-smilepay-payment-info-atm.php:60
+#: templates/emails/email-order-smilepay-payment-info-barcode.php:60
+#: templates/emails/email-order-smilepay-payment-info-cvs-711.php:44
+#: templates/emails/email-order-smilepay-payment-info-cvs-fami.php:44
+#: templates/emails/plain/email-order-ecpay-payment-info-barcode.php:34
+#: templates/emails/plain/email-order-ecpay-payment-info-cvs.php:30
+#: templates/emails/plain/email-order-smilepay-payment-info-barcode.php:34
+#: templates/emails/plain/email-order-smilepay-payment-info-cvs-711.php:30
+#: templates/emails/plain/email-order-smilepay-payment-info-cvs-fami.php:30
+#, php-format
+msgctxt "Datetime"
+msgid "%1$s %2$s"
+msgstr ""
+
+#: templates/emails/email-order-ecpay-payment-info-barcode.php:30
+#: templates/emails/email-order-newebpay-payment-info-barcode.php:30
+#: templates/emails/email-order-smilepay-payment-info-barcode.php:30
+#: templates/emails/plain/email-order-ecpay-payment-info-barcode.php:26
+#: templates/emails/plain/email-order-newebpay-payment-info-barcode.php:26
+#: templates/emails/plain/email-order-smilepay-payment-info-barcode.php:26
+msgid "Barcode 1"
+msgstr ""
+
+#: templates/emails/email-order-ecpay-payment-info-barcode.php:38
+#: templates/emails/email-order-newebpay-payment-info-barcode.php:38
+#: templates/emails/email-order-smilepay-payment-info-barcode.php:38
+#: templates/emails/plain/email-order-ecpay-payment-info-barcode.php:28
+#: templates/emails/plain/email-order-newebpay-payment-info-barcode.php:28
+#: templates/emails/plain/email-order-smilepay-payment-info-barcode.php:28
+msgid "Barcode 2"
+msgstr ""
+
+#: templates/emails/email-order-ecpay-payment-info-barcode.php:46
+#: templates/emails/email-order-newebpay-payment-info-barcode.php:46
+#: templates/emails/email-order-smilepay-payment-info-barcode.php:46
+#: templates/emails/plain/email-order-ecpay-payment-info-barcode.php:30
+#: templates/emails/plain/email-order-newebpay-payment-info-barcode.php:30
+#: templates/emails/plain/email-order-smilepay-payment-info-barcode.php:30
+msgid "Barcode 3"
+msgstr ""
+
+#: templates/emails/email-order-ecpay-payment-info-cvs.php:30
+#: templates/emails/email-order-newebpay-payment-info-cvs.php:29
+#: templates/emails/email-order-payuni-payment-info-cvs.php:29
+#: templates/emails/email-order-smilepay-payment-info-cvs-711.php:30
+#: templates/emails/email-order-smilepay-payment-info-cvs-fami.php:30
+#: templates/emails/plain/email-order-ecpay-payment-info-cvs.php:26
+#: templates/emails/plain/email-order-newebpay-payment-info-cvs.php:26
+#: templates/emails/plain/email-order-payuni-payment-info-cvs.php:26
+#: templates/emails/plain/email-order-smilepay-payment-info-cvs-711.php:26
+#: templates/emails/plain/email-order-smilepay-payment-info-cvs-fami.php:26
+msgid "CVS code"
 msgstr ""
 
 #: templates/order/order-ecpay-shipping-info.php:18
@@ -308,6 +458,24 @@ msgstr ""
 msgid "Transport temperature"
 msgstr ""
 
+#: woocommerce/admin/view/product-shipping-option.php:18
+#: woocommerce/admin/view/product-variation-shipping-option.php:24
+msgctxt "Transport temp"
+msgid "Normal temperature"
+msgstr ""
+
+#: woocommerce/admin/view/product-shipping-option.php:19
+#: woocommerce/admin/view/product-variation-shipping-option.php:25
+msgctxt "Transport temp"
+msgid "Refrigerated"
+msgstr ""
+
+#: woocommerce/admin/view/product-shipping-option.php:20
+#: woocommerce/admin/view/product-variation-shipping-option.php:26
+msgctxt "Transport temp"
+msgid "Frozen"
+msgstr ""
+
 #: woocommerce/admin/view/product-shipping-option.php:27
 #: woocommerce/admin/view/product-variation-shipping-option.php:34
 msgid "Skip shipping method"
@@ -481,7 +649,7 @@ msgid "Pay via Credit (24 installment)"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/gateway-digital.php:15
-#: woocommerce/gateways/newebpay/gateway-digital.php:15
+#: woocommerce/gateways/newebpay/gateway-digital.php:21
 #: woocommerce/gateways/payuni/gateway-digital.php:17
 msgid "Pay via Digital Payment"
 msgstr ""
@@ -501,6 +669,28 @@ msgstr ""
 
 #: woocommerce/gateways/ecpay/gateway-zingala.php:21
 msgid "Pay via Zingala"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/gateway.php:95
+#: woocommerce/gateways/newebpay/gateway.php:83
+#: woocommerce/gateways/payuni/gateway.php:87
+msgid "Apple Pay"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/gateway.php:96
+#: woocommerce/gateways/newebpay/gateway.php:84
+#: woocommerce/gateways/payuni/gateway.php:88
+msgid "Support Apple Pay"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/gateway.php:101
+#: woocommerce/gateways/newebpay/gateway.php:108
+msgid "UnionPay"
+msgstr ""
+
+#: woocommerce/gateways/ecpay/gateway.php:102
+#: woocommerce/gateways/newebpay/gateway.php:109
+msgid "Support UnionPay"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/admin.php:32
@@ -847,7 +1037,7 @@ msgid "NewebPay CVS"
 msgstr ""
 
 #: woocommerce/gateways/newebpay/blocks/gateway-digital.php:28
-#: woocommerce/gateways/newebpay/gateway-digital.php:16
+#: woocommerce/gateways/newebpay/gateway-digital.php:22
 msgid "NewebPay Digital Payment"
 msgstr ""
 
@@ -879,6 +1069,30 @@ msgstr ""
 msgid "NewebPay Credit (30 installment)"
 msgstr ""
 
+#: woocommerce/gateways/newebpay/gateway-digital.php:27
+msgid "Esun Wallet"
+msgstr ""
+
+#: woocommerce/gateways/newebpay/gateway-digital.php:28
+msgid "Support Esun Wallet"
+msgstr ""
+
+#: woocommerce/gateways/newebpay/gateway-digital.php:33
+msgid "LinePay"
+msgstr ""
+
+#: woocommerce/gateways/newebpay/gateway-digital.php:34
+msgid "Support LinePay"
+msgstr ""
+
+#: woocommerce/gateways/newebpay/gateway-digital.php:39
+msgid "Taiwan Pay"
+msgstr ""
+
+#: woocommerce/gateways/newebpay/gateway-digital.php:40
+msgid "Support Taiwan Pay"
+msgstr ""
+
 #: woocommerce/gateways/newebpay/gateway-esunwallet.php:15
 msgid "Pay via Esun Wallet"
 msgstr ""
@@ -890,6 +1104,34 @@ msgstr ""
 
 #: woocommerce/gateways/newebpay/gateway-twpay.php:15
 msgid "Pay via Taiwan Pay"
+msgstr ""
+
+#: woocommerce/gateways/newebpay/gateway.php:89
+#: woocommerce/gateways/payuni/gateway.php:93
+msgid "Google Pay"
+msgstr ""
+
+#: woocommerce/gateways/newebpay/gateway.php:90
+#: woocommerce/gateways/payuni/gateway.php:94
+msgid "Support Google Pay"
+msgstr ""
+
+#: woocommerce/gateways/newebpay/gateway.php:95
+#: woocommerce/gateways/payuni/gateway.php:99
+msgid "Samsung Pay"
+msgstr ""
+
+#: woocommerce/gateways/newebpay/gateway.php:96
+#: woocommerce/gateways/payuni/gateway.php:100
+msgid "Support Samsung Pay"
+msgstr ""
+
+#: woocommerce/gateways/newebpay/gateway.php:102
+msgid "AE"
+msgstr ""
+
+#: woocommerce/gateways/newebpay/gateway.php:103
+msgid "Support AE"
 msgstr ""
 
 #: woocommerce/gateways/newebpay/includes/ajax.php:38
