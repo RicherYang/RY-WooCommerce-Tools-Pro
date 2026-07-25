@@ -1,12 +1,12 @@
 <?php
 
-namespace RY\Paid\Page;
+namespace RY\Paid\V20260724\Page;
 
 defined('ABSPATH') or exit;
 
-use RY\General\AbstractAdminPage;
-use RY\General\Logs;
-use RY\Paid\AbstractLicense;
+use RY\General\V20260724\AbstractAdminPage;
+use RY\General\V20260724\Logs;
+use RY\Paid\V20260724\AbstractLicense;
 
 final class License extends AbstractAdminPage
 {

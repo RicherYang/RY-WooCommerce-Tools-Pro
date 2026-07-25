@@ -2,7 +2,7 @@
 
 defined('ABSPATH') or exit;
 
-use RY\General\AbstractBasic;
+use RY\General\V20260724\AbstractBasic;
 
 final class RY_WTP extends AbstractBasic
 {

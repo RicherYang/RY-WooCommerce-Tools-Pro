@@ -1,20 +1,13 @@
 <?php
 
-namespace RY\Paid;
+namespace RY\Paid\V20260724;
 
 defined('ABSPATH') or exit;
 
-abstract class AbstractLinkServer
+use RY\General\V20260724\AbstractLinkServer as GeneralAbstractLinkServer;
+
+abstract class AbstractLinkServer extends GeneralAbstractLinkServer
 {
-    protected string $api_url = 'https://ry-plugin.com/wp-json/ry/v2/';
-
-    protected string $plugin_slug;
-
-    protected function get_base_info(): array
-    {
-        return [];
-    }
-
     public function check_version()
     {
         @set_time_limit(30);
@@ -76,23 +69,5 @@ abstract class AbstractLinkServer
         ]);
 
         return $this->decode_response($response);
-    }
-
-    protected function decode_response($response)
-    {
-        if (is_wp_error($response)) {
-            return false;
-        }
-
-        if (wp_remote_retrieve_response_code($response) != 200) {
-            return false;
-        }
-
-        $data = json_decode(wp_remote_retrieve_body($response), true);
-        if (empty($data)) {
-            return false;
-        }
-
-        return $data;
     }
 }

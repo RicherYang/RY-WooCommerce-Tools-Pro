@@ -1,10 +1,10 @@
 <?php
 
-namespace RY\Paid;
+namespace RY\Paid\V20260724;
 
 defined('ABSPATH') or exit;
 
-use RY\General\Logs;
+use RY\General\V20260724\Logs;
 
 abstract class AbstractLicense
 {

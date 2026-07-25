@@ -3,8 +3,8 @@
     "version": "2026.7.16",
     "autoload": {
         "psr-4": {
-            "RY\\General\\": "includes/ry-general",
-            "RY\\Paid\\": "includes/ry-paid"
+            "RY\\General\\V20260724\\": "includes/ry-general",
+            "RY\\Paid\\V20260724\\": "includes/ry-paid"
         }
     },
     "config": {
