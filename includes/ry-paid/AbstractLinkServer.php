@@ -1,10 +1,10 @@
 <?php
 
-namespace RY\Paid\V20260724;
+namespace RY\Paid\V20260727;
 
 defined('ABSPATH') or exit;
 
-use RY\General\V20260724\AbstractLinkServer as GeneralAbstractLinkServer;
+use RY\General\V20260727\AbstractLinkServer as GeneralAbstractLinkServer;
 
 abstract class AbstractLinkServer extends GeneralAbstractLinkServer
 {
@@ -15,6 +15,7 @@ abstract class AbstractLinkServer extends GeneralAbstractLinkServer
         $response = wp_remote_get($this->api_url . 'products/' . $this->plugin_slug, [
             'timeout' => 20,
             'httpversion' => '1.1',
+            'user-agent' => 'WordPress; RY Plugin',
         ]);
 
         return $this->decode_response($response);
@@ -27,6 +28,7 @@ abstract class AbstractLinkServer extends GeneralAbstractLinkServer
         $response = wp_remote_get($this->api_url . 'products/info/' . $this->plugin_slug, [
             'timeout' => 20,
             'httpversion' => '1.1',
+            'user-agent' => 'WordPress; RY Plugin',
         ]);
 
         return $this->decode_response($response);
@@ -39,6 +41,7 @@ abstract class AbstractLinkServer extends GeneralAbstractLinkServer
         $response = wp_remote_post($this->api_url . 'license/expire/' . $this->plugin_slug, [
             'timeout' => 20,
             'httpversion' => '1.1',
+            'user-agent' => 'WordPress; RY Plugin',
             'headers' => [
                 'Content-Type' => 'application/json;charset=' . get_bloginfo('charset'),
             ],
@@ -58,6 +61,7 @@ abstract class AbstractLinkServer extends GeneralAbstractLinkServer
         $response = wp_remote_post($this->api_url . 'license/activate/' . $this->plugin_slug, [
             'timeout' => 20,
             'httpversion' => '1.1',
+            'user-agent' => 'WordPress; RY Plugin',
             'headers' => [
                 'Content-Type' => 'application/json;charset=' . get_bloginfo('charset'),
             ],

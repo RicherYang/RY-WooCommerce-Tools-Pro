@@ -1,12 +1,12 @@
 <?php
 
-namespace RY\Paid\V20260724\Page;
+namespace RY\Paid\V20260727\Page;
 
 defined('ABSPATH') or exit;
 
-use RY\General\V20260724\AbstractAdminPage;
-use RY\General\V20260724\Logs;
-use RY\Paid\V20260724\AbstractLicense;
+use RY\General\V20260727\AbstractAdminPage;
+use RY\General\V20260727\Logs;
+use RY\Paid\V20260727\AbstractLicense;
 
 final class License extends AbstractAdminPage
 {
@@ -23,6 +23,7 @@ final class License extends AbstractAdminPage
         $menu_list[] = [
             'name' => '授權金鑰',
             'slug' => 'ry-license',
+            'capability' => 'manage_options',
             'function' => [__CLASS__, 'pre_show_page'],
         ];
 
@@ -53,7 +54,7 @@ final class License extends AbstractAdminPage
 
     public function output_page(): void
     {
-        echo '<div class="wrap"><h1>授權金鑰</h1>';
+        echo '<div class="wrap"><h1 class="wp-heading">授權金鑰</h1>';
         echo '<form method="post" action="admin-post.php">';
         echo '<input type="hidden" name="action" value="ry-paid-admin-license">';
         wp_nonce_field('ry-paid-admin-license', '_wpnonce', false);

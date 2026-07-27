@@ -2,7 +2,7 @@
 
 defined('ABSPATH') or exit;
 
-use RY\Paid\V20260724\AbstractLinkServer;
+use RY\Paid\V20260727\AbstractLinkServer;
 
 final class RY_WTP_LinkServer extends AbstractLinkServer
 {
@@ -21,18 +21,8 @@ final class RY_WTP_LinkServer extends AbstractLinkServer
 
     protected function get_base_info(): array
     {
-        $info = [
+        return [
             'plugin' => RY_WTP_VERSION,
-            'php' => PHP_VERSION,
-            'wp' => get_bloginfo('version'),
         ];
-        if (defined('WC_VERSION')) {
-            $info['wc'] = WC_VERSION;
-        }
-        if (defined('TUTOR_VERSION')) {
-            $info['tt'] = TUTOR_VERSION;
-        }
-
-        return $info;
     }
 }

@@ -1,17 +1,17 @@
 <?php
 
-namespace RY\Paid\V20260724;
+namespace RY\Paid\V20260727;
 
 defined('ABSPATH') or exit;
 
-use RY\General\V20260724\AbstractAdmin as GeneralAbstractAdmin;
-use RY\Paid\V20260724\Page\License;
+use RY\General\V20260727\AbstractAdmin as GeneralAbstractAdmin;
+use RY\Paid\V20260727\Page\License as PageLicense;
 
 abstract class AbstractAdmin extends GeneralAbstractAdmin
 {
     protected function do_init(): void
     {
-        License::init_menu();
+        PageLicense::init_menu();
         add_action('all_admin_notices', [$this, 'show_not_activated']);
 
         parent::do_init();

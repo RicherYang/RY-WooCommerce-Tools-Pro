@@ -1,6 +1,6 @@
 <?php defined('ABSPATH') or exit; ?>
 
-<h2><?php echo esc_html($name); ?></h2>
+<h2 class="title"><?php echo esc_html($name); ?></h2>
 <table class="form-table">
     <tbody>
         <tr>

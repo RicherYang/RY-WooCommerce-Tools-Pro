@@ -2,7 +2,7 @@
 
 defined('ABSPATH') or exit;
 
-use RY\General\V20260724\AbstractBasic;
+use RY\General\V20260727\AbstractBasic;
 
 final class RY_WTP extends AbstractBasic
 {
@@ -115,9 +115,18 @@ final class RY_WTP extends AbstractBasic
         }
     }
 
-    public static function plugin_activation() {}
+    public static function usage_tracking(): void
+    {
+        if (get_option('RY_General_tracking', 'yes') !== 'yes') {
+            return;
+        }
 
-    public static function plugin_deactivation()
+        RY_WTP_LinkServer::instance()->send_tracking();
+    }
+
+    public static function plugin_activation(): void {}
+
+    public static function plugin_deactivation(): void
     {
         wp_unschedule_hook(self::OPTION_PREFIX . 'check_expire');
         wp_unschedule_hook(self::OPTION_PREFIX . 'check_update');
