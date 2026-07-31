@@ -1,12 +1,13 @@
 <?php
 
-namespace RY\Paid\V20260727\Page;
+namespace RY\Paid\V20260729\Page;
 
 defined('ABSPATH') or exit;
 
-use RY\General\V20260727\AbstractAdminPage;
-use RY\General\V20260727\Logs;
-use RY\Paid\V20260727\AbstractLicense;
+use RY\General\V20260729\AbstractAdminPage;
+use RY\General\V20260729\Logs;
+use RY\General\V20260729\Utils;
+use RY\Paid\V20260729\AbstractLicense;
 
 final class License extends AbstractAdminPage
 {
@@ -14,8 +15,10 @@ final class License extends AbstractAdminPage
 
     public static function init_menu(): void
     {
-        add_filter('ry-plugin/menu_list', [__CLASS__, 'add_menu'], 9999);
-        add_action('admin_post_ry-paid-admin-license', [__CLASS__, 'admin_action']);
+        if (!has_action('admin_post_ry-paid-license')) {
+            add_filter('ry-plugin/menu_list', [__CLASS__, 'add_menu'], 9999);
+            add_action('admin_post_ry-paid-license', [__CLASS__, 'admin_action']);
+        }
     }
 
     public static function add_menu(array $menu_list): array
@@ -55,9 +58,7 @@ final class License extends AbstractAdminPage
     public function output_page(): void
     {
         echo '<div class="wrap"><h1 class="wp-heading">授權金鑰</h1>';
-        echo '<form method="post" action="admin-post.php">';
-        echo '<input type="hidden" name="action" value="ry-paid-admin-license">';
-        wp_nonce_field('ry-paid-admin-license', '_wpnonce', false);
+        echo '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '">';
         foreach ($this->license_list as $license) {
             $name = $license['name'];
             $basename = $license['basename'];
@@ -71,14 +72,30 @@ final class License extends AbstractAdminPage
 
             include __DIR__ . '/html/license.php';
         }
-        submit_button();
+        Utils::the_action_form_button('paid-license', 'save-option', __('Save Changes', 'ry-woocommerce-tools-pro'), 'submit', 'button-primary');
         echo '</form>';
 
         echo '</div>';
     }
 
-    public function do_admin_action(string $action): void
+    protected function do_admin_action(string $action, string $real_action): void
     {
+        if ('ry-paid-license' !== $action) {
+            return;
+        }
+
+        if ($real_action !== '' && is_callable([$this, $real_action])) {
+            $this->$real_action();
+        }
+
+        wp_safe_redirect(admin_url('admin.php?page=ry-license'));
+        exit;
+    }
+
+    private function save_option(): void
+    {
+        check_ajax_referer('save-option', '_ajax_nonce');
+
         static $error_msg = [];
         if (empty($error_msg)) {
             $error_msg = [
@@ -88,14 +105,6 @@ final class License extends AbstractAdminPage
                 'Used key' => '已使用的金鑰',
                 'Is tried' => '已使用過測試版',
             ];
-        }
-
-        if ('ry-paid-admin-license' !== $action) {
-            return;
-        }
-
-        if (!wp_verify_nonce($_POST['_wpnonce'] ?? '', $action)) {
-            wp_die('Invalid nonce');
         }
 
         foreach ($this->license_list as $license) {
@@ -127,22 +136,5 @@ final class License extends AbstractAdminPage
                 }
             }
         }
-
-        wp_safe_redirect(admin_url('admin.php?page=ry-license'));
-        exit;
-    }
-
-    protected function add_notice(string $status, string $message): void
-    {
-        $notice = get_transient('ry-notice');
-        if (!is_array($notice)) {
-            $notice = [];
-        }
-        if (!isset($notice[$status])) {
-            $notice[$status] = [];
-        }
-        $notice[$status][] = $message;
-
-        set_transient('ry-notice', $notice);
     }
 }

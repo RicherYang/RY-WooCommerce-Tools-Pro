@@ -18,7 +18,7 @@ final class RY_WTP_Update
         }
 
         if (version_compare($now_version, '3.0.0', '<')) {
-            wp_unschedule_hook(RY_WTP::OPTION_PREFIX . 'check_update');
+            wp_unschedule_hook(RY_WTP::PREFIX . 'check_update');
 
             RY_WTP::update_option('version', '3.0.0', true);
         }
@@ -51,8 +51,8 @@ final class RY_WTP_Update
             RY_WTP::update_option('version', '3.8.0', true);
         }
 
-        if (version_compare($now_version, '2026.7.27', '<')) {
-            RY_WTP::update_option('version', '2026.7.27', true);
+        if (version_compare($now_version, '2026.7.31', '<')) {
+            RY_WTP::update_option('version', '2026.7.31', true);
         }
     }
 }

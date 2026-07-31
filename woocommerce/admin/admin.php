@@ -46,11 +46,11 @@ final class RY_WTP_WC_Admin
     public function add_setting($settings, $current_section)
     {
         if ($current_section == '') {
-            $setting_idx = array_search(RY_WT::OPTION_PREFIX . 'strength_password', array_column($settings, 'id'));
+            $setting_idx = array_search(RY_WT::PREFIX . 'strength_password', array_column($settings, 'id'));
             array_splice($settings, $setting_idx + 1, 0, [
                 [
                     'title' => __('Only to WooCommerce account', 'ry-woocommerce-tools-pro'),
-                    'id' => RY_WTP::OPTION_PREFIX . 'register_from_woocommerce',
+                    'id' => RY_WTP::PREFIX . 'register_from_woocommerce',
                     'type' => 'checkbox',
                     'default' => 'no',
                     'desc' => __('Redirect login, register and lost-password from wp-login to WooCommerce account page.', 'ry-woocommerce-tools-pro'),
@@ -58,7 +58,7 @@ final class RY_WTP_WC_Admin
                 ],
                 [
                     'title' => __('Simple CAPTCHA', 'ry-woocommerce-tools-pro'),
-                    'id' => RY_WTP::OPTION_PREFIX . 'simple_captcha',
+                    'id' => RY_WTP::PREFIX . 'simple_captcha',
                     'type' => 'checkbox',
                     'default' => 'no',
                     'desc' => __('Enable simple CAPTCHA for WooCommerce register form.', 'ry-woocommerce-tools-pro'),
@@ -66,11 +66,11 @@ final class RY_WTP_WC_Admin
                 ],
             ]);
 
-            $setting_idx = array_search(RY_WT::OPTION_PREFIX . 'show_unpay_title', array_column($settings, 'id'));
+            $setting_idx = array_search(RY_WT::PREFIX . 'show_unpay_title', array_column($settings, 'id'));
             array_splice($settings, $setting_idx + 1, 0, [
                 [
                     'title' => __('Virtual product skip processing', 'ry-woocommerce-tools-pro'),
-                    'id' => RY_WTP::OPTION_PREFIX . 'virtual_skip_processing',
+                    'id' => RY_WTP::PREFIX . 'virtual_skip_processing',
                     'type' => 'checkbox',
                     'default' => 'no',
                     'desc' => __('Virtual product order skip processing status.', 'ry-woocommerce-tools-pro'),

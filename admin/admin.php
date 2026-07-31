@@ -2,7 +2,7 @@
 
 defined('ABSPATH') or exit;
 
-use RY\Paid\V20260727\AbstractAdmin;
+use RY\Paid\V20260729\AbstractAdmin;
 
 final class RY_WTP_Admin extends AbstractAdmin
 {
@@ -22,8 +22,6 @@ final class RY_WTP_Admin extends AbstractAdmin
 
     protected function do_init(): void
     {
-        parent::do_init();
-
         include_once RY_WTP_PLUGIN_DIR . 'admin/functions.php';
 
         $this->license = RY_WTP_License::instance();

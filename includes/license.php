@@ -2,7 +2,7 @@
 
 defined('ABSPATH') or exit;
 
-use RY\Paid\V20260727\AbstractLicense;
+use RY\Paid\V20260729\AbstractLicense;
 
 final class RY_WTP_License extends AbstractLicense
 {

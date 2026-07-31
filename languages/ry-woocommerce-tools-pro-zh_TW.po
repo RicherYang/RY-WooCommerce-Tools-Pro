@@ -524,8 +524,8 @@ msgid "ECPay select cvs store"
 msgstr "綠界選擇超商門市"
 
 #. translators: %1$s: Name of this plugin %2$s: Name of require plugin %3$s: min require version
-#: admin/admin.php:61
-#: admin/admin.php:77
+#: admin/admin.php:59
+#: admin/admin.php:75
 #, php-format
 msgid "<strong>%1$s</strong> is inactive. It require %2$s %3$s or newer."
 msgstr "<strong>%1$s</strong> 暫停運作。 需求 %2$s %3$s 或更新版本。"
@@ -1076,12 +1076,12 @@ msgstr "授權類型"
 msgid "Invalid amount"
 msgstr "無效的金額"
 
-#: admin/admin.php:57
+#: admin/admin.php:55
 msgid "WordPress Plugin Directory"
 msgstr "WordPress 外掛目錄庫"
 
 #. translators: %1$s: Name of require plugin
-#: admin/admin.php:68
+#: admin/admin.php:66
 #, php-format
 msgid "You can download from %s and manual update to the latest version."
 msgstr "你可以從 %s 下載並且手動更新至最新版本。"
@@ -1235,34 +1235,34 @@ msgstr "藍新台灣 Pay"
 msgid "%1$s: Your <a href=\"%2$s\">license</a> is not activated yet!"
 msgstr "%1$s: 你的<a href=\"%2$s\">授權</a>尚未啟用！"
 
-#: includes/ry-general/Page/Logs.php:27
-#: includes/ry-general/Page/Logs.php:75
+#: includes/ry-general/Page/Logs.php:29
+#: includes/ry-general/Page/Logs.php:78
 msgid "Logs"
 msgstr "紀錄"
 
-#: includes/ry-general/Page/Logs.php:136
+#: includes/ry-general/Page/Logs.php:158
 msgid "Delete successful."
 msgstr "刪除成功。"
 
-#: includes/ry-general/Page/Logs.php:143
+#: includes/ry-general/Page/Logs.php:165
 msgid "Delete failed."
 msgstr "刪除失敗。"
 
 #. translators: %s: Path of log file
-#: includes/ry-general/Page/html/log-info.php:5
+#: includes/ry-general/Page/html/log-info.php:10
 #, php-format
 msgid "Viewing log file %s"
 msgstr "檢視紀錄檔 %s"
 
-#: includes/ry-general/Page/html/log-info.php:36
+#: includes/ry-general/Page/html/log-info.php:41
 msgid "Details"
 msgstr "詳細資訊"
 
-#: includes/ry-general/Page/html/log-info.php:63
+#: includes/ry-general/Page/html/log-info.php:65
 msgid "Download"
 msgstr "下載"
 
-#: includes/ry-general/Page/html/log-info.php:71
+#: includes/ry-general/Page/html/log-info.php:70
 msgid "Delete Permanently"
 msgstr "永久刪除"
 
@@ -1274,7 +1274,7 @@ msgstr "紀錄類別"
 msgid "Log Files"
 msgstr "紀錄檔案"
 
-#: includes/ry-general/Page/Logs.php:77
+#: includes/ry-general/Page/Logs.php:80
 msgid "No logs found."
 msgstr "没有紀錄檔案。"
 
@@ -1537,7 +1537,7 @@ msgid " (%s)"
 msgstr " (%s)"
 
 #. translators: %d: Number of days
-#: includes/ry-general/Page/html/log-info.php:75
+#: includes/ry-general/Page/html/log-info.php:74
 #, php-format
 msgid "Log file will delete after %d days"
 msgstr "紀錄檔案將在 %d 天後刪除"
@@ -1560,11 +1560,16 @@ msgstr "允許 RY Plugin 追蹤使用情況"
 msgid "Read about what usage data is tracked at: %s ."
 msgstr "閱讀 %s 以理解我們追蹤那些數據。"
 
-#: includes/ry-general/Page/Option.php:21
-#: includes/ry-general/Page/Option.php:35
+#: includes/ry-general/Page/Option.php:23
+#: includes/ry-general/Page/Option.php:37
 msgid "Options"
 msgstr "設定"
 
-#: includes/ry-general/Page/Option.php:64
+#: includes/ry-general/Page/Option.php:72
 msgid "Settings saved."
 msgstr "設定已儲存。"
+
+#: includes/ry-general/Page/Option.php:41
+#: includes/ry-paid/Page/License.php:75
+msgid "Save Changes"
+msgstr ""

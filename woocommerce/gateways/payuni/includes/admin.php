@@ -36,7 +36,7 @@ final class RY_WTP_WC_PAYUNi_Gateway_Admin
                 ],
                 [
                     'title' => __('Independent payment gateway', 'ry-woocommerce-tools-pro'),
-                    'id' => RY_WTP::OPTION_PREFIX . 'payuni_credit_installment',
+                    'id' => RY_WTP::PREFIX . 'payuni_credit_installment',
                     'type' => 'checkbox',
                     'default' => 'no',
                     'desc' => __('Add each periods of credit installment as a payment gateway.', 'ry-woocommerce-tools-pro')
@@ -44,7 +44,7 @@ final class RY_WTP_WC_PAYUNi_Gateway_Admin
                     'checkboxgroup' => 'start',
                 ],
                 [
-                    'id' => RY_WTP::OPTION_PREFIX . 'payuni_independent_digital',
+                    'id' => RY_WTP::PREFIX . 'payuni_independent_digital',
                     'type' => 'checkbox',
                     'default' => 'no',
                     'desc' => __('Add each type of digital payment as a payment gateway.', 'ry-woocommerce-tools-pro')
@@ -53,7 +53,7 @@ final class RY_WTP_WC_PAYUNi_Gateway_Admin
                 ],
                 [
                     'title' => __('Show payment info in email', 'ry-woocommerce-tools-pro'),
-                    'id' => RY_WTP::OPTION_PREFIX . 'payuni_email_payment_info',
+                    'id' => RY_WTP::PREFIX . 'payuni_email_payment_info',
                     'type' => 'checkbox',
                     'default' => 'no',
                     'desc' => sprintf(

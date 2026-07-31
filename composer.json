@@ -1,13 +1,13 @@
 {
     "name": "ry/woocommerce-tools-pro",
-    "version": "2026.7.27",
+    "version": "2026.7.31",
     "require": {
         "woocommerce/action-scheduler": "^4.0"
     },
     "autoload": {
         "psr-4": {
-            "RY\\General\\V20260727\\": "includes/ry-general",
-            "RY\\Paid\\V20260727\\": "includes/ry-paid"
+            "RY\\General\\V20260729\\": "includes/ry-general",
+            "RY\\Paid\\V20260729\\": "includes/ry-paid"
         }
     },
     "config": {

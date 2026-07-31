@@ -1,10 +1,10 @@
 <?php
 
-namespace RY\Paid\V20260727;
+namespace RY\Paid\V20260729;
 
 defined('ABSPATH') or exit;
 
-use RY\General\V20260727\Logs;
+use RY\General\V20260729\Logs;
 
 abstract class AbstractLicense
 {
@@ -49,13 +49,13 @@ abstract class AbstractLicense
         static::$main_class::delete_transient('version_info');
         static::$main_class::delete_transient('expire_link_error');
 
-        wp_unschedule_hook(static::$main_class::OPTION_PREFIX . 'check_expire');
+        wp_unschedule_hook(static::$main_class::get_prefix_name('check_expire'));
     }
 
     public function check_expire_cron(): void
     {
-        if (!wp_next_scheduled(static::$main_class::OPTION_PREFIX . 'check_expire')) {
-            wp_schedule_event(time() + HOUR_IN_SECONDS, 'daily', static::$main_class::OPTION_PREFIX . 'check_expire');
+        if (!wp_next_scheduled(static::$main_class::get_prefix_name('check_expire'))) {
+            wp_schedule_event(time() + HOUR_IN_SECONDS, 'daily', static::$main_class::get_prefix_name('check_expire'));
         }
     }
 

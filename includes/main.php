@@ -2,11 +2,11 @@
 
 defined('ABSPATH') or exit;
 
-use RY\General\V20260727\AbstractBasic;
+use RY\General\V20260729\AbstractBasic;
 
 final class RY_WTP extends AbstractBasic
 {
-    public const OPTION_PREFIX = 'RY_WTP_';
+    public const PREFIX = 'RY_WTP_';
 
     public const PLUGIN_NAME = 'RY Tools (Pro) for WooCommerce';
 
@@ -128,7 +128,7 @@ final class RY_WTP extends AbstractBasic
 
     public static function plugin_deactivation(): void
     {
-        wp_unschedule_hook(self::OPTION_PREFIX . 'check_expire');
-        wp_unschedule_hook(self::OPTION_PREFIX . 'check_update');
+        wp_unschedule_hook(self::get_prefix_name('check_expire'));
+        wp_unschedule_hook(self::get_prefix_name('check_update'));
     }
 }

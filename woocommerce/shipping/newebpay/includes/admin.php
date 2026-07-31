@@ -28,7 +28,7 @@ final class RY_WTP_NewebPay_Shipping_Admin
                 array_splice($settings, $setting_idx + 1, 0, [
                     [
                         'title' => __('cvs remove billing address', 'ry-woocommerce-tools-pro'),
-                        'id' => RY_WTP::OPTION_PREFIX . 'newebpay_cvs_billing_address',
+                        'id' => RY_WTP::PREFIX . 'newebpay_cvs_billing_address',
                         'type' => 'checkbox',
                         'default' => 'no',
                         'desc' => __('Remove billing address when shipping mode is cvs.', 'ry-woocommerce-tools-pro')
