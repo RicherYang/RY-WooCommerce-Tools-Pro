@@ -190,6 +190,7 @@ final class RY_WTP_ECPay_Shipping_Admin
                                 'ServerReplyURL' => esc_url(add_query_arg([
                                     'ry-ecpay-map-redirect' => 'ry-ecpay-map-redirect',
                                     'lang' => get_locale(),
+                                    'key' => $order->get_order_key(),
                                 ], WC()->api_request_url('ry_ecpay_map_callback'))),
                                 'ExtraData' => 'ry' . $order->get_id(),
                             ],

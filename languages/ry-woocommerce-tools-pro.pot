@@ -2,7 +2,7 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: RY Tools (Pro) for WooCommerce 2026.8.5\n"
+"Project-Id-Version: RY Tools (Pro) for WooCommerce 2026.8.7\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ry-woocommerce-tools-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1417,11 +1417,11 @@ msgstr ""
 msgid "Print ECPay shipping booking note (tcat)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:222
+#: woocommerce/shipping/ecpay/includes/admin.php:223
 msgid "Get info"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:242
+#: woocommerce/shipping/ecpay/includes/admin.php:243
 msgid "ECPay shipping ID"
 msgstr ""
 

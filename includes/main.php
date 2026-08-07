@@ -10,7 +10,7 @@ final class RY_WTP extends AbstractBasic
 
     public const PLUGIN_NAME = 'RY Tools (Pro) for WooCommerce';
 
-    public const MIN_TOOLS_VERSION = '2026.7.18';
+    public const MIN_TOOLS_VERSION = '2026.8.7';
 
     private static ?self $_instance = null;
 
