@@ -51,8 +51,8 @@ final class RY_WTP_Update
             RY_WTP::update_option('version', '3.8.0', true);
         }
 
-        if (version_compare($now_version, '2026.8.7', '<')) {
-            RY_WTP::update_option('version', '2026.8.7', true);
+        if (version_compare($now_version, '2026.8.12', '<')) {
+            RY_WTP::update_option('version', '2026.8.12', true);
         }
     }
 }
