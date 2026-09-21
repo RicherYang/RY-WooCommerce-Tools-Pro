@@ -2,6 +2,8 @@
 
 defined('ABSPATH') or exit;
 
+use RY\WooCommerce\Pro\Main;
+
 final class RY_WTP_NewebPay_Shipping
 {
     private static ?self $_instance = null;
@@ -50,7 +52,7 @@ final class RY_WTP_NewebPay_Shipping
             }
 
             if ($is_support) {
-                if ('yes' == RY_WTP::get_option('ecpay_cvs_billing_address', 'no')) {
+                if ('yes' == Main::get_option('ecpay_cvs_billing_address', 'no')) {
                     if (str_contains($chosen_method[0], '_cvs')) {
                         $hide_fields = ['billing_country', 'billing_address_1', 'billing_address_2', 'billing_city', 'billing_state', 'billing_postcode'];
                         foreach ($hide_fields as $field_name) {
@@ -64,7 +66,7 @@ final class RY_WTP_NewebPay_Shipping
         }
 
         if (did_action('woocommerce_checkout_process')) {
-            if (RY_WTP::get_option('newebpay_cvs_billing_address', 'no') == 'yes') {
+            if (Main::get_option('newebpay_cvs_billing_address', 'no') == 'yes') {
                 $used_cvs = false;
                 $shipping_method = wp_unslash($_POST['shipping_method'] ?? []);
                 foreach ($shipping_method as $method) {

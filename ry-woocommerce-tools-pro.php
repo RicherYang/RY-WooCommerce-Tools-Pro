@@ -11,12 +11,13 @@
  * Author: Richer Yang
  * Author URI: https://richer.tw/
  * License: GPLv3
- * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
  * Update URI: https://ry-plugin.com/ry-woocommerce-tools-pro
  *
  * Text Domain: ry-woocommerce-tools-pro
  * Domain Path: /languages
  */
+
+use RY\WooCommerce\Pro\Main;
 
 defined('ABSPATH') or exit;
 
@@ -27,14 +28,8 @@ define('RY_WTP_PLUGIN_BASENAME', plugin_basename(__FILE__));
 define('RY_WTP_PLUGIN_LANGUAGES_DIR', plugin_dir_path(__FILE__) . '/languages');
 
 require_once RY_WTP_PLUGIN_DIR . 'includes/vendor/autoload.php';
-require_once RY_WTP_PLUGIN_DIR . 'includes/main.php';
 
-register_activation_hook(__FILE__, ['RY_WTP', 'plugin_activation']);
-register_deactivation_hook(__FILE__, ['RY_WTP', 'plugin_deactivation']);
+register_activation_hook(__FILE__, [Main::class, 'plugin_activation']);
+register_deactivation_hook(__FILE__, [Main::class, 'plugin_deactivation']);
 
-function RY_WTP(): RY_WTP
-{
-    return RY_WTP::instance();
-}
-
-RY_WTP();
+Main::instance();

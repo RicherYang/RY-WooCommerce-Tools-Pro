@@ -1,12 +1,14 @@
 <?php
 
+namespace RY\WooCommerce\Pro;
+
 defined('ABSPATH') or exit;
 
-final class RY_WTP_Updater
+final class Updater
 {
     private static ?self $_instance = null;
 
-    public static function instance(): RY_WTP_Updater
+    public static function instance(): Updater
     {
         if (null === self::$_instance) {
             self::$_instance = new self();
@@ -30,7 +32,7 @@ final class RY_WTP_Updater
             return $update;
         }
 
-        return RY_WTP_LinkServer::instance()->check_version();
+        return LinkServer::instance()->check_version();
     }
 
     public function check_basic_plugin($updates)
@@ -40,7 +42,7 @@ final class RY_WTP_Updater
                 return $this->get_official_info($updates);
             }
 
-            if (version_compare(RY_WT_VERSION, RY_WTP::MIN_TOOLS_VERSION, '<')) {
+            if (version_compare(RY_WT_VERSION, Main::MIN_TOOLS_VERSION, '<')) {
                 return $this->get_official_info($updates);
             }
         }
@@ -58,7 +60,7 @@ final class RY_WTP_Updater
             return $result;
         }
 
-        $response = RY_WTP_LinkServer::instance()->get_info();
+        $response = LinkServer::instance()->get_info();
         if (!empty($response)) {
             return (object) $response;
         }

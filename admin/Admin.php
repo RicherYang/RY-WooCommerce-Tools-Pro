@@ -1,16 +1,21 @@
 <?php
 
+namespace RY\WooCommerce\Pro\Admin;
+
 defined('ABSPATH') or exit;
 
 use RY\Paid\V20260729\AbstractAdmin;
+use RY\WooCommerce\Main as WT_Main;
+use RY\WooCommerce\Pro\License;
+use RY\WooCommerce\Pro\Main;
 
-final class RY_WTP_Admin extends AbstractAdmin
+final class Admin extends AbstractAdmin
 {
     private static ?self $_instance = null;
 
-    protected RY_WTP_License $license;
+    protected License $license;
 
-    public static function instance(): RY_WTP_Admin
+    public static function instance(): Admin
     {
         if (null === self::$_instance) {
             self::$_instance = new self();
@@ -22,9 +27,7 @@ final class RY_WTP_Admin extends AbstractAdmin
 
     protected function do_init(): void
     {
-        include_once RY_WTP_PLUGIN_DIR . 'admin/functions.php';
-
-        $this->license = RY_WTP_License::instance();
+        $this->license = License::instance();
         add_filter('ry-plugin/license_list', [$this, 'add_license']);
 
         if ($this->license->is_activated()) {
@@ -48,7 +51,7 @@ final class RY_WTP_Admin extends AbstractAdmin
 
     public function need_ry_woocommerce_tools(): void
     {
-        if (!defined('RY_WT_VERSION') || version_compare(RY_WT_VERSION, RY_WTP::MIN_TOOLS_VERSION, '<')) {
+        if (!defined('RY_WT_VERSION') || version_compare(RY_WT_VERSION, Main::MIN_TOOLS_VERSION, '<')) {
             $download_link = sprintf(
                 '<a href="%1$s" target="_blank">%2$s</a>',
                 'https://tw.wordpress.org/plugins/ry-woocommerce-tools/',
@@ -59,7 +62,7 @@ final class RY_WTP_Admin extends AbstractAdmin
                 __('<strong>%1$s</strong> is inactive. It require %2$s %3$s or newer.', 'ry-woocommerce-tools-pro'),
                 $this->license::$main_class::PLUGIN_NAME,
                 'RY Tools for WooCommerce',
-                RY_WTP::MIN_TOOLS_VERSION,
+                Main::MIN_TOOLS_VERSION,
             );
             $message .= sprintf(
                 /* translators: %1$s: Name of require plugin */
@@ -69,13 +72,13 @@ final class RY_WTP_Admin extends AbstractAdmin
             printf('<div class="error"><p>%s</p></div>', wp_kses($message, ['strong' => [], 'a' => ['href' => true, 'target' => true]]));
         }
 
-        if (defined('RY_WT::MIN_PRO_TOOLS_VERSION') && version_compare(RY_WTP_VERSION, RY_WT::MIN_PRO_TOOLS_VERSION, '<')) {
+        if (defined('WT_Main::MIN_PRO_TOOLS_VERSION') && version_compare(RY_WTP_VERSION, WT_Main::MIN_PRO_TOOLS_VERSION, '<')) {
             $message = sprintf(
                 /* translators: %1$s: Name of this plugin %2$s: Name of require plugin %3$s: min require version */
                 __('<strong>%1$s</strong> is inactive. It require %2$s %3$s or newer.', 'ry-woocommerce-tools-pro'),
                 $this->license::$main_class::PLUGIN_NAME,
                 $this->license::$main_class::PLUGIN_NAME,
-                RY_WT::MIN_PRO_TOOLS_VERSION,
+                WT_Main::MIN_PRO_TOOLS_VERSION,
             );
             printf('<div class="error"><p>%s</p></div>', wp_kses($message, ['strong' => []]));
         }

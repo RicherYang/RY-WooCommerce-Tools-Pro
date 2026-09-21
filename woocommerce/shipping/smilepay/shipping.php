@@ -2,6 +2,9 @@
 
 defined('ABSPATH') or exit;
 
+use RY\WooCommerce\Main as WT_Main;
+use RY\WooCommerce\Pro\Main;
+
 final class RY_WTP_SmilePay_Shipping
 {
     private static ?self $_instance = null;
@@ -35,12 +38,12 @@ final class RY_WTP_SmilePay_Shipping
 
         add_filter('woocommerce_checkout_fields', [$this, 'hide_billing_info'], 9999);
 
-        if ('yes' === RY_WT::get_option('smilepay_shipping_auto_order_status', 'yes')) {
+        if ('yes' === WT_Main::get_option('smilepay_shipping_auto_order_status', 'yes')) {
             add_action('ry_smilepay_shipping_response_status_1', [$this, 'shipping_transporting'], 10, 2);
         }
 
-        if ('yes' === RY_WT::get_option('smilepay_shipping_auto_get_no', 'yes')) {
-            if ('yes' === RY_WTP::get_option('smilepay_shipping_auto_with_scheduler', 'no')) {
+        if ('yes' === WT_Main::get_option('smilepay_shipping_auto_get_no', 'yes')) {
+            if ('yes' === Main::get_option('smilepay_shipping_auto_with_scheduler', 'no')) {
                 remove_action('woocommerce_order_status_processing', [RY_WT_WC_SmilePay_Shipping::instance(), 'get_code'], 10, 2);
                 add_action('woocommerce_order_status_processing', [$this, 'get_code'], 10, 2);
             }
@@ -70,7 +73,7 @@ final class RY_WTP_SmilePay_Shipping
             }
 
             if ($is_support) {
-                if ('yes' == RY_WTP::get_option('smilepay_cvs_billing_address', 'no')) {
+                if ('yes' == Main::get_option('smilepay_cvs_billing_address', 'no')) {
                     if (str_contains($chosen_method[0], '_cvs')) {
                         $hide_fields = ['billing_country', 'billing_address_1', 'billing_address_2', 'billing_city', 'billing_state', 'billing_postcode'];
                         foreach ($hide_fields as $field_name) {
@@ -84,7 +87,7 @@ final class RY_WTP_SmilePay_Shipping
         }
 
         if (did_action('woocommerce_checkout_process')) {
-            if (RY_WTP::get_option('smilepay_cvs_billing_address', 'no') == 'yes') {
+            if (Main::get_option('smilepay_cvs_billing_address', 'no') == 'yes') {
                 $used_cvs = false;
                 $shipping_method = wp_unslash($_POST['shipping_method'] ?? []);
                 foreach ($shipping_method as $method) {

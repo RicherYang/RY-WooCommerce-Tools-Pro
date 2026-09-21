@@ -3,6 +3,8 @@
 defined('ABSPATH') or exit;
 
 use Automattic\WooCommerce\Utilities\OrderUtil;
+use RY\WooCommerce\Main as WT_Main;
+use RY\WooCommerce\Pro\Main;
 
 final class RY_WTP_ECPay_Shipping_Admin
 {
@@ -47,11 +49,11 @@ final class RY_WTP_ECPay_Shipping_Admin
         if ($current_section == 'ecpay_shipping') {
             wp_enqueue_script('ry-wtp-admin-setting');
 
-            $setting_idx = array_search(RY_WT::PREFIX . 'ecpay_shipping_auto_get_no', array_column($settings, 'id'));
+            $setting_idx = array_search(WT_Main::get_prefix_name('ecpay_shipping_auto_get_no'), array_column($settings, 'id'));
             array_splice($settings, $setting_idx + 1, 0, [
                 [
                     'title' => __('Auto get with scheduler action', 'ry-woocommerce-tools-pro'),
-                    'id' => RY_WTP::PREFIX . 'ecpay_shipping_auto_with_scheduler',
+                    'id' => Main::get_prefix_name('ecpay_shipping_auto_with_scheduler'),
                     'type' => 'checkbox',
                     'default' => 'no',
                     'desc' => __('Get shipping payment no use scheduler action.', 'ry-woocommerce-tools-pro'),
@@ -59,11 +61,11 @@ final class RY_WTP_ECPay_Shipping_Admin
             ]);
 
             if (!$checkout_with_block) {
-                $setting_idx = array_search(RY_WT::PREFIX . 'ecpay_shipping_log_status_change', array_column($settings, 'id'));
+                $setting_idx = array_search(WT_Main::get_prefix_name('ecpay_shipping_log_status_change'), array_column($settings, 'id'));
                 array_splice($settings, $setting_idx, 0, [
                     [
                         'title' => __('cvs remove billing address', 'ry-woocommerce-tools-pro'),
-                        'id' => RY_WTP::PREFIX . 'ecpay_cvs_billing_address',
+                        'id' => Main::get_prefix_name('ecpay_cvs_billing_address'),
                         'type' => 'checkbox',
                         'default' => 'no',
                         'desc' => __('Remove billing address when shipping mode is cvs.', 'ry-woocommerce-tools-pro')
@@ -72,21 +74,21 @@ final class RY_WTP_ECPay_Shipping_Admin
                 ]);
             }
 
-            $setting_idx = array_search(RY_WT::PREFIX . 'ecpay_shipping_apiinfo[prefix]', array_column($settings, 'id'));
+            $setting_idx = array_search(WT_Main::get_prefix_name('ecpay_shipping_apiinfo[prefix]'), array_column($settings, 'id'));
             array_splice($settings, $setting_idx, 0, [
                 [
                     'title' => __('Clean up receiver name', 'ry-woocommerce-tools-pro'),
-                    'id' => RY_WT::PREFIX . 'ecpay_shipping_apiinfo[cleanup_name]',
+                    'id' => WT_Main::get_prefix_name('ecpay_shipping_apiinfo[cleanup_name]'),
                     'type' => 'checkbox',
                     'default' => 'no',
                     'desc' => __('Clean up receiver name to comply with ECPay request.', 'ry-woocommerce-tools-pro'),
                 ],
             ]);
 
-            $setting_idx = array_search(RY_WT::PREFIX . 'ecpay_shipping_cvs_type', array_column($settings, 'id'));
+            $setting_idx = array_search(WT_Main::get_prefix_name('ecpay_shipping_cvs_type'), array_column($settings, 'id'));
             $settings[$setting_idx]['options']['B2C'] = _x('B2C', 'Cvs type', 'ry-woocommerce-tools-pro');
 
-            $setting_idx = array_search(RY_WT::PREFIX . 'ecpay_shipping_apiinfo[declare_over]', array_column($settings, 'id'));
+            $setting_idx = array_search(WT_Main::get_prefix_name('ecpay_shipping_apiinfo[declare_over]'), array_column($settings, 'id'));
             $settings[$setting_idx]['options']['multi'] = __('multi package', 'ry-woocommerce-tools-pro');
         }
         return $settings;
@@ -185,7 +187,7 @@ final class RY_WTP_ECPay_Shipping_Admin
                             'postData' => [
                                 'MerchantID' => $api_info['MerchantID'],
                                 'LogisticsType' => $method_class::SHIPPING_TYPE,
-                                'LogisticsSubType' => $method_class::Shipping_Sub_Type . (('C2C' === RY_WT::get_option('ecpay_shipping_cvs_type', 'C2C')) ? 'C2C' : ''),
+                                'LogisticsSubType' => $method_class::Shipping_Sub_Type . (('C2C' === WT_Main::get_option('ecpay_shipping_cvs_type', 'C2C')) ? 'C2C' : ''),
                                 'IsCollection' => 'Y',
                                 'ServerReplyURL' => esc_url(add_query_arg([
                                     'ry-ecpay-map-redirect' => 'ry-ecpay-map-redirect',

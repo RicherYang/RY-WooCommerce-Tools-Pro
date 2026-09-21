@@ -2,6 +2,9 @@
 
 defined('ABSPATH') or exit;
 
+use RY\WooCommerce\Main as WT_Main;
+use RY\WooCommerce\Pro\Main;
+
 final class RY_WTP_ECPay_Shipping
 {
     private static ?self $_instance = null;
@@ -42,7 +45,7 @@ final class RY_WTP_ECPay_Shipping
 
         add_filter('woocommerce_checkout_fields', [$this, 'hide_billing_info'], 9999);
 
-        if ('yes' === RY_WT::get_option('ecpay_shipping_auto_order_status', 'yes')) {
+        if ('yes' === WT_Main::get_option('ecpay_shipping_auto_order_status', 'yes')) {
             add_action('ry_ecpay_shipping_response_status_2030', [$this, 'shipping_transporting'], 10, 2);
             add_action('ry_ecpay_shipping_response_status_2068', [$this, 'shipping_transporting'], 10, 2);
             add_action('ry_ecpay_shipping_response_status_3001', [$this, 'shipping_transporting'], 10, 2);
@@ -53,8 +56,8 @@ final class RY_WTP_ECPay_Shipping
             add_action('ry_ecpay_shipping_response_status_3301', [$this, 'shipping_transporting'], 10, 2);
         }
 
-        if ('yes' === RY_WT::get_option('ecpay_shipping_auto_get_no', 'yes')) {
-            if ('yes' === RY_WTP::get_option('ecpay_shipping_auto_with_scheduler', 'no')) {
+        if ('yes' === WT_Main::get_option('ecpay_shipping_auto_get_no', 'yes')) {
+            if ('yes' === Main::get_option('ecpay_shipping_auto_with_scheduler', 'no')) {
                 remove_action('woocommerce_order_status_processing', [RY_WT_WC_ECPay_Shipping::instance(), 'get_code'], 10, 2);
                 add_action('woocommerce_order_status_processing', [$this, 'get_code'], 10, 2);
             }
@@ -79,7 +82,7 @@ final class RY_WTP_ECPay_Shipping
         $cvs_hide_fields = ['billing_postcode', 'billing_state', 'billing_city', 'billing_address_1', 'billing_address_2'];
 
         if (is_checkout()) {
-            if ('yes' == RY_WTP::get_option('ecpay_cvs_billing_address', 'no')) {
+            if ('yes' == Main::get_option('ecpay_cvs_billing_address', 'no')) {
                 if (isset($fields['billing'])) {
                     foreach ($cvs_hide_fields as $key) {
                         if (isset($fields['billing'][$key])) {
@@ -95,7 +98,7 @@ final class RY_WTP_ECPay_Shipping
         }
 
         if (did_action('woocommerce_checkout_process')) {
-            if (RY_WTP::get_option('ecpay_cvs_billing_address', 'no') == 'yes') {
+            if (Main::get_option('ecpay_cvs_billing_address', 'no') == 'yes') {
                 $used_cvs = false;
                 $shipping_method = wp_unslash($_POST['shipping_method'] ?? []);
                 foreach ($shipping_method as $method) {

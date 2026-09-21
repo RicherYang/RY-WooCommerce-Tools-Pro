@@ -2,6 +2,8 @@
 
 defined('ABSPATH') or exit;
 
+use RY\WooCommerce\Pro\Main;
+
 final class RY_WTP_WC_ECPay_Gateway extends RY_WTP_Gateway_Model
 {
     private static ?self $_instance = null;
@@ -20,7 +22,7 @@ final class RY_WTP_WC_ECPay_Gateway extends RY_WTP_Gateway_Model
     {
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-applepay.php';
 
-        if ('yes' === RY_WTP::get_option('ecpay_independent_credit_installment', 'no')) {
+        if ('yes' === Main::get_option('ecpay_independent_credit_installment', 'no')) {
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/includes/gateway-credit-installment.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-credit-installment-3.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-credit-installment-6.php';
@@ -29,14 +31,14 @@ final class RY_WTP_WC_ECPay_Gateway extends RY_WTP_Gateway_Model
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-credit-installment-24.php';
         }
 
-        if ('yes' === RY_WTP::get_option('ecpay_independent_bnpl', 'no')) {
+        if ('yes' === Main::get_option('ecpay_independent_bnpl', 'no')) {
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-urich.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-zingala.php';
         } else {
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-bnpl.php';
         }
 
-        if ('yes' === RY_WTP::get_option('ecpay_independent_digital', 'no')) {
+        if ('yes' === Main::get_option('ecpay_independent_digital', 'no')) {
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-ipass.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/ecpay/gateway-jkopay.php';
         } else {
@@ -54,7 +56,7 @@ final class RY_WTP_WC_ECPay_Gateway extends RY_WTP_Gateway_Model
         add_filter('woocommerce_payment_gateways', [$this, 'add_method']);
         add_filter('woocommerce_settings_api_form_fields_ry_ecpay_credit', [$this, 'add_credit_settings']);
 
-        if ('yes' === RY_WTP::get_option('ecpay_email_payment_info', 'no')) {
+        if ('yes' === Main::get_option('ecpay_email_payment_info', 'no')) {
             add_action('woocommerce_email_after_order_table', [$this, 'add_payment_info'], 10, 4);
         }
     }
@@ -63,7 +65,7 @@ final class RY_WTP_WC_ECPay_Gateway extends RY_WTP_Gateway_Model
     {
         $methods[] = 'RY_ECPay_Gateway_Applepay';
 
-        if ('yes' === RY_WTP::get_option('ecpay_independent_credit_installment', 'no')) {
+        if ('yes' === Main::get_option('ecpay_independent_credit_installment', 'no')) {
             unset($methods[array_search('WC_Gateway_ECPay_Credit_Installment', $methods)]);
             $methods[] = 'RY_ECPay_Gateway_Credit_Installment_3';
             $methods[] = 'RY_ECPay_Gateway_Credit_Installment_6';
@@ -72,14 +74,14 @@ final class RY_WTP_WC_ECPay_Gateway extends RY_WTP_Gateway_Model
             $methods[] = 'RY_ECPay_Gateway_Credit_Installment_24';
         }
 
-        if ('yes' === RY_WTP::get_option('ecpay_independent_bnpl', 'no')) {
+        if ('yes' === Main::get_option('ecpay_independent_bnpl', 'no')) {
             $methods[] = 'RY_ECPay_Gateway_Urich';
             $methods[] = 'RY_ECPay_Gateway_Zingala';
         } else {
             $methods[] = 'RY_ECPay_Gateway_Bnpl';
         }
 
-        if ('yes' === RY_WTP::get_option('ecpay_independent_digital', 'no')) {
+        if ('yes' === Main::get_option('ecpay_independent_digital', 'no')) {
             $methods[] = 'RY_ECPay_Gateway_Ipass';
             $methods[] = 'RY_ECPay_Gateway_Jkopay';
         } else {

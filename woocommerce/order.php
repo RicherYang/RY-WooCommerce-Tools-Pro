@@ -2,6 +2,8 @@
 
 defined('ABSPATH') or exit;
 
+use RY\WooCommerce\Pro\Main;
+
 final class RY_WTP_WC_Order
 {
     private static ?self $_instance = null;
@@ -29,7 +31,7 @@ final class RY_WTP_WC_Order
     public static function virtual_skip_processing($need_processing, $product)
     {
         if ($need_processing === true) {
-            if ('yes' === RY_WTP::get_option('virtual_skip_processing', 'no')) {
+            if ('yes' === Main::get_option('virtual_skip_processing', 'no')) {
                 return !$product->is_virtual();
             }
         }

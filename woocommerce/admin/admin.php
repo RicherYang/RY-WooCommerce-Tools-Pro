@@ -2,6 +2,9 @@
 
 defined('ABSPATH') or exit;
 
+use RY\WooCommerce\Main as WT_Main;
+use RY\WooCommerce\Pro\Main;
+
 final class RY_WTP_WC_Admin
 {
     private static ?self $_instance = null;
@@ -36,7 +39,7 @@ final class RY_WTP_WC_Admin
         wp_register_script('ry-wtp-admin-setting', RY_WTP_PLUGIN_URL . 'assets/admin/setting.js', $asset_info['dependencies'], $asset_info['version'], true);
     }
 
-    public function add_sections($sections)
+    public function add_sections($sections = [])
     {
         unset($sections['pro_info']);
 
@@ -46,11 +49,11 @@ final class RY_WTP_WC_Admin
     public function add_setting($settings, $current_section)
     {
         if ($current_section == '') {
-            $setting_idx = array_search(RY_WT::PREFIX . 'strength_password', array_column($settings, 'id'));
+            $setting_idx = array_search(WT_Main::get_prefix_name('strength_password'), array_column($settings, 'id'));
             array_splice($settings, $setting_idx + 1, 0, [
                 [
                     'title' => __('Only to WooCommerce account', 'ry-woocommerce-tools-pro'),
-                    'id' => RY_WTP::PREFIX . 'register_from_woocommerce',
+                    'id' => Main::get_prefix_name('register_from_woocommerce'),
                     'type' => 'checkbox',
                     'default' => 'no',
                     'desc' => __('Redirect login, register and lost-password from wp-login to WooCommerce account page.', 'ry-woocommerce-tools-pro'),
@@ -58,7 +61,7 @@ final class RY_WTP_WC_Admin
                 ],
                 [
                     'title' => __('Simple CAPTCHA', 'ry-woocommerce-tools-pro'),
-                    'id' => RY_WTP::PREFIX . 'simple_captcha',
+                    'id' => Main::get_prefix_name('simple_captcha'),
                     'type' => 'checkbox',
                     'default' => 'no',
                     'desc' => __('Enable simple CAPTCHA for WooCommerce register form.', 'ry-woocommerce-tools-pro'),
@@ -66,11 +69,11 @@ final class RY_WTP_WC_Admin
                 ],
             ]);
 
-            $setting_idx = array_search(RY_WT::PREFIX . 'show_unpay_title', array_column($settings, 'id'));
+            $setting_idx = array_search(WT_Main::get_prefix_name('show_unpay_title'), array_column($settings, 'id'));
             array_splice($settings, $setting_idx + 1, 0, [
                 [
                     'title' => __('Virtual product skip processing', 'ry-woocommerce-tools-pro'),
-                    'id' => RY_WTP::PREFIX . 'virtual_skip_processing',
+                    'id' => Main::get_prefix_name('virtual_skip_processing'),
                     'type' => 'checkbox',
                     'default' => 'no',
                     'desc' => __('Virtual product order skip processing status.', 'ry-woocommerce-tools-pro'),

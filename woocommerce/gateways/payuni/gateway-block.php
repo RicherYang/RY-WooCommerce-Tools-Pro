@@ -3,6 +3,7 @@
 defined('ABSPATH') or exit;
 
 use Automattic\WooCommerce\Blocks\Payments\PaymentMethodRegistry;
+use RY\WooCommerce\Pro\Main;
 
 final class RY_WTP_WC_PAYUNi_Gateway_Block
 {
@@ -33,7 +34,7 @@ final class RY_WTP_WC_PAYUNi_Gateway_Block
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/blocks/gateway-credit.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/blocks/gateway-cvs.php';
 
-            if ('yes' === RY_WTP::get_option('payuni_independent_credit_installment', 'no')) {
+            if ('yes' === Main::get_option('payuni_independent_credit_installment', 'no')) {
                 include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/blocks/gateway-credit-installment-3.php';
                 include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/blocks/gateway-credit-installment-6.php';
                 include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/blocks/gateway-credit-installment-9.php';
@@ -45,7 +46,7 @@ final class RY_WTP_WC_PAYUNi_Gateway_Block
                 include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/blocks/gateway-credit-installment.php';
             }
 
-            if ('yes' === RY_WTP::get_option('payuni_independent_digital', 'no')) {
+            if ('yes' === Main::get_option('payuni_independent_digital', 'no')) {
                 include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/blocks/gateway-icash.php';
                 include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/blocks/gateway-jkopay.php';
                 include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/blocks/gateway-linepay.php';
@@ -64,7 +65,7 @@ final class RY_WTP_WC_PAYUNi_Gateway_Block
         $payment_method_registry->register(new RY_PAYUNi_Gateway_Credit_Blocks_Support());
         $payment_method_registry->register(new RY_PAYUNi_Gateway_Cvs_Blocks_Support());
 
-        if ('yes' === RY_WTP::get_option('payuni_independent_credit_installment', 'no')) {
+        if ('yes' === Main::get_option('payuni_independent_credit_installment', 'no')) {
             $payment_method_registry->register(new RY_PAYUNi_Gateway_Credit_Installment_3_Blocks_Support());
             $payment_method_registry->register(new RY_PAYUNi_Gateway_Credit_Installment_6_Blocks_Support());
             $payment_method_registry->register(new RY_PAYUNi_Gateway_Credit_Installment_9_Blocks_Support());
@@ -76,7 +77,7 @@ final class RY_WTP_WC_PAYUNi_Gateway_Block
             $payment_method_registry->register(new RY_PAYUNi_Gateway_Credit_Installment_Blocks_Support());
         }
 
-        if ('yes' === RY_WTP::get_option('payuni_independent_digital', 'no')) {
+        if ('yes' === Main::get_option('payuni_independent_digital', 'no')) {
             $payment_method_registry->register(new RY_PAYUNi_Gateway_Icash_Blocks_Support());
             $payment_method_registry->register(new RY_PAYUNi_Gateway_Jkopay_Blocks_Support());
             $payment_method_registry->register(new RY_PAYUNi_Gateway_Linepay_Blocks_Support());

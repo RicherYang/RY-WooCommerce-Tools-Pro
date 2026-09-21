@@ -2,6 +2,8 @@
 
 defined('ABSPATH') or exit;
 
+use RY\WooCommerce\Pro\Main;
+
 final class RY_WTP_WC_SmilePay_Gateway_Admin
 {
     private static ?self $_instance = null;
@@ -33,7 +35,7 @@ final class RY_WTP_WC_SmilePay_Gateway_Admin
                 ],
                 [
                     'title' => __('Show payment info in email', 'ry-woocommerce-tools-pro'),
-                    'id' => RY_WTP::PREFIX . 'smilepay_email_payment_info',
+                    'id' => Main::get_prefix_name('smilepay_email_payment_info'),
                     'type' => 'checkbox',
                     'default' => 'no',
                     'desc' => sprintf(

@@ -2,6 +2,8 @@
 
 defined('ABSPATH') or exit;
 
+use RY\WooCommerce\Pro\Main;
+
 final class RY_WTP_WC_SmilePay_Gateway extends RY_WTP_Gateway_Model
 {
     private static ?self $_instance = null;
@@ -26,7 +28,7 @@ final class RY_WTP_WC_SmilePay_Gateway extends RY_WTP_Gateway_Model
             RY_WTP_WC_SmilePay_Gateway_Admin::instance();
         }
 
-        if ('yes' === RY_WTP::get_option('smilepay_email_payment_info', 'no')) {
+        if ('yes' === Main::get_option('smilepay_email_payment_info', 'no')) {
             add_action('woocommerce_email_after_order_table', [$this, 'add_payment_info'], 10, 4);
         }
     }

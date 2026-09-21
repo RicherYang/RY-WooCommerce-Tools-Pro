@@ -2,6 +2,8 @@
 
 defined('ABSPATH') or exit;
 
+use RY\WooCommerce\Pro\Main;
+
 final class RY_WTP_NewebPay_Shipping_Admin
 {
     private static ?self $_instance = null;
@@ -28,7 +30,7 @@ final class RY_WTP_NewebPay_Shipping_Admin
                 array_splice($settings, $setting_idx + 1, 0, [
                     [
                         'title' => __('cvs remove billing address', 'ry-woocommerce-tools-pro'),
-                        'id' => RY_WTP::PREFIX . 'newebpay_cvs_billing_address',
+                        'id' => Main::get_prefix_name('newebpay_cvs_billing_address'),
                         'type' => 'checkbox',
                         'default' => 'no',
                         'desc' => __('Remove billing address when shipping mode is cvs.', 'ry-woocommerce-tools-pro')

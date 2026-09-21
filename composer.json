@@ -7,7 +7,9 @@
     "autoload": {
         "psr-4": {
             "RY\\General\\V20260810\\": "includes/ry-general",
-            "RY\\Paid\\V20260729\\": "includes/ry-paid"
+            "RY\\Paid\\V20260729\\": "includes/ry-paid",
+            "RY\\WooCommerce\\Pro\\": "classes",
+            "RY\\WooCommerce\\Pro\\Admin\\": "admin"
         }
     },
     "config": {

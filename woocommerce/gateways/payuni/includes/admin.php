@@ -2,6 +2,8 @@
 
 defined('ABSPATH') or exit;
 
+use RY\WooCommerce\Pro\Main;
+
 final class RY_WTP_WC_PAYUNi_Gateway_Admin
 {
     private static ?self $_instance = null;
@@ -36,7 +38,7 @@ final class RY_WTP_WC_PAYUNi_Gateway_Admin
                 ],
                 [
                     'title' => __('Independent payment gateway', 'ry-woocommerce-tools-pro'),
-                    'id' => RY_WTP::PREFIX . 'payuni_credit_installment',
+                    'id' => Main::get_prefix_name('payuni_credit_installment'),
                     'type' => 'checkbox',
                     'default' => 'no',
                     'desc' => __('Add each periods of credit installment as a payment gateway.', 'ry-woocommerce-tools-pro')
@@ -44,7 +46,7 @@ final class RY_WTP_WC_PAYUNi_Gateway_Admin
                     'checkboxgroup' => 'start',
                 ],
                 [
-                    'id' => RY_WTP::PREFIX . 'payuni_independent_digital',
+                    'id' => Main::get_prefix_name('payuni_independent_digital'),
                     'type' => 'checkbox',
                     'default' => 'no',
                     'desc' => __('Add each type of digital payment as a payment gateway.', 'ry-woocommerce-tools-pro')
@@ -53,7 +55,7 @@ final class RY_WTP_WC_PAYUNi_Gateway_Admin
                 ],
                 [
                     'title' => __('Show payment info in email', 'ry-woocommerce-tools-pro'),
-                    'id' => RY_WTP::PREFIX . 'payuni_email_payment_info',
+                    'id' => Main::get_prefix_name('payuni_email_payment_info'),
                     'type' => 'checkbox',
                     'default' => 'no',
                     'desc' => sprintf(

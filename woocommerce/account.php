@@ -2,6 +2,8 @@
 
 defined('ABSPATH') or exit;
 
+use RY\WooCommerce\Pro\Main;
+
 final class RY_WTP_WC_Account
 {
     private static ?self $_instance = null;
@@ -20,7 +22,7 @@ final class RY_WTP_WC_Account
     {
         add_action('login_init', [$this, 'check_action_limit']);
 
-        if ('yes' === RY_WTP::get_option('simple_captcha', 'no')) {
+        if ('yes' === Main::get_option('simple_captcha', 'no')) {
             add_action('woocommerce_register_form', [$this, 'add_register_field']);
             add_filter('woocommerce_registration_errors', [$this, 'check_registration_info'], 10, 3);
         }
@@ -28,7 +30,7 @@ final class RY_WTP_WC_Account
 
     public function check_action_limit()
     {
-        if ('yes' === RY_WTP::get_option('register_from_woocommerce', 'no')) {
+        if ('yes' === Main::get_option('register_from_woocommerce', 'no')) {
             add_filter('register_url', [$this, 'return_wc_account']);
 
             add_action('login_form_login', [$this, 'redirect_wc_account']);

@@ -3,6 +3,7 @@
 defined('ABSPATH') or exit;
 
 use Automattic\WooCommerce\Blocks\Payments\PaymentMethodRegistry;
+use RY\WooCommerce\Pro\Main;
 
 final class RY_WTP_WC_NewebPay_Gateway_Block
 {
@@ -35,7 +36,7 @@ final class RY_WTP_WC_NewebPay_Gateway_Block
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/blocks/gateway-cvs.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/blocks/gateway-webatm.php';
 
-            if ('yes' === RY_WTP::get_option('newebpay_independent_credit_installment', 'no')) {
+            if ('yes' === Main::get_option('newebpay_independent_credit_installment', 'no')) {
                 include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/blocks/gateway-credit-installment-3.php';
                 include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/blocks/gateway-credit-installment-6.php';
                 include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/blocks/gateway-credit-installment-12.php';
@@ -45,7 +46,7 @@ final class RY_WTP_WC_NewebPay_Gateway_Block
                 include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/blocks/gateway-credit-installment.php';
             }
 
-            if ('yes' === RY_WTP::get_option('newebpay_independent_digital', 'no')) {
+            if ('yes' === Main::get_option('newebpay_independent_digital', 'no')) {
                 include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/blocks/gateway-esunwallet.php';
                 include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/blocks/gateway-linepay.php';
                 include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/blocks/gateway-twpay.php';
@@ -66,7 +67,7 @@ final class RY_WTP_WC_NewebPay_Gateway_Block
         $payment_method_registry->register(new RY_NewebPay_Gateway_Cvs_Blocks_Support());
         $payment_method_registry->register(new RY_NewebPay_Gateway_Webatm_Blocks_Support());
 
-        if ('yes' === RY_WTP::get_option('newebpay_independent_credit_installment', 'no')) {
+        if ('yes' === Main::get_option('newebpay_independent_credit_installment', 'no')) {
             $payment_method_registry->register(new RY_NewebPay_Gateway_Credit_Installment_3_Blocks_Support());
             $payment_method_registry->register(new RY_NewebPay_Gateway_Credit_Installment_6_Blocks_Support());
             $payment_method_registry->register(new RY_NewebPay_Gateway_Credit_Installment_12_Blocks_Support());
@@ -76,7 +77,7 @@ final class RY_WTP_WC_NewebPay_Gateway_Block
             $payment_method_registry->register(new RY_NewebPay_Gateway_Credit_Installment_Blocks_Support());
         }
 
-        if ('yes' === RY_WTP::get_option('newebpay_independent_digital', 'no')) {
+        if ('yes' === Main::get_option('newebpay_independent_digital', 'no')) {
             $payment_method_registry->register(new RY_NewebPay_Gateway_Esunwallet_Blocks_Support());
             $payment_method_registry->register(new RY_NewebPay_Gateway_Linepay_Blocks_Support());
             $payment_method_registry->register(new RY_NewebPay_Gateway_Twpay_Blocks_Support());

@@ -2,6 +2,8 @@
 
 defined('ABSPATH') or exit;
 
+use RY\WooCommerce\Pro\Main;
+
 final class RY_WTP_WC_PAYUNi_Gateway extends RY_WTP_Gateway_Model
 {
     private static ?self $_instance = null;
@@ -20,7 +22,7 @@ final class RY_WTP_WC_PAYUNi_Gateway extends RY_WTP_Gateway_Model
     {
         include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/gateway-bnpl.php';
 
-        if ('yes' === RY_WTP::get_option('payuni_independent_credit_installment', 'no')) {
+        if ('yes' === Main::get_option('payuni_independent_credit_installment', 'no')) {
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/includes/gateway-credit-installment.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/gateway-credit-installment-3.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/gateway-credit-installment-6.php';
@@ -31,7 +33,7 @@ final class RY_WTP_WC_PAYUNi_Gateway extends RY_WTP_Gateway_Model
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/gateway-credit-installment-30.php';
         }
 
-        if ('yes' === RY_WTP::get_option('payuni_independent_digital', 'no')) {
+        if ('yes' === Main::get_option('payuni_independent_digital', 'no')) {
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/gateway-icash.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/gateway-jkopay.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/payuni/gateway-linepay.php';
@@ -50,7 +52,7 @@ final class RY_WTP_WC_PAYUNi_Gateway extends RY_WTP_Gateway_Model
         add_filter('woocommerce_payment_gateways', [$this, 'add_method']);
         add_filter('woocommerce_settings_api_form_fields_ry_payuni_credit', [$this, 'add_credit_settings']);
 
-        if ('yes' === RY_WTP::get_option('payuni_email_payment_info', 'no')) {
+        if ('yes' === Main::get_option('payuni_email_payment_info', 'no')) {
             add_action('woocommerce_email_after_order_table', [$this, 'add_payment_info'], 10, 4);
         }
     }
@@ -59,7 +61,7 @@ final class RY_WTP_WC_PAYUNi_Gateway extends RY_WTP_Gateway_Model
     {
         $methods[] = 'RY_PAYUNi_Gateway_Bnpl';
 
-        if ('yes' === RY_WTP::get_option('payuni_independent_credit_installment', 'no')) {
+        if ('yes' === Main::get_option('payuni_independent_credit_installment', 'no')) {
             unset($methods[array_search('WC_Gateway_PAYUNi_Credit_Installment', $methods)]);
             $methods[] = 'RY_PAYUNi_Gateway_Credit_Installment_3';
             $methods[] = 'RY_PAYUNi_Gateway_Credit_Installment_6';
@@ -70,7 +72,7 @@ final class RY_WTP_WC_PAYUNi_Gateway extends RY_WTP_Gateway_Model
             $methods[] = 'RY_PAYUNi_Gateway_Credit_Installment_30';
         }
 
-        if ('yes' === RY_WTP::get_option('payuni_independent_digital', 'no')) {
+        if ('yes' === Main::get_option('payuni_independent_digital', 'no')) {
             $methods[] = 'RY_PAYUNi_Gateway_Icash';
             $methods[] = 'RY_PAYUNi_Gateway_Jkopay';
             $methods[] = 'RY_PAYUNi_Gateway_Linepay';
