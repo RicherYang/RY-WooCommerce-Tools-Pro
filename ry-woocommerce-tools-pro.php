@@ -4,7 +4,7 @@
  * Plugin Name: RY Tools (Pro) for WooCommerce
  * Plugin URI: https://ry-plugin.com/ry-woocommerce-tools-pro/
  * Description: WooCommerce payment and shipping tools
- * Version: 2026.8.12
+ * Version: 2026.9.21
  * Requires at least: 6.8
  * Requires PHP: 8.2
  * Requires Plugins: ry-woocommerce-tools
@@ -21,7 +21,7 @@ use RY\WooCommerce\Pro\Main;
 
 defined('ABSPATH') or exit;
 
-define('RY_WTP_VERSION', '2026.8.12');
+define('RY_WTP_VERSION', '2026.9.21');
 define('RY_WTP_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('RY_WTP_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('RY_WTP_PLUGIN_BASENAME', plugin_basename(__FILE__));
