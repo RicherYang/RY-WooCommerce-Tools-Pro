@@ -10,7 +10,7 @@ use RY\WooCommerce\Pro\Admin\Admin;
 
 final class Main extends AbstractBasic
 {
-    public const PREFIX = '\RY_WTP_';
+    public const PREFIX = 'RY_WTP_';
 
     public const PLUGIN_NAME = 'RY Tools (Pro) for WooCommerce';
 

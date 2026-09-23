@@ -53,8 +53,13 @@ final class Update
             Main::update_option('version', '3.8.0', true);
         }
 
-        if (version_compare($now_version, '2026.9.22', '<')) {
-            Main::update_option('version', '2026.9.22', true);
+        if (version_compare($now_version, '2026.9.23', '<')) {
+            add_action('init', function () {
+                global $wpdb;
+
+                $wpdb->query("DELETE FROM {$wpdb->prefix}options WHERE option_name LIKE '\RY_WTP%'");
+            });
+            Main::update_option('version', '2026.9.23', true);
         }
     }
 }
