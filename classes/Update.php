@@ -53,13 +53,18 @@ final class Update
             Main::update_option('version', '3.8.0', true);
         }
 
-        if (version_compare($now_version, '2026.9.23', '<')) {
+        if (version_compare($now_version, '2026.9.23.1', '<')) {
             add_action('init', function () {
                 global $wpdb;
 
-                $wpdb->query("DELETE FROM {$wpdb->prefix}options WHERE option_name LIKE '\RY_WTP%'");
+                $rows = $wpdb->get_results($wpdb->prepare("SELECT * FROM {$wpdb->prefix}options WHERE option_name LIKE %s", '%RY_WTP_%'));
+                foreach ($rows as $rows) {
+                    if (str_starts_with($rows->option_name, '\RY_WTP_')) {
+                        delete_option($rows->option_name);
+                    }
+                }
             });
-            Main::update_option('version', '2026.9.23', true);
+            Main::update_option('version', '2026.9.23.1', true);
         }
     }
 }
