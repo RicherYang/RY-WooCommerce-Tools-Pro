@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: RY Tools (Pro) for WooCommerce\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-16 10:51+0800\n"
-"PO-Revision-Date: 2026-08-07 13:47+0800\n"
 "Last-Translator: Richer Yang\n"
 "Language-Team: \n"
-"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-02-16 10:51+0800\n"
+"PO-Revision-Date: 2026-08-07 13:47+0800\n"
+"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
 "X-Poedit-Basepath: ..\n"
@@ -214,31 +214,31 @@ msgstr "使用信用卡（6 期）付款"
 msgid "ECPay Credit (6 installment)"
 msgstr "綠界信用卡（分 6 期）"
 
-#: woocommerce/gateways/ecpay/includes/admin.php:32
-#: woocommerce/gateways/newebpay/includes/admin.php:34
-#: woocommerce/gateways/payuni/includes/admin.php:33
-#: woocommerce/gateways/smilepay/includes/admin.php:30
+#: woocommerce/gateways/ecpay/includes/admin.php:34
+#: woocommerce/gateways/newebpay/includes/admin.php:36
+#: woocommerce/gateways/payuni/includes/admin.php:35
+#: woocommerce/gateways/smilepay/includes/admin.php:32
 msgid "Gateway options"
 msgstr "金流設定"
 
-#: woocommerce/gateways/ecpay/includes/admin.php:41
-#: woocommerce/gateways/newebpay/includes/admin.php:43
-#: woocommerce/gateways/payuni/includes/admin.php:42
+#: woocommerce/gateways/ecpay/includes/admin.php:43
+#: woocommerce/gateways/newebpay/includes/admin.php:45
+#: woocommerce/gateways/payuni/includes/admin.php:44
 msgid "Add each periods of credit installment as a payment gateway."
 msgstr "將每一個信用卡分期期數新增為一個付款方式。"
 
-#: woocommerce/gateways/ecpay/includes/admin.php:62
-#: woocommerce/gateways/newebpay/includes/admin.php:56
-#: woocommerce/gateways/payuni/includes/admin.php:55
-#: woocommerce/gateways/smilepay/includes/admin.php:35
+#: woocommerce/gateways/ecpay/includes/admin.php:64
+#: woocommerce/gateways/newebpay/includes/admin.php:58
+#: woocommerce/gateways/payuni/includes/admin.php:57
+#: woocommerce/gateways/smilepay/includes/admin.php:37
 msgid "Show payment info in email"
 msgstr "在信件中顯示付款資訊"
 
 #. translators: %s: email title
-#: woocommerce/gateways/ecpay/includes/admin.php:68
-#: woocommerce/gateways/newebpay/includes/admin.php:62
-#: woocommerce/gateways/payuni/includes/admin.php:61
-#: woocommerce/gateways/smilepay/includes/admin.php:41
+#: woocommerce/gateways/ecpay/includes/admin.php:70
+#: woocommerce/gateways/newebpay/includes/admin.php:64
+#: woocommerce/gateways/payuni/includes/admin.php:63
+#: woocommerce/gateways/smilepay/includes/admin.php:43
 #, php-format
 msgid "Add payment info in \"%s\" email."
 msgstr "在「%s」信件中顯示付款資訊。"
@@ -305,72 +305,72 @@ msgstr "藍新信用卡（6 期）"
 msgid "SmilePay"
 msgstr "速買配"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:53
-#: woocommerce/shipping/smilepay/includes/admin.php:46
+#: woocommerce/shipping/ecpay/includes/admin.php:55
+#: woocommerce/shipping/smilepay/includes/admin.php:48
 msgid "Auto get with scheduler action"
 msgstr "使用排程來自動取得物流單號"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:57
-#: woocommerce/shipping/smilepay/includes/admin.php:50
+#: woocommerce/shipping/ecpay/includes/admin.php:59
+#: woocommerce/shipping/smilepay/includes/admin.php:52
 msgid "Get shipping payment no use scheduler action."
 msgstr "使用排程動作來取得物流寄件編號。"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:65
-#: woocommerce/shipping/newebpay/includes/admin.php:30
-#: woocommerce/shipping/smilepay/includes/admin.php:58
+#: woocommerce/shipping/ecpay/includes/admin.php:67
+#: woocommerce/shipping/newebpay/includes/admin.php:32
+#: woocommerce/shipping/smilepay/includes/admin.php:60
 msgid "cvs remove billing address"
 msgstr "超商取貨移除帳單地址"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:69
-#: woocommerce/shipping/newebpay/includes/admin.php:34
-#: woocommerce/shipping/smilepay/includes/admin.php:62
+#: woocommerce/shipping/ecpay/includes/admin.php:71
+#: woocommerce/shipping/newebpay/includes/admin.php:36
+#: woocommerce/shipping/smilepay/includes/admin.php:64
 msgid "Remove billing address when shipping mode is cvs."
 msgstr "當超商取貨的時候移除帳單中的地址欄位。"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:70
-#: woocommerce/shipping/newebpay/includes/admin.php:35
-#: woocommerce/shipping/smilepay/includes/admin.php:63
+#: woocommerce/shipping/ecpay/includes/admin.php:72
+#: woocommerce/shipping/newebpay/includes/admin.php:37
+#: woocommerce/shipping/smilepay/includes/admin.php:65
 msgid "The billing address still will show in order details."
 msgstr "在訂單明細當中依然會顯示帳單地址的資料。"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:78
+#: woocommerce/shipping/ecpay/includes/admin.php:80
 msgid "Clean up receiver name"
 msgstr "調整收件人姓名"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:82
+#: woocommerce/shipping/ecpay/includes/admin.php:84
 msgid "Clean up receiver name to comply with ECPay request."
 msgstr "自動調整收件人姓名以符合綠界的規定。"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:87
+#: woocommerce/shipping/ecpay/includes/admin.php:89
 msgctxt "Cvs type"
 msgid "B2C"
 msgstr "B2C"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:90
+#: woocommerce/shipping/ecpay/includes/admin.php:92
 msgid "multi package"
 msgstr "產生多筆物流單"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:112
+#: woocommerce/shipping/ecpay/includes/admin.php:114
 msgid "Print ECPay shipping booking note (711)"
 msgstr "列印綠界物流託運單 (7-11)"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:113
+#: woocommerce/shipping/ecpay/includes/admin.php:115
 msgid "Print ECPay shipping booking note (family)"
 msgstr "列印綠界物流託運單 (全家)"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:114
+#: woocommerce/shipping/ecpay/includes/admin.php:116
 msgid "Print ECPay shipping booking note (hilife)"
 msgstr "列印綠界物流託運單 (萊爾富)"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:115
+#: woocommerce/shipping/ecpay/includes/admin.php:117
 msgid "Print ECPay shipping booking note (post)"
 msgstr "列印綠界物流託運單 (郵局)"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:116
+#: woocommerce/shipping/ecpay/includes/admin.php:118
 msgid "Print ECPay shipping booking note (tcat)"
 msgstr "列印綠界物流託運單 (黑貓)"
 
-#: woocommerce/shipping/ecpay/shipping-cvs-711.php:11
+#: woocommerce/shipping/ecpay/shipping-cvs-711.php:13
 #: woocommerce/shipping/ecpay/shipping-cvs-family.php:11
 #: woocommerce/shipping/ecpay/shipping-cvs-hilife.php:11
 #: woocommerce/shipping/ecpay/shipping-home-post.php:11
@@ -382,7 +382,7 @@ msgstr "列印綠界物流託運單 (黑貓)"
 msgid "A minimum order amount ( except discount and tex )"
 msgstr "最小訂購金額（不包含折價及稅金）"
 
-#: woocommerce/shipping/ecpay/shipping-cvs-711.php:12
+#: woocommerce/shipping/ecpay/shipping-cvs-711.php:14
 #: woocommerce/shipping/ecpay/shipping-cvs-family.php:12
 #: woocommerce/shipping/ecpay/shipping-cvs-hilife.php:12
 #: woocommerce/shipping/ecpay/shipping-home-post.php:12
@@ -394,7 +394,7 @@ msgstr "最小訂購金額（不包含折價及稅金）"
 msgid "A minimum order amount OR a coupon ( except discount and tex )"
 msgstr "最小訂購金額或使用折價券（不包含折價及稅金）"
 
-#: woocommerce/shipping/ecpay/shipping-cvs-711.php:13
+#: woocommerce/shipping/ecpay/shipping-cvs-711.php:15
 #: woocommerce/shipping/ecpay/shipping-cvs-family.php:13
 #: woocommerce/shipping/ecpay/shipping-cvs-hilife.php:13
 #: woocommerce/shipping/ecpay/shipping-home-post.php:13
@@ -406,11 +406,11 @@ msgstr "最小訂購金額或使用折價券（不包含折價及稅金）"
 msgid "A minimum order amount AND a coupon ( except discount and tex )"
 msgstr "最小訂購金額以及使用折價券（不包含折價及稅金）"
 
-#: woocommerce/shipping/smilepay/includes/admin.php:73
+#: woocommerce/shipping/smilepay/includes/admin.php:75
 msgid "Print smilepay shipping booking note (711)"
 msgstr "列印速買配物流託運單 (7-11)"
 
-#: woocommerce/shipping/smilepay/includes/admin.php:74
+#: woocommerce/shipping/smilepay/includes/admin.php:76
 msgid "Print SmilePay shipping booking note (family)"
 msgstr "列印速買配物流託運單 (全家)"
 
@@ -524,25 +524,26 @@ msgid "ECPay select cvs store"
 msgstr "綠界選擇超商門市"
 
 #. translators: %1$s: Name of this plugin %2$s: Name of require plugin %3$s: min require version
-#: admin/admin.php:59 admin/admin.php:75
+#: admin/Admin.php:62
+#: admin/Admin.php:78
 #, php-format
 msgid "<strong>%1$s</strong> is inactive. It require %2$s %3$s or newer."
 msgstr "<strong>%1$s</strong> 暫停運作。 需求 %2$s %3$s 或更新版本。"
 
-#: woocommerce/shipping/ecpay/shipping.php:174
-#: woocommerce/shipping/smilepay/shipping.php:163
+#: woocommerce/shipping/ecpay/shipping.php:177
+#: woocommerce/shipping/smilepay/shipping.php:166
 msgid "Invalid cellphone number"
 msgstr "無效的手機號碼"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:110
+#: woocommerce/shipping/ecpay/includes/admin.php:112
 msgid "Get ECPay shipping no"
 msgstr "取得綠界託運單號"
 
-#: woocommerce/shipping/smilepay/includes/admin.php:75
+#: woocommerce/shipping/smilepay/includes/admin.php:77
 msgid "Print SmilePay shipping booking note (tcat)"
 msgstr "列印速買配物流託運單 (黑貓)"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:223
+#: woocommerce/shipping/ecpay/includes/admin.php:225
 msgid "Get info"
 msgstr "取得資訊"
 
@@ -752,25 +753,25 @@ msgstr "代收款項撥款日期"
 msgid "Change address"
 msgstr "變更地址"
 
-#: woocommerce/gateways/ecpay/includes/admin.php:69
-#: woocommerce/gateways/newebpay/includes/admin.php:63
-#: woocommerce/gateways/payuni/includes/admin.php:62
-#: woocommerce/gateways/smilepay/includes/admin.php:42
+#: woocommerce/gateways/ecpay/includes/admin.php:71
+#: woocommerce/gateways/newebpay/includes/admin.php:65
+#: woocommerce/gateways/payuni/includes/admin.php:64
+#: woocommerce/gateways/smilepay/includes/admin.php:44
 msgid "Order on-hold"
 msgstr "訂單保留"
 
 #. translators: %s: count
-#: woocommerce/shipping/ecpay/includes/admin.php:103
+#: woocommerce/shipping/ecpay/includes/admin.php:105
 #, php-format
 msgid "%s order get shipping no."
 msgid_plural "%s order get shipping no."
 msgstr[0] "%s 筆訂單取得物流託運單。"
 
-#: woocommerce/shipping/ecpay/includes/admin.php:243
+#: woocommerce/shipping/ecpay/includes/admin.php:245
 msgid "ECPay shipping ID"
 msgstr "綠界物流編號"
 
-#: woocommerce/shipping/smilepay/includes/admin.php:108
+#: woocommerce/shipping/smilepay/includes/admin.php:110
 msgid "SmilePay shipping ID"
 msgstr "速買配物流編號"
 
@@ -876,11 +877,11 @@ msgstr "禁止的運送方式"
 msgid "Select shipping methods to skip"
 msgstr "請選擇要禁止的運送方式"
 
-#: woocommerce/admin/admin.php:72
+#: woocommerce/admin/admin.php:75
 msgid "Virtual product skip processing"
 msgstr "虛擬商品跳過處理中"
 
-#: woocommerce/admin/admin.php:76
+#: woocommerce/admin/admin.php:79
 msgid "Virtual product order skip processing status."
 msgstr "虛擬商品的訂單跳過處理中狀態。"
 
@@ -908,69 +909,69 @@ msgstr "使用街口支付付款"
 msgid "ECPay JKOPay"
 msgstr "綠界街口支付"
 
-#: woocommerce/admin/admin.php:52
+#: woocommerce/admin/admin.php:55
 msgid "Only to WooCommerce account"
 msgstr "限制使用 WooCommerce 帳號頁面"
 
-#: woocommerce/admin/admin.php:56
+#: woocommerce/admin/admin.php:59
 msgid "Redirect login, register and lost-password from wp-login to WooCommerce account page."
 msgstr "將登入、註冊和忘記密碼頁面從 wp-login 重新導向到 WooCommerce 帳號頁面。"
 
-#: woocommerce/admin/admin.php:60
+#: woocommerce/admin/admin.php:63
 msgid "Simple CAPTCHA"
 msgstr "簡易的驗證碼"
 
-#: woocommerce/admin/admin.php:64
+#: woocommerce/admin/admin.php:67
 msgid "Enable simple CAPTCHA for WooCommerce register form."
 msgstr "啟用簡易驗證碼於 WooCommerce 註冊表單。"
 
-#: woocommerce/account.php:63
+#: woocommerce/account.php:65
 msgid "one"
 msgstr "壹"
 
-#: woocommerce/account.php:64
+#: woocommerce/account.php:66
 msgid "two"
 msgstr "貳"
 
-#: woocommerce/account.php:65
+#: woocommerce/account.php:67
 msgid "three"
 msgstr "參"
 
-#: woocommerce/account.php:66
+#: woocommerce/account.php:68
 msgid "four"
 msgstr "肆"
 
-#: woocommerce/account.php:67
+#: woocommerce/account.php:69
 msgid "five"
 msgstr "伍"
 
-#: woocommerce/account.php:68
+#: woocommerce/account.php:70
 msgid "six"
 msgstr "陸"
 
-#: woocommerce/account.php:69
+#: woocommerce/account.php:71
 msgid "seven"
 msgstr "柒"
 
-#: woocommerce/account.php:70
+#: woocommerce/account.php:72
 msgid "eight"
 msgstr "捌"
 
-#: woocommerce/account.php:71
+#: woocommerce/account.php:73
 msgid "nine"
 msgstr "玖"
 
 #. translators: %1$s: first number, %2$s: second number, such as one, two, three.
-#: woocommerce/account.php:75
+#: woocommerce/account.php:77
 #, php-format
 msgid "Please use numbers to enter the result of %1$s + %2$s."
 msgstr "請使用數字輸入 %1$s + %2$s 的結果。"
 
-#: woocommerce/account.php:80
+#: woocommerce/account.php:82
 msgid "bot check"
 msgstr "機器人檢查"
 
-#: woocommerce/account.php:95
+#: woocommerce/account.php:97
 msgid "Bot check failed. Please make sure you enter the correct number."
 msgstr "機器人檢查失敗。請確保您輸入正確的數字。"
 
@@ -978,7 +979,8 @@ msgstr "機器人檢查失敗。請確保您輸入正確的數字。"
 msgid "Refund through service provider"
 msgstr "透過服務供應商退款"
 
-#: woocommerce/admin/meta-box.php:28 woocommerce/admin/order.php:61
+#: woocommerce/admin/meta-box.php:28
+#: woocommerce/admin/order.php:61
 msgid "Get payment info"
 msgstr "取得付款交易資訊"
 
@@ -1074,12 +1076,12 @@ msgstr "授權類型"
 msgid "Invalid amount"
 msgstr "無效的金額"
 
-#: admin/admin.php:55
+#: admin/Admin.php:58
 msgid "WordPress Plugin Directory"
 msgstr "WordPress 外掛目錄庫"
 
 #. translators: %1$s: Name of require plugin
-#: admin/admin.php:66
+#: admin/Admin.php:69
 #, php-format
 msgid "You can download from %s and manual update to the latest version."
 msgstr "你可以從 %s 下載並且手動更新至最新版本。"
@@ -1128,17 +1130,17 @@ msgstr "使用 icash Pay 付款"
 msgid "PAYUNi icash Pay"
 msgstr "統一 icash Pay"
 
-#: woocommerce/gateways/ecpay/includes/admin.php:49
+#: woocommerce/gateways/ecpay/includes/admin.php:51
 msgid "Add each type of BNPL as a payment gateway."
 msgstr "將每一個先買後付新增為一個付款方式。"
 
-#: woocommerce/gateways/ecpay/includes/admin.php:42
-#: woocommerce/gateways/ecpay/includes/admin.php:50
-#: woocommerce/gateways/ecpay/includes/admin.php:58
-#: woocommerce/gateways/newebpay/includes/admin.php:44
-#: woocommerce/gateways/newebpay/includes/admin.php:52
-#: woocommerce/gateways/payuni/includes/admin.php:43
-#: woocommerce/gateways/payuni/includes/admin.php:51
+#: woocommerce/gateways/ecpay/includes/admin.php:44
+#: woocommerce/gateways/ecpay/includes/admin.php:52
+#: woocommerce/gateways/ecpay/includes/admin.php:60
+#: woocommerce/gateways/newebpay/includes/admin.php:46
+#: woocommerce/gateways/newebpay/includes/admin.php:54
+#: woocommerce/gateways/payuni/includes/admin.php:45
+#: woocommerce/gateways/payuni/includes/admin.php:53
 msgid "Note: This option will remove the original payment gateway."
 msgstr "注意：將移除原本的付款方式。"
 
@@ -1160,9 +1162,9 @@ msgstr "使用 中租銀角零卡 付款"
 msgid "ECPay Zingala"
 msgstr "綠界中租銀角零卡"
 
-#: woocommerce/gateways/ecpay/includes/admin.php:37
-#: woocommerce/gateways/newebpay/includes/admin.php:39
-#: woocommerce/gateways/payuni/includes/admin.php:38
+#: woocommerce/gateways/ecpay/includes/admin.php:39
+#: woocommerce/gateways/newebpay/includes/admin.php:41
+#: woocommerce/gateways/payuni/includes/admin.php:40
 msgid "Independent payment gateway"
 msgstr "獨立的付款方式"
 
@@ -1178,9 +1180,9 @@ msgstr "綠界電子支付"
 msgid "Pay via Digital Payment"
 msgstr "使用電子支付付款"
 
-#: woocommerce/gateways/ecpay/includes/admin.php:57
-#: woocommerce/gateways/newebpay/includes/admin.php:51
-#: woocommerce/gateways/payuni/includes/admin.php:50
+#: woocommerce/gateways/ecpay/includes/admin.php:59
+#: woocommerce/gateways/newebpay/includes/admin.php:53
+#: woocommerce/gateways/payuni/includes/admin.php:52
 msgid "Add each type of digital payment as a payment gateway."
 msgstr "將每一個電子支付新增為一個付款方式。"
 
@@ -1233,7 +1235,8 @@ msgstr "藍新台灣 Pay"
 msgid "%1$s: Your <a href=\"%2$s\">license</a> is not activated yet!"
 msgstr "%1$s: 你的<a href=\"%2$s\">授權</a>尚未啟用！"
 
-#: includes/ry-general/Page/Logs.php:29 includes/ry-general/Page/Logs.php:78
+#: includes/ry-general/Page/Logs.php:29
+#: includes/ry-general/Page/Logs.php:78
 msgid "Logs"
 msgstr "紀錄"
 
@@ -1275,53 +1278,53 @@ msgstr "紀錄檔案"
 msgid "No logs found."
 msgstr "没有紀錄檔案。"
 
-#: woocommerce/gateways/ecpay/gateway.php:95
-#: woocommerce/gateways/newebpay/gateway.php:83
-#: woocommerce/gateways/payuni/gateway.php:87
+#: woocommerce/gateways/ecpay/gateway.php:97
+#: woocommerce/gateways/newebpay/gateway.php:85
+#: woocommerce/gateways/payuni/gateway.php:89
 msgid "Apple Pay"
 msgstr "Apple Pay"
 
-#: woocommerce/gateways/ecpay/gateway.php:96
-#: woocommerce/gateways/newebpay/gateway.php:84
-#: woocommerce/gateways/payuni/gateway.php:88
+#: woocommerce/gateways/ecpay/gateway.php:98
+#: woocommerce/gateways/newebpay/gateway.php:86
+#: woocommerce/gateways/payuni/gateway.php:90
 msgid "Support Apple Pay"
 msgstr "支援 Apple Pay"
 
-#: woocommerce/gateways/ecpay/gateway.php:101
-#: woocommerce/gateways/newebpay/gateway.php:108
+#: woocommerce/gateways/ecpay/gateway.php:103
+#: woocommerce/gateways/newebpay/gateway.php:110
 msgid "UnionPay"
 msgstr "銀聯卡"
 
-#: woocommerce/gateways/ecpay/gateway.php:102
-#: woocommerce/gateways/newebpay/gateway.php:109
+#: woocommerce/gateways/ecpay/gateway.php:104
+#: woocommerce/gateways/newebpay/gateway.php:111
 msgid "Support UnionPay"
 msgstr "支援銀聯卡"
 
-#: woocommerce/gateways/newebpay/gateway.php:89
-#: woocommerce/gateways/payuni/gateway.php:93
+#: woocommerce/gateways/newebpay/gateway.php:91
+#: woocommerce/gateways/payuni/gateway.php:95
 msgid "Google Pay"
 msgstr "Google Pay"
 
-#: woocommerce/gateways/newebpay/gateway.php:90
-#: woocommerce/gateways/payuni/gateway.php:94
+#: woocommerce/gateways/newebpay/gateway.php:92
+#: woocommerce/gateways/payuni/gateway.php:96
 msgid "Support Google Pay"
 msgstr "支援 Google Pay"
 
-#: woocommerce/gateways/newebpay/gateway.php:95
-#: woocommerce/gateways/payuni/gateway.php:99
+#: woocommerce/gateways/newebpay/gateway.php:97
+#: woocommerce/gateways/payuni/gateway.php:101
 msgid "Samsung Pay"
 msgstr "Samsung Pay"
 
-#: woocommerce/gateways/newebpay/gateway.php:96
-#: woocommerce/gateways/payuni/gateway.php:100
+#: woocommerce/gateways/newebpay/gateway.php:98
+#: woocommerce/gateways/payuni/gateway.php:102
 msgid "Support Samsung Pay"
 msgstr "支援 Samsung Pay"
 
-#: woocommerce/gateways/newebpay/gateway.php:102
+#: woocommerce/gateways/newebpay/gateway.php:104
 msgid "AE"
 msgstr "美國運通卡"
 
-#: woocommerce/gateways/newebpay/gateway.php:103
+#: woocommerce/gateways/newebpay/gateway.php:105
 msgid "Support AE"
 msgstr "支援 美國運通卡"
 
@@ -1552,7 +1555,8 @@ msgstr "啟用追蹤"
 msgid "Allow usage of RY Plugin to be tracked"
 msgstr "允許 RY Plugin 追蹤使用情況"
 
-#: includes/ry-general/Page/html/options.php:18
+#. translators: %s: link to usage tracking information
+#: includes/ry-general/Page/html/options.php:19
 #, php-format
 msgid "Read about what usage data is tracked at: %s ."
 msgstr "閱讀 %s 以理解我們追蹤那些數據。"
@@ -1566,6 +1570,7 @@ msgstr "設定"
 msgid "Settings saved."
 msgstr "設定已儲存。"
 
-#: includes/ry-general/Page/Option.php:41 includes/ry-paid/Page/License.php:75
+#: includes/ry-general/Page/Option.php:41
+#: includes/ry-paid/Page/License.php:75
 msgid "Save Changes"
 msgstr "儲存設定"

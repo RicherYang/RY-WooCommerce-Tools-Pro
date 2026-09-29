@@ -2,7 +2,7 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: RY Tools (Pro) for WooCommerce 2026.8.7\n"
+"Project-Id-Version: RY Tools (Pro) for WooCommerce 2026.9.29\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ry-woocommerce-tools-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,19 +38,19 @@ msgstr ""
 msgid "https://richer.tw/"
 msgstr ""
 
-#: admin/admin.php:55
+#: admin/Admin.php:58
 msgid "WordPress Plugin Directory"
 msgstr ""
 
 #. translators: %1$s: Name of this plugin %2$s: Name of require plugin %3$s: min require version
-#: admin/admin.php:59
-#: admin/admin.php:75
+#: admin/Admin.php:62
+#: admin/Admin.php:78
 #, php-format
 msgid "<strong>%1$s</strong> is inactive. It require %2$s %3$s or newer."
 msgstr ""
 
 #. translators: %1$s: Name of require plugin
-#: admin/admin.php:66
+#: admin/Admin.php:69
 #, php-format
 msgid "You can download from %s and manual update to the latest version."
 msgstr ""
@@ -116,7 +116,8 @@ msgstr ""
 msgid "Allow usage of RY Plugin to be tracked"
 msgstr ""
 
-#: includes/ry-general/Page/html/options.php:18
+#. translators: %s: link to usage tracking information
+#: includes/ry-general/Page/html/options.php:19
 #, php-format
 msgid "Read about what usage data is tracked at: %s ."
 msgstr ""
@@ -360,77 +361,77 @@ msgctxt "Shipping status"
 msgid "Unknow"
 msgstr ""
 
-#: woocommerce/account.php:63
+#: woocommerce/account.php:65
 msgid "one"
 msgstr ""
 
-#: woocommerce/account.php:64
+#: woocommerce/account.php:66
 msgid "two"
 msgstr ""
 
-#: woocommerce/account.php:65
+#: woocommerce/account.php:67
 msgid "three"
 msgstr ""
 
-#: woocommerce/account.php:66
+#: woocommerce/account.php:68
 msgid "four"
 msgstr ""
 
-#: woocommerce/account.php:67
+#: woocommerce/account.php:69
 msgid "five"
 msgstr ""
 
-#: woocommerce/account.php:68
+#: woocommerce/account.php:70
 msgid "six"
 msgstr ""
 
-#: woocommerce/account.php:69
+#: woocommerce/account.php:71
 msgid "seven"
 msgstr ""
 
-#: woocommerce/account.php:70
+#: woocommerce/account.php:72
 msgid "eight"
 msgstr ""
 
-#: woocommerce/account.php:71
+#: woocommerce/account.php:73
 msgid "nine"
 msgstr ""
 
 #. translators: %1$s: first number, %2$s: second number, such as one, two, three.
-#: woocommerce/account.php:75
+#: woocommerce/account.php:77
 #, php-format
 msgid "Please use numbers to enter the result of %1$s + %2$s."
 msgstr ""
 
-#: woocommerce/account.php:80
+#: woocommerce/account.php:82
 msgid "bot check"
 msgstr ""
 
-#: woocommerce/account.php:95
+#: woocommerce/account.php:97
 msgid "Bot check failed. Please make sure you enter the correct number."
 msgstr ""
 
-#: woocommerce/admin/admin.php:52
+#: woocommerce/admin/admin.php:55
 msgid "Only to WooCommerce account"
 msgstr ""
 
-#: woocommerce/admin/admin.php:56
+#: woocommerce/admin/admin.php:59
 msgid "Redirect login, register and lost-password from wp-login to WooCommerce account page."
 msgstr ""
 
-#: woocommerce/admin/admin.php:60
+#: woocommerce/admin/admin.php:63
 msgid "Simple CAPTCHA"
 msgstr ""
 
-#: woocommerce/admin/admin.php:64
+#: woocommerce/admin/admin.php:67
 msgid "Enable simple CAPTCHA for WooCommerce register form."
 msgstr ""
 
-#: woocommerce/admin/admin.php:72
+#: woocommerce/admin/admin.php:75
 msgid "Virtual product skip processing"
 msgstr ""
 
-#: woocommerce/admin/admin.php:76
+#: woocommerce/admin/admin.php:79
 msgid "Virtual product order skip processing status."
 msgstr ""
 
@@ -725,87 +726,87 @@ msgstr ""
 msgid "Pay via Zingala"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/gateway.php:95
-#: woocommerce/gateways/newebpay/gateway.php:83
-#: woocommerce/gateways/payuni/gateway.php:87
+#: woocommerce/gateways/ecpay/gateway.php:97
+#: woocommerce/gateways/newebpay/gateway.php:85
+#: woocommerce/gateways/payuni/gateway.php:89
 msgid "Apple Pay"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/gateway.php:96
-#: woocommerce/gateways/newebpay/gateway.php:84
-#: woocommerce/gateways/payuni/gateway.php:88
+#: woocommerce/gateways/ecpay/gateway.php:98
+#: woocommerce/gateways/newebpay/gateway.php:86
+#: woocommerce/gateways/payuni/gateway.php:90
 msgid "Support Apple Pay"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/gateway.php:101
-#: woocommerce/gateways/newebpay/gateway.php:108
+#: woocommerce/gateways/ecpay/gateway.php:103
+#: woocommerce/gateways/newebpay/gateway.php:110
 msgid "UnionPay"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/gateway.php:102
-#: woocommerce/gateways/newebpay/gateway.php:109
+#: woocommerce/gateways/ecpay/gateway.php:104
+#: woocommerce/gateways/newebpay/gateway.php:111
 msgid "Support UnionPay"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/includes/admin.php:32
-#: woocommerce/gateways/newebpay/includes/admin.php:34
-#: woocommerce/gateways/payuni/includes/admin.php:33
-#: woocommerce/gateways/smilepay/includes/admin.php:30
+#: woocommerce/gateways/ecpay/includes/admin.php:34
+#: woocommerce/gateways/newebpay/includes/admin.php:36
+#: woocommerce/gateways/payuni/includes/admin.php:35
+#: woocommerce/gateways/smilepay/includes/admin.php:32
 msgid "Gateway options"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/includes/admin.php:37
-#: woocommerce/gateways/newebpay/includes/admin.php:39
-#: woocommerce/gateways/payuni/includes/admin.php:38
+#: woocommerce/gateways/ecpay/includes/admin.php:39
+#: woocommerce/gateways/newebpay/includes/admin.php:41
+#: woocommerce/gateways/payuni/includes/admin.php:40
 msgid "Independent payment gateway"
 msgstr ""
 
-#: woocommerce/gateways/ecpay/includes/admin.php:41
-#: woocommerce/gateways/newebpay/includes/admin.php:43
-#: woocommerce/gateways/payuni/includes/admin.php:42
+#: woocommerce/gateways/ecpay/includes/admin.php:43
+#: woocommerce/gateways/newebpay/includes/admin.php:45
+#: woocommerce/gateways/payuni/includes/admin.php:44
 msgid "Add each periods of credit installment as a payment gateway."
 msgstr ""
 
-#: woocommerce/gateways/ecpay/includes/admin.php:42
-#: woocommerce/gateways/ecpay/includes/admin.php:50
-#: woocommerce/gateways/ecpay/includes/admin.php:58
-#: woocommerce/gateways/newebpay/includes/admin.php:44
-#: woocommerce/gateways/newebpay/includes/admin.php:52
-#: woocommerce/gateways/payuni/includes/admin.php:43
-#: woocommerce/gateways/payuni/includes/admin.php:51
+#: woocommerce/gateways/ecpay/includes/admin.php:44
+#: woocommerce/gateways/ecpay/includes/admin.php:52
+#: woocommerce/gateways/ecpay/includes/admin.php:60
+#: woocommerce/gateways/newebpay/includes/admin.php:46
+#: woocommerce/gateways/newebpay/includes/admin.php:54
+#: woocommerce/gateways/payuni/includes/admin.php:45
+#: woocommerce/gateways/payuni/includes/admin.php:53
 msgid "Note: This option will remove the original payment gateway."
 msgstr ""
 
-#: woocommerce/gateways/ecpay/includes/admin.php:49
+#: woocommerce/gateways/ecpay/includes/admin.php:51
 msgid "Add each type of BNPL as a payment gateway."
 msgstr ""
 
-#: woocommerce/gateways/ecpay/includes/admin.php:57
-#: woocommerce/gateways/newebpay/includes/admin.php:51
-#: woocommerce/gateways/payuni/includes/admin.php:50
+#: woocommerce/gateways/ecpay/includes/admin.php:59
+#: woocommerce/gateways/newebpay/includes/admin.php:53
+#: woocommerce/gateways/payuni/includes/admin.php:52
 msgid "Add each type of digital payment as a payment gateway."
 msgstr ""
 
-#: woocommerce/gateways/ecpay/includes/admin.php:62
-#: woocommerce/gateways/newebpay/includes/admin.php:56
-#: woocommerce/gateways/payuni/includes/admin.php:55
-#: woocommerce/gateways/smilepay/includes/admin.php:35
+#: woocommerce/gateways/ecpay/includes/admin.php:64
+#: woocommerce/gateways/newebpay/includes/admin.php:58
+#: woocommerce/gateways/payuni/includes/admin.php:57
+#: woocommerce/gateways/smilepay/includes/admin.php:37
 msgid "Show payment info in email"
 msgstr ""
 
 #. translators: %s: email title
-#: woocommerce/gateways/ecpay/includes/admin.php:68
-#: woocommerce/gateways/newebpay/includes/admin.php:62
-#: woocommerce/gateways/payuni/includes/admin.php:61
-#: woocommerce/gateways/smilepay/includes/admin.php:41
+#: woocommerce/gateways/ecpay/includes/admin.php:70
+#: woocommerce/gateways/newebpay/includes/admin.php:64
+#: woocommerce/gateways/payuni/includes/admin.php:63
+#: woocommerce/gateways/smilepay/includes/admin.php:43
 #, php-format
 msgid "Add payment info in \"%s\" email."
 msgstr ""
 
-#: woocommerce/gateways/ecpay/includes/admin.php:69
-#: woocommerce/gateways/newebpay/includes/admin.php:63
-#: woocommerce/gateways/payuni/includes/admin.php:62
-#: woocommerce/gateways/smilepay/includes/admin.php:42
+#: woocommerce/gateways/ecpay/includes/admin.php:71
+#: woocommerce/gateways/newebpay/includes/admin.php:65
+#: woocommerce/gateways/payuni/includes/admin.php:64
+#: woocommerce/gateways/smilepay/includes/admin.php:44
 msgid "Order on-hold"
 msgstr ""
 
@@ -1160,31 +1161,31 @@ msgstr ""
 msgid "Pay via Taiwan Pay"
 msgstr ""
 
-#: woocommerce/gateways/newebpay/gateway.php:89
-#: woocommerce/gateways/payuni/gateway.php:93
+#: woocommerce/gateways/newebpay/gateway.php:91
+#: woocommerce/gateways/payuni/gateway.php:95
 msgid "Google Pay"
 msgstr ""
 
-#: woocommerce/gateways/newebpay/gateway.php:90
-#: woocommerce/gateways/payuni/gateway.php:94
+#: woocommerce/gateways/newebpay/gateway.php:92
+#: woocommerce/gateways/payuni/gateway.php:96
 msgid "Support Google Pay"
 msgstr ""
 
-#: woocommerce/gateways/newebpay/gateway.php:95
-#: woocommerce/gateways/payuni/gateway.php:99
+#: woocommerce/gateways/newebpay/gateway.php:97
+#: woocommerce/gateways/payuni/gateway.php:101
 msgid "Samsung Pay"
 msgstr ""
 
-#: woocommerce/gateways/newebpay/gateway.php:96
-#: woocommerce/gateways/payuni/gateway.php:100
+#: woocommerce/gateways/newebpay/gateway.php:98
+#: woocommerce/gateways/payuni/gateway.php:102
 msgid "Support Samsung Pay"
 msgstr ""
 
-#: woocommerce/gateways/newebpay/gateway.php:102
+#: woocommerce/gateways/newebpay/gateway.php:104
 msgid "AE"
 msgstr ""
 
-#: woocommerce/gateways/newebpay/gateway.php:103
+#: woocommerce/gateways/newebpay/gateway.php:105
 msgid "Support AE"
 msgstr ""
 
@@ -1340,88 +1341,88 @@ msgstr ""
 msgid "SmilePay WebATM"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:53
-#: woocommerce/shipping/smilepay/includes/admin.php:46
+#: woocommerce/shipping/ecpay/includes/admin.php:55
+#: woocommerce/shipping/smilepay/includes/admin.php:48
 msgid "Auto get with scheduler action"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:57
-#: woocommerce/shipping/smilepay/includes/admin.php:50
+#: woocommerce/shipping/ecpay/includes/admin.php:59
+#: woocommerce/shipping/smilepay/includes/admin.php:52
 msgid "Get shipping payment no use scheduler action."
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:65
-#: woocommerce/shipping/newebpay/includes/admin.php:30
-#: woocommerce/shipping/smilepay/includes/admin.php:58
+#: woocommerce/shipping/ecpay/includes/admin.php:67
+#: woocommerce/shipping/newebpay/includes/admin.php:32
+#: woocommerce/shipping/smilepay/includes/admin.php:60
 msgid "cvs remove billing address"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:69
-#: woocommerce/shipping/newebpay/includes/admin.php:34
-#: woocommerce/shipping/smilepay/includes/admin.php:62
+#: woocommerce/shipping/ecpay/includes/admin.php:71
+#: woocommerce/shipping/newebpay/includes/admin.php:36
+#: woocommerce/shipping/smilepay/includes/admin.php:64
 msgid "Remove billing address when shipping mode is cvs."
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:70
-#: woocommerce/shipping/newebpay/includes/admin.php:35
-#: woocommerce/shipping/smilepay/includes/admin.php:63
+#: woocommerce/shipping/ecpay/includes/admin.php:72
+#: woocommerce/shipping/newebpay/includes/admin.php:37
+#: woocommerce/shipping/smilepay/includes/admin.php:65
 msgid "The billing address still will show in order details."
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:78
+#: woocommerce/shipping/ecpay/includes/admin.php:80
 msgid "Clean up receiver name"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:82
+#: woocommerce/shipping/ecpay/includes/admin.php:84
 msgid "Clean up receiver name to comply with ECPay request."
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:87
+#: woocommerce/shipping/ecpay/includes/admin.php:89
 msgctxt "Cvs type"
 msgid "B2C"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:90
+#: woocommerce/shipping/ecpay/includes/admin.php:92
 msgid "multi package"
 msgstr ""
 
 #. translators: %s: count
-#: woocommerce/shipping/ecpay/includes/admin.php:103
+#: woocommerce/shipping/ecpay/includes/admin.php:105
 #, php-format
 msgid "%s order get shipping no."
 msgid_plural "%s order get shipping no."
 msgstr[0] ""
 msgstr[1] ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:110
+#: woocommerce/shipping/ecpay/includes/admin.php:112
 msgid "Get ECPay shipping no"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:112
+#: woocommerce/shipping/ecpay/includes/admin.php:114
 msgid "Print ECPay shipping booking note (711)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:113
+#: woocommerce/shipping/ecpay/includes/admin.php:115
 msgid "Print ECPay shipping booking note (family)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:114
+#: woocommerce/shipping/ecpay/includes/admin.php:116
 msgid "Print ECPay shipping booking note (hilife)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:115
+#: woocommerce/shipping/ecpay/includes/admin.php:117
 msgid "Print ECPay shipping booking note (post)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:116
+#: woocommerce/shipping/ecpay/includes/admin.php:118
 msgid "Print ECPay shipping booking note (tcat)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:223
+#: woocommerce/shipping/ecpay/includes/admin.php:225
 msgid "Get info"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:243
+#: woocommerce/shipping/ecpay/includes/admin.php:245
 msgid "ECPay shipping ID"
 msgstr ""
 
@@ -1490,7 +1491,7 @@ msgstr ""
 msgid "Package weight"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/shipping-cvs-711.php:11
+#: woocommerce/shipping/ecpay/shipping-cvs-711.php:13
 #: woocommerce/shipping/ecpay/shipping-cvs-family.php:11
 #: woocommerce/shipping/ecpay/shipping-cvs-hilife.php:11
 #: woocommerce/shipping/ecpay/shipping-home-post.php:11
@@ -1502,7 +1503,7 @@ msgstr ""
 msgid "A minimum order amount ( except discount and tex )"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/shipping-cvs-711.php:12
+#: woocommerce/shipping/ecpay/shipping-cvs-711.php:14
 #: woocommerce/shipping/ecpay/shipping-cvs-family.php:12
 #: woocommerce/shipping/ecpay/shipping-cvs-hilife.php:12
 #: woocommerce/shipping/ecpay/shipping-home-post.php:12
@@ -1514,7 +1515,7 @@ msgstr ""
 msgid "A minimum order amount OR a coupon ( except discount and tex )"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/shipping-cvs-711.php:13
+#: woocommerce/shipping/ecpay/shipping-cvs-711.php:15
 #: woocommerce/shipping/ecpay/shipping-cvs-family.php:13
 #: woocommerce/shipping/ecpay/shipping-cvs-hilife.php:13
 #: woocommerce/shipping/ecpay/shipping-home-post.php:13
@@ -1526,24 +1527,24 @@ msgstr ""
 msgid "A minimum order amount AND a coupon ( except discount and tex )"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/shipping.php:174
-#: woocommerce/shipping/smilepay/shipping.php:163
+#: woocommerce/shipping/ecpay/shipping.php:177
+#: woocommerce/shipping/smilepay/shipping.php:166
 msgid "Invalid cellphone number"
 msgstr ""
 
-#: woocommerce/shipping/smilepay/includes/admin.php:73
+#: woocommerce/shipping/smilepay/includes/admin.php:75
 msgid "Print smilepay shipping booking note (711)"
 msgstr ""
 
-#: woocommerce/shipping/smilepay/includes/admin.php:74
+#: woocommerce/shipping/smilepay/includes/admin.php:76
 msgid "Print SmilePay shipping booking note (family)"
 msgstr ""
 
-#: woocommerce/shipping/smilepay/includes/admin.php:75
+#: woocommerce/shipping/smilepay/includes/admin.php:77
 msgid "Print SmilePay shipping booking note (tcat)"
 msgstr ""
 
-#: woocommerce/shipping/smilepay/includes/admin.php:108
+#: woocommerce/shipping/smilepay/includes/admin.php:110
 msgid "SmilePay shipping ID"
 msgstr ""
 
