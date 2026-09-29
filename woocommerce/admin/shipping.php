@@ -175,15 +175,15 @@ final class RY_WTP_WC_Admin_Shipping
 
         if (isset($support_temp)) {
             if (in_array('1', $support_temp)) {
-                echo '<button type="button" class="button ry-' . esc_attr($type) . '-shipping-info" data-orderid="' . esc_attr($order->get_id()) . '" data-temp="1">' . esc_html__('Get shipping no (normal temperature)', 'ry-woocommerce-tools-pro') . '</button>';
+                echo '<button type="button" class="button ry-get-shipping-note" data-type="' . esc_attr($type) . '"data-orderid="' . esc_attr($order->get_id()) . '" data-temp="1">' . esc_html__('Get shipping no (normal temperature)', 'ry-woocommerce-tools-pro') . '</button>';
             }
 
             if (in_array('2', $support_temp)) {
-                echo '<button type="button" class="button ry-' . esc_attr($type) . '-shipping-info" data-orderid="' . esc_attr($order->get_id()) . '" data-temp="2">' . esc_html__('Get shipping no (refrigerated)', 'ry-woocommerce-tools-pro') . '</button>';
+                echo '<button type="button" class="button ry-get-shipping-note" data-type="' . esc_attr($type) . '"data-orderid="' . esc_attr($order->get_id()) . '" data-temp="2">' . esc_html__('Get shipping no (refrigerated)', 'ry-woocommerce-tools-pro') . '</button>';
             }
 
             if (in_array('3', $support_temp)) {
-                echo '<button type="button" class="button ry-' . esc_attr($type) . '-shipping-info" data-orderid="' . esc_attr($order->get_id()) . '" data-temp="3">' . esc_html__('Get shipping no (frozen)', 'ry-woocommerce-tools-pro') . '</button>';
+                echo '<button type="button" class="button ry-get-shipping-note" data-type="' . esc_attr($type) . '"data-orderid="' . esc_attr($order->get_id()) . '" data-temp="3">' . esc_html__('Get shipping no (frozen)', 'ry-woocommerce-tools-pro') . '</button>';
             }
         }
     }
