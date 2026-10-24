@@ -5,5 +5,5 @@
 		'wc-settings',
 		'wp-html-entities'
 	),
-	'version' => '50ce71b1d65ba146f331'
+	'version' => 'a0d284ef9f9258d75e5d'
 );

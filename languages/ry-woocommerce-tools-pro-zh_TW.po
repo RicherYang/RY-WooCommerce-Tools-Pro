@@ -8,13 +8,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-02-16 10:51+0800\n"
-"PO-Revision-Date: 2026-08-07 13:47+0800\n"
+"PO-Revision-Date: 2026-10-24 16:08+0800\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 3.9\n"
+"X-Generator: Poedit 3.10\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: assets-src\n"
@@ -137,7 +137,7 @@ msgid "ECPay"
 msgstr "綠界科技"
 
 #: woocommerce/gateways/ecpay/gateway-bnpl.php:21
-#: woocommerce/gateways/newebpay/gateway-bnpl.php:19
+#: woocommerce/gateways/newebpay/gateway-bnpl.php:21
 #: woocommerce/gateways/payuni/gateway-bnpl.php:21
 msgid "Pay via BNPL"
 msgstr "使用先買後付付款"
@@ -228,7 +228,7 @@ msgid "Add each periods of credit installment as a payment gateway."
 msgstr "將每一個信用卡分期期數新增為一個付款方式。"
 
 #: woocommerce/gateways/ecpay/includes/admin.php:64
-#: woocommerce/gateways/newebpay/includes/admin.php:58
+#: woocommerce/gateways/newebpay/includes/admin.php:66
 #: woocommerce/gateways/payuni/includes/admin.php:57
 #: woocommerce/gateways/smilepay/includes/admin.php:37
 msgid "Show payment info in email"
@@ -236,13 +236,14 @@ msgstr "在信件中顯示付款資訊"
 
 #. translators: %s: email title
 #: woocommerce/gateways/ecpay/includes/admin.php:70
-#: woocommerce/gateways/newebpay/includes/admin.php:64
+#: woocommerce/gateways/newebpay/includes/admin.php:72
 #: woocommerce/gateways/payuni/includes/admin.php:63
 #: woocommerce/gateways/smilepay/includes/admin.php:43
 #, php-format
 msgid "Add payment info in \"%s\" email."
 msgstr "在「%s」信件中顯示付款資訊。"
 
+#: woocommerce/gateways/newebpay/blocks/gateway-aftee.php:45
 #: woocommerce/gateways/newebpay/blocks/gateway-atm.php:45
 #: woocommerce/gateways/newebpay/blocks/gateway-barcode.php:45
 #: woocommerce/gateways/newebpay/blocks/gateway-bnpl.php:45
@@ -257,6 +258,7 @@ msgstr "在「%s」信件中顯示付款資訊。"
 #: woocommerce/gateways/newebpay/blocks/gateway-digital.php:45
 #: woocommerce/gateways/newebpay/blocks/gateway-esunwallet.php:45
 #: woocommerce/gateways/newebpay/blocks/gateway-linepay.php:45
+#: woocommerce/gateways/newebpay/blocks/gateway-oppay.php:45
 #: woocommerce/gateways/newebpay/blocks/gateway-twpay.php:45
 #: woocommerce/gateways/newebpay/blocks/gateway-webatm.php:45
 msgid "NewebPay"
@@ -754,7 +756,7 @@ msgid "Change address"
 msgstr "變更地址"
 
 #: woocommerce/gateways/ecpay/includes/admin.php:71
-#: woocommerce/gateways/newebpay/includes/admin.php:65
+#: woocommerce/gateways/newebpay/includes/admin.php:73
 #: woocommerce/gateways/payuni/includes/admin.php:64
 #: woocommerce/gateways/smilepay/includes/admin.php:44
 msgid "Order on-hold"
@@ -1131,6 +1133,7 @@ msgid "PAYUNi icash Pay"
 msgstr "統一 icash Pay"
 
 #: woocommerce/gateways/ecpay/includes/admin.php:51
+#: woocommerce/gateways/newebpay/includes/admin.php:53
 msgid "Add each type of BNPL as a payment gateway."
 msgstr "將每一個先買後付新增為一個付款方式。"
 
@@ -1139,6 +1142,7 @@ msgstr "將每一個先買後付新增為一個付款方式。"
 #: woocommerce/gateways/ecpay/includes/admin.php:60
 #: woocommerce/gateways/newebpay/includes/admin.php:46
 #: woocommerce/gateways/newebpay/includes/admin.php:54
+#: woocommerce/gateways/newebpay/includes/admin.php:62
 #: woocommerce/gateways/payuni/includes/admin.php:45
 #: woocommerce/gateways/payuni/includes/admin.php:53
 msgid "Note: This option will remove the original payment gateway."
@@ -1181,7 +1185,7 @@ msgid "Pay via Digital Payment"
 msgstr "使用電子支付付款"
 
 #: woocommerce/gateways/ecpay/includes/admin.php:59
-#: woocommerce/gateways/newebpay/includes/admin.php:53
+#: woocommerce/gateways/newebpay/includes/admin.php:61
 #: woocommerce/gateways/payuni/includes/admin.php:52
 msgid "Add each type of digital payment as a payment gateway."
 msgstr "將每一個電子支付新增為一個付款方式。"
@@ -1197,7 +1201,7 @@ msgid "PAYUNi BNPL"
 msgstr "統一先買後付"
 
 #: woocommerce/gateways/newebpay/blocks/gateway-bnpl.php:28
-#: woocommerce/gateways/newebpay/gateway-bnpl.php:20
+#: woocommerce/gateways/newebpay/gateway-bnpl.php:22
 msgid "NewebPay BNPL"
 msgstr "藍新先買後付"
 
@@ -1222,7 +1226,7 @@ msgstr "藍新 LINE Pay"
 
 #: woocommerce/gateways/newebpay/gateway-twpay.php:15
 msgid "Pay via Taiwan Pay"
-msgstr "使用台灣 Pay 路款"
+msgstr "使用台灣 Pay 付款"
 
 #: woocommerce/gateways/newebpay/blocks/gateway-twpay.php:28
 #: woocommerce/gateways/newebpay/gateway-twpay.php:16
@@ -1279,52 +1283,52 @@ msgid "No logs found."
 msgstr "没有紀錄檔案。"
 
 #: woocommerce/gateways/ecpay/gateway.php:97
-#: woocommerce/gateways/newebpay/gateway.php:85
+#: woocommerce/gateways/newebpay/gateway.php:97
 #: woocommerce/gateways/payuni/gateway.php:89
 msgid "Apple Pay"
 msgstr "Apple Pay"
 
 #: woocommerce/gateways/ecpay/gateway.php:98
-#: woocommerce/gateways/newebpay/gateway.php:86
+#: woocommerce/gateways/newebpay/gateway.php:98
 #: woocommerce/gateways/payuni/gateway.php:90
 msgid "Support Apple Pay"
 msgstr "支援 Apple Pay"
 
 #: woocommerce/gateways/ecpay/gateway.php:103
-#: woocommerce/gateways/newebpay/gateway.php:110
+#: woocommerce/gateways/newebpay/gateway.php:122
 msgid "UnionPay"
 msgstr "銀聯卡"
 
 #: woocommerce/gateways/ecpay/gateway.php:104
-#: woocommerce/gateways/newebpay/gateway.php:111
+#: woocommerce/gateways/newebpay/gateway.php:123
 msgid "Support UnionPay"
 msgstr "支援銀聯卡"
 
-#: woocommerce/gateways/newebpay/gateway.php:91
+#: woocommerce/gateways/newebpay/gateway.php:103
 #: woocommerce/gateways/payuni/gateway.php:95
 msgid "Google Pay"
 msgstr "Google Pay"
 
-#: woocommerce/gateways/newebpay/gateway.php:92
+#: woocommerce/gateways/newebpay/gateway.php:104
 #: woocommerce/gateways/payuni/gateway.php:96
 msgid "Support Google Pay"
 msgstr "支援 Google Pay"
 
-#: woocommerce/gateways/newebpay/gateway.php:97
+#: woocommerce/gateways/newebpay/gateway.php:109
 #: woocommerce/gateways/payuni/gateway.php:101
 msgid "Samsung Pay"
 msgstr "Samsung Pay"
 
-#: woocommerce/gateways/newebpay/gateway.php:98
+#: woocommerce/gateways/newebpay/gateway.php:110
 #: woocommerce/gateways/payuni/gateway.php:102
 msgid "Support Samsung Pay"
 msgstr "支援 Samsung Pay"
 
-#: woocommerce/gateways/newebpay/gateway.php:104
+#: woocommerce/gateways/newebpay/gateway.php:116
 msgid "AE"
 msgstr "美國運通卡"
 
-#: woocommerce/gateways/newebpay/gateway.php:105
+#: woocommerce/gateways/newebpay/gateway.php:117
 msgid "Support AE"
 msgstr "支援 美國運通卡"
 
@@ -1574,3 +1578,37 @@ msgstr "設定已儲存。"
 #: includes/ry-paid/Page/License.php:75
 msgid "Save Changes"
 msgstr "儲存設定"
+
+#: woocommerce/gateways/newebpay/gateway-bnpl.php:27
+msgid "Aftee"
+msgstr "AFTEE 先享後付"
+
+#: woocommerce/gateways/newebpay/gateway-bnpl.php:28
+msgid "Support Aftee"
+msgstr "支援 AFTEE 先享後付"
+
+#: woocommerce/gateways/newebpay/gateway-bnpl.php:33
+msgid "Oppay"
+msgstr "大哥付你分期"
+
+#: woocommerce/gateways/newebpay/gateway-bnpl.php:34
+msgid "Support Oppay"
+msgstr "支援大哥付你分期"
+
+#: woocommerce/gateways/newebpay/gateway-aftee.php:17
+msgid "Pay via AFTEE"
+msgstr "使用 AFTEE 先享後付付款"
+
+#: woocommerce/gateways/newebpay/blocks/gateway-aftee.php:28
+#: woocommerce/gateways/newebpay/gateway-aftee.php:18
+msgid "NewebPay AFTEE"
+msgstr "藍新 AFTEE 先享後付"
+
+#: woocommerce/gateways/newebpay/gateway-oppay.php:17
+msgid "Pay via Oppay"
+msgstr "使用大哥付你分期付款"
+
+#: woocommerce/gateways/newebpay/blocks/gateway-oppay.php:28
+#: woocommerce/gateways/newebpay/gateway-oppay.php:18
+msgid "NewebPay Oppay"
+msgstr "藍新大哥付你分期"

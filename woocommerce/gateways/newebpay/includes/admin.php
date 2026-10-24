@@ -47,6 +47,14 @@ final class RY_WTP_WC_NewebPay_Gateway_Admin
                     'checkboxgroup' => 'start',
                 ],
                 [
+                    'id' => Main::get_prefix_name('newebpay_independent_bnpl'),
+                    'type' => 'checkbox',
+                    'default' => 'no',
+                    'desc' => __('Add each type of BNPL as a payment gateway.', 'ry-woocommerce-tools-pro')
+                        . ' ' . __('Note: This option will remove the original payment gateway.', 'ry-woocommerce-tools-pro'),
+                    'checkboxgroup' => '',
+                ],
+                [
                     'id' => Main::get_prefix_name('newebpay_independent_digital'),
                     'type' => 'checkbox',
                     'default' => 'no',

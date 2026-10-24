@@ -20,8 +20,6 @@ final class RY_WTP_WC_NewebPay_Gateway extends RY_WTP_Gateway_Model
 
     protected function do_init(): void
     {
-        include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/gateway-bnpl.php';
-
         if ('yes' === Main::get_option('newebpay_independent_credit_installment', 'no')) {
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/includes/gateway-credit-installment.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/gateway-credit-installment-3.php';
@@ -30,6 +28,13 @@ final class RY_WTP_WC_NewebPay_Gateway extends RY_WTP_Gateway_Model
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/gateway-credit-installment-18.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/gateway-credit-installment-24.php';
             include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/gateway-credit-installment-30.php';
+        }
+
+        if ('yes' === Main::get_option('newebpay_independent_bnpl', 'no')) {
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/gateway-aftee.php';
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/gateway-oppay.php';
+        } else {
+            include_once RY_WTP_PLUGIN_DIR . 'woocommerce/gateways/newebpay/gateway-bnpl.php';
         }
 
         if ('yes' === Main::get_option('newebpay_independent_digital', 'no')) {
@@ -66,6 +71,13 @@ final class RY_WTP_WC_NewebPay_Gateway extends RY_WTP_Gateway_Model
             $methods[] = 'RY_NewebPay_Gateway_Credit_Installment_18';
             $methods[] = 'RY_NewebPay_Gateway_Credit_Installment_24';
             $methods[] = 'RY_NewebPay_Gateway_Credit_Installment_30';
+        }
+
+        if ('yes' === Main::get_option('newebpay_independent_bnpl', 'no')) {
+            $methods[] = 'RY_NewebPay_Gateway_Aftee';
+            $methods[] = 'RY_NewebPay_Gateway_Oppay';
+        } else {
+            $methods[] = 'RY_NewebPay_Gateway_Bnpl';
         }
 
         if ('yes' === Main::get_option('newebpay_independent_digital', 'no')) {

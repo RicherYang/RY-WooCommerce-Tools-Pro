@@ -2,7 +2,7 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: RY Tools (Pro) for WooCommerce 2026.9.29\n"
+"Project-Id-Version: RY Tools (Pro) for WooCommerce 2026.10.24\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ry-woocommerce-tools-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -656,7 +656,7 @@ msgid "Pay via Apple Pay"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/gateway-bnpl.php:21
-#: woocommerce/gateways/newebpay/gateway-bnpl.php:19
+#: woocommerce/gateways/newebpay/gateway-bnpl.php:21
 #: woocommerce/gateways/payuni/gateway-bnpl.php:21
 msgid "Pay via BNPL"
 msgstr ""
@@ -727,24 +727,24 @@ msgid "Pay via Zingala"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/gateway.php:97
-#: woocommerce/gateways/newebpay/gateway.php:85
+#: woocommerce/gateways/newebpay/gateway.php:97
 #: woocommerce/gateways/payuni/gateway.php:89
 msgid "Apple Pay"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/gateway.php:98
-#: woocommerce/gateways/newebpay/gateway.php:86
+#: woocommerce/gateways/newebpay/gateway.php:98
 #: woocommerce/gateways/payuni/gateway.php:90
 msgid "Support Apple Pay"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/gateway.php:103
-#: woocommerce/gateways/newebpay/gateway.php:110
+#: woocommerce/gateways/newebpay/gateway.php:122
 msgid "UnionPay"
 msgstr ""
 
 #: woocommerce/gateways/ecpay/gateway.php:104
-#: woocommerce/gateways/newebpay/gateway.php:111
+#: woocommerce/gateways/newebpay/gateway.php:123
 msgid "Support UnionPay"
 msgstr ""
 
@@ -772,23 +772,25 @@ msgstr ""
 #: woocommerce/gateways/ecpay/includes/admin.php:60
 #: woocommerce/gateways/newebpay/includes/admin.php:46
 #: woocommerce/gateways/newebpay/includes/admin.php:54
+#: woocommerce/gateways/newebpay/includes/admin.php:62
 #: woocommerce/gateways/payuni/includes/admin.php:45
 #: woocommerce/gateways/payuni/includes/admin.php:53
 msgid "Note: This option will remove the original payment gateway."
 msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/admin.php:51
+#: woocommerce/gateways/newebpay/includes/admin.php:53
 msgid "Add each type of BNPL as a payment gateway."
 msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/admin.php:59
-#: woocommerce/gateways/newebpay/includes/admin.php:53
+#: woocommerce/gateways/newebpay/includes/admin.php:61
 #: woocommerce/gateways/payuni/includes/admin.php:52
 msgid "Add each type of digital payment as a payment gateway."
 msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/admin.php:64
-#: woocommerce/gateways/newebpay/includes/admin.php:58
+#: woocommerce/gateways/newebpay/includes/admin.php:66
 #: woocommerce/gateways/payuni/includes/admin.php:57
 #: woocommerce/gateways/smilepay/includes/admin.php:37
 msgid "Show payment info in email"
@@ -796,7 +798,7 @@ msgstr ""
 
 #. translators: %s: email title
 #: woocommerce/gateways/ecpay/includes/admin.php:70
-#: woocommerce/gateways/newebpay/includes/admin.php:64
+#: woocommerce/gateways/newebpay/includes/admin.php:72
 #: woocommerce/gateways/payuni/includes/admin.php:63
 #: woocommerce/gateways/smilepay/includes/admin.php:43
 #, php-format
@@ -804,7 +806,7 @@ msgid "Add payment info in \"%s\" email."
 msgstr ""
 
 #: woocommerce/gateways/ecpay/includes/admin.php:71
-#: woocommerce/gateways/newebpay/includes/admin.php:65
+#: woocommerce/gateways/newebpay/includes/admin.php:73
 #: woocommerce/gateways/payuni/includes/admin.php:64
 #: woocommerce/gateways/smilepay/includes/admin.php:44
 msgid "Order on-hold"
@@ -1022,10 +1024,12 @@ msgstr ""
 msgid "Refund"
 msgstr ""
 
-#: woocommerce/gateways/newebpay/blocks/gateway-atm.php:28
-msgid "NewebPay ATM"
+#: woocommerce/gateways/newebpay/blocks/gateway-aftee.php:28
+#: woocommerce/gateways/newebpay/gateway-aftee.php:18
+msgid "NewebPay AFTEE"
 msgstr ""
 
+#: woocommerce/gateways/newebpay/blocks/gateway-aftee.php:45
 #: woocommerce/gateways/newebpay/blocks/gateway-atm.php:45
 #: woocommerce/gateways/newebpay/blocks/gateway-barcode.php:45
 #: woocommerce/gateways/newebpay/blocks/gateway-bnpl.php:45
@@ -1040,9 +1044,14 @@ msgstr ""
 #: woocommerce/gateways/newebpay/blocks/gateway-digital.php:45
 #: woocommerce/gateways/newebpay/blocks/gateway-esunwallet.php:45
 #: woocommerce/gateways/newebpay/blocks/gateway-linepay.php:45
+#: woocommerce/gateways/newebpay/blocks/gateway-oppay.php:45
 #: woocommerce/gateways/newebpay/blocks/gateway-twpay.php:45
 #: woocommerce/gateways/newebpay/blocks/gateway-webatm.php:45
 msgid "NewebPay"
+msgstr ""
+
+#: woocommerce/gateways/newebpay/blocks/gateway-atm.php:28
+msgid "NewebPay ATM"
 msgstr ""
 
 #: woocommerce/gateways/newebpay/blocks/gateway-barcode.php:28
@@ -1050,7 +1059,7 @@ msgid "NewebPay BARCODE"
 msgstr ""
 
 #: woocommerce/gateways/newebpay/blocks/gateway-bnpl.php:28
-#: woocommerce/gateways/newebpay/gateway-bnpl.php:20
+#: woocommerce/gateways/newebpay/gateway-bnpl.php:22
 msgid "NewebPay BNPL"
 msgstr ""
 
@@ -1106,6 +1115,11 @@ msgstr ""
 msgid "NewebPay LinePay"
 msgstr ""
 
+#: woocommerce/gateways/newebpay/blocks/gateway-oppay.php:28
+#: woocommerce/gateways/newebpay/gateway-oppay.php:18
+msgid "NewebPay Oppay"
+msgstr ""
+
 #: woocommerce/gateways/newebpay/blocks/gateway-twpay.php:28
 #: woocommerce/gateways/newebpay/gateway-twpay.php:16
 msgid "NewebPay Taiwan Pay"
@@ -1113,6 +1127,26 @@ msgstr ""
 
 #: woocommerce/gateways/newebpay/blocks/gateway-webatm.php:28
 msgid "NewebPay WebATM"
+msgstr ""
+
+#: woocommerce/gateways/newebpay/gateway-aftee.php:17
+msgid "Pay via AFTEE"
+msgstr ""
+
+#: woocommerce/gateways/newebpay/gateway-bnpl.php:27
+msgid "Aftee"
+msgstr ""
+
+#: woocommerce/gateways/newebpay/gateway-bnpl.php:28
+msgid "Support Aftee"
+msgstr ""
+
+#: woocommerce/gateways/newebpay/gateway-bnpl.php:33
+msgid "Oppay"
+msgstr ""
+
+#: woocommerce/gateways/newebpay/gateway-bnpl.php:34
+msgid "Support Oppay"
 msgstr ""
 
 #: woocommerce/gateways/newebpay/gateway-credit-installment-30.php:12
@@ -1157,35 +1191,39 @@ msgstr ""
 msgid "Pay via LinePay"
 msgstr ""
 
+#: woocommerce/gateways/newebpay/gateway-oppay.php:17
+msgid "Pay via Oppay"
+msgstr ""
+
 #: woocommerce/gateways/newebpay/gateway-twpay.php:15
 msgid "Pay via Taiwan Pay"
 msgstr ""
 
-#: woocommerce/gateways/newebpay/gateway.php:91
+#: woocommerce/gateways/newebpay/gateway.php:103
 #: woocommerce/gateways/payuni/gateway.php:95
 msgid "Google Pay"
 msgstr ""
 
-#: woocommerce/gateways/newebpay/gateway.php:92
+#: woocommerce/gateways/newebpay/gateway.php:104
 #: woocommerce/gateways/payuni/gateway.php:96
 msgid "Support Google Pay"
 msgstr ""
 
-#: woocommerce/gateways/newebpay/gateway.php:97
+#: woocommerce/gateways/newebpay/gateway.php:109
 #: woocommerce/gateways/payuni/gateway.php:101
 msgid "Samsung Pay"
 msgstr ""
 
-#: woocommerce/gateways/newebpay/gateway.php:98
+#: woocommerce/gateways/newebpay/gateway.php:110
 #: woocommerce/gateways/payuni/gateway.php:102
 msgid "Support Samsung Pay"
 msgstr ""
 
-#: woocommerce/gateways/newebpay/gateway.php:104
+#: woocommerce/gateways/newebpay/gateway.php:116
 msgid "AE"
 msgstr ""
 
-#: woocommerce/gateways/newebpay/gateway.php:105
+#: woocommerce/gateways/newebpay/gateway.php:117
 msgid "Support AE"
 msgstr ""
 

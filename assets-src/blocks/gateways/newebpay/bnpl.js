@@ -5,7 +5,7 @@ import { getSetting } from '@woocommerce/settings';
 import PaymentLabel from '../../base/_payment-label';
 
 const settings = getSetting('ry_newebpay_bnpl_data', {});
-const label = decodeEntities(settings.title || RyNewebpayAtmBlockParams.defaultTitle);
+const label = decodeEntities(settings.title || RyNewebpayBnplBlockParams.defaultTitle);
 
 const Label = ({ ...props }) => {
     return <PaymentLabel

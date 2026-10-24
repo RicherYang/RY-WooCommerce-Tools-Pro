@@ -1,7 +1,7 @@
 {
     "name": "ry-woocommerce-tools-pro",
     "title": "RY Tools (Pro) for WooCommerce",
-    "version": "2026.9.29",
+    "version": "2026.10.24",
     "author": "Richer Yang",
     "private": true,
     "devDependencies": {
