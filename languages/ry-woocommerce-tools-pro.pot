@@ -2,7 +2,7 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: RY Tools (Pro) for WooCommerce 2026.10.24\n"
+"Project-Id-Version: RY Tools (Pro) for WooCommerce 2026.11.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ry-woocommerce-tools-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -433,6 +433,22 @@ msgstr ""
 
 #: woocommerce/admin/admin.php:79
 msgid "Virtual product order skip processing status."
+msgstr ""
+
+#: woocommerce/admin/admin.php:87
+msgid "CVS remove billing address"
+msgstr ""
+
+#: woocommerce/admin/admin.php:91
+msgid "Remove checkout form billing address for CVS shipping mode."
+msgstr ""
+
+#: woocommerce/admin/admin.php:94
+msgid "Virtual product remove billing address"
+msgstr ""
+
+#: woocommerce/admin/admin.php:98
+msgid "Remove checkout form billing address for virtual product."
 msgstr ""
 
 #: woocommerce/admin/meta-box.php:16
@@ -1389,78 +1405,60 @@ msgstr ""
 msgid "Get shipping payment no use scheduler action."
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:67
-#: woocommerce/shipping/newebpay/includes/admin.php:32
-#: woocommerce/shipping/smilepay/includes/admin.php:60
-msgid "cvs remove billing address"
-msgstr ""
-
-#: woocommerce/shipping/ecpay/includes/admin.php:71
-#: woocommerce/shipping/newebpay/includes/admin.php:36
-#: woocommerce/shipping/smilepay/includes/admin.php:64
-msgid "Remove billing address when shipping mode is cvs."
-msgstr ""
-
-#: woocommerce/shipping/ecpay/includes/admin.php:72
-#: woocommerce/shipping/newebpay/includes/admin.php:37
-#: woocommerce/shipping/smilepay/includes/admin.php:65
-msgid "The billing address still will show in order details."
-msgstr ""
-
-#: woocommerce/shipping/ecpay/includes/admin.php:80
+#: woocommerce/shipping/ecpay/includes/admin.php:66
 msgid "Clean up receiver name"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:84
+#: woocommerce/shipping/ecpay/includes/admin.php:70
 msgid "Clean up receiver name to comply with ECPay request."
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:89
+#: woocommerce/shipping/ecpay/includes/admin.php:75
 msgctxt "Cvs type"
 msgid "B2C"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:92
+#: woocommerce/shipping/ecpay/includes/admin.php:78
 msgid "multi package"
 msgstr ""
 
 #. translators: %s: count
-#: woocommerce/shipping/ecpay/includes/admin.php:105
+#: woocommerce/shipping/ecpay/includes/admin.php:91
 #, php-format
 msgid "%s order get shipping no."
 msgid_plural "%s order get shipping no."
 msgstr[0] ""
 msgstr[1] ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:112
+#: woocommerce/shipping/ecpay/includes/admin.php:98
 msgid "Get ECPay shipping no"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:114
+#: woocommerce/shipping/ecpay/includes/admin.php:100
 msgid "Print ECPay shipping booking note (711)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:115
+#: woocommerce/shipping/ecpay/includes/admin.php:101
 msgid "Print ECPay shipping booking note (family)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:116
+#: woocommerce/shipping/ecpay/includes/admin.php:102
 msgid "Print ECPay shipping booking note (hilife)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:117
+#: woocommerce/shipping/ecpay/includes/admin.php:103
 msgid "Print ECPay shipping booking note (post)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:118
+#: woocommerce/shipping/ecpay/includes/admin.php:104
 msgid "Print ECPay shipping booking note (tcat)"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:225
+#: woocommerce/shipping/ecpay/includes/admin.php:211
 msgid "Get info"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/includes/admin.php:245
+#: woocommerce/shipping/ecpay/includes/admin.php:231
 msgid "ECPay shipping ID"
 msgstr ""
 
@@ -1565,24 +1563,24 @@ msgstr ""
 msgid "A minimum order amount AND a coupon ( except discount and tex )"
 msgstr ""
 
-#: woocommerce/shipping/ecpay/shipping.php:177
-#: woocommerce/shipping/smilepay/shipping.php:166
+#: woocommerce/shipping/ecpay/shipping.php:128
+#: woocommerce/shipping/smilepay/shipping.php:110
 msgid "Invalid cellphone number"
 msgstr ""
 
-#: woocommerce/shipping/smilepay/includes/admin.php:75
+#: woocommerce/shipping/smilepay/includes/admin.php:61
 msgid "Print smilepay shipping booking note (711)"
 msgstr ""
 
-#: woocommerce/shipping/smilepay/includes/admin.php:76
+#: woocommerce/shipping/smilepay/includes/admin.php:62
 msgid "Print SmilePay shipping booking note (family)"
 msgstr ""
 
-#: woocommerce/shipping/smilepay/includes/admin.php:77
+#: woocommerce/shipping/smilepay/includes/admin.php:63
 msgid "Print SmilePay shipping booking note (tcat)"
 msgstr ""
 
-#: woocommerce/shipping/smilepay/includes/admin.php:110
+#: woocommerce/shipping/smilepay/includes/admin.php:96
 msgid "SmilePay shipping ID"
 msgstr ""
 

@@ -14,7 +14,7 @@ final class Main extends AbstractBasic
 
     public const PLUGIN_NAME = 'RY Tools (Pro) for WooCommerce';
 
-    public const MIN_TOOLS_VERSION = '2026.10.24';
+    public const MIN_TOOLS_VERSION = '2026.11.3';
 
     private static ?self $_instance = null;
 

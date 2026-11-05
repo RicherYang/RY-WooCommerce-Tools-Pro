@@ -43,8 +43,6 @@ final class RY_WTP_ECPay_Shipping
 
         RY_WTP_WC_Shipping::instance();
 
-        add_filter('woocommerce_checkout_fields', [$this, 'hide_billing_info'], 9999);
-
         if ('yes' === WT_Main::get_option('ecpay_shipping_auto_order_status', 'yes')) {
             add_action('ry_ecpay_shipping_response_status_2030', [$this, 'shipping_transporting'], 10, 2);
             add_action('ry_ecpay_shipping_response_status_2068', [$this, 'shipping_transporting'], 10, 2);
@@ -75,53 +73,6 @@ final class RY_WTP_ECPay_Shipping
             // 針對 Polylang 外掛調整語系設定
             add_action('woocommerce_api_ry_ecpay_map_callback', [$this, 'chang_polylang_lang'], 9);
         }
-    }
-
-    public function hide_billing_info($fields)
-    {
-        $cvs_hide_fields = ['billing_postcode', 'billing_state', 'billing_city', 'billing_address_1', 'billing_address_2'];
-
-        if (is_checkout()) {
-            if ('yes' == Main::get_option('ecpay_cvs_billing_address', 'no')) {
-                if (isset($fields['billing'])) {
-                    foreach ($cvs_hide_fields as $key) {
-                        if (isset($fields['billing'][$key])) {
-                            if (isset($fields['billing'][$key]['class'])) {
-                                $fields['billing'][$key]['class'][] = 'ry-cvs-hide';
-                            } else {
-                                $fields['billing'][$key]['class'] = ['ry-cvs-hide'];
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        if (did_action('woocommerce_checkout_process')) {
-            if (Main::get_option('ecpay_cvs_billing_address', 'no') == 'yes') {
-                $used_cvs = false;
-                $shipping_method = wp_unslash($_POST['shipping_method'] ?? []);
-                foreach ($shipping_method as $method) {
-                    $method_ID = strstr($method, ':', true);
-                    if (isset(RY_WT_WC_ECPay_Shipping::$support_methods[$method_ID])) {
-                        if (str_contains($method_ID, '_cvs')) {
-                            $used_cvs = true;
-                        }
-                    }
-                }
-
-                if ($used_cvs) {
-                    $fields['billing']['billing_country']['required'] = false;
-                    $fields['billing']['billing_address_1']['required'] = false;
-                    $fields['billing']['billing_address_2']['required'] = false;
-                    $fields['billing']['billing_city']['required'] = false;
-                    $fields['billing']['billing_state']['required'] = false;
-                    $fields['billing']['billing_postcode']['required'] = false;
-                }
-            }
-        }
-
-        return $fields;
     }
 
     public function shipping_transporting($ipn_info, $order)

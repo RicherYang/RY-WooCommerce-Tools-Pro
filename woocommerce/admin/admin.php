@@ -80,6 +80,24 @@ final class RY_WTP_WC_Admin
                     'autoload' => false,
                 ],
             ]);
+
+            $setting_idx = array_search(WT_Main::get_prefix_name('address_zip_first'), array_column($settings, 'id'));
+            array_splice($settings, $setting_idx + 1, 0, [
+                [
+                    'title' => __('CVS remove billing address', 'ry-woocommerce-tools-pro'),
+                    'id' => Main::get_prefix_name('hide_cvs_billing_address'),
+                    'type' => 'checkbox',
+                    'default' => 'no',
+                    'desc' => __('Remove checkout form billing address for CVS shipping mode.', 'ry-woocommerce-tools-pro') . '</p>',
+                ],
+                [
+                    'title' => __('Virtual product remove billing address', 'ry-woocommerce-tools-pro'),
+                    'id' => Main::get_prefix_name('hide_virtual_billing_address'),
+                    'type' => 'checkbox',
+                    'default' => 'no',
+                    'desc' => __('Remove checkout form billing address for virtual product.', 'ry-woocommerce-tools-pro') . '</p>',
+                ],
+            ]);
         }
         return $settings;
     }

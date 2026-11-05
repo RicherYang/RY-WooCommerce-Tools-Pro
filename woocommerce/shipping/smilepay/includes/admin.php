@@ -52,20 +52,6 @@ final class RY_WTP_SmilePay_Shipping_Admin
                     'desc' => __('Get shipping payment no use scheduler action.', 'ry-woocommerce-tools-pro'),
                 ],
             ]);
-
-            if (!$checkout_with_block) {
-                $setting_idx = array_search(WT_Main::get_prefix_name('smilepay_shipping_log_status_change'), array_column($settings, 'id'));
-                array_splice($settings, $setting_idx, 0, [
-                    [
-                        'title' => __('cvs remove billing address', 'ry-woocommerce-tools-pro'),
-                        'id' => Main::get_prefix_name('smilepay_cvs_billing_address'),
-                        'type' => 'checkbox',
-                        'default' => 'no',
-                        'desc' => __('Remove billing address when shipping mode is cvs.', 'ry-woocommerce-tools-pro')
-                            . '<p class="description" style="margin-bottom:2px">' . __('The billing address still will show in order details.', 'ry-woocommerce-tools-pro') . '</p>',
-                    ],
-                ]);
-            }
         }
         return $settings;
     }

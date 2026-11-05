@@ -36,15 +36,13 @@ final class RY_WTP_SmilePay_Shipping
 
         RY_WTP_WC_Shipping::instance();
 
-        add_filter('woocommerce_checkout_fields', [$this, 'hide_billing_info'], 9999);
-
         if ('yes' === WT_Main::get_option('smilepay_shipping_auto_order_status', 'yes')) {
             add_action('ry_smilepay_shipping_response_status_1', [$this, 'shipping_transporting'], 10, 2);
         }
 
         if ('yes' === WT_Main::get_option('smilepay_shipping_auto_get_no', 'yes')) {
             if ('yes' === Main::get_option('smilepay_shipping_auto_with_scheduler', 'no')) {
-                remove_action('woocommerce_order_status_processing', [RY_WT_WC_SmilePay_Shipping::instance(), 'get_code'], 10, 2);
+                remove_action('woocommerce_order_status_processing', [RY_WT_WC_SmilePay_Shipping::instance(), 'get_code'], 10);
                 add_action('woocommerce_order_status_processing', [$this, 'get_code'], 10, 2);
             }
         }
@@ -57,60 +55,6 @@ final class RY_WTP_SmilePay_Shipping
             add_action('woocommerce_after_checkout_validation', [$this, 'check_phone'], 10, 2);
             add_action('woocommerce_view_order', [$this, 'shipping_info']);
         }
-    }
-
-    public function hide_billing_info($fields)
-    {
-        if (is_checkout()) {
-            $chosen_method = WC()->session->get('chosen_shipping_methods', []);
-            $is_support = false;
-            if (count($chosen_method)) {
-                foreach (RY_WT_WC_SmilePay_Shipping::$support_methods as $method => $method_class) {
-                    if (str_starts_with($chosen_method[0], $method)) {
-                        $is_support = true;
-                    }
-                }
-            }
-
-            if ($is_support) {
-                if ('yes' == Main::get_option('smilepay_cvs_billing_address', 'no')) {
-                    if (str_contains($chosen_method[0], '_cvs')) {
-                        $hide_fields = ['billing_country', 'billing_address_1', 'billing_address_2', 'billing_city', 'billing_state', 'billing_postcode'];
-                        foreach ($hide_fields as $field_name) {
-                            if (isset($fields['billing'][$field_name])) {
-                                $fields['billing'][$field_name]['class'][] = 'ry-hide';
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        if (did_action('woocommerce_checkout_process')) {
-            if (Main::get_option('smilepay_cvs_billing_address', 'no') == 'yes') {
-                $used_cvs = false;
-                $shipping_method = wp_unslash($_POST['shipping_method'] ?? []);
-                foreach ($shipping_method as $method) {
-                    $method_ID = strstr($method, ':', true);
-                    if (isset(RY_WT_WC_SmilePay_Shipping::$support_methods[$method_ID])) {
-                        if (str_contains($method_ID, '_cvs')) {
-                            $used_cvs = true;
-                        }
-                    }
-                }
-
-                if ($used_cvs) {
-                    $fields['billing']['billing_country']['required'] = false;
-                    $fields['billing']['billing_address_1']['required'] = false;
-                    $fields['billing']['billing_address_2']['required'] = false;
-                    $fields['billing']['billing_city']['required'] = false;
-                    $fields['billing']['billing_state']['required'] = false;
-                    $fields['billing']['billing_postcode']['required'] = false;
-                }
-            }
-        }
-
-        return $fields;
     }
 
     public function shipping_transporting($ipn_info, $order)
