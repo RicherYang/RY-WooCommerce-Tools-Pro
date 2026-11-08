@@ -67,7 +67,7 @@ final class Update
             Main::update_option('version', '2026.9.23.1', true);
         }
 
-        if (version_compare($now_version, '2026.11.3', '<')) {
+        if (version_compare($now_version, '2026.11.4', '<')) {
             add_action('init', function () {
                 $hide_cvs_billing_address = wc_string_to_bool(Main::get_option('ecpay_cvs_billing_address', 'no')) ||
                     wc_string_to_bool(Main::get_option('newebpay_cvs_billing_address', 'no')) ||
@@ -78,8 +78,15 @@ final class Update
                 Main::delete_option('newebpay_cvs_billing_address');
                 Main::delete_option('smilepay_cvs_billing_address');
 
-                Main::update_option('version', '2026.11.3', true);
+                Main::update_option('version', '2026.11.4', true);
             });
+        }
+
+        if (version_compare($now_version, '2026.11.7', '<')) {
+            wp_unschedule_hook('\RY_WTP_check_expire');
+            wp_unschedule_hook(Main::get_prefix_name('check_expire'));
+
+            Main::update_option('version', '2026.11.7', true);
         }
     }
 }

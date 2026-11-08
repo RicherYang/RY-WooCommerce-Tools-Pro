@@ -4,7 +4,7 @@ namespace RY\WooCommerce\Pro\Admin;
 
 defined('ABSPATH') or exit;
 
-use RY\Paid\V20260729\AbstractAdmin;
+use RY\Paid\V20261107\AbstractAdmin;
 use RY\WooCommerce\Main as WT_Main;
 use RY\WooCommerce\Pro\License;
 use RY\WooCommerce\Pro\Main;

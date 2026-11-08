@@ -1,6 +1,6 @@
 <?php
 
-namespace RY\Paid\V20260729;
+namespace RY\Paid\V20261107;
 
 defined('ABSPATH') or exit;
 
@@ -49,14 +49,14 @@ abstract class AbstractLicense
         static::$main_class::delete_transient('version_info');
         static::$main_class::delete_transient('expire_link_error');
 
-        wp_unschedule_hook(static::$main_class::get_prefix_name('check_expire'));
+        as_unschedule_all_actions(static::$main_class::get_prefix_name('check_expire'));
     }
 
     public function check_expire_cron(): void
     {
-        if (!wp_next_scheduled(static::$main_class::get_prefix_name('check_expire'))) {
-            wp_schedule_event(time() + HOUR_IN_SECONDS, 'daily', static::$main_class::get_prefix_name('check_expire'));
-        }
+        add_action('wp_loaded', function () {
+            as_schedule_recurring_action(time() + HOUR_IN_SECONDS, DAY_IN_SECONDS, static::$main_class::get_prefix_name('check_expire'), [], 'ry-license', true);
+        });
     }
 
     public function is_activated(): bool

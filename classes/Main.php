@@ -14,7 +14,7 @@ final class Main extends AbstractBasic
 
     public const PLUGIN_NAME = 'RY Tools (Pro) for WooCommerce';
 
-    public const MIN_TOOLS_VERSION = '2026.11.3';
+    public const MIN_TOOLS_VERSION = '2026.11.4';
 
     private static ?self $_instance = null;
 
@@ -125,6 +125,7 @@ final class Main extends AbstractBasic
 
     public static function plugin_deactivation(): void
     {
-        wp_unschedule_hook(self::get_prefix_name('check_expire'));
+        as_unschedule_all_actions(self::get_prefix_name('check_expire'));
+        as_unschedule_all_actions('RY_GENERAL_usage_tracking');
     }
 }

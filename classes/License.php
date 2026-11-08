@@ -4,7 +4,7 @@ namespace RY\WooCommerce\Pro;
 
 defined('ABSPATH') or exit;
 
-use RY\Paid\V20260729\AbstractLicense;
+use RY\Paid\V20261107\AbstractLicense;
 
 final class License extends AbstractLicense
 {
