@@ -2,7 +2,7 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: RY Tools (Pro) for WooCommerce 2026.11.3\n"
+"Project-Id-Version: RY Tools (Pro) for WooCommerce 2026.11.7\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ry-woocommerce-tools-pro\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,6 +53,10 @@ msgstr ""
 #: admin/Admin.php:69
 #, php-format
 msgid "You can download from %s and manual update to the latest version."
+msgstr ""
+
+#: includes/ry-general/AbstractAdmin.php:32
+msgid "Please check your server time setting. Server time is differs from NTP more than one minute."
 msgstr ""
 
 #: includes/ry-general/ActionScheduler/ListTable.php:30

@@ -4,7 +4,7 @@ namespace RY\Paid\V20261107;
 
 defined('ABSPATH') or exit;
 
-use RY\General\V20260810\AbstractLinkServer as GeneralAbstractLinkServer;
+use RY\General\V20261107\AbstractLinkServer as GeneralAbstractLinkServer;
 
 abstract class AbstractLinkServer extends GeneralAbstractLinkServer
 {

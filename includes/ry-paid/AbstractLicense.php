@@ -4,7 +4,7 @@ namespace RY\Paid\V20261107;
 
 defined('ABSPATH') or exit;
 
-use RY\General\V20260810\Logs;
+use RY\General\V20261107\Logs;
 
 abstract class AbstractLicense
 {

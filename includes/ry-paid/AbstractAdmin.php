@@ -4,7 +4,7 @@ namespace RY\Paid\V20261107;
 
 defined('ABSPATH') or exit;
 
-use RY\General\V20260810\AbstractAdmin as GeneralAbstractAdmin;
+use RY\General\V20261107\AbstractAdmin as GeneralAbstractAdmin;
 use RY\Paid\V20261107\Page\License as PageLicense;
 
 abstract class AbstractAdmin extends GeneralAbstractAdmin

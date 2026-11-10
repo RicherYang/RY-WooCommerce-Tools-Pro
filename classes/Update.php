@@ -83,10 +83,21 @@ final class Update
         }
 
         if (version_compare($now_version, '2026.11.7', '<')) {
-            wp_unschedule_hook('\RY_WTP_check_expire');
-            wp_unschedule_hook(Main::get_prefix_name('check_expire'));
+            add_action('init', function () {
+                wp_unschedule_hook('\RY_WTP_check_expire');
+                wp_unschedule_hook(Main::get_prefix_name('check_expire'));
+                if (function_exists('stream_socket_client')) {
+                    as_schedule_recurring_action(time() + HOUR_IN_SECONDS, DAY_IN_SECONDS, 'RY_GENERAL_ntp_time', [], '', true);
+                }
 
-            Main::update_option('version', '2026.11.7', true);
+                Main::update_option('version', '2026.11.7', true);
+            });
+
+            $tracking = get_option('RY_General_tracking', null);
+            if ($tracking !== null) {
+                delete_option('RY_General_tracking');
+                update_option('RY_GENERAL_tracking', $tracking);
+            }
         }
     }
 }
