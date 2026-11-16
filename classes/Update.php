@@ -99,5 +99,9 @@ final class Update
                 update_option('RY_GENERAL_tracking', $tracking);
             }
         }
+
+        if (version_compare($now_version, '2026.11.16', '<')) {
+            Main::update_option('version', '2026.11.16', true);
+        }
     }
 }

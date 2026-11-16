@@ -75,13 +75,22 @@ final class RY_WTP_WC_Order
             if ($virtual_hide) {
                 $change_required = true;
             }
-            if ($csv_hide) {
+            if ($change_required === false && $csv_hide) {
                 $shipping_method = wp_unslash($_POST['shipping_method'] ?? []);
                 foreach ($shipping_method as $method) {
                     $method_ID = strstr($method, ':', true);
-                    if (isset(RY_WT_WC_ECPay_Shipping::$support_methods[$method_ID])) {
-                        if (str_contains($method_ID, '_cvs')) {
+                    if (str_contains($method_ID, '_cvs')) {
+                        if (class_exists('RY_WT_WC_ECPay_Shipping') && isset(RY_WT_WC_ECPay_Shipping::$support_methods[$method_ID])) {
                             $change_required = true;
+                            break;
+                        }
+                        if (class_exists('RY_WT_WC_NewebPay_Shipping') && isset(RY_WT_WC_NewebPay_Shipping::$support_methods[$method_ID])) {
+                            $change_required = true;
+                            break;
+                        }
+                        if (class_exists('RY_WT_WC_SmilePay_Shipping') && isset(RY_WT_WC_SmilePay_Shipping::$support_methods[$method_ID])) {
+                            $change_required = true;
+                            break;
                         }
                     }
                 }
