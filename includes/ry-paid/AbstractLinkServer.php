@@ -15,7 +15,7 @@ abstract class AbstractLinkServer extends GeneralAbstractLinkServer
         $response = wp_remote_get($this->api_url . 'products/' . $this->plugin_slug, [
             'timeout' => 20,
             'httpversion' => '1.1',
-            'user-agent' => 'WordPress; RY Plugin',
+            'user-agent' => apply_filters('http_headers_useragent', 'RY/' . date('Y.m')),
         ]);
 
         return $this->decode_response($response);
@@ -28,7 +28,7 @@ abstract class AbstractLinkServer extends GeneralAbstractLinkServer
         $response = wp_remote_get($this->api_url . 'products/info/' . $this->plugin_slug, [
             'timeout' => 20,
             'httpversion' => '1.1',
-            'user-agent' => 'WordPress; RY Plugin',
+            'user-agent' => apply_filters('http_headers_useragent', 'RY/' . date('Y.m')),
         ]);
 
         return $this->decode_response($response);
@@ -41,7 +41,7 @@ abstract class AbstractLinkServer extends GeneralAbstractLinkServer
         $response = wp_remote_post($this->api_url . 'license/expire/' . $this->plugin_slug, [
             'timeout' => 20,
             'httpversion' => '1.1',
-            'user-agent' => 'WordPress; RY Plugin',
+            'user-agent' => apply_filters('http_headers_useragent', 'RY/' . date('Y.m')),
             'headers' => [
                 'Content-Type' => 'application/json;charset=' . get_bloginfo('charset'),
             ],
@@ -61,7 +61,7 @@ abstract class AbstractLinkServer extends GeneralAbstractLinkServer
         $response = wp_remote_post($this->api_url . 'license/activate/' . $this->plugin_slug, [
             'timeout' => 20,
             'httpversion' => '1.1',
-            'user-agent' => 'WordPress; RY Plugin',
+            'user-agent' => apply_filters('http_headers_useragent', 'RY/' . date('Y.m')),
             'headers' => [
                 'Content-Type' => 'application/json;charset=' . get_bloginfo('charset'),
             ],
